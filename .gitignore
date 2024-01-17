@@ -1,0 +1,4 @@
+*.gem
+Gemfile.lock
+.rbenv-gemsets
+.DS_Store
