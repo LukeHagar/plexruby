@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    plexruby (0.0.1)
+    plexruby (0.0.2)
       faraday
       faraday-multipart
       rack
@@ -55,13 +55,13 @@ GEM
     rubocop-ast (1.30.0)
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
-    sorbet (0.5.11237)
-      sorbet-static (= 0.5.11237)
-    sorbet-runtime (0.5.11237)
-    sorbet-static (0.5.11237-x86_64-linux)
-    sorbet-static-and-runtime (0.5.11237)
-      sorbet (= 0.5.11237)
-      sorbet-runtime (= 0.5.11237)
+    sorbet (0.5.11287)
+      sorbet-static (= 0.5.11287)
+    sorbet-runtime (0.5.11287)
+    sorbet-static (0.5.11287-x86_64-linux)
+    sorbet-static-and-runtime (0.5.11287)
+      sorbet (= 0.5.11287)
+      sorbet-runtime (= 0.5.11287)
     spoom (1.2.4)
       erubi (>= 1.10.0)
       sorbet-static-and-runtime (>= 0.5.10187)
