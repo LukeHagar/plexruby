@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    plexruby (0.0.2)
+    plexruby (0.0.3)
       faraday
       faraday-multipart
       rack
@@ -58,6 +58,7 @@ GEM
     sorbet (0.5.11287)
       sorbet-static (= 0.5.11287)
     sorbet-runtime (0.5.11287)
+    sorbet-static (0.5.11287-aarch64-linux)
     sorbet-static (0.5.11287-x86_64-linux)
     sorbet-static-and-runtime (0.5.11287)
       sorbet (= 0.5.11287)
@@ -87,6 +88,7 @@ GEM
       yard (>= 0.9)
 
 PLATFORMS
+  aarch64-linux
   x86_64-linux
 
 DEPENDENCIES

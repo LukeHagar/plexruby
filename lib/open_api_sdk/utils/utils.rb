@@ -29,8 +29,8 @@ module OpenApiSDK
       end
     end
 
-    sig { params(headers_params: FieldAugmented).returns(T::Hash[Symbol, String]) }
-    def self.get_headers(headers_params)
+    sig { params(headers_params: FieldAugmented, gbls: T.nilable(T::Hash[Symbol, T::Hash[Symbol, T::Hash[Symbol, Object]]])).returns(T::Hash[Symbol, String]) }
+    def self.get_headers(headers_params, gbls = nil)
       return {} if headers_params.nil?
 
       headers = {}
@@ -39,7 +39,8 @@ module OpenApiSDK
         metadata = f.metadata[:header]
         next if metadata.nil?
 
-        value = _serialize_header(metadata.fetch(:explode, false), headers_params.send(f.name))
+        value = _populate_from_globals(f.name, headers_params&.send(f.name), 'header', gbls)
+        value = _serialize_header(metadata.fetch(:explode, false), value)
         headers[metadata.fetch(:field_name, f.name)] = value if !value.empty?
       end
       headers
