@@ -30,21 +30,21 @@ module OpenApiSDK
     end
 
 
-    sig { params(x_plex_client_identifier: ::String, strong: T.nilable(T::Boolean), server_url: T.nilable(String)).returns(::OpenApiSDK::Operations::GetPinResponse) }
-    def get_pin(x_plex_client_identifier, strong = nil, server_url = nil)
+    sig { params(strong: T.nilable(T::Boolean), x_plex_client_identifier: T.nilable(::String), server_url: T.nilable(String)).returns(::OpenApiSDK::Operations::GetPinResponse) }
+    def get_pin(strong = nil, x_plex_client_identifier = nil, server_url = nil)
       # get_pin - Get a Pin
       # Retrieve a Pin from Plex.tv for authentication flows
       request = ::OpenApiSDK::Operations::GetPinRequest.new(
         
-        x_plex_client_identifier: x_plex_client_identifier,
-        strong: strong
+        strong: strong,
+        x_plex_client_identifier: x_plex_client_identifier
       )
       base_url = Utils.template_url(GET_PIN_SERVERS[0], {
       })
       base_url = server_url if !server_url.nil?
       url = "#{base_url}/pins"
-      headers = Utils.get_headers(request)
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetPinRequest, request)
+      headers = Utils.get_headers(request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetPinRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -73,8 +73,8 @@ module OpenApiSDK
     end
 
 
-    sig { params(pin_id: ::String, x_plex_client_identifier: ::String, server_url: T.nilable(String)).returns(::OpenApiSDK::Operations::GetTokenResponse) }
-    def get_token(pin_id, x_plex_client_identifier, server_url = nil)
+    sig { params(pin_id: ::String, x_plex_client_identifier: T.nilable(::String), server_url: T.nilable(String)).returns(::OpenApiSDK::Operations::GetTokenResponse) }
+    def get_token(pin_id, x_plex_client_identifier = nil, server_url = nil)
       # get_token - Get Access Token
       # Retrieve an Access Token from Plex.tv after the Pin has already been authenticated
       request = ::OpenApiSDK::Operations::GetTokenRequest.new(
@@ -89,9 +89,10 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::GetTokenRequest,
         base_url,
         '/pins/{pinID}',
-        request
+        request,
+        @sdk_configuration.globals
       )
-      headers = Utils.get_headers(request)
+      headers = Utils.get_headers(request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 

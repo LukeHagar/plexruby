@@ -46,7 +46,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/hubs/search"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::PerformSearchRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::PerformSearchRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -90,7 +90,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/hubs/search/voice"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::PerformVoiceSearchRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::PerformVoiceSearchRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -128,7 +128,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/search"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetSearchResultsRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetSearchResultsRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 

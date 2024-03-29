@@ -145,7 +145,8 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::StopTranscodeSessionRequest,
         base_url,
         '/transcode/sessions/{sessionKey}',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
       headers['Accept'] = 'application/json'

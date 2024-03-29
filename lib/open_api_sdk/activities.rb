@@ -77,7 +77,8 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::CancelServerActivitiesRequest,
         base_url,
         '/activities/{activityUUID}',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
       headers['Accept'] = 'application/json'

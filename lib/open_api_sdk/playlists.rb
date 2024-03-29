@@ -34,7 +34,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/playlists"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::CreatePlaylistRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::CreatePlaylistRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -78,7 +78,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/playlists"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetPlaylistsRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetPlaylistsRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -125,7 +125,8 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::GetPlaylistRequest,
         base_url,
         '/playlists/{playlistID}',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
       headers['Accept'] = 'application/json'
@@ -172,7 +173,8 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::DeletePlaylistRequest,
         base_url,
         '/playlists/{playlistID}',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
       headers['Accept'] = 'application/json'
@@ -216,10 +218,11 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::UpdatePlaylistRequest,
         base_url,
         '/playlists/{playlistID}',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::UpdatePlaylistRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::UpdatePlaylistRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -264,10 +267,11 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::GetPlaylistContentsRequest,
         base_url,
         '/playlists/{playlistID}/items',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetPlaylistContentsRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetPlaylistContentsRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -313,7 +317,8 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::ClearPlaylistContentsRequest,
         base_url,
         '/playlists/{playlistID}/items',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
       headers['Accept'] = 'application/json'
@@ -358,10 +363,11 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::AddPlaylistContentsRequest,
         base_url,
         '/playlists/{playlistID}/items',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::AddPlaylistContentsRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::AddPlaylistContentsRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -406,7 +412,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/playlists/upload"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::UploadPlaylistRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::UploadPlaylistRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 

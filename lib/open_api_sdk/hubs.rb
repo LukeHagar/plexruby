@@ -33,7 +33,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/hubs"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetGlobalHubsRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetGlobalHubsRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -81,10 +81,11 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::GetLibraryHubsRequest,
         base_url,
         '/hubs/sections/{sectionId}',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetLibraryHubsRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetLibraryHubsRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 

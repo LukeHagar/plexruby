@@ -22,7 +22,9 @@ This will mark the provided media key as Played.
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -60,7 +62,9 @@ This will mark the provided media key as Unplayed.
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -99,7 +103,9 @@ This API command can be used to update the play progress of a media item.
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",

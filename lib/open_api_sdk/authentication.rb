@@ -34,7 +34,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/security/token"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetTransientTokenRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetTransientTokenRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -74,7 +74,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/security/resources"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetSourceConnectionInformationRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetSourceConnectionInformationRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 

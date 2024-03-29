@@ -33,7 +33,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/library/hashes"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetFileHashRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetFileHashRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -194,10 +194,11 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::GetLibraryRequest,
         base_url,
         '/library/sections/{sectionId}',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetLibraryRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetLibraryRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -242,7 +243,8 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::DeleteLibraryRequest,
         base_url,
         '/library/sections/{sectionId}',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
       headers['Accept'] = 'application/json'
@@ -304,7 +306,8 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::GetLibraryItemsRequest,
         base_url,
         '/library/sections/{sectionId}/{tag}',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
       headers['Accept'] = 'application/json'
@@ -345,7 +348,8 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::RefreshLibraryRequest,
         base_url,
         '/library/sections/{sectionId}/refresh',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
       headers['Accept'] = 'application/json'
@@ -405,10 +409,11 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::SearchLibraryRequest,
         base_url,
         '/library/sections/{sectionId}/search',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::SearchLibraryRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::SearchLibraryRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -448,7 +453,8 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::GetMetadataRequest,
         base_url,
         '/library/metadata/{ratingKey}',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
       headers['Accept'] = 'application/json'
@@ -495,7 +501,8 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::GetMetadataChildrenRequest,
         base_url,
         '/library/metadata/{ratingKey}/children',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
       headers['Accept'] = 'application/json'

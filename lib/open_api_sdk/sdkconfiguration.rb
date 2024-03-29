@@ -23,6 +23,7 @@ module OpenApiSDK
     field :server_url, T.nilable(String)
     field :server_idx, T.nilable(Integer)
     field :server_params, Array[Hash[Symbol, String]], { 'default_factory': Array}
+    field :globals, Hash[Symbol, Hash[Symbol, Hash[Symbol, Object]]]
     field :language, String
     field :openapi_doc_version, String
     field :sdk_version, String
@@ -30,19 +31,20 @@ module OpenApiSDK
     field :user_agent, String
 
 
-    sig { params(client: Faraday::Connection, security: T.nilable(::OpenApiSDK::Shared::Security), server_url: T.nilable(String), server_idx: T.nilable(Integer), server_params: T::Array[String]).void }
-    def initialize(client, security, server_url, server_idx, server_params)
+    sig { params(client: Faraday::Connection, security: T.nilable(::OpenApiSDK::Shared::Security), server_url: T.nilable(String), server_idx: T.nilable(Integer), server_params: T::Array[String], globals: T::Hash[Symbol, T::Hash[Symbol, T::Hash[Symbol, Object]]]).void }
+    def initialize(client, security, server_url, server_idx, server_params, globals)
       @client = client
       @server_url = server_url
       @server_idx = server_idx.nil? ? 0 : server_idx
       raise StandardError, "Invalid server index #{server_idx}" if @server_idx.negative? || @server_idx >= SERVERS.length
       @server_params = server_params
       @security = security
+      @globals = globals.nil? ? {} : globals
       @language = 'ruby'
       @openapi_doc_version = '0.0.3'
-      @sdk_version = '0.0.3'
-      @gen_version = '2.291.0'
-      @user_agent = 'speakeasy-sdk/ruby 0.0.3 2.291.0 0.0.3 plexruby'
+      @sdk_version = '0.1.0'
+      @gen_version = '2.292.0'
+      @user_agent = 'speakeasy-sdk/ruby 0.1.0 2.292.0 0.0.3 plexruby'
     end
 
     sig { returns([String, T::Hash[Symbol, String]]) }

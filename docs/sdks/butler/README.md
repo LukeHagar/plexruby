@@ -24,7 +24,9 @@ Returns a list of butler tasks
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -61,7 +63,9 @@ This endpoint will attempt to start all Butler tasks that are enabled in the set
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -94,7 +98,9 @@ This endpoint will stop all currently running tasks and remove any scheduled tas
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -131,7 +137,9 @@ This endpoint will attempt to start a single Butler task that is enabled in the 
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -170,7 +178,9 @@ This endpoint will stop a currently running task by name, or remove it from the 
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",

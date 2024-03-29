@@ -32,7 +32,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/statistics/media"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetStatisticsRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetStatisticsRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 

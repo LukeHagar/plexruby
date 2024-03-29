@@ -23,7 +23,9 @@ This will retrieve the "Now Playing" Information of the PMS.
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -55,7 +57,9 @@ This will Retrieve a listing of all history views.
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -87,7 +91,9 @@ Get Transcode Sessions
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -119,7 +125,9 @@ Stop a Transcode Session
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",

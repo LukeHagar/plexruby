@@ -30,7 +30,9 @@ This resource returns hash values for local files
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -70,7 +72,9 @@ This endpoint will return the recently added content.
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -108,7 +112,9 @@ This allows a client to provide a rich interface around the media (e.g. allow so
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -179,7 +185,9 @@ Each type in the library comes with a set of filters and sorts, aiding in buildi
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -218,7 +226,9 @@ Delate a library using a specific section
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -276,7 +286,9 @@ Fetches details from a specific section of the library identified by a section k
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -316,7 +328,9 @@ This endpoint Refreshes the library.
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -372,7 +386,9 @@ Each type in the library comes with a set of filters and sorts, aiding in buildi
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -412,7 +428,9 @@ This endpoint will return the metadata of a library item specified with the rati
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -451,7 +469,9 @@ This endpoint will return the children of of a library item specified with the r
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -490,7 +510,9 @@ This endpoint will return the on deck content.
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",

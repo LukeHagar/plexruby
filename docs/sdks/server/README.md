@@ -27,7 +27,9 @@ Server Capabilities
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -59,7 +61,9 @@ Get Server Preferences
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -91,7 +95,9 @@ Get Available Clients
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -123,7 +129,9 @@ Get Devices
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -155,7 +163,9 @@ Get Server Identity
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -187,7 +197,9 @@ Returns MyPlex Account Information
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -220,7 +232,9 @@ Plex's Photo transcoder is used throughout the service to serve images at specif
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -268,7 +282,9 @@ Get Server List
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "<value>",
+    )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",

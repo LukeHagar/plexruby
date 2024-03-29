@@ -32,7 +32,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/:/scrobble"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::MarkPlayedRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::MarkPlayedRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -70,7 +70,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/:/unscrobble"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::MarkUnplayedRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::MarkUnplayedRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -111,7 +111,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/:/progress"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::UpdatePlayProgressRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::UpdatePlayProgressRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 

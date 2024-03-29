@@ -18,6 +18,7 @@ module OpenApiSDK
     sig do
       params(client: Faraday::Request,
              security: T.nilable(Shared::Security),
+             x_plex_client_identifier: ::String,
              protocol: T.nilable(::OpenApiSDK::ServerVariables::ServerProtocol),
              ip: T.nilable(::String),
              port: T.nilable(::String),
@@ -27,6 +28,7 @@ module OpenApiSDK
     end
     def initialize(client: nil,
                    security: nil,
+                   x_plex_client_identifier: nil,
                    protocol: nil,
                    ip: nil,
                    port: nil,
@@ -37,6 +39,7 @@ module OpenApiSDK
       ## Instantiates the SDK configuring it with the provided parameters.
       # @param [Faraday::Request] client The faraday HTTP client to use for all operations
       # @param [Shared::Security] security The security details required for authentication
+      # @param [::String] x_plex_client_identifier: Configures the x_plex_client_identifier parameter for all supported operations
       # @param [T.nilable(::OpenApiSDK::ServerVariables::ServerProtocol)] protocol: Allows setting the protocol variable for url substitution
       # @param [T.nilable(::String)] ip: Allows setting the ip variable for url substitution
       # @param [T.nilable(::String)] port: Allows setting the port variable for url substitution
@@ -68,7 +71,19 @@ module OpenApiSDK
         },
       ]
 
-      @sdk_configuration = SDKConfiguration.new(client, security, server_url, server_idx, server_params)
+      globals = {
+        'parameters': {
+          'queryParam': {
+          },
+          'pathParam': {
+          },
+          'header': {
+            'x_plex_client_identifier': x_plex_client_identifier
+          }
+        }
+      }
+
+      @sdk_configuration = SDKConfiguration.new(client, security, server_url, server_idx, server_params, globals)
       init_sdks
     end
 

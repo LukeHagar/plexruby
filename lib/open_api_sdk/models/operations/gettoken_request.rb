@@ -20,10 +20,10 @@ module OpenApiSDK
       # This is used to track the client application and its usage
       # (UUID, serial number, or other number unique per device)
       # 
-      field :x_plex_client_identifier, ::String, { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
+      field :x_plex_client_identifier, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
 
 
-      sig { params(pin_id: ::String, x_plex_client_identifier: ::String).void }
+      sig { params(pin_id: ::String, x_plex_client_identifier: T.nilable(::String)).void }
       def initialize(pin_id: nil, x_plex_client_identifier: nil)
         @pin_id = pin_id
         @x_plex_client_identifier = x_plex_client_identifier

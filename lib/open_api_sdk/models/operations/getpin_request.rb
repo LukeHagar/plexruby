@@ -14,22 +14,22 @@ module OpenApiSDK
     class GetPinRequest < ::OpenApiSDK::Utils::FieldAugmented
       extend T::Sig
 
-      # The unique identifier for the client application
-      # This is used to track the client application and its usage
-      # (UUID, serial number, or other number unique per device)
-      # 
-      field :x_plex_client_identifier, ::String, { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
       # Determines the kind of code returned by the API call
       # Strong codes are used for Pin authentication flows
       # Non-Strong codes are used for `Plex.tv/link`
       # 
       field :strong, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'strong', 'style': 'form', 'explode': true } }
+      # The unique identifier for the client application
+      # This is used to track the client application and its usage
+      # (UUID, serial number, or other number unique per device)
+      # 
+      field :x_plex_client_identifier, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
 
 
-      sig { params(x_plex_client_identifier: ::String, strong: T.nilable(T::Boolean)).void }
-      def initialize(x_plex_client_identifier: nil, strong: nil)
-        @x_plex_client_identifier = x_plex_client_identifier
+      sig { params(strong: T.nilable(T::Boolean), x_plex_client_identifier: T.nilable(::String)).void }
+      def initialize(strong: nil, x_plex_client_identifier: nil)
         @strong = strong
+        @x_plex_client_identifier = x_plex_client_identifier
       end
     end
   end

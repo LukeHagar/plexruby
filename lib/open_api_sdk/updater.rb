@@ -70,7 +70,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/updater/check"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::CheckForUpdatesRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::CheckForUpdatesRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -110,7 +110,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/updater/apply"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::ApplyUpdatesRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::ApplyUpdatesRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 

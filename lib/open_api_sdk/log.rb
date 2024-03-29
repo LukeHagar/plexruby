@@ -35,7 +35,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/log"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::LogLineRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::LogLineRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 

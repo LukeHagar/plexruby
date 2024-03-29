@@ -146,7 +146,8 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::StartTaskRequest,
         base_url,
         '/butler/{taskName}',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
       headers['Accept'] = 'application/json'
@@ -188,7 +189,8 @@ module OpenApiSDK
         ::OpenApiSDK::Operations::StopTaskRequest,
         base_url,
         '/butler/{taskName}',
-        request
+        request,
+        @sdk_configuration.globals
       )
       headers = {}
       headers['Accept'] = 'application/json'

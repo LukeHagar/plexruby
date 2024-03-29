@@ -251,7 +251,7 @@ module OpenApiSDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/photo/:/transcode"
       headers = {}
-      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetResizedPhotoRequest, request)
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetResizedPhotoRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
