@@ -78,7 +78,7 @@ module OpenApiSDK
           'pathParam': {
           },
           'header': {
-            'x_plex_client_identifier': x_plex_client_identifier
+            'x_plex_client_identifier': x_plex_client_identifier,
           }
         }
       }
