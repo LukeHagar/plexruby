@@ -26,7 +26,7 @@ require 'plexruby'
 
 
 s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "<value>",
+      x_plex_client_identifier: "Postman",
     )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
@@ -188,11 +188,11 @@ require 'plexruby'
 
 
 s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "<value>",
+      x_plex_client_identifier: "Postman",
     )
 
     
-res = s.plex.get_pin(server_url: "https://plex.tv/api/v2", strong=false, x_plex_client_identifier="<value>")
+res = s.plex.get_pin(server_url: "https://plex.tv/api/v2", strong=false, x_plex_client_identifier="Postman")
 
 if ! res.two_hundred_application_json_object.nil?
   # handle response
@@ -206,7 +206,7 @@ end
 
 A parameter is configured globally. This parameter must be set on the SDK client instance itself during initialization. When configured as an option during SDK initialization, This global value will be used as the default on the operations that use it. When such operations are called, there is a place in each to override the global value, if needed.
 
-For example, you can set `X-Plex-Client-Identifier` to `"<value>"` at SDK initialization and then you do not have to pass the same value on calls to operations like `get_pin`. But if you want to do so you may, which will locally override the global setting. See the example code below for a demonstration.
+For example, you can set `X-Plex-Client-Identifier` to `"Postman"` at SDK initialization and then you do not have to pass the same value on calls to operations like `get_pin`. But if you want to do so you may, which will locally override the global setting. See the example code below for a demonstration.
 
 
 ### Available Globals
@@ -228,11 +228,11 @@ require 'plexruby'
 
 
 s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "<value>",
+      x_plex_client_identifier: "Postman",
     )
 
     
-res = s.plex.get_pin(strong=false, x_plex_client_identifier="<value>")
+res = s.plex.get_pin(strong=false, x_plex_client_identifier="Postman")
 
 if ! res.two_hundred_application_json_object.nil?
   # handle response

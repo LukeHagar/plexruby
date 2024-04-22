@@ -22,7 +22,7 @@ require 'plexruby'
 
 
 s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "<value>",
+      x_plex_client_identifier: "Postman",
     )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
@@ -75,7 +75,7 @@ require 'plexruby'
 
 
 s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "<value>",
+      x_plex_client_identifier: "Postman",
     )
 s.config_security(
   ::OpenApiSDK::Shared::Security.new(
