@@ -1,10 +1,10 @@
-speakeasyVersion: 1.269.1
+speakeasyVersion: 1.270.0
 sources:
     my-source: {}
 targets:
     plexruby:
         source: my-source
-        outLocation: /github/workspace/repo
+        outLocation: /Users/lukehagar/Documents/GitHub/plexruby
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -16,3 +16,5 @@ workflow:
         plexruby:
             target: ruby
             source: my-source
+            codeSamples:
+                output: codeSamples.yaml
