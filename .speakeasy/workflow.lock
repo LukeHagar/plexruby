@@ -1,10 +1,10 @@
-speakeasyVersion: 1.270.0
+speakeasyVersion: 1.271.0
 sources:
     my-source: {}
 targets:
     plexruby:
         source: my-source
-        outLocation: /Users/lukehagar/Documents/GitHub/plexruby
+        outLocation: /github/workspace/repo
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
