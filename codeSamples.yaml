@@ -3,318 +3,342 @@ info:
   title: CodeSamples overlay for ruby target
   version: 0.0.0
 actions:
-  - target: $["paths"]["/:/prefs"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getServerPreferences
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_server_preferences()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/servers"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getServerList
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_server_list()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/hubs"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getGlobalHubs
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_global_hubs(count=1262.49, only_transient=::OpenApiSDK::Operations::OnlyTransient::ONE)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/security/token"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getTransientToken
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_transient_token(type=::OpenApiSDK::Operations::GetTransientTokenQueryParamType::DELEGATION, scope=::OpenApiSDK::Operations::Scope::ALL)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/butler/{taskName}"]["post"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: startTask
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.start_task(task_name=::OpenApiSDK::Operations::TaskName::CLEAN_OLD_BUNDLES)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/library/onDeck"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getOnDeck
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_on_deck()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/log"]["post"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: logMultiLine
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = \"level=4&message=Test%20message%201&source=postman\nlevel=3&message=Test%20message%202&source=postman\nlevel=1&message=Test%20message%203&source=postman\"\n    \nres = s.log_multi_line(req)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/playlists/{playlistID}/items"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getPlaylistContents
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_playlist_contents(playlist_id=5004.46, type=9403.59)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/transcode/sessions/{sessionKey}"]["delete"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: stopTranscodeSession
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.stop_transcode_session(session_key=\"zz7llzqlx8w9vnrsbnwhbmep\")\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/devices"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getDevices
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_devices()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
   - target: $["paths"]["/photo/:/transcode"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getResizedPhoto
           source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::OpenApiSDK::Operations::GetResizedPhotoRequest.new(\n  width: 110.0,\n  height: 165.0,\n  opacity: 643869,\n  blur: 4000.0,\n  min_size: ::OpenApiSDK::Operations::MinSize::ZERO,\n  upscale: ::OpenApiSDK::Operations::Upscale::ZERO,\n  url: \"/library/metadata/49564/thumb/1654258204\",\n)\n    \nres = s.get_resized_photo(req)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/activities"]["get"]
+  - target: $["paths"]["/servers"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
-          label: getServerActivities
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_server_activities()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/hubs/sections/{sectionId}"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getLibraryHubs
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_library_hubs(section_id=6728.76, count=9010.22, only_transient=::OpenApiSDK::Operations::QueryParamOnlyTransient::ZERO)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/search"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getSearchResults
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_search_results(query=\"110\")\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/status/sessions/history/all"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getSessionHistory
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_session_history()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/library/sections/{sectionId}/refresh"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: refreshLibrary
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.refresh_library(section_id=934.16)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/pins"]["post"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getPin
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\n\n    \nres = s.get_pin(strong=false, x_plex_client_identifier=\"Postman\")\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/:/progress"]["post"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: updatePlayProgress
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.update_play_progress(key=\"<value>\", time=6900.91, state=\"<value>\")\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/library/sections/{sectionId}/search"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: searchLibrary
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.search_library(section_id=933505, type=::OpenApiSDK::Operations::Type::FOUR)\n\nif ! res.object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/library/metadata/{ratingKey}/children"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getMetadataChildren
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_metadata_children(rating_key=1539.14)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/transcode/sessions"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getTranscodeSessions
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_transcode_sessions()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/library/hashes"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getFileHash
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_file_hash(url=\"file://C:\\Image.png&type=13\", type=4462.17)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/butler/{taskName}"]["delete"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: stopTask
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.stop_task(task_name=::OpenApiSDK::Operations::PathParamTaskName::BACKUP_DATABASE)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/log"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: logLine
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.log_line(level=::OpenApiSDK::Operations::Level::THREE, message=\"Test log message\", source=\"Postman\")\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/playlists/{playlistID}/items"]["put"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: addPlaylistContents
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.add_playlist_contents(playlist_id=8502.01, uri=\"server://12345/com.plexapp.plugins.library/library/metadata/1\", play_queue_id=123.0)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/security/resources"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getSourceConnectionInformation
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_source_connection_information(source=\"server://client-identifier\")\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getServerCapabilities
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_server_capabilities()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/clients"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getAvailableClients
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_available_clients()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/video/:/transcode/universal/start.mpd"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: startUniversalTranscode
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::OpenApiSDK::Operations::StartUniversalTranscodeRequest.new(\n  has_mde: 8924.99,\n  path: \"/etc/mail\",\n  media_index: 9962.95,\n  part_index: 1232.82,\n  protocol: \"<value>\",\n)\n    \nres = s.start_universal_transcode(req)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/hubs/search"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: performSearch
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.perform_search(query=\"dylan\", section_id=1516.53, limit=5.0)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/library/sections/{sectionId}"]["delete"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: deleteLibrary
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.delete_library(section_id=1000.0)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/library/metadata/{ratingKey}"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getMetadata
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_metadata(rating_key=8382.31)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/:/scrobble"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: markPlayed
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.mark_played(key=59398.0)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/activities/{activityUUID}"]["delete"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: cancelServerActivities
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.cancel_server_activities(activity_uuid=\"<value>\")\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/butler"]["post"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: startAllTasks
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.start_all_tasks()\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/library/recentlyAdded"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getRecentlyAdded
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_recently_added()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/log/networked"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: enablePaperTrail
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.enable_paper_trail()\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/playlists"]["post"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: createPlaylist
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::OpenApiSDK::Operations::CreatePlaylistRequest.new(\n  title: \"<value>\",\n  type: ::OpenApiSDK::Operations::QueryParamType::PHOTO,\n  smart: ::OpenApiSDK::Operations::Smart::ONE,\n  uri: \"https://inborn-brochure.biz\",\n)\n    \nres = s.create_playlist(req)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/playlists/{playlistID}"]["delete"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: deletePlaylist
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.delete_playlist(playlist_id=216.22)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/:/timeline"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getTimeline
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::OpenApiSDK::Operations::GetTimelineRequest.new(\n  rating_key: 716.56,\n  key: \"<key>\",\n  state: ::OpenApiSDK::Operations::State::PAUSED,\n  has_mde: 7574.33,\n  time: 3327.51,\n  duration: 7585.39,\n  context: \"<value>\",\n  play_queue_item_id: 1406.21,\n  play_back_time: 2699.34,\n  row: 3536.42,\n)\n    \nres = s.get_timeline(req)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/pins/{pinID}"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getToken
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\n\n    \nres = s.get_token(pin_id=\"<value>\", x_plex_client_identifier=\"Postman\")\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/playlists/{playlistID}/items"]["delete"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: clearPlaylistContents
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.clear_playlist_contents(playlist_id=1893.18)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/statistics/media"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getStatistics
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_statistics(timespan=411769)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/updater/check"]["put"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: checkForUpdates
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.check_for_updates(download=::OpenApiSDK::Operations::Download::ONE)\n\nif res.status_code == 200\n  # handle response\nend"
+          label: getServerList
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_server_list()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
   - target: $["paths"]["/:/unscrobble"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: markUnplayed
           source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.mark_unplayed(key=59398.0)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/library/sections/{sectionId}"]["get"]
+  - target: $["paths"]["/:/progress"]["post"]
     update:
       x-codeSamples:
         - lang: ruby
-          label: getLibrary
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_library(section_id=1000.0, include_details=::OpenApiSDK::Operations::IncludeDetails::ZERO)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/playlists/{playlistID}"]["get"]
+          label: updatePlayProgress
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.update_play_progress(key=\"<value>\", time=90000.0, state=\"played\")\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/activities/{activityUUID}"]["delete"]
     update:
       x-codeSamples:
         - lang: ruby
-          label: getPlaylist
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_playlist(playlist_id=4109.48)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/butler"]["delete"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: stopAllTasks
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.stop_all_tasks()\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/playlists"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getPlaylists
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_playlists(playlist_type=::OpenApiSDK::Operations::PlaylistType::AUDIO, smart=::OpenApiSDK::Operations::QueryParamSmart::ZERO)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+          label: cancelServerActivities
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.cancel_server_activities(activity_uuid=\"25b71ed5-0f9d-461c-baa7-d404e9e10d3e\")\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/playlists/upload"]["post"]
     update:
       x-codeSamples:
         - lang: ruby
           label: uploadPlaylist
           source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.upload_playlist(path=\"/home/barkley/playlist.m3u\", force=::OpenApiSDK::Operations::Force::ZERO)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/updater/apply"]["put"]
+  - target: $["paths"]["/"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
-          label: applyUpdates
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.apply_updates(tonight=::OpenApiSDK::Operations::Tonight::ONE, skip=::OpenApiSDK::Operations::Skip::ZERO)\n\nif res.status_code == 200\n  # handle response\nend"
+          label: getServerCapabilities
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_server_capabilities()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/video/:/transcode/universal/start.mpd"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: startUniversalTranscode
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::OpenApiSDK::Operations::StartUniversalTranscodeRequest.new(\n  has_mde: 1.0,\n  path: \"/library/metadata/23409\",\n  media_index: 0.0,\n  part_index: 0.0,\n  protocol: \"hls\",\n  fast_seek: 0.0,\n  direct_play: 0.0,\n  direct_stream: 0.0,\n  subtitle_size: 100.0,\n  subtites: \"burn\",\n  audio_boost: 100.0,\n  location: \"lan\",\n  media_buffer_size: 102400.0,\n  session: \"zvcage8b7rkioqcm8f4uns4c\",\n  add_debug_overlay: 0.0,\n  auto_adjust_quality: 0.0,\n)\n    \nres = s.start_universal_transcode(req)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/log/networked"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: enablePaperTrail
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.enable_paper_trail()\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/identity"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getServerIdentity
           source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_server_identity()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/library/hashes"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getFileHash
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_file_hash(url=\"file://C:\\Image.png&type=13\", type=4462.17)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/devices"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getDevices
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_devices()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/:/scrobble"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: markPlayed
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.mark_played(key=59398.0)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/hubs/sections/{sectionId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getLibraryHubs
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_library_hubs(section_id=6728.76, count=9010.22, only_transient=::OpenApiSDK::Operations::QueryParamOnlyTransient::ZERO)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/library/sections/{sectionId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getLibrary
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_library(section_id=1000.0, include_details=::OpenApiSDK::Operations::IncludeDetails::ZERO)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/library/sections/{sectionId}/search"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: searchLibrary
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.search_library(section_id=933505, type=::OpenApiSDK::Operations::Type::FOUR)\n\nif ! res.object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/status/sessions"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getSessions
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_sessions()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/transcode/sessions"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getTranscodeSessions
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_transcode_sessions()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/activities"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getServerActivities
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_server_activities()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/library/sections/{sectionId}"]["delete"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: deleteLibrary
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.delete_library(section_id=1000.0)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/:/prefs"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getServerPreferences
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_server_preferences()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/clients"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getAvailableClients
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_available_clients()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/:/timeline"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getTimeline
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::OpenApiSDK::Operations::GetTimelineRequest.new(\n  rating_key: 23409.0,\n  key: \"/library/metadata/23409\",\n  state: ::OpenApiSDK::Operations::State::PLAYING,\n  has_mde: 1.0,\n  time: 2000.0,\n  duration: 10000.0,\n  context: \"home:hub.continueWatching\",\n  play_queue_item_id: 1.0,\n  play_back_time: 2000.0,\n  row: 1.0,\n)\n    \nres = s.get_timeline(req)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/butler"]["delete"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: stopAllTasks
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.stop_all_tasks()\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/hubs"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getGlobalHubs
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_global_hubs(count=1262.49, only_transient=::OpenApiSDK::Operations::OnlyTransient::ONE)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/hubs/search/voice"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: performVoiceSearch
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.perform_voice_search(query=\"dead+poop\", section_id=4094.8, limit=5.0)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/search"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getSearchResults
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_search_results(query=\"110\")\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/playlists"]["post"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: createPlaylist
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::OpenApiSDK::Operations::CreatePlaylistRequest.new(\n  title: \"<value>\",\n  type: ::OpenApiSDK::Operations::QueryParamType::PHOTO,\n  smart: ::OpenApiSDK::Operations::Smart::ONE,\n  uri: \"https://inborn-brochure.biz\",\n)\n    \nres = s.create_playlist(req)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/playlists/{playlistID}/items"]["delete"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: clearPlaylistContents
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.clear_playlist_contents(playlist_id=1893.18)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/library/recentlyAdded"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getRecentlyAdded
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_recently_added()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/library/sections/{sectionId}/refresh"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: refreshLibrary
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.refresh_library(section_id=934.16)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/playlists/{playlistID}/items"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getPlaylistContents
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_playlist_contents(playlist_id=5004.46, type=9403.59)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/hubs/search"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: performSearch
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.perform_search(query=\"dylan\", section_id=1516.53, limit=5.0)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/log"]["post"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: logMultiLine
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = \"level=4&message=Test%20message%201&source=postman\nlevel=3&message=Test%20message%202&source=postman\nlevel=1&message=Test%20message%203&source=postman\"\n    \nres = s.log_multi_line(req)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/security/token"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getTransientToken
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_transient_token(type=::OpenApiSDK::Operations::GetTransientTokenQueryParamType::DELEGATION, scope=::OpenApiSDK::Operations::Scope::ALL)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/security/resources"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getSourceConnectionInformation
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_source_connection_information(source=\"server://client-identifier\")\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/butler"]["post"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: startAllTasks
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.start_all_tasks()\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/transcode/sessions/{sessionKey}"]["delete"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: stopTranscodeSession
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.stop_transcode_session(session_key=\"zz7llzqlx8w9vnrsbnwhbmep\")\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/updater/status"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getUpdateStatus
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_update_status()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/updater/apply"]["put"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: applyUpdates
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.apply_updates(tonight=::OpenApiSDK::Operations::Tonight::ONE, skip=::OpenApiSDK::Operations::Skip::ZERO)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/butler/{taskName}"]["delete"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: stopTask
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.stop_task(task_name=::OpenApiSDK::Operations::PathParamTaskName::BACKUP_DATABASE)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/library/metadata/{ratingKey}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getMetadata
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_metadata(rating_key=8382.31)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/playlists/{playlistID}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getPlaylist
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_playlist(playlist_id=4109.48)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/playlists/{playlistID}"]["delete"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: deletePlaylist
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.delete_playlist(playlist_id=216.22)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/statistics/media"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getStatistics
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_statistics(timespan=4)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/butler/{taskName}"]["post"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: startTask
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.start_task(task_name=::OpenApiSDK::Operations::TaskName::CLEAN_OLD_BUNDLES)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/myplex/account"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getMyPlexAccount
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_my_plex_account()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/playlists/{playlistID}/items"]["put"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: addPlaylistContents
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.add_playlist_contents(playlist_id=8502.01, uri=\"server://12345/com.plexapp.plugins.library/library/metadata/1\", play_queue_id=123.0)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/updater/check"]["put"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: checkForUpdates
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.check_for_updates(download=::OpenApiSDK::Operations::Download::ONE)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/library/onDeck"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getOnDeck
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_on_deck()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/log"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: logLine
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.log_line(level=::OpenApiSDK::Operations::Level::THREE, message=\"Test log message\", source=\"Postman\")\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/playlists/{playlistID}"]["put"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: updatePlaylist
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.update_playlist(playlist_id=3915, title=\"<value>\", summary=\"<value>\")\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/library/sections/{sectionId}/{tag}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getLibraryItems
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_library_items(section_id=451092, tag=::OpenApiSDK::Operations::Tag::UNWATCHED)\n\nif ! res.object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/library/metadata/{ratingKey}/children"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getMetadataChildren
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_metadata_children(rating_key=1539.14)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/pins/{pinID}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getToken
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\n\n    \nres = s.get_token(pin_id=\"<value>\", x_plex_client_identifier=\"Postman\")\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/status/sessions/history/all"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: getSessionHistory
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_session_history()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
   - target: $["paths"]["/butler"]["get"]
     update:
       x-codeSamples:
@@ -327,39 +351,15 @@ actions:
         - lang: ruby
           label: getLibraries
           source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_libraries()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/library/sections/{sectionId}/{tag}"]["get"]
+  - target: $["paths"]["/pins"]["post"]
     update:
       x-codeSamples:
         - lang: ruby
-          label: getLibraryItems
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_library_items(section_id=451092, tag=::OpenApiSDK::Operations::Tag::UNWATCHED)\n\nif ! res.object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/updater/status"]["get"]
+          label: getPin
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\n\n    \nres = s.get_pin(strong=false, x_plex_client_identifier=\"Postman\")\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/playlists"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
-          label: getUpdateStatus
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_update_status()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/myplex/account"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getMyPlexAccount
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_my_plex_account()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
-  - target: $["paths"]["/hubs/search/voice"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: performVoiceSearch
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.perform_voice_search(query=\"dead+poop\", section_id=4094.8, limit=5.0)\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/playlists/{playlistID}"]["put"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: updatePlaylist
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.update_playlist(playlist_id=3915, title=\"<value>\", summary=\"<value>\")\n\nif res.status_code == 200\n  # handle response\nend"
-  - target: $["paths"]["/status/sessions"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getSessions
-          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_sessions()\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
+          label: getPlaylists
+          source: "require 'plexruby'\n\n\ns = ::OpenApiSDK::PlexAPI.new(\n      x_plex_client_identifier: \"Postman\",\n    )\ns.config_security(\n  ::OpenApiSDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.get_playlists(playlist_type=::OpenApiSDK::Operations::PlaylistType::AUDIO, smart=::OpenApiSDK::Operations::QueryParamSmart::ZERO)\n\nif ! res.two_hundred_application_json_object.nil?\n  # handle response\nend"
