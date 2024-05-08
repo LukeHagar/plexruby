@@ -32,16 +32,16 @@ s.config_security(
 
 
 req = ::OpenApiSDK::Operations::GetTimelineRequest.new(
-  rating_key: 716.56,
-  key: "<key>",
-  state: ::OpenApiSDK::Operations::State::PAUSED,
-  has_mde: 7574.33,
-  time: 3327.51,
-  duration: 7585.39,
-  context: "<value>",
-  play_queue_item_id: 1406.21,
-  play_back_time: 2699.34,
-  row: 3536.42,
+  rating_key: 23409.0,
+  key: "/library/metadata/23409",
+  state: ::OpenApiSDK::Operations::State::PLAYING,
+  has_mde: 1.0,
+  time: 2000.0,
+  duration: 10000.0,
+  context: "home:hub.continueWatching",
+  play_queue_item_id: 1.0,
+  play_back_time: 2000.0,
+  row: 1.0,
 )
     
 res = s.video.get_timeline(req)
@@ -85,11 +85,22 @@ s.config_security(
 
 
 req = ::OpenApiSDK::Operations::StartUniversalTranscodeRequest.new(
-  has_mde: 8924.99,
-  path: "/etc/mail",
-  media_index: 9962.95,
-  part_index: 1232.82,
-  protocol: "<value>",
+  has_mde: 1.0,
+  path: "/library/metadata/23409",
+  media_index: 0.0,
+  part_index: 0.0,
+  protocol: "hls",
+  fast_seek: 0.0,
+  direct_play: 0.0,
+  direct_stream: 0.0,
+  subtitle_size: 100.0,
+  subtites: "burn",
+  audio_boost: 100.0,
+  location: "lan",
+  media_buffer_size: 102400.0,
+  session: "zvcage8b7rkioqcm8f4uns4c",
+  add_debug_overlay: 0.0,
+  auto_adjust_quality: 0.0,
 )
     
 res = s.video.start_universal_transcode(req)

@@ -71,7 +71,7 @@ s.config_security(
 )
 
     
-res = s.activities.cancel_server_activities(activity_uuid="<value>")
+res = s.activities.cancel_server_activities(activity_uuid="25b71ed5-0f9d-461c-baa7-d404e9e10d3e")
 
 if res.status_code == 200
   # handle response
@@ -81,9 +81,9 @@ end
 
 ### Parameters
 
-| Parameter                           | Type                                | Required                            | Description                         |
-| ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
-| `activity_uuid`                     | *::String*                          | :heavy_check_mark:                  | The UUID of the activity to cancel. |
+| Parameter                            | Type                                 | Required                             | Description                          | Example                              |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| `activity_uuid`                      | *::String*                           | :heavy_check_mark:                   | The UUID of the activity to cancel.  | 25b71ed5-0f9d-461c-baa7-d404e9e10d3e |
 
 
 ### Response

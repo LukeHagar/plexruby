@@ -296,7 +296,7 @@ s.config_security(
 )
 
     
-res = s.library.get_library_items(section_id=451092, tag=::OpenApiSDK::Operations::Tag::UNWATCHED)
+res = s.library.get_library_items(section_id="<value>", tag=::OpenApiSDK::Operations::Tag::GENRE)
 
 if ! res.object.nil?
   # handle response
@@ -308,7 +308,7 @@ end
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `section_id`                                                    | *::Integer*                                                     | :heavy_check_mark:                                              | the Id of the library to query                                  |
+| `section_id`                                                    | *::Object*                                                      | :heavy_check_mark:                                              | the Id of the library to query                                  |
 | `tag`                                                           | [::OpenApiSDK::Operations::Tag](../../models/operations/tag.md) | :heavy_check_mark:                                              | A key representing a specific tag within the section.           |
 
 

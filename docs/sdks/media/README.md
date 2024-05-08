@@ -113,7 +113,7 @@ s.config_security(
 )
 
     
-res = s.media.update_play_progress(key="<value>", time=6900.91, state="<value>")
+res = s.media.update_play_progress(key="<value>", time=90000.0, state="played")
 
 if res.status_code == 200
   # handle response
@@ -123,11 +123,11 @@ end
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `key`                                                               | *::String*                                                          | :heavy_check_mark:                                                  | the media key                                                       |
-| `time`                                                              | *::Float*                                                           | :heavy_check_mark:                                                  | The time, in milliseconds, used to set the media playback progress. |
-| `state`                                                             | *::String*                                                          | :heavy_check_mark:                                                  | The playback state of the media item.                               |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `key`                                                               | *::String*                                                          | :heavy_check_mark:                                                  | the media key                                                       |                                                                     |
+| `time`                                                              | *::Float*                                                           | :heavy_check_mark:                                                  | The time, in milliseconds, used to set the media playback progress. | 90000                                                               |
+| `state`                                                             | *::String*                                                          | :heavy_check_mark:                                                  | The playback state of the media item.                               | played                                                              |
 
 
 ### Response

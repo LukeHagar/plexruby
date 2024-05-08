@@ -30,7 +30,7 @@ s.config_security(
 )
 
     
-res = s.statistics.get_statistics(timespan=411769)
+res = s.statistics.get_statistics(timespan=4)
 
 if ! res.two_hundred_application_json_object.nil?
   # handle response
@@ -40,9 +40,9 @@ end
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `timespan`                                                                                | *::Integer*                                                                               | :heavy_minus_sign:                                                                        | The timespan to retrieve statistics for<br/>the exact meaning of this parameter is not known<br/> |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               | Example                                                                                   |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `timespan`                                                                                | *::Integer*                                                                               | :heavy_minus_sign:                                                                        | The timespan to retrieve statistics for<br/>the exact meaning of this parameter is not known<br/> | 4                                                                                         |
 
 
 ### Response
