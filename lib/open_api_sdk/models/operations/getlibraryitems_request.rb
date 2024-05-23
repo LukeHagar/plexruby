@@ -12,12 +12,12 @@ module OpenApiSDK
       extend T::Sig
 
       # the Id of the library to query
-      field :section_id, ::Object, { 'path_param': { 'field_name': 'sectionId', 'style': 'simple', 'explode': false } }
+      field :section_id, ::Integer, { 'path_param': { 'field_name': 'sectionId', 'style': 'simple', 'explode': false } }
       # A key representing a specific tag within the section.
       field :tag, ::OpenApiSDK::Operations::Tag, { 'path_param': { 'field_name': 'tag', 'style': 'simple', 'explode': false } }
 
 
-      sig { params(section_id: ::Object, tag: ::OpenApiSDK::Operations::Tag).void }
+      sig { params(section_id: ::Integer, tag: ::OpenApiSDK::Operations::Tag).void }
       def initialize(section_id: nil, tag: nil)
         @section_id = section_id
         @tag = tag

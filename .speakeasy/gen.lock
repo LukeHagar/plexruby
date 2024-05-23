@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: aa9449e7-c19d-411d-b8e2-f9c5fe982f6f
 management:
-  docChecksum: 543cb95355401d2e3c2ba11a50d9dd94
+  docChecksum: 911d74baa0d06121d2ce2c71d94e977a
   docVersion: 0.0.3
-  speakeasyVersion: 1.285.0
-  generationVersion: 2.326.3
-  releaseVersion: 0.1.4
-  configChecksum: d28c70e32f445a1ec51cf7d37fe85327
+  speakeasyVersion: 1.295.1
+  generationVersion: 2.335.5
+  releaseVersion: 0.1.5
+  configChecksum: 6cc2cc64c4e95ab4f88ab982ef86f5e7
   repoURL: https://github.com/LukeHagar/plexruby.git
   repoSubDirectory: .
   installationURL: https://github.com/LukeHagar/plexruby
@@ -279,6 +279,8 @@ generatedFiles:
   - lib/open_api_sdk/models/operations/deletelibrary_response.rb
   - lib/open_api_sdk/models/operations/tag.rb
   - lib/open_api_sdk/models/operations/getlibraryitems_request.rb
+  - lib/open_api_sdk/models/operations/getlibraryitems_errors.rb
+  - lib/open_api_sdk/models/operations/getlibraryitems_library_responsebody.rb
   - lib/open_api_sdk/models/operations/getlibraryitems_part.rb
   - lib/open_api_sdk/models/operations/getlibraryitems_media.rb
   - lib/open_api_sdk/models/operations/getlibraryitems_genre.rb
@@ -296,6 +298,8 @@ generatedFiles:
   - lib/open_api_sdk/models/operations/refreshlibrary_response.rb
   - lib/open_api_sdk/models/operations/type.rb
   - lib/open_api_sdk/models/operations/searchlibrary_request.rb
+  - lib/open_api_sdk/models/operations/searchlibrary_errors.rb
+  - lib/open_api_sdk/models/operations/searchlibrary_library_responsebody.rb
   - lib/open_api_sdk/models/operations/searchlibrary_metadata.rb
   - lib/open_api_sdk/models/operations/searchlibrary_mediacontainer.rb
   - lib/open_api_sdk/models/operations/searchlibrary_responsebody.rb
@@ -680,6 +684,8 @@ generatedFiles:
   - docs/models/operations/deletelibraryresponse.md
   - docs/models/operations/tag.md
   - docs/models/operations/getlibraryitemsrequest.md
+  - docs/models/operations/getlibraryitemserrors.md
+  - docs/models/operations/getlibraryitemslibraryresponsebody.md
   - docs/models/operations/getlibraryitemspart.md
   - docs/models/operations/getlibraryitemsmedia.md
   - docs/models/operations/getlibraryitemsgenre.md
@@ -697,6 +703,8 @@ generatedFiles:
   - docs/models/operations/refreshlibraryresponse.md
   - docs/models/operations/type.md
   - docs/models/operations/searchlibraryrequest.md
+  - docs/models/operations/searchlibraryerrors.md
+  - docs/models/operations/searchlibrarylibraryresponsebody.md
   - docs/models/operations/searchlibrarymetadata.md
   - docs/models/operations/searchlibrarymediacontainer.md
   - docs/models/operations/searchlibraryresponsebody.md

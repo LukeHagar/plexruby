@@ -271,7 +271,7 @@ module OpenApiSDK
     end
 
 
-    sig { params(section_id: ::Object, tag: ::OpenApiSDK::Operations::Tag).returns(::OpenApiSDK::Operations::GetLibraryItemsResponse) }
+    sig { params(section_id: ::Integer, tag: ::OpenApiSDK::Operations::Tag).returns(::OpenApiSDK::Operations::GetLibraryItemsResponse) }
     def get_library_items(section_id, tag)
       # get_library_items - Get Library Items
       # Fetches details from a specific section of the library identified by a section key and a tag. The tag parameter accepts the following values:
@@ -326,7 +326,13 @@ module OpenApiSDK
       if r.status == 200
         if Utils.match_content_type(content_type, 'application/json')
           out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::GetLibraryItemsResponseBody)
-          res.object = out
+          res.two_hundred_application_json_object = out
+        end
+      elsif r.status == 400
+      elsif r.status == 401
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::GetLibraryItemsLibraryResponseBody)
+          res.four_hundred_and_one_application_json_object = out
         end
       end
       res
@@ -431,7 +437,13 @@ module OpenApiSDK
       if r.status == 200
         if Utils.match_content_type(content_type, 'application/json')
           out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::SearchLibraryResponseBody)
-          res.object = out
+          res.two_hundred_application_json_object = out
+        end
+      elsif r.status == 400
+      elsif r.status == 401
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::SearchLibraryLibraryResponseBody)
+          res.four_hundred_and_one_application_json_object = out
         end
       end
       res

@@ -14,12 +14,12 @@ module OpenApiSDK
     
     # GET_PIN_SERVERS contains the list of server urls available to the SDK.
     GET_PIN_SERVERS = [
-      'https://plex.tv/api/v2',
+      'https://plex.tv/api/v2', 
     ].freeze
     
     # GET_TOKEN_SERVERS contains the list of server urls available to the SDK.
     GET_TOKEN_SERVERS = [
-      'https://plex.tv/api/v2',
+      'https://plex.tv/api/v2', 
     ].freeze
     # API Calls that perform operations directly against https://Plex.tv
     # 

@@ -296,9 +296,9 @@ s.config_security(
 )
 
     
-res = s.library.get_library_items(section_id="<value>", tag=::OpenApiSDK::Operations::Tag::GENRE)
+res = s.library.get_library_items(section_id=1, tag=::OpenApiSDK::Operations::Tag::GENRE)
 
-if ! res.object.nil?
+if ! res.two_hundred_application_json_object.nil?
   # handle response
 end
 
@@ -306,10 +306,10 @@ end
 
 ### Parameters
 
-| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `section_id`                                                    | *::Object*                                                      | :heavy_check_mark:                                              | the Id of the library to query                                  |
-| `tag`                                                           | [::OpenApiSDK::Operations::Tag](../../models/operations/tag.md) | :heavy_check_mark:                                              | A key representing a specific tag within the section.           |
+| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     | Example                                                         |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `section_id`                                                    | *::Integer*                                                     | :heavy_check_mark:                                              | the Id of the library to query                                  | 1                                                               |
+| `tag`                                                           | [::OpenApiSDK::Operations::Tag](../../models/operations/tag.md) | :heavy_check_mark:                                              | A key representing a specific tag within the section.           |                                                                 |
 
 
 ### Response
@@ -398,7 +398,7 @@ s.config_security(
     
 res = s.library.search_library(section_id=933505, type=::OpenApiSDK::Operations::Type::FOUR)
 
-if ! res.object.nil?
+if ! res.two_hundred_application_json_object.nil?
   # handle response
 end
 
