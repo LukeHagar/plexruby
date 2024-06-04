@@ -3,16 +3,16 @@ id: aa9449e7-c19d-411d-b8e2-f9c5fe982f6f
 management:
   docChecksum: 911d74baa0d06121d2ce2c71d94e977a
   docVersion: 0.0.3
-  speakeasyVersion: 1.295.1
-  generationVersion: 2.335.5
-  releaseVersion: 0.1.5
-  configChecksum: 6cc2cc64c4e95ab4f88ab982ef86f5e7
+  speakeasyVersion: 1.299.6
+  generationVersion: 2.338.12
+  releaseVersion: 0.1.6
+  configChecksum: 4833578ad426e3f5e12fb312da9df6fb
   repoURL: https://github.com/LukeHagar/plexruby.git
   repoSubDirectory: .
   installationURL: https://github.com/LukeHagar/plexruby
 features:
   ruby:
-    core: 3.2.12
+    core: 3.2.13
     flattening: 2.81.1
     globalSecurity: 2.81.6
     globalServerURLs: 2.82.3

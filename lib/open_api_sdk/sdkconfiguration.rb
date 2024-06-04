@@ -42,9 +42,9 @@ module OpenApiSDK
       @globals = globals.nil? ? {} : globals
       @language = 'ruby'
       @openapi_doc_version = '0.0.3'
-      @sdk_version = '0.1.5'
-      @gen_version = '2.335.5'
-      @user_agent = 'speakeasy-sdk/ruby 0.1.5 2.335.5 0.0.3 plexruby'
+      @sdk_version = '0.1.6'
+      @gen_version = '2.338.12'
+      @user_agent = 'speakeasy-sdk/ruby 0.1.6 2.338.12 0.0.3 plexruby'
     end
 
     sig { returns([String, T::Hash[Symbol, String]]) }
