@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: aa9449e7-c19d-411d-b8e2-f9c5fe982f6f
 management:
-  docChecksum: 911d74baa0d06121d2ce2c71d94e977a
+  docChecksum: 37654ea0982ab5e87a9a9576014c9d19
   docVersion: 0.0.3
-  speakeasyVersion: 1.299.6
-  generationVersion: 2.338.12
-  releaseVersion: 0.1.6
-  configChecksum: 4833578ad426e3f5e12fb312da9df6fb
+  speakeasyVersion: 1.308.1
+  generationVersion: 2.342.6
+  releaseVersion: 0.2.0
+  configChecksum: 1507274669f173a15fcb7c909dcf9110
   repoURL: https://github.com/LukeHagar/plexruby.git
   repoSubDirectory: .
   installationURL: https://github.com/LukeHagar/plexruby
@@ -19,6 +19,7 @@ features:
     globals: 2.82.1
     methodServerURLs: 2.82.1
     nameOverrides: 2.81.2
+    typeOverrides: 2.81.1
 generatedFiles:
   - lib/open_api_sdk/sdkconfiguration.rb
   - lib/open_api_sdk/server.rb
@@ -26,16 +27,17 @@ generatedFiles:
   - lib/open_api_sdk/video.rb
   - lib/open_api_sdk/activities.rb
   - lib/open_api_sdk/butler.rb
+  - lib/open_api_sdk/plex.rb
   - lib/open_api_sdk/hubs.rb
   - lib/open_api_sdk/search.rb
   - lib/open_api_sdk/library.rb
   - lib/open_api_sdk/log.rb
-  - lib/open_api_sdk/plex.rb
   - lib/open_api_sdk/playlists.rb
   - lib/open_api_sdk/authentication.rb
   - lib/open_api_sdk/statistics.rb
   - lib/open_api_sdk/sessions.rb
   - lib/open_api_sdk/updater.rb
+  - lib/open_api_sdk/watchlist.rb
   - lib/open_api_sdk/plex_api.rb
   - lib/open_api_sdk/server_variables/server_protocol.rb
   - lib/open_api_sdk/server_variables.rb
@@ -187,6 +189,22 @@ generatedFiles:
   - lib/open_api_sdk/models/operations/stoptask_errors.rb
   - lib/open_api_sdk/models/operations/stoptask_responsebody.rb
   - lib/open_api_sdk/models/operations/stoptask_response.rb
+  - lib/open_api_sdk/models/operations/gethomedata_errors.rb
+  - lib/open_api_sdk/models/operations/gethomedata_plex_responsebody.rb
+  - lib/open_api_sdk/models/operations/gethomedata_responsebody.rb
+  - lib/open_api_sdk/models/operations/gethomedata_response.rb
+  - lib/open_api_sdk/models/operations/getpin_request.rb
+  - lib/open_api_sdk/models/operations/getpin_errors.rb
+  - lib/open_api_sdk/models/operations/getpin_plex_responsebody.rb
+  - lib/open_api_sdk/models/operations/location.rb
+  - lib/open_api_sdk/models/operations/getpin_responsebody.rb
+  - lib/open_api_sdk/models/operations/getpin_response.rb
+  - lib/open_api_sdk/models/operations/gettoken_request.rb
+  - lib/open_api_sdk/models/operations/gettoken_errors.rb
+  - lib/open_api_sdk/models/operations/gettoken_plex_responsebody.rb
+  - lib/open_api_sdk/models/operations/gettoken_location.rb
+  - lib/open_api_sdk/models/operations/gettoken_responsebody.rb
+  - lib/open_api_sdk/models/operations/gettoken_response.rb
   - lib/open_api_sdk/models/operations/onlytransient.rb
   - lib/open_api_sdk/models/operations/getglobalhubs_request.rb
   - lib/open_api_sdk/models/operations/getglobalhubs_errors.rb
@@ -248,7 +266,7 @@ generatedFiles:
   - lib/open_api_sdk/models/operations/writer.rb
   - lib/open_api_sdk/models/operations/country.rb
   - lib/open_api_sdk/models/operations/role.rb
-  - lib/open_api_sdk/models/operations/metadata.rb
+  - lib/open_api_sdk/models/operations/getrecentlyadded_metadata.rb
   - lib/open_api_sdk/models/operations/getrecentlyadded_mediacontainer.rb
   - lib/open_api_sdk/models/operations/getrecentlyadded_responsebody.rb
   - lib/open_api_sdk/models/operations/getrecentlyadded_response.rb
@@ -264,7 +282,7 @@ generatedFiles:
   - lib/open_api_sdk/models/operations/getlibrary_errors.rb
   - lib/open_api_sdk/models/operations/getlibrary_library_responsebody.rb
   - lib/open_api_sdk/models/operations/getlibrary_directory.rb
-  - lib/open_api_sdk/models/operations/filter.rb
+  - lib/open_api_sdk/models/operations/getlibrary_filter.rb
   - lib/open_api_sdk/models/operations/sort.rb
   - lib/open_api_sdk/models/operations/field.rb
   - lib/open_api_sdk/models/operations/getlibrary_type.rb
@@ -351,16 +369,6 @@ generatedFiles:
   - lib/open_api_sdk/models/operations/enablepapertrail_errors.rb
   - lib/open_api_sdk/models/operations/enablepapertrail_responsebody.rb
   - lib/open_api_sdk/models/operations/enablepapertrail_response.rb
-  - lib/open_api_sdk/models/operations/getpin_request.rb
-  - lib/open_api_sdk/models/operations/getpin_errors.rb
-  - lib/open_api_sdk/models/operations/getpin_plex_responsebody.rb
-  - lib/open_api_sdk/models/operations/location.rb
-  - lib/open_api_sdk/models/operations/getpin_responsebody.rb
-  - lib/open_api_sdk/models/operations/getpin_response.rb
-  - lib/open_api_sdk/models/operations/gettoken_request.rb
-  - lib/open_api_sdk/models/operations/gettoken_errors.rb
-  - lib/open_api_sdk/models/operations/gettoken_responsebody.rb
-  - lib/open_api_sdk/models/operations/gettoken_response.rb
   - lib/open_api_sdk/models/operations/queryparam_type.rb
   - lib/open_api_sdk/models/operations/smart.rb
   - lib/open_api_sdk/models/operations/createplaylist_request.rb
@@ -488,6 +496,17 @@ generatedFiles:
   - lib/open_api_sdk/models/operations/applyupdates_errors.rb
   - lib/open_api_sdk/models/operations/applyupdates_responsebody.rb
   - lib/open_api_sdk/models/operations/applyupdates_response.rb
+  - lib/open_api_sdk/models/operations/filter.rb
+  - lib/open_api_sdk/models/operations/libtype.rb
+  - lib/open_api_sdk/models/operations/includecollections.rb
+  - lib/open_api_sdk/models/operations/includeexternalmedia.rb
+  - lib/open_api_sdk/models/operations/getwatchlist_request.rb
+  - lib/open_api_sdk/models/operations/getwatchlist_errors.rb
+  - lib/open_api_sdk/models/operations/getwatchlist_watchlist_responsebody.rb
+  - lib/open_api_sdk/models/operations/image.rb
+  - lib/open_api_sdk/models/operations/metadata.rb
+  - lib/open_api_sdk/models/operations/getwatchlist_responsebody.rb
+  - lib/open_api_sdk/models/operations/getwatchlist_response.rb
   - lib/open_api_sdk/models/shared/security.rb
   - lib/plexruby.rb
   - lib/open_api_sdk/models/operations.rb
@@ -592,6 +611,22 @@ generatedFiles:
   - docs/models/operations/stoptaskerrors.md
   - docs/models/operations/stoptaskresponsebody.md
   - docs/models/operations/stoptaskresponse.md
+  - docs/models/operations/gethomedataerrors.md
+  - docs/models/operations/gethomedataplexresponsebody.md
+  - docs/models/operations/gethomedataresponsebody.md
+  - docs/models/operations/gethomedataresponse.md
+  - docs/models/operations/getpinrequest.md
+  - docs/models/operations/getpinerrors.md
+  - docs/models/operations/getpinplexresponsebody.md
+  - docs/models/operations/location.md
+  - docs/models/operations/getpinresponsebody.md
+  - docs/models/operations/getpinresponse.md
+  - docs/models/operations/gettokenrequest.md
+  - docs/models/operations/gettokenerrors.md
+  - docs/models/operations/gettokenplexresponsebody.md
+  - docs/models/operations/gettokenlocation.md
+  - docs/models/operations/gettokenresponsebody.md
+  - docs/models/operations/gettokenresponse.md
   - docs/models/operations/onlytransient.md
   - docs/models/operations/getglobalhubsrequest.md
   - docs/models/operations/getglobalhubserrors.md
@@ -653,7 +688,7 @@ generatedFiles:
   - docs/models/operations/writer.md
   - docs/models/operations/country.md
   - docs/models/operations/role.md
-  - docs/models/operations/metadata.md
+  - docs/models/operations/getrecentlyaddedmetadata.md
   - docs/models/operations/getrecentlyaddedmediacontainer.md
   - docs/models/operations/getrecentlyaddedresponsebody.md
   - docs/models/operations/getrecentlyaddedresponse.md
@@ -669,7 +704,7 @@ generatedFiles:
   - docs/models/operations/getlibraryerrors.md
   - docs/models/operations/getlibrarylibraryresponsebody.md
   - docs/models/operations/getlibrarydirectory.md
-  - docs/models/operations/filter.md
+  - docs/models/operations/getlibraryfilter.md
   - docs/models/operations/sort.md
   - docs/models/operations/field.md
   - docs/models/operations/getlibrarytype.md
@@ -756,16 +791,6 @@ generatedFiles:
   - docs/models/operations/enablepapertrailerrors.md
   - docs/models/operations/enablepapertrailresponsebody.md
   - docs/models/operations/enablepapertrailresponse.md
-  - docs/models/operations/getpinrequest.md
-  - docs/models/operations/getpinerrors.md
-  - docs/models/operations/getpinplexresponsebody.md
-  - docs/models/operations/location.md
-  - docs/models/operations/getpinresponsebody.md
-  - docs/models/operations/getpinresponse.md
-  - docs/models/operations/gettokenrequest.md
-  - docs/models/operations/gettokenerrors.md
-  - docs/models/operations/gettokenresponsebody.md
-  - docs/models/operations/gettokenresponse.md
   - docs/models/operations/queryparamtype.md
   - docs/models/operations/smart.md
   - docs/models/operations/createplaylistrequest.md
@@ -893,6 +918,17 @@ generatedFiles:
   - docs/models/operations/applyupdateserrors.md
   - docs/models/operations/applyupdatesresponsebody.md
   - docs/models/operations/applyupdatesresponse.md
+  - docs/models/operations/filter.md
+  - docs/models/operations/libtype.md
+  - docs/models/operations/includecollections.md
+  - docs/models/operations/includeexternalmedia.md
+  - docs/models/operations/getwatchlistrequest.md
+  - docs/models/operations/getwatchlisterrors.md
+  - docs/models/operations/getwatchlistwatchlistresponsebody.md
+  - docs/models/operations/image.md
+  - docs/models/operations/metadata.md
+  - docs/models/operations/getwatchlistresponsebody.md
+  - docs/models/operations/getwatchlistresponse.md
   - docs/models/shared/security.md
   - docs/sdks/plexapi/README.md
   - docs/sdks/server/README.md
@@ -900,15 +936,16 @@ generatedFiles:
   - docs/sdks/video/README.md
   - docs/sdks/activities/README.md
   - docs/sdks/butler/README.md
+  - docs/sdks/plex/README.md
   - docs/sdks/hubs/README.md
   - docs/sdks/search/README.md
   - docs/sdks/library/README.md
   - docs/sdks/log/README.md
-  - docs/sdks/plex/README.md
   - docs/sdks/playlists/README.md
   - docs/sdks/authentication/README.md
   - docs/sdks/statistics/README.md
   - docs/sdks/sessions/README.md
   - docs/sdks/updater/README.md
+  - docs/sdks/watchlist/README.md
   - USAGE.md
   - .gitattributes

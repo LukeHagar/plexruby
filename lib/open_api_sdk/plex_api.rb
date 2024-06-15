@@ -13,7 +13,7 @@ module OpenApiSDK
   class PlexAPI
     extend T::Sig
 
-    attr_accessor :server, :media, :video, :activities, :butler, :hubs, :search, :library, :log, :plex, :playlists, :authentication, :statistics, :sessions, :updater
+    attr_accessor :server, :media, :video, :activities, :butler, :plex, :hubs, :search, :library, :log, :playlists, :authentication, :statistics, :sessions, :updater, :watchlist
 
     sig do
       params(client: Faraday::Request,
@@ -118,16 +118,17 @@ module OpenApiSDK
       @video = Video.new(@sdk_configuration)
       @activities = Activities.new(@sdk_configuration)
       @butler = Butler.new(@sdk_configuration)
+      @plex = Plex.new(@sdk_configuration)
       @hubs = Hubs.new(@sdk_configuration)
       @search = Search.new(@sdk_configuration)
       @library = Library.new(@sdk_configuration)
       @log = Log.new(@sdk_configuration)
-      @plex = Plex.new(@sdk_configuration)
       @playlists = Playlists.new(@sdk_configuration)
       @authentication = Authentication.new(@sdk_configuration)
       @statistics = Statistics.new(@sdk_configuration)
       @sessions = Sessions.new(@sdk_configuration)
       @updater = Updater.new(@sdk_configuration)
+      @watchlist = Watchlist.new(@sdk_configuration)
     end
   end
 end

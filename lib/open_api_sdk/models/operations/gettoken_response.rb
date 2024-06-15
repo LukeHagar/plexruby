@@ -20,16 +20,19 @@ module OpenApiSDK
       field :raw_response, ::Faraday::Response
       # HTTP response status code for this operation
       field :status_code, ::Integer
+      # Access Token
+      field :two_hundred_application_json_object, T.nilable(::OpenApiSDK::Operations::GetTokenResponseBody)
       # X-Plex-Client-Identifier is missing
-      field :object, T.nilable(::OpenApiSDK::Operations::GetTokenResponseBody)
+      field :four_hundred_application_json_object, T.nilable(::OpenApiSDK::Operations::GetTokenPlexResponseBody)
 
 
-      sig { params(content_type: ::String, raw_response: ::Faraday::Response, status_code: ::Integer, object: T.nilable(::OpenApiSDK::Operations::GetTokenResponseBody)).void }
-      def initialize(content_type: nil, raw_response: nil, status_code: nil, object: nil)
+      sig { params(content_type: ::String, raw_response: ::Faraday::Response, status_code: ::Integer, two_hundred_application_json_object: T.nilable(::OpenApiSDK::Operations::GetTokenResponseBody), four_hundred_application_json_object: T.nilable(::OpenApiSDK::Operations::GetTokenPlexResponseBody)).void }
+      def initialize(content_type: nil, raw_response: nil, status_code: nil, two_hundred_application_json_object: nil, four_hundred_application_json_object: nil)
         @content_type = content_type
         @raw_response = raw_response
         @status_code = status_code
-        @object = object
+        @two_hundred_application_json_object = two_hundred_application_json_object
+        @four_hundred_application_json_object = four_hundred_application_json_object
       end
     end
   end

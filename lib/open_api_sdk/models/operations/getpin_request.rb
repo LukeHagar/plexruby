@@ -14,6 +14,9 @@ module OpenApiSDK
     class GetPinRequest < ::OpenApiSDK::Utils::FieldAugmented
       extend T::Sig
 
+      # Product name of the application shown in the list of devices
+      # 
+      field :x_plex_product, ::String, { 'header': { 'field_name': 'X-Plex-Product', 'style': 'simple', 'explode': false } }
       # Determines the kind of code returned by the API call
       # Strong codes are used for Pin authentication flows
       # Non-Strong codes are used for `Plex.tv/link`
@@ -26,8 +29,9 @@ module OpenApiSDK
       field :x_plex_client_identifier, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
 
 
-      sig { params(strong: T.nilable(T::Boolean), x_plex_client_identifier: T.nilable(::String)).void }
-      def initialize(strong: nil, x_plex_client_identifier: nil)
+      sig { params(x_plex_product: ::String, strong: T.nilable(T::Boolean), x_plex_client_identifier: T.nilable(::String)).void }
+      def initialize(x_plex_product: nil, strong: nil, x_plex_client_identifier: nil)
+        @x_plex_product = x_plex_product
         @strong = strong
         @x_plex_client_identifier = x_plex_client_identifier
       end

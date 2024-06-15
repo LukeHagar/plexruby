@@ -29,14 +29,14 @@ module OpenApiSDK
 
       field :in_privacy_restricted_country, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('in_privacy_restricted_country') } }
 
-      field :postal_code, T.nilable(::Float), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('postal_code') } }
+      field :postal_code, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('postal_code') } }
 
       field :subdivisions, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('subdivisions') } }
 
       field :time_zone, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('time_zone') } }
 
 
-      sig { params(city: T.nilable(::String), code: T.nilable(::String), continent_code: T.nilable(::String), coordinates: T.nilable(::String), country: T.nilable(::String), european_union_member: T.nilable(T::Boolean), in_privacy_restricted_country: T.nilable(T::Boolean), postal_code: T.nilable(::Float), subdivisions: T.nilable(::String), time_zone: T.nilable(::String)).void }
+      sig { params(city: T.nilable(::String), code: T.nilable(::String), continent_code: T.nilable(::String), coordinates: T.nilable(::String), country: T.nilable(::String), european_union_member: T.nilable(T::Boolean), in_privacy_restricted_country: T.nilable(T::Boolean), postal_code: T.nilable(::String), subdivisions: T.nilable(::String), time_zone: T.nilable(::String)).void }
       def initialize(city: nil, code: nil, continent_code: nil, coordinates: nil, country: nil, european_union_member: nil, in_privacy_restricted_country: nil, postal_code: nil, subdivisions: nil, time_zone: nil)
         @city = city
         @code = code

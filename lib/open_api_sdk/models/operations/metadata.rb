@@ -6,15 +6,16 @@
 
 module OpenApiSDK
   module Operations
+    METADATA_SERVERS = [
+      'https://metadata.provider.plex.tv'
+    ].freeze
   
 
     class Metadata < ::OpenApiSDK::Utils::FieldAugmented
       extend T::Sig
 
 
-      field :added_at, T.nilable(::Float), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('addedAt') } }
-
-      field :allow_sync, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('allowSync') } }
+      field :added_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('addedAt') } }
 
       field :art, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('art') } }
 
@@ -22,47 +23,57 @@ module OpenApiSDK
 
       field :audience_rating_image, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('audienceRatingImage') } }
 
-      field :chapter_source, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('chapterSource') } }
+      field :availability_id, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('availabilityId') } }
+
+      field :banner, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('banner') } }
+
+      field :child_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('childCount') } }
 
       field :content_rating, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('contentRating') } }
 
-      field :country, T.nilable(T::Array[::OpenApiSDK::Operations::Country]), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('Country') } }
+      field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('duration') } }
 
-      field :director, T.nilable(T::Array[::OpenApiSDK::Operations::Director]), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('Director') } }
-
-      field :duration, T.nilable(::Float), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('duration') } }
-
-      field :genre, T.nilable(T::Array[::OpenApiSDK::Operations::Genre]), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('Genre') } }
+      field :expires_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('expiresAt') } }
 
       field :guid, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('guid') } }
 
+      field :image, T.nilable(T::Array[::OpenApiSDK::Operations::Image]), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('Image') } }
+
+      field :imdb_rating_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('imdbRatingCount') } }
+
+      field :is_continuing_series, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('isContinuingSeries') } }
+
       field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('key') } }
 
-      field :library_section_id, T.nilable(::Float), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('librarySectionID') } }
+      field :leaf_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('leafCount') } }
 
-      field :library_section_title, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('librarySectionTitle') } }
+      field :originally_available_at, T.nilable(::Date), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('originallyAvailableAt'), 'decoder': Utils.date_from_iso_format(true) } }
 
-      field :library_section_uuid, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('librarySectionUUID') } }
+      field :original_title, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('originalTitle') } }
 
-      field :media, T.nilable(T::Array[::OpenApiSDK::Operations::Media]), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('Media') } }
+      field :playable_key, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('playableKey') } }
 
-      field :originally_available_at, T.nilable(::DateTime), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('originallyAvailableAt'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
-      field :primary_extra_key, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('primaryExtraKey') } }
+      field :public_pages_url, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('publicPagesURL') } }
 
       field :rating, T.nilable(::Float), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('rating') } }
 
       field :rating_image, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('ratingImage') } }
 
-      field :rating_key, T.nilable(::Float), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('ratingKey') } }
+      field :rating_key, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('ratingKey') } }
 
-      field :role, T.nilable(T::Array[::OpenApiSDK::Operations::Role]), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('Role') } }
+      field :skip_children, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('skipChildren') } }
+
+      field :slug, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('slug') } }
+
+      field :streaming_media_id, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('streamingMediaId') } }
 
       field :studio, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('studio') } }
 
-      field :summary, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('summary') } }
+      field :subtype, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('subtype') } }
 
       field :tagline, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('tagline') } }
+
+      field :theme, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('theme') } }
 
       field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('thumb') } }
 
@@ -70,46 +81,47 @@ module OpenApiSDK
 
       field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('type') } }
 
-      field :updated_at, T.nilable(::Float), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('updatedAt') } }
+      field :user_state, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('userState') } }
 
-      field :writer, T.nilable(T::Array[::OpenApiSDK::Operations::Writer]), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('Writer') } }
-
-      field :year, T.nilable(::Float), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('year') } }
+      field :year, T.nilable(::Integer), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('year') } }
 
 
-      sig { params(added_at: T.nilable(::Float), allow_sync: T.nilable(T::Boolean), art: T.nilable(::String), audience_rating: T.nilable(::Float), audience_rating_image: T.nilable(::String), chapter_source: T.nilable(::String), content_rating: T.nilable(::String), country: T.nilable(T::Array[::OpenApiSDK::Operations::Country]), director: T.nilable(T::Array[::OpenApiSDK::Operations::Director]), duration: T.nilable(::Float), genre: T.nilable(T::Array[::OpenApiSDK::Operations::Genre]), guid: T.nilable(::String), key: T.nilable(::String), library_section_id: T.nilable(::Float), library_section_title: T.nilable(::String), library_section_uuid: T.nilable(::String), media: T.nilable(T::Array[::OpenApiSDK::Operations::Media]), originally_available_at: T.nilable(::DateTime), primary_extra_key: T.nilable(::String), rating: T.nilable(::Float), rating_image: T.nilable(::String), rating_key: T.nilable(::Float), role: T.nilable(T::Array[::OpenApiSDK::Operations::Role]), studio: T.nilable(::String), summary: T.nilable(::String), tagline: T.nilable(::String), thumb: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String), updated_at: T.nilable(::Float), writer: T.nilable(T::Array[::OpenApiSDK::Operations::Writer]), year: T.nilable(::Float)).void }
-      def initialize(added_at: nil, allow_sync: nil, art: nil, audience_rating: nil, audience_rating_image: nil, chapter_source: nil, content_rating: nil, country: nil, director: nil, duration: nil, genre: nil, guid: nil, key: nil, library_section_id: nil, library_section_title: nil, library_section_uuid: nil, media: nil, originally_available_at: nil, primary_extra_key: nil, rating: nil, rating_image: nil, rating_key: nil, role: nil, studio: nil, summary: nil, tagline: nil, thumb: nil, title: nil, type: nil, updated_at: nil, writer: nil, year: nil)
+      sig { params(added_at: T.nilable(::Integer), art: T.nilable(::String), audience_rating: T.nilable(::Float), audience_rating_image: T.nilable(::String), availability_id: T.nilable(::String), banner: T.nilable(::String), child_count: T.nilable(::Integer), content_rating: T.nilable(::String), duration: T.nilable(::Integer), expires_at: T.nilable(::Integer), guid: T.nilable(::String), image: T.nilable(T::Array[::OpenApiSDK::Operations::Image]), imdb_rating_count: T.nilable(::Integer), is_continuing_series: T.nilable(T::Boolean), key: T.nilable(::String), leaf_count: T.nilable(::Integer), originally_available_at: T.nilable(::Date), original_title: T.nilable(::String), playable_key: T.nilable(::String), public_pages_url: T.nilable(::String), rating: T.nilable(::Float), rating_image: T.nilable(::String), rating_key: T.nilable(::String), skip_children: T.nilable(T::Boolean), slug: T.nilable(::String), streaming_media_id: T.nilable(::String), studio: T.nilable(::String), subtype: T.nilable(::String), tagline: T.nilable(::String), theme: T.nilable(::String), thumb: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String), user_state: T.nilable(T::Boolean), year: T.nilable(::Integer)).void }
+      def initialize(added_at: nil, art: nil, audience_rating: nil, audience_rating_image: nil, availability_id: nil, banner: nil, child_count: nil, content_rating: nil, duration: nil, expires_at: nil, guid: nil, image: nil, imdb_rating_count: nil, is_continuing_series: nil, key: nil, leaf_count: nil, originally_available_at: nil, original_title: nil, playable_key: nil, public_pages_url: nil, rating: nil, rating_image: nil, rating_key: nil, skip_children: nil, slug: nil, streaming_media_id: nil, studio: nil, subtype: nil, tagline: nil, theme: nil, thumb: nil, title: nil, type: nil, user_state: nil, year: nil)
         @added_at = added_at
-        @allow_sync = allow_sync
         @art = art
         @audience_rating = audience_rating
         @audience_rating_image = audience_rating_image
-        @chapter_source = chapter_source
+        @availability_id = availability_id
+        @banner = banner
+        @child_count = child_count
         @content_rating = content_rating
-        @country = country
-        @director = director
         @duration = duration
-        @genre = genre
+        @expires_at = expires_at
         @guid = guid
+        @image = image
+        @imdb_rating_count = imdb_rating_count
+        @is_continuing_series = is_continuing_series
         @key = key
-        @library_section_id = library_section_id
-        @library_section_title = library_section_title
-        @library_section_uuid = library_section_uuid
-        @media = media
+        @leaf_count = leaf_count
         @originally_available_at = originally_available_at
-        @primary_extra_key = primary_extra_key
+        @original_title = original_title
+        @playable_key = playable_key
+        @public_pages_url = public_pages_url
         @rating = rating
         @rating_image = rating_image
         @rating_key = rating_key
-        @role = role
+        @skip_children = skip_children
+        @slug = slug
+        @streaming_media_id = streaming_media_id
         @studio = studio
-        @summary = summary
+        @subtype = subtype
         @tagline = tagline
+        @theme = theme
         @thumb = thumb
         @title = title
         @type = type
-        @updated_at = updated_at
-        @writer = writer
+        @user_state = user_state
         @year = year
       end
     end

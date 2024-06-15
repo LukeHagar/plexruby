@@ -20,14 +20,14 @@ module OpenApiSDK
 
       field :media_tag_version, T.nilable(::Float), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('mediaTagVersion') } }
 
-      field :metadata, T.nilable(T::Array[::OpenApiSDK::Operations::Metadata]), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('Metadata') } }
+      field :metadata, T.nilable(T::Array[::OpenApiSDK::Operations::GetRecentlyAddedMetadata]), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('Metadata') } }
 
       field :mixed_parents, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('mixedParents') } }
 
       field :size, T.nilable(::Float), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('size') } }
 
 
-      sig { params(allow_sync: T.nilable(T::Boolean), identifier: T.nilable(::String), media_tag_prefix: T.nilable(::String), media_tag_version: T.nilable(::Float), metadata: T.nilable(T::Array[::OpenApiSDK::Operations::Metadata]), mixed_parents: T.nilable(T::Boolean), size: T.nilable(::Float)).void }
+      sig { params(allow_sync: T.nilable(T::Boolean), identifier: T.nilable(::String), media_tag_prefix: T.nilable(::String), media_tag_version: T.nilable(::Float), metadata: T.nilable(T::Array[::OpenApiSDK::Operations::GetRecentlyAddedMetadata]), mixed_parents: T.nilable(T::Boolean), size: T.nilable(::Float)).void }
       def initialize(allow_sync: nil, identifier: nil, media_tag_prefix: nil, media_tag_version: nil, metadata: nil, mixed_parents: nil, size: nil)
         @allow_sync = allow_sync
         @identifier = identifier

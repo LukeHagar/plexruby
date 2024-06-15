@@ -6,31 +6,18 @@
 
 module OpenApiSDK
   module Operations
+    FILTER_SERVERS = [
+      'https://metadata.provider.plex.tv'
+    ].freeze
   
-
-    class Filter < ::OpenApiSDK::Utils::FieldAugmented
-      extend T::Sig
-
-
-      field :filter, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('filter') } }
-
-      field :filter_type, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('filterType') } }
-
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('key') } }
-
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('title') } }
-
-      field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('type') } }
-
-
-      sig { params(filter: T.nilable(::String), filter_type: T.nilable(::String), key: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String)).void }
-      def initialize(filter: nil, filter_type: nil, key: nil, title: nil, type: nil)
-        @filter = filter
-        @filter_type = filter_type
-        @key = key
-        @title = title
-        @type = type
+    # Filter - Filter
+    class Filter < T::Enum
+      enums do
+        ALL = new('all')
+        AVAILABLE = new('available')
+        RELEASED = new('released')
       end
     end
+
   end
 end

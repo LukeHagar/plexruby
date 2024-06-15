@@ -30,12 +30,50 @@ module OpenApiSDK
     end
 
 
-    sig { params(strong: T.nilable(T::Boolean), x_plex_client_identifier: T.nilable(::String), server_url: T.nilable(String)).returns(::OpenApiSDK::Operations::GetPinResponse) }
-    def get_pin(strong = nil, x_plex_client_identifier = nil, server_url = nil)
+    sig { returns(::OpenApiSDK::Operations::GetHomeDataResponse) }
+    def get_home_data
+      # get_home_data - Get Plex Home Data
+      # Retrieves the home data for the authenticated user, including details like home ID, name, guest access information, and subscription status.
+      url, params = @sdk_configuration.get_server_details
+      base_url = Utils.template_url(url, params)
+      url = "#{base_url}/home"
+      headers = {}
+      headers['Accept'] = 'application/json'
+      headers['user-agent'] = @sdk_configuration.user_agent
+
+      r = @sdk_configuration.client.get(url) do |req|
+        req.headers = headers
+        Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
+      end
+
+      content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
+
+      res = ::OpenApiSDK::Operations::GetHomeDataResponse.new(
+        status_code: r.status, content_type: content_type, raw_response: r
+      )
+      if r.status == 200
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::GetHomeDataResponseBody)
+          res.two_hundred_application_json_object = out
+        end
+      elsif r.status == 400
+      elsif r.status == 401
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::GetHomeDataPlexResponseBody)
+          res.four_hundred_and_one_application_json_object = out
+        end
+      end
+      res
+    end
+
+
+    sig { params(x_plex_product: ::String, strong: T.nilable(T::Boolean), x_plex_client_identifier: T.nilable(::String), server_url: T.nilable(String)).returns(::OpenApiSDK::Operations::GetPinResponse) }
+    def get_pin(x_plex_product, strong = nil, x_plex_client_identifier = nil, server_url = nil)
       # get_pin - Get a Pin
       # Retrieve a Pin from Plex.tv for authentication flows
       request = ::OpenApiSDK::Operations::GetPinRequest.new(
         
+        x_plex_product: x_plex_product,
         strong: strong,
         x_plex_client_identifier: x_plex_client_identifier
       )
@@ -58,10 +96,10 @@ module OpenApiSDK
       res = ::OpenApiSDK::Operations::GetPinResponse.new(
         status_code: r.status, content_type: content_type, raw_response: r
       )
-      if r.status == 200
+      if r.status == 201
         if Utils.match_content_type(content_type, 'application/json')
           out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::GetPinResponseBody)
-          res.two_hundred_application_json_object = out
+          res.two_hundred_and_one_application_json_object = out
         end
       elsif r.status == 400
         if Utils.match_content_type(content_type, 'application/json')
@@ -106,10 +144,14 @@ module OpenApiSDK
         status_code: r.status, content_type: content_type, raw_response: r
       )
       if r.status == 200
-      elsif r.status == 400
         if Utils.match_content_type(content_type, 'application/json')
           out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::GetTokenResponseBody)
-          res.object = out
+          res.two_hundred_application_json_object = out
+        end
+      elsif r.status == 400
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::GetTokenPlexResponseBody)
+          res.four_hundred_application_json_object = out
         end
       end
       res

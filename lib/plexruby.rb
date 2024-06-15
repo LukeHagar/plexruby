@@ -13,16 +13,17 @@ module OpenApiSDK
   autoload :Video, 'open_api_sdk/video'
   autoload :Activities, 'open_api_sdk/activities'
   autoload :Butler, 'open_api_sdk/butler'
+  autoload :Plex, 'open_api_sdk/plex'
   autoload :Hubs, 'open_api_sdk/hubs'
   autoload :Search, 'open_api_sdk/search'
   autoload :Library, 'open_api_sdk/library'
   autoload :Log, 'open_api_sdk/log'
-  autoload :Plex, 'open_api_sdk/plex'
   autoload :Playlists, 'open_api_sdk/playlists'
   autoload :Authentication, 'open_api_sdk/authentication'
   autoload :Statistics, 'open_api_sdk/statistics'
   autoload :Sessions, 'open_api_sdk/sessions'
   autoload :Updater, 'open_api_sdk/updater'
+  autoload :Watchlist, 'open_api_sdk/watchlist'
 end
 
 require_relative 'open_api_sdk/utils/t'

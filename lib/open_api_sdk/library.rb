@@ -271,7 +271,7 @@ module OpenApiSDK
     end
 
 
-    sig { params(section_id: ::Integer, tag: ::OpenApiSDK::Operations::Tag).returns(::OpenApiSDK::Operations::GetLibraryItemsResponse) }
+    sig { params(section_id: ::Object, tag: ::OpenApiSDK::Operations::Tag).returns(::OpenApiSDK::Operations::GetLibraryItemsResponse) }
     def get_library_items(section_id, tag)
       # get_library_items - Get Library Items
       # Fetches details from a specific section of the library identified by a section key and a tag. The tag parameter accepts the following values:

@@ -16,7 +16,7 @@ module OpenApiSDK
 
       field :field, T.nilable(T::Array[::OpenApiSDK::Operations::Field]), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('Field') } }
 
-      field :filter, T.nilable(T::Array[::OpenApiSDK::Operations::Filter]), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('Filter') } }
+      field :filter, T.nilable(T::Array[::OpenApiSDK::Operations::GetLibraryFilter]), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('Filter') } }
 
       field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('key') } }
 
@@ -27,7 +27,7 @@ module OpenApiSDK
       field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('type') } }
 
 
-      sig { params(active: T.nilable(T::Boolean), field: T.nilable(T::Array[::OpenApiSDK::Operations::Field]), filter: T.nilable(T::Array[::OpenApiSDK::Operations::Filter]), key: T.nilable(::String), sort: T.nilable(T::Array[::OpenApiSDK::Operations::Sort]), title: T.nilable(::String), type: T.nilable(::String)).void }
+      sig { params(active: T.nilable(T::Boolean), field: T.nilable(T::Array[::OpenApiSDK::Operations::Field]), filter: T.nilable(T::Array[::OpenApiSDK::Operations::GetLibraryFilter]), key: T.nilable(::String), sort: T.nilable(T::Array[::OpenApiSDK::Operations::Sort]), title: T.nilable(::String), type: T.nilable(::String)).void }
       def initialize(active: nil, field: nil, filter: nil, key: nil, sort: nil, title: nil, type: nil)
         @active = active
         @field = field
