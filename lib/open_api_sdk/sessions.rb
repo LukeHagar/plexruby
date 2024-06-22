@@ -57,19 +57,28 @@ module OpenApiSDK
     end
 
 
-    sig { returns(::OpenApiSDK::Operations::GetSessionHistoryResponse) }
-    def get_session_history
+    sig { params(sort: T.nilable(::String), account_id: T.nilable(::Integer), filter: T.nilable(::OpenApiSDK::Operations::Filter), library_section_id: T.nilable(::Integer)).returns(::OpenApiSDK::Operations::GetSessionHistoryResponse) }
+    def get_session_history(sort = nil, account_id = nil, filter = nil, library_section_id = nil)
       # get_session_history - Get Session History
       # This will Retrieve a listing of all history views.
+      request = ::OpenApiSDK::Operations::GetSessionHistoryRequest.new(
+        
+        sort: sort,
+        account_id: account_id,
+        filter: filter,
+        library_section_id: library_section_id
+      )
       url, params = @sdk_configuration.get_server_details
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/status/sessions/history/all"
       headers = {}
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetSessionHistoryRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
       r = @sdk_configuration.client.get(url) do |req|
         req.headers = headers
+        req.params = query_params
         Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
       end
 

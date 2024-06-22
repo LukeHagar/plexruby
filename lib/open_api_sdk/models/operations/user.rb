@@ -12,18 +12,12 @@ module OpenApiSDK
       extend T::Sig
 
 
-      field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('id') } }
-
-      field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('thumb') } }
-
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('title') } }
+      field :id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('id') } }
 
 
-      sig { params(id: T.nilable(::String), thumb: T.nilable(::String), title: T.nilable(::String)).void }
-      def initialize(id: nil, thumb: nil, title: nil)
+      sig { params(id: T.nilable(::Integer)).void }
+      def initialize(id: nil)
         @id = id
-        @thumb = thumb
-        @title = title
       end
     end
   end

@@ -31,7 +31,7 @@ s.config_security(
 
 
 req = ::OpenApiSDK::Operations::GetWatchlistRequest.new(
-  filter: ::OpenApiSDK::Operations::Filter::RELEASED,
+  filter: ::OpenApiSDK::Operations::PathParamFilter::RELEASED,
   x_plex_token: "<value>",
 )
     

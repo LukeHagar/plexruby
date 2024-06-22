@@ -31,7 +31,7 @@ module OpenApiSDK
 
       field :location, T.nilable(::OpenApiSDK::Operations::Location), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('location') } }
 
-      field :new_registration, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('newRegistration') } }
+      field :new_registration, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('newRegistration') } }
 
       field :product, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('product') } }
       # a link to a QR code hosted on plex.tv 
@@ -43,7 +43,7 @@ module OpenApiSDK
       field :trusted, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('trusted') } }
 
 
-      sig { params(auth_token: T.nilable(::String), client_identifier: T.nilable(::String), code: T.nilable(::String), created_at: T.nilable(::DateTime), expires_at: T.nilable(::DateTime), expires_in: T.nilable(::Float), id: T.nilable(::Float), location: T.nilable(::OpenApiSDK::Operations::Location), new_registration: T.nilable(::String), product: T.nilable(::String), qr: T.nilable(::String), trusted: T.nilable(T::Boolean)).void }
+      sig { params(auth_token: T.nilable(::String), client_identifier: T.nilable(::String), code: T.nilable(::String), created_at: T.nilable(::DateTime), expires_at: T.nilable(::DateTime), expires_in: T.nilable(::Float), id: T.nilable(::Float), location: T.nilable(::OpenApiSDK::Operations::Location), new_registration: T.nilable(T::Boolean), product: T.nilable(::String), qr: T.nilable(::String), trusted: T.nilable(T::Boolean)).void }
       def initialize(auth_token: nil, client_identifier: nil, code: nil, created_at: nil, expires_at: nil, expires_in: nil, id: nil, location: nil, new_registration: nil, product: nil, qr: nil, trusted: nil)
         @auth_token = auth_token
         @client_identifier = client_identifier

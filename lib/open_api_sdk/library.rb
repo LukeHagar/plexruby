@@ -271,8 +271,8 @@ module OpenApiSDK
     end
 
 
-    sig { params(section_id: ::Object, tag: ::OpenApiSDK::Operations::Tag).returns(::OpenApiSDK::Operations::GetLibraryItemsResponse) }
-    def get_library_items(section_id, tag)
+    sig { params(section_id: ::Object, tag: ::OpenApiSDK::Operations::Tag, include_guids: T.nilable(::Integer)).returns(::OpenApiSDK::Operations::GetLibraryItemsResponse) }
+    def get_library_items(section_id, tag, include_guids = nil)
       # get_library_items - Get Library Items
       # Fetches details from a specific section of the library identified by a section key and a tag. The tag parameter accepts the following values:
       # - `all`: All items in the section.
@@ -298,7 +298,8 @@ module OpenApiSDK
       request = ::OpenApiSDK::Operations::GetLibraryItemsRequest.new(
         
         section_id: section_id,
-        tag: tag
+        tag: tag,
+        include_guids: include_guids
       )
       url, params = @sdk_configuration.get_server_details
       base_url = Utils.template_url(url, params)
@@ -310,11 +311,13 @@ module OpenApiSDK
         @sdk_configuration.globals
       )
       headers = {}
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetLibraryItemsRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
       r = @sdk_configuration.client.get(url) do |req|
         req.headers = headers
+        req.params = query_params
         Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
       end
 
@@ -498,14 +501,15 @@ module OpenApiSDK
     end
 
 
-    sig { params(rating_key: ::Float).returns(::OpenApiSDK::Operations::GetMetadataChildrenResponse) }
-    def get_metadata_children(rating_key)
+    sig { params(rating_key: ::Float, include_elements: T.nilable(::String)).returns(::OpenApiSDK::Operations::GetMetadataChildrenResponse) }
+    def get_metadata_children(rating_key, include_elements = nil)
       # get_metadata_children - Get Items Children
       # This endpoint will return the children of of a library item specified with the ratingKey.
       # 
       request = ::OpenApiSDK::Operations::GetMetadataChildrenRequest.new(
         
-        rating_key: rating_key
+        rating_key: rating_key,
+        include_elements: include_elements
       )
       url, params = @sdk_configuration.get_server_details
       base_url = Utils.template_url(url, params)
@@ -517,11 +521,13 @@ module OpenApiSDK
         @sdk_configuration.globals
       )
       headers = {}
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetMetadataChildrenRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
       r = @sdk_configuration.client.get(url) do |req|
         req.headers = headers
+        req.params = query_params
         Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
       end
 
@@ -540,6 +546,45 @@ module OpenApiSDK
         if Utils.match_content_type(content_type, 'application/json')
           out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::GetMetadataChildrenLibraryResponseBody)
           res.four_hundred_and_one_application_json_object = out
+        end
+      end
+      res
+    end
+
+
+    sig { params(type: ::Integer, include_guids: T.nilable(::Integer)).returns(::OpenApiSDK::Operations::GetTopWatchedContentResponse) }
+    def get_top_watched_content(type, include_guids = nil)
+      # get_top_watched_content - Get Top Watched Content
+      # This endpoint will return the top watched content from libraries of a certain type
+      # 
+      request = ::OpenApiSDK::Operations::GetTopWatchedContentRequest.new(
+        
+        type: type,
+        include_guids: include_guids
+      )
+      url, params = @sdk_configuration.get_server_details
+      base_url = Utils.template_url(url, params)
+      url = "#{base_url}/library/all/top"
+      headers = {}
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetTopWatchedContentRequest, request, @sdk_configuration.globals)
+      headers['Accept'] = 'application/json'
+      headers['user-agent'] = @sdk_configuration.user_agent
+
+      r = @sdk_configuration.client.get(url) do |req|
+        req.headers = headers
+        req.params = query_params
+        Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
+      end
+
+      content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
+
+      res = ::OpenApiSDK::Operations::GetTopWatchedContentResponse.new(
+        status_code: r.status, content_type: content_type, raw_response: r
+      )
+      if r.status == 200
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::GetTopWatchedContentResponseBody)
+          res.object = out
         end
       end
       res

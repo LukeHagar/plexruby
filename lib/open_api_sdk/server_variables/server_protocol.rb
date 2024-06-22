@@ -7,7 +7,7 @@
 module OpenApiSDK
   module ServerVariables
   
-    # ServerProtocol - The protocol to use when connecting to your plex server.
+
     class ServerProtocol < T::Enum
       enums do
         HTTP = new('http')

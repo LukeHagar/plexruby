@@ -61,5 +61,91 @@ module OpenApiSDK
       end
       res
     end
+
+
+    sig { params(timespan: T.nilable(::Integer)).returns(::OpenApiSDK::Operations::GetResourcesStatisticsResponse) }
+    def get_resources_statistics(timespan = nil)
+      # get_resources_statistics - Get Resources Statistics
+      # This will return the resources for the server
+      request = ::OpenApiSDK::Operations::GetResourcesStatisticsRequest.new(
+        
+        timespan: timespan
+      )
+      url, params = @sdk_configuration.get_server_details
+      base_url = Utils.template_url(url, params)
+      url = "#{base_url}/statistics/resources"
+      headers = {}
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetResourcesStatisticsRequest, request, @sdk_configuration.globals)
+      headers['Accept'] = 'application/json'
+      headers['user-agent'] = @sdk_configuration.user_agent
+
+      r = @sdk_configuration.client.get(url) do |req|
+        req.headers = headers
+        req.params = query_params
+        Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
+      end
+
+      content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
+
+      res = ::OpenApiSDK::Operations::GetResourcesStatisticsResponse.new(
+        status_code: r.status, content_type: content_type, raw_response: r
+      )
+      if r.status == 200
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::GetResourcesStatisticsResponseBody)
+          res.two_hundred_application_json_object = out
+        end
+      elsif r.status == 400
+      elsif r.status == 401
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::GetResourcesStatisticsStatisticsResponseBody)
+          res.four_hundred_and_one_application_json_object = out
+        end
+      end
+      res
+    end
+
+
+    sig { params(timespan: T.nilable(::Integer)).returns(::OpenApiSDK::Operations::GetBandwidthStatisticsResponse) }
+    def get_bandwidth_statistics(timespan = nil)
+      # get_bandwidth_statistics - Get Bandwidth Statistics
+      # This will return the bandwidth statistics for the server
+      request = ::OpenApiSDK::Operations::GetBandwidthStatisticsRequest.new(
+        
+        timespan: timespan
+      )
+      url, params = @sdk_configuration.get_server_details
+      base_url = Utils.template_url(url, params)
+      url = "#{base_url}/statistics/bandwidth"
+      headers = {}
+      query_params = Utils.get_query_params(::OpenApiSDK::Operations::GetBandwidthStatisticsRequest, request, @sdk_configuration.globals)
+      headers['Accept'] = 'application/json'
+      headers['user-agent'] = @sdk_configuration.user_agent
+
+      r = @sdk_configuration.client.get(url) do |req|
+        req.headers = headers
+        req.params = query_params
+        Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
+      end
+
+      content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
+
+      res = ::OpenApiSDK::Operations::GetBandwidthStatisticsResponse.new(
+        status_code: r.status, content_type: content_type, raw_response: r
+      )
+      if r.status == 200
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::GetBandwidthStatisticsResponseBody)
+          res.two_hundred_application_json_object = out
+        end
+      elsif r.status == 400
+      elsif r.status == 401
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::GetBandwidthStatisticsStatisticsResponseBody)
+          res.four_hundred_and_one_application_json_object = out
+        end
+      end
+      res
+    end
   end
 end

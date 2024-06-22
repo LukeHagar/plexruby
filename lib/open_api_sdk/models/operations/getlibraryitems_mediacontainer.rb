@@ -18,7 +18,7 @@ module OpenApiSDK
 
       field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('identifier') } }
 
-      field :library_section_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('librarySectionID') } }
+      field :library_section_id, T.nilable(::Object), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('librarySectionID') } }
 
       field :library_section_title, T.nilable(::String), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('librarySectionTitle') } }
 
@@ -45,7 +45,7 @@ module OpenApiSDK
       field :view_mode, T.nilable(::Integer), { 'format_json': { 'letter_case': ::OpenApiSDK::Utils.field_name('viewMode') } }
 
 
-      sig { params(allow_sync: T.nilable(T::Boolean), art: T.nilable(::String), identifier: T.nilable(::String), library_section_id: T.nilable(::Integer), library_section_title: T.nilable(::String), library_section_uuid: T.nilable(::String), media_tag_prefix: T.nilable(::String), media_tag_version: T.nilable(::Integer), metadata: T.nilable(T::Array[::OpenApiSDK::Operations::GetLibraryItemsMetadata]), mixed_parents: T.nilable(T::Boolean), size: T.nilable(::Integer), thumb: T.nilable(::String), title1: T.nilable(::String), title2: T.nilable(::String), view_group: T.nilable(::String), view_mode: T.nilable(::Integer)).void }
+      sig { params(allow_sync: T.nilable(T::Boolean), art: T.nilable(::String), identifier: T.nilable(::String), library_section_id: T.nilable(::Object), library_section_title: T.nilable(::String), library_section_uuid: T.nilable(::String), media_tag_prefix: T.nilable(::String), media_tag_version: T.nilable(::Integer), metadata: T.nilable(T::Array[::OpenApiSDK::Operations::GetLibraryItemsMetadata]), mixed_parents: T.nilable(T::Boolean), size: T.nilable(::Integer), thumb: T.nilable(::String), title1: T.nilable(::String), title2: T.nilable(::String), view_group: T.nilable(::String), view_mode: T.nilable(::Integer)).void }
       def initialize(allow_sync: nil, art: nil, identifier: nil, library_section_id: nil, library_section_title: nil, library_section_uuid: nil, media_tag_prefix: nil, media_tag_version: nil, metadata: nil, mixed_parents: nil, size: nil, thumb: nil, title1: nil, title2: nil, view_group: nil, view_mode: nil)
         @allow_sync = allow_sync
         @art = art

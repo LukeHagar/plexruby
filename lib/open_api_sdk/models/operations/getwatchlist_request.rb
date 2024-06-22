@@ -15,7 +15,7 @@ module OpenApiSDK
       extend T::Sig
 
       # Filter
-      field :filter, ::OpenApiSDK::Operations::Filter, { 'path_param': { 'field_name': 'filter', 'style': 'simple', 'explode': false } }
+      field :filter, ::OpenApiSDK::Operations::PathParamFilter, { 'path_param': { 'field_name': 'filter', 'style': 'simple', 'explode': false } }
       # User Token
       field :x_plex_token, ::String, { 'query_param': { 'field_name': 'X-Plex-Token', 'style': 'form', 'explode': true } }
       # include collections in the results
@@ -46,7 +46,7 @@ module OpenApiSDK
       field :x_plex_container_start, T.nilable(::Integer), { 'query_param': { 'field_name': 'X-Plex-Container-Start', 'style': 'form', 'explode': true } }
 
 
-      sig { params(filter: ::OpenApiSDK::Operations::Filter, x_plex_token: ::String, include_collections: T.nilable(::OpenApiSDK::Operations::IncludeCollections), include_external_media: T.nilable(::OpenApiSDK::Operations::IncludeExternalMedia), libtype: T.nilable(::OpenApiSDK::Operations::Libtype), maxresults: T.nilable(::Integer), sort: T.nilable(::String), x_plex_container_size: T.nilable(::Integer), x_plex_container_start: T.nilable(::Integer)).void }
+      sig { params(filter: ::OpenApiSDK::Operations::PathParamFilter, x_plex_token: ::String, include_collections: T.nilable(::OpenApiSDK::Operations::IncludeCollections), include_external_media: T.nilable(::OpenApiSDK::Operations::IncludeExternalMedia), libtype: T.nilable(::OpenApiSDK::Operations::Libtype), maxresults: T.nilable(::Integer), sort: T.nilable(::String), x_plex_container_size: T.nilable(::Integer), x_plex_container_start: T.nilable(::Integer)).void }
       def initialize(filter: nil, x_plex_token: nil, include_collections: nil, include_external_media: nil, libtype: nil, maxresults: nil, sort: nil, x_plex_container_size: nil, x_plex_container_start: nil)
         @filter = filter
         @x_plex_token = x_plex_token

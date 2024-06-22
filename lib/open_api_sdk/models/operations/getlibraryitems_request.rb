@@ -15,12 +15,16 @@ module OpenApiSDK
       field :section_id, ::Object, { 'path_param': { 'field_name': 'sectionId', 'style': 'simple', 'explode': false } }
       # A key representing a specific tag within the section.
       field :tag, ::OpenApiSDK::Operations::Tag, { 'path_param': { 'field_name': 'tag', 'style': 'simple', 'explode': false } }
+      # Adds the Guids object to the response
+      # 
+      field :include_guids, T.nilable(::Integer), { 'query_param': { 'field_name': 'includeGuids', 'style': 'form', 'explode': true } }
 
 
-      sig { params(section_id: ::Object, tag: ::OpenApiSDK::Operations::Tag).void }
-      def initialize(section_id: nil, tag: nil)
+      sig { params(section_id: ::Object, tag: ::OpenApiSDK::Operations::Tag, include_guids: T.nilable(::Integer)).void }
+      def initialize(section_id: nil, tag: nil, include_guids: nil)
         @section_id = section_id
         @tag = tag
+        @include_guids = include_guids
       end
     end
   end

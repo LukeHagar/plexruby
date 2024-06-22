@@ -1,0 +1,15 @@
+# GetBandwidthStatisticsAccount
+
+
+## Fields
+
+| Field                                                      | Type                                                       | Required                                                   | Description                                                | Example                                                    |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `id`                                                       | *T.nilable(::Integer)*                                     | :heavy_minus_sign:                                         | N/A                                                        | 238960586                                                  |
+| `key`                                                      | *T.nilable(::String)*                                      | :heavy_minus_sign:                                         | N/A                                                        | /accounts/238960586                                        |
+| `name`                                                     | *T.nilable(::String)*                                      | :heavy_minus_sign:                                         | N/A                                                        | Diane                                                      |
+| `default_audio_language`                                   | *T.nilable(::String)*                                      | :heavy_minus_sign:                                         | N/A                                                        | en                                                         |
+| `auto_select_audio`                                        | *T.nilable(T::Boolean)*                                    | :heavy_minus_sign:                                         | N/A                                                        | true                                                       |
+| `default_subtitle_language`                                | *T.nilable(::String)*                                      | :heavy_minus_sign:                                         | N/A                                                        | en                                                         |
+| `subtitle_mode`                                            | *T.nilable(::Integer)*                                     | :heavy_minus_sign:                                         | N/A                                                        | 1                                                          |
+| `thumb`                                                    | *T.nilable(::String)*                                      | :heavy_minus_sign:                                         | N/A                                                        | https://plex.tv/users/50d83634246da1de/avatar?c=1707110967 |

@@ -6,18 +6,17 @@
 
 module OpenApiSDK
   module Operations
-    FILTER_SERVERS = [
-      'https://metadata.provider.plex.tv'
-    ].freeze
   
-    # Filter - Filter
-    class Filter < T::Enum
-      enums do
-        ALL = new('all')
-        AVAILABLE = new('available')
-        RELEASED = new('released')
-      end
-    end
+    # Filters content by field and direction/equality
+    # (Unknown if viewedAt is the only supported column)
+    # 
+    class Filter < ::OpenApiSDK::Utils::FieldAugmented
+      extend T::Sig
 
+
+
+      
+      def initialize; end
+    end
   end
 end

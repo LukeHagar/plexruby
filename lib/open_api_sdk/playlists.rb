@@ -190,7 +190,7 @@ module OpenApiSDK
       res = ::OpenApiSDK::Operations::DeletePlaylistResponse.new(
         status_code: r.status, content_type: content_type, raw_response: r
       )
-      if [200, 400].include?(r.status)
+      if [204, 400].include?(r.status)
       elsif r.status == 401
         if Utils.match_content_type(content_type, 'application/json')
           out = Utils.unmarshal_complex(r.env.response_body, ::OpenApiSDK::Operations::DeletePlaylistResponseBody)

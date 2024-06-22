@@ -22,8 +22,8 @@ module OpenApiSDK
 
     sig { returns(::OpenApiSDK::Operations::GetServerCapabilitiesResponse) }
     def get_server_capabilities
-      # get_server_capabilities - Server Capabilities
-      # Server Capabilities
+      # get_server_capabilities - Get Server Capabilities
+      # Get Server Capabilities
       url, params = @sdk_configuration.get_server_details
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/"

@@ -18,6 +18,7 @@ API Calls interacting with Plex Media Server Libraries
 * [search_library](#search_library) - Search Library
 * [get_metadata](#get_metadata) - Get Items Metadata
 * [get_metadata_children](#get_metadata_children) - Get Items Children
+* [get_top_watched_content](#get_top_watched_content) - Get Top Watched Content
 * [get_on_deck](#get_on_deck) - Get On Deck
 
 ## get_file_hash
@@ -296,7 +297,7 @@ s.config_security(
 )
 
     
-res = s.library.get_library_items(section_id="<value>", tag=::OpenApiSDK::Operations::Tag::GENRE)
+res = s.library.get_library_items(section_id="<value>", tag=::OpenApiSDK::Operations::Tag::GENRE, include_guids=1)
 
 if ! res.two_hundred_application_json_object.nil?
   # handle response
@@ -306,10 +307,11 @@ end
 
 ### Parameters
 
-| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `section_id`                                                    | *::Object*                                                      | :heavy_check_mark:                                              | the Id of the library to query                                  |
-| `tag`                                                           | [::OpenApiSDK::Operations::Tag](../../models/operations/tag.md) | :heavy_check_mark:                                              | A key representing a specific tag within the section.           |
+| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     | Example                                                         |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `section_id`                                                    | *::Object*                                                      | :heavy_check_mark:                                              | the Id of the library to query                                  |                                                                 |
+| `tag`                                                           | [::OpenApiSDK::Operations::Tag](../../models/operations/tag.md) | :heavy_check_mark:                                              | A key representing a specific tag within the section.           |                                                                 |
+| `include_guids`                                                 | *::Integer*                                                     | :heavy_minus_sign:                                              | Adds the Guids object to the response<br/>                      | 1                                                               |
 
 
 ### Response
@@ -479,7 +481,7 @@ s.config_security(
 )
 
     
-res = s.library.get_metadata_children(rating_key=1539.14)
+res = s.library.get_metadata_children(rating_key=1539.14, include_elements="<value>")
 
 if ! res.two_hundred_application_json_object.nil?
   # handle response
@@ -489,14 +491,57 @@ end
 
 ### Parameters
 
-| Parameter                                             | Type                                                  | Required                                              | Description                                           |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `rating_key`                                          | *::Float*                                             | :heavy_check_mark:                                    | the id of the library item to return the children of. |
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `rating_key`                                                            | *::Float*                                                               | :heavy_check_mark:                                                      | the id of the library item to return the children of.                   |
+| `include_elements`                                                      | *::String*                                                              | :heavy_minus_sign:                                                      | Adds additional elements to the response. Supported types are (Stream)<br/> |
 
 
 ### Response
 
 **[T.nilable(::OpenApiSDK::Operations::GetMetadataChildrenResponse)](../../models/operations/getmetadatachildrenresponse.md)**
+
+
+## get_top_watched_content
+
+This endpoint will return the top watched content from libraries of a certain type
+
+
+### Example Usage
+
+```ruby
+require 'plexruby'
+
+
+s = ::OpenApiSDK::PlexAPI.new(
+      x_plex_client_identifier: "Postman",
+    )
+s.config_security(
+  ::OpenApiSDK::Shared::Security.new(
+    access_token: "<YOUR_API_KEY_HERE>",
+  )
+)
+
+    
+res = s.library.get_top_watched_content(type=505531, include_guids=1)
+
+if ! res.object.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                           | Type                                                | Required                                            | Description                                         | Example                                             |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `type`                                              | *::Integer*                                         | :heavy_check_mark:                                  | the library type (1 - movies, 2 - shows, 3 - music) |                                                     |
+| `include_guids`                                     | *::Integer*                                         | :heavy_minus_sign:                                  | Adds the Guids object to the response<br/>          | 1                                                   |
+
+
+### Response
+
+**[T.nilable(::OpenApiSDK::Operations::GetTopWatchedContentResponse)](../../models/operations/gettopwatchedcontentresponse.md)**
 
 
 ## get_on_deck
