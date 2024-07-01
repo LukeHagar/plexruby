@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    plexruby (0.2.1)
+    plexruby (0.2.2)
       faraday
       faraday-multipart
       rack

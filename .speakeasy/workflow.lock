@@ -1,9 +1,9 @@
-speakeasyVersion: 1.322.3
+speakeasyVersion: 1.323.0
 sources:
     my-source:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:592d9f445e819ab87fedda10a4cb8624ff5a6e1a179eea289918ab8cdc73ccd4
-        sourceBlobDigest: sha256:9770e0b26dcff8cdab6bd7369d930cd931e9ed47173efd6a409e7c36559f7c81
+        sourceRevisionDigest: sha256:721539660c22a7f2ba3b0ed8d71c2ce29bfa19693a5c04678c22dbd586a5f035
+        sourceBlobDigest: sha256:943fb1e9bd8048efbda87a1af9ebec6d822c22f871d18bad37434f1de29ab5a7
         tags:
             - latest
             - main
@@ -11,8 +11,10 @@ targets:
     plexruby:
         source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:592d9f445e819ab87fedda10a4cb8624ff5a6e1a179eea289918ab8cdc73ccd4
-        sourceBlobDigest: sha256:9770e0b26dcff8cdab6bd7369d930cd931e9ed47173efd6a409e7c36559f7c81
+        sourceRevisionDigest: sha256:721539660c22a7f2ba3b0ed8d71c2ce29bfa19693a5c04678c22dbd586a5f035
+        sourceBlobDigest: sha256:943fb1e9bd8048efbda87a1af9ebec6d822c22f871d18bad37434f1de29ab5a7
+        codeSamplesNamespace: code-samples-ruby-plexruby
+        codeSamplesRevisionDigest: sha256:24ab3fdcfdf227479438768e2bcef3b25c3121818b5fe93478b3cb538b5ca0e5
         outLocation: /github/workspace/repo
 workflow:
     workflowVersion: 1.0.0
@@ -29,3 +31,5 @@ workflow:
             source: my-source
             codeSamples:
                 output: codeSamples.yaml
+                registry:
+                    location: registry.speakeasyapi.dev/lukehagar/lukehagar/code-samples-ruby-plexruby

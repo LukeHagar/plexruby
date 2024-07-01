@@ -3,10 +3,10 @@ id: aa9449e7-c19d-411d-b8e2-f9c5fe982f6f
 management:
   docChecksum: e73920abd3a55e8d249592f2e3090574
   docVersion: 0.0.3
-  speakeasyVersion: 1.314.2
-  generationVersion: 2.349.6
-  releaseVersion: 0.2.1
-  configChecksum: c2d06e76294cc34856d5d82ec3bd41e3
+  speakeasyVersion: 1.323.0
+  generationVersion: 2.356.0
+  releaseVersion: 0.2.2
+  configChecksum: aae57149adcd9df481637be90e3e71b2
   repoURL: https://github.com/LukeHagar/plexruby.git
   repoSubDirectory: .
   installationURL: https://github.com/LukeHagar/plexruby
