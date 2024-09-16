@@ -5,8 +5,8 @@ management:
   docVersion: 0.0.3
   speakeasyVersion: 1.397.2
   generationVersion: 2.415.8
-  releaseVersion: 0.3.4
-  configChecksum: 2725162a230db6ada6065be692444dc2
+  releaseVersion: 0.3.5
+  configChecksum: b47335363281cb2bc91347ed8463cbdf
   repoURL: https://github.com/LukeHagar/plexruby.git
   repoSubDirectory: .
   installationURL: https://github.com/LukeHagar/plexruby

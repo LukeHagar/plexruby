@@ -7,29 +7,36 @@ sources:
         tags:
             - latest
             - main
+    plexapi:
+        sourceNamespace: plexapi
+        sourceRevisionDigest: sha256:533fe97486e3fe2d84e890b7bbcdba4543d415e45181386154e011861f6da36f
+        sourceBlobDigest: sha256:f7e2709f52370dff16c1851a7a4e44a89f2e978e9cae335bffc10625950b3bd9
+        tags:
+            - latest
+            - main
 targets:
     plexruby:
-        source: my-source
-        sourceNamespace: my-source
-        sourceRevisionDigest: sha256:90da815184f89206abe4694aca05802c71d19c10d572a0a1f84d89883e5fce45
+        source: plexapi
+        sourceNamespace: plexapi
+        sourceRevisionDigest: sha256:533fe97486e3fe2d84e890b7bbcdba4543d415e45181386154e011861f6da36f
         sourceBlobDigest: sha256:f7e2709f52370dff16c1851a7a4e44a89f2e978e9cae335bffc10625950b3bd9
         codeSamplesNamespace: code-samples-ruby-plexruby
-        codeSamplesRevisionDigest: sha256:f7325622cd3daf766e0c56ebe8390fe313bbfeb35a0a013f4cd6cfcc1700f5b3
+        codeSamplesRevisionDigest: sha256:528ed89116bd86753ee769183367924a5a991630b7cd609339b283e1bcbda236
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
-        my-source:
+        plexapi:
             inputs:
-                - location: registry.speakeasyapi.dev/lukehagar/lukehagar/plex-api:main
+                - location: registry.speakeasyapi.dev/plexapi/plexapi/plexapi:main
     targets:
         plexruby:
             target: ruby
-            source: my-source
+            source: plexapi
             publish:
                 rubygems:
                     token: $rubygems_auth_token
             codeSamples:
                 output: codeSamples.yaml
                 registry:
-                    location: registry.speakeasyapi.dev/lukehagar/lukehagar/code-samples-ruby-plexruby
+                    location: registry.speakeasyapi.dev/plexapi/plexapi/code-samples-ruby-plexruby
