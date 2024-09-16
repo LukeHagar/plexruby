@@ -18,7 +18,7 @@ This will return the media statistics for the server
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -59,7 +59,7 @@ This will return the resources for the server
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -100,7 +100,7 @@ This will return the bandwidth statistics for the server
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(

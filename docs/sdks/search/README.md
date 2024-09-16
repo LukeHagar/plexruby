@@ -30,7 +30,7 @@ This request is intended to be very fast, and called as the user types.
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -77,7 +77,7 @@ Results, as well as their containing per-type hubs, contain a `distance` attribu
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -120,7 +120,7 @@ This will search the database for the string provided.
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(

@@ -22,7 +22,7 @@ Get Companions Data
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -63,7 +63,7 @@ Get friends of provided auth token.
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -104,7 +104,7 @@ Returns the geolocation and locale data of the caller
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -140,7 +140,7 @@ Retrieves the home data for the authenticated user, including details like home 
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -175,7 +175,7 @@ Get Plex server access tokens and server connections
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -220,7 +220,7 @@ Retrieve a Pin from Plex.tv for authentication flows
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -259,7 +259,7 @@ Retrieve an Access Token from Plex.tv after the Pin has been authenticated
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(

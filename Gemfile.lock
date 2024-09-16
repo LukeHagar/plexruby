@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    plexruby (0.3.2)
+    plex-ruby-sdk (0.3.3)
       faraday
       faraday-multipart
       rack
@@ -93,7 +93,7 @@ PLATFORMS
 
 DEPENDENCIES
   minitest
-  plexruby!
+  plex-ruby-sdk!
   rubocop
   sorbet-runtime
   tapioca

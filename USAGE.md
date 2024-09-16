@@ -1,6 +1,6 @@
 <!-- Start SDK Example Usage [usage] -->
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(

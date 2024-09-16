@@ -42,9 +42,9 @@ module PlexRubySDK
       @globals = globals.nil? ? {} : globals
       @language = 'ruby'
       @openapi_doc_version = '0.0.3'
-      @sdk_version = '0.3.2'
+      @sdk_version = '0.3.3'
       @gen_version = '2.415.8'
-      @user_agent = 'speakeasy-sdk/ruby 0.3.2 2.415.8 0.0.3 plexruby'
+      @user_agent = 'speakeasy-sdk/ruby 0.3.3 2.415.8 0.0.3 plex-ruby-sdk'
     end
 
     sig { returns([String, T::Hash[Symbol, String]]) }

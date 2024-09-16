@@ -23,7 +23,7 @@ Get Server Activities
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -58,7 +58,7 @@ Cancel Server Activities
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(

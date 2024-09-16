@@ -19,7 +19,7 @@ This will retrieve the "Now Playing" Information of the PMS.
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -54,7 +54,7 @@ This will Retrieve a listing of all history views.
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -98,7 +98,7 @@ Get Transcode Sessions
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -133,7 +133,7 @@ Stop a Transcode Session
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(

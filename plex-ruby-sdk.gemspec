@@ -3,8 +3,8 @@
 $LOAD_PATH.push File.expand_path('lib', __dir__)
 
 Gem::Specification.new do |s|
-  s.name        = 'plexruby'
-  s.version     = '0.3.2'
+  s.name        = 'plex-ruby-sdk'
+  s.version     = '0.3.3'
   s.platform    = Gem::Platform::RUBY
   s.licenses    = ['Apache-2.0']
   s.summary     = ''

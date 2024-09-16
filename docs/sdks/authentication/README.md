@@ -20,7 +20,7 @@ This endpoint provides the caller with a temporary token with the same access le
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -64,7 +64,7 @@ Note: requires Plex Media Server >= 1.15.4.
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -105,7 +105,7 @@ Get the User data from the provided X-Plex-Token
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -146,7 +146,7 @@ Sign in user with username and password and return user data with Plex authentic
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(

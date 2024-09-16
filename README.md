@@ -29,7 +29,7 @@ Plex-API: An Open API Spec for interacting with Plex.tv and Plex Media Server
 The SDK can be installed using [RubyGems](https://rubygems.org/):
 
 ```bash
-gem install plexruby
+gem install plex-ruby-sdk
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -39,7 +39,7 @@ gem install plexruby
 ### Example
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -224,7 +224,7 @@ The default server can also be overridden globally by passing a URL to the `serv
 
 The server URL can also be overridden on a per-operation basis, provided a server list was specified for the operation. For example:
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -269,7 +269,7 @@ This is used to track the client application and its usage
 ### Example
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
