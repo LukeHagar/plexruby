@@ -27,4 +27,4 @@ ruby:
   maxMethodParams: 4
   module: PlexRubySDK
   outputModelSuffix: output
-  packageName: plex-ruby-sdk
+  packageName: plex_ruby_sdk
