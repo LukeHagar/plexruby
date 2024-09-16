@@ -19,7 +19,7 @@ This endpoint will write a single-line log message, including a level and source
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -83,7 +83,7 @@ Ensure each parameter is properly URL-encoded to avoid interpretation issues.
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -129,7 +129,7 @@ This endpoint will enable all Plex Media Serverlogs to be sent to the Papertrail
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(

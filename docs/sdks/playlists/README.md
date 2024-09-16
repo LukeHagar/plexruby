@@ -30,7 +30,7 @@ Create a new playlist. By default the playlist is blank. To create a playlist al
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -78,7 +78,7 @@ Get All Playlists given the specified filters.
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -122,7 +122,7 @@ Smart playlist details contain the `content` attribute. This is the content URI 
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -164,7 +164,7 @@ This endpoint will delete a playlist
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -206,7 +206,7 @@ From PMS version 1.9.1 clients can also edit playlist metadata using this endpoi
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -253,7 +253,7 @@ Note that for dumb playlists, items have a `playlistItemID` attribute which is u
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -296,7 +296,7 @@ Clears a playlist, only works with dumb playlists. Returns the playlist.
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -339,7 +339,7 @@ With a smart playlist, passing a new `uri` parameter replaces the rules for the 
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -383,7 +383,7 @@ Imports m3u playlists by passing a path on the server to scan for m3u-formatted 
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(

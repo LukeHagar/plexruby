@@ -20,7 +20,7 @@ Returns a list of butler tasks
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -60,7 +60,7 @@ This endpoint will attempt to start all Butler tasks that are enabled in the set
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -96,7 +96,7 @@ This endpoint will stop all currently running tasks and remove any scheduled tas
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -136,7 +136,7 @@ This endpoint will attempt to start a single Butler task that is enabled in the 
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
@@ -178,7 +178,7 @@ This endpoint will stop a currently running task by name, or remove it from the 
 ### Example Usage
 
 ```ruby
-require 'plexruby'
+require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(

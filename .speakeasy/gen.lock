@@ -5,8 +5,8 @@ management:
   docVersion: 0.0.3
   speakeasyVersion: 1.397.2
   generationVersion: 2.415.8
-  releaseVersion: 0.3.2
-  configChecksum: aa1242008b99b40584966bcff9193325
+  releaseVersion: 0.3.3
+  configChecksum: bbc41306a25086aeae9fd27706f2e334
   repoURL: https://github.com/LukeHagar/plexruby.git
   repoSubDirectory: .
   installationURL: https://github.com/LukeHagar/plexruby
@@ -732,6 +732,7 @@ generatedFiles:
   - docs/sdks/updater/README.md
   - docs/sdks/video/README.md
   - docs/sdks/watchlist/README.md
+  - lib/plex-ruby-sdk.rb
   - lib/plex_ruby_sdk/activities.rb
   - lib/plex_ruby_sdk/authentication.rb
   - lib/plex_ruby_sdk/butler.rb
@@ -1443,8 +1444,7 @@ generatedFiles:
   - lib/plex_ruby_sdk/utils/utils.rb
   - lib/plex_ruby_sdk/video.rb
   - lib/plex_ruby_sdk/watchlist.rb
-  - lib/plexruby.rb
-  - plexruby.gemspec
+  - plex-ruby-sdk.gemspec
   - sorbet/config
   - sorbet/rbi/annotations/.gitattributes
   - sorbet/rbi/annotations/faraday.rbi
