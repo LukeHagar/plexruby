@@ -1,9 +1,9 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-    my-source:
+    plexapi:
         inputs:
-            - location: registry.speakeasyapi.dev/lukehagar/lukehagar/plex-api:main
+            - location: registry.speakeasyapi.dev/plexapi/plexapi/plexapi:main
 targets:
     plexruby:
         target: ruby
@@ -14,4 +14,4 @@ targets:
         codeSamples:
             output: codeSamples.yaml
             registry:
-                location: registry.speakeasyapi.dev/lukehagar/lukehagar/code-samples-ruby-plexruby
+                location: registry.speakeasyapi.dev/plexapi/plexapi/code-samples-ruby-plexruby
