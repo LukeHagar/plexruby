@@ -29,7 +29,7 @@ Plex-API: An Open API Spec for interacting with Plex.tv and Plex Media Server
 The SDK can be installed using [RubyGems](https://rubygems.org/):
 
 ```bash
-gem install plex-ruby-sdk
+gem install plex_ruby_sdk
 ```
 <!-- End SDK Installation [installation] -->
 
