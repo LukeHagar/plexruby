@@ -1,6 +1,5 @@
 # Search
 
-
 ## Overview
 
 API Calls that perform search operations with Plex Media Server
@@ -34,17 +33,17 @@ This request is intended to be very fast, and called as the user types.
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
     
-res = s.search.perform_search(query="dylan", section_id=1516.53, limit=5.0)
+res = s.search.perform_search(query="arnold", section_id=9372.7, limit=5.0)
 
 if res.status_code == 200
   # handle response
@@ -60,10 +59,11 @@ end
 | `section_id`                                                                          | *::Float*                                                                             | :heavy_minus_sign:                                                                    | This gives context to the search, and can result in re-ordering of search result hubs |                                                                                       |
 | `limit`                                                                               | *::Float*                                                                             | :heavy_minus_sign:                                                                    | The number of items to return per hub                                                 | 5                                                                                     |
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::PerformSearchResponse)](../../models/operations/performsearchresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::PerformSearchResponse)](../../models/operations/performsearchresponse.md)**
+
+
 
 
 ## perform_voice_search
@@ -80,11 +80,11 @@ Results, as well as their containing per-type hubs, contain a `distance` attribu
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -106,10 +106,11 @@ end
 | `section_id`                                                                          | *::Float*                                                                             | :heavy_minus_sign:                                                                    | This gives context to the search, and can result in re-ordering of search result hubs |                                                                                       |
 | `limit`                                                                               | *::Float*                                                                             | :heavy_minus_sign:                                                                    | The number of items to return per hub                                                 | 5                                                                                     |
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::PerformVoiceSearchResponse)](../../models/operations/performvoicesearchresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::PerformVoiceSearchResponse)](../../models/operations/performvoicesearchresponse.md)**
+
+
 
 
 ## get_search_results
@@ -122,11 +123,11 @@ This will search the database for the string provided.
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -134,7 +135,7 @@ s.config_security(
     
 res = s.search.get_search_results(query="110")
 
-if ! res.two_hundred_application_json_object.nil?
+if ! res.object.nil?
   # handle response
 end
 
@@ -146,8 +147,8 @@ end
 | ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ |
 | `query`                        | *::String*                     | :heavy_check_mark:             | The search query string to use | 110                            |
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetSearchResultsResponse)](../../models/operations/getsearchresultsresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetSearchResultsResponse)](../../models/operations/getsearchresultsresponse.md)**
+
 

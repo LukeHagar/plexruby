@@ -1,6 +1,5 @@
 # Video
 
-
 ## Overview
 
 API Calls that perform operations with Plex Media Server Videos
@@ -21,20 +20,20 @@ Get the timeline for a media item
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
 
-req = ::OpenApiSDK::Operations::GetTimelineRequest.new(
+req = ::PlexRubySDK::Operations::GetTimelineRequest.new(
   rating_key: 23409.0,
   key: "/library/metadata/23409",
-  state: ::OpenApiSDK::Operations::State::PLAYING,
+  state: ::PlexRubySDK::Operations::State::PLAYING,
   has_mde: 1.0,
   time: 2000.0,
   duration: 10000.0,
@@ -54,14 +53,15 @@ end
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [::OpenApiSDK::Operations::GetTimelineRequest](../../models/operations/gettimelinerequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
-
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [::PlexRubySDK::Operations::GetTimelineRequest](../../models/operations/gettimelinerequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetTimelineResponse)](../../models/operations/gettimelineresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetTimelineResponse)](../../models/operations/gettimelineresponse.md)**
+
+
 
 
 ## start_universal_transcode
@@ -74,17 +74,17 @@ Begin a Universal Transcode Session
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
 
-req = ::OpenApiSDK::Operations::StartUniversalTranscodeRequest.new(
+req = ::PlexRubySDK::Operations::StartUniversalTranscodeRequest.new(
   has_mde: 1.0,
   path: "/library/metadata/23409",
   media_index: 0.0,
@@ -113,12 +113,12 @@ end
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                             | [::OpenApiSDK::Operations::StartUniversalTranscodeRequest](../../models/operations/startuniversaltranscoderequest.md) | :heavy_check_mark:                                                                                                    | The request object to use for the request.                                                                            |
-
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                              | [::PlexRubySDK::Operations::StartUniversalTranscodeRequest](../../models/operations/startuniversaltranscoderequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
 
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::StartUniversalTranscodeResponse)](../../models/operations/startuniversaltranscoderesponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::StartUniversalTranscodeResponse)](../../models/operations/startuniversaltranscoderesponse.md)**
+
 

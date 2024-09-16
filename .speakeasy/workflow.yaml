@@ -3,13 +3,14 @@ speakeasyVersion: latest
 sources:
     my-source:
         inputs:
-            - location: https://raw.githubusercontent.com/LukeHagar/plex-api-spec/main/plex-media-server-spec-dereferenced.yaml
-        registry:
-            location: registry.speakeasyapi.dev/lukehagar/lukehagar/my-source
+            - location: registry.speakeasyapi.dev/lukehagar/lukehagar/plex-api:main
 targets:
     plexruby:
         target: ruby
         source: my-source
+        publish:
+            rubygems:
+                token: $rubygems_auth_token
         codeSamples:
             output: codeSamples.yaml
             registry:

@@ -1,6 +1,5 @@
 # Activities
 
-
 ## Overview
 
 Activities are awesome. They provide a way to monitor and control asynchronous operations on the server. In order to receive real-time updates for activities, a client would normally subscribe via either EventSource or Websocket endpoints.
@@ -27,11 +26,11 @@ Get Server Activities
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -39,16 +38,17 @@ s.config_security(
     
 res = s.activities.get_server_activities()
 
-if ! res.two_hundred_application_json_object.nil?
+if ! res.object.nil?
   # handle response
 end
 
 ```
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetServerActivitiesResponse)](../../models/operations/getserveractivitiesresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetServerActivitiesResponse)](../../models/operations/getserveractivitiesresponse.md)**
+
+
 
 
 ## cancel_server_activities
@@ -61,11 +61,11 @@ Cancel Server Activities
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -85,8 +85,8 @@ end
 | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | `activity_uuid`                      | *::String*                           | :heavy_check_mark:                   | The UUID of the activity to cancel.  | 25b71ed5-0f9d-461c-baa7-d404e9e10d3e |
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::CancelServerActivitiesResponse)](../../models/operations/cancelserveractivitiesresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::CancelServerActivitiesResponse)](../../models/operations/cancelserveractivitiesresponse.md)**
+
 

@@ -1,6 +1,5 @@
 # Statistics
 
-
 ## Overview
 
 API Calls that perform operations with Plex Media Server Statistics
@@ -22,11 +21,11 @@ This will return the media statistics for the server
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -34,7 +33,7 @@ s.config_security(
     
 res = s.statistics.get_statistics(timespan=4)
 
-if ! res.two_hundred_application_json_object.nil?
+if ! res.object.nil?
   # handle response
 end
 
@@ -46,10 +45,11 @@ end
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | `timespan`                                                                                | *::Integer*                                                                               | :heavy_minus_sign:                                                                        | The timespan to retrieve statistics for<br/>the exact meaning of this parameter is not known<br/> | 4                                                                                         |
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetStatisticsResponse)](../../models/operations/getstatisticsresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetStatisticsResponse)](../../models/operations/getstatisticsresponse.md)**
+
+
 
 
 ## get_resources_statistics
@@ -62,11 +62,11 @@ This will return the resources for the server
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -74,7 +74,7 @@ s.config_security(
     
 res = s.statistics.get_resources_statistics(timespan=4)
 
-if ! res.two_hundred_application_json_object.nil?
+if ! res.object.nil?
   # handle response
 end
 
@@ -86,10 +86,11 @@ end
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | `timespan`                                                                                | *::Integer*                                                                               | :heavy_minus_sign:                                                                        | The timespan to retrieve statistics for<br/>the exact meaning of this parameter is not known<br/> | 4                                                                                         |
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetResourcesStatisticsResponse)](../../models/operations/getresourcesstatisticsresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetResourcesStatisticsResponse)](../../models/operations/getresourcesstatisticsresponse.md)**
+
+
 
 
 ## get_bandwidth_statistics
@@ -102,11 +103,11 @@ This will return the bandwidth statistics for the server
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -114,7 +115,7 @@ s.config_security(
     
 res = s.statistics.get_bandwidth_statistics(timespan=4)
 
-if ! res.two_hundred_application_json_object.nil?
+if ! res.object.nil?
   # handle response
 end
 
@@ -126,8 +127,8 @@ end
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | `timespan`                                                                                | *::Integer*                                                                               | :heavy_minus_sign:                                                                        | The timespan to retrieve statistics for<br/>the exact meaning of this parameter is not known<br/> | 4                                                                                         |
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetBandwidthStatisticsResponse)](../../models/operations/getbandwidthstatisticsresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetBandwidthStatisticsResponse)](../../models/operations/getbandwidthstatisticsresponse.md)**
+
 

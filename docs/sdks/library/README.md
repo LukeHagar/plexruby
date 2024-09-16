@@ -1,6 +1,5 @@
 # Library
 
-
 ## Overview
 
 API Calls interacting with Plex Media Server Libraries
@@ -10,13 +9,13 @@ API Calls interacting with Plex Media Server Libraries
 
 * [get_file_hash](#get_file_hash) - Get Hash Value
 * [get_recently_added](#get_recently_added) - Get Recently Added
-* [get_libraries](#get_libraries) - Get All Libraries
-* [get_library](#get_library) - Get Library Details
+* [get_all_libraries](#get_all_libraries) - Get All Libraries
+* [get_library_details](#get_library_details) - Get Library Details
 * [delete_library](#delete_library) - Delete Library Section
 * [get_library_items](#get_library_items) - Get Library Items
-* [refresh_library](#refresh_library) - Refresh Library
-* [search_library](#search_library) - Search Library
-* [get_metadata](#get_metadata) - Get Items Metadata
+* [get_refresh_library_metadata](#get_refresh_library_metadata) - Refresh Metadata Of The Library
+* [get_search_library](#get_search_library) - Search Library
+* [get_meta_data_by_rating_key](#get_meta_data_by_rating_key) - Get Metadata by RatingKey
 * [get_metadata_children](#get_metadata_children) - Get Items Children
 * [get_top_watched_content](#get_top_watched_content) - Get Top Watched Content
 * [get_on_deck](#get_on_deck) - Get On Deck
@@ -31,11 +30,11 @@ This resource returns hash values for local files
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -56,10 +55,11 @@ end
 | `url`                                                             | *::String*                                                        | :heavy_check_mark:                                                | This is the path to the local file, must be prefixed by `file://` | file://C:\Image.png&type=13                                       |
 | `type`                                                            | *::Float*                                                         | :heavy_minus_sign:                                                | Item type                                                         |                                                                   |
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetFileHashResponse)](../../models/operations/getfilehashresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetFileHashResponse)](../../models/operations/getfilehashresponse.md)**
+
+
 
 
 ## get_recently_added
@@ -73,31 +73,39 @@ This endpoint will return the recently added content.
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
     
-res = s.library.get_recently_added()
+res = s.library.get_recently_added(x_plex_container_start=0, x_plex_container_size=50)
 
-if ! res.two_hundred_application_json_object.nil?
+if ! res.object.nil?
   # handle response
 end
 
 ```
 
+### Parameters
+
+| Parameter                                                                                                                                                                                 | Type                                                                                                                                                                                      | Required                                                                                                                                                                                  | Description                                                                                                                                                                               | Example                                                                                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_plex_container_start`                                                                                                                                                                  | *::Integer*                                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                        | The index of the first item to return. If not specified, the first item will be returned.<br/>If the number of items exceeds the limit, the response will be paginated.<br/>By default this is 0<br/> | 0                                                                                                                                                                                         |
+| `x_plex_container_size`                                                                                                                                                                   | *::Integer*                                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                        | The number of items to return. If not specified, all items will be returned.<br/>If the number of items exceeds the limit, the response will be paginated.<br/>By default this is 50<br/> | 50                                                                                                                                                                                        |
 
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetRecentlyAddedResponse)](../../models/operations/getrecentlyaddedresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetRecentlyAddedResponse)](../../models/operations/getrecentlyaddedresponse.md)**
 
 
-## get_libraries
+
+
+## get_all_libraries
 
 A library section (commonly referred to as just a library) is a collection of media. 
 Libraries are typed, and depending on their type provide either a flat or a hierarchical view of the media. 
@@ -113,31 +121,32 @@ This allows a client to provide a rich interface around the media (e.g. allow so
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
     
-res = s.library.get_libraries()
+res = s.library.get_all_libraries()
 
-if ! res.two_hundred_application_json_object.nil?
+if ! res.object.nil?
   # handle response
 end
 
 ```
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetLibrariesResponse)](../../models/operations/getlibrariesresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetAllLibrariesResponse)](../../models/operations/getalllibrariesresponse.md)**
 
 
-## get_library
+
+
+## get_library_details
 
 ## Library Details Endpoint
 
@@ -186,19 +195,19 @@ Each type in the library comes with a set of filters and sorts, aiding in buildi
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
     
-res = s.library.get_library(section_id=1000.0, include_details=::OpenApiSDK::Operations::IncludeDetails::ZERO)
+res = s.library.get_library_details(section_key=9518, include_details=::PlexRubySDK::Operations::IncludeDetails::ZERO)
 
-if ! res.two_hundred_application_json_object.nil?
+if ! res.object.nil?
   # handle response
 end
 
@@ -208,18 +217,19 @@ end
 
 | Parameter                                                                                                                                                                                  | Type                                                                                                                                                                                       | Required                                                                                                                                                                                   | Description                                                                                                                                                                                | Example                                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `section_id`                                                                                                                                                                               | *::Float*                                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                                         | the Id of the library to query                                                                                                                                                             | 1000                                                                                                                                                                                       |
-| `include_details`                                                                                                                                                                          | [::OpenApiSDK::Operations::IncludeDetails](../../models/operations/includedetails.md)                                                                                                      | :heavy_minus_sign:                                                                                                                                                                         | Whether or not to include details for a section (types, filters, and sorts). <br/>Only exists for backwards compatibility, media providers other than the server libraries have it on always.<br/> |                                                                                                                                                                                            |
-
+| `section_key`                                                                                                                                                                              | *::Integer*                                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                         | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/>                                                                                      | 9518                                                                                                                                                                                       |
+| `include_details`                                                                                                                                                                          | [::PlexRubySDK::Operations::IncludeDetails](../../models/operations/includedetails.md)                                                                                                     | :heavy_minus_sign:                                                                                                                                                                         | Whether or not to include details for a section (types, filters, and sorts). <br/>Only exists for backwards compatibility, media providers other than the server libraries have it on always.<br/> |                                                                                                                                                                                            |
 
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetLibraryResponse)](../../models/operations/getlibraryresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetLibraryDetailsResponse)](../../models/operations/getlibrarydetailsresponse.md)**
+
+
 
 
 ## delete_library
 
-Delate a library using a specific section
+Delete a library using a specific section id
 
 ### Example Usage
 
@@ -227,17 +237,17 @@ Delate a library using a specific section
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
     
-res = s.library.delete_library(section_id=1000.0)
+res = s.library.delete_library(section_key=9518)
 
 if res.status_code == 200
   # handle response
@@ -247,14 +257,15 @@ end
 
 ### Parameters
 
-| Parameter                      | Type                           | Required                       | Description                    | Example                        |
-| ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ |
-| `section_id`                   | *::Float*                      | :heavy_check_mark:             | the Id of the library to query | 1000                           |
-
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `section_key`                                                                                 | *::Integer*                                                                                   | :heavy_check_mark:                                                                            | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/> | 9518                                                                                          |
 
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::DeleteLibraryResponse)](../../models/operations/deletelibraryresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::DeleteLibraryResponse)](../../models/operations/deletelibraryresponse.md)**
+
+
 
 
 ## get_library_items
@@ -287,19 +298,29 @@ Fetches details from a specific section of the library identified by a section k
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
-    
-res = s.library.get_library_items(section_id="<value>", tag=::OpenApiSDK::Operations::Tag::GENRE, include_guids=1)
 
-if ! res.two_hundred_application_json_object.nil?
+req = ::PlexRubySDK::Operations::GetLibraryItemsRequest.new(
+  section_key: 9518,
+  tag: ::PlexRubySDK::Operations::Tag::EDITION,
+  include_guids: ::PlexRubySDK::Operations::IncludeGuids::ONE,
+  include_meta: ::PlexRubySDK::Operations::IncludeMeta::ONE,
+  type: ::PlexRubySDK::Operations::Type::TWO,
+  x_plex_container_start: 0,
+  x_plex_container_size: 50,
+)
+    
+res = s.library.get_library_items(req)
+
+if ! res.object.nil?
   # handle response
 end
 
@@ -307,21 +328,20 @@ end
 
 ### Parameters
 
-| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     | Example                                                         |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `section_id`                                                    | *::Object*                                                      | :heavy_check_mark:                                              | the Id of the library to query                                  |                                                                 |
-| `tag`                                                           | [::OpenApiSDK::Operations::Tag](../../models/operations/tag.md) | :heavy_check_mark:                                              | A key representing a specific tag within the section.           |                                                                 |
-| `include_guids`                                                 | *::Integer*                                                     | :heavy_minus_sign:                                              | Adds the Guids object to the response<br/>                      | 1                                                               |
-
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [::PlexRubySDK::Operations::GetLibraryItemsRequest](../../models/operations/getlibraryitemsrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
 
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetLibraryItemsResponse)](../../models/operations/getlibraryitemsresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetLibraryItemsResponse)](../../models/operations/getlibraryitemsresponse.md)**
 
 
-## refresh_library
 
-This endpoint Refreshes the library.
+
+## get_refresh_library_metadata
+
+This endpoint Refreshes all the Metadata of the library.
 
 
 ### Example Usage
@@ -330,17 +350,17 @@ This endpoint Refreshes the library.
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
     
-res = s.library.refresh_library(section_id=934.16)
+res = s.library.get_refresh_library_metadata(section_key=9518, force=::PlexRubySDK::Operations::Force::ONE)
 
 if res.status_code == 200
   # handle response
@@ -350,17 +370,19 @@ end
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `section_id`                     | *::Float*                        | :heavy_check_mark:               | the Id of the library to refresh |
-
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `section_key`                                                                                 | *::Integer*                                                                                   | :heavy_check_mark:                                                                            | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/> | 9518                                                                                          |
+| `force`                                                                                       | [::PlexRubySDK::Operations::Force](../../models/operations/force.md)                          | :heavy_minus_sign:                                                                            | Force the refresh even if the library is already being refreshed.                             | 0                                                                                             |
 
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::RefreshLibraryResponse)](../../models/operations/refreshlibraryresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetRefreshLibraryMetadataResponse)](../../models/operations/getrefreshlibrarymetadataresponse.md)**
 
 
-## search_library
+
+
+## get_search_library
 
 Search for content within a specific section of the library.
 
@@ -388,19 +410,19 @@ Each type in the library comes with a set of filters and sorts, aiding in buildi
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
     
-res = s.library.search_library(section_id=933505, type=::OpenApiSDK::Operations::Type::FOUR)
+res = s.library.get_search_library(section_key=9518, type=::PlexRubySDK::Operations::QueryParamType::TWO)
 
-if ! res.two_hundred_application_json_object.nil?
+if ! res.object.nil?
   # handle response
 end
 
@@ -408,18 +430,19 @@ end
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `section_id`                                                      | *::Integer*                                                       | :heavy_check_mark:                                                | the Id of the library to query                                    |
-| `type`                                                            | [::OpenApiSDK::Operations::Type](../../models/operations/type.md) | :heavy_check_mark:                                                | Plex content type to search for                                   |
-
+| Parameter                                                                                                                                                                       | Type                                                                                                                                                                            | Required                                                                                                                                                                        | Description                                                                                                                                                                     | Example                                                                                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `section_key`                                                                                                                                                                   | *::Integer*                                                                                                                                                                     | :heavy_check_mark:                                                                                                                                                              | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/>                                                                           | 9518                                                                                                                                                                            |
+| `type`                                                                                                                                                                          | [::PlexRubySDK::Operations::QueryParamType](../../models/operations/queryparamtype.md)                                                                                          | :heavy_check_mark:                                                                                                                                                              | The type of media to retrieve.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                               |
 
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::SearchLibraryResponse)](../../models/operations/searchlibraryresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetSearchLibraryResponse)](../../models/operations/getsearchlibraryresponse.md)**
 
 
-## get_metadata
+
+
+## get_meta_data_by_rating_key
 
 This endpoint will return the metadata of a library item specified with the ratingKey.
 
@@ -430,19 +453,19 @@ This endpoint will return the metadata of a library item specified with the rati
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
     
-res = s.library.get_metadata(rating_key=8382.31)
+res = s.library.get_meta_data_by_rating_key(rating_key=9518)
 
-if ! res.two_hundred_application_json_object.nil?
+if ! res.object.nil?
   # handle response
 end
 
@@ -450,14 +473,15 @@ end
 
 ### Parameters
 
-| Parameter                                             | Type                                                  | Required                                              | Description                                           |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `rating_key`                                          | *::Float*                                             | :heavy_check_mark:                                    | the id of the library item to return the children of. |
-
+| Parameter                                             | Type                                                  | Required                                              | Description                                           | Example                                               |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `rating_key`                                          | *::Integer*                                           | :heavy_check_mark:                                    | the id of the library item to return the children of. | 9518                                                  |
 
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetMetadataResponse)](../../models/operations/getmetadataresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetMetaDataByRatingKeyResponse)](../../models/operations/getmetadatabyratingkeyresponse.md)**
+
+
 
 
 ## get_metadata_children
@@ -471,11 +495,11 @@ This endpoint will return the children of of a library item specified with the r
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -483,7 +507,7 @@ s.config_security(
     
 res = s.library.get_metadata_children(rating_key=1539.14, include_elements="<value>")
 
-if ! res.two_hundred_application_json_object.nil?
+if ! res.object.nil?
   # handle response
 end
 
@@ -496,10 +520,11 @@ end
 | `rating_key`                                                            | *::Float*                                                               | :heavy_check_mark:                                                      | the id of the library item to return the children of.                   |
 | `include_elements`                                                      | *::String*                                                              | :heavy_minus_sign:                                                      | Adds additional elements to the response. Supported types are (Stream)<br/> |
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetMetadataChildrenResponse)](../../models/operations/getmetadatachildrenresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetMetadataChildrenResponse)](../../models/operations/getmetadatachildrenresponse.md)**
+
+
 
 
 ## get_top_watched_content
@@ -513,17 +538,17 @@ This endpoint will return the top watched content from libraries of a certain ty
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
     
-res = s.library.get_top_watched_content(type=505531, include_guids=1)
+res = s.library.get_top_watched_content(type=::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType::TWO, include_guids=1)
 
 if ! res.object.nil?
   # handle response
@@ -533,15 +558,16 @@ end
 
 ### Parameters
 
-| Parameter                                           | Type                                                | Required                                            | Description                                         | Example                                             |
-| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| `type`                                              | *::Integer*                                         | :heavy_check_mark:                                  | the library type (1 - movies, 2 - shows, 3 - music) |                                                     |
-| `include_guids`                                     | *::Integer*                                         | :heavy_minus_sign:                                  | Adds the Guids object to the response<br/>          | 1                                                   |
-
+| Parameter                                                                                                                                                                       | Type                                                                                                                                                                            | Required                                                                                                                                                                        | Description                                                                                                                                                                     | Example                                                                                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`                                                                                                                                                                          | [::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType](../../models/operations/gettopwatchedcontentqueryparamtype.md)                                                  | :heavy_check_mark:                                                                                                                                                              | The type of media to retrieve.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                               |
+| `include_guids`                                                                                                                                                                 | *::Integer*                                                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                              | Adds the Guids object to the response<br/>                                                                                                                                      | 1                                                                                                                                                                               |
 
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetTopWatchedContentResponse)](../../models/operations/gettopwatchedcontentresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetTopWatchedContentResponse)](../../models/operations/gettopwatchedcontentresponse.md)**
+
+
 
 
 ## get_on_deck
@@ -555,11 +581,11 @@ This endpoint will return the on deck content.
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -567,14 +593,14 @@ s.config_security(
     
 res = s.library.get_on_deck()
 
-if ! res.two_hundred_application_json_object.nil?
+if ! res.object.nil?
   # handle response
 end
 
 ```
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetOnDeckResponse)](../../models/operations/getondeckresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetOnDeckResponse)](../../models/operations/getondeckresponse.md)**
+
 

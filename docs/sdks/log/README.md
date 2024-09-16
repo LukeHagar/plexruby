@@ -1,6 +1,5 @@
 # Log
 
-
 ## Overview
 
 Submit logs to the Log Handler for Plex Media Server
@@ -23,17 +22,17 @@ This endpoint will write a single-line log message, including a level and source
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
     
-res = s.log.log_line(level=::OpenApiSDK::Operations::Level::THREE, message="Test log message", source="Postman")
+res = s.log.log_line(level=::PlexRubySDK::Operations::Level::THREE, message="Test log message", source="Postman")
 
 if res.status_code == 200
   # handle response
@@ -45,14 +44,15 @@ end
 
 | Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   | Example                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `level`                                                                                                       | [::OpenApiSDK::Operations::Level](../../models/operations/level.md)                                           | :heavy_check_mark:                                                                                            | An integer log level to write to the PMS log with.  <br/>0: Error  <br/>1: Warning  <br/>2: Info  <br/>3: Debug  <br/>4: Verbose<br/> |                                                                                                               |
+| `level`                                                                                                       | [::PlexRubySDK::Operations::Level](../../models/operations/level.md)                                          | :heavy_check_mark:                                                                                            | An integer log level to write to the PMS log with.  <br/>0: Error  <br/>1: Warning  <br/>2: Info  <br/>3: Debug  <br/>4: Verbose<br/> |                                                                                                               |
 | `message`                                                                                                     | *::String*                                                                                                    | :heavy_check_mark:                                                                                            | The text of the message to write to the log.                                                                  | Test log message                                                                                              |
 | `source`                                                                                                      | *::String*                                                                                                    | :heavy_check_mark:                                                                                            | a string indicating the source of the message.                                                                | Postman                                                                                                       |
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::LogLineResponse)](../../models/operations/loglineresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::LogLineResponse)](../../models/operations/loglineresponse.md)**
+
+
 
 
 ## log_multi_line
@@ -86,11 +86,11 @@ Ensure each parameter is properly URL-encoded to avoid interpretation issues.
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -114,10 +114,11 @@ end
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
 | `request`                                  | [::String](../../models//.md)              | :heavy_check_mark:                         | The request object to use for the request. |
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::LogMultiLineResponse)](../../models/operations/logmultilineresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::LogMultiLineResponse)](../../models/operations/logmultilineresponse.md)**
+
+
 
 
 ## enable_paper_trail
@@ -131,11 +132,11 @@ This endpoint will enable all Plex Media Serverlogs to be sent to the Papertrail
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -149,8 +150,8 @@ end
 
 ```
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::EnablePaperTrailResponse)](../../models/operations/enablepapertrailresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::EnablePaperTrailResponse)](../../models/operations/enablepapertrailresponse.md)**
+
 

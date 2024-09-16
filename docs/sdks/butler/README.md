@@ -1,6 +1,5 @@
 # Butler
 
-
 ## Overview
 
 Butler is the task manager of the Plex Media Server Ecosystem.
@@ -24,11 +23,11 @@ Returns a list of butler tasks
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -36,16 +35,17 @@ s.config_security(
     
 res = s.butler.get_butler_tasks()
 
-if ! res.two_hundred_application_json_object.nil?
+if ! res.object.nil?
   # handle response
 end
 
 ```
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::GetButlerTasksResponse)](../../models/operations/getbutlertasksresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetButlerTasksResponse)](../../models/operations/getbutlertasksresponse.md)**
+
+
 
 
 ## start_all_tasks
@@ -63,11 +63,11 @@ This endpoint will attempt to start all Butler tasks that are enabled in the set
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -81,10 +81,11 @@ end
 
 ```
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::StartAllTasksResponse)](../../models/operations/startalltasksresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::StartAllTasksResponse)](../../models/operations/startalltasksresponse.md)**
+
+
 
 
 ## stop_all_tasks
@@ -98,11 +99,11 @@ This endpoint will stop all currently running tasks and remove any scheduled tas
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
@@ -116,10 +117,11 @@ end
 
 ```
 
-
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::StopAllTasksResponse)](../../models/operations/stopalltasksresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::StopAllTasksResponse)](../../models/operations/stopalltasksresponse.md)**
+
+
 
 
 ## start_task
@@ -137,17 +139,17 @@ This endpoint will attempt to start a single Butler task that is enabled in the 
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
     
-res = s.butler.start_task(task_name=::OpenApiSDK::Operations::TaskName::CLEAN_OLD_BUNDLES)
+res = s.butler.start_task(task_name=::PlexRubySDK::Operations::TaskName::CLEAN_OLD_BUNDLES)
 
 if res.status_code == 200
   # handle response
@@ -157,14 +159,15 @@ end
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `task_name`                                                               | [::OpenApiSDK::Operations::TaskName](../../models/operations/taskname.md) | :heavy_check_mark:                                                        | the name of the task to be started.                                       |
-
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `task_name`                                                                | [::PlexRubySDK::Operations::TaskName](../../models/operations/taskname.md) | :heavy_check_mark:                                                         | the name of the task to be started.                                        |
 
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::StartTaskResponse)](../../models/operations/starttaskresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::StartTaskResponse)](../../models/operations/starttaskresponse.md)**
+
+
 
 
 ## stop_task
@@ -178,17 +181,17 @@ This endpoint will stop a currently running task by name, or remove it from the 
 require 'plexruby'
 
 
-s = ::OpenApiSDK::PlexAPI.new(
-      x_plex_client_identifier: "Postman",
+s = ::PlexRubySDK::PlexAPI.new(
+      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
     )
 s.config_security(
-  ::OpenApiSDK::Shared::Security.new(
+  ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
   )
 )
 
     
-res = s.butler.stop_task(task_name=::OpenApiSDK::Operations::PathParamTaskName::BACKUP_DATABASE)
+res = s.butler.stop_task(task_name=::PlexRubySDK::Operations::PathParamTaskName::BACKUP_DATABASE)
 
 if res.status_code == 200
   # handle response
@@ -198,12 +201,12 @@ end
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `task_name`                                                                                 | [::OpenApiSDK::Operations::PathParamTaskName](../../models/operations/pathparamtaskname.md) | :heavy_check_mark:                                                                          | The name of the task to be started.                                                         |
-
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `task_name`                                                                                  | [::PlexRubySDK::Operations::PathParamTaskName](../../models/operations/pathparamtaskname.md) | :heavy_check_mark:                                                                           | The name of the task to be started.                                                          |
 
 ### Response
 
-**[T.nilable(::OpenApiSDK::Operations::StopTaskResponse)](../../models/operations/stoptaskresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::StopTaskResponse)](../../models/operations/stoptaskresponse.md)**
+
 
