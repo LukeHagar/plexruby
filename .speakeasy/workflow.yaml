@@ -7,7 +7,7 @@ sources:
 targets:
     plexruby:
         target: ruby
-        source: my-source
+        source: plexapi
         publish:
             rubygems:
                 token: $rubygems_auth_token
