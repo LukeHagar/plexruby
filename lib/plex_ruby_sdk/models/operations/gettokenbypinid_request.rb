@@ -20,13 +20,13 @@ module PlexRubySDK
       # This is used to track the client application and its usage
       # (UUID, serial number, or other number unique per device)
       # 
-      field :x_plex_client_identifier, T.nilable(::String), { 'query_param': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'form', 'explode': true } }
+      field :client_id, T.nilable(::String), { 'query_param': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'form', 'explode': true } }
 
 
-      sig { params(pin_id: ::Integer, x_plex_client_identifier: T.nilable(::String)).void }
-      def initialize(pin_id: nil, x_plex_client_identifier: nil)
+      sig { params(pin_id: ::Integer, client_id: T.nilable(::String)).void }
+      def initialize(pin_id: nil, client_id: nil)
         @pin_id = pin_id
-        @x_plex_client_identifier = x_plex_client_identifier
+        @client_id = client_id
       end
     end
   end

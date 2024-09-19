@@ -24,7 +24,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -68,7 +72,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -109,7 +117,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -150,11 +162,15 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 
     
-res = s.authentication.post_users_sign_in_data(x_plex_client_identifier="gcgzw5rz2xovp84b4vha3a40", request_body=::PlexRubySDK::Operations::PostUsersSignInDataRequestBody.new(
+res = s.authentication.post_users_sign_in_data(client_id="gcgzw5rz2xovp84b4vha3a40", request_body=::PlexRubySDK::Operations::PostUsersSignInDataRequestBody.new(
   login: "username@email.com",
   password: "password123",
   verification_code: "123456",
@@ -170,7 +186,7 @@ end
 
 | Parameter                                                                                                                                                             | Type                                                                                                                                                                  | Required                                                                                                                                                              | Description                                                                                                                                                           | Example                                                                                                                                                               |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `x_plex_client_identifier`                                                                                                                                            | *::String*                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                    | The unique identifier for the client application<br/>This is used to track the client application and its usage<br/>(UUID, serial number, or other number unique per device)<br/> | gcgzw5rz2xovp84b4vha3a40                                                                                                                                              |
+| `client_id`                                                                                                                                                           | *::String*                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                    | The unique identifier for the client application<br/>This is used to track the client application and its usage<br/>(UUID, serial number, or other number unique per device)<br/> | gcgzw5rz2xovp84b4vha3a40                                                                                                                                              |
 | `request_body`                                                                                                                                                        | [::PlexRubySDK::Operations::PostUsersSignInDataRequestBody](../../models/operations/postuserssignindatarequestbody.md)                                                | :heavy_minus_sign:                                                                                                                                                    | Login credentials                                                                                                                                                     |                                                                                                                                                                       |
 | `server_url`                                                                                                                                                          | *String*                                                                                                                                                              | :heavy_minus_sign:                                                                                                                                                    | An optional server URL to use.                                                                                                                                        | http://localhost:8080                                                                                                                                                 |
 

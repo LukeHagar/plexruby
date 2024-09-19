@@ -43,7 +43,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -228,7 +232,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -249,21 +257,25 @@ end
 <!-- Start Global Parameters [global-parameters] -->
 ## Global Parameters
 
-A parameter is configured globally. This parameter may be set on the SDK client instance itself during initialization. When configured as an option during SDK initialization, This global value will be used as the default on the operations that use it. When such operations are called, there is a place in each to override the global value, if needed.
+Certain parameters are configured globally. These parameters may be set on the SDK client instance itself during initialization. When configured as an option during SDK initialization, These global values will be used as defaults on the operations that use them. When such operations are called, there is a place in each to override the global value, if needed.
 
-For example, you can set `X-Plex-Client-Identifier` to `"gcgzw5rz2xovp84b4vha3a40"` at SDK initialization and then you do not have to pass the same value on calls to operations like `get_server_resources`. But if you want to do so you may, which will locally override the global setting. See the example code below for a demonstration.
+For example, you can set `ClientID` to `"gcgzw5rz2xovp84b4vha3a40"` at SDK initialization and then you do not have to pass the same value on calls to operations like `get_server_resources`. But if you want to do so you may, which will locally override the global setting. See the example code below for a demonstration.
 
 
 ### Available Globals
 
-The following global parameter is available.
+The following global parameters are available.
 
 | Name | Type | Required | Description |
 | ---- | ---- |:--------:| ----------- |
-| x_plex_client_identifier | ::String |  | The unique identifier for the client application
+| client_id | ::String |  | The unique identifier for the client application
 This is used to track the client application and its usage
 (UUID, serial number, or other number unique per device)
  |
+| client_name | ::String |  | The client_name parameter. |
+| client_version | ::String |  | The client_version parameter. |
+| client_platform | ::String |  | The client_platform parameter. |
+| device_name | ::String |  | The device_name parameter. |
 
 
 ### Example
@@ -273,7 +285,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -282,7 +298,7 @@ s.config_security(
 )
 
     
-res = s.plex.get_server_resources(x_plex_client_identifier="gcgzw5rz2xovp84b4vha3a40", include_https=::PlexRubySDK::Operations::IncludeHttps::ONE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ONE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ONE)
+res = s.plex.get_server_resources(client_id="gcgzw5rz2xovp84b4vha3a40", include_https=::PlexRubySDK::Operations::IncludeHttps::ONE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ONE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ONE)
 
 if ! res.plex_devices.nil?
   # handle response

@@ -35,12 +35,12 @@ module PlexRubySDK
 
       field :trusted, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('trusted') } }
 
-      field :auth_token, T.nilable(::Object), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('authToken') } }
+      field :auth_token, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('authToken') } }
 
       field :new_registration, T.nilable(::Object), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('newRegistration') } }
 
 
-      sig { params(client_identifier: ::String, code: ::String, created_at: ::DateTime, expires_at: ::DateTime, expires_in: ::Integer, id: ::Integer, location: ::PlexRubySDK::Operations::GeoData, product: ::String, qr: ::String, trusted: T::Boolean, auth_token: T.nilable(::Object), new_registration: T.nilable(::Object)).void }
+      sig { params(client_identifier: ::String, code: ::String, created_at: ::DateTime, expires_at: ::DateTime, expires_in: ::Integer, id: ::Integer, location: ::PlexRubySDK::Operations::GeoData, product: ::String, qr: ::String, trusted: T::Boolean, auth_token: T.nilable(::String), new_registration: T.nilable(::Object)).void }
       def initialize(client_identifier: nil, code: nil, created_at: nil, expires_at: nil, expires_in: nil, id: nil, location: nil, product: nil, qr: nil, trusted: nil, auth_token: nil, new_registration: nil)
         @client_identifier = client_identifier
         @code = code

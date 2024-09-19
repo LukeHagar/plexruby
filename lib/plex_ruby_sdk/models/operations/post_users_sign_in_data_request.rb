@@ -14,19 +14,19 @@ module PlexRubySDK
     class PostUsersSignInDataRequest < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
-      # Login credentials
-      field :request_body, T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataRequestBody), { 'request': { 'media_type': 'application/x-www-form-urlencoded' } }
       # The unique identifier for the client application
       # This is used to track the client application and its usage
       # (UUID, serial number, or other number unique per device)
       # 
-      field :x_plex_client_identifier, T.nilable(::String), { 'query_param': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'form', 'explode': true } }
+      field :client_id, T.nilable(::String), { 'query_param': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'form', 'explode': true } }
+      # Login credentials
+      field :request_body, T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataRequestBody), { 'request': { 'media_type': 'application/x-www-form-urlencoded' } }
 
 
-      sig { params(request_body: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataRequestBody), x_plex_client_identifier: T.nilable(::String)).void }
-      def initialize(request_body: nil, x_plex_client_identifier: nil)
+      sig { params(client_id: T.nilable(::String), request_body: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataRequestBody)).void }
+      def initialize(client_id: nil, request_body: nil)
+        @client_id = client_id
         @request_body = request_body
-        @x_plex_client_identifier = x_plex_client_identifier
       end
     end
   end

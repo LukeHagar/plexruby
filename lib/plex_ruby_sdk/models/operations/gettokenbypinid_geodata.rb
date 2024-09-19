@@ -31,14 +31,14 @@ module PlexRubySDK
       # Indicates if the region has privacy restrictions.
       field :in_privacy_restricted_region, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('in_privacy_restricted_region') } }
       # The postal code of the location.
-      field :postal_code, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('postal_code') } }
+      field :postal_code, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('postal_code') } }
       # The name of the primary administrative subdivision.
       field :subdivisions, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subdivisions') } }
       # The time zone of the country.
       field :time_zone, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('time_zone') } }
 
 
-      sig { params(city: ::String, code: ::String, continent_code: ::String, coordinates: ::String, country: ::String, european_union_member: T::Boolean, in_privacy_restricted_country: T::Boolean, in_privacy_restricted_region: T::Boolean, postal_code: ::Integer, subdivisions: ::String, time_zone: ::String).void }
+      sig { params(city: ::String, code: ::String, continent_code: ::String, coordinates: ::String, country: ::String, european_union_member: T::Boolean, in_privacy_restricted_country: T::Boolean, in_privacy_restricted_region: T::Boolean, postal_code: ::String, subdivisions: ::String, time_zone: ::String).void }
       def initialize(city: nil, code: nil, continent_code: nil, coordinates: nil, country: nil, european_union_member: nil, in_privacy_restricted_country: nil, in_privacy_restricted_region: nil, postal_code: nil, subdivisions: nil, time_zone: nil)
         @city = city
         @code = code

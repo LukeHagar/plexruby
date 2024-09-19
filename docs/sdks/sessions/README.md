@@ -23,7 +23,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -58,7 +62,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -102,7 +110,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -137,7 +149,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(

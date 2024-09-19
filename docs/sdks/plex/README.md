@@ -26,7 +26,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -67,7 +71,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -108,7 +116,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 
     
@@ -144,7 +156,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -179,7 +195,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -188,7 +208,7 @@ s.config_security(
 )
 
     
-res = s.plex.get_server_resources(x_plex_client_identifier="gcgzw5rz2xovp84b4vha3a40", include_https=::PlexRubySDK::Operations::IncludeHttps::ONE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ONE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ONE)
+res = s.plex.get_server_resources(client_id="gcgzw5rz2xovp84b4vha3a40", include_https=::PlexRubySDK::Operations::IncludeHttps::ONE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ONE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ONE)
 
 if ! res.plex_devices.nil?
   # handle response
@@ -200,7 +220,7 @@ end
 
 | Parameter                                                                                                                                                             | Type                                                                                                                                                                  | Required                                                                                                                                                              | Description                                                                                                                                                           | Example                                                                                                                                                               |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `x_plex_client_identifier`                                                                                                                                            | *::String*                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                    | The unique identifier for the client application<br/>This is used to track the client application and its usage<br/>(UUID, serial number, or other number unique per device)<br/> | gcgzw5rz2xovp84b4vha3a40                                                                                                                                              |
+| `client_id`                                                                                                                                                           | *::String*                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                    | The unique identifier for the client application<br/>This is used to track the client application and its usage<br/>(UUID, serial number, or other number unique per device)<br/> | gcgzw5rz2xovp84b4vha3a40                                                                                                                                              |
 | `include_https`                                                                                                                                                       | [::PlexRubySDK::Operations::IncludeHttps](../../models/operations/includehttps.md)                                                                                    | :heavy_minus_sign:                                                                                                                                                    | Include Https entries in the results                                                                                                                                  | 1                                                                                                                                                                     |
 | `include_relay`                                                                                                                                                       | [::PlexRubySDK::Operations::IncludeRelay](../../models/operations/includerelay.md)                                                                                    | :heavy_minus_sign:                                                                                                                                                    | Include Relay addresses in the results <br/>E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400<br/>                                            | 1                                                                                                                                                                     |
 | `include_i_pv6`                                                                                                                                                       | [::PlexRubySDK::Operations::IncludeIPv6](../../models/operations/includeipv6.md)                                                                                      | :heavy_minus_sign:                                                                                                                                                    | Include IPv6 entries in the results                                                                                                                                   | 1                                                                                                                                                                     |
@@ -215,7 +235,7 @@ end
 
 ## get_pin
 
-Retrieve a Pin from Plex.tv for authentication flows
+Retrieve a Pin ID from Plex.tv to use for authentication flows
 
 ### Example Usage
 
@@ -224,11 +244,17 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 
+
+req = ::PlexRubySDK::Operations::GetPinRequest.new()
     
-res = s.plex.get_pin(strong=false, x_plex_client_identifier="gcgzw5rz2xovp84b4vha3a40", x_plex_product="Plex Web")
+res = s.plex.get_pin(req)
 
 if ! res.auth_pin_container.nil?
   # handle response
@@ -238,12 +264,10 @@ end
 
 ### Parameters
 
-| Parameter                                                                                                                                                             | Type                                                                                                                                                                  | Required                                                                                                                                                              | Description                                                                                                                                                           | Example                                                                                                                                                               |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `strong`                                                                                                                                                              | *T::Boolean*                                                                                                                                                          | :heavy_minus_sign:                                                                                                                                                    | Determines the kind of code returned by the API call<br/>Strong codes are used for Pin authentication flows<br/>Non-Strong codes are used for `Plex.tv/link`<br/>     |                                                                                                                                                                       |
-| `x_plex_client_identifier`                                                                                                                                            | *::String*                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                    | The unique identifier for the client application<br/>This is used to track the client application and its usage<br/>(UUID, serial number, or other number unique per device)<br/> | gcgzw5rz2xovp84b4vha3a40                                                                                                                                              |
-| `x_plex_product`                                                                                                                                                      | *::String*                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                    | N/A                                                                                                                                                                   | Plex Web                                                                                                                                                              |
-| `server_url`                                                                                                                                                          | *String*                                                                                                                                                              | :heavy_minus_sign:                                                                                                                                                    | An optional server URL to use.                                                                                                                                        | http://localhost:8080                                                                                                                                                 |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [::PlexRubySDK::Operations::GetPinRequest](../../models/operations/getpinrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `server_url`                                                                         | *String*                                                                             | :heavy_minus_sign:                                                                   | An optional server URL to use.                                                       |
 
 ### Response
 
@@ -263,11 +287,15 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      x_plex_client_identifier: "gcgzw5rz2xovp84b4vha3a40",
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
     )
 
     
-res = s.plex.get_token_by_pin_id(pin_id=408895, x_plex_client_identifier="gcgzw5rz2xovp84b4vha3a40")
+res = s.plex.get_token_by_pin_id(pin_id=408895, client_id="gcgzw5rz2xovp84b4vha3a40")
 
 if ! res.auth_pin_container.nil?
   # handle response
@@ -280,7 +308,7 @@ end
 | Parameter                                                                                                                                                             | Type                                                                                                                                                                  | Required                                                                                                                                                              | Description                                                                                                                                                           | Example                                                                                                                                                               |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `pin_id`                                                                                                                                                              | *::Integer*                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                    | The PinID to retrieve an access token for                                                                                                                             |                                                                                                                                                                       |
-| `x_plex_client_identifier`                                                                                                                                            | *::String*                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                    | The unique identifier for the client application<br/>This is used to track the client application and its usage<br/>(UUID, serial number, or other number unique per device)<br/> | gcgzw5rz2xovp84b4vha3a40                                                                                                                                              |
+| `client_id`                                                                                                                                                           | *::String*                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                    | The unique identifier for the client application<br/>This is used to track the client application and its usage<br/>(UUID, serial number, or other number unique per device)<br/> | gcgzw5rz2xovp84b4vha3a40                                                                                                                                              |
 | `server_url`                                                                                                                                                          | *String*                                                                                                                                                              | :heavy_minus_sign:                                                                                                                                                    | An optional server URL to use.                                                                                                                                        | http://localhost:8080                                                                                                                                                 |
 
 ### Response

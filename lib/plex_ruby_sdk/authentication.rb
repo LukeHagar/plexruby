@@ -162,13 +162,13 @@ module PlexRubySDK
     end
 
 
-    sig { params(x_plex_client_identifier: T.nilable(::String), request_body: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataRequestBody), server_url: T.nilable(String)).returns(::PlexRubySDK::Operations::PostUsersSignInDataResponse) }
-    def post_users_sign_in_data(x_plex_client_identifier = nil, request_body = nil, server_url = nil)
+    sig { params(client_id: T.nilable(::String), request_body: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataRequestBody), server_url: T.nilable(String)).returns(::PlexRubySDK::Operations::PostUsersSignInDataResponse) }
+    def post_users_sign_in_data(client_id = nil, request_body = nil, server_url = nil)
       # post_users_sign_in_data - Get User Sign In Data
       # Sign in user with username and password and return user data with Plex authentication token
       request = ::PlexRubySDK::Operations::PostUsersSignInDataRequest.new(
         
-        x_plex_client_identifier: x_plex_client_identifier,
+        client_id: client_id,
         request_body: request_body
       )
       base_url = Utils.template_url(POST_USERS_SIGN_IN_DATA_SERVERS[0], {
