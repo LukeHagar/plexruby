@@ -12,12 +12,12 @@ module PlexRubySDK
       extend T::Sig
 
 
-      field :id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+      field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
 
-      field :path, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('path') } }
+      field :path, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('path') } }
 
 
-      sig { params(id: T.nilable(::Integer), path: T.nilable(::String)).void }
+      sig { params(id: ::Integer, path: ::String).void }
       def initialize(id: nil, path: nil)
         @id = id
         @path = path

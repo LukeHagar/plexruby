@@ -13,8 +13,8 @@ module PlexRubySDK
     # IncludeHttps - Include Https entries in the results
     class IncludeHttps < T::Enum
       enums do
-        ZERO = new(0)
-        ONE = new(1)
+        DISABLE = new(0)
+        ENABLE = new(1)
       end
     end
   end

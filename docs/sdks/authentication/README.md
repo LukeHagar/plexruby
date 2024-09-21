@@ -85,7 +85,7 @@ s.config_security(
 )
 
     
-res = s.authentication.get_source_connection_information(source="server://client-identifier")
+res = s.authentication.get_source_connection_information(source="provider://provider-identifier")
 
 if res.status_code == 200
   # handle response
@@ -169,12 +169,14 @@ s = ::PlexRubySDK::PlexAPI.new(
       device_name: "Linux",
     )
 
-    
-res = s.authentication.post_users_sign_in_data(client_id="gcgzw5rz2xovp84b4vha3a40", request_body=::PlexRubySDK::Operations::PostUsersSignInDataRequestBody.new(
+
+req = ::PlexRubySDK::Operations::PostUsersSignInDataRequestBody.new(
   login: "username@email.com",
   password: "password123",
   verification_code: "123456",
-))
+)
+    
+res = s.authentication.post_users_sign_in_data(req)
 
 if ! res.user_plex_account.nil?
   # handle response
@@ -184,11 +186,10 @@ end
 
 ### Parameters
 
-| Parameter                                                                                                                                                             | Type                                                                                                                                                                  | Required                                                                                                                                                              | Description                                                                                                                                                           | Example                                                                                                                                                               |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `client_id`                                                                                                                                                           | *::String*                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                    | The unique identifier for the client application<br/>This is used to track the client application and its usage<br/>(UUID, serial number, or other number unique per device)<br/> | gcgzw5rz2xovp84b4vha3a40                                                                                                                                              |
-| `request_body`                                                                                                                                                        | [::PlexRubySDK::Operations::PostUsersSignInDataRequestBody](../../models/operations/postuserssignindatarequestbody.md)                                                | :heavy_minus_sign:                                                                                                                                                    | Login credentials                                                                                                                                                     |                                                                                                                                                                       |
-| `server_url`                                                                                                                                                          | *String*                                                                                                                                                              | :heavy_minus_sign:                                                                                                                                                    | An optional server URL to use.                                                                                                                                        | http://localhost:8080                                                                                                                                                 |
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                              | [::PlexRubySDK::Operations::PostUsersSignInDataRequestBody](../../models/operations/postuserssignindatarequestbody.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| `server_url`                                                                                                           | *String*                                                                                                               | :heavy_minus_sign:                                                                                                     | An optional server URL to use.                                                                                         |
 
 ### Response
 

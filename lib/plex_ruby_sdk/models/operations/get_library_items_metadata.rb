@@ -12,6 +12,22 @@ module PlexRubySDK
       extend T::Sig
 
 
+      field :duration, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
+
+      field :guid, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('guid') } }
+
+      field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+      field :media, T::Array[::PlexRubySDK::Operations::GetLibraryItemsMedia], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Media') } }
+
+      field :rating_key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingKey') } }
+
+      field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+
+      field :year, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('year') } }
+
       field :added_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('addedAt') } }
 
       field :art, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('art') } }
@@ -30,8 +46,6 @@ module PlexRubySDK
 
       field :director, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsDirector]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Director') } }
 
-      field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
-
       field :genre, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsGenre]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Genre') } }
 
       field :grandparent_art, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentArt') } }
@@ -48,21 +62,18 @@ module PlexRubySDK
 
       field :grandparent_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentTitle') } }
 
-      field :guid, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('guid') } }
-
       field :has_premium_extras, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasPremiumExtras') } }
 
       field :has_premium_primary_extra, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasPremiumPrimaryExtra') } }
 
       field :index, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('index') } }
 
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
       field :last_viewed_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('lastViewedAt') } }
 
       field :leaf_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('leafCount') } }
-
-      field :media, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsMedia]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Media') } }
+      # The Guid object is only included in the response if the `includeGuids` parameter is set to `1`.
+      # 
+      field :media_guid, T.nilable(T::Array[::PlexRubySDK::Operations::MediaGuid]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Guid') } }
 
       field :originally_available_at, T.nilable(::Date), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originallyAvailableAt'), 'decoder': Utils.date_from_iso_format(true) } }
 
@@ -92,8 +103,6 @@ module PlexRubySDK
 
       field :rating_image, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingImage') } }
 
-      field :rating_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingKey') } }
-
       field :role, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsRole]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Role') } }
 
       field :skip_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('skipCount') } }
@@ -108,11 +117,7 @@ module PlexRubySDK
 
       field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
 
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-
       field :title_sort, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('titleSort') } }
-
-      field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
 
       field :updated_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('updatedAt') } }
 
@@ -124,11 +129,17 @@ module PlexRubySDK
 
       field :writer, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsWriter]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Writer') } }
 
-      field :year, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('year') } }
 
-
-      sig { params(added_at: T.nilable(::Integer), art: T.nilable(::String), audience_rating: T.nilable(::Float), audience_rating_image: T.nilable(::String), chapter_source: T.nilable(::String), child_count: T.nilable(::Integer), content_rating: T.nilable(::String), country: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsCountry]), director: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsDirector]), duration: T.nilable(::Integer), genre: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsGenre]), grandparent_art: T.nilable(::String), grandparent_guid: T.nilable(::String), grandparent_key: T.nilable(::String), grandparent_rating_key: T.nilable(::String), grandparent_theme: T.nilable(::String), grandparent_thumb: T.nilable(::String), grandparent_title: T.nilable(::String), guid: T.nilable(::String), has_premium_extras: T.nilable(::String), has_premium_primary_extra: T.nilable(::String), index: T.nilable(::Integer), key: T.nilable(::String), last_viewed_at: T.nilable(::Integer), leaf_count: T.nilable(::Integer), media: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsMedia]), originally_available_at: T.nilable(::Date), original_title: T.nilable(::String), parent_guid: T.nilable(::String), parent_index: T.nilable(::Integer), parent_key: T.nilable(::String), parent_rating_key: T.nilable(::String), parent_studio: T.nilable(::String), parent_theme: T.nilable(::String), parent_thumb: T.nilable(::String), parent_title: T.nilable(::String), parent_year: T.nilable(::Integer), primary_extra_key: T.nilable(::String), rating: T.nilable(::Float), rating_image: T.nilable(::String), rating_key: T.nilable(::String), role: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsRole]), skip_count: T.nilable(::Integer), studio: T.nilable(::String), summary: T.nilable(::String), tagline: T.nilable(::String), theme: T.nilable(::String), thumb: T.nilable(::String), title: T.nilable(::String), title_sort: T.nilable(::String), type: T.nilable(::String), updated_at: T.nilable(::Integer), view_count: T.nilable(::Integer), viewed_leaf_count: T.nilable(::Integer), view_offset: T.nilable(::Integer), writer: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsWriter]), year: T.nilable(::Integer)).void }
-      def initialize(added_at: nil, art: nil, audience_rating: nil, audience_rating_image: nil, chapter_source: nil, child_count: nil, content_rating: nil, country: nil, director: nil, duration: nil, genre: nil, grandparent_art: nil, grandparent_guid: nil, grandparent_key: nil, grandparent_rating_key: nil, grandparent_theme: nil, grandparent_thumb: nil, grandparent_title: nil, guid: nil, has_premium_extras: nil, has_premium_primary_extra: nil, index: nil, key: nil, last_viewed_at: nil, leaf_count: nil, media: nil, originally_available_at: nil, original_title: nil, parent_guid: nil, parent_index: nil, parent_key: nil, parent_rating_key: nil, parent_studio: nil, parent_theme: nil, parent_thumb: nil, parent_title: nil, parent_year: nil, primary_extra_key: nil, rating: nil, rating_image: nil, rating_key: nil, role: nil, skip_count: nil, studio: nil, summary: nil, tagline: nil, theme: nil, thumb: nil, title: nil, title_sort: nil, type: nil, updated_at: nil, view_count: nil, viewed_leaf_count: nil, view_offset: nil, writer: nil, year: nil)
+      sig { params(duration: ::Integer, guid: ::String, key: ::String, media: T::Array[::PlexRubySDK::Operations::GetLibraryItemsMedia], rating_key: ::String, title: ::String, type: ::String, year: ::Integer, added_at: T.nilable(::Integer), art: T.nilable(::String), audience_rating: T.nilable(::Float), audience_rating_image: T.nilable(::String), chapter_source: T.nilable(::String), child_count: T.nilable(::Integer), content_rating: T.nilable(::String), country: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsCountry]), director: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsDirector]), genre: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsGenre]), grandparent_art: T.nilable(::String), grandparent_guid: T.nilable(::String), grandparent_key: T.nilable(::String), grandparent_rating_key: T.nilable(::String), grandparent_theme: T.nilable(::String), grandparent_thumb: T.nilable(::String), grandparent_title: T.nilable(::String), has_premium_extras: T.nilable(::String), has_premium_primary_extra: T.nilable(::String), index: T.nilable(::Integer), last_viewed_at: T.nilable(::Integer), leaf_count: T.nilable(::Integer), media_guid: T.nilable(T::Array[::PlexRubySDK::Operations::MediaGuid]), originally_available_at: T.nilable(::Date), original_title: T.nilable(::String), parent_guid: T.nilable(::String), parent_index: T.nilable(::Integer), parent_key: T.nilable(::String), parent_rating_key: T.nilable(::String), parent_studio: T.nilable(::String), parent_theme: T.nilable(::String), parent_thumb: T.nilable(::String), parent_title: T.nilable(::String), parent_year: T.nilable(::Integer), primary_extra_key: T.nilable(::String), rating: T.nilable(::Float), rating_image: T.nilable(::String), role: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsRole]), skip_count: T.nilable(::Integer), studio: T.nilable(::String), summary: T.nilable(::String), tagline: T.nilable(::String), theme: T.nilable(::String), thumb: T.nilable(::String), title_sort: T.nilable(::String), updated_at: T.nilable(::Integer), view_count: T.nilable(::Integer), viewed_leaf_count: T.nilable(::Integer), view_offset: T.nilable(::Integer), writer: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsWriter])).void }
+      def initialize(duration: nil, guid: nil, key: nil, media: nil, rating_key: nil, title: nil, type: nil, year: nil, added_at: nil, art: nil, audience_rating: nil, audience_rating_image: nil, chapter_source: nil, child_count: nil, content_rating: nil, country: nil, director: nil, genre: nil, grandparent_art: nil, grandparent_guid: nil, grandparent_key: nil, grandparent_rating_key: nil, grandparent_theme: nil, grandparent_thumb: nil, grandparent_title: nil, has_premium_extras: nil, has_premium_primary_extra: nil, index: nil, last_viewed_at: nil, leaf_count: nil, media_guid: nil, originally_available_at: nil, original_title: nil, parent_guid: nil, parent_index: nil, parent_key: nil, parent_rating_key: nil, parent_studio: nil, parent_theme: nil, parent_thumb: nil, parent_title: nil, parent_year: nil, primary_extra_key: nil, rating: nil, rating_image: nil, role: nil, skip_count: nil, studio: nil, summary: nil, tagline: nil, theme: nil, thumb: nil, title_sort: nil, updated_at: nil, view_count: nil, viewed_leaf_count: nil, view_offset: nil, writer: nil)
+        @duration = duration
+        @guid = guid
+        @key = key
+        @media = media
+        @rating_key = rating_key
+        @title = title
+        @type = type
+        @year = year
         @added_at = added_at
         @art = art
         @audience_rating = audience_rating
@@ -138,7 +149,6 @@ module PlexRubySDK
         @content_rating = content_rating
         @country = country
         @director = director
-        @duration = duration
         @genre = genre
         @grandparent_art = grandparent_art
         @grandparent_guid = grandparent_guid
@@ -147,14 +157,12 @@ module PlexRubySDK
         @grandparent_theme = grandparent_theme
         @grandparent_thumb = grandparent_thumb
         @grandparent_title = grandparent_title
-        @guid = guid
         @has_premium_extras = has_premium_extras
         @has_premium_primary_extra = has_premium_primary_extra
         @index = index
-        @key = key
         @last_viewed_at = last_viewed_at
         @leaf_count = leaf_count
-        @media = media
+        @media_guid = media_guid
         @originally_available_at = originally_available_at
         @original_title = original_title
         @parent_guid = parent_guid
@@ -169,7 +177,6 @@ module PlexRubySDK
         @primary_extra_key = primary_extra_key
         @rating = rating
         @rating_image = rating_image
-        @rating_key = rating_key
         @role = role
         @skip_count = skip_count
         @studio = studio
@@ -177,15 +184,12 @@ module PlexRubySDK
         @tagline = tagline
         @theme = theme
         @thumb = thumb
-        @title = title
         @title_sort = title_sort
-        @type = type
         @updated_at = updated_at
         @view_count = view_count
         @viewed_leaf_count = viewed_leaf_count
         @view_offset = view_offset
         @writer = writer
-        @year = year
       end
     end
   end

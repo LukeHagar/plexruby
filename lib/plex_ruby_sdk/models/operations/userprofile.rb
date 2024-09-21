@@ -14,32 +14,32 @@ module PlexRubySDK
     class UserProfile < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
+      # If the account has automatically select audio and subtitle tracks enabled
+      field :auto_select_audio, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('autoSelectAudio') } }
+
+      field :auto_select_subtitle, ::PlexRubySDK::Operations::AutoSelectSubtitle, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('autoSelectSubtitle'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::AutoSelectSubtitle, false) } }
       # The preferred audio language for the account
       field :default_audio_language, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('defaultAudioLanguage') } }
+
+      field :default_subtitle_accessibility, ::PlexRubySDK::Operations::DefaultSubtitleAccessibility, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('defaultSubtitleAccessibility'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::DefaultSubtitleAccessibility, false) } }
+
+      field :default_subtitle_forced, ::PlexRubySDK::Operations::DefaultSubtitleForced, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('defaultSubtitleForced'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::DefaultSubtitleForced, false) } }
       # The preferred subtitle language for the account
       field :default_subtitle_language, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('defaultSubtitleLanguage') } }
-      # If the account has automatically select audio and subtitle tracks enabled
-      field :auto_select_audio, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('autoSelectAudio') } }
-      # The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)
-      field :auto_select_subtitle, T.nilable(::PlexRubySDK::Operations::AutoSelectSubtitle), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('autoSelectSubtitle'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::AutoSelectSubtitle, true) } }
-      # The subtitles for the deaf or hard-of-hearing (SDH) searches mode (0 = Prefer non-SDH subtitles, 1 = Prefer SDH subtitles, 2 = Only show SDH subtitles, 3 = Only shown non-SDH subtitles)
-      field :default_subtitle_accessibility, T.nilable(::PlexRubySDK::Operations::DefaultSubtitleAccessibility), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('defaultSubtitleAccessibility'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::DefaultSubtitleAccessibility, true) } }
-      # The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles)
-      field :default_subtitle_forced, T.nilable(::PlexRubySDK::Operations::DefaultSubtitleForced), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('defaultSubtitleForced'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::DefaultSubtitleForced, true) } }
 
-      field :media_reviews_visibility, T.nilable(::PlexRubySDK::Operations::MediaReviewsVisibility), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaReviewsVisibility'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::MediaReviewsVisibility, true) } }
+      field :media_reviews_visibility, ::PlexRubySDK::Operations::MediaReviewsVisibility, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaReviewsVisibility'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::MediaReviewsVisibility, false) } }
 
-      field :watched_indicator, T.nilable(::PlexRubySDK::Operations::WatchedIndicator), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('watchedIndicator'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::WatchedIndicator, true) } }
+      field :watched_indicator, ::PlexRubySDK::Operations::WatchedIndicator, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('watchedIndicator'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::WatchedIndicator, false) } }
 
 
-      sig { params(default_audio_language: ::String, default_subtitle_language: ::String, auto_select_audio: T.nilable(T::Boolean), auto_select_subtitle: T.nilable(::PlexRubySDK::Operations::AutoSelectSubtitle), default_subtitle_accessibility: T.nilable(::PlexRubySDK::Operations::DefaultSubtitleAccessibility), default_subtitle_forced: T.nilable(::PlexRubySDK::Operations::DefaultSubtitleForced), media_reviews_visibility: T.nilable(::PlexRubySDK::Operations::MediaReviewsVisibility), watched_indicator: T.nilable(::PlexRubySDK::Operations::WatchedIndicator)).void }
-      def initialize(default_audio_language: nil, default_subtitle_language: nil, auto_select_audio: nil, auto_select_subtitle: nil, default_subtitle_accessibility: nil, default_subtitle_forced: nil, media_reviews_visibility: nil, watched_indicator: nil)
-        @default_audio_language = default_audio_language
-        @default_subtitle_language = default_subtitle_language
+      sig { params(auto_select_audio: T::Boolean, auto_select_subtitle: ::PlexRubySDK::Operations::AutoSelectSubtitle, default_audio_language: ::String, default_subtitle_accessibility: ::PlexRubySDK::Operations::DefaultSubtitleAccessibility, default_subtitle_forced: ::PlexRubySDK::Operations::DefaultSubtitleForced, default_subtitle_language: ::String, media_reviews_visibility: ::PlexRubySDK::Operations::MediaReviewsVisibility, watched_indicator: ::PlexRubySDK::Operations::WatchedIndicator).void }
+      def initialize(auto_select_audio: nil, auto_select_subtitle: nil, default_audio_language: nil, default_subtitle_accessibility: nil, default_subtitle_forced: nil, default_subtitle_language: nil, media_reviews_visibility: nil, watched_indicator: nil)
         @auto_select_audio = auto_select_audio
         @auto_select_subtitle = auto_select_subtitle
+        @default_audio_language = default_audio_language
         @default_subtitle_accessibility = default_subtitle_accessibility
         @default_subtitle_forced = default_subtitle_forced
+        @default_subtitle_language = default_subtitle_language
         @media_reviews_visibility = media_reviews_visibility
         @watched_indicator = watched_indicator
       end

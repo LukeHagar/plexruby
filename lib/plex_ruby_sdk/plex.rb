@@ -216,13 +216,12 @@ module PlexRubySDK
     end
 
 
-    sig { params(client_id: T.nilable(::String), include_https: T.nilable(::PlexRubySDK::Operations::IncludeHttps), include_relay: T.nilable(::PlexRubySDK::Operations::IncludeRelay), include_i_pv6: T.nilable(::PlexRubySDK::Operations::IncludeIPv6), server_url: T.nilable(String)).returns(::PlexRubySDK::Operations::GetServerResourcesResponse) }
-    def get_server_resources(client_id = nil, include_https = nil, include_relay = nil, include_i_pv6 = nil, server_url = nil)
+    sig { params(include_https: T.nilable(::PlexRubySDK::Operations::IncludeHttps), include_relay: T.nilable(::PlexRubySDK::Operations::IncludeRelay), include_i_pv6: T.nilable(::PlexRubySDK::Operations::IncludeIPv6), server_url: T.nilable(String)).returns(::PlexRubySDK::Operations::GetServerResourcesResponse) }
+    def get_server_resources(include_https = nil, include_relay = nil, include_i_pv6 = nil, server_url = nil)
       # get_server_resources - Get Server Resources
       # Get Plex server access tokens and server connections
       request = ::PlexRubySDK::Operations::GetServerResourcesRequest.new(
         
-        client_id: client_id,
         include_https: include_https,
         include_relay: include_relay,
         include_i_pv6: include_i_pv6
@@ -305,14 +304,13 @@ module PlexRubySDK
     end
 
 
-    sig { params(pin_id: ::Integer, client_id: T.nilable(::String), server_url: T.nilable(String)).returns(::PlexRubySDK::Operations::GetTokenByPinIdResponse) }
-    def get_token_by_pin_id(pin_id, client_id = nil, server_url = nil)
+    sig { params(pin_id: ::Integer, server_url: T.nilable(String)).returns(::PlexRubySDK::Operations::GetTokenByPinIdResponse) }
+    def get_token_by_pin_id(pin_id, server_url = nil)
       # get_token_by_pin_id - Get Access Token by PinId
       # Retrieve an Access Token from Plex.tv after the Pin has been authenticated
       request = ::PlexRubySDK::Operations::GetTokenByPinIdRequest.new(
         
-        pin_id: pin_id,
-        client_id: client_id
+        pin_id: pin_id
       )
       base_url = Utils.template_url(GET_TOKEN_BY_PIN_ID_SERVERS[0], {
       })
@@ -325,13 +323,11 @@ module PlexRubySDK
         @sdk_configuration.globals
       )
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetTokenByPinIdRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
       r = @sdk_configuration.client.get(url) do |req|
         req.headers = headers
-        req.params = query_params
       end
 
       content_type = r.headers.fetch('Content-Type', 'application/octet-stream')

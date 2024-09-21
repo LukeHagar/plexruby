@@ -12,10 +12,10 @@ module PlexRubySDK
       extend T::Sig
 
 
-      field :media_container, T.nilable(::PlexRubySDK::Operations::GetAllLibrariesMediaContainer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('MediaContainer') } }
+      field :media_container, ::PlexRubySDK::Operations::GetAllLibrariesMediaContainer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('MediaContainer') } }
 
 
-      sig { params(media_container: T.nilable(::PlexRubySDK::Operations::GetAllLibrariesMediaContainer)).void }
+      sig { params(media_container: ::PlexRubySDK::Operations::GetAllLibrariesMediaContainer).void }
       def initialize(media_container: nil)
         @media_container = media_container
       end

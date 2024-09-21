@@ -433,15 +433,16 @@ module PlexRubySDK
     end
 
 
-    sig { params(path: ::String, force: ::PlexRubySDK::Operations::QueryParamForce).returns(::PlexRubySDK::Operations::UploadPlaylistResponse) }
-    def upload_playlist(path, force)
+    sig { params(path: ::String, force: ::PlexRubySDK::Operations::QueryParamForce, section_id: ::Integer).returns(::PlexRubySDK::Operations::UploadPlaylistResponse) }
+    def upload_playlist(path, force, section_id)
       # upload_playlist - Upload Playlist
       # Imports m3u playlists by passing a path on the server to scan for m3u-formatted playlist files, or a path to a single playlist file.
       # 
       request = ::PlexRubySDK::Operations::UploadPlaylistRequest.new(
         
         path: path,
-        force: force
+        force: force,
+        section_id: section_id
       )
       url, params = @sdk_configuration.get_server_details
       base_url = Utils.template_url(url, params)

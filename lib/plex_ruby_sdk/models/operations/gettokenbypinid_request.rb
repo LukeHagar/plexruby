@@ -16,17 +16,11 @@ module PlexRubySDK
 
       # The PinID to retrieve an access token for
       field :pin_id, ::Integer, { 'path_param': { 'field_name': 'pinID', 'style': 'simple', 'explode': false } }
-      # The unique identifier for the client application
-      # This is used to track the client application and its usage
-      # (UUID, serial number, or other number unique per device)
-      # 
-      field :client_id, T.nilable(::String), { 'query_param': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'form', 'explode': true } }
 
 
-      sig { params(pin_id: ::Integer, client_id: T.nilable(::String)).void }
-      def initialize(pin_id: nil, client_id: nil)
+      sig { params(pin_id: ::Integer).void }
+      def initialize(pin_id: nil)
         @pin_id = pin_id
-        @client_id = client_id
       end
     end
   end

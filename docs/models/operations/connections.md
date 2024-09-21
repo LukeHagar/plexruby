@@ -3,12 +3,12 @@
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `protocol`         | *::String*         | :heavy_check_mark: | N/A                |
-| `address`          | *::String*         | :heavy_check_mark: | N/A                |
-| `port`             | *::Float*          | :heavy_check_mark: | N/A                |
-| `uri`              | *::String*         | :heavy_check_mark: | N/A                |
-| `local`            | *T::Boolean*       | :heavy_check_mark: | N/A                |
-| `relay`            | *T::Boolean*       | :heavy_check_mark: | N/A                |
-| `i_pv6`            | *T::Boolean*       | :heavy_check_mark: | N/A                |
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `protocol`                                                                 | [::PlexRubySDK::Operations::Protocol](../../models/operations/protocol.md) | :heavy_check_mark:                                                         | The protocol used for the connection (http, https, etc)                    |
+| `address`                                                                  | *::String*                                                                 | :heavy_check_mark:                                                         | The (ip) address or domain name used for the connection                    |
+| `port`                                                                     | *::Integer*                                                                | :heavy_check_mark:                                                         | The port used for the connection                                           |
+| `uri`                                                                      | *::String*                                                                 | :heavy_check_mark:                                                         | The full URI of the connection                                             |
+| `local`                                                                    | *T::Boolean*                                                               | :heavy_check_mark:                                                         | If the connection is local address                                         |
+| `relay`                                                                    | *T::Boolean*                                                               | :heavy_check_mark:                                                         | If the connection is relayed through plex.direct                           |
+| `i_pv6`                                                                    | *T::Boolean*                                                               | :heavy_check_mark:                                                         | If the connection is using IPv6                                            |

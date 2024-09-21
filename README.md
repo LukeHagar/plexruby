@@ -259,7 +259,7 @@ end
 
 Certain parameters are configured globally. These parameters may be set on the SDK client instance itself during initialization. When configured as an option during SDK initialization, These global values will be used as defaults on the operations that use them. When such operations are called, there is a place in each to override the global value, if needed.
 
-For example, you can set `ClientID` to `"gcgzw5rz2xovp84b4vha3a40"` at SDK initialization and then you do not have to pass the same value on calls to operations like `get_server_resources`. But if you want to do so you may, which will locally override the global setting. See the example code below for a demonstration.
+For example, you can set `ClientID` to `"gcgzw5rz2xovp84b4vha3a40"` at SDK initialization and then you do not have to pass the same value on calls to operations like `get_pin`. But if you want to do so you may, which will locally override the global setting. See the example code below for a demonstration.
 
 
 ### Available Globals
@@ -291,16 +291,13 @@ s = ::PlexRubySDK::PlexAPI.new(
       client_platform: "Chrome",
       device_name: "Linux",
     )
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
 
+
+req = ::PlexRubySDK::Operations::GetPinRequest.new()
     
-res = s.plex.get_server_resources(client_id="gcgzw5rz2xovp84b4vha3a40", include_https=::PlexRubySDK::Operations::IncludeHttps::ONE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ONE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ONE)
+res = s.plex.get_pin(req)
 
-if ! res.plex_devices.nil?
+if ! res.auth_pin_container.nil?
   # handle response
 end
 

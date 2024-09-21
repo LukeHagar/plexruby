@@ -128,19 +128,19 @@ actions:
       x-codeSamples:
         - lang: ruby
           label: performSearch
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.search.perform_search(query=\"arnold\", section_id=9372.7, limit=5.0)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.search.perform_search(query=\"dylan\", section_id=5838.67, limit=5.0)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/hubs/search/voice"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: performVoiceSearch
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.search.perform_voice_search(query=\"dead+poop\", section_id=4094.8, limit=5.0)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.search.perform_voice_search(query=\"dead+poop\", section_id=4094.80, limit=5.0)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/hubs/sections/{sectionId}"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getLibraryHubs
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.hubs.get_library_hubs(section_id=6728.76, count=9010.22, only_transient=::PlexRubySDK::Operations::QueryParamOnlyTransient::ZERO)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.hubs.get_library_hubs(section_id=6728.76, count=639.24, only_transient=::PlexRubySDK::Operations::QueryParamOnlyTransient::ONE)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/identity"]["get"]
     update:
       x-codeSamples:
@@ -152,7 +152,7 @@ actions:
       x-codeSamples:
         - lang: ruby
           label: getTopWatchedContent
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_top_watched_content(type=::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType::TWO, include_guids=1)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_top_watched_content(type=::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType::SHOW, include_guids=1)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/hashes"]["get"]
     update:
       x-codeSamples:
@@ -176,7 +176,7 @@ actions:
       x-codeSamples:
         - lang: ruby
           label: getMetadataChildren
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_metadata_children(rating_key=1539.14, include_elements=\"<value>\")\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_metadata_children(rating_key=1539.15, include_elements=\"<value>\")\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/metadata/{ratingKey}/thumb"]["get"]
     update:
       x-codeSamples:
@@ -230,13 +230,13 @@ actions:
       x-codeSamples:
         - lang: ruby
           label: library
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_search_library(section_key=9518, type=::PlexRubySDK::Operations::QueryParamType::TWO)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_search_library(section_key=9518, type=::PlexRubySDK::Operations::QueryParamType::SHOW)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/sections/{sectionKey}/{tag}"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: items
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetLibraryItemsRequest.new(\n  section_key: 9518,\n  tag: ::PlexRubySDK::Operations::Tag::EDITION,\n  include_guids: ::PlexRubySDK::Operations::IncludeGuids::ONE,\n  include_meta: ::PlexRubySDK::Operations::IncludeMeta::ONE,\n  type: ::PlexRubySDK::Operations::Type::TWO,\n  x_plex_container_start: 0,\n  x_plex_container_size: 50,\n)\n    \nres = s.library.get_library_items(req)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetLibraryItemsRequest.new(\n  section_key: 9518,\n  tag: ::PlexRubySDK::Operations::Tag::EDITION,\n  include_guids: ::PlexRubySDK::Operations::IncludeGuids::ENABLE,\n  include_meta: ::PlexRubySDK::Operations::IncludeMeta::ENABLE,\n  type: ::PlexRubySDK::Operations::Type::SHOW,\n  x_plex_container_start: 0,\n  x_plex_container_size: 50,\n)\n    \nres = s.library.get_library_items(req)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/log"]["get"]
     update:
       x-codeSamples:
@@ -272,7 +272,7 @@ actions:
       x-codeSamples:
         - lang: ruby
           label: getResizedPhoto
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetResizedPhotoRequest.new(\n  width: 110.0,\n  height: 165.0,\n  opacity: 643869,\n  blur: 0.0,\n  min_size: ::PlexRubySDK::Operations::MinSize::ZERO,\n  upscale: ::PlexRubySDK::Operations::Upscale::ONE,\n  url: \"/library/metadata/49564/thumb/1654258204\",\n)\n    \nres = s.server.get_resized_photo(req)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetResizedPhotoRequest.new(\n  width: 110.0,\n  height: 165.0,\n  opacity: 643869,\n  blur: 4000.0,\n  min_size: ::PlexRubySDK::Operations::MinSize::ONE,\n  upscale: ::PlexRubySDK::Operations::Upscale::ZERO,\n  url: \"/library/metadata/49564/thumb/1654258204\",\n)\n    \nres = s.server.get_resized_photo(req)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/pins"]["post"]
     update:
       x-codeSamples:
@@ -284,7 +284,7 @@ actions:
       x-codeSamples:
         - lang: ruby
           label: getTokenByPinId
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\n\n    \nres = s.plex.get_token_by_pin_id(pin_id=408895, client_id=\"gcgzw5rz2xovp84b4vha3a40\")\n\nif ! res.auth_pin_container.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\n\n    \nres = s.plex.get_token_by_pin_id(pin_id=408895)\n\nif ! res.auth_pin_container.nil?\n  # handle response\nend"
   - target: $["paths"]["/playlists"]["get"]
     update:
       x-codeSamples:
@@ -296,13 +296,13 @@ actions:
       x-codeSamples:
         - lang: ruby
           label: createPlaylist
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::CreatePlaylistRequest.new(\n  title: \"<value>\",\n  type: ::PlexRubySDK::Operations::CreatePlaylistQueryParamType::PHOTO,\n  smart: ::PlexRubySDK::Operations::Smart::ONE,\n  uri: \"https://inborn-brochure.biz\",\n)\n    \nres = s.playlists.create_playlist(req)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::CreatePlaylistRequest.new(\n  title: \"<value>\",\n  type: ::PlexRubySDK::Operations::CreatePlaylistQueryParamType::PHOTO,\n  smart: ::PlexRubySDK::Operations::Smart::ONE,\n  uri: \"https://hoarse-testing.info/\",\n)\n    \nres = s.playlists.create_playlist(req)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/playlists/upload"]["post"]
     update:
       x-codeSamples:
         - lang: ruby
           label: uploadPlaylist
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.upload_playlist(path=\"/home/barkley/playlist.m3u\", force=::PlexRubySDK::Operations::QueryParamForce::ZERO)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.upload_playlist(path=\"/home/barkley/playlist.m3u\", force=::PlexRubySDK::Operations::QueryParamForce::ZERO, section_id=1)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/playlists/{playlistID}"]["delete"]
     update:
       x-codeSamples:
@@ -320,7 +320,7 @@ actions:
       x-codeSamples:
         - lang: ruby
           label: updatePlaylist
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.update_playlist(playlist_id=3915, title=\"<value>\", summary=\"<value>\")\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.update_playlist(playlist_id=3915.00, title=\"<value>\", summary=\"<value>\")\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/playlists/{playlistID}/items"]["delete"]
     update:
       x-codeSamples:
@@ -332,19 +332,19 @@ actions:
       x-codeSamples:
         - lang: ruby
           label: getPlaylistContents
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.get_playlist_contents(playlist_id=5004.46, type=::PlexRubySDK::Operations::GetPlaylistContentsQueryParamType::TWO)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.get_playlist_contents(playlist_id=5004.46, type=::PlexRubySDK::Operations::GetPlaylistContentsQueryParamType::SHOW)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/playlists/{playlistID}/items"]["put"]
     update:
       x-codeSamples:
         - lang: ruby
           label: addPlaylistContents
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.add_playlist_contents(playlist_id=8502.01, uri=\"server://12345/com.plexapp.plugins.library/library/metadata/1\", play_queue_id=123.0)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.add_playlist_contents(playlist_id=8502.00, uri=\"server://12345/com.plexapp.plugins.library/library/metadata/1\", play_queue_id=123.0)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/resources"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: resources
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.plex.get_server_resources(client_id=\"gcgzw5rz2xovp84b4vha3a40\", include_https=::PlexRubySDK::Operations::IncludeHttps::ONE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ONE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ONE)\n\nif ! res.plex_devices.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.plex.get_server_resources(include_https=::PlexRubySDK::Operations::IncludeHttps::ENABLE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ENABLE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ENABLE)\n\nif ! res.plex_devices.nil?\n  # handle response\nend"
   - target: $["paths"]["/search"]["get"]
     update:
       x-codeSamples:
@@ -356,7 +356,7 @@ actions:
       x-codeSamples:
         - lang: ruby
           label: getSourceConnectionInformation
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.authentication.get_source_connection_information(source=\"server://client-identifier\")\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.authentication.get_source_connection_information(source=\"provider://provider-identifier\")\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/security/token"]["get"]
     update:
       x-codeSamples:
@@ -440,7 +440,7 @@ actions:
       x-codeSamples:
         - lang: ruby
           label: data
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\n\n    \nres = s.authentication.post_users_sign_in_data(client_id=\"gcgzw5rz2xovp84b4vha3a40\", request_body=::PlexRubySDK::Operations::PostUsersSignInDataRequestBody.new(\n  login: \"username@email.com\",\n  password: \"password123\",\n  verification_code: \"123456\",\n))\n\nif ! res.user_plex_account.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\n\n\nreq = ::PlexRubySDK::Operations::PostUsersSignInDataRequestBody.new(\n  login: \"username@email.com\",\n  password: \"password123\",\n  verification_code: \"123456\",\n)\n    \nres = s.authentication.post_users_sign_in_data(req)\n\nif ! res.user_plex_account.nil?\n  # handle response\nend"
   - target: $["paths"]["/video/:/transcode/universal/start.mpd"]["get"]
     update:
       x-codeSamples:

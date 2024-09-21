@@ -275,9 +275,9 @@ req = ::PlexRubySDK::Operations::GetResizedPhotoRequest.new(
   width: 110.0,
   height: 165.0,
   opacity: 643869,
-  blur: 0.0,
-  min_size: ::PlexRubySDK::Operations::MinSize::ZERO,
-  upscale: ::PlexRubySDK::Operations::Upscale::ONE,
+  blur: 4000.0,
+  min_size: ::PlexRubySDK::Operations::MinSize::ONE,
+  upscale: ::PlexRubySDK::Operations::Upscale::ZERO,
   url: "/library/metadata/49564/thumb/1654258204",
 )
     

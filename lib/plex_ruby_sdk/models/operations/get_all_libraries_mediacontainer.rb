@@ -14,19 +14,19 @@ module PlexRubySDK
 
       field :allow_sync, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
 
+      field :directory, T::Array[::PlexRubySDK::Operations::GetAllLibrariesDirectory], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
+
       field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
 
       field :title1, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title1') } }
 
-      field :directory, T.nilable(T::Array[::PlexRubySDK::Operations::GetAllLibrariesDirectory]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
 
-
-      sig { params(allow_sync: T::Boolean, size: ::Integer, title1: ::String, directory: T.nilable(T::Array[::PlexRubySDK::Operations::GetAllLibrariesDirectory])).void }
-      def initialize(allow_sync: nil, size: nil, title1: nil, directory: nil)
+      sig { params(allow_sync: T::Boolean, directory: T::Array[::PlexRubySDK::Operations::GetAllLibrariesDirectory], size: ::Integer, title1: ::String).void }
+      def initialize(allow_sync: nil, directory: nil, size: nil, title1: nil)
         @allow_sync = allow_sync
+        @directory = directory
         @size = size
         @title1 = title1
-        @directory = directory
       end
     end
   end

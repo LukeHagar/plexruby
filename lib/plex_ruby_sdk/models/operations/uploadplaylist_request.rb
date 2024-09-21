@@ -25,12 +25,15 @@ module PlexRubySDK
       # The GUID of each playlist is based on the filename.
       # 
       field :path, ::String, { 'query_param': { 'field_name': 'path', 'style': 'form', 'explode': true } }
+      # Possibly the section ID to upload the playlist to, we are not certain.
+      field :section_id, ::Integer, { 'query_param': { 'field_name': 'sectionID', 'style': 'form', 'explode': true } }
 
 
-      sig { params(force: ::PlexRubySDK::Operations::QueryParamForce, path: ::String).void }
-      def initialize(force: nil, path: nil)
+      sig { params(force: ::PlexRubySDK::Operations::QueryParamForce, path: ::String, section_id: ::Integer).void }
+      def initialize(force: nil, path: nil, section_id: nil)
         @force = force
         @path = path
+        @section_id = section_id
       end
     end
   end

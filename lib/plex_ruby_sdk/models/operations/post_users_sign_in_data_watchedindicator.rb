@@ -10,11 +10,11 @@ module PlexRubySDK
       'https://plex.tv/api/v2/'
     ].freeze
   
-
+    # PostUsersSignInDataWatchedIndicator - Whether or not media watched indicators are enabled (little orange dot on media)
     class PostUsersSignInDataWatchedIndicator < T::Enum
       enums do
-        ZERO = new('0')
-        ONE = new('1')
+        DISABLE = new(0)
+        ENABLE = new(1)
       end
     end
   end

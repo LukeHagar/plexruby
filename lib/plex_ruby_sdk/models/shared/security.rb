@@ -12,7 +12,7 @@ module PlexRubySDK
       extend T::Sig
 
 
-      field :access_token, T.nilable(::String), { 'security': { 'scheme': true, 'type': 'apiKey', 'sub_type': 'query', 'field_name': 'X-Plex-Token' } }
+      field :access_token, T.nilable(::String), { 'security': { 'scheme': true, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-Plex-Token' } }
 
 
       sig { params(access_token: T.nilable(::String)).void }

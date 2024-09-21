@@ -13,8 +13,8 @@ module PlexRubySDK
     # AutoSelectSubtitle - The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)
     class AutoSelectSubtitle < T::Enum
       enums do
-        ZERO = new('0')
-        ONE = new('1')
+        DISABLE = new(0)
+        ENABLE = new(1)
       end
     end
   end

@@ -14,23 +14,23 @@ module PlexRubySDK
     class Connections < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
-
+      # The (ip) address or domain name used for the connection
       field :address, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('address') } }
-
+      # If the connection is using IPv6
       field :i_pv6, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('IPv6') } }
-
+      # If the connection is local address
       field :local, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('local') } }
-
-      field :port, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('port') } }
-
-      field :protocol, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('protocol') } }
-
+      # The port used for the connection
+      field :port, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('port') } }
+      # The protocol used for the connection (http, https, etc)
+      field :protocol, ::PlexRubySDK::Operations::Protocol, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('protocol'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::Protocol, false) } }
+      # If the connection is relayed through plex.direct
       field :relay, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('relay') } }
-
+      # The full URI of the connection
       field :uri, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('uri') } }
 
 
-      sig { params(address: ::String, i_pv6: T::Boolean, local: T::Boolean, port: ::Float, protocol: ::String, relay: T::Boolean, uri: ::String).void }
+      sig { params(address: ::String, i_pv6: T::Boolean, local: T::Boolean, port: ::Integer, protocol: ::PlexRubySDK::Operations::Protocol, relay: T::Boolean, uri: ::String).void }
       def initialize(address: nil, i_pv6: nil, local: nil, port: nil, protocol: nil, relay: nil, uri: nil)
         @address = address
         @i_pv6 = i_pv6

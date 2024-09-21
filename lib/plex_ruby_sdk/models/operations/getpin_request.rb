@@ -14,11 +14,6 @@ module PlexRubySDK
     class GetPinRequest < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
-      # The unique identifier for the client application
-      # This is used to track the client application and its usage
-      # (UUID, serial number, or other number unique per device)
-      # 
-      field :client_id, T.nilable(::String), { 'query_param': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'form', 'explode': true } }
 
       field :client_name, T.nilable(::String), { 'query_param': { 'field_name': 'X-Plex-Product', 'style': 'form', 'explode': true } }
 
@@ -34,9 +29,8 @@ module PlexRubySDK
       field :strong, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'strong', 'style': 'form', 'explode': true } }
 
 
-      sig { params(client_id: T.nilable(::String), client_name: T.nilable(::String), client_platform: T.nilable(::String), client_version: T.nilable(::String), device_name: T.nilable(::String), strong: T.nilable(T::Boolean)).void }
-      def initialize(client_id: nil, client_name: nil, client_platform: nil, client_version: nil, device_name: nil, strong: nil)
-        @client_id = client_id
+      sig { params(client_name: T.nilable(::String), client_platform: T.nilable(::String), client_version: T.nilable(::String), device_name: T.nilable(::String), strong: T.nilable(T::Boolean)).void }
+      def initialize(client_name: nil, client_platform: nil, client_version: nil, device_name: nil, strong: nil)
         @client_name = client_name
         @client_platform = client_platform
         @client_version = client_version

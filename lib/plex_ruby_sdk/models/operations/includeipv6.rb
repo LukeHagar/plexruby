@@ -13,8 +13,8 @@ module PlexRubySDK
     # IncludeIPv6 - Include IPv6 entries in the results
     class IncludeIPv6 < T::Enum
       enums do
-        ZERO = new(0)
-        ONE = new(1)
+        DISABLE = new(0)
+        ENABLE = new(1)
       end
     end
   end

@@ -12,50 +12,50 @@ module PlexRubySDK
       extend T::Sig
 
 
-      field :agent, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('agent') } }
+      field :agent, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('agent') } }
 
-      field :allow_sync, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
+      field :allow_sync, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
 
-      field :art, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('art') } }
+      field :art, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('art') } }
 
-      field :composite, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('composite') } }
+      field :composite, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('composite') } }
 
-      field :content, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('content') } }
+      field :content, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('content') } }
 
-      field :content_changed_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('contentChangedAt') } }
-      # Unix epoch datetime
-      field :created_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('createdAt') } }
+      field :content_changed_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('contentChangedAt') } }
+      # Unix epoch datetime in seconds
+      field :created_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('createdAt') } }
 
-      field :directory, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('directory') } }
+      field :directory, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('directory') } }
 
-      field :filters, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filters') } }
+      field :filters, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filters') } }
 
-      field :hidden, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hidden') } }
+      field :hidden, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hidden') } }
 
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+      field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
 
-      field :language, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('language') } }
+      field :language, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('language') } }
 
-      field :location, T.nilable(T::Array[::PlexRubySDK::Operations::Location]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Location') } }
+      field :location, T::Array[::PlexRubySDK::Operations::Location], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Location') } }
 
-      field :refreshing, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('refreshing') } }
-      # Unix epoch datetime
-      field :scanned_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('scannedAt') } }
+      field :refreshing, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('refreshing') } }
+      # Unix epoch datetime in seconds
+      field :scanned_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('scannedAt') } }
 
-      field :scanner, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('scanner') } }
+      field :scanner, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('scanner') } }
 
-      field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
+      field :thumb, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
 
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+      field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
 
-      field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
-      # Unix epoch datetime
-      field :updated_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('updatedAt') } }
+      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+      # Unix epoch datetime in seconds
+      field :updated_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('updatedAt') } }
 
-      field :uuid, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('uuid') } }
+      field :uuid, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('uuid') } }
 
 
-      sig { params(agent: T.nilable(::String), allow_sync: T.nilable(T::Boolean), art: T.nilable(::String), composite: T.nilable(::String), content: T.nilable(T::Boolean), content_changed_at: T.nilable(::Integer), created_at: T.nilable(::Integer), directory: T.nilable(T::Boolean), filters: T.nilable(T::Boolean), hidden: T.nilable(::Integer), key: T.nilable(::String), language: T.nilable(::String), location: T.nilable(T::Array[::PlexRubySDK::Operations::Location]), refreshing: T.nilable(T::Boolean), scanned_at: T.nilable(::Integer), scanner: T.nilable(::String), thumb: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String), updated_at: T.nilable(::Integer), uuid: T.nilable(::String)).void }
+      sig { params(agent: ::String, allow_sync: T::Boolean, art: ::String, composite: ::String, content: T::Boolean, content_changed_at: ::Integer, created_at: ::Integer, directory: T::Boolean, filters: T::Boolean, hidden: ::Integer, key: ::String, language: ::String, location: T::Array[::PlexRubySDK::Operations::Location], refreshing: T::Boolean, scanned_at: ::Integer, scanner: ::String, thumb: ::String, title: ::String, type: ::String, updated_at: ::Integer, uuid: ::String).void }
       def initialize(agent: nil, allow_sync: nil, art: nil, composite: nil, content: nil, content_changed_at: nil, created_at: nil, directory: nil, filters: nil, hidden: nil, key: nil, language: nil, location: nil, refreshing: nil, scanned_at: nil, scanner: nil, thumb: nil, title: nil, type: nil, updated_at: nil, uuid: nil)
         @agent = agent
         @allow_sync = allow_sync

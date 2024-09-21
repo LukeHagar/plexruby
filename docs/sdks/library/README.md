@@ -335,9 +335,9 @@ s.config_security(
 req = ::PlexRubySDK::Operations::GetLibraryItemsRequest.new(
   section_key: 9518,
   tag: ::PlexRubySDK::Operations::Tag::EDITION,
-  include_guids: ::PlexRubySDK::Operations::IncludeGuids::ONE,
-  include_meta: ::PlexRubySDK::Operations::IncludeMeta::ONE,
-  type: ::PlexRubySDK::Operations::Type::TWO,
+  include_guids: ::PlexRubySDK::Operations::IncludeGuids::ENABLE,
+  include_meta: ::PlexRubySDK::Operations::IncludeMeta::ENABLE,
+  type: ::PlexRubySDK::Operations::Type::SHOW,
   x_plex_container_start: 0,
   x_plex_container_size: 50,
 )
@@ -452,7 +452,7 @@ s.config_security(
 )
 
     
-res = s.library.get_search_library(section_key=9518, type=::PlexRubySDK::Operations::QueryParamType::TWO)
+res = s.library.get_search_library(section_key=9518, type=::PlexRubySDK::Operations::QueryParamType::SHOW)
 
 if ! res.object.nil?
   # handle response
@@ -545,7 +545,7 @@ s.config_security(
 )
 
     
-res = s.library.get_metadata_children(rating_key=1539.14, include_elements="<value>")
+res = s.library.get_metadata_children(rating_key=1539.15, include_elements="<value>")
 
 if ! res.object.nil?
   # handle response
@@ -592,7 +592,7 @@ s.config_security(
 )
 
     
-res = s.library.get_top_watched_content(type=::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType::TWO, include_guids=1)
+res = s.library.get_top_watched_content(type=::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType::SHOW, include_guids=1)
 
 if ! res.object.nil?
   # handle response

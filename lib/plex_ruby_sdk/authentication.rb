@@ -162,29 +162,22 @@ module PlexRubySDK
     end
 
 
-    sig { params(client_id: T.nilable(::String), request_body: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataRequestBody), server_url: T.nilable(String)).returns(::PlexRubySDK::Operations::PostUsersSignInDataResponse) }
-    def post_users_sign_in_data(client_id = nil, request_body = nil, server_url = nil)
+    sig { params(request: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataRequestBody), server_url: T.nilable(String)).returns(::PlexRubySDK::Operations::PostUsersSignInDataResponse) }
+    def post_users_sign_in_data(request, server_url = nil)
       # post_users_sign_in_data - Get User Sign In Data
       # Sign in user with username and password and return user data with Plex authentication token
-      request = ::PlexRubySDK::Operations::PostUsersSignInDataRequest.new(
-        
-        client_id: client_id,
-        request_body: request_body
-      )
       base_url = Utils.template_url(POST_USERS_SIGN_IN_DATA_SERVERS[0], {
       })
       base_url = server_url if !server_url.nil?
       url = "#{base_url}/users/signin"
       headers = {}
-      req_content_type, data, form = Utils.serialize_request_body(request, :request_body, :form)
+      req_content_type, data, form = Utils.serialize_request_body(request, :request, :form)
       headers['content-type'] = req_content_type
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::PostUsersSignInDataRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
       r = @sdk_configuration.client.post(url) do |req|
         req.headers = headers
-        req.params = query_params
         if form
           req.body = Utils.encode_form(form)
         elsif Utils.match_content_type(req_content_type, 'application/x-www-form-urlencoded')

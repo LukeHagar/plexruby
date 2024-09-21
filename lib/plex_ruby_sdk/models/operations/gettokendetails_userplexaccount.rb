@@ -52,7 +52,7 @@ module PlexRubySDK
       field :home_size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('homeSize') } }
       # The Plex account ID
       field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-      # Unix epoch datetime
+      # Unix epoch datetime in seconds
       field :joined_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('joinedAt') } }
       # The account locale
       field :locale, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('locale') } }
@@ -66,7 +66,7 @@ module PlexRubySDK
       field :profile, ::PlexRubySDK::Operations::UserProfile, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('profile') } }
       # If the account has a Plex Home PIN enabled
       field :protected, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('protected') } }
-      # Unix epoch datetime
+      # Unix epoch datetime in seconds
       field :remember_expires_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('rememberExpiresAt') } }
       # If the account is a Plex Home managed user
       field :restricted, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('restricted') } }

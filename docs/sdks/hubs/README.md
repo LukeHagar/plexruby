@@ -81,7 +81,7 @@ s.config_security(
 )
 
     
-res = s.hubs.get_library_hubs(section_id=6728.76, count=9010.22, only_transient=::PlexRubySDK::Operations::QueryParamOnlyTransient::ZERO)
+res = s.hubs.get_library_hubs(section_id=6728.76, count=639.24, only_transient=::PlexRubySDK::Operations::QueryParamOnlyTransient::ONE)
 
 if ! res.object.nil?
   # handle response

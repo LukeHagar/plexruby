@@ -16,10 +16,10 @@ module PlexRubySDK
     # 
     class GetTopWatchedContentQueryParamType < T::Enum
       enums do
-        ONE = new(1)
-        TWO = new(2)
-        THREE = new(3)
-        FOUR = new(4)
+        MOVIE = new(1)
+        SHOW = new(2)
+        SEASON = new(3)
+        EPISODE = new(4)
       end
     end
   end
