@@ -12,18 +12,30 @@ module PlexRubySDK
       extend T::Sig
 
 
+      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+
+      field :action, T.nilable(T::Array[::PlexRubySDK::Operations::Action]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Action') } }
+
       field :directory, T.nilable(T::Array[::PlexRubySDK::Operations::GetMediaProvidersDirectory]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
+
+      field :flavor, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('flavor') } }
 
       field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
 
-      field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+      field :scrobble_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('scrobbleKey') } }
+
+      field :unscrobble_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('unscrobbleKey') } }
 
 
-      sig { params(directory: T.nilable(T::Array[::PlexRubySDK::Operations::GetMediaProvidersDirectory]), key: T.nilable(::String), type: T.nilable(::String)).void }
-      def initialize(directory: nil, key: nil, type: nil)
-        @directory = directory
-        @key = key
+      sig { params(type: ::String, action: T.nilable(T::Array[::PlexRubySDK::Operations::Action]), directory: T.nilable(T::Array[::PlexRubySDK::Operations::GetMediaProvidersDirectory]), flavor: T.nilable(::String), key: T.nilable(::String), scrobble_key: T.nilable(::String), unscrobble_key: T.nilable(::String)).void }
+      def initialize(type: nil, action: nil, directory: nil, flavor: nil, key: nil, scrobble_key: nil, unscrobble_key: nil)
         @type = type
+        @action = action
+        @directory = directory
+        @flavor = flavor
+        @key = key
+        @scrobble_key = scrobble_key
+        @unscrobble_key = unscrobble_key
       end
     end
   end

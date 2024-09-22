@@ -17,7 +17,7 @@ module PlexRubySDK
     class QueryParamType < T::Enum
       enums do
         MOVIE = new(1)
-        SHOW = new(2)
+        TV_SHOW = new(2)
         SEASON = new(3)
         EPISODE = new(4)
       end

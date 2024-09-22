@@ -15,10 +15,10 @@ module PlexRubySDK
 
       field :field_type, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsFieldType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('FieldType') } }
 
-      field :type, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Type') } }
+      field :type, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsLibraryType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Type') } }
 
 
-      sig { params(field_type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsFieldType]), type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsType])).void }
+      sig { params(field_type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsFieldType]), type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsLibraryType])).void }
       def initialize(field_type: nil, type: nil)
         @field_type = field_type
         @type = type

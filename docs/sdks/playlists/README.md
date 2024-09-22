@@ -290,7 +290,7 @@ s.config_security(
 )
 
     
-res = s.playlists.get_playlist_contents(playlist_id=5004.46, type=::PlexRubySDK::Operations::GetPlaylistContentsQueryParamType::SHOW)
+res = s.playlists.get_playlist_contents(playlist_id=5004.46, type=::PlexRubySDK::Operations::GetPlaylistContentsQueryParamType::TV_SHOW)
 
 if ! res.object.nil?
   # handle response

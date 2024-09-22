@@ -11,24 +11,31 @@ module PlexRubySDK
     class GetLibraryItemsPart < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
+      # The container format of the media file.
+      # 
+      field :container, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
 
-      field :container, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
+      field :duration, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
 
-      field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
+      field :file, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('file') } }
 
-      field :file, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('file') } }
+      field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
 
-      field :id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+      field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
 
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+      field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
 
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+      field :video_profile, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
 
-      field :video_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
+      field :audio_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioProfile') } }
+
+      field :has_thumbnail, T.nilable(::PlexRubySDK::Operations::HasThumbnail), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasThumbnail'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::HasThumbnail, true) } }
+
+      field :indexes, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('indexes') } }
 
 
-      sig { params(container: T.nilable(::String), duration: T.nilable(::Integer), file: T.nilable(::String), id: T.nilable(::Integer), key: T.nilable(::String), size: T.nilable(::Integer), video_profile: T.nilable(::String)).void }
-      def initialize(container: nil, duration: nil, file: nil, id: nil, key: nil, size: nil, video_profile: nil)
+      sig { params(container: ::String, duration: ::Integer, file: ::String, id: ::Integer, key: ::String, size: ::Integer, video_profile: ::String, audio_profile: T.nilable(::String), has_thumbnail: T.nilable(::PlexRubySDK::Operations::HasThumbnail), indexes: T.nilable(::String)).void }
+      def initialize(container: nil, duration: nil, file: nil, id: nil, key: nil, size: nil, video_profile: nil, audio_profile: nil, has_thumbnail: nil, indexes: nil)
         @container = container
         @duration = duration
         @file = file
@@ -36,6 +43,9 @@ module PlexRubySDK
         @key = key
         @size = size
         @video_profile = video_profile
+        @audio_profile = audio_profile
+        @has_thumbnail = has_thumbnail
+        @indexes = indexes
       end
     end
   end

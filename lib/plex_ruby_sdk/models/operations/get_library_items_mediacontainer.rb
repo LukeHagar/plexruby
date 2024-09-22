@@ -16,6 +16,8 @@ module PlexRubySDK
 
       field :art, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('art') } }
 
+      field :content, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('content') } }
+
       field :identifier, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
 
       field :library_section_id, ::Object, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
@@ -28,6 +30,10 @@ module PlexRubySDK
 
       field :media_tag_version, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
 
+      field :metadata, T::Array[::PlexRubySDK::Operations::GetLibraryItemsMetadata], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
+
+      field :offset, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('offset') } }
+
       field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
 
       field :thumb, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
@@ -36,36 +42,42 @@ module PlexRubySDK
 
       field :title2, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title2') } }
 
+      field :total_size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('totalSize') } }
+
       field :view_group, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewGroup') } }
       # The Meta object is only included in the response if the `includeMeta` parameter is set to `1`.
       # 
       field :meta, T.nilable(::PlexRubySDK::Operations::Meta), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Meta') } }
 
-      field :metadata, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsMetadata]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
-
       field :mixed_parents, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mixedParents') } }
+
+      field :nocache, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('nocache') } }
 
       field :view_mode, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewMode') } }
 
 
-      sig { params(allow_sync: T::Boolean, art: ::String, identifier: ::String, library_section_id: ::Object, library_section_title: ::String, library_section_uuid: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, size: ::Integer, thumb: ::String, title1: ::String, title2: ::String, view_group: ::String, meta: T.nilable(::PlexRubySDK::Operations::Meta), metadata: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsMetadata]), mixed_parents: T.nilable(T::Boolean), view_mode: T.nilable(::Integer)).void }
-      def initialize(allow_sync: nil, art: nil, identifier: nil, library_section_id: nil, library_section_title: nil, library_section_uuid: nil, media_tag_prefix: nil, media_tag_version: nil, size: nil, thumb: nil, title1: nil, title2: nil, view_group: nil, meta: nil, metadata: nil, mixed_parents: nil, view_mode: nil)
+      sig { params(allow_sync: T::Boolean, art: ::String, content: ::String, identifier: ::String, library_section_id: ::Object, library_section_title: ::String, library_section_uuid: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, metadata: T::Array[::PlexRubySDK::Operations::GetLibraryItemsMetadata], offset: ::Integer, size: ::Integer, thumb: ::String, title1: ::String, title2: ::String, total_size: ::Integer, view_group: ::String, meta: T.nilable(::PlexRubySDK::Operations::Meta), mixed_parents: T.nilable(T::Boolean), nocache: T.nilable(T::Boolean), view_mode: T.nilable(::Integer)).void }
+      def initialize(allow_sync: nil, art: nil, content: nil, identifier: nil, library_section_id: nil, library_section_title: nil, library_section_uuid: nil, media_tag_prefix: nil, media_tag_version: nil, metadata: nil, offset: nil, size: nil, thumb: nil, title1: nil, title2: nil, total_size: nil, view_group: nil, meta: nil, mixed_parents: nil, nocache: nil, view_mode: nil)
         @allow_sync = allow_sync
         @art = art
+        @content = content
         @identifier = identifier
         @library_section_id = library_section_id
         @library_section_title = library_section_title
         @library_section_uuid = library_section_uuid
         @media_tag_prefix = media_tag_prefix
         @media_tag_version = media_tag_version
+        @metadata = metadata
+        @offset = offset
         @size = size
         @thumb = thumb
         @title1 = title1
         @title2 = title2
+        @total_size = total_size
         @view_group = view_group
         @meta = meta
-        @metadata = metadata
         @mixed_parents = mixed_parents
+        @nocache = nocache
         @view_mode = view_mode
       end
     end
