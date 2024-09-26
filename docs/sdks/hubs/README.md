@@ -8,6 +8,7 @@ Hubs are a structured two-dimensional container for media, generally represented
 ### Available Operations
 
 * [get_global_hubs](#get_global_hubs) - Get Global Hubs
+* [get_recently_added](#get_recently_added) - Get Recently Added
 * [get_library_hubs](#get_library_hubs) - Get library specific hubs
 
 ## get_global_hubs
@@ -52,6 +53,61 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetGlobalHubsResponse)](../../models/operations/getglobalhubsresponse.md)**
+
+
+
+
+## get_recently_added
+
+This endpoint will return the recently added content.
+
+
+### Example Usage
+
+```ruby
+require 'plex_ruby_sdk'
+
+
+s = ::PlexRubySDK::PlexAPI.new(
+      client_id: "gcgzw5rz2xovp84b4vha3a40",
+      client_name: "Plex Web",
+      client_version: "4.133.0",
+      client_platform: "Chrome",
+      device_name: "Linux",
+    )
+s.config_security(
+  ::PlexRubySDK::Shared::Security.new(
+    access_token: "<YOUR_API_KEY_HERE>",
+  )
+)
+
+
+req = ::PlexRubySDK::Operations::GetRecentlyAddedRequest.new(
+  content_directory_id: 470161,
+  section_id: 2,
+  type: ::PlexRubySDK::Operations::Type::TV_SHOW,
+  include_meta: ::PlexRubySDK::Operations::IncludeMeta::ENABLE,
+  x_plex_container_start: 0,
+  x_plex_container_size: 50,
+)
+    
+res = s.hubs.get_recently_added(req)
+
+if ! res.object.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [::PlexRubySDK::Operations::GetRecentlyAddedRequest](../../models/operations/getrecentlyaddedrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+
+### Response
+
+**[T.nilable(::PlexRubySDK::Operations::GetRecentlyAddedResponse)](../../models/operations/getrecentlyaddedresponse.md)**
 
 
 

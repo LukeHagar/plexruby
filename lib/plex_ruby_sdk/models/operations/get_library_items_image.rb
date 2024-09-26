@@ -14,12 +14,12 @@ module PlexRubySDK
 
       field :alt, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('alt') } }
 
-      field :type, ::PlexRubySDK::Operations::GetLibraryItemsLibraryResponseType, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetLibraryItemsLibraryResponseType, false) } }
+      field :type, ::PlexRubySDK::Operations::GetLibraryItemsLibraryResponse200Type, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetLibraryItemsLibraryResponse200Type, false) } }
 
       field :url, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('url') } }
 
 
-      sig { params(alt: ::String, type: ::PlexRubySDK::Operations::GetLibraryItemsLibraryResponseType, url: ::String).void }
+      sig { params(alt: ::String, type: ::PlexRubySDK::Operations::GetLibraryItemsLibraryResponse200Type, url: ::String).void }
       def initialize(alt: nil, type: nil, url: nil)
         @alt = alt
         @type = type

@@ -64,21 +64,16 @@ module PlexRubySDK
     end
 
 
-    sig { params(x_plex_container_start: T.nilable(::Integer), x_plex_container_size: T.nilable(::Integer)).returns(::PlexRubySDK::Operations::GetRecentlyAddedResponse) }
-    def get_recently_added(x_plex_container_start = nil, x_plex_container_size = nil)
-      # get_recently_added - Get Recently Added
+    sig { params(request: T.nilable(::PlexRubySDK::Operations::GetRecentlyAddedLibraryRequest)).returns(::PlexRubySDK::Operations::GetRecentlyAddedLibraryResponse) }
+    def get_recently_added_library(request)
+      # get_recently_added_library - Get Recently Added
       # This endpoint will return the recently added content.
       # 
-      request = ::PlexRubySDK::Operations::GetRecentlyAddedRequest.new(
-        
-        x_plex_container_start: x_plex_container_start,
-        x_plex_container_size: x_plex_container_size
-      )
       url, params = @sdk_configuration.get_server_details
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/library/recentlyAdded"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetRecentlyAddedRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetRecentlyAddedLibraryRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -90,22 +85,22 @@ module PlexRubySDK
 
       content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
 
-      res = ::PlexRubySDK::Operations::GetRecentlyAddedResponse.new(
+      res = ::PlexRubySDK::Operations::GetRecentlyAddedLibraryResponse.new(
         status_code: r.status, content_type: content_type, raw_response: r
       )
       if r.status == 200
         if Utils.match_content_type(content_type, 'application/json')
-          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetRecentlyAddedResponseBody)
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetRecentlyAddedLibraryResponseBody)
           res.object = out
         end
       elsif r.status == 400
         if Utils.match_content_type(content_type, 'application/json')
-          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetRecentlyAddedBadRequest)
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetRecentlyAddedLibraryBadRequest)
           res.bad_request = out
         end
       elsif r.status == 401
         if Utils.match_content_type(content_type, 'application/json')
-          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetRecentlyAddedUnauthorized)
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetRecentlyAddedLibraryUnauthorized)
           res.unauthorized = out
         end
       end
@@ -420,7 +415,7 @@ module PlexRubySDK
     end
 
 
-    sig { params(section_key: ::Integer, type: ::PlexRubySDK::Operations::QueryParamType).returns(::PlexRubySDK::Operations::GetSearchLibraryResponse) }
+    sig { params(section_key: ::Integer, type: ::PlexRubySDK::Operations::GetSearchLibraryQueryParamType).returns(::PlexRubySDK::Operations::GetSearchLibraryResponse) }
     def get_search_library(section_key, type)
       # get_search_library - Search Library
       # Search for content within a specific section of the library.

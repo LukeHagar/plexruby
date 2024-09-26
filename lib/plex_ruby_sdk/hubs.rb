@@ -68,6 +68,41 @@ module PlexRubySDK
     end
 
 
+    sig { params(request: T.nilable(::PlexRubySDK::Operations::GetRecentlyAddedRequest)).returns(::PlexRubySDK::Operations::GetRecentlyAddedResponse) }
+    def get_recently_added(request)
+      # get_recently_added - Get Recently Added
+      # This endpoint will return the recently added content.
+      # 
+      url, params = @sdk_configuration.get_server_details
+      base_url = Utils.template_url(url, params)
+      url = "#{base_url}/hubs/home/recentlyAdded"
+      headers = {}
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetRecentlyAddedRequest, request, @sdk_configuration.globals)
+      headers['Accept'] = 'application/json'
+      headers['user-agent'] = @sdk_configuration.user_agent
+
+      r = @sdk_configuration.client.get(url) do |req|
+        req.headers = headers
+        req.params = query_params
+        Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
+      end
+
+      content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
+
+      res = ::PlexRubySDK::Operations::GetRecentlyAddedResponse.new(
+        status_code: r.status, content_type: content_type, raw_response: r
+      )
+      if r.status == 200
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetRecentlyAddedResponseBody)
+          res.object = out
+        end
+      elsif [400, 401].include?(r.status)
+      end
+      res
+    end
+
+
     sig { params(section_id: ::Float, count: T.nilable(::Float), only_transient: T.nilable(::PlexRubySDK::Operations::QueryParamOnlyTransient)).returns(::PlexRubySDK::Operations::GetLibraryHubsResponse) }
     def get_library_hubs(section_id, count = nil, only_transient = nil)
       # get_library_hubs - Get library specific hubs

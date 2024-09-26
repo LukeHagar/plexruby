@@ -3,7 +3,7 @@
 
 ## Fields
 
-| Field                 | Type                  | Required              | Description           | Example               |
-| --------------------- | --------------------- | --------------------- | --------------------- | --------------------- |
-| `key`                 | *T.nilable(::String)* | :heavy_minus_sign:    | N/A                   | =                     |
-| `title`               | *T.nilable(::String)* | :heavy_minus_sign:    | N/A                   | is                    |
+| Field              | Type               | Required           | Description        | Example            |
+| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
+| `key`              | *::String*         | :heavy_check_mark: | N/A                | =                  |
+| `title`            | *::String*         | :heavy_check_mark: | N/A                | is                 |

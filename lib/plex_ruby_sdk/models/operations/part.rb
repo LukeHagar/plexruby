@@ -11,40 +11,50 @@ module PlexRubySDK
     class Part < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
+      # The container format of the media file.
+      # 
+      field :container, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
 
-      field :container, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
+      field :duration, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
 
-      field :duration, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
+      field :file, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('file') } }
 
-      field :file, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('file') } }
+      field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+
+      field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+      field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+      field :video_profile, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
+
+      field :audio_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioProfile') } }
 
       field :has64bit_offsets, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('has64bitOffsets') } }
 
-      field :has_thumbnail, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasThumbnail') } }
+      field :has_thumbnail, T.nilable(::PlexRubySDK::Operations::HasThumbnail), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasThumbnail'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::HasThumbnail, true) } }
 
-      field :id, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+      field :indexes, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('indexes') } }
 
       field :optimized_for_streaming, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('optimizedForStreaming') } }
 
-      field :size, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-
-      field :video_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
+      field :stream, T.nilable(T::Array[::PlexRubySDK::Operations::Stream]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Stream') } }
 
 
-      sig { params(container: T.nilable(::String), duration: T.nilable(::Float), file: T.nilable(::String), has64bit_offsets: T.nilable(T::Boolean), has_thumbnail: T.nilable(::Float), id: T.nilable(::Float), key: T.nilable(::String), optimized_for_streaming: T.nilable(T::Boolean), size: T.nilable(::Float), video_profile: T.nilable(::String)).void }
-      def initialize(container: nil, duration: nil, file: nil, has64bit_offsets: nil, has_thumbnail: nil, id: nil, key: nil, optimized_for_streaming: nil, size: nil, video_profile: nil)
+      sig { params(container: ::String, duration: ::Integer, file: ::String, id: ::Integer, key: ::String, size: ::Integer, video_profile: ::String, audio_profile: T.nilable(::String), has64bit_offsets: T.nilable(T::Boolean), has_thumbnail: T.nilable(::PlexRubySDK::Operations::HasThumbnail), indexes: T.nilable(::String), optimized_for_streaming: T.nilable(T::Boolean), stream: T.nilable(T::Array[::PlexRubySDK::Operations::Stream])).void }
+      def initialize(container: nil, duration: nil, file: nil, id: nil, key: nil, size: nil, video_profile: nil, audio_profile: nil, has64bit_offsets: nil, has_thumbnail: nil, indexes: nil, optimized_for_streaming: nil, stream: nil)
         @container = container
         @duration = duration
         @file = file
-        @has64bit_offsets = has64bit_offsets
-        @has_thumbnail = has_thumbnail
         @id = id
         @key = key
-        @optimized_for_streaming = optimized_for_streaming
         @size = size
         @video_profile = video_profile
+        @audio_profile = audio_profile
+        @has64bit_offsets = has64bit_offsets
+        @has_thumbnail = has_thumbnail
+        @indexes = indexes
+        @optimized_for_streaming = optimized_for_streaming
+        @stream = stream
       end
     end
   end

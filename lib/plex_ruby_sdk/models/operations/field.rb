@@ -12,21 +12,21 @@ module PlexRubySDK
       extend T::Sig
 
 
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+      field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+      field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
 
       field :sub_type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subType') } }
 
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
 
-      field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
-
-
-      sig { params(key: T.nilable(::String), sub_type: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String)).void }
-      def initialize(key: nil, sub_type: nil, title: nil, type: nil)
+      sig { params(key: ::String, title: ::String, type: ::String, sub_type: T.nilable(::String)).void }
+      def initialize(key: nil, title: nil, type: nil, sub_type: nil)
         @key = key
-        @sub_type = sub_type
         @title = title
         @type = type
+        @sub_type = sub_type
       end
     end
   end

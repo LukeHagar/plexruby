@@ -21,7 +21,7 @@ module PlexRubySDK
       field :composite, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('composite') } }
 
       field :content, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('content') } }
-
+      # Unix epoch datetime in seconds
       field :content_changed_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('contentChangedAt') } }
       # Unix epoch datetime in seconds
       field :created_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('createdAt') } }

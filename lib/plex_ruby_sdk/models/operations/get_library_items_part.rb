@@ -29,13 +29,19 @@ module PlexRubySDK
 
       field :audio_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioProfile') } }
 
-      field :has_thumbnail, T.nilable(::PlexRubySDK::Operations::HasThumbnail), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasThumbnail'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::HasThumbnail, true) } }
+      field :has64bit_offsets, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('has64bitOffsets') } }
+
+      field :has_thumbnail, T.nilable(::PlexRubySDK::Operations::GetLibraryItemsHasThumbnail), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasThumbnail'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetLibraryItemsHasThumbnail, true) } }
 
       field :indexes, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('indexes') } }
 
+      field :optimized_for_streaming, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('optimizedForStreaming') } }
 
-      sig { params(container: ::String, duration: ::Integer, file: ::String, id: ::Integer, key: ::String, size: ::Integer, video_profile: ::String, audio_profile: T.nilable(::String), has_thumbnail: T.nilable(::PlexRubySDK::Operations::HasThumbnail), indexes: T.nilable(::String)).void }
-      def initialize(container: nil, duration: nil, file: nil, id: nil, key: nil, size: nil, video_profile: nil, audio_profile: nil, has_thumbnail: nil, indexes: nil)
+      field :stream, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsStream]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Stream') } }
+
+
+      sig { params(container: ::String, duration: ::Integer, file: ::String, id: ::Integer, key: ::String, size: ::Integer, video_profile: ::String, audio_profile: T.nilable(::String), has64bit_offsets: T.nilable(T::Boolean), has_thumbnail: T.nilable(::PlexRubySDK::Operations::GetLibraryItemsHasThumbnail), indexes: T.nilable(::String), optimized_for_streaming: T.nilable(T::Boolean), stream: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsStream])).void }
+      def initialize(container: nil, duration: nil, file: nil, id: nil, key: nil, size: nil, video_profile: nil, audio_profile: nil, has64bit_offsets: nil, has_thumbnail: nil, indexes: nil, optimized_for_streaming: nil, stream: nil)
         @container = container
         @duration = duration
         @file = file
@@ -44,8 +50,11 @@ module PlexRubySDK
         @size = size
         @video_profile = video_profile
         @audio_profile = audio_profile
+        @has64bit_offsets = has64bit_offsets
         @has_thumbnail = has_thumbnail
         @indexes = indexes
+        @optimized_for_streaming = optimized_for_streaming
+        @stream = stream
       end
     end
   end

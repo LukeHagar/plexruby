@@ -8,7 +8,7 @@ API Calls interacting with Plex Media Server Libraries
 ### Available Operations
 
 * [get_file_hash](#get_file_hash) - Get Hash Value
-* [get_recently_added](#get_recently_added) - Get Recently Added
+* [get_recently_added_library](#get_recently_added_library) - Get Recently Added
 * [get_all_libraries](#get_all_libraries) - Get All Libraries
 * [get_library_details](#get_library_details) - Get Library Details
 * [delete_library](#delete_library) - Delete Library Section
@@ -66,7 +66,7 @@ end
 
 
 
-## get_recently_added
+## get_recently_added_library
 
 This endpoint will return the recently added content.
 
@@ -90,8 +90,31 @@ s.config_security(
   )
 )
 
+
+req = ::PlexRubySDK::Operations::GetRecentlyAddedLibraryRequest.new(
+  content_directory_id: 2,
+  pinned_content_directory_id: [
+    3,
+    5,
+    7,
+    13,
+    12,
+    1,
+    6,
+    14,
+    2,
+    10,
+    16,
+    17,
+  ],
+  section_id: 2,
+  type: ::PlexRubySDK::Operations::QueryParamType::TV_SHOW,
+  include_meta: ::PlexRubySDK::Operations::QueryParamIncludeMeta::ENABLE,
+  x_plex_container_start: 0,
+  x_plex_container_size: 50,
+)
     
-res = s.library.get_recently_added(x_plex_container_start=0, x_plex_container_size=50)
+res = s.library.get_recently_added_library(req)
 
 if ! res.object.nil?
   # handle response
@@ -101,14 +124,13 @@ end
 
 ### Parameters
 
-| Parameter                                                                                                                                                                                 | Type                                                                                                                                                                                      | Required                                                                                                                                                                                  | Description                                                                                                                                                                               | Example                                                                                                                                                                                   |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `x_plex_container_start`                                                                                                                                                                  | *::Integer*                                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                        | The index of the first item to return. If not specified, the first item will be returned.<br/>If the number of items exceeds the limit, the response will be paginated.<br/>By default this is 0<br/> | 0                                                                                                                                                                                         |
-| `x_plex_container_size`                                                                                                                                                                   | *::Integer*                                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                        | The number of items to return. If not specified, all items will be returned.<br/>If the number of items exceeds the limit, the response will be paginated.<br/>By default this is 50<br/> | 50                                                                                                                                                                                        |
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                              | [::PlexRubySDK::Operations::GetRecentlyAddedLibraryRequest](../../models/operations/getrecentlyaddedlibraryrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetRecentlyAddedResponse)](../../models/operations/getrecentlyaddedresponse.md)**
+**[T.nilable(::PlexRubySDK::Operations::GetRecentlyAddedLibraryResponse)](../../models/operations/getrecentlyaddedlibraryresponse.md)**
 
 
 
@@ -336,8 +358,8 @@ req = ::PlexRubySDK::Operations::GetLibraryItemsRequest.new(
   section_key: 9518,
   tag: ::PlexRubySDK::Operations::Tag::EDITION,
   include_guids: ::PlexRubySDK::Operations::IncludeGuids::ENABLE,
-  include_meta: ::PlexRubySDK::Operations::IncludeMeta::ENABLE,
-  type: ::PlexRubySDK::Operations::Type::TV_SHOW,
+  type: ::PlexRubySDK::Operations::GetLibraryItemsQueryParamType::TV_SHOW,
+  include_meta: ::PlexRubySDK::Operations::GetLibraryItemsQueryParamIncludeMeta::ENABLE,
   x_plex_container_start: 0,
   x_plex_container_size: 50,
 )
@@ -452,7 +474,7 @@ s.config_security(
 )
 
     
-res = s.library.get_search_library(section_key=9518, type=::PlexRubySDK::Operations::QueryParamType::TV_SHOW)
+res = s.library.get_search_library(section_key=9518, type=::PlexRubySDK::Operations::GetSearchLibraryQueryParamType::TV_SHOW)
 
 if ! res.object.nil?
   # handle response
@@ -465,7 +487,7 @@ end
 | Parameter                                                                                                                                                                       | Type                                                                                                                                                                            | Required                                                                                                                                                                        | Description                                                                                                                                                                     | Example                                                                                                                                                                         |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `section_key`                                                                                                                                                                   | *::Integer*                                                                                                                                                                     | :heavy_check_mark:                                                                                                                                                              | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/>                                                                           | 9518                                                                                                                                                                            |
-| `type`                                                                                                                                                                          | [::PlexRubySDK::Operations::QueryParamType](../../models/operations/queryparamtype.md)                                                                                          | :heavy_check_mark:                                                                                                                                                              | The type of media to retrieve.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                               |
+| `type`                                                                                                                                                                          | [::PlexRubySDK::Operations::GetSearchLibraryQueryParamType](../../models/operations/getsearchlibraryqueryparamtype.md)                                                          | :heavy_check_mark:                                                                                                                                                              | The type of media to retrieve.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                               |
 
 ### Response
 

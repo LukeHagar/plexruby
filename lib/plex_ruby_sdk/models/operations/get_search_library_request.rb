@@ -22,10 +22,10 @@ module PlexRubySDK
       # 4 = episode
       # E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
       # 
-      field :type, ::PlexRubySDK::Operations::QueryParamType, { 'query_param': { 'field_name': 'type', 'style': 'form', 'explode': true } }
+      field :type, ::PlexRubySDK::Operations::GetSearchLibraryQueryParamType, { 'query_param': { 'field_name': 'type', 'style': 'form', 'explode': true } }
 
 
-      sig { params(section_key: ::Integer, type: ::PlexRubySDK::Operations::QueryParamType).void }
+      sig { params(section_key: ::Integer, type: ::PlexRubySDK::Operations::GetSearchLibraryQueryParamType).void }
       def initialize(section_key: nil, type: nil)
         @section_key = section_key
         @type = type

@@ -20,7 +20,7 @@ module PlexRubySDK
 
       field :directory, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsDirectory]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
 
-      field :field_type, T.nilable(T::Array[::PlexRubySDK::Operations::FieldType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('FieldType') } }
+      field :field_type, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsFieldType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('FieldType') } }
 
       field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
 
@@ -43,7 +43,7 @@ module PlexRubySDK
       field :view_mode, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewMode') } }
 
 
-      sig { params(allow_sync: T.nilable(T::Boolean), art: T.nilable(::String), content: T.nilable(::String), directory: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsDirectory]), field_type: T.nilable(T::Array[::PlexRubySDK::Operations::FieldType]), identifier: T.nilable(::String), library_section_id: T.nilable(::Integer), media_tag_prefix: T.nilable(::String), media_tag_version: T.nilable(::Integer), size: T.nilable(::Integer), thumb: T.nilable(::String), title1: T.nilable(::String), type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsType]), view_group: T.nilable(::String), view_mode: T.nilable(::Integer)).void }
+      sig { params(allow_sync: T.nilable(T::Boolean), art: T.nilable(::String), content: T.nilable(::String), directory: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsDirectory]), field_type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsFieldType]), identifier: T.nilable(::String), library_section_id: T.nilable(::Integer), media_tag_prefix: T.nilable(::String), media_tag_version: T.nilable(::Integer), size: T.nilable(::Integer), thumb: T.nilable(::String), title1: T.nilable(::String), type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsType]), view_group: T.nilable(::String), view_mode: T.nilable(::Integer)).void }
       def initialize(allow_sync: nil, art: nil, content: nil, directory: nil, field_type: nil, identifier: nil, library_section_id: nil, media_tag_prefix: nil, media_tag_version: nil, size: nil, thumb: nil, title1: nil, type: nil, view_group: nil, view_mode: nil)
         @allow_sync = allow_sync
         @art = art

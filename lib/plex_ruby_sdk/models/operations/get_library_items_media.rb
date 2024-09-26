@@ -42,11 +42,15 @@ module PlexRubySDK
 
       field :audio_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioProfile') } }
 
+      field :has64bit_offsets, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('has64bitOffsets') } }
+
       field :has_voice_activity, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasVoiceActivity') } }
 
+      field :optimized_for_streaming, T.nilable(::PlexRubySDK::Operations::GetLibraryItemsOptimizedForStreaming), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('optimizedForStreaming'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetLibraryItemsOptimizedForStreaming, true) } }
 
-      sig { params(aspect_ratio: ::Float, audio_channels: ::Integer, audio_codec: ::String, bitrate: ::Integer, container: ::String, duration: ::Integer, height: ::Integer, id: ::Integer, part: T::Array[::PlexRubySDK::Operations::GetLibraryItemsPart], video_codec: ::String, video_frame_rate: ::String, video_profile: ::String, video_resolution: ::String, width: ::Integer, audio_profile: T.nilable(::String), has_voice_activity: T.nilable(T::Boolean)).void }
-      def initialize(aspect_ratio: nil, audio_channels: nil, audio_codec: nil, bitrate: nil, container: nil, duration: nil, height: nil, id: nil, part: nil, video_codec: nil, video_frame_rate: nil, video_profile: nil, video_resolution: nil, width: nil, audio_profile: nil, has_voice_activity: nil)
+
+      sig { params(aspect_ratio: ::Float, audio_channels: ::Integer, audio_codec: ::String, bitrate: ::Integer, container: ::String, duration: ::Integer, height: ::Integer, id: ::Integer, part: T::Array[::PlexRubySDK::Operations::GetLibraryItemsPart], video_codec: ::String, video_frame_rate: ::String, video_profile: ::String, video_resolution: ::String, width: ::Integer, audio_profile: T.nilable(::String), has64bit_offsets: T.nilable(T::Boolean), has_voice_activity: T.nilable(T::Boolean), optimized_for_streaming: T.nilable(::PlexRubySDK::Operations::GetLibraryItemsOptimizedForStreaming)).void }
+      def initialize(aspect_ratio: nil, audio_channels: nil, audio_codec: nil, bitrate: nil, container: nil, duration: nil, height: nil, id: nil, part: nil, video_codec: nil, video_frame_rate: nil, video_profile: nil, video_resolution: nil, width: nil, audio_profile: nil, has64bit_offsets: nil, has_voice_activity: nil, optimized_for_streaming: nil)
         @aspect_ratio = aspect_ratio
         @audio_channels = audio_channels
         @audio_codec = audio_codec
@@ -62,7 +66,9 @@ module PlexRubySDK
         @video_resolution = video_resolution
         @width = width
         @audio_profile = audio_profile
+        @has64bit_offsets = has64bit_offsets
         @has_voice_activity = has_voice_activity
+        @optimized_for_streaming = optimized_for_streaming
       end
     end
   end

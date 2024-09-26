@@ -14,20 +14,20 @@ module PlexRubySDK
 
       field :active, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('active') } }
 
-      field :field, T.nilable(T::Array[::PlexRubySDK::Operations::Field]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Field') } }
+      field :field, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsField]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Field') } }
 
       field :filter, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsFilter]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Filter') } }
 
       field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
 
-      field :sort, T.nilable(T::Array[::PlexRubySDK::Operations::Sort]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Sort') } }
+      field :sort, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsSort]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Sort') } }
 
       field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
 
       field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
 
 
-      sig { params(active: T.nilable(T::Boolean), field: T.nilable(T::Array[::PlexRubySDK::Operations::Field]), filter: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsFilter]), key: T.nilable(::String), sort: T.nilable(T::Array[::PlexRubySDK::Operations::Sort]), title: T.nilable(::String), type: T.nilable(::String)).void }
+      sig { params(active: T.nilable(T::Boolean), field: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsField]), filter: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsFilter]), key: T.nilable(::String), sort: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsSort]), title: T.nilable(::String), type: T.nilable(::String)).void }
       def initialize(active: nil, field: nil, filter: nil, key: nil, sort: nil, title: nil, type: nil)
         @active = active
         @field = field

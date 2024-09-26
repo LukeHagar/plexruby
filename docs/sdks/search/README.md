@@ -47,7 +47,7 @@ s.config_security(
 )
 
     
-res = s.search.perform_search(query="dylan", section_id=5838.67, limit=5.0)
+res = s.search.perform_search(query="dylan", section_id=9372.69, limit=5.0)
 
 if res.status_code == 200
   # handle response

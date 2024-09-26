@@ -11,13 +11,28 @@ module PlexRubySDK
     class Role < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
-
+      # The filter used to find the actor or tag.
+      field :filter, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
+      # The ID of the tag or actor.
+      field :id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+      # The role of the actor or tag in the media.
+      field :role, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('role') } }
+      # The name of the tag or actor.
       field :tag, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+      # Unique identifier for the tag.
+      field :tag_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
+      # The thumbnail of the actor
+      field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
 
 
-      sig { params(tag: T.nilable(::String)).void }
-      def initialize(tag: nil)
+      sig { params(filter: T.nilable(::String), id: T.nilable(::Integer), role: T.nilable(::String), tag: T.nilable(::String), tag_key: T.nilable(::String), thumb: T.nilable(::String)).void }
+      def initialize(filter: nil, id: nil, role: nil, tag: nil, tag_key: nil, thumb: nil)
+        @filter = filter
+        @id = id
+        @role = role
         @tag = tag
+        @tag_key = tag_key
+        @thumb = thumb
       end
     end
   end

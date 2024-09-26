@@ -13,7 +13,7 @@ module PlexRubySDK
 
       # The direction of the sort. Can be either `asc` or `desc`.
       # 
-      field :default_direction, ::PlexRubySDK::Operations::DefaultDirection, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('defaultDirection'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::DefaultDirection, false) } }
+      field :default_direction, ::PlexRubySDK::Operations::GetLibraryItemsDefaultDirection, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('defaultDirection'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetLibraryItemsDefaultDirection, false) } }
 
       field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
 
@@ -22,7 +22,7 @@ module PlexRubySDK
       field :active, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('active') } }
       # The direction of the sort. Can be either `asc` or `desc`.
       # 
-      field :active_direction, T.nilable(::PlexRubySDK::Operations::ActiveDirection), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('activeDirection'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::ActiveDirection, true) } }
+      field :active_direction, T.nilable(::PlexRubySDK::Operations::GetLibraryItemsActiveDirection), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('activeDirection'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetLibraryItemsActiveDirection, true) } }
 
       field :default, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('default') } }
 
@@ -31,7 +31,7 @@ module PlexRubySDK
       field :first_character_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('firstCharacterKey') } }
 
 
-      sig { params(default_direction: ::PlexRubySDK::Operations::DefaultDirection, key: ::String, title: ::String, active: T.nilable(T::Boolean), active_direction: T.nilable(::PlexRubySDK::Operations::ActiveDirection), default: T.nilable(::String), desc_key: T.nilable(::String), first_character_key: T.nilable(::String)).void }
+      sig { params(default_direction: ::PlexRubySDK::Operations::GetLibraryItemsDefaultDirection, key: ::String, title: ::String, active: T.nilable(T::Boolean), active_direction: T.nilable(::PlexRubySDK::Operations::GetLibraryItemsActiveDirection), default: T.nilable(::String), desc_key: T.nilable(::String), first_character_key: T.nilable(::String)).void }
       def initialize(default_direction: nil, key: nil, title: nil, active: nil, active_direction: nil, default: nil, desc_key: nil, first_character_key: nil)
         @default_direction = default_direction
         @key = key

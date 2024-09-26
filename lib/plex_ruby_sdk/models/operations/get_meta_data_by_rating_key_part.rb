@@ -30,12 +30,12 @@ module PlexRubySDK
 
       field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
 
-      field :stream, T.nilable(T::Array[::PlexRubySDK::Operations::Stream]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Stream') } }
+      field :stream, T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyStream]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Stream') } }
 
       field :video_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
 
 
-      sig { params(audio_profile: T.nilable(::String), container: T.nilable(::String), duration: T.nilable(::Integer), file: T.nilable(::String), has64bit_offsets: T.nilable(T::Boolean), id: T.nilable(::Integer), key: T.nilable(::String), optimized_for_streaming: T.nilable(T::Boolean), size: T.nilable(::Integer), stream: T.nilable(T::Array[::PlexRubySDK::Operations::Stream]), video_profile: T.nilable(::String)).void }
+      sig { params(audio_profile: T.nilable(::String), container: T.nilable(::String), duration: T.nilable(::Integer), file: T.nilable(::String), has64bit_offsets: T.nilable(T::Boolean), id: T.nilable(::Integer), key: T.nilable(::String), optimized_for_streaming: T.nilable(T::Boolean), size: T.nilable(::Integer), stream: T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyStream]), video_profile: T.nilable(::String)).void }
       def initialize(audio_profile: nil, container: nil, duration: nil, file: nil, has64bit_offsets: nil, id: nil, key: nil, optimized_for_streaming: nil, size: nil, stream: nil, video_profile: nil)
         @audio_profile = audio_profile
         @container = container

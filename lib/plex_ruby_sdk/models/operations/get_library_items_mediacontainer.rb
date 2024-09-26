@@ -7,7 +7,8 @@
 module PlexRubySDK
   module Operations
   
-
+    # The Meta object is only included in the response if the `includeMeta` parameter is set to `1`.
+    # 
     class GetLibraryItemsMediaContainer < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
@@ -20,7 +21,7 @@ module PlexRubySDK
 
       field :identifier, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
 
-      field :library_section_id, ::Object, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
+      field :library_section_id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
 
       field :library_section_title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionTitle') } }
 
@@ -45,19 +46,23 @@ module PlexRubySDK
       field :total_size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('totalSize') } }
 
       field :view_group, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewGroup') } }
+
+      field :field_type, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsFieldType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('FieldType') } }
       # The Meta object is only included in the response if the `includeMeta` parameter is set to `1`.
       # 
-      field :meta, T.nilable(::PlexRubySDK::Operations::Meta), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Meta') } }
+      field :meta, T.nilable(::PlexRubySDK::Operations::GetLibraryItemsMeta), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Meta') } }
 
       field :mixed_parents, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mixedParents') } }
 
       field :nocache, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('nocache') } }
 
+      field :type, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Type') } }
+
       field :view_mode, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewMode') } }
 
 
-      sig { params(allow_sync: T::Boolean, art: ::String, content: ::String, identifier: ::String, library_section_id: ::Object, library_section_title: ::String, library_section_uuid: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, metadata: T::Array[::PlexRubySDK::Operations::GetLibraryItemsMetadata], offset: ::Integer, size: ::Integer, thumb: ::String, title1: ::String, title2: ::String, total_size: ::Integer, view_group: ::String, meta: T.nilable(::PlexRubySDK::Operations::Meta), mixed_parents: T.nilable(T::Boolean), nocache: T.nilable(T::Boolean), view_mode: T.nilable(::Integer)).void }
-      def initialize(allow_sync: nil, art: nil, content: nil, identifier: nil, library_section_id: nil, library_section_title: nil, library_section_uuid: nil, media_tag_prefix: nil, media_tag_version: nil, metadata: nil, offset: nil, size: nil, thumb: nil, title1: nil, title2: nil, total_size: nil, view_group: nil, meta: nil, mixed_parents: nil, nocache: nil, view_mode: nil)
+      sig { params(allow_sync: T::Boolean, art: ::String, content: ::String, identifier: ::String, library_section_id: ::Integer, library_section_title: ::String, library_section_uuid: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, metadata: T::Array[::PlexRubySDK::Operations::GetLibraryItemsMetadata], offset: ::Integer, size: ::Integer, thumb: ::String, title1: ::String, title2: ::String, total_size: ::Integer, view_group: ::String, field_type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsFieldType]), meta: T.nilable(::PlexRubySDK::Operations::GetLibraryItemsMeta), mixed_parents: T.nilable(T::Boolean), nocache: T.nilable(T::Boolean), type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsType]), view_mode: T.nilable(::Integer)).void }
+      def initialize(allow_sync: nil, art: nil, content: nil, identifier: nil, library_section_id: nil, library_section_title: nil, library_section_uuid: nil, media_tag_prefix: nil, media_tag_version: nil, metadata: nil, offset: nil, size: nil, thumb: nil, title1: nil, title2: nil, total_size: nil, view_group: nil, field_type: nil, meta: nil, mixed_parents: nil, nocache: nil, type: nil, view_mode: nil)
         @allow_sync = allow_sync
         @art = art
         @content = content
@@ -75,9 +80,11 @@ module PlexRubySDK
         @title2 = title2
         @total_size = total_size
         @view_group = view_group
+        @field_type = field_type
         @meta = meta
         @mixed_parents = mixed_parents
         @nocache = nocache
+        @type = type
         @view_mode = view_mode
       end
     end

@@ -12,12 +12,12 @@ module PlexRubySDK
       extend T::Sig
 
 
-      field :operator, T.nilable(T::Array[::PlexRubySDK::Operations::Operator]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Operator') } }
+      field :operator, T::Array[::PlexRubySDK::Operations::Operator], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Operator') } }
 
-      field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
 
 
-      sig { params(operator: T.nilable(T::Array[::PlexRubySDK::Operations::Operator]), type: T.nilable(::String)).void }
+      sig { params(operator: T::Array[::PlexRubySDK::Operations::Operator], type: ::String).void }
       def initialize(operator: nil, type: nil)
         @operator = operator
         @type = type

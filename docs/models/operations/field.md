@@ -5,7 +5,7 @@
 
 | Field                 | Type                  | Required              | Description           | Example               |
 | --------------------- | --------------------- | --------------------- | --------------------- | --------------------- |
-| `key`                 | *T.nilable(::String)* | :heavy_minus_sign:    | N/A                   | label                 |
-| `title`               | *T.nilable(::String)* | :heavy_minus_sign:    | N/A                   | Label                 |
-| `type`                | *T.nilable(::String)* | :heavy_minus_sign:    | N/A                   | tag                   |
-| `sub_type`            | *T.nilable(::String)* | :heavy_minus_sign:    | N/A                   | bitrate               |
+| `key`                 | *::String*            | :heavy_check_mark:    | N/A                   | show.title            |
+| `title`               | *::String*            | :heavy_check_mark:    | N/A                   | Show Title            |
+| `type`                | *::String*            | :heavy_check_mark:    | N/A                   | string                |
+| `sub_type`            | *T.nilable(::String)* | :heavy_minus_sign:    | N/A                   | rating                |

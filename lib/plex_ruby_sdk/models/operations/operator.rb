@@ -12,12 +12,12 @@ module PlexRubySDK
       extend T::Sig
 
 
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+      field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
 
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+      field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
 
 
-      sig { params(key: T.nilable(::String), title: T.nilable(::String)).void }
+      sig { params(key: ::String, title: ::String).void }
       def initialize(key: nil, title: nil)
         @key = key
         @title = title
