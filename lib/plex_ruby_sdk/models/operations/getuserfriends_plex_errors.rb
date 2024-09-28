@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     GET_USER_FRIENDS_PLEX_ERRORS_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
 

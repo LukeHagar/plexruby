@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     POST_USERS_SIGN_IN_DATA_WATCHED_INDICATOR_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
     # PostUsersSignInDataWatchedIndicator - Whether or not media watched indicators are enabled (little orange dot on media)

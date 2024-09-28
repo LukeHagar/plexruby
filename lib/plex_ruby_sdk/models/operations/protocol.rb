@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     PROTOCOL_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
     # Protocol - The protocol used for the connection (http, https, etc)

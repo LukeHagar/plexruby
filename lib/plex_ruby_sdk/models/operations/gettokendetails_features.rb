@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     GET_TOKEN_DETAILS_FEATURES_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
 

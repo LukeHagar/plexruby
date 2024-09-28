@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     INCLUDE_RELAY_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
     # IncludeRelay - Include Relay addresses in the results 

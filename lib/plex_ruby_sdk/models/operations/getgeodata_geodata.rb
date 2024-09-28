@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     GET_GEO_DATA_GEO_DATA_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
     # Geo location data

@@ -290,7 +290,7 @@ actions:
       x-codeSamples:
         - lang: ruby
           label: getTokenByPinId
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\n\n    \nres = s.plex.get_token_by_pin_id(pin_id=408895)\n\nif ! res.auth_pin_container.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\n\n\nreq = ::PlexRubySDK::Operations::GetTokenByPinIdRequest.new(\n  pin_id: 408895,\n)\n    \nres = s.plex.get_token_by_pin_id(req)\n\nif ! res.auth_pin_container.nil?\n  # handle response\nend"
   - target: $["paths"]["/playlists"]["get"]
     update:
       x-codeSamples:

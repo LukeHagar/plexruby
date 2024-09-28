@@ -7,10 +7,10 @@
 module PlexRubySDK
   module Operations
     MAILING_LIST_STATUS_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
-    # MailingListStatus - Your current mailing list status
+    # MailingListStatus - Your current mailing list status (active or unsubscribed)
     class MailingListStatus < T::Enum
       enums do
         ACTIVE = new('active')

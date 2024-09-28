@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     GET_TOKEN_DETAILS_AUTHENTICATION_RESPONSE_STATUS_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
     # GetTokenDetailsAuthenticationResponseStatus - String representation of subscriptionActive

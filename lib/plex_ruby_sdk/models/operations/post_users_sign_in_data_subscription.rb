@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     POST_USERS_SIGN_IN_DATA_SUBSCRIPTION_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
     # If the account’s Plex Pass subscription is active

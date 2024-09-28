@@ -293,8 +293,12 @@ s = ::PlexRubySDK::PlexAPI.new(
       device_name: "Linux",
     )
 
+
+req = ::PlexRubySDK::Operations::GetTokenByPinIdRequest.new(
+  pin_id: 408895,
+)
     
-res = s.plex.get_token_by_pin_id(pin_id=408895)
+res = s.plex.get_token_by_pin_id(req)
 
 if ! res.auth_pin_container.nil?
   # handle response
@@ -304,10 +308,10 @@ end
 
 ### Parameters
 
-| Parameter                                 | Type                                      | Required                                  | Description                               |
-| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
-| `pin_id`                                  | *::Integer*                               | :heavy_check_mark:                        | The PinID to retrieve an access token for |
-| `server_url`                              | *String*                                  | :heavy_minus_sign:                        | An optional server URL to use.            |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [::PlexRubySDK::Operations::GetTokenByPinIdRequest](../../models/operations/gettokenbypinidrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `server_url`                                                                                           | *String*                                                                                               | :heavy_minus_sign:                                                                                     | An optional server URL to use.                                                                         |
 
 ### Response
 

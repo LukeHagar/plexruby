@@ -6,6 +6,9 @@ Metrics:
   Enabled: false
 Style/IfInsideElse:
   Enabled: false
+# Temporary until Ruby deals with empty responses correctly
+Style/EmptyElse:
+  Enabled: false
 Style/GuardClause:
   Enabled: false
 Style/ConditionalAssignment:

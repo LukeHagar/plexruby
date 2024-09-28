@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     GET_TOKEN_DETAILS_USER_PLEX_ACCOUNT_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
     # Logged in user details
@@ -60,7 +60,7 @@ module PlexRubySDK
       field :locale, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('locale') } }
       # If you are subscribed to the Plex newsletter
       field :mailing_list_active, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mailingListActive') } }
-      # Your current mailing list status
+      # Your current mailing list status (active or unsubscribed)
       field :mailing_list_status, ::PlexRubySDK::Operations::MailingListStatus, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mailingListStatus'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::MailingListStatus, false) } }
       # The maximum number of accounts allowed in the Plex Home
       field :max_home_size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('maxHomeSize') } }

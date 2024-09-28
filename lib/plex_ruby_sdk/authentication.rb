@@ -14,12 +14,12 @@ module PlexRubySDK
     
     # GET_TOKEN_DETAILS_SERVERS contains the list of server urls available to the SDK.
     GET_TOKEN_DETAILS_SERVERS = [
-      'https://plex.tv/api/v2/', 
+      'https://plex.tv/api/v2', 
     ].freeze
     
     # POST_USERS_SIGN_IN_DATA_SERVERS contains the list of server urls available to the SDK.
     POST_USERS_SIGN_IN_DATA_SERVERS = [
-      'https://plex.tv/api/v2/', 
+      'https://plex.tv/api/v2', 
     ].freeze
     # API Calls regarding authentication for Plex Media Server
     # 

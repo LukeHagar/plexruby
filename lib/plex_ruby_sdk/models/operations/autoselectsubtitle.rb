@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     AUTO_SELECT_SUBTITLE_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
     # AutoSelectSubtitle - The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)

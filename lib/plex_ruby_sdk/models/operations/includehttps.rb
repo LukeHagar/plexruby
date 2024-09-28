@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     INCLUDE_HTTPS_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
     # IncludeHttps - Include Https entries in the results

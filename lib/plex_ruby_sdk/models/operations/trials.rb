@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     TRIALS_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
 

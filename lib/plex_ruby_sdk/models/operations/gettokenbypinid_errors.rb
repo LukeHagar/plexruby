@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     GET_TOKEN_BY_PIN_ID_ERRORS_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
 

@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     GET_GEO_DATA_BAD_REQUEST_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
     # Bad Request - A parameter was not specified, or was specified incorrectly.

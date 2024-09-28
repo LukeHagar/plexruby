@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     POST_USERS_SIGN_IN_DATA_DEFAULT_SUBTITLE_FORCED_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
     # PostUsersSignInDataDefaultSubtitleForced - The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles)

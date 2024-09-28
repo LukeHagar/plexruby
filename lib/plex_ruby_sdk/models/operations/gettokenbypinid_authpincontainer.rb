@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     GET_TOKEN_BY_PIN_ID_AUTH_PIN_CONTAINER_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
     # The Pin with a non-null authToken when it has been verified by the user

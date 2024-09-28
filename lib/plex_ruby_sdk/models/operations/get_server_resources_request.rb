@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     GET_SERVER_RESOURCES_REQUEST_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
 

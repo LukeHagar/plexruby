@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
     INCLUDE_I_PV6_SERVERS = [
-      'https://plex.tv/api/v2/'
+      'https://plex.tv/api/v2'
     ].freeze
   
     # IncludeIPv6 - Include IPv6 entries in the results
