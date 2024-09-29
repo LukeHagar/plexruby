@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: aa9449e7-c19d-411d-b8e2-f9c5fe982f6f
 management:
-  docChecksum: e7673f3f46e5b0bf495c378378aa7ad6
+  docChecksum: 9f62ea35c6168986c8e3557d5df50b99
   docVersion: 0.0.3
   speakeasyVersion: 1.404.5
   generationVersion: 2.426.2
-  releaseVersion: 0.4.3
-  configChecksum: 99bb289a2dc7a206fe4ee310195b2359
+  releaseVersion: 0.4.4
+  configChecksum: 8179ff53ef7a5af9de014fd5a209ac2b
   repoURL: https://github.com/LukeHagar/plexruby.git
   repoSubDirectory: .
   installationURL: https://github.com/LukeHagar/plexruby
