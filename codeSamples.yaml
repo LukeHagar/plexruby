@@ -350,7 +350,7 @@ actions:
       x-codeSamples:
         - lang: ruby
           label: resources
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.plex.get_server_resources(include_https=::PlexRubySDK::Operations::IncludeHttps::ENABLE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ENABLE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ENABLE)\n\nif ! res.plex_devices.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.plex.get_server_resources(include_https=::PlexRubySDK::Operations::IncludeHttps::ENABLE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ENABLE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ENABLE, client_id=\"gcgzw5rz2xovp84b4vha3a40\")\n\nif ! res.plex_devices.nil?\n  # handle response\nend"
   - target: $["paths"]["/search"]["get"]
     update:
       x-codeSamples:

@@ -14,6 +14,11 @@ module PlexRubySDK
     class GetServerResourcesRequest < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
+      # The unique identifier for the client application
+      # This is used to track the client application and its usage
+      # (UUID, serial number, or other number unique per device)
+      # 
+      field :client_id, T.nilable(::String), { 'query_param': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'form', 'explode': true } }
       # Include Https entries in the results
       field :include_https, T.nilable(::PlexRubySDK::Operations::IncludeHttps), { 'query_param': { 'field_name': 'includeHttps', 'style': 'form', 'explode': true } }
       # Include IPv6 entries in the results
@@ -24,8 +29,9 @@ module PlexRubySDK
       field :include_relay, T.nilable(::PlexRubySDK::Operations::IncludeRelay), { 'query_param': { 'field_name': 'includeRelay', 'style': 'form', 'explode': true } }
 
 
-      sig { params(include_https: T.nilable(::PlexRubySDK::Operations::IncludeHttps), include_i_pv6: T.nilable(::PlexRubySDK::Operations::IncludeIPv6), include_relay: T.nilable(::PlexRubySDK::Operations::IncludeRelay)).void }
-      def initialize(include_https: nil, include_i_pv6: nil, include_relay: nil)
+      sig { params(client_id: T.nilable(::String), include_https: T.nilable(::PlexRubySDK::Operations::IncludeHttps), include_i_pv6: T.nilable(::PlexRubySDK::Operations::IncludeIPv6), include_relay: T.nilable(::PlexRubySDK::Operations::IncludeRelay)).void }
+      def initialize(client_id: nil, include_https: nil, include_i_pv6: nil, include_relay: nil)
+        @client_id = client_id
         @include_https = include_https
         @include_i_pv6 = include_i_pv6
         @include_relay = include_relay

@@ -216,15 +216,16 @@ module PlexRubySDK
     end
 
 
-    sig { params(include_https: T.nilable(::PlexRubySDK::Operations::IncludeHttps), include_relay: T.nilable(::PlexRubySDK::Operations::IncludeRelay), include_i_pv6: T.nilable(::PlexRubySDK::Operations::IncludeIPv6), server_url: T.nilable(String)).returns(::PlexRubySDK::Operations::GetServerResourcesResponse) }
-    def get_server_resources(include_https = nil, include_relay = nil, include_i_pv6 = nil, server_url = nil)
+    sig { params(include_https: T.nilable(::PlexRubySDK::Operations::IncludeHttps), include_relay: T.nilable(::PlexRubySDK::Operations::IncludeRelay), include_i_pv6: T.nilable(::PlexRubySDK::Operations::IncludeIPv6), client_id: T.nilable(::String), server_url: T.nilable(String)).returns(::PlexRubySDK::Operations::GetServerResourcesResponse) }
+    def get_server_resources(include_https = nil, include_relay = nil, include_i_pv6 = nil, client_id = nil, server_url = nil)
       # get_server_resources - Get Server Resources
       # Get Plex server access tokens and server connections
       request = ::PlexRubySDK::Operations::GetServerResourcesRequest.new(
         
         include_https: include_https,
         include_relay: include_relay,
-        include_i_pv6: include_i_pv6
+        include_i_pv6: include_i_pv6,
+        client_id: client_id
       )
       base_url = Utils.template_url(GET_SERVER_RESOURCES_SERVERS[0], {
       })
