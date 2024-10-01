@@ -58,7 +58,6 @@ end
 
 
 
-
 ## get_source_connection_information
 
 If a caller requires connection details and a transient token for a source that is known to the server, for example a cloud media provider or shared PMS, then this endpoint can be called. This endpoint is only accessible with either an admin token or a valid transient token generated from an admin token.
@@ -105,7 +104,6 @@ end
 
 
 
-
 ## get_token_details
 
 Get the User data from the provided X-Plex-Token
@@ -147,7 +145,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetTokenDetailsResponse)](../../models/operations/gettokendetailsresponse.md)**
-
 
 
 
@@ -196,5 +193,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataResponse)](../../models/operations/postuserssignindataresponse.md)**
-
 

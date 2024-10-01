@@ -59,7 +59,6 @@ end
 
 
 
-
 ## get_user_friends
 
 Get friends of provided auth token.
@@ -104,7 +103,6 @@ end
 
 
 
-
 ## get_geo_data
 
 Returns the geolocation and locale data of the caller
@@ -141,7 +139,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetGeoDataResponse)](../../models/operations/getgeodataresponse.md)**
-
 
 
 
@@ -183,7 +180,6 @@ end
 
 
 
-
 ## get_server_resources
 
 Get Plex server access tokens and server connections
@@ -218,18 +214,17 @@ end
 
 ### Parameters
 
-| Parameter                                                                                                                                                             | Type                                                                                                                                                                  | Required                                                                                                                                                              | Description                                                                                                                                                           | Example                                                                                                                                                               |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `include_https`                                                                                                                                                       | [::PlexRubySDK::Operations::IncludeHttps](../../models/operations/includehttps.md)                                                                                    | :heavy_minus_sign:                                                                                                                                                    | Include Https entries in the results                                                                                                                                  | 1                                                                                                                                                                     |
-| `include_relay`                                                                                                                                                       | [::PlexRubySDK::Operations::IncludeRelay](../../models/operations/includerelay.md)                                                                                    | :heavy_minus_sign:                                                                                                                                                    | Include Relay addresses in the results <br/>E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400<br/>                                            | 1                                                                                                                                                                     |
-| `include_i_pv6`                                                                                                                                                       | [::PlexRubySDK::Operations::IncludeIPv6](../../models/operations/includeipv6.md)                                                                                      | :heavy_minus_sign:                                                                                                                                                    | Include IPv6 entries in the results                                                                                                                                   | 1                                                                                                                                                                     |
-| `client_id`                                                                                                                                                           | *::String*                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                    | The unique identifier for the client application<br/>This is used to track the client application and its usage<br/>(UUID, serial number, or other number unique per device)<br/> | gcgzw5rz2xovp84b4vha3a40                                                                                                                                              |
-| `server_url`                                                                                                                                                          | *String*                                                                                                                                                              | :heavy_minus_sign:                                                                                                                                                    | An optional server URL to use.                                                                                                                                        | http://localhost:8080                                                                                                                                                 |
+| Parameter                                                                                                                                                              | Type                                                                                                                                                                   | Required                                                                                                                                                               | Description                                                                                                                                                            | Example                                                                                                                                                                |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `include_https`                                                                                                                                                        | [::PlexRubySDK::Operations::IncludeHttps](../../models/operations/includehttps.md)                                                                                     | :heavy_minus_sign:                                                                                                                                                     | Include Https entries in the results                                                                                                                                   | 1                                                                                                                                                                      |
+| `include_relay`                                                                                                                                                        | [::PlexRubySDK::Operations::IncludeRelay](../../models/operations/includerelay.md)                                                                                     | :heavy_minus_sign:                                                                                                                                                     | Include Relay addresses in the results <br/>E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400<br/>                                             | 1                                                                                                                                                                      |
+| `include_i_pv6`                                                                                                                                                        | [::PlexRubySDK::Operations::IncludeIPv6](../../models/operations/includeipv6.md)                                                                                       | :heavy_minus_sign:                                                                                                                                                     | Include IPv6 entries in the results                                                                                                                                    | 1                                                                                                                                                                      |
+| `client_id`                                                                                                                                                            | *::String*                                                                                                                                                             | :heavy_minus_sign:                                                                                                                                                     | The unique identifier for the client application. This is used to track the client application and its usage. (UUID, serial number, or other number unique per device) | gcgzw5rz2xovp84b4vha3a40                                                                                                                                               |
+| `server_url`                                                                                                                                                           | *String*                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                     | An optional server URL to use.                                                                                                                                         | http://localhost:8080                                                                                                                                                  |
 
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetServerResourcesResponse)](../../models/operations/getserverresourcesresponse.md)**
-
 
 
 
@@ -275,7 +270,6 @@ end
 
 
 
-
 ## get_token_by_pin_id
 
 Retrieve an Access Token from Plex.tv after the Pin has been authenticated
@@ -317,5 +311,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetTokenByPinIdResponse)](../../models/operations/gettokenbypinidresponse.md)**
-
 

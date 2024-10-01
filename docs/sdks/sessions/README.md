@@ -50,7 +50,6 @@ end
 
 
 
-
 ## get_session_history
 
 This will Retrieve a listing of all history views.
@@ -98,7 +97,6 @@ end
 
 
 
-
 ## get_transcode_sessions
 
 Get Transcode Sessions
@@ -134,7 +132,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetTranscodeSessionsResponse)](../../models/operations/gettranscodesessionsresponse.md)**
-
 
 
 
@@ -179,5 +176,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::StopTranscodeSessionResponse)](../../models/operations/stoptranscodesessionresponse.md)**
-
 

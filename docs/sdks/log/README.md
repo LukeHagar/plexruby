@@ -58,7 +58,6 @@ end
 
 
 
-
 ## log_multi_line
 
 This endpoint allows for the batch addition of log entries to the main Plex Media Server log.  
@@ -128,7 +127,6 @@ end
 
 
 
-
 ## enable_paper_trail
 
 This endpoint will enable all Plex Media Serverlogs to be sent to the Papertrail networked logging site for a period of time.
@@ -165,5 +163,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::EnablePaperTrailResponse)](../../models/operations/enablepapertrailresponse.md)**
-
 

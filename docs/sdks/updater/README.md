@@ -50,7 +50,6 @@ end
 
 
 
-
 ## check_for_updates
 
 Checking for updates
@@ -92,7 +91,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::CheckForUpdatesResponse)](../../models/operations/checkforupdatesresponse.md)**
-
 
 
 
@@ -139,5 +137,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::ApplyUpdatesResponse)](../../models/operations/applyupdatesresponse.md)**
-
 

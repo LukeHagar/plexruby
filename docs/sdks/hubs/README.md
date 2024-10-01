@@ -56,7 +56,6 @@ end
 
 
 
-
 ## get_recently_added
 
 This endpoint will return the recently added content.
@@ -111,7 +110,6 @@ end
 
 
 
-
 ## get_library_hubs
 
 This endpoint will return a list of library specific hubs
@@ -156,5 +154,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetLibraryHubsResponse)](../../models/operations/getlibraryhubsresponse.md)**
-
 

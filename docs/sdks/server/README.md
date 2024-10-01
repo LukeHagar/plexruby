@@ -55,7 +55,6 @@ end
 
 
 
-
 ## get_server_preferences
 
 Get Server Preferences
@@ -91,7 +90,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetServerPreferencesResponse)](../../models/operations/getserverpreferencesresponse.md)**
-
 
 
 
@@ -133,7 +131,6 @@ end
 
 
 
-
 ## get_devices
 
 Get Devices
@@ -172,7 +169,6 @@ end
 
 
 
-
 ## get_server_identity
 
 This request is useful to determine if the server is online or offline
@@ -203,7 +199,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetServerIdentityResponse)](../../models/operations/getserveridentityresponse.md)**
-
 
 
 
@@ -242,7 +237,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetMyPlexAccountResponse)](../../models/operations/getmyplexaccountresponse.md)**
-
 
 
 
@@ -301,7 +295,6 @@ end
 
 
 
-
 ## get_media_providers
 
 Retrieves media providers and their features from the Plex server.
@@ -346,7 +339,6 @@ end
 
 
 
-
 ## get_server_list
 
 Get Server List
@@ -382,5 +374,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetServerListResponse)](../../models/operations/getserverlistresponse.md)**
-
 

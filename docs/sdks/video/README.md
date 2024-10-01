@@ -67,7 +67,6 @@ end
 
 
 
-
 ## start_universal_transcode
 
 Begin a Universal Transcode Session
@@ -128,5 +127,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::StartUniversalTranscodeResponse)](../../models/operations/startuniversaltranscoderesponse.md)**
-
 

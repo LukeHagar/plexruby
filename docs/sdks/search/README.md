@@ -69,7 +69,6 @@ end
 
 
 
-
 ## perform_voice_search
 
 This endpoint performs a search specifically tailored towards voice or other imprecise input which may work badly with the substring and spell-checking heuristics used by the `/hubs/search` endpoint. 
@@ -120,7 +119,6 @@ end
 
 
 
-
 ## get_search_results
 
 This will search the database for the string provided.
@@ -162,5 +160,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetSearchResultsResponse)](../../models/operations/getsearchresultsresponse.md)**
-
 

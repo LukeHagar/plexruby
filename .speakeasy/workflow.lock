@@ -1,4 +1,4 @@
-speakeasyVersion: 1.404.5
+speakeasyVersion: 1.405.6
 sources:
     my-source:
         sourceNamespace: my-source
@@ -9,8 +9,8 @@ sources:
             - main
     plexapi:
         sourceNamespace: plexapi
-        sourceRevisionDigest: sha256:a9bd67eaa35b8311162ae769209f725cc5da16e57976b4928c54594c02cd451c
-        sourceBlobDigest: sha256:43ddffba137c37d2f64f8db185179a273bcc5ca7242594c932da99d1eb7f3e98
+        sourceRevisionDigest: sha256:c52cde0b8d51e160f7b9f1a3d3ea4dbb1aca6d5caad714e549201fb757fadd57
+        sourceBlobDigest: sha256:f417b03ff71356808554313f24c3d06d670474bf51bc9a0631de1ad49c13a361
         tags:
             - latest
             - main
@@ -18,10 +18,10 @@ targets:
     plexruby:
         source: plexapi
         sourceNamespace: plexapi
-        sourceRevisionDigest: sha256:a9bd67eaa35b8311162ae769209f725cc5da16e57976b4928c54594c02cd451c
-        sourceBlobDigest: sha256:43ddffba137c37d2f64f8db185179a273bcc5ca7242594c932da99d1eb7f3e98
+        sourceRevisionDigest: sha256:c52cde0b8d51e160f7b9f1a3d3ea4dbb1aca6d5caad714e549201fb757fadd57
+        sourceBlobDigest: sha256:f417b03ff71356808554313f24c3d06d670474bf51bc9a0631de1ad49c13a361
         codeSamplesNamespace: code-samples-ruby-plexruby
-        codeSamplesRevisionDigest: sha256:fbfa11d155d5c73bed6140bb9afdad2c3d3735ea2b000b2a6966a54088d09c3b
+        codeSamplesRevisionDigest: sha256:9e29da1762cbdc612d7f42b05357b40f20cd9a8d7fa59da610f148b84219a34b
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

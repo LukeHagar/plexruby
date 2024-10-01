@@ -294,10 +294,7 @@ The following global parameters are available.
 
 | Name | Type | Required | Description |
 | ---- | ---- |:--------:| ----------- |
-| client_id | ::String |  | The unique identifier for the client application
-This is used to track the client application and its usage
-(UUID, serial number, or other number unique per device)
- |
+| client_id | ::String |  | The unique identifier for the client application. This is used to track the client application and its usage. (UUID, serial number, or other number unique per device) |
 | client_name | ::String |  | The client_name parameter. |
 | client_version | ::String |  | The client_version parameter. |
 | client_platform | ::String |  | The client_platform parameter. |

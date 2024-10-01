@@ -51,7 +51,6 @@ end
 
 
 
-
 ## start_all_tasks
 
 This endpoint will attempt to start all Butler tasks that are enabled in the settings. Butler tasks normally run automatically during a time window configured on the server's Settings page but can be manually started using this endpoint. Tasks will run with the following criteria:
@@ -95,7 +94,6 @@ end
 
 
 
-
 ## stop_all_tasks
 
 This endpoint will stop all currently running tasks and remove any scheduled tasks from the queue.
@@ -132,7 +130,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::StopAllTasksResponse)](../../models/operations/stopalltasksresponse.md)**
-
 
 
 
@@ -185,7 +182,6 @@ end
 
 
 
-
 ## stop_task
 
 This endpoint will stop a currently running task by name, or remove it from the list of scheduled tasks if it exists. See the section above for a list of task names for this endpoint.
@@ -228,5 +224,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::StopTaskResponse)](../../models/operations/stoptaskresponse.md)**
-
 

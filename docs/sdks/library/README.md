@@ -65,7 +65,6 @@ end
 
 
 
-
 ## get_recently_added_library
 
 This endpoint will return the recently added content.
@@ -134,7 +133,6 @@ end
 
 
 
-
 ## get_all_libraries
 
 A library section (commonly referred to as just a library) is a collection of media. 
@@ -176,7 +174,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetAllLibrariesResponse)](../../models/operations/getalllibrariesresponse.md)**
-
 
 
 
@@ -264,7 +261,6 @@ end
 
 
 
-
 ## delete_library
 
 Delete a library using a specific section id
@@ -306,7 +302,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::DeleteLibraryResponse)](../../models/operations/deletelibraryresponse.md)**
-
 
 
 
@@ -384,7 +379,6 @@ end
 
 
 
-
 ## get_refresh_library_metadata
 
 This endpoint Refreshes all the Metadata of the library.
@@ -428,7 +422,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetRefreshLibraryMetadataResponse)](../../models/operations/getrefreshlibrarymetadataresponse.md)**
-
 
 
 
@@ -495,7 +488,6 @@ end
 
 
 
-
 ## get_meta_data_by_rating_key
 
 This endpoint will return the metadata of a library item specified with the ratingKey.
@@ -538,7 +530,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetMetaDataByRatingKeyResponse)](../../models/operations/getmetadatabyratingkeyresponse.md)**
-
 
 
 
@@ -588,7 +579,6 @@ end
 
 
 
-
 ## get_top_watched_content
 
 This endpoint will return the top watched content from libraries of a certain type
@@ -635,7 +625,6 @@ end
 
 
 
-
 ## get_on_deck
 
 This endpoint will return the on deck content.
@@ -672,5 +661,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetOnDeckResponse)](../../models/operations/getondeckresponse.md)**
-
 

@@ -74,7 +74,6 @@ end
 
 
 
-
 ## get_playlists
 
 Get All Playlists given the specified filters.
@@ -117,7 +116,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetPlaylistsResponse)](../../models/operations/getplaylistsresponse.md)**
-
 
 
 
@@ -167,7 +165,6 @@ end
 
 
 
-
 ## delete_playlist
 
 This endpoint will delete a playlist
@@ -210,7 +207,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::DeletePlaylistResponse)](../../models/operations/deleteplaylistresponse.md)**
-
 
 
 
@@ -258,7 +254,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::UpdatePlaylistResponse)](../../models/operations/updateplaylistresponse.md)**
-
 
 
 
@@ -311,7 +306,6 @@ end
 
 
 
-
 ## clear_playlist_contents
 
 Clears a playlist, only works with dumb playlists. Returns the playlist.
@@ -354,7 +348,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::ClearPlaylistContentsResponse)](../../models/operations/clearplaylistcontentsresponse.md)**
-
 
 
 
@@ -406,7 +399,6 @@ end
 
 
 
-
 ## upload_playlist
 
 Imports m3u playlists by passing a path on the server to scan for m3u-formatted playlist files, or a path to a single playlist file.
@@ -451,5 +443,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::UploadPlaylistResponse)](../../models/operations/uploadplaylistresponse.md)**
-
 

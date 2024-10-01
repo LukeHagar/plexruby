@@ -54,7 +54,6 @@ end
 
 
 
-
 ## cancel_server_activities
 
 Cancel Server Activities
@@ -96,5 +95,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::CancelServerActivitiesResponse)](../../models/operations/cancelserveractivitiesresponse.md)**
-
 

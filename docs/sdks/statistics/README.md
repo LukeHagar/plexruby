@@ -55,7 +55,6 @@ end
 
 
 
-
 ## get_resources_statistics
 
 This will return the resources for the server
@@ -100,7 +99,6 @@ end
 
 
 
-
 ## get_bandwidth_statistics
 
 This will return the bandwidth statistics for the server
@@ -142,5 +140,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetBandwidthStatisticsResponse)](../../models/operations/getbandwidthstatisticsresponse.md)**
-
 

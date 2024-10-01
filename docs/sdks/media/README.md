@@ -57,7 +57,6 @@ end
 
 
 
-
 ## mark_unplayed
 
 This will mark the provided media key as Unplayed.
@@ -99,7 +98,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::MarkUnplayedResponse)](../../models/operations/markunplayedresponse.md)**
-
 
 
 
@@ -147,7 +145,6 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::UpdatePlayProgressResponse)](../../models/operations/updateplayprogressresponse.md)**
-
 
 
 
@@ -204,7 +201,6 @@ end
 
 
 
-
 ## get_thumb_image
 
 Gets the thumbnail image of the media item
@@ -255,5 +251,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetThumbImageResponse)](../../models/operations/getthumbimageresponse.md)**
-
 
