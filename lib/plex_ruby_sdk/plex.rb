@@ -231,7 +231,7 @@ module PlexRubySDK
       })
       base_url = server_url if !server_url.nil?
       url = "#{base_url}/resources"
-      headers = {}
+      headers = Utils.get_headers(request, @sdk_configuration.globals)
       query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetServerResourcesRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
@@ -275,7 +275,7 @@ module PlexRubySDK
       })
       base_url = server_url if !server_url.nil?
       url = "#{base_url}/pins"
-      headers = {}
+      headers = Utils.get_headers(request, @sdk_configuration.globals)
       query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetPinRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
@@ -319,14 +319,12 @@ module PlexRubySDK
         request,
         @sdk_configuration.globals
       )
-      headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetTokenByPinIdRequest, request, @sdk_configuration.globals)
+      headers = Utils.get_headers(request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
       r = @sdk_configuration.client.get(url) do |req|
         req.headers = headers
-        req.params = query_params
       end
 
       content_type = r.headers.fetch('Content-Type', 'application/octet-stream')

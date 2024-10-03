@@ -17,7 +17,7 @@ module PlexRubySDK
       # If the account's Plex Pass subscription is active
       field :active, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('active') } }
       # List of features allowed on your Plex Pass subscription
-      field :features, T.nilable(T::Array[::PlexRubySDK::Operations::PostUsersSignInDataFeatures]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('features') } }
+      field :features, T.nilable(T::Array[::String]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('features') } }
       # Payment service used for your Plex Pass subscription
       field :payment_service, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('paymentService') } }
       # Name of Plex Pass subscription plan
@@ -28,7 +28,7 @@ module PlexRubySDK
       field :subscribed_at, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subscribedAt') } }
 
 
-      sig { params(active: T.nilable(T::Boolean), features: T.nilable(T::Array[::PlexRubySDK::Operations::PostUsersSignInDataFeatures]), payment_service: T.nilable(::String), plan: T.nilable(::String), status: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataAuthenticationStatus), subscribed_at: T.nilable(::String)).void }
+      sig { params(active: T.nilable(T::Boolean), features: T.nilable(T::Array[::String]), payment_service: T.nilable(::String), plan: T.nilable(::String), status: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataAuthenticationStatus), subscribed_at: T.nilable(::String)).void }
       def initialize(active: nil, features: nil, payment_service: nil, plan: nil, status: nil, subscribed_at: nil)
         @active = active
         @features = features

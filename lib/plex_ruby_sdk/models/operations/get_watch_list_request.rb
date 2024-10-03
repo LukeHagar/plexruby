@@ -16,8 +16,8 @@ module PlexRubySDK
 
       # Filter
       field :filter, ::PlexRubySDK::Operations::Filter, { 'path_param': { 'field_name': 'filter', 'style': 'simple', 'explode': false } }
-      # Plex Authentication Token
-      field :x_plex_token, ::String, { 'query_param': { 'field_name': 'X-Plex-Token', 'style': 'form', 'explode': true } }
+      # An authentication token, obtained from plex.tv
+      field :x_plex_token, ::String, { 'header': { 'field_name': 'X-Plex-Token', 'style': 'simple', 'explode': false } }
       # include collections in the results
       # 
       field :include_collections, T.nilable(::PlexRubySDK::Operations::IncludeCollections), { 'query_param': { 'field_name': 'includeCollections', 'style': 'form', 'explode': true } }

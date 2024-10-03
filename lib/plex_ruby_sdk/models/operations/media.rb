@@ -12,63 +12,63 @@ module PlexRubySDK
       extend T::Sig
 
 
-      field :aspect_ratio, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('aspectRatio') } }
-
-      field :audio_channels, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioChannels') } }
-
-      field :audio_codec, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioCodec') } }
-
-      field :bitrate, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('bitrate') } }
-
       field :container, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
-
-      field :duration, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
-
-      field :height, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('height') } }
 
       field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
 
       field :part, T::Array[::PlexRubySDK::Operations::Part], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Part') } }
 
-      field :video_codec, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoCodec') } }
+      field :aspect_ratio, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('aspectRatio') } }
 
-      field :video_frame_rate, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoFrameRate') } }
+      field :audio_channels, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioChannels') } }
 
-      field :video_profile, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
-
-      field :video_resolution, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoResolution') } }
-
-      field :width, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('width') } }
+      field :audio_codec, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioCodec') } }
 
       field :audio_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioProfile') } }
+
+      field :bitrate, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('bitrate') } }
+
+      field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
 
       field :has64bit_offsets, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('has64bitOffsets') } }
 
       field :has_voice_activity, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasVoiceActivity') } }
 
+      field :height, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('height') } }
+
       field :optimized_for_streaming, T.nilable(::PlexRubySDK::Operations::OptimizedForStreaming), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('optimizedForStreaming'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::OptimizedForStreaming, true) } }
 
+      field :video_codec, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoCodec') } }
 
-      sig { params(aspect_ratio: ::Float, audio_channels: ::Integer, audio_codec: ::String, bitrate: ::Integer, container: ::String, duration: ::Integer, height: ::Integer, id: ::Integer, part: T::Array[::PlexRubySDK::Operations::Part], video_codec: ::String, video_frame_rate: ::String, video_profile: ::String, video_resolution: ::String, width: ::Integer, audio_profile: T.nilable(::String), has64bit_offsets: T.nilable(T::Boolean), has_voice_activity: T.nilable(T::Boolean), optimized_for_streaming: T.nilable(::PlexRubySDK::Operations::OptimizedForStreaming)).void }
-      def initialize(aspect_ratio: nil, audio_channels: nil, audio_codec: nil, bitrate: nil, container: nil, duration: nil, height: nil, id: nil, part: nil, video_codec: nil, video_frame_rate: nil, video_profile: nil, video_resolution: nil, width: nil, audio_profile: nil, has64bit_offsets: nil, has_voice_activity: nil, optimized_for_streaming: nil)
+      field :video_frame_rate, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoFrameRate') } }
+
+      field :video_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
+
+      field :video_resolution, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoResolution') } }
+
+      field :width, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('width') } }
+
+
+      sig { params(container: ::String, id: ::Integer, part: T::Array[::PlexRubySDK::Operations::Part], aspect_ratio: T.nilable(::Float), audio_channels: T.nilable(::Integer), audio_codec: T.nilable(::String), audio_profile: T.nilable(::String), bitrate: T.nilable(::Integer), duration: T.nilable(::Integer), has64bit_offsets: T.nilable(T::Boolean), has_voice_activity: T.nilable(T::Boolean), height: T.nilable(::Integer), optimized_for_streaming: T.nilable(::PlexRubySDK::Operations::OptimizedForStreaming), video_codec: T.nilable(::String), video_frame_rate: T.nilable(::String), video_profile: T.nilable(::String), video_resolution: T.nilable(::String), width: T.nilable(::Integer)).void }
+      def initialize(container: nil, id: nil, part: nil, aspect_ratio: nil, audio_channels: nil, audio_codec: nil, audio_profile: nil, bitrate: nil, duration: nil, has64bit_offsets: nil, has_voice_activity: nil, height: nil, optimized_for_streaming: nil, video_codec: nil, video_frame_rate: nil, video_profile: nil, video_resolution: nil, width: nil)
+        @container = container
+        @id = id
+        @part = part
         @aspect_ratio = aspect_ratio
         @audio_channels = audio_channels
         @audio_codec = audio_codec
+        @audio_profile = audio_profile
         @bitrate = bitrate
-        @container = container
         @duration = duration
+        @has64bit_offsets = has64bit_offsets
+        @has_voice_activity = has_voice_activity
         @height = height
-        @id = id
-        @part = part
+        @optimized_for_streaming = optimized_for_streaming
         @video_codec = video_codec
         @video_frame_rate = video_frame_rate
         @video_profile = video_profile
         @video_resolution = video_resolution
         @width = width
-        @audio_profile = audio_profile
-        @has64bit_offsets = has64bit_offsets
-        @has_voice_activity = has_voice_activity
-        @optimized_for_streaming = optimized_for_streaming
       end
     end
   end

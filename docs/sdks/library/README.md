@@ -15,6 +15,7 @@ API Calls interacting with Plex Media Server Libraries
 * [get_library_items](#get_library_items) - Get Library Items
 * [get_refresh_library_metadata](#get_refresh_library_metadata) - Refresh Metadata Of The Library
 * [get_search_library](#get_search_library) - Search Library
+* [get_search_all_libraries](#get_search_all_libraries) - Search All Libraries
 * [get_meta_data_by_rating_key](#get_meta_data_by_rating_key) - Get Metadata by RatingKey
 * [get_metadata_children](#get_metadata_children) - Get Items Children
 * [get_top_watched_content](#get_top_watched_content) - Get Top Watched Content
@@ -31,11 +32,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -57,7 +58,7 @@ end
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       | Example                                                           |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `url`                                                             | *::String*                                                        | :heavy_check_mark:                                                | This is the path to the local file, must be prefixed by `file://` | file://C:\Image.png&type=13                                       |
-| `type`                                                            | *::Float*                                                         | :heavy_minus_sign:                                                | Item type                                                         |                                                                   |
+| `type`                                                            | *T.nilable(::Float)*                                              | :heavy_minus_sign:                                                | Item type                                                         |                                                                   |
 
 ### Response
 
@@ -77,11 +78,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -150,11 +151,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -227,11 +228,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -253,7 +254,7 @@ end
 | Parameter                                                                                                                                                                                  | Type                                                                                                                                                                                       | Required                                                                                                                                                                                   | Description                                                                                                                                                                                | Example                                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `section_key`                                                                                                                                                                              | *::Integer*                                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                         | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/>                                                                                      | 9518                                                                                                                                                                                       |
-| `include_details`                                                                                                                                                                          | [::PlexRubySDK::Operations::IncludeDetails](../../models/operations/includedetails.md)                                                                                                     | :heavy_minus_sign:                                                                                                                                                                         | Whether or not to include details for a section (types, filters, and sorts). <br/>Only exists for backwards compatibility, media providers other than the server libraries have it on always.<br/> |                                                                                                                                                                                            |
+| `include_details`                                                                                                                                                                          | [T.nilable(::PlexRubySDK::Operations::IncludeDetails)](../../models/operations/includedetails.md)                                                                                          | :heavy_minus_sign:                                                                                                                                                                         | Whether or not to include details for a section (types, filters, and sorts). <br/>Only exists for backwards compatibility, media providers other than the server libraries have it on always.<br/> |                                                                                                                                                                                            |
 
 ### Response
 
@@ -272,11 +273,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -336,11 +337,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -350,10 +351,10 @@ s.config_security(
 
 
 req = ::PlexRubySDK::Operations::GetLibraryItemsRequest.new(
-  section_key: 9518,
   tag: ::PlexRubySDK::Operations::Tag::EDITION,
   include_guids: ::PlexRubySDK::Operations::IncludeGuids::ENABLE,
   type: ::PlexRubySDK::Operations::GetLibraryItemsQueryParamType::TV_SHOW,
+  section_key: 9518,
   include_meta: ::PlexRubySDK::Operations::GetLibraryItemsQueryParamIncludeMeta::ENABLE,
   x_plex_container_start: 0,
   x_plex_container_size: 50,
@@ -391,11 +392,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -417,7 +418,7 @@ end
 | Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `section_key`                                                                                 | *::Integer*                                                                                   | :heavy_check_mark:                                                                            | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/> | 9518                                                                                          |
-| `force`                                                                                       | [::PlexRubySDK::Operations::Force](../../models/operations/force.md)                          | :heavy_minus_sign:                                                                            | Force the refresh even if the library is already being refreshed.                             | 0                                                                                             |
+| `force`                                                                                       | [T.nilable(::PlexRubySDK::Operations::Force)](../../models/operations/force.md)               | :heavy_minus_sign:                                                                            | Force the refresh even if the library is already being refreshed.                             | 0                                                                                             |
 
 ### Response
 
@@ -454,11 +455,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -488,6 +489,60 @@ end
 
 
 
+## get_search_all_libraries
+
+Search the provided query across all library sections, or a single section, and return matches as hubs, split up by type.
+
+
+### Example Usage
+
+```ruby
+require 'plex_ruby_sdk'
+
+
+s = ::PlexRubySDK::PlexAPI.new(
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
+    )
+s.config_security(
+  ::PlexRubySDK::Shared::Security.new(
+    access_token: "<YOUR_API_KEY_HERE>",
+  )
+)
+
+
+req = ::PlexRubySDK::Operations::GetSearchAllLibrariesRequest.new(
+  query: "<value>",
+  search_types: [
+    ::PlexRubySDK::Operations::SearchTypes::PEOPLE,
+  ],
+  include_collections: ::PlexRubySDK::Operations::QueryParamIncludeCollections::ENABLE,
+  include_external_media: ::PlexRubySDK::Operations::QueryParamIncludeExternalMedia::ENABLE,
+)
+    
+res = s.library.get_search_all_libraries(req)
+
+if ! res.object.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                          | [::PlexRubySDK::Operations::GetSearchAllLibrariesRequest](../../models/operations/getsearchalllibrariesrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+
+### Response
+
+**[T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesResponse)](../../models/operations/getsearchalllibrariesresponse.md)**
+
+
+
 ## get_meta_data_by_rating_key
 
 This endpoint will return the metadata of a library item specified with the ratingKey.
@@ -500,11 +555,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -545,11 +600,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -571,7 +626,7 @@ end
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
 | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | `rating_key`                                                            | *::Float*                                                               | :heavy_check_mark:                                                      | the id of the library item to return the children of.                   |
-| `include_elements`                                                      | *::String*                                                              | :heavy_minus_sign:                                                      | Adds additional elements to the response. Supported types are (Stream)<br/> |
+| `include_elements`                                                      | *T.nilable(::String)*                                                   | :heavy_minus_sign:                                                      | Adds additional elements to the response. Supported types are (Stream)<br/> |
 
 ### Response
 
@@ -591,11 +646,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -617,7 +672,7 @@ end
 | Parameter                                                                                                                                                                       | Type                                                                                                                                                                            | Required                                                                                                                                                                        | Description                                                                                                                                                                     | Example                                                                                                                                                                         |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `type`                                                                                                                                                                          | [::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType](../../models/operations/gettopwatchedcontentqueryparamtype.md)                                                  | :heavy_check_mark:                                                                                                                                                              | The type of media to retrieve.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                               |
-| `include_guids`                                                                                                                                                                 | *::Integer*                                                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                              | Adds the Guids object to the response<br/>                                                                                                                                      | 1                                                                                                                                                                               |
+| `include_guids`                                                                                                                                                                 | *T.nilable(::Integer)*                                                                                                                                                          | :heavy_minus_sign:                                                                                                                                                              | Adds the Guids object to the response<br/>                                                                                                                                      | 1                                                                                                                                                                               |
 
 ### Response
 
@@ -637,11 +692,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(

@@ -165,7 +165,7 @@ module PlexRubySDK
         request,
         @sdk_configuration.globals
       )
-      headers = {}
+      headers = Utils.get_headers(request, @sdk_configuration.globals)
       query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetBannerImageRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json;q=1, image/jpeg;q=0'
       headers['user-agent'] = @sdk_configuration.user_agent
@@ -213,7 +213,7 @@ module PlexRubySDK
         request,
         @sdk_configuration.globals
       )
-      headers = {}
+      headers = Utils.get_headers(request, @sdk_configuration.globals)
       query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetThumbImageRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json;q=1, image/jpeg;q=0'
       headers['user-agent'] = @sdk_configuration.user_agent

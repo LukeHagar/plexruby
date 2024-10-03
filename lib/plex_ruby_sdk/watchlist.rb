@@ -39,7 +39,7 @@ module PlexRubySDK
         request,
         @sdk_configuration.globals
       )
-      headers = {}
+      headers = Utils.get_headers(request, @sdk_configuration.globals)
       query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetWatchListRequest, request, @sdk_configuration.globals)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent

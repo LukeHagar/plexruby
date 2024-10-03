@@ -23,11 +23,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -61,11 +61,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -86,10 +86,10 @@ end
 
 | Parameter                                                                                                                                                                                     | Type                                                                                                                                                                                          | Required                                                                                                                                                                                      | Description                                                                                                                                                                                   | Example                                                                                                                                                                                       |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `sort`                                                                                                                                                                                        | *::String*                                                                                                                                                                                    | :heavy_minus_sign:                                                                                                                                                                            | Sorts the results by the specified field followed by the direction (asc, desc)<br/>                                                                                                           |                                                                                                                                                                                               |
-| `account_id`                                                                                                                                                                                  | *::Integer*                                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                            | Filter results by those that are related to a specific users id<br/>                                                                                                                          | 1                                                                                                                                                                                             |
-| `filter`                                                                                                                                                                                      | [::PlexRubySDK::Operations::QueryParamFilter](../../models/operations/queryparamfilter.md)                                                                                                    | :heavy_minus_sign:                                                                                                                                                                            | Filters content by field and direction/equality<br/>(Unknown if viewedAt is the only supported column)<br/>                                                                                   | {<br/>"viewed-at-greater-than": {<br/>"value": "viewedAt\u003e"<br/>},<br/>"viewed-at-greater-than-or-equal-to": {<br/>"value": "viewedAt\u003e=\u003e"<br/>},<br/>"viewed-at-less-than": {<br/>"value": "viewedAt\u003c"<br/>}<br/>} |
-| `library_section_id`                                                                                                                                                                          | *::Integer*                                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                            | Filters the results based on the id of a valid library section<br/>                                                                                                                           | 12                                                                                                                                                                                            |
+| `sort`                                                                                                                                                                                        | *T.nilable(::String)*                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                            | Sorts the results by the specified field followed by the direction (asc, desc)<br/>                                                                                                           |                                                                                                                                                                                               |
+| `account_id`                                                                                                                                                                                  | *T.nilable(::Integer)*                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                            | Filter results by those that are related to a specific users id<br/>                                                                                                                          | 1                                                                                                                                                                                             |
+| `filter`                                                                                                                                                                                      | [T.nilable(::PlexRubySDK::Operations::QueryParamFilter)](../../models/operations/queryparamfilter.md)                                                                                         | :heavy_minus_sign:                                                                                                                                                                            | Filters content by field and direction/equality<br/>(Unknown if viewedAt is the only supported column)<br/>                                                                                   | {<br/>"viewed-at-greater-than": {<br/>"value": "viewedAt\u003e"<br/>},<br/>"viewed-at-greater-than-or-equal-to": {<br/>"value": "viewedAt\u003e=\u003e"<br/>},<br/>"viewed-at-less-than": {<br/>"value": "viewedAt\u003c"<br/>}<br/>} |
+| `library_section_id`                                                                                                                                                                          | *T.nilable(::Integer)*                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                            | Filters the results based on the id of a valid library section<br/>                                                                                                                           | 12                                                                                                                                                                                            |
 
 ### Response
 
@@ -108,11 +108,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -146,11 +146,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(

@@ -15,8 +15,6 @@ module PlexRubySDK
       # 
       field :container, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
 
-      field :duration, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
-
       field :file, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('file') } }
 
       field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
@@ -25,9 +23,9 @@ module PlexRubySDK
 
       field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
 
-      field :video_profile, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
-
       field :audio_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioProfile') } }
+
+      field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
 
       field :has64bit_offsets, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('has64bitOffsets') } }
 
@@ -39,22 +37,24 @@ module PlexRubySDK
 
       field :stream, T.nilable(T::Array[::PlexRubySDK::Operations::Stream]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Stream') } }
 
+      field :video_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
 
-      sig { params(container: ::String, duration: ::Integer, file: ::String, id: ::Integer, key: ::String, size: ::Integer, video_profile: ::String, audio_profile: T.nilable(::String), has64bit_offsets: T.nilable(T::Boolean), has_thumbnail: T.nilable(::PlexRubySDK::Operations::HasThumbnail), indexes: T.nilable(::String), optimized_for_streaming: T.nilable(T::Boolean), stream: T.nilable(T::Array[::PlexRubySDK::Operations::Stream])).void }
-      def initialize(container: nil, duration: nil, file: nil, id: nil, key: nil, size: nil, video_profile: nil, audio_profile: nil, has64bit_offsets: nil, has_thumbnail: nil, indexes: nil, optimized_for_streaming: nil, stream: nil)
+
+      sig { params(container: ::String, file: ::String, id: ::Integer, key: ::String, size: ::Integer, audio_profile: T.nilable(::String), duration: T.nilable(::Integer), has64bit_offsets: T.nilable(T::Boolean), has_thumbnail: T.nilable(::PlexRubySDK::Operations::HasThumbnail), indexes: T.nilable(::String), optimized_for_streaming: T.nilable(T::Boolean), stream: T.nilable(T::Array[::PlexRubySDK::Operations::Stream]), video_profile: T.nilable(::String)).void }
+      def initialize(container: nil, file: nil, id: nil, key: nil, size: nil, audio_profile: nil, duration: nil, has64bit_offsets: nil, has_thumbnail: nil, indexes: nil, optimized_for_streaming: nil, stream: nil, video_profile: nil)
         @container = container
-        @duration = duration
         @file = file
         @id = id
         @key = key
         @size = size
-        @video_profile = video_profile
         @audio_profile = audio_profile
+        @duration = duration
         @has64bit_offsets = has64bit_offsets
         @has_thumbnail = has_thumbnail
         @indexes = indexes
         @optimized_for_streaming = optimized_for_streaming
         @stream = stream
+        @video_profile = video_profile
       end
     end
   end

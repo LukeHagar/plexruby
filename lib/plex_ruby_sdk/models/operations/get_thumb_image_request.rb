@@ -21,8 +21,8 @@ module PlexRubySDK
       field :upscale, ::Integer, { 'query_param': { 'field_name': 'upscale', 'style': 'form', 'explode': true } }
 
       field :width, ::Integer, { 'query_param': { 'field_name': 'width', 'style': 'form', 'explode': true } }
-      # Plex Authentication Token
-      field :x_plex_token, ::String, { 'query_param': { 'field_name': 'X-Plex-Token', 'style': 'form', 'explode': true } }
+      # An authentication token, obtained from plex.tv
+      field :x_plex_token, ::String, { 'header': { 'field_name': 'X-Plex-Token', 'style': 'simple', 'explode': false } }
 
 
       sig { params(height: ::Integer, min_size: ::Integer, rating_key: ::Integer, upscale: ::Integer, width: ::Integer, x_plex_token: ::String).void }

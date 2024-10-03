@@ -11,8 +11,8 @@ module PlexRubySDK
     class GetMediaProvidersRequest < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
-      # Plex Authentication Token
-      field :x_plex_token, ::String, { 'query_param': { 'field_name': 'X-Plex-Token', 'style': 'form', 'explode': true } }
+      # An authentication token, obtained from plex.tv
+      field :x_plex_token, ::String, { 'header': { 'field_name': 'X-Plex-Token', 'style': 'simple', 'explode': false } }
 
 
       sig { params(x_plex_token: ::String).void }

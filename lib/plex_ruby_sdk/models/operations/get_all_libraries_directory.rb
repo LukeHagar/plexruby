@@ -36,7 +36,7 @@ module PlexRubySDK
 
       field :language, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('language') } }
 
-      field :location, T::Array[::PlexRubySDK::Operations::Location], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Location') } }
+      field :location, T::Array[::PlexRubySDK::Operations::GetAllLibrariesLocation], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Location') } }
 
       field :refreshing, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('refreshing') } }
       # Unix epoch datetime in seconds
@@ -55,7 +55,7 @@ module PlexRubySDK
       field :uuid, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('uuid') } }
 
 
-      sig { params(agent: ::String, allow_sync: T::Boolean, art: ::String, composite: ::String, content: T::Boolean, content_changed_at: ::Integer, created_at: ::Integer, directory: T::Boolean, filters: T::Boolean, hidden: ::Integer, key: ::String, language: ::String, location: T::Array[::PlexRubySDK::Operations::Location], refreshing: T::Boolean, scanned_at: ::Integer, scanner: ::String, thumb: ::String, title: ::String, type: ::String, updated_at: ::Integer, uuid: ::String).void }
+      sig { params(agent: ::String, allow_sync: T::Boolean, art: ::String, composite: ::String, content: T::Boolean, content_changed_at: ::Integer, created_at: ::Integer, directory: T::Boolean, filters: T::Boolean, hidden: ::Integer, key: ::String, language: ::String, location: T::Array[::PlexRubySDK::Operations::GetAllLibrariesLocation], refreshing: T::Boolean, scanned_at: ::Integer, scanner: ::String, thumb: ::String, title: ::String, type: ::String, updated_at: ::Integer, uuid: ::String).void }
       def initialize(agent: nil, allow_sync: nil, art: nil, composite: nil, content: nil, content_changed_at: nil, created_at: nil, directory: nil, filters: nil, hidden: nil, key: nil, language: nil, location: nil, refreshing: nil, scanned_at: nil, scanner: nil, thumb: nil, title: nil, type: nil, updated_at: nil, uuid: nil)
         @agent = agent
         @allow_sync = allow_sync

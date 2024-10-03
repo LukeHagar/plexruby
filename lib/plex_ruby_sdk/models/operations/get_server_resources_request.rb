@@ -14,8 +14,8 @@ module PlexRubySDK
     class GetServerResourcesRequest < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
-      # The unique identifier for the client application. This is used to track the client application and its usage. (UUID, serial number, or other number unique per device)
-      field :client_id, T.nilable(::String), { 'query_param': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'form', 'explode': true } }
+      # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
+      field :client_id, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
       # Include Https entries in the results
       field :include_https, T.nilable(::PlexRubySDK::Operations::IncludeHttps), { 'query_param': { 'field_name': 'includeHttps', 'style': 'form', 'explode': true } }
       # Include IPv6 entries in the results

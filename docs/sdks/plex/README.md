@@ -26,11 +26,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -70,11 +70,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -114,11 +114,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 
     
@@ -153,11 +153,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -191,11 +191,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -204,7 +204,7 @@ s.config_security(
 )
 
     
-res = s.plex.get_server_resources(include_https=::PlexRubySDK::Operations::IncludeHttps::ENABLE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ENABLE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ENABLE, client_id="gcgzw5rz2xovp84b4vha3a40")
+res = s.plex.get_server_resources(include_https=::PlexRubySDK::Operations::IncludeHttps::ENABLE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ENABLE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ENABLE, client_id="3381b62b-9ab7-4e37-827b-203e9809eb58")
 
 if ! res.plex_devices.nil?
   # handle response
@@ -214,13 +214,13 @@ end
 
 ### Parameters
 
-| Parameter                                                                                                                                                              | Type                                                                                                                                                                   | Required                                                                                                                                                               | Description                                                                                                                                                            | Example                                                                                                                                                                |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `include_https`                                                                                                                                                        | [::PlexRubySDK::Operations::IncludeHttps](../../models/operations/includehttps.md)                                                                                     | :heavy_minus_sign:                                                                                                                                                     | Include Https entries in the results                                                                                                                                   | 1                                                                                                                                                                      |
-| `include_relay`                                                                                                                                                        | [::PlexRubySDK::Operations::IncludeRelay](../../models/operations/includerelay.md)                                                                                     | :heavy_minus_sign:                                                                                                                                                     | Include Relay addresses in the results <br/>E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400<br/>                                             | 1                                                                                                                                                                      |
-| `include_i_pv6`                                                                                                                                                        | [::PlexRubySDK::Operations::IncludeIPv6](../../models/operations/includeipv6.md)                                                                                       | :heavy_minus_sign:                                                                                                                                                     | Include IPv6 entries in the results                                                                                                                                    | 1                                                                                                                                                                      |
-| `client_id`                                                                                                                                                            | *::String*                                                                                                                                                             | :heavy_minus_sign:                                                                                                                                                     | The unique identifier for the client application. This is used to track the client application and its usage. (UUID, serial number, or other number unique per device) | gcgzw5rz2xovp84b4vha3a40                                                                                                                                               |
-| `server_url`                                                                                                                                                           | *String*                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                     | An optional server URL to use.                                                                                                                                         | http://localhost:8080                                                                                                                                                  |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        | Example                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `include_https`                                                                                                    | [T.nilable(::PlexRubySDK::Operations::IncludeHttps)](../../models/operations/includehttps.md)                      | :heavy_minus_sign:                                                                                                 | Include Https entries in the results                                                                               | 1                                                                                                                  |
+| `include_relay`                                                                                                    | [T.nilable(::PlexRubySDK::Operations::IncludeRelay)](../../models/operations/includerelay.md)                      | :heavy_minus_sign:                                                                                                 | Include Relay addresses in the results <br/>E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400<br/> | 1                                                                                                                  |
+| `include_i_pv6`                                                                                                    | [T.nilable(::PlexRubySDK::Operations::IncludeIPv6)](../../models/operations/includeipv6.md)                        | :heavy_minus_sign:                                                                                                 | Include IPv6 entries in the results                                                                                | 1                                                                                                                  |
+| `client_id`                                                                                                        | *T.nilable(::String)*                                                                                              | :heavy_minus_sign:                                                                                                 | An opaque identifier unique to the client (UUID, serial number, or other unique device ID)                         | 3381b62b-9ab7-4e37-827b-203e9809eb58                                                                               |
+| `server_url`                                                                                                       | *String*                                                                                                           | :heavy_minus_sign:                                                                                                 | An optional server URL to use.                                                                                     | http://localhost:8080                                                                                              |
 
 ### Response
 
@@ -239,11 +239,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 
 
@@ -281,11 +281,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 
 

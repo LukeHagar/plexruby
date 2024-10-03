@@ -8,448 +8,454 @@ actions:
       x-codeSamples:
         - lang: ruby
           label: getServerCapabilities
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.server.get_server_capabilities()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.server.get_server_capabilities()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/:/prefs"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getServerPreferences
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.server.get_server_preferences()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.server.get_server_preferences()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/:/progress"]["post"]
     update:
       x-codeSamples:
         - lang: ruby
           label: updatePlayProgress
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.media.update_play_progress(key=\"<key>\", time=90000.0, state=\"played\")\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.media.update_play_progress(key=\"<key>\", time=90000.0, state=\"played\")\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/:/scrobble"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: markPlayed
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.media.mark_played(key=59398.0)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.media.mark_played(key=59398.0)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/:/timeline"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getTimeline
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetTimelineRequest.new(\n  rating_key: 23409.0,\n  key: \"/library/metadata/23409\",\n  state: ::PlexRubySDK::Operations::State::PLAYING,\n  has_mde: 1.0,\n  time: 2000.0,\n  duration: 10000.0,\n  context: \"home:hub.continueWatching\",\n  play_queue_item_id: 1.0,\n  play_back_time: 2000.0,\n  row: 1.0,\n)\n    \nres = s.video.get_timeline(req)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetTimelineRequest.new(\n  rating_key: 23409.0,\n  key: \"/library/metadata/23409\",\n  state: ::PlexRubySDK::Operations::State::PLAYING,\n  has_mde: 1.0,\n  time: 2000.0,\n  duration: 10000.0,\n  context: \"home:hub.continueWatching\",\n  play_queue_item_id: 1.0,\n  play_back_time: 2000.0,\n  row: 1.0,\n)\n    \nres = s.video.get_timeline(req)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/:/unscrobble"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: markUnplayed
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.media.mark_unplayed(key=59398.0)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.media.mark_unplayed(key=59398.0)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/activities"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getServerActivities
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.activities.get_server_activities()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.activities.get_server_activities()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/activities/{activityUUID}"]["delete"]
     update:
       x-codeSamples:
         - lang: ruby
           label: cancelServerActivities
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.activities.cancel_server_activities(activity_uuid=\"25b71ed5-0f9d-461c-baa7-d404e9e10d3e\")\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.activities.cancel_server_activities(activity_uuid=\"25b71ed5-0f9d-461c-baa7-d404e9e10d3e\")\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/butler"]["delete"]
     update:
       x-codeSamples:
         - lang: ruby
           label: stopAllTasks
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.butler.stop_all_tasks()\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.butler.stop_all_tasks()\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/butler"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getButlerTasks
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.butler.get_butler_tasks()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.butler.get_butler_tasks()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/butler"]["post"]
     update:
       x-codeSamples:
         - lang: ruby
           label: startAllTasks
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.butler.start_all_tasks()\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.butler.start_all_tasks()\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/butler/{taskName}"]["delete"]
     update:
       x-codeSamples:
         - lang: ruby
           label: stopTask
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.butler.stop_task(task_name=::PlexRubySDK::Operations::PathParamTaskName::BACKUP_DATABASE)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.butler.stop_task(task_name=::PlexRubySDK::Operations::PathParamTaskName::BACKUP_DATABASE)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/butler/{taskName}"]["post"]
     update:
       x-codeSamples:
         - lang: ruby
           label: startTask
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.butler.start_task(task_name=::PlexRubySDK::Operations::TaskName::CLEAN_OLD_BUNDLES)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.butler.start_task(task_name=::PlexRubySDK::Operations::TaskName::CLEAN_OLD_BUNDLES)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/clients"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getAvailableClients
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.server.get_available_clients()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.server.get_available_clients()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/companions"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getCompanionsData
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.plex.get_companions_data()\n\nif ! res.response_bodies.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.plex.get_companions_data()\n\nif ! res.response_bodies.nil?\n  # handle response\nend"
   - target: $["paths"]["/devices"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getDevices
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.server.get_devices()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.server.get_devices()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/friends"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getUserFriends
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.plex.get_user_friends()\n\nif ! res.friends.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.plex.get_user_friends()\n\nif ! res.friends.nil?\n  # handle response\nend"
   - target: $["paths"]["/geoip"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getGeoData
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\n\n    \nres = s.plex.get_geo_data()\n\nif ! res.geo_data.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\n\n    \nres = s.plex.get_geo_data()\n\nif ! res.geo_data.nil?\n  # handle response\nend"
   - target: $["paths"]["/home"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getHomeData
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.plex.get_home_data()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.plex.get_home_data()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/hubs"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getGlobalHubs
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.hubs.get_global_hubs(count=1262.49, only_transient=::PlexRubySDK::Operations::OnlyTransient::ONE)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.hubs.get_global_hubs(count=1262.49, only_transient=::PlexRubySDK::Operations::OnlyTransient::ONE)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/hubs/home/recentlyAdded"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: added
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetRecentlyAddedRequest.new(\n  content_directory_id: 470161,\n  section_id: 2,\n  type: ::PlexRubySDK::Operations::Type::TV_SHOW,\n  include_meta: ::PlexRubySDK::Operations::IncludeMeta::ENABLE,\n  x_plex_container_start: 0,\n  x_plex_container_size: 50,\n)\n    \nres = s.hubs.get_recently_added(req)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetRecentlyAddedRequest.new(\n  content_directory_id: 470161,\n  section_id: 2,\n  type: ::PlexRubySDK::Operations::Type::TV_SHOW,\n  include_meta: ::PlexRubySDK::Operations::IncludeMeta::ENABLE,\n  x_plex_container_start: 0,\n  x_plex_container_size: 50,\n)\n    \nres = s.hubs.get_recently_added(req)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/hubs/search"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: performSearch
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.search.perform_search(query=\"dylan\", section_id=9372.69, limit=5.0)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.search.perform_search(query=\"dylan\", section_id=9372.69, limit=5.0)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/hubs/search/voice"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: performVoiceSearch
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.search.perform_voice_search(query=\"dead+poop\", section_id=4094.80, limit=5.0)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.search.perform_voice_search(query=\"dead+poop\", section_id=4094.80, limit=5.0)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/hubs/sections/{sectionId}"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getLibraryHubs
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.hubs.get_library_hubs(section_id=6728.76, count=639.24, only_transient=::PlexRubySDK::Operations::QueryParamOnlyTransient::ONE)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.hubs.get_library_hubs(section_id=6728.76, count=639.24, only_transient=::PlexRubySDK::Operations::QueryParamOnlyTransient::ONE)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/identity"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: identity
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\n\n    \nres = s.server.get_server_identity()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\n\n    \nres = s.server.get_server_identity()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/all/top"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getTopWatchedContent
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_top_watched_content(type=::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType::TV_SHOW, include_guids=1)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_top_watched_content(type=::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType::TV_SHOW, include_guids=1)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/hashes"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getFileHash
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_file_hash(url=\"file://C:\\Image.png&type=13\", type=4462.17)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_file_hash(url=\"file://C:\\Image.png&type=13\", type=4462.17)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/library/metadata/{ratingKey}"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: key
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_meta_data_by_rating_key(rating_key=9518)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_meta_data_by_rating_key(rating_key=9518)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/metadata/{ratingKey}/banner"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: image
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetBannerImageRequest.new(\n  rating_key: 9518,\n  width: 396,\n  height: 396,\n  min_size: 1,\n  upscale: 1,\n  x_plex_token: \"CV5xoxjTpFKUzBTShsaf\",\n)\n    \nres = s.media.get_banner_image(req)\n\nif ! res.bytes.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetBannerImageRequest.new(\n  rating_key: 9518,\n  width: 396,\n  height: 396,\n  min_size: 1,\n  upscale: 1,\n  x_plex_token: \"CV5xoxjTpFKUzBTShsaf\",\n)\n    \nres = s.media.get_banner_image(req)\n\nif ! res.bytes.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/metadata/{ratingKey}/children"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getMetadataChildren
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_metadata_children(rating_key=1539.15, include_elements=\"<value>\")\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_metadata_children(rating_key=1539.15, include_elements=\"<value>\")\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/metadata/{ratingKey}/thumb"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: image
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetThumbImageRequest.new(\n  rating_key: 9518,\n  width: 396,\n  height: 396,\n  min_size: 1,\n  upscale: 1,\n  x_plex_token: \"CV5xoxjTpFKUzBTShsaf\",\n)\n    \nres = s.media.get_thumb_image(req)\n\nif ! res.bytes.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetThumbImageRequest.new(\n  rating_key: 9518,\n  width: 396,\n  height: 396,\n  min_size: 1,\n  upscale: 1,\n  x_plex_token: \"CV5xoxjTpFKUzBTShsaf\",\n)\n    \nres = s.media.get_thumb_image(req)\n\nif ! res.bytes.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/onDeck"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getOnDeck
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_on_deck()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_on_deck()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/recentlyAdded"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: library
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetRecentlyAddedLibraryRequest.new(\n  content_directory_id: 2,\n  pinned_content_directory_id: [\n    3,\n    5,\n    7,\n    13,\n    12,\n    1,\n    6,\n    14,\n    2,\n    10,\n    16,\n    17,\n  ],\n  section_id: 2,\n  type: ::PlexRubySDK::Operations::QueryParamType::TV_SHOW,\n  include_meta: ::PlexRubySDK::Operations::QueryParamIncludeMeta::ENABLE,\n  x_plex_container_start: 0,\n  x_plex_container_size: 50,\n)\n    \nres = s.library.get_recently_added_library(req)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetRecentlyAddedLibraryRequest.new(\n  content_directory_id: 2,\n  pinned_content_directory_id: [\n    3,\n    5,\n    7,\n    13,\n    12,\n    1,\n    6,\n    14,\n    2,\n    10,\n    16,\n    17,\n  ],\n  section_id: 2,\n  type: ::PlexRubySDK::Operations::QueryParamType::TV_SHOW,\n  include_meta: ::PlexRubySDK::Operations::QueryParamIncludeMeta::ENABLE,\n  x_plex_container_start: 0,\n  x_plex_container_size: 50,\n)\n    \nres = s.library.get_recently_added_library(req)\n\nif ! res.object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/library/search"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: libraries
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetSearchAllLibrariesRequest.new(\n  query: \"<value>\",\n  search_types: [\n    ::PlexRubySDK::Operations::SearchTypes::PEOPLE,\n  ],\n  include_collections: ::PlexRubySDK::Operations::QueryParamIncludeCollections::ENABLE,\n  include_external_media: ::PlexRubySDK::Operations::QueryParamIncludeExternalMedia::ENABLE,\n)\n    \nres = s.library.get_search_all_libraries(req)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/sections"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: libraries
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_all_libraries()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_all_libraries()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/sections/watchlist/{filter}"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: list
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetWatchListRequest.new(\n  filter: ::PlexRubySDK::Operations::Filter::AVAILABLE,\n  x_plex_container_start: 0,\n  x_plex_container_size: 50,\n  x_plex_token: \"CV5xoxjTpFKUzBTShsaf\",\n)\n    \nres = s.watchlist.get_watch_list(req)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetWatchListRequest.new(\n  filter: ::PlexRubySDK::Operations::Filter::AVAILABLE,\n  x_plex_container_start: 0,\n  x_plex_container_size: 50,\n  x_plex_token: \"CV5xoxjTpFKUzBTShsaf\",\n)\n    \nres = s.watchlist.get_watch_list(req)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/sections/{sectionKey}"]["delete"]
     update:
       x-codeSamples:
         - lang: ruby
           label: deleteLibrary
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.delete_library(section_key=9518)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.delete_library(section_key=9518)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/library/sections/{sectionKey}"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: details
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_library_details(section_key=9518, include_details=::PlexRubySDK::Operations::IncludeDetails::ZERO)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_library_details(section_key=9518, include_details=::PlexRubySDK::Operations::IncludeDetails::ZERO)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/sections/{sectionKey}/refresh"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: metadata
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_refresh_library_metadata(section_key=9518, force=::PlexRubySDK::Operations::Force::ONE)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_refresh_library_metadata(section_key=9518, force=::PlexRubySDK::Operations::Force::ONE)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/library/sections/{sectionKey}/search"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: library
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_search_library(section_key=9518, type=::PlexRubySDK::Operations::GetSearchLibraryQueryParamType::TV_SHOW)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_search_library(section_key=9518, type=::PlexRubySDK::Operations::GetSearchLibraryQueryParamType::TV_SHOW)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/sections/{sectionKey}/{tag}"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: items
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetLibraryItemsRequest.new(\n  section_key: 9518,\n  tag: ::PlexRubySDK::Operations::Tag::EDITION,\n  include_guids: ::PlexRubySDK::Operations::IncludeGuids::ENABLE,\n  type: ::PlexRubySDK::Operations::GetLibraryItemsQueryParamType::TV_SHOW,\n  include_meta: ::PlexRubySDK::Operations::GetLibraryItemsQueryParamIncludeMeta::ENABLE,\n  x_plex_container_start: 0,\n  x_plex_container_size: 50,\n)\n    \nres = s.library.get_library_items(req)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetLibraryItemsRequest.new(\n  tag: ::PlexRubySDK::Operations::Tag::EDITION,\n  include_guids: ::PlexRubySDK::Operations::IncludeGuids::ENABLE,\n  type: ::PlexRubySDK::Operations::GetLibraryItemsQueryParamType::TV_SHOW,\n  section_key: 9518,\n  include_meta: ::PlexRubySDK::Operations::GetLibraryItemsQueryParamIncludeMeta::ENABLE,\n  x_plex_container_start: 0,\n  x_plex_container_size: 50,\n)\n    \nres = s.library.get_library_items(req)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/log"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: logLine
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.log.log_line(level=::PlexRubySDK::Operations::Level::THREE, message=\"Test log message\", source=\"Postman\")\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.log.log_line(level=::PlexRubySDK::Operations::Level::THREE, message=\"Test log message\", source=\"Postman\")\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/log"]["post"]
     update:
       x-codeSamples:
         - lang: ruby
           label: logMultiLine
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = \"level=4&message=Test%20message%201&source=postman\nlevel=3&message=Test%20message%202&source=postman\nlevel=1&message=Test%20message%203&source=postman\"\n    \nres = s.log.log_multi_line(req)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = \"level=4&message=Test%20message%201&source=postman\nlevel=3&message=Test%20message%202&source=postman\nlevel=1&message=Test%20message%203&source=postman\"\n    \nres = s.log.log_multi_line(req)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/log/networked"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: enablePaperTrail
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.log.enable_paper_trail()\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.log.enable_paper_trail()\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/media/providers"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: providers
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.server.get_media_providers(x_plex_token=\"CV5xoxjTpFKUzBTShsaf\")\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.server.get_media_providers(x_plex_token=\"CV5xoxjTpFKUzBTShsaf\")\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/myplex/account"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getMyPlexAccount
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.server.get_my_plex_account()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.server.get_my_plex_account()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/photo/:/transcode"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getResizedPhoto
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetResizedPhotoRequest.new(\n  width: 110.0,\n  height: 165.0,\n  opacity: 643869,\n  blur: 0.0,\n  min_size: ::PlexRubySDK::Operations::MinSize::ONE,\n  upscale: ::PlexRubySDK::Operations::Upscale::ONE,\n  url: \"/library/metadata/49564/thumb/1654258204\",\n)\n    \nres = s.server.get_resized_photo(req)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetResizedPhotoRequest.new(\n  width: 110.0,\n  height: 165.0,\n  opacity: 643869,\n  blur: 0.0,\n  min_size: ::PlexRubySDK::Operations::MinSize::ONE,\n  upscale: ::PlexRubySDK::Operations::Upscale::ONE,\n  url: \"/library/metadata/49564/thumb/1654258204\",\n)\n    \nres = s.server.get_resized_photo(req)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/pins"]["post"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getPin
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\n\n\nreq = ::PlexRubySDK::Operations::GetPinRequest.new()\n    \nres = s.plex.get_pin(req)\n\nif ! res.auth_pin_container.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\n\n\nreq = ::PlexRubySDK::Operations::GetPinRequest.new()\n    \nres = s.plex.get_pin(req)\n\nif ! res.auth_pin_container.nil?\n  # handle response\nend"
   - target: $["paths"]["/pins/{pinID}"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getTokenByPinId
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\n\n\nreq = ::PlexRubySDK::Operations::GetTokenByPinIdRequest.new(\n  pin_id: 408895,\n)\n    \nres = s.plex.get_token_by_pin_id(req)\n\nif ! res.auth_pin_container.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\n\n\nreq = ::PlexRubySDK::Operations::GetTokenByPinIdRequest.new(\n  pin_id: 408895,\n)\n    \nres = s.plex.get_token_by_pin_id(req)\n\nif ! res.auth_pin_container.nil?\n  # handle response\nend"
   - target: $["paths"]["/playlists"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getPlaylists
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.get_playlists(playlist_type=::PlexRubySDK::Operations::PlaylistType::AUDIO, smart=::PlexRubySDK::Operations::QueryParamSmart::ZERO)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.get_playlists(playlist_type=::PlexRubySDK::Operations::PlaylistType::AUDIO, smart=::PlexRubySDK::Operations::QueryParamSmart::ZERO)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/playlists"]["post"]
     update:
       x-codeSamples:
         - lang: ruby
           label: createPlaylist
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::CreatePlaylistRequest.new(\n  title: \"<value>\",\n  type: ::PlexRubySDK::Operations::CreatePlaylistQueryParamType::PHOTO,\n  smart: ::PlexRubySDK::Operations::Smart::ONE,\n  uri: \"https://hoarse-testing.info/\",\n)\n    \nres = s.playlists.create_playlist(req)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::CreatePlaylistRequest.new(\n  title: \"<value>\",\n  type: ::PlexRubySDK::Operations::CreatePlaylistQueryParamType::PHOTO,\n  smart: ::PlexRubySDK::Operations::Smart::ONE,\n  uri: \"https://hoarse-testing.info/\",\n)\n    \nres = s.playlists.create_playlist(req)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/playlists/upload"]["post"]
     update:
       x-codeSamples:
         - lang: ruby
           label: uploadPlaylist
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.upload_playlist(path=\"/home/barkley/playlist.m3u\", force=::PlexRubySDK::Operations::QueryParamForce::ZERO, section_id=1)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.upload_playlist(path=\"/home/barkley/playlist.m3u\", force=::PlexRubySDK::Operations::QueryParamForce::ZERO, section_id=1)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/playlists/{playlistID}"]["delete"]
     update:
       x-codeSamples:
         - lang: ruby
           label: deletePlaylist
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.delete_playlist(playlist_id=216.22)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.delete_playlist(playlist_id=216.22)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/playlists/{playlistID}"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getPlaylist
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.get_playlist(playlist_id=4109.48)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.get_playlist(playlist_id=4109.48)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/playlists/{playlistID}"]["put"]
     update:
       x-codeSamples:
         - lang: ruby
           label: updatePlaylist
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.update_playlist(playlist_id=3915.00, title=\"<value>\", summary=\"<value>\")\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.update_playlist(playlist_id=3915.00, title=\"<value>\", summary=\"<value>\")\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/playlists/{playlistID}/items"]["delete"]
     update:
       x-codeSamples:
         - lang: ruby
           label: clearPlaylistContents
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.clear_playlist_contents(playlist_id=1893.18)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.clear_playlist_contents(playlist_id=1893.18)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/playlists/{playlistID}/items"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getPlaylistContents
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.get_playlist_contents(playlist_id=5004.46, type=::PlexRubySDK::Operations::GetPlaylistContentsQueryParamType::TV_SHOW)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.get_playlist_contents(playlist_id=5004.46, type=::PlexRubySDK::Operations::GetPlaylistContentsQueryParamType::TV_SHOW)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/playlists/{playlistID}/items"]["put"]
     update:
       x-codeSamples:
         - lang: ruby
           label: addPlaylistContents
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.add_playlist_contents(playlist_id=8502.00, uri=\"server://12345/com.plexapp.plugins.library/library/metadata/1\", play_queue_id=123.0)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.playlists.add_playlist_contents(playlist_id=8502.00, uri=\"server://12345/com.plexapp.plugins.library/library/metadata/1\", play_queue_id=123.0)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/resources"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: resources
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.plex.get_server_resources(include_https=::PlexRubySDK::Operations::IncludeHttps::ENABLE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ENABLE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ENABLE, client_id=\"gcgzw5rz2xovp84b4vha3a40\")\n\nif ! res.plex_devices.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.plex.get_server_resources(include_https=::PlexRubySDK::Operations::IncludeHttps::ENABLE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ENABLE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ENABLE, client_id=\"3381b62b-9ab7-4e37-827b-203e9809eb58\")\n\nif ! res.plex_devices.nil?\n  # handle response\nend"
   - target: $["paths"]["/search"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getSearchResults
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.search.get_search_results(query=\"110\")\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.search.get_search_results(query=\"110\")\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/security/resources"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getSourceConnectionInformation
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.authentication.get_source_connection_information(source=\"server://client-identifier\")\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.authentication.get_source_connection_information(source=\"server://client-identifier\")\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/security/token"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getTransientToken
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.authentication.get_transient_token(type=::PlexRubySDK::Operations::GetTransientTokenQueryParamType::DELEGATION, scope=::PlexRubySDK::Operations::Scope::ALL)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.authentication.get_transient_token(type=::PlexRubySDK::Operations::GetTransientTokenQueryParamType::DELEGATION, scope=::PlexRubySDK::Operations::Scope::ALL)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/servers"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getServerList
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.server.get_server_list()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.server.get_server_list()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/statistics/bandwidth"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getBandwidthStatistics
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.statistics.get_bandwidth_statistics(timespan=4)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.statistics.get_bandwidth_statistics(timespan=4)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/statistics/media"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getStatistics
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.statistics.get_statistics(timespan=4)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.statistics.get_statistics(timespan=4)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/statistics/resources"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getResourcesStatistics
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.statistics.get_resources_statistics(timespan=4)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.statistics.get_resources_statistics(timespan=4)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/status/sessions"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getSessions
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.sessions.get_sessions()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.sessions.get_sessions()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/status/sessions/history/all"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getSessionHistory
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.sessions.get_session_history(sort=\"<value>\", account_id=1, filter=::PlexRubySDK::Operations::QueryParamFilter.new(), library_section_id=12)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.sessions.get_session_history(sort=\"<value>\", account_id=1, filter=::PlexRubySDK::Operations::QueryParamFilter.new(), library_section_id=12)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/transcode/sessions"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getTranscodeSessions
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.sessions.get_transcode_sessions()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.sessions.get_transcode_sessions()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/transcode/sessions/{sessionKey}"]["delete"]
     update:
       x-codeSamples:
         - lang: ruby
           label: stopTranscodeSession
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.sessions.stop_transcode_session(session_key=\"zz7llzqlx8w9vnrsbnwhbmep\")\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.sessions.stop_transcode_session(session_key=\"zz7llzqlx8w9vnrsbnwhbmep\")\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/updater/apply"]["put"]
     update:
       x-codeSamples:
         - lang: ruby
           label: applyUpdates
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.updater.apply_updates(tonight=::PlexRubySDK::Operations::Tonight::ONE, skip=::PlexRubySDK::Operations::Skip::ONE)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.updater.apply_updates(tonight=::PlexRubySDK::Operations::Tonight::ONE, skip=::PlexRubySDK::Operations::Skip::ONE)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/updater/check"]["put"]
     update:
       x-codeSamples:
         - lang: ruby
           label: checkForUpdates
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.updater.check_for_updates(download=::PlexRubySDK::Operations::Download::ONE)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.updater.check_for_updates(download=::PlexRubySDK::Operations::Download::ONE)\n\nif res.status_code == 200\n  # handle response\nend"
   - target: $["paths"]["/updater/status"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getUpdateStatus
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.updater.get_update_status()\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.updater.get_update_status()\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/user"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: getTokenDetails
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.authentication.get_token_details()\n\nif ! res.user_plex_account.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.authentication.get_token_details()\n\nif ! res.user_plex_account.nil?\n  # handle response\nend"
   - target: $["paths"]["/users/signin"]["post"]
     update:
       x-codeSamples:
         - lang: ruby
           label: data
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\n\n\nreq = ::PlexRubySDK::Operations::PostUsersSignInDataRequest.new(\n  request_body: ::PlexRubySDK::Operations::PostUsersSignInDataRequestBody.new(\n    login: \"username@email.com\",\n    password: \"password123\",\n    verification_code: \"123456\",\n  ),\n)\n    \nres = s.authentication.post_users_sign_in_data(req)\n\nif ! res.user_plex_account.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\n\n\nreq = ::PlexRubySDK::Operations::PostUsersSignInDataRequest.new(\n  request_body: ::PlexRubySDK::Operations::PostUsersSignInDataRequestBody.new(\n    login: \"username@email.com\",\n    password: \"password123\",\n    verification_code: \"123456\",\n  ),\n)\n    \nres = s.authentication.post_users_sign_in_data(req)\n\nif ! res.user_plex_account.nil?\n  # handle response\nend"
   - target: $["paths"]["/video/:/transcode/universal/start.mpd"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: startUniversalTranscode
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"gcgzw5rz2xovp84b4vha3a40\",\n      client_name: \"Plex Web\",\n      client_version: \"4.133.0\",\n      client_platform: \"Chrome\",\n      device_name: \"Linux\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::StartUniversalTranscodeRequest.new(\n  has_mde: 1.0,\n  path: \"/library/metadata/23409\",\n  media_index: 0.0,\n  part_index: 0.0,\n  protocol: \"hls\",\n  fast_seek: 0.0,\n  direct_play: 0.0,\n  direct_stream: 0.0,\n  subtitle_size: 100.0,\n  subtites: \"burn\",\n  audio_boost: 100.0,\n  location: \"lan\",\n  media_buffer_size: 102400.0,\n  session: \"zvcage8b7rkioqcm8f4uns4c\",\n  add_debug_overlay: 0.0,\n  auto_adjust_quality: 0.0,\n)\n    \nres = s.video.start_universal_transcode(req)\n\nif res.status_code == 200\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new(\n      client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n      client_name: \"Plex for Roku\",\n      client_version: \"2.4.1\",\n      platform: \"Roku\",\n      device_nickname: \"Roku 3\",\n    )\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::StartUniversalTranscodeRequest.new(\n  has_mde: 1.0,\n  path: \"/library/metadata/23409\",\n  media_index: 0.0,\n  part_index: 0.0,\n  protocol: \"hls\",\n  fast_seek: 0.0,\n  direct_play: 0.0,\n  direct_stream: 0.0,\n  subtitle_size: 100.0,\n  subtites: \"burn\",\n  audio_boost: 100.0,\n  location: \"lan\",\n  media_buffer_size: 102400.0,\n  session: \"zvcage8b7rkioqcm8f4uns4c\",\n  add_debug_overlay: 0.0,\n  auto_adjust_quality: 0.0,\n)\n    \nres = s.video.start_universal_transcode(req)\n\nif res.status_code == 200\n  # handle response\nend"

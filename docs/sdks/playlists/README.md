@@ -34,11 +34,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -85,11 +85,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -108,10 +108,10 @@ end
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `playlist_type`                                                                          | [::PlexRubySDK::Operations::PlaylistType](../../models/operations/playlisttype.md)       | :heavy_minus_sign:                                                                       | limit to a type of playlist.                                                             |
-| `smart`                                                                                  | [::PlexRubySDK::Operations::QueryParamSmart](../../models/operations/queryparamsmart.md) | :heavy_minus_sign:                                                                       | type of playlists to return (default is all).                                            |
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `playlist_type`                                                                                     | [T.nilable(::PlexRubySDK::Operations::PlaylistType)](../../models/operations/playlisttype.md)       | :heavy_minus_sign:                                                                                  | limit to a type of playlist.                                                                        |
+| `smart`                                                                                             | [T.nilable(::PlexRubySDK::Operations::QueryParamSmart)](../../models/operations/queryparamsmart.md) | :heavy_minus_sign:                                                                                  | type of playlists to return (default is all).                                                       |
 
 ### Response
 
@@ -132,11 +132,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -177,11 +177,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -222,11 +222,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -248,8 +248,8 @@ end
 | Parameter                           | Type                                | Required                            | Description                         |
 | ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | `playlist_id`                       | *::Float*                           | :heavy_check_mark:                  | the ID of the playlist              |
-| `title`                             | *::String*                          | :heavy_minus_sign:                  | name of the playlist                |
-| `summary`                           | *::String*                          | :heavy_minus_sign:                  | summary description of the playlist |
+| `title`                             | *T.nilable(::String)*               | :heavy_minus_sign:                  | name of the playlist                |
+| `summary`                           | *T.nilable(::String)*               | :heavy_minus_sign:                  | summary description of the playlist |
 
 ### Response
 
@@ -272,11 +272,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -318,11 +318,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -364,11 +364,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
@@ -391,7 +391,7 @@ end
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
 | `playlist_id`                                                 | *::Float*                                                     | :heavy_check_mark:                                            | the ID of the playlist                                        |                                                               |
 | `uri`                                                         | *::String*                                                    | :heavy_check_mark:                                            | the content URI for the playlist                              | server://12345/com.plexapp.plugins.library/library/metadata/1 |
-| `play_queue_id`                                               | *::Float*                                                     | :heavy_minus_sign:                                            | the play queue to add to a playlist                           | 123                                                           |
+| `play_queue_id`                                               | *T.nilable(::Float)*                                          | :heavy_minus_sign:                                            | the play queue to add to a playlist                           | 123                                                           |
 
 ### Response
 
@@ -411,11 +411,11 @@ require 'plex_ruby_sdk'
 
 
 s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "gcgzw5rz2xovp84b4vha3a40",
-      client_name: "Plex Web",
-      client_version: "4.133.0",
-      client_platform: "Chrome",
-      device_name: "Linux",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
     )
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
