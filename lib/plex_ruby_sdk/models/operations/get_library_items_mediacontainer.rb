@@ -31,8 +31,6 @@ module PlexRubySDK
 
       field :media_tag_version, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
 
-      field :metadata, T::Array[::PlexRubySDK::Operations::GetLibraryItemsMetadata], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
-
       field :offset, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('offset') } }
 
       field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
@@ -52,6 +50,8 @@ module PlexRubySDK
       # 
       field :meta, T.nilable(::PlexRubySDK::Operations::GetLibraryItemsMeta), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Meta') } }
 
+      field :metadata, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsMetadata]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
+
       field :mixed_parents, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mixedParents') } }
 
       field :nocache, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('nocache') } }
@@ -61,8 +61,8 @@ module PlexRubySDK
       field :view_mode, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewMode') } }
 
 
-      sig { params(allow_sync: T::Boolean, art: ::String, content: ::String, identifier: ::String, library_section_id: ::Integer, library_section_title: ::String, library_section_uuid: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, metadata: T::Array[::PlexRubySDK::Operations::GetLibraryItemsMetadata], offset: ::Integer, size: ::Integer, thumb: ::String, title1: ::String, title2: ::String, total_size: ::Integer, view_group: ::String, field_type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsFieldType]), meta: T.nilable(::PlexRubySDK::Operations::GetLibraryItemsMeta), mixed_parents: T.nilable(T::Boolean), nocache: T.nilable(T::Boolean), type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsType]), view_mode: T.nilable(::Integer)).void }
-      def initialize(allow_sync: nil, art: nil, content: nil, identifier: nil, library_section_id: nil, library_section_title: nil, library_section_uuid: nil, media_tag_prefix: nil, media_tag_version: nil, metadata: nil, offset: nil, size: nil, thumb: nil, title1: nil, title2: nil, total_size: nil, view_group: nil, field_type: nil, meta: nil, mixed_parents: nil, nocache: nil, type: nil, view_mode: nil)
+      sig { params(allow_sync: T::Boolean, art: ::String, content: ::String, identifier: ::String, library_section_id: ::Integer, library_section_title: ::String, library_section_uuid: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, offset: ::Integer, size: ::Integer, thumb: ::String, title1: ::String, title2: ::String, total_size: ::Integer, view_group: ::String, field_type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsFieldType]), meta: T.nilable(::PlexRubySDK::Operations::GetLibraryItemsMeta), metadata: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsMetadata]), mixed_parents: T.nilable(T::Boolean), nocache: T.nilable(T::Boolean), type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsType]), view_mode: T.nilable(::Integer)).void }
+      def initialize(allow_sync: nil, art: nil, content: nil, identifier: nil, library_section_id: nil, library_section_title: nil, library_section_uuid: nil, media_tag_prefix: nil, media_tag_version: nil, offset: nil, size: nil, thumb: nil, title1: nil, title2: nil, total_size: nil, view_group: nil, field_type: nil, meta: nil, metadata: nil, mixed_parents: nil, nocache: nil, type: nil, view_mode: nil)
         @allow_sync = allow_sync
         @art = art
         @content = content
@@ -72,7 +72,6 @@ module PlexRubySDK
         @library_section_uuid = library_section_uuid
         @media_tag_prefix = media_tag_prefix
         @media_tag_version = media_tag_version
-        @metadata = metadata
         @offset = offset
         @size = size
         @thumb = thumb
@@ -82,6 +81,7 @@ module PlexRubySDK
         @view_group = view_group
         @field_type = field_type
         @meta = meta
+        @metadata = metadata
         @mixed_parents = mixed_parents
         @nocache = nocache
         @type = type

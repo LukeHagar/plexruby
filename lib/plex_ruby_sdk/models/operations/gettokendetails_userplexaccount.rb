@@ -16,10 +16,10 @@ module PlexRubySDK
 
       # Unknown
       field :ads_consent, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('adsConsent') } }
-      # Unknown
-      field :ads_consent_reminder_at, ::DateTime, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('adsConsentReminderAt'), 'decoder': Utils.datetime_from_iso_format(false) } }
-      # Unknown
-      field :ads_consent_set_at, ::DateTime, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('adsConsentSetAt'), 'decoder': Utils.datetime_from_iso_format(false) } }
+
+      field :ads_consent_reminder_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('adsConsentReminderAt') } }
+
+      field :ads_consent_set_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('adsConsentSetAt') } }
       # Unknown
       field :anonymous, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('anonymous') } }
 
@@ -100,7 +100,7 @@ module PlexRubySDK
       field :roles, T.nilable(T::Array[::String]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('roles') } }
 
 
-      sig { params(ads_consent: T::Boolean, ads_consent_reminder_at: ::DateTime, ads_consent_set_at: ::DateTime, anonymous: T::Boolean, attribution_partner: ::String, auth_token: ::String, backup_codes_created: T::Boolean, confirmed: T::Boolean, country: ::String, email: ::String, email_only_auth: T::Boolean, entitlements: T::Array[::String], experimental_features: T::Boolean, friendly_name: ::String, guest: T::Boolean, has_password: T::Boolean, home: T::Boolean, home_admin: T::Boolean, home_size: ::Integer, id: ::Integer, joined_at: ::Integer, locale: ::String, mailing_list_active: T::Boolean, mailing_list_status: ::PlexRubySDK::Operations::MailingListStatus, max_home_size: ::Integer, profile: ::PlexRubySDK::Operations::UserProfile, protected: T::Boolean, remember_expires_at: ::Integer, restricted: T::Boolean, scrobble_types: ::String, services: T::Array[::PlexRubySDK::Operations::Services], subscription: ::PlexRubySDK::Operations::Subscription, subscription_description: ::String, subscriptions: T::Array[::PlexRubySDK::Operations::GetTokenDetailsSubscription], thumb: ::String, title: ::String, two_factor_enabled: T::Boolean, username: ::String, uuid: ::String, pin: T.nilable(::String), roles: T.nilable(T::Array[::String])).void }
+      sig { params(ads_consent: T::Boolean, ads_consent_reminder_at: ::Integer, ads_consent_set_at: ::Integer, anonymous: T::Boolean, attribution_partner: ::String, auth_token: ::String, backup_codes_created: T::Boolean, confirmed: T::Boolean, country: ::String, email: ::String, email_only_auth: T::Boolean, entitlements: T::Array[::String], experimental_features: T::Boolean, friendly_name: ::String, guest: T::Boolean, has_password: T::Boolean, home: T::Boolean, home_admin: T::Boolean, home_size: ::Integer, id: ::Integer, joined_at: ::Integer, locale: ::String, mailing_list_active: T::Boolean, mailing_list_status: ::PlexRubySDK::Operations::MailingListStatus, max_home_size: ::Integer, profile: ::PlexRubySDK::Operations::UserProfile, protected: T::Boolean, remember_expires_at: ::Integer, restricted: T::Boolean, scrobble_types: ::String, services: T::Array[::PlexRubySDK::Operations::Services], subscription: ::PlexRubySDK::Operations::Subscription, subscription_description: ::String, subscriptions: T::Array[::PlexRubySDK::Operations::GetTokenDetailsSubscription], thumb: ::String, title: ::String, two_factor_enabled: T::Boolean, username: ::String, uuid: ::String, pin: T.nilable(::String), roles: T.nilable(T::Array[::String])).void }
       def initialize(ads_consent: nil, ads_consent_reminder_at: nil, ads_consent_set_at: nil, anonymous: nil, attribution_partner: nil, auth_token: nil, backup_codes_created: nil, confirmed: nil, country: nil, email: nil, email_only_auth: nil, entitlements: nil, experimental_features: nil, friendly_name: nil, guest: nil, has_password: nil, home: nil, home_admin: nil, home_size: nil, id: nil, joined_at: nil, locale: nil, mailing_list_active: nil, mailing_list_status: nil, max_home_size: nil, profile: nil, protected: nil, remember_expires_at: nil, restricted: nil, scrobble_types: nil, services: nil, subscription: nil, subscription_description: nil, subscriptions: nil, thumb: nil, title: nil, two_factor_enabled: nil, username: nil, uuid: nil, pin: nil, roles: nil)
         @ads_consent = ads_consent
         @ads_consent_reminder_at = ads_consent_reminder_at
