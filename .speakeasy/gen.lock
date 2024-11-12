@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: aa9449e7-c19d-411d-b8e2-f9c5fe982f6f
 management:
-  docChecksum: 23094f3a9fe02710a8628ad5456f5d42
+  docChecksum: af45c1ae70f7fc6589adb3f8075cb275
   docVersion: 0.0.3
-  speakeasyVersion: 1.406.0
-  generationVersion: 2.429.0
-  releaseVersion: 0.4.8
-  configChecksum: 565e24d604aee50353cfdf9eb1ba57a3
+  speakeasyVersion: 1.438.1
+  generationVersion: 2.457.2
+  releaseVersion: 0.5.0
+  configChecksum: 5da078fb62750d5891f7aad21eed4fd4
   repoURL: https://github.com/LukeHagar/plexruby.git
   repoSubDirectory: .
   installationURL: https://github.com/LukeHagar/plexruby
   published: true
 features:
   ruby:
-    core: 3.2.26
+    core: 3.3.0
     deprecations: 2.81.1
     enums: 2.81.1
     flattening: 2.81.1

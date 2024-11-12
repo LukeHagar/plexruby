@@ -95,19 +95,19 @@ end
 <details open>
 <summary>Available methods</summary>
 
-### [Activities](docs/sdks/activities/README.md)
+### [activities](docs/sdks/activities/README.md)
 
 * [get_server_activities](docs/sdks/activities/README.md#get_server_activities) - Get Server Activities
 * [cancel_server_activities](docs/sdks/activities/README.md#cancel_server_activities) - Cancel Server Activities
 
-### [Authentication](docs/sdks/authentication/README.md)
+### [authentication](docs/sdks/authentication/README.md)
 
 * [get_transient_token](docs/sdks/authentication/README.md#get_transient_token) - Get a Transient Token
 * [get_source_connection_information](docs/sdks/authentication/README.md#get_source_connection_information) - Get Source Connection Information
 * [get_token_details](docs/sdks/authentication/README.md#get_token_details) - Get Token Details
 * [post_users_sign_in_data](docs/sdks/authentication/README.md#post_users_sign_in_data) - Get User Sign In Data
 
-### [Butler](docs/sdks/butler/README.md)
+### [butler](docs/sdks/butler/README.md)
 
 * [get_butler_tasks](docs/sdks/butler/README.md#get_butler_tasks) - Get Butler tasks
 * [start_all_tasks](docs/sdks/butler/README.md#start_all_tasks) - Start all Butler tasks
@@ -115,13 +115,13 @@ end
 * [start_task](docs/sdks/butler/README.md#start_task) - Start a single Butler task
 * [stop_task](docs/sdks/butler/README.md#stop_task) - Stop a single Butler task
 
-### [Hubs](docs/sdks/hubs/README.md)
+### [hubs](docs/sdks/hubs/README.md)
 
 * [get_global_hubs](docs/sdks/hubs/README.md#get_global_hubs) - Get Global Hubs
 * [get_recently_added](docs/sdks/hubs/README.md#get_recently_added) - Get Recently Added
 * [get_library_hubs](docs/sdks/hubs/README.md#get_library_hubs) - Get library specific hubs
 
-### [Library](docs/sdks/library/README.md)
+### [library](docs/sdks/library/README.md)
 
 * [get_file_hash](docs/sdks/library/README.md#get_file_hash) - Get Hash Value
 * [get_recently_added_library](docs/sdks/library/README.md#get_recently_added_library) - Get Recently Added
@@ -137,13 +137,13 @@ end
 * [get_top_watched_content](docs/sdks/library/README.md#get_top_watched_content) - Get Top Watched Content
 * [get_on_deck](docs/sdks/library/README.md#get_on_deck) - Get On Deck
 
-### [Log](docs/sdks/log/README.md)
+### [log](docs/sdks/log/README.md)
 
 * [log_line](docs/sdks/log/README.md#log_line) - Logging a single line message.
 * [log_multi_line](docs/sdks/log/README.md#log_multi_line) - Logging a multi-line message
 * [enable_paper_trail](docs/sdks/log/README.md#enable_paper_trail) - Enabling Papertrail
 
-### [Media](docs/sdks/media/README.md)
+### [media](docs/sdks/media/README.md)
 
 * [mark_played](docs/sdks/media/README.md#mark_played) - Mark Media Played
 * [mark_unplayed](docs/sdks/media/README.md#mark_unplayed) - Mark Media Unplayed
@@ -151,7 +151,7 @@ end
 * [get_banner_image](docs/sdks/media/README.md#get_banner_image) - Get Banner Image
 * [get_thumb_image](docs/sdks/media/README.md#get_thumb_image) - Get Thumb Image
 
-### [Playlists](docs/sdks/playlists/README.md)
+### [playlists](docs/sdks/playlists/README.md)
 
 * [create_playlist](docs/sdks/playlists/README.md#create_playlist) - Create a Playlist
 * [get_playlists](docs/sdks/playlists/README.md#get_playlists) - Get All Playlists
@@ -163,7 +163,7 @@ end
 * [add_playlist_contents](docs/sdks/playlists/README.md#add_playlist_contents) - Adding to a Playlist
 * [upload_playlist](docs/sdks/playlists/README.md#upload_playlist) - Upload Playlist
 
-### [Plex](docs/sdks/plex/README.md)
+### [plex](docs/sdks/plex/README.md)
 
 * [get_companions_data](docs/sdks/plex/README.md#get_companions_data) - Get Companions Data
 * [get_user_friends](docs/sdks/plex/README.md#get_user_friends) - Get list of friends of the user logged in
@@ -174,13 +174,13 @@ end
 * [get_token_by_pin_id](docs/sdks/plex/README.md#get_token_by_pin_id) - Get Access Token by PinId
 
 
-### [Search](docs/sdks/search/README.md)
+### [search](docs/sdks/search/README.md)
 
 * [perform_search](docs/sdks/search/README.md#perform_search) - Perform a search
 * [perform_voice_search](docs/sdks/search/README.md#perform_voice_search) - Perform a voice search
 * [get_search_results](docs/sdks/search/README.md#get_search_results) - Get Search Results
 
-### [Server](docs/sdks/server/README.md)
+### [server](docs/sdks/server/README.md)
 
 * [get_server_capabilities](docs/sdks/server/README.md#get_server_capabilities) - Get Server Capabilities
 * [get_server_preferences](docs/sdks/server/README.md#get_server_preferences) - Get Server Preferences
@@ -192,31 +192,31 @@ end
 * [get_media_providers](docs/sdks/server/README.md#get_media_providers) - Get Media Providers
 * [get_server_list](docs/sdks/server/README.md#get_server_list) - Get Server List
 
-### [Sessions](docs/sdks/sessions/README.md)
+### [sessions](docs/sdks/sessions/README.md)
 
 * [get_sessions](docs/sdks/sessions/README.md#get_sessions) - Get Active Sessions
 * [get_session_history](docs/sdks/sessions/README.md#get_session_history) - Get Session History
 * [get_transcode_sessions](docs/sdks/sessions/README.md#get_transcode_sessions) - Get Transcode Sessions
 * [stop_transcode_session](docs/sdks/sessions/README.md#stop_transcode_session) - Stop a Transcode Session
 
-### [Statistics](docs/sdks/statistics/README.md)
+### [statistics](docs/sdks/statistics/README.md)
 
 * [get_statistics](docs/sdks/statistics/README.md#get_statistics) - Get Media Statistics
 * [get_resources_statistics](docs/sdks/statistics/README.md#get_resources_statistics) - Get Resources Statistics
 * [get_bandwidth_statistics](docs/sdks/statistics/README.md#get_bandwidth_statistics) - Get Bandwidth Statistics
 
-### [Updater](docs/sdks/updater/README.md)
+### [updater](docs/sdks/updater/README.md)
 
 * [get_update_status](docs/sdks/updater/README.md#get_update_status) - Querying status of updates
 * [check_for_updates](docs/sdks/updater/README.md#check_for_updates) - Checking for updates
 * [apply_updates](docs/sdks/updater/README.md#apply_updates) - Apply Updates
 
-### [Video](docs/sdks/video/README.md)
+### [video](docs/sdks/video/README.md)
 
 * [get_timeline](docs/sdks/video/README.md#get_timeline) - Get the timeline for a media item
 * [start_universal_transcode](docs/sdks/video/README.md#start_universal_transcode) - Start Universal Transcode
 
-### [Watchlist](docs/sdks/watchlist/README.md)
+### [watchlist](docs/sdks/watchlist/README.md)
 
 * [get_watch_list](docs/sdks/watchlist/README.md#get_watch_list) - Get User Watchlist
 
@@ -226,29 +226,42 @@ end
 <!-- Start Server Selection [server] -->
 ## Server Selection
 
-## Server Selection
+### Server Variables
 
-### Select Server by Index
-
-You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `{protocol}://{ip}:{port}` | `protocol` (default is `https`), `ip` (default is `10.10.10.47`), `port` (default is `32400`) |
-
-
-
-#### Variables
-
-Some of the server options above contain variables. If you want to set the values of those variables, the following optional parameters are available when initializing the SDK client instance:
- * `protocol: ::PlexRubySDK::ServerVariables::ServerProtocol`
- * `ip: ::String`
- * `port: ::String`
+The default server `{protocol}://{ip}:{port}` contains variables and is set to `https://10.10.10.47:32400` by default. To override default values, the following parameters are available when initializing the SDK client instance:
+ * `protocol (::PlexRubySDK::ServerVariables::ServerProtocol)`
+ * `ip (::String)`
+ * `port (::String)`
 
 ### Override Server URL Per-Client
 
-The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+The default server can also be overridden globally by passing a URL to the `server_url (String)` optional parameter when initializing the SDK client instance. For example:
+```ruby
+require 'plex_ruby_sdk'
 
+
+s = ::PlexRubySDK::PlexAPI.new(
+      server_url: "https://10.10.10.47:32400",
+      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+      client_name: "Plex for Roku",
+      client_version: "2.4.1",
+      platform: "Roku",
+      device_nickname: "Roku 3",
+    )
+s.config_security(
+  ::PlexRubySDK::Shared::Security.new(
+    access_token: "<YOUR_API_KEY_HERE>",
+  )
+)
+
+    
+res = s.server.get_server_capabilities()
+
+if ! res.object.nil?
+  # handle response
+end
+
+```
 
 ### Override Server URL Per-Operation
 

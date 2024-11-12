@@ -20,6 +20,7 @@ module PlexRubySDK
         TV_SHOW = new(2)
         SEASON = new(3)
         EPISODE = new(4)
+        AUDIO = new(8)
       end
     end
   end
