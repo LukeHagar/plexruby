@@ -14,7 +14,7 @@ module PlexRubySDK
       # The timespan to retrieve statistics for
       # the exact meaning of this parameter is not known
       # 
-      field :timespan, T.nilable(::Integer), { 'query_param': { 'field_name': 'Timespan', 'style': 'form', 'explode': true } }
+      field :timespan, T.nilable(::Integer), { 'query_param': { 'field_name': 'timespan', 'style': 'form', 'explode': true } }
 
 
       sig { params(timespan: T.nilable(::Integer)).void }
