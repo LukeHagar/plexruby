@@ -32,7 +32,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/:/scrobble"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::MarkPlayedRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::MarkPlayedRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -59,6 +59,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -75,7 +76,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/:/unscrobble"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::MarkUnplayedRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::MarkUnplayedRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -102,6 +103,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -121,7 +123,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/:/progress"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::UpdatePlayProgressRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::UpdatePlayProgressRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -148,6 +150,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -162,11 +165,10 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::GetBannerImageRequest,
         base_url,
         '/library/metadata/{ratingKey}/banner',
-        request,
-        @sdk_configuration.globals
+        request
       )
-      headers = Utils.get_headers(request, @sdk_configuration.globals)
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetBannerImageRequest, request, @sdk_configuration.globals)
+      headers = Utils.get_headers(request)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetBannerImageRequest, request)
       headers['Accept'] = 'application/json;q=1, image/jpeg;q=0'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -184,7 +186,6 @@ module PlexRubySDK
       if r.status == 200
         res.headers = r.headers
         res.bytes = r.env.response_body if Utils.match_content_type(content_type, 'image/jpeg')
-      
       elsif r.status == 400
         if Utils.match_content_type(content_type, 'application/json')
           out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetBannerImageBadRequest)
@@ -196,6 +197,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -210,11 +212,10 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::GetThumbImageRequest,
         base_url,
         '/library/metadata/{ratingKey}/thumb',
-        request,
-        @sdk_configuration.globals
+        request
       )
-      headers = Utils.get_headers(request, @sdk_configuration.globals)
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetThumbImageRequest, request, @sdk_configuration.globals)
+      headers = Utils.get_headers(request)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetThumbImageRequest, request)
       headers['Accept'] = 'application/json;q=1, image/jpeg;q=0'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -232,7 +233,6 @@ module PlexRubySDK
       if r.status == 200
         res.headers = r.headers
         res.bytes = r.env.response_body if Utils.match_content_type(content_type, 'image/jpeg')
-      
       elsif r.status == 400
         if Utils.match_content_type(content_type, 'application/json')
           out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetThumbImageBadRequest)
@@ -244,6 +244,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
   end

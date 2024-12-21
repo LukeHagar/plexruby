@@ -26,13 +26,7 @@ Get Companions Data
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -70,13 +64,7 @@ Get friends of provided auth token.
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -114,13 +102,7 @@ Returns the geolocation and locale data of the caller
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 
     
 res = s.plex.get_geo_data()
@@ -153,13 +135,7 @@ Retrieves the home data for the authenticated user, including details like home 
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -191,13 +167,7 @@ Get Plex server access tokens and server connections
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -205,7 +175,7 @@ s.config_security(
 )
 
     
-res = s.plex.get_server_resources(include_https=::PlexRubySDK::Operations::IncludeHttps::ENABLE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ENABLE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ENABLE, client_id="3381b62b-9ab7-4e37-827b-203e9809eb58")
+res = s.plex.get_server_resources(client_id="3381b62b-9ab7-4e37-827b-203e9809eb58", include_https=::PlexRubySDK::Operations::IncludeHttps::ENABLE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ENABLE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ENABLE)
 
 if ! res.plex_devices.nil?
   # handle response
@@ -217,10 +187,10 @@ end
 
 | Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        | Example                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `client_id`                                                                                                        | *::String*                                                                                                         | :heavy_check_mark:                                                                                                 | An opaque identifier unique to the client (UUID, serial number, or other unique device ID)                         | 3381b62b-9ab7-4e37-827b-203e9809eb58                                                                               |
 | `include_https`                                                                                                    | [T.nilable(::PlexRubySDK::Operations::IncludeHttps)](../../models/operations/includehttps.md)                      | :heavy_minus_sign:                                                                                                 | Include Https entries in the results                                                                               | 1                                                                                                                  |
 | `include_relay`                                                                                                    | [T.nilable(::PlexRubySDK::Operations::IncludeRelay)](../../models/operations/includerelay.md)                      | :heavy_minus_sign:                                                                                                 | Include Relay addresses in the results <br/>E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400<br/> | 1                                                                                                                  |
 | `include_i_pv6`                                                                                                    | [T.nilable(::PlexRubySDK::Operations::IncludeIPv6)](../../models/operations/includeipv6.md)                        | :heavy_minus_sign:                                                                                                 | Include IPv6 entries in the results                                                                                | 1                                                                                                                  |
-| `client_id`                                                                                                        | *T.nilable(::String)*                                                                                              | :heavy_minus_sign:                                                                                                 | An opaque identifier unique to the client (UUID, serial number, or other unique device ID)                         | 3381b62b-9ab7-4e37-827b-203e9809eb58                                                                               |
 | `server_url`                                                                                                       | *String*                                                                                                           | :heavy_minus_sign:                                                                                                 | An optional server URL to use.                                                                                     | http://localhost:8080                                                                                              |
 
 ### Response
@@ -239,16 +209,16 @@ Retrieve a Pin ID from Plex.tv to use for authentication flows
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 
 
-req = ::PlexRubySDK::Operations::GetPinRequest.new()
+req = ::PlexRubySDK::Operations::GetPinRequest.new(
+  client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+  client_name: "Plex for Roku",
+  device_nickname: "Roku 3",
+  client_version: "2.4.1",
+  platform: "Roku",
+)
     
 res = s.plex.get_pin(req)
 
@@ -281,17 +251,16 @@ Retrieve an Access Token from Plex.tv after the Pin has been authenticated
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 
 
 req = ::PlexRubySDK::Operations::GetTokenByPinIdRequest.new(
   pin_id: 408895,
+  client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+  client_name: "Plex for Roku",
+  device_nickname: "Roku 3",
+  client_version: "2.4.1",
+  platform: "Roku",
 )
     
 res = s.plex.get_token_by_pin_id(req)

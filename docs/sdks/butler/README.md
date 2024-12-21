@@ -24,13 +24,7 @@ Returns a list of butler tasks
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -67,13 +61,7 @@ This endpoint will attempt to start all Butler tasks that are enabled in the set
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -106,13 +94,7 @@ This endpoint will stop all currently running tasks and remove any scheduled tas
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -149,13 +131,7 @@ This endpoint will attempt to start a single Butler task that is enabled in the 
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -194,13 +170,7 @@ This endpoint will stop a currently running task by name, or remove it from the 
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",

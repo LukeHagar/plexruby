@@ -29,6 +29,7 @@ module PlexRubySDK
         RESOLUTION = new('resolution')
         FIRST_CHARACTER = new('firstCharacter')
         FOLDER = new('folder')
+        ALBUMS = new('albums')
       end
     end
   end

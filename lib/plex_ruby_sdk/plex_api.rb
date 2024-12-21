@@ -18,11 +18,6 @@ module PlexRubySDK
     sig do
       params(client: Faraday::Request,
              security: T.nilable(Shared::Security),
-             client_id: ::String,
-             client_name: ::String,
-             client_version: ::String,
-             platform: ::String,
-             device_nickname: ::String,
              protocol: T.nilable(::PlexRubySDK::ServerVariables::ServerProtocol),
              ip: T.nilable(::String),
              port: T.nilable(::String),
@@ -32,11 +27,6 @@ module PlexRubySDK
     end
     def initialize(client: nil,
                    security: nil,
-                   client_id: nil,
-                   client_name: nil,
-                   client_version: nil,
-                   platform: nil,
-                   device_nickname: nil,
                    protocol: nil,
                    ip: nil,
                    port: nil,
@@ -47,11 +37,6 @@ module PlexRubySDK
       ## Instantiates the SDK configuring it with the provided parameters.
       # @param [Faraday::Request] client The faraday HTTP client to use for all operations
       # @param [Shared::Security] security The security details required for authentication
-      # @param [::String] client_id: Configures the client_id parameter for all supported operations
-      # @param [::String] client_name: Configures the client_name parameter for all supported operations
-      # @param [::String] client_version: Configures the client_version parameter for all supported operations
-      # @param [::String] platform: Configures the platform parameter for all supported operations
-      # @param [::String] device_nickname: Configures the device_nickname parameter for all supported operations
       # @param [T.nilable(::PlexRubySDK::ServerVariables::ServerProtocol)] protocol: Allows setting the protocol variable for url substitution
       # @param [T.nilable(::String)] ip: Allows setting the ip variable for url substitution
       # @param [T.nilable(::String)] port: Allows setting the port variable for url substitution
@@ -83,23 +68,7 @@ module PlexRubySDK
         },
       ]
 
-      globals = {
-        'parameters': {
-          'queryParam': {
-          },
-          'pathParam': {
-          },
-          'header': {
-            'client_id': client_id,
-            'client_name': client_name,
-            'client_version': client_version,
-            'platform': platform,
-            'device_nickname': device_nickname,
-          }
-        }
-      }
-
-      @sdk_configuration = SDKConfiguration.new(client, security, server_url, server_idx, server_params, globals)
+      @sdk_configuration = SDKConfiguration.new(client, security, server_url, server_idx, server_params)
       init_sdks
     end
 

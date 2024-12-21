@@ -33,7 +33,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/library/hashes"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetFileHashRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetFileHashRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -60,6 +60,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -73,7 +74,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/library/recentlyAdded"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetRecentlyAddedLibraryRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetRecentlyAddedLibraryRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -104,6 +105,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -151,6 +153,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -209,11 +212,10 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::GetLibraryDetailsRequest,
         base_url,
         '/library/sections/{sectionKey}',
-        request,
-        @sdk_configuration.globals
+        request
       )
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetLibraryDetailsRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetLibraryDetailsRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -244,6 +246,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -262,8 +265,7 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::DeleteLibraryRequest,
         base_url,
         '/library/sections/{sectionKey}',
-        request,
-        @sdk_configuration.globals
+        request
       )
       headers = {}
       headers['Accept'] = 'application/json'
@@ -291,6 +293,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -318,6 +321,7 @@ module PlexRubySDK
       # - `resolution`: Items categorized by resolution.
       # - `firstCharacter`: Items categorized by the first letter.
       # - `folder`: Items categorized by folder.
+      # - `albums`: Items categorized by album.
       # 
       url, params = @sdk_configuration.get_server_details
       base_url = Utils.template_url(url, params)
@@ -325,11 +329,10 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::GetLibraryItemsRequest,
         base_url,
         '/library/sections/{sectionKey}/{tag}',
-        request,
-        @sdk_configuration.globals
+        request
       )
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetLibraryItemsRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetLibraryItemsRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -360,6 +363,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -380,11 +384,10 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::GetRefreshLibraryMetadataRequest,
         base_url,
         '/library/sections/{sectionKey}/refresh',
-        request,
-        @sdk_configuration.globals
+        request
       )
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetRefreshLibraryMetadataRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetRefreshLibraryMetadataRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -411,6 +414,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -448,11 +452,10 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::GetSearchLibraryRequest,
         base_url,
         '/library/sections/{sectionKey}/search',
-        request,
-        @sdk_configuration.globals
+        request
       )
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetSearchLibraryRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetSearchLibraryRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -483,6 +486,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -495,8 +499,8 @@ module PlexRubySDK
       url, params = @sdk_configuration.get_server_details
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/library/search"
-      headers = Utils.get_headers(request, @sdk_configuration.globals)
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetSearchAllLibrariesRequest, request, @sdk_configuration.globals)
+      headers = Utils.get_headers(request)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetSearchAllLibrariesRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -527,6 +531,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -546,8 +551,7 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::GetMetaDataByRatingKeyRequest,
         base_url,
         '/library/metadata/{ratingKey}',
-        request,
-        @sdk_configuration.globals
+        request
       )
       headers = {}
       headers['Accept'] = 'application/json'
@@ -579,6 +583,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -599,11 +604,10 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::GetMetadataChildrenRequest,
         base_url,
         '/library/metadata/{ratingKey}/children',
-        request,
-        @sdk_configuration.globals
+        request
       )
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetMetadataChildrenRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetMetadataChildrenRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -634,6 +638,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -652,7 +657,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/library/all/top"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetTopWatchedContentRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetTopWatchedContentRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -683,6 +688,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -725,6 +731,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
   end

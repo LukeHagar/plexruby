@@ -29,12 +29,16 @@ module PlexRubySDK
       field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
 
       field :genre, T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyGenre]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Genre') } }
+      # The name of the album artist for the track when audio, and the name of the TV show for the episode when video.
+      field :grandparent_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentTitle') } }
 
       field :guid, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('guid') } }
 
       field :guids, T.nilable(T::Array[::PlexRubySDK::Operations::Guids]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Guid') } }
 
       field :has_premium_primary_extra, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasPremiumPrimaryExtra') } }
+      # The index starting from 0 of this media item in the MetaData array.
+      field :index, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('index') } }
 
       field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
 
@@ -47,6 +51,12 @@ module PlexRubySDK
       field :media, T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyMedia]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Media') } }
 
       field :originally_available_at, T.nilable(::Date), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originallyAvailableAt'), 'decoder': Utils.date_from_iso_format(true) } }
+      # The orginal untranslated name of the media item when non-english.
+      field :original_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originalTitle') } }
+      # The parent index starting from 0 of this media item in the parent MetaData array.
+      field :parent_index, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentIndex') } }
+      # The name of the album for the track when audio, and the name of the season for the episode when TV show.
+      field :parent_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentTitle') } }
 
       field :producer, T.nilable(T::Array[::PlexRubySDK::Operations::Producer]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Producer') } }
 
@@ -79,8 +89,8 @@ module PlexRubySDK
       field :year, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('year') } }
 
 
-      sig { params(added_at: T.nilable(::Integer), art: T.nilable(::String), audience_rating: T.nilable(::Float), audience_rating_image: T.nilable(::String), content_rating: T.nilable(::String), country: T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyCountry]), director: T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyDirector]), duration: T.nilable(::Integer), genre: T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyGenre]), guid: T.nilable(::String), guids: T.nilable(T::Array[::PlexRubySDK::Operations::Guids]), has_premium_primary_extra: T.nilable(::String), key: T.nilable(::String), library_section_id: T.nilable(::Integer), library_section_key: T.nilable(::String), library_section_title: T.nilable(::String), media: T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyMedia]), originally_available_at: T.nilable(::Date), producer: T.nilable(T::Array[::PlexRubySDK::Operations::Producer]), rating: T.nilable(::Float), rating_image: T.nilable(::String), rating_key: T.nilable(::String), ratings: T.nilable(T::Array[::PlexRubySDK::Operations::Ratings]), role: T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyRole]), studio: T.nilable(::String), summary: T.nilable(::String), tagline: T.nilable(::String), thumb: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String), updated_at: T.nilable(::Integer), writer: T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyWriter]), year: T.nilable(::Integer)).void }
-      def initialize(added_at: nil, art: nil, audience_rating: nil, audience_rating_image: nil, content_rating: nil, country: nil, director: nil, duration: nil, genre: nil, guid: nil, guids: nil, has_premium_primary_extra: nil, key: nil, library_section_id: nil, library_section_key: nil, library_section_title: nil, media: nil, originally_available_at: nil, producer: nil, rating: nil, rating_image: nil, rating_key: nil, ratings: nil, role: nil, studio: nil, summary: nil, tagline: nil, thumb: nil, title: nil, type: nil, updated_at: nil, writer: nil, year: nil)
+      sig { params(added_at: T.nilable(::Integer), art: T.nilable(::String), audience_rating: T.nilable(::Float), audience_rating_image: T.nilable(::String), content_rating: T.nilable(::String), country: T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyCountry]), director: T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyDirector]), duration: T.nilable(::Integer), genre: T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyGenre]), grandparent_title: T.nilable(::String), guid: T.nilable(::String), guids: T.nilable(T::Array[::PlexRubySDK::Operations::Guids]), has_premium_primary_extra: T.nilable(::String), index: T.nilable(::Integer), key: T.nilable(::String), library_section_id: T.nilable(::Integer), library_section_key: T.nilable(::String), library_section_title: T.nilable(::String), media: T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyMedia]), originally_available_at: T.nilable(::Date), original_title: T.nilable(::String), parent_index: T.nilable(::Integer), parent_title: T.nilable(::String), producer: T.nilable(T::Array[::PlexRubySDK::Operations::Producer]), rating: T.nilable(::Float), rating_image: T.nilable(::String), rating_key: T.nilable(::String), ratings: T.nilable(T::Array[::PlexRubySDK::Operations::Ratings]), role: T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyRole]), studio: T.nilable(::String), summary: T.nilable(::String), tagline: T.nilable(::String), thumb: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String), updated_at: T.nilable(::Integer), writer: T.nilable(T::Array[::PlexRubySDK::Operations::GetMetaDataByRatingKeyWriter]), year: T.nilable(::Integer)).void }
+      def initialize(added_at: nil, art: nil, audience_rating: nil, audience_rating_image: nil, content_rating: nil, country: nil, director: nil, duration: nil, genre: nil, grandparent_title: nil, guid: nil, guids: nil, has_premium_primary_extra: nil, index: nil, key: nil, library_section_id: nil, library_section_key: nil, library_section_title: nil, media: nil, originally_available_at: nil, original_title: nil, parent_index: nil, parent_title: nil, producer: nil, rating: nil, rating_image: nil, rating_key: nil, ratings: nil, role: nil, studio: nil, summary: nil, tagline: nil, thumb: nil, title: nil, type: nil, updated_at: nil, writer: nil, year: nil)
         @added_at = added_at
         @art = art
         @audience_rating = audience_rating
@@ -90,15 +100,20 @@ module PlexRubySDK
         @director = director
         @duration = duration
         @genre = genre
+        @grandparent_title = grandparent_title
         @guid = guid
         @guids = guids
         @has_premium_primary_extra = has_premium_primary_extra
+        @index = index
         @key = key
         @library_section_id = library_section_id
         @library_section_key = library_section_key
         @library_section_title = library_section_title
         @media = media
         @originally_available_at = originally_available_at
+        @original_title = original_title
+        @parent_index = parent_index
+        @parent_title = parent_title
         @producer = producer
         @rating = rating
         @rating_image = rating_image

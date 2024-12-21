@@ -32,7 +32,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/statistics/media"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetStatisticsRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetStatisticsRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -63,6 +63,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -79,7 +80,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/statistics/resources"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetResourcesStatisticsRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetResourcesStatisticsRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -110,6 +111,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -126,7 +128,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/statistics/bandwidth"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetBandwidthStatisticsRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetBandwidthStatisticsRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -157,6 +159,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
   end

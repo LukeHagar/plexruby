@@ -58,6 +58,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -74,7 +75,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/updater/check"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::CheckForUpdatesRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::CheckForUpdatesRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -101,6 +102,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -119,7 +121,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/updater/apply"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::ApplyUpdatesRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::ApplyUpdatesRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -146,6 +148,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
   end

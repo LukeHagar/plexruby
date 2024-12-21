@@ -28,13 +28,7 @@ Get Server Capabilities
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -66,13 +60,7 @@ Get Server Preferences
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -104,13 +92,7 @@ Get Available Clients
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -142,13 +124,7 @@ Get Devices
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -180,13 +156,7 @@ This request is useful to determine if the server is online or offline
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 
     
 res = s.server.get_server_identity()
@@ -213,13 +183,7 @@ Returns MyPlex Account Information
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -252,13 +216,7 @@ Plex's Photo transcoder is used throughout the service to serve images at specif
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -306,13 +264,7 @@ Retrieves media providers and their features from the Plex server.
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -350,13 +302,7 @@ Get Server List
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",

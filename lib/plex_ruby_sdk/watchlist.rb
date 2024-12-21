@@ -36,11 +36,10 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::GetWatchListRequest,
         base_url,
         '/library/sections/watchlist/{filter}',
-        request,
-        @sdk_configuration.globals
+        request
       )
-      headers = Utils.get_headers(request, @sdk_configuration.globals)
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetWatchListRequest, request, @sdk_configuration.globals)
+      headers = Utils.get_headers(request)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetWatchListRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -71,6 +70,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
   end

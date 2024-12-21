@@ -15,7 +15,7 @@ module PlexRubySDK
       extend T::Sig
 
       # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
-      field :client_id, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
+      field :client_id, ::String, { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
       # The name of the client application. (Plex Web, Plex Media Server, etc.)
       field :client_name, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Product', 'style': 'simple', 'explode': false } }
       # The version of the client application.
@@ -28,7 +28,7 @@ module PlexRubySDK
       field :request_body, T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataRequestBody), { 'request': { 'media_type': 'application/x-www-form-urlencoded' } }
 
 
-      sig { params(client_id: T.nilable(::String), client_name: T.nilable(::String), client_version: T.nilable(::String), device_nickname: T.nilable(::String), platform: T.nilable(::String), request_body: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataRequestBody)).void }
+      sig { params(client_id: ::String, client_name: T.nilable(::String), client_version: T.nilable(::String), device_nickname: T.nilable(::String), platform: T.nilable(::String), request_body: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataRequestBody)).void }
       def initialize(client_id: nil, client_name: nil, client_version: nil, device_nickname: nil, platform: nil, request_body: nil)
         @client_id = client_id
         @client_name = client_name

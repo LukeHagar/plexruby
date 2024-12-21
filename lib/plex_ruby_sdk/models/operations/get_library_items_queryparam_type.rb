@@ -21,6 +21,8 @@ module PlexRubySDK
         SEASON = new(3)
         EPISODE = new(4)
         AUDIO = new(8)
+        ALBUM = new(9)
+        TRACK = new(10)
       end
     end
   end

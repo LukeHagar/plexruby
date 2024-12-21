@@ -33,7 +33,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/hubs"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetGlobalHubsRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetGlobalHubsRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -64,6 +64,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -77,7 +78,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/hubs/home/recentlyAdded"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetRecentlyAddedRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetRecentlyAddedRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -99,6 +100,7 @@ module PlexRubySDK
         end
       elsif [400, 401].include?(r.status)
       end
+
       res
     end
 
@@ -120,11 +122,10 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::GetLibraryHubsRequest,
         base_url,
         '/hubs/sections/{sectionId}',
-        request,
-        @sdk_configuration.globals
+        request
       )
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetLibraryHubsRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetLibraryHubsRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -155,6 +156,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
   end

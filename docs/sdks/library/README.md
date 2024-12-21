@@ -32,13 +32,7 @@ This resource returns hash values for local files
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -78,13 +72,7 @@ This endpoint will return the recently added content.
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -151,13 +139,7 @@ This allows a client to provide a rich interface around the media (e.g. allow so
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -228,13 +210,7 @@ Each type in the library comes with a set of filters and sorts, aiding in buildi
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -273,13 +249,7 @@ Delete a library using a specific section id
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -329,6 +299,7 @@ Fetches details from a specific section of the library identified by a section k
 - `resolution`: Items categorized by resolution.
 - `firstCharacter`: Items categorized by the first letter.
 - `folder`: Items categorized by folder.
+- `albums`: Items categorized by album.
 
 
 ### Example Usage
@@ -337,13 +308,7 @@ Fetches details from a specific section of the library identified by a section k
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -392,13 +357,7 @@ This endpoint Refreshes all the Metadata of the library.
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -455,13 +414,7 @@ Each type in the library comes with a set of filters and sorts, aiding in buildi
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -501,13 +454,7 @@ Search the provided query across all library sections, or a single section, and 
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -517,6 +464,7 @@ s.config_security(
 
 req = ::PlexRubySDK::Operations::GetSearchAllLibrariesRequest.new(
   query: "<value>",
+  client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
   search_types: [
     ::PlexRubySDK::Operations::SearchTypes::PEOPLE,
   ],
@@ -555,13 +503,7 @@ This endpoint will return the metadata of a library item specified with the rati
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -600,13 +542,7 @@ This endpoint will return the children of of a library item specified with the r
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -646,13 +582,7 @@ This endpoint will return the top watched content from libraries of a certain ty
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -692,13 +622,7 @@ This endpoint will return the on deck content.
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",

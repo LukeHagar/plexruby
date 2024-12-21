@@ -57,6 +57,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -76,7 +77,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/status/sessions/history/all"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetSessionHistoryRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetSessionHistoryRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -107,6 +108,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -148,6 +150,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -166,8 +169,7 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::StopTranscodeSessionRequest,
         base_url,
         '/transcode/sessions/{sessionKey}',
-        request,
-        @sdk_configuration.globals
+        request
       )
       headers = {}
       headers['Accept'] = 'application/json'
@@ -195,6 +197,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
   end

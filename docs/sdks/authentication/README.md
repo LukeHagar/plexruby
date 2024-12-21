@@ -24,13 +24,7 @@ This endpoint provides the caller with a temporary token with the same access le
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -71,13 +65,7 @@ Note: requires Plex Media Server >= 1.15.4.
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -115,13 +103,7 @@ Get the User data from the provided X-Plex-Token
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 s.config_security(
   ::PlexRubySDK::Shared::Security.new(
     access_token: "<YOUR_API_KEY_HERE>",
@@ -159,16 +141,15 @@ Sign in user with username and password and return user data with Plex authentic
 require 'plex_ruby_sdk'
 
 
-s = ::PlexRubySDK::PlexAPI.new(
-      client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
-      client_name: "Plex for Roku",
-      client_version: "2.4.1",
-      platform: "Roku",
-      device_nickname: "Roku 3",
-    )
+s = ::PlexRubySDK::PlexAPI.new
 
 
 req = ::PlexRubySDK::Operations::PostUsersSignInDataRequest.new(
+  client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
+  client_name: "Plex for Roku",
+  device_nickname: "Roku 3",
+  client_version: "2.4.1",
+  platform: "Roku",
   request_body: ::PlexRubySDK::Operations::PostUsersSignInDataRequestBody.new(
     login: "username@email.com",
     password: "password123",

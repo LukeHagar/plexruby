@@ -14,10 +14,10 @@ module PlexRubySDK
     class GetTokenByPinIdRequest < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
+      # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
+      field :client_id, ::String, { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
       # The PinID to retrieve an access token for
       field :pin_id, ::Integer, { 'path_param': { 'field_name': 'pinID', 'style': 'simple', 'explode': false } }
-      # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
-      field :client_id, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
       # The name of the client application. (Plex Web, Plex Media Server, etc.)
       field :client_name, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Product', 'style': 'simple', 'explode': false } }
       # The version of the client application.
@@ -28,10 +28,10 @@ module PlexRubySDK
       field :platform, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Platform', 'style': 'simple', 'explode': false } }
 
 
-      sig { params(pin_id: ::Integer, client_id: T.nilable(::String), client_name: T.nilable(::String), client_version: T.nilable(::String), device_nickname: T.nilable(::String), platform: T.nilable(::String)).void }
-      def initialize(pin_id: nil, client_id: nil, client_name: nil, client_version: nil, device_nickname: nil, platform: nil)
-        @pin_id = pin_id
+      sig { params(client_id: ::String, pin_id: ::Integer, client_name: T.nilable(::String), client_version: T.nilable(::String), device_nickname: T.nilable(::String), platform: T.nilable(::String)).void }
+      def initialize(client_id: nil, pin_id: nil, client_name: nil, client_version: nil, device_nickname: nil, platform: nil)
         @client_id = client_id
+        @pin_id = pin_id
         @client_name = client_name
         @client_version = client_version
         @device_nickname = device_nickname

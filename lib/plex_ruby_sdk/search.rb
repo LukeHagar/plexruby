@@ -46,7 +46,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/hubs/search"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::PerformSearchRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::PerformSearchRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -73,6 +73,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -95,7 +96,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/hubs/search/voice"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::PerformVoiceSearchRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::PerformVoiceSearchRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -122,6 +123,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -138,7 +140,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/search"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetSearchResultsRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetSearchResultsRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -169,6 +171,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
   end

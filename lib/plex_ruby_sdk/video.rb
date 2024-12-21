@@ -28,7 +28,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/:/timeline"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetTimelineRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetTimelineRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -55,6 +55,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -67,7 +68,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/video/:/transcode/universal/start.mpd"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::StartUniversalTranscodeRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::StartUniversalTranscodeRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -94,6 +95,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
   end

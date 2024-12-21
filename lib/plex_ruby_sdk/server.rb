@@ -57,6 +57,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -98,6 +99,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -139,6 +141,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -180,6 +183,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -215,6 +219,7 @@ module PlexRubySDK
           res.request_timeout = out
         end
       end
+
       res
     end
 
@@ -256,6 +261,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -269,7 +275,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/photo/:/transcode"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetResizedPhotoRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetResizedPhotoRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -296,6 +302,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -311,7 +318,7 @@ module PlexRubySDK
       url, params = @sdk_configuration.get_server_details
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/media/providers"
-      headers = Utils.get_headers(request, @sdk_configuration.globals)
+      headers = Utils.get_headers(request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -341,6 +348,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -382,6 +390,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
   end

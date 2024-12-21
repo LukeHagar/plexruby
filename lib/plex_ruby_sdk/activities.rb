@@ -63,6 +63,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -81,8 +82,7 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::CancelServerActivitiesRequest,
         base_url,
         '/activities/{activityUUID}',
-        request,
-        @sdk_configuration.globals
+        request
       )
       headers = {}
       headers['Accept'] = 'application/json'
@@ -110,6 +110,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
   end

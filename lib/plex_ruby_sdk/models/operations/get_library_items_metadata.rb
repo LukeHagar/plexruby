@@ -133,12 +133,12 @@ module PlexRubySDK
       field :role, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsRole]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Role') } }
 
       field :season_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('seasonCount') } }
-      # Setting that indicates the episode ordering for the show 
-      # None = Library default, 
-      # tmdbAiring = The Movie Database (Aired), 
-      # aired = TheTVDB (Aired), 
-      # dvd = TheTVDB (DVD), 
-      # absolute = TheTVDB (Absolute)).
+      # Setting that indicates the episode ordering for the show
+      # None = Library default,
+      # tmdbAiring = The Movie Database (Aired),
+      # tvdbAiring = TheTVDB (Aired),
+      # tvdbDvd = TheTVDB (DVD),
+      # tvdbAbsolute = TheTVDB (Absolute)).
       # 
       field :show_ordering, T.nilable(::PlexRubySDK::Operations::GetLibraryItemsShowOrdering), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('showOrdering'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetLibraryItemsShowOrdering, true) } }
 

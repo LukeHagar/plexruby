@@ -11,10 +11,10 @@ module PlexRubySDK
     class GetSearchAllLibrariesRequest < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
+      # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
+      field :client_id, ::String, { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
       # The search query term.
       field :query, ::String, { 'query_param': { 'field_name': 'query', 'style': 'form', 'explode': true } }
-      # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
-      field :client_id, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
       # Whether to include collections in the search results.
       field :include_collections, T.nilable(::PlexRubySDK::Operations::QueryParamIncludeCollections), { 'query_param': { 'field_name': 'includeCollections', 'style': 'form', 'explode': true } }
       # Whether to include external media in the search results.
@@ -26,10 +26,10 @@ module PlexRubySDK
       field :search_types, T.nilable(T::Array[::PlexRubySDK::Operations::SearchTypes]), { 'query_param': { 'field_name': 'searchTypes', 'style': 'form', 'explode': false } }
 
 
-      sig { params(query: ::String, client_id: T.nilable(::String), include_collections: T.nilable(::PlexRubySDK::Operations::QueryParamIncludeCollections), include_external_media: T.nilable(::PlexRubySDK::Operations::QueryParamIncludeExternalMedia), limit: T.nilable(::Integer), search_types: T.nilable(T::Array[::PlexRubySDK::Operations::SearchTypes])).void }
-      def initialize(query: nil, client_id: nil, include_collections: nil, include_external_media: nil, limit: nil, search_types: nil)
-        @query = query
+      sig { params(client_id: ::String, query: ::String, include_collections: T.nilable(::PlexRubySDK::Operations::QueryParamIncludeCollections), include_external_media: T.nilable(::PlexRubySDK::Operations::QueryParamIncludeExternalMedia), limit: T.nilable(::Integer), search_types: T.nilable(T::Array[::PlexRubySDK::Operations::SearchTypes])).void }
+      def initialize(client_id: nil, query: nil, include_collections: nil, include_external_media: nil, limit: nil, search_types: nil)
         @client_id = client_id
+        @query = query
         @include_collections = include_collections
         @include_external_media = include_external_media
         @limit = limit

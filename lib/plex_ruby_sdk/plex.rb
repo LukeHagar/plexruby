@@ -88,6 +88,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -130,6 +131,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -171,6 +173,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -212,27 +215,28 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
 
-    sig { params(include_https: T.nilable(::PlexRubySDK::Operations::IncludeHttps), include_relay: T.nilable(::PlexRubySDK::Operations::IncludeRelay), include_i_pv6: T.nilable(::PlexRubySDK::Operations::IncludeIPv6), client_id: T.nilable(::String), server_url: T.nilable(String)).returns(::PlexRubySDK::Operations::GetServerResourcesResponse) }
-    def get_server_resources(include_https = nil, include_relay = nil, include_i_pv6 = nil, client_id = nil, server_url = nil)
+    sig { params(client_id: ::String, include_https: T.nilable(::PlexRubySDK::Operations::IncludeHttps), include_relay: T.nilable(::PlexRubySDK::Operations::IncludeRelay), include_i_pv6: T.nilable(::PlexRubySDK::Operations::IncludeIPv6), server_url: T.nilable(String)).returns(::PlexRubySDK::Operations::GetServerResourcesResponse) }
+    def get_server_resources(client_id, include_https = nil, include_relay = nil, include_i_pv6 = nil, server_url = nil)
       # get_server_resources - Get Server Resources
       # Get Plex server access tokens and server connections
       request = ::PlexRubySDK::Operations::GetServerResourcesRequest.new(
         
+        client_id: client_id,
         include_https: include_https,
         include_relay: include_relay,
-        include_i_pv6: include_i_pv6,
-        client_id: client_id
+        include_i_pv6: include_i_pv6
       )
       base_url = Utils.template_url(GET_SERVER_RESOURCES_SERVERS[0], {
       })
       base_url = server_url if !server_url.nil?
       url = "#{base_url}/resources"
-      headers = Utils.get_headers(request, @sdk_configuration.globals)
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetServerResourcesRequest, request, @sdk_configuration.globals)
+      headers = Utils.get_headers(request)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetServerResourcesRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -263,6 +267,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -275,8 +280,8 @@ module PlexRubySDK
       })
       base_url = server_url if !server_url.nil?
       url = "#{base_url}/pins"
-      headers = Utils.get_headers(request, @sdk_configuration.globals)
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetPinRequest, request, @sdk_configuration.globals)
+      headers = Utils.get_headers(request)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetPinRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -301,6 +306,7 @@ module PlexRubySDK
           res.bad_request = out
         end
       end
+
       res
     end
 
@@ -316,10 +322,9 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::GetTokenByPinIdRequest,
         base_url,
         '/pins/{pinID}',
-        request,
-        @sdk_configuration.globals
+        request
       )
-      headers = Utils.get_headers(request, @sdk_configuration.globals)
+      headers = Utils.get_headers(request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -348,6 +353,7 @@ module PlexRubySDK
           res.object = out
         end
       end
+
       res
     end
   end

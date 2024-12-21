@@ -57,6 +57,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -99,6 +100,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -137,6 +139,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -160,8 +163,7 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::StartTaskRequest,
         base_url,
         '/butler/{taskName}',
-        request,
-        @sdk_configuration.globals
+        request
       )
       headers = {}
       headers['Accept'] = 'application/json'
@@ -189,6 +191,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -208,8 +211,7 @@ module PlexRubySDK
         ::PlexRubySDK::Operations::StopTaskRequest,
         base_url,
         '/butler/{taskName}',
-        request,
-        @sdk_configuration.globals
+        request
       )
       headers = {}
       headers['Accept'] = 'application/json'
@@ -237,6 +239,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
   end

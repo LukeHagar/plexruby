@@ -35,7 +35,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/log"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::LogLineRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::LogLineRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -62,6 +62,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -130,6 +131,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -168,6 +170,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
   end

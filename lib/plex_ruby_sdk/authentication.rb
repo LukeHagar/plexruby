@@ -44,7 +44,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/security/token"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetTransientTokenRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetTransientTokenRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -71,6 +71,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -89,7 +90,7 @@ module PlexRubySDK
       base_url = Utils.template_url(url, params)
       url = "#{base_url}/security/resources"
       headers = {}
-      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetSourceConnectionInformationRequest, request, @sdk_configuration.globals)
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetSourceConnectionInformationRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -116,6 +117,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -158,6 +160,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
 
@@ -170,7 +173,7 @@ module PlexRubySDK
       })
       base_url = server_url if !server_url.nil?
       url = "#{base_url}/users/signin"
-      headers = Utils.get_headers(request, @sdk_configuration.globals)
+      headers = Utils.get_headers(request)
       req_content_type, data, form = Utils.serialize_request_body(request, :request_body, :form)
       headers['content-type'] = req_content_type
       headers['Accept'] = 'application/json'
@@ -208,6 +211,7 @@ module PlexRubySDK
           res.unauthorized = out
         end
       end
+
       res
     end
   end
