@@ -7,11 +7,12 @@
 module PlexRubySDK
   module Operations
   
-
+    # GetSearchAllLibrariesFlattenSeasons - Setting that indicates if seasons are set to hidden for the show. (-1 = Library default, 0 = Hide, 1 = Show).
     class GetSearchAllLibrariesFlattenSeasons < T::Enum
       enums do
-        FALSE = new('0')
-        TRUE = new('1')
+        LIBRARY_DEFAULT = new('-1')
+        HIDE = new('0')
+        SHOW = new('1')
       end
     end
   end

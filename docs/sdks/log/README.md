@@ -92,9 +92,9 @@ s.config_security(
 )
 
 
-req = "level=4&message=Test%20message%201&source=postman
-level=3&message=Test%20message%202&source=postman
-level=1&message=Test%20message%203&source=postman"
+req = "level=4&message=Test%20message%201&source=postman\n" +
+"level=3&message=Test%20message%202&source=postman\n" +
+"level=1&message=Test%20message%203&source=postman"
     
 res = s.log.log_multi_line(req)
 

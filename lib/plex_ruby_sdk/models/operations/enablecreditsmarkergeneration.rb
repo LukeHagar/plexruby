@@ -7,12 +7,11 @@
 module PlexRubySDK
   module Operations
   
-    # FlattenSeasons - Setting that indicates if seasons are set to hidden for the show. (-1 = Library default, 0 = Hide, 1 = Show).
-    class FlattenSeasons < T::Enum
+    # EnableCreditsMarkerGeneration - Setting that indicates if credits markers detection is enabled. (-1 = Library default, 0 = Disabled).
+    class EnableCreditsMarkerGeneration < T::Enum
       enums do
         LIBRARY_DEFAULT = new('-1')
-        HIDE = new('0')
-        SHOW = new('1')
+        DISABLED = new('0')
       end
     end
   end

@@ -136,7 +136,7 @@ module PlexRubySDK
       res = ::PlexRubySDK::Operations::ApplyUpdatesResponse.new(
         status_code: r.status, content_type: content_type, raw_response: r
       )
-      if [200, 500].include?(r.status)
+      if r.status == 200
       elsif r.status == 400
         if Utils.match_content_type(content_type, 'application/json')
           out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::ApplyUpdatesBadRequest)
@@ -147,6 +147,7 @@ module PlexRubySDK
           out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::ApplyUpdatesUnauthorized)
           res.unauthorized = out
         end
+      elsif r.status == 500
       end
 
       res

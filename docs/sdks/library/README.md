@@ -550,7 +550,7 @@ s.config_security(
 )
 
     
-res = s.library.get_metadata_children(rating_key=1539.15, include_elements="<value>")
+res = s.library.get_metadata_children(rating_key=1539.14, include_elements="<value>")
 
 if ! res.object.nil?
   # handle response

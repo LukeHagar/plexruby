@@ -158,7 +158,7 @@ module PlexRubySDK
       res = ::PlexRubySDK::Operations::EnablePaperTrailResponse.new(
         status_code: r.status, content_type: content_type, raw_response: r
       )
-      if [200, 403].include?(r.status)
+      if r.status == 200
       elsif r.status == 400
         if Utils.match_content_type(content_type, 'application/json')
           out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::EnablePaperTrailBadRequest)
@@ -169,6 +169,7 @@ module PlexRubySDK
           out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::EnablePaperTrailUnauthorized)
           res.unauthorized = out
         end
+      elsif r.status == 403
       end
 
       res

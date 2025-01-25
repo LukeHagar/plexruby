@@ -206,7 +206,7 @@ s.config_security(
 )
 
     
-res = s.playlists.update_playlist(playlist_id=3915.00, title="<value>", summary="<value>")
+res = s.playlists.update_playlist(playlist_id=3915.0, title="<value>", summary="<value>")
 
 if res.status_code == 200
   # handle response
@@ -330,7 +330,7 @@ s.config_security(
 )
 
     
-res = s.playlists.add_playlist_contents(playlist_id=8502.00, uri="server://12345/com.plexapp.plugins.library/library/metadata/1", play_queue_id=123.0)
+res = s.playlists.add_playlist_contents(playlist_id=8502.01, uri="server://12345/com.plexapp.plugins.library/library/metadata/1", play_queue_id=123.0)
 
 if ! res.object.nil?
   # handle response
