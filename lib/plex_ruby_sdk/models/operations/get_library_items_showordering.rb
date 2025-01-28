@@ -7,20 +7,20 @@
 module PlexRubySDK
   module Operations
   
-    # GetLibraryItemsShowOrdering - Setting that indicates the episode ordering for the show
+    # GetLibraryItemsShowOrdering - Setting that indicates the episode ordering for the show.
     # None = Library default,
     # tmdbAiring = The Movie Database (Aired),
-    # tvdbAiring = TheTVDB (Aired),
-    # tvdbDvd = TheTVDB (DVD),
-    # tvdbAbsolute = TheTVDB (Absolute)).
+    # aired = TheTVDB (Aired),
+    # dvd = TheTVDB (DVD),
+    # absolute = TheTVDB (Absolute)).
     # 
     class GetLibraryItemsShowOrdering < T::Enum
       enums do
         NONE = new('None')
         TMDB_AIRING = new('tmdbAiring')
-        TVDB_AIRING = new('tvdbAiring')
-        TVDB_DVD = new('tvdbDvd')
-        TVDB_ABSOLUTE = new('tvdbAbsolute')
+        TVDB_AIRED = new('aired')
+        TVDB_DVD = new('dvd')
+        TVDB_ABSOLUTE = new('absolute')
       end
     end
   end
