@@ -491,6 +491,112 @@ module PlexRubySDK
     end
 
 
+    sig { params(section_key: ::Integer).returns(::PlexRubySDK::Operations::GetGenresLibraryResponse) }
+    def get_genres_library(section_key)
+      # get_genres_library - Get Genres of library media
+      # Retrieves a list of all the genres that are found for the media in this library.
+      # 
+      request = ::PlexRubySDK::Operations::GetGenresLibraryRequest.new(
+        
+        section_key: section_key
+      )
+      url, params = @sdk_configuration.get_server_details
+      base_url = Utils.template_url(url, params)
+      url = Utils.generate_url(
+        ::PlexRubySDK::Operations::GetGenresLibraryRequest,
+        base_url,
+        '/library/sections/{sectionKey}/genre',
+        request
+      )
+      headers = {}
+      headers['Accept'] = 'application/json'
+      headers['user-agent'] = @sdk_configuration.user_agent
+
+      r = @sdk_configuration.client.get(url) do |req|
+        req.headers = headers
+        Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
+      end
+
+      content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
+
+      res = ::PlexRubySDK::Operations::GetGenresLibraryResponse.new(
+        status_code: r.status, content_type: content_type, raw_response: r
+      )
+      if r.status == 200
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetGenresLibraryResponseBody)
+          res.object = out
+        end
+      elsif r.status == 400
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetGenresLibraryBadRequest)
+          res.bad_request = out
+        end
+      elsif r.status == 401
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetGenresLibraryUnauthorized)
+          res.unauthorized = out
+        end
+      elsif r.status == 404
+      end
+
+      res
+    end
+
+
+    sig { params(section_key: ::Integer).returns(::PlexRubySDK::Operations::GetCountriesLibraryResponse) }
+    def get_countries_library(section_key)
+      # get_countries_library - Get Countries of library media
+      # Retrieves a list of all the countries that are found for the media in this library.
+      # 
+      request = ::PlexRubySDK::Operations::GetCountriesLibraryRequest.new(
+        
+        section_key: section_key
+      )
+      url, params = @sdk_configuration.get_server_details
+      base_url = Utils.template_url(url, params)
+      url = Utils.generate_url(
+        ::PlexRubySDK::Operations::GetCountriesLibraryRequest,
+        base_url,
+        '/library/sections/{sectionKey}/country',
+        request
+      )
+      headers = {}
+      headers['Accept'] = 'application/json'
+      headers['user-agent'] = @sdk_configuration.user_agent
+
+      r = @sdk_configuration.client.get(url) do |req|
+        req.headers = headers
+        Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
+      end
+
+      content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
+
+      res = ::PlexRubySDK::Operations::GetCountriesLibraryResponse.new(
+        status_code: r.status, content_type: content_type, raw_response: r
+      )
+      if r.status == 200
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetCountriesLibraryResponseBody)
+          res.object = out
+        end
+      elsif r.status == 400
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetCountriesLibraryBadRequest)
+          res.bad_request = out
+        end
+      elsif r.status == 401
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetCountriesLibraryUnauthorized)
+          res.unauthorized = out
+        end
+      elsif r.status == 404
+      end
+
+      res
+    end
+
+
     sig { params(request: T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesRequest)).returns(::PlexRubySDK::Operations::GetSearchAllLibrariesResponse) }
     def get_search_all_libraries(request)
       # get_search_all_libraries - Search All Libraries

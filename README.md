@@ -133,6 +133,8 @@ end
 * [get_library_items](docs/sdks/library/README.md#get_library_items) - Get Library Items
 * [get_refresh_library_metadata](docs/sdks/library/README.md#get_refresh_library_metadata) - Refresh Metadata Of The Library
 * [get_search_library](docs/sdks/library/README.md#get_search_library) - Search Library
+* [get_genres_library](docs/sdks/library/README.md#get_genres_library) - Get Genres of library media
+* [get_countries_library](docs/sdks/library/README.md#get_countries_library) - Get Countries of library media
 * [get_search_all_libraries](docs/sdks/library/README.md#get_search_all_libraries) - Search All Libraries
 * [get_meta_data_by_rating_key](docs/sdks/library/README.md#get_meta_data_by_rating_key) - Get Metadata by RatingKey
 * [get_metadata_children](docs/sdks/library/README.md#get_metadata_children) - Get Items Children

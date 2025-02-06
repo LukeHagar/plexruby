@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: aa9449e7-c19d-411d-b8e2-f9c5fe982f6f
 management:
-  docChecksum: a643a64d282d705e3e24f61ed6f068c6
+  docChecksum: 14b35829d4be91a88269761c3ed01426
   docVersion: 0.0.3
-  speakeasyVersion: 1.476.2
-  generationVersion: 2.495.1
-  releaseVersion: 0.7.1
-  configChecksum: 54b134f9b3287727283b5301dc0e9518
+  speakeasyVersion: 1.484.1
+  generationVersion: 2.503.2
+  releaseVersion: 0.7.2
+  configChecksum: f8b827052ae75626fa447b20a8597211
   repoURL: https://github.com/LukeHagar/plexruby.git
   repoSubDirectory: .
   installationURL: https://github.com/LukeHagar/plexruby
   published: true
 features:
   ruby:
-    core: 3.5.1
+    core: 3.5.3
     deprecations: 2.81.2
     enums: 2.81.1
     flattening: 2.81.1
@@ -162,6 +162,15 @@ generatedFiles:
   - docs/models/operations/getcompanionsdataplexerrors.md
   - docs/models/operations/getcompanionsdataresponse.md
   - docs/models/operations/getcompanionsdataunauthorized.md
+  - docs/models/operations/getcountrieslibrarybadrequest.md
+  - docs/models/operations/getcountrieslibrarydirectory.md
+  - docs/models/operations/getcountrieslibraryerrors.md
+  - docs/models/operations/getcountrieslibrarylibraryerrors.md
+  - docs/models/operations/getcountrieslibrarymediacontainer.md
+  - docs/models/operations/getcountrieslibraryrequest.md
+  - docs/models/operations/getcountrieslibraryresponse.md
+  - docs/models/operations/getcountrieslibraryresponsebody.md
+  - docs/models/operations/getcountrieslibraryunauthorized.md
   - docs/models/operations/getdevicesbadrequest.md
   - docs/models/operations/getdeviceserrors.md
   - docs/models/operations/getdevicesmediacontainer.md
@@ -175,6 +184,15 @@ generatedFiles:
   - docs/models/operations/getfilehashrequest.md
   - docs/models/operations/getfilehashresponse.md
   - docs/models/operations/getfilehashunauthorized.md
+  - docs/models/operations/getgenreslibrarybadrequest.md
+  - docs/models/operations/getgenreslibrarydirectory.md
+  - docs/models/operations/getgenreslibraryerrors.md
+  - docs/models/operations/getgenreslibrarylibraryerrors.md
+  - docs/models/operations/getgenreslibrarymediacontainer.md
+  - docs/models/operations/getgenreslibraryrequest.md
+  - docs/models/operations/getgenreslibraryresponse.md
+  - docs/models/operations/getgenreslibraryresponsebody.md
+  - docs/models/operations/getgenreslibraryunauthorized.md
   - docs/models/operations/getgeodatabadrequest.md
   - docs/models/operations/getgeodataerrors.md
   - docs/models/operations/getgeodatageodata.md
@@ -959,6 +977,24 @@ generatedFiles:
   - lib/plex_ruby_sdk/models/operations/get_banner_image_request.rb
   - lib/plex_ruby_sdk/models/operations/get_banner_image_response.rb
   - lib/plex_ruby_sdk/models/operations/get_banner_image_unauthorized.rb
+  - lib/plex_ruby_sdk/models/operations/get_countries_library_badrequest.rb
+  - lib/plex_ruby_sdk/models/operations/get_countries_library_directory.rb
+  - lib/plex_ruby_sdk/models/operations/get_countries_library_errors.rb
+  - lib/plex_ruby_sdk/models/operations/get_countries_library_library_errors.rb
+  - lib/plex_ruby_sdk/models/operations/get_countries_library_mediacontainer.rb
+  - lib/plex_ruby_sdk/models/operations/get_countries_library_request.rb
+  - lib/plex_ruby_sdk/models/operations/get_countries_library_response.rb
+  - lib/plex_ruby_sdk/models/operations/get_countries_library_responsebody.rb
+  - lib/plex_ruby_sdk/models/operations/get_countries_library_unauthorized.rb
+  - lib/plex_ruby_sdk/models/operations/get_genres_library_badrequest.rb
+  - lib/plex_ruby_sdk/models/operations/get_genres_library_directory.rb
+  - lib/plex_ruby_sdk/models/operations/get_genres_library_errors.rb
+  - lib/plex_ruby_sdk/models/operations/get_genres_library_library_errors.rb
+  - lib/plex_ruby_sdk/models/operations/get_genres_library_mediacontainer.rb
+  - lib/plex_ruby_sdk/models/operations/get_genres_library_request.rb
+  - lib/plex_ruby_sdk/models/operations/get_genres_library_response.rb
+  - lib/plex_ruby_sdk/models/operations/get_genres_library_responsebody.rb
+  - lib/plex_ruby_sdk/models/operations/get_genres_library_unauthorized.rb
   - lib/plex_ruby_sdk/models/operations/get_library_details_badrequest.rb
   - lib/plex_ruby_sdk/models/operations/get_library_details_directory.rb
   - lib/plex_ruby_sdk/models/operations/get_library_details_errors.rb
@@ -2694,5 +2730,29 @@ examples:
           application/json: {"errors": [{"code": 1000, "message": "X-Plex-Client-Identifier is missing", "status": 400}, {"code": 1000, "message": "X-Plex-Client-Identifier is missing", "status": 400}]}
         "401":
           application/json: {"errors": [{"code": 1001, "message": "User could not be authenticated", "status": 401}]}
+  get-genres-library:
+    speakeasy-default-get-genres-library:
+      parameters:
+        path:
+          sectionKey: 9518
+      responses:
+        "200":
+          application/json: {"MediaContainer": {"size": 50, "identifier": "com.plexapp.plugins.library", "allowSync": false, "art": "/:/resources/show-fanart.jpg", "content": "secondary", "mediaTagPrefix": "/system/bundle/media/flags/", "mediaTagVersion": 1734362201, "nocache": true, "thumb": "/:/resources/show.png", "title1": "TV Shows (Reality)", "title2": "By Genre", "viewGroup": "secondary", "Directory": [{"fastKey": "/library/sections/10/all?genre=89", "key": "89", "title": "Action", "type": "genre"}]}}
+        "400":
+          application/json: {"errors": [{"code": 1000, "message": "X-Plex-Client-Identifier is missing", "status": 400}]}
+        "401":
+          application/json: {"errors": [{"code": 1001, "message": "User could not be authenticated", "status": 401}, {"code": 1001, "message": "User could not be authenticated", "status": 401}, {"code": 1001, "message": "User could not be authenticated", "status": 401}]}
+  get-countries-library:
+    speakeasy-default-get-countries-library:
+      parameters:
+        path:
+          sectionKey: 9518
+      responses:
+        "200":
+          application/json: {"MediaContainer": {"size": 50, "identifier": "com.plexapp.plugins.library", "allowSync": false, "art": "/:/resources/show-fanart.jpg", "content": "secondary", "mediaTagPrefix": "/system/bundle/media/flags/", "mediaTagVersion": 1734362201, "nocache": true, "thumb": "/:/resources/show.png", "title1": "TV Series", "title2": "By Country", "viewGroup": "secondary", "Directory": [{"fastKey": "/library/sections/2/all?country=15491", "key": "15491", "title": "Japan"}]}}
+        "400":
+          application/json: {"errors": [{"code": 1000, "message": "X-Plex-Client-Identifier is missing", "status": 400}, {"code": 1000, "message": "X-Plex-Client-Identifier is missing", "status": 400}]}
+        "401":
+          application/json: {"errors": [{"code": 1001, "message": "User could not be authenticated", "status": 401}, {"code": 1001, "message": "User could not be authenticated", "status": 401}, {"code": 1001, "message": "User could not be authenticated", "status": 401}]}
 examplesVersion: 1.0.0
 generatedTests: {}

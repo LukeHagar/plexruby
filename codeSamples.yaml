@@ -231,6 +231,18 @@ actions:
         - lang: ruby
           label: details
           source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_library_details(section_key=9518, include_details=::PlexRubySDK::Operations::IncludeDetails::ZERO)\n\nif ! res.object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/library/sections/{sectionKey}/country"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: library
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_countries_library(section_key=9518)\n\nif ! res.object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/library/sections/{sectionKey}/genre"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: library
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_genres_library(section_key=9518)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/sections/{sectionKey}/refresh"]["get"]
     update:
       x-codeSamples:

@@ -16,6 +16,8 @@ API Calls interacting with Plex Media Server Libraries
 * [get_library_items](#get_library_items) - Get Library Items
 * [get_refresh_library_metadata](#get_refresh_library_metadata) - Refresh Metadata Of The Library
 * [get_search_library](#get_search_library) - Search Library
+* [get_genres_library](#get_genres_library) - Get Genres of library media
+* [get_countries_library](#get_countries_library) - Get Countries of library media
 * [get_search_all_libraries](#get_search_all_libraries) - Search All Libraries
 * [get_meta_data_by_rating_key](#get_meta_data_by_rating_key) - Get Metadata by RatingKey
 * [get_metadata_children](#get_metadata_children) - Get Items Children
@@ -440,6 +442,84 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetSearchLibraryResponse)](../../models/operations/getsearchlibraryresponse.md)**
+
+
+
+## get_genres_library
+
+Retrieves a list of all the genres that are found for the media in this library.
+
+
+### Example Usage
+
+```ruby
+require 'plex_ruby_sdk'
+
+
+s = ::PlexRubySDK::PlexAPI.new
+s.config_security(
+  ::PlexRubySDK::Shared::Security.new(
+    access_token: "<YOUR_API_KEY_HERE>",
+  )
+)
+
+    
+res = s.library.get_genres_library(section_key=9518)
+
+if ! res.object.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `section_key`                                                                                 | *::Integer*                                                                                   | :heavy_check_mark:                                                                            | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/> | 9518                                                                                          |
+
+### Response
+
+**[T.nilable(::PlexRubySDK::Operations::GetGenresLibraryResponse)](../../models/operations/getgenreslibraryresponse.md)**
+
+
+
+## get_countries_library
+
+Retrieves a list of all the countries that are found for the media in this library.
+
+
+### Example Usage
+
+```ruby
+require 'plex_ruby_sdk'
+
+
+s = ::PlexRubySDK::PlexAPI.new
+s.config_security(
+  ::PlexRubySDK::Shared::Security.new(
+    access_token: "<YOUR_API_KEY_HERE>",
+  )
+)
+
+    
+res = s.library.get_countries_library(section_key=9518)
+
+if ! res.object.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `section_key`                                                                                 | *::Integer*                                                                                   | :heavy_check_mark:                                                                            | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/> | 9518                                                                                          |
+
+### Response
+
+**[T.nilable(::PlexRubySDK::Operations::GetCountriesLibraryResponse)](../../models/operations/getcountrieslibraryresponse.md)**
 
 
 
