@@ -459,6 +459,12 @@ actions:
         - lang: ruby
           label: getTokenDetails
           source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.authentication.get_token_details()\n\nif ! res.user_plex_account.nil?\n  # handle response\nend"
+  - target: $["paths"]["/users"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: users
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new\n\n\nreq = ::PlexRubySDK::Operations::GetUsersRequest.new(\n  client_id: \"3381b62b-9ab7-4e37-827b-203e9809eb58\",\n  client_name: \"Plex for Roku\",\n  device_nickname: \"Roku 3\",\n  device_name: \"Chrome\",\n  device_screen_resolution: \"1487x1165,2560x1440\",\n  client_version: \"2.4.1\",\n  platform: \"Roku\",\n  client_features: \"external-media,indirect-media,hub-style-list\",\n  model: \"4200X\",\n  x_plex_session_id: \"97e136ef-4ddd-4ff3-89a7-a5820c96c2ca\",\n  x_plex_language: \"en\",\n  platform_version: \"4.3 build 1057\",\n  x_plex_token: \"CV5xoxjTpFKUzBTShsaf\",\n)\n    \nres = s.users.get_users(req)\n\nif ! res.body.nil?\n  # handle response\nend"
   - target: $["paths"]["/users/signin"]["post"]
     update:
       x-codeSamples:

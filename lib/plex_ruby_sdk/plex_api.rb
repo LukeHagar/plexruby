@@ -13,7 +13,7 @@ module PlexRubySDK
   class PlexAPI
     extend T::Sig
 
-    attr_accessor :server, :media, :video, :activities, :butler, :plex, :hubs, :search, :library, :watchlist, :log, :playlists, :authentication, :statistics, :sessions, :updater
+    attr_accessor :server, :media, :video, :activities, :butler, :plex, :hubs, :search, :library, :watchlist, :log, :playlists, :authentication, :statistics, :sessions, :updater, :users
 
     sig do
       params(client: Faraday::Request,
@@ -114,6 +114,7 @@ module PlexRubySDK
       @statistics = Statistics.new(@sdk_configuration)
       @sessions = Sessions.new(@sdk_configuration)
       @updater = Updater.new(@sdk_configuration)
+      @users = Users.new(@sdk_configuration)
     end
   end
 end

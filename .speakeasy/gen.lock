@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: aa9449e7-c19d-411d-b8e2-f9c5fe982f6f
 management:
-  docChecksum: 14b35829d4be91a88269761c3ed01426
+  docChecksum: 7dec92ab9151a1b5a35df5faa81811ba
   docVersion: 0.0.3
-  speakeasyVersion: 1.484.1
-  generationVersion: 2.503.2
-  releaseVersion: 0.7.2
-  configChecksum: f8b827052ae75626fa447b20a8597211
+  speakeasyVersion: 1.487.0
+  generationVersion: 2.506.0
+  releaseVersion: 0.7.3
+  configChecksum: a483b18d4304a34e95c72b6b2855944c
   repoURL: https://github.com/LukeHagar/plexruby.git
   repoSubDirectory: .
   installationURL: https://github.com/LukeHagar/plexruby
@@ -41,6 +41,12 @@ generatedFiles:
   - docs/models/operations/addplaylistcontentsresponse.md
   - docs/models/operations/addplaylistcontentsresponsebody.md
   - docs/models/operations/addplaylistcontentsunauthorized.md
+  - docs/models/operations/alllibraries.md
+  - docs/models/operations/allowcameraupload.md
+  - docs/models/operations/allowchannels.md
+  - docs/models/operations/allowsubtitleadmin.md
+  - docs/models/operations/allowsync.md
+  - docs/models/operations/allowtuners.md
   - docs/models/operations/applyupdatesbadrequest.md
   - docs/models/operations/applyupdateserrors.md
   - docs/models/operations/applyupdatesrequest.md
@@ -618,6 +624,7 @@ generatedFiles:
   - docs/models/operations/gettopwatchedcontentresponsebody.md
   - docs/models/operations/gettopwatchedcontentrole.md
   - docs/models/operations/gettopwatchedcontentunauthorized.md
+  - docs/models/operations/gettopwatchedcontentuser.md
   - docs/models/operations/gettranscodesessionsbadrequest.md
   - docs/models/operations/gettranscodesessionserrors.md
   - docs/models/operations/gettranscodesessionsmediacontainer.md
@@ -644,6 +651,15 @@ generatedFiles:
   - docs/models/operations/getuserfriendsplexerrors.md
   - docs/models/operations/getuserfriendsresponse.md
   - docs/models/operations/getuserfriendsunauthorized.md
+  - docs/models/operations/getusersbadrequest.md
+  - docs/models/operations/getuserserrors.md
+  - docs/models/operations/getusersmediacontainer.md
+  - docs/models/operations/getusersrequest.md
+  - docs/models/operations/getusersresponse.md
+  - docs/models/operations/getusersresponsebody.md
+  - docs/models/operations/getusersserver.md
+  - docs/models/operations/getusersunauthorized.md
+  - docs/models/operations/getusersuserserrors.md
   - docs/models/operations/getwatchlistbadrequest.md
   - docs/models/operations/getwatchlisterrors.md
   - docs/models/operations/getwatchlistrequest.md
@@ -653,6 +669,7 @@ generatedFiles:
   - docs/models/operations/getwatchlistwatchlisterrors.md
   - docs/models/operations/guids.md
   - docs/models/operations/hasthumbnail.md
+  - docs/models/operations/home.md
   - docs/models/operations/hub.md
   - docs/models/operations/image.md
   - docs/models/operations/includecollections.md
@@ -704,9 +721,11 @@ generatedFiles:
   - docs/models/operations/onlytransient.md
   - docs/models/operations/operator.md
   - docs/models/operations/optimizedforstreaming.md
+  - docs/models/operations/owned.md
   - docs/models/operations/part.md
   - docs/models/operations/pastsubscription.md
   - docs/models/operations/pathparamtaskname.md
+  - docs/models/operations/pending.md
   - docs/models/operations/performsearchbadrequest.md
   - docs/models/operations/performsearcherrors.md
   - docs/models/operations/performsearchrequest.md
@@ -746,6 +765,7 @@ generatedFiles:
   - docs/models/operations/postuserssignindatauserprofile.md
   - docs/models/operations/postuserssignindatawatchedindicator.md
   - docs/models/operations/producer.md
+  - docs/models/operations/protected.md
   - docs/models/operations/protocol.md
   - docs/models/operations/provider.md
   - docs/models/operations/queryparamfilter.md
@@ -759,6 +779,7 @@ generatedFiles:
   - docs/models/operations/ratings.md
   - docs/models/operations/release.md
   - docs/models/operations/responsebody.md
+  - docs/models/operations/restricted.md
   - docs/models/operations/role.md
   - docs/models/operations/scope.md
   - docs/models/operations/searchresult.md
@@ -860,6 +881,7 @@ generatedFiles:
   - docs/sdks/sessions/README.md
   - docs/sdks/statistics/README.md
   - docs/sdks/updater/README.md
+  - docs/sdks/users/README.md
   - docs/sdks/video/README.md
   - docs/sdks/watchlist/README.md
   - lib/plex_ruby_sdk.rb
@@ -884,6 +906,12 @@ generatedFiles:
   - lib/plex_ruby_sdk/models/operations/addplaylistcontents_response.rb
   - lib/plex_ruby_sdk/models/operations/addplaylistcontents_responsebody.rb
   - lib/plex_ruby_sdk/models/operations/addplaylistcontents_unauthorized.rb
+  - lib/plex_ruby_sdk/models/operations/alllibraries.rb
+  - lib/plex_ruby_sdk/models/operations/allowcameraupload.rb
+  - lib/plex_ruby_sdk/models/operations/allowchannels.rb
+  - lib/plex_ruby_sdk/models/operations/allowsubtitleadmin.rb
+  - lib/plex_ruby_sdk/models/operations/allowsync.rb
+  - lib/plex_ruby_sdk/models/operations/allowtuners.rb
   - lib/plex_ruby_sdk/models/operations/applyupdates_badrequest.rb
   - lib/plex_ruby_sdk/models/operations/applyupdates_errors.rb
   - lib/plex_ruby_sdk/models/operations/applyupdates_request.rb
@@ -1183,6 +1211,15 @@ generatedFiles:
   - lib/plex_ruby_sdk/models/operations/get_thumb_image_request.rb
   - lib/plex_ruby_sdk/models/operations/get_thumb_image_response.rb
   - lib/plex_ruby_sdk/models/operations/get_thumb_image_unauthorized.rb
+  - lib/plex_ruby_sdk/models/operations/get_users_badrequest.rb
+  - lib/plex_ruby_sdk/models/operations/get_users_errors.rb
+  - lib/plex_ruby_sdk/models/operations/get_users_mediacontainer.rb
+  - lib/plex_ruby_sdk/models/operations/get_users_request.rb
+  - lib/plex_ruby_sdk/models/operations/get_users_response.rb
+  - lib/plex_ruby_sdk/models/operations/get_users_responsebody.rb
+  - lib/plex_ruby_sdk/models/operations/get_users_server.rb
+  - lib/plex_ruby_sdk/models/operations/get_users_unauthorized.rb
+  - lib/plex_ruby_sdk/models/operations/get_users_users_errors.rb
   - lib/plex_ruby_sdk/models/operations/get_watch_list_badrequest.rb
   - lib/plex_ruby_sdk/models/operations/get_watch_list_errors.rb
   - lib/plex_ruby_sdk/models/operations/get_watch_list_request.rb
@@ -1468,6 +1505,7 @@ generatedFiles:
   - lib/plex_ruby_sdk/models/operations/gettopwatchedcontent_responsebody.rb
   - lib/plex_ruby_sdk/models/operations/gettopwatchedcontent_role.rb
   - lib/plex_ruby_sdk/models/operations/gettopwatchedcontent_unauthorized.rb
+  - lib/plex_ruby_sdk/models/operations/gettopwatchedcontent_user.rb
   - lib/plex_ruby_sdk/models/operations/gettranscodesessions_badrequest.rb
   - lib/plex_ruby_sdk/models/operations/gettranscodesessions_errors.rb
   - lib/plex_ruby_sdk/models/operations/gettranscodesessions_mediacontainer.rb
@@ -1496,6 +1534,7 @@ generatedFiles:
   - lib/plex_ruby_sdk/models/operations/getuserfriends_unauthorized.rb
   - lib/plex_ruby_sdk/models/operations/guids.rb
   - lib/plex_ruby_sdk/models/operations/hasthumbnail.rb
+  - lib/plex_ruby_sdk/models/operations/home.rb
   - lib/plex_ruby_sdk/models/operations/hub.rb
   - lib/plex_ruby_sdk/models/operations/image.rb
   - lib/plex_ruby_sdk/models/operations/includecollections.rb
@@ -1547,9 +1586,11 @@ generatedFiles:
   - lib/plex_ruby_sdk/models/operations/onlytransient.rb
   - lib/plex_ruby_sdk/models/operations/operator.rb
   - lib/plex_ruby_sdk/models/operations/optimizedforstreaming.rb
+  - lib/plex_ruby_sdk/models/operations/owned.rb
   - lib/plex_ruby_sdk/models/operations/part.rb
   - lib/plex_ruby_sdk/models/operations/pastsubscription.rb
   - lib/plex_ruby_sdk/models/operations/pathparam_taskname.rb
+  - lib/plex_ruby_sdk/models/operations/pending.rb
   - lib/plex_ruby_sdk/models/operations/performsearch_badrequest.rb
   - lib/plex_ruby_sdk/models/operations/performsearch_errors.rb
   - lib/plex_ruby_sdk/models/operations/performsearch_request.rb
@@ -1589,6 +1630,7 @@ generatedFiles:
   - lib/plex_ruby_sdk/models/operations/post_users_sign_in_data_userprofile.rb
   - lib/plex_ruby_sdk/models/operations/post_users_sign_in_data_watchedindicator.rb
   - lib/plex_ruby_sdk/models/operations/producer.rb
+  - lib/plex_ruby_sdk/models/operations/protected.rb
   - lib/plex_ruby_sdk/models/operations/protocol.rb
   - lib/plex_ruby_sdk/models/operations/provider.rb
   - lib/plex_ruby_sdk/models/operations/queryparam_filter.rb
@@ -1602,6 +1644,7 @@ generatedFiles:
   - lib/plex_ruby_sdk/models/operations/ratings.rb
   - lib/plex_ruby_sdk/models/operations/release.rb
   - lib/plex_ruby_sdk/models/operations/responsebody.rb
+  - lib/plex_ruby_sdk/models/operations/restricted.rb
   - lib/plex_ruby_sdk/models/operations/role.rb
   - lib/plex_ruby_sdk/models/operations/scope.rb
   - lib/plex_ruby_sdk/models/operations/searchresult.rb
@@ -1700,6 +1743,7 @@ generatedFiles:
   - lib/plex_ruby_sdk/sessions.rb
   - lib/plex_ruby_sdk/statistics.rb
   - lib/plex_ruby_sdk/updater.rb
+  - lib/plex_ruby_sdk/users.rb
   - lib/plex_ruby_sdk/utils/metadata_fields.rb
   - lib/plex_ruby_sdk/utils/t.rb
   - lib/plex_ruby_sdk/utils/utils.rb
@@ -2754,5 +2798,29 @@ examples:
           application/json: {"errors": [{"code": 1000, "message": "X-Plex-Client-Identifier is missing", "status": 400}, {"code": 1000, "message": "X-Plex-Client-Identifier is missing", "status": 400}]}
         "401":
           application/json: {"errors": [{"code": 1001, "message": "User could not be authenticated", "status": 401}, {"code": 1001, "message": "User could not be authenticated", "status": 401}, {"code": 1001, "message": "User could not be authenticated", "status": 401}]}
+  get-users:
+    "":
+      parameters:
+        header:
+          X-Plex-Client-Identifier: "3381b62b-9ab7-4e37-827b-203e9809eb58"
+          X-Plex-Product: "Plex for Roku"
+          X-Plex-Device: "Roku 3"
+          X-Plex-Device-Name: "Chrome"
+          X-Plex-Device-Screen-Resolution: "1487x1165,2560x1440"
+          X-Plex-Version: "2.4.1"
+          X-Plex-Platform: "Roku"
+          X-Plex-Features: "external-media,indirect-media,hub-style-list"
+          X-Plex-Model: "4200X"
+          X-Plex-Session-Id: "97e136ef-4ddd-4ff3-89a7-a5820c96c2ca"
+          X-Plex-Language: "en"
+          X-Plex-Platform-Version: "4.3 build 1057"
+          X-Plex-Token: "CV5xoxjTpFKUzBTShsaf"
+      responses:
+        "200":
+          application/xml: "0xa9CdebeF9E"
+        "400":
+          application/json: {"errors": [{"code": 1000, "message": "X-Plex-Client-Identifier is missing", "status": 400}, {"code": 1000, "message": "X-Plex-Client-Identifier is missing", "status": 400}]}
+        "401":
+          application/json: {"errors": [{"code": 1001, "message": "User could not be authenticated", "status": 401}, {"code": 1001, "message": "User could not be authenticated", "status": 401}]}
 examplesVersion: 1.0.0
 generatedTests: {}

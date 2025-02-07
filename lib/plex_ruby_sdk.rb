@@ -24,6 +24,7 @@ module PlexRubySDK
   autoload :Statistics, 'plex_ruby_sdk/statistics'
   autoload :Sessions, 'plex_ruby_sdk/sessions'
   autoload :Updater, 'plex_ruby_sdk/updater'
+  autoload :Users, 'plex_ruby_sdk/users'
 end
 
 require_relative 'plex_ruby_sdk/utils/t'
