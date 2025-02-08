@@ -15,11 +15,20 @@ module PlexRubySDK
       # Note: This is unique in the context of the Plex server.
       # 
       field :section_key, ::Integer, { 'path_param': { 'field_name': 'sectionKey', 'style': 'simple', 'explode': false } }
+      # The type of media to retrieve or filter by.
+      # 1 = movie
+      # 2 = show
+      # 3 = season
+      # 4 = episode
+      # E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
+      # 
+      field :type, ::PlexRubySDK::Operations::GetCountriesLibraryQueryParamType, { 'query_param': { 'field_name': 'type', 'style': 'form', 'explode': true } }
 
 
-      sig { params(section_key: ::Integer).void }
-      def initialize(section_key: nil)
+      sig { params(section_key: ::Integer, type: ::PlexRubySDK::Operations::GetCountriesLibraryQueryParamType).void }
+      def initialize(section_key: nil, type: nil)
         @section_key = section_key
+        @type = type
       end
     end
   end

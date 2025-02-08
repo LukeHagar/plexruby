@@ -13,7 +13,7 @@ module PlexRubySDK
 
       # The content directory ID.
       field :content_directory_id, ::Integer, { 'query_param': { 'field_name': 'contentDirectoryID', 'style': 'form', 'explode': true } }
-      # The type of media to retrieve.
+      # The type of media to retrieve or filter by.
       # 1 = movie
       # 2 = show
       # 3 = season

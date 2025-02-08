@@ -15,7 +15,7 @@ module PlexRubySDK
       # Note: This is unique in the context of the Plex server.
       # 
       field :section_key, ::Integer, { 'path_param': { 'field_name': 'sectionKey', 'style': 'simple', 'explode': false } }
-      # The type of media to retrieve.
+      # The type of media to retrieve or filter by.
       # 1 = movie
       # 2 = show
       # 3 = season

@@ -169,8 +169,8 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: key
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_meta_data_by_rating_key(rating_key=9518)\n\nif ! res.object.nil?\n  # handle response\nend"
+          label: data
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n\nreq = ::PlexRubySDK::Operations::GetMediaMetaDataRequest.new(\n  rating_key: 9518,\n  include_concerts: true,\n  include_extras: true,\n  include_on_deck: true,\n  include_popular_leaves: true,\n  include_preferences: true,\n  include_reviews: true,\n  include_chapters: true,\n  include_stations: true,\n  include_external_media: true,\n  async_augment_metadata: true,\n  async_check_files: true,\n  async_refresh_analysis: true,\n  async_refresh_local_media_agent: true,\n)\n    \nres = s.library.get_media_meta_data(req)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/metadata/{ratingKey}/banner"]["get"]
     update:
       x-codeSamples:
@@ -231,18 +231,24 @@ actions:
         - lang: ruby
           label: details
           source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_library_details(section_key=9518, include_details=::PlexRubySDK::Operations::IncludeDetails::ZERO)\n\nif ! res.object.nil?\n  # handle response\nend"
+  - target: $["paths"]["/library/sections/{sectionKey}/actor"]["get"]
+    update:
+      x-codeSamples:
+        - lang: ruby
+          label: library
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_actors_library(section_key=9518, type=::PlexRubySDK::Operations::GetActorsLibraryQueryParamType::TV_SHOW)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/sections/{sectionKey}/country"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: library
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_countries_library(section_key=9518)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_countries_library(section_key=9518, type=::PlexRubySDK::Operations::GetCountriesLibraryQueryParamType::TV_SHOW)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/sections/{sectionKey}/genre"]["get"]
     update:
       x-codeSamples:
         - lang: ruby
           label: library
-          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_genres_library(section_key=9518)\n\nif ! res.object.nil?\n  # handle response\nend"
+          source: "require 'plex_ruby_sdk'\n\n\ns = ::PlexRubySDK::PlexAPI.new\ns.config_security(\n  ::PlexRubySDK::Shared::Security.new(\n    access_token: \"<YOUR_API_KEY_HERE>\",\n  )\n)\n\n    \nres = s.library.get_genres_library(section_key=9518, type=::PlexRubySDK::Operations::GetGenresLibraryQueryParamType::TV_SHOW)\n\nif ! res.object.nil?\n  # handle response\nend"
   - target: $["paths"]["/library/sections/{sectionKey}/refresh"]["get"]
     update:
       x-codeSamples:

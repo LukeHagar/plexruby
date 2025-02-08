@@ -491,14 +491,15 @@ module PlexRubySDK
     end
 
 
-    sig { params(section_key: ::Integer).returns(::PlexRubySDK::Operations::GetGenresLibraryResponse) }
-    def get_genres_library(section_key)
+    sig { params(section_key: ::Integer, type: ::PlexRubySDK::Operations::GetGenresLibraryQueryParamType).returns(::PlexRubySDK::Operations::GetGenresLibraryResponse) }
+    def get_genres_library(section_key, type)
       # get_genres_library - Get Genres of library media
       # Retrieves a list of all the genres that are found for the media in this library.
       # 
       request = ::PlexRubySDK::Operations::GetGenresLibraryRequest.new(
         
-        section_key: section_key
+        section_key: section_key,
+        type: type
       )
       url, params = @sdk_configuration.get_server_details
       base_url = Utils.template_url(url, params)
@@ -509,11 +510,13 @@ module PlexRubySDK
         request
       )
       headers = {}
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetGenresLibraryRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
       r = @sdk_configuration.client.get(url) do |req|
         req.headers = headers
+        req.params = query_params
         Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
       end
 
@@ -544,14 +547,15 @@ module PlexRubySDK
     end
 
 
-    sig { params(section_key: ::Integer).returns(::PlexRubySDK::Operations::GetCountriesLibraryResponse) }
-    def get_countries_library(section_key)
+    sig { params(section_key: ::Integer, type: ::PlexRubySDK::Operations::GetCountriesLibraryQueryParamType).returns(::PlexRubySDK::Operations::GetCountriesLibraryResponse) }
+    def get_countries_library(section_key, type)
       # get_countries_library - Get Countries of library media
       # Retrieves a list of all the countries that are found for the media in this library.
       # 
       request = ::PlexRubySDK::Operations::GetCountriesLibraryRequest.new(
         
-        section_key: section_key
+        section_key: section_key,
+        type: type
       )
       url, params = @sdk_configuration.get_server_details
       base_url = Utils.template_url(url, params)
@@ -562,11 +566,13 @@ module PlexRubySDK
         request
       )
       headers = {}
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetCountriesLibraryRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
       r = @sdk_configuration.client.get(url) do |req|
         req.headers = headers
+        req.params = query_params
         Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
       end
 
@@ -588,6 +594,62 @@ module PlexRubySDK
       elsif r.status == 401
         if Utils.match_content_type(content_type, 'application/json')
           out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetCountriesLibraryUnauthorized)
+          res.unauthorized = out
+        end
+      elsif r.status == 404
+      end
+
+      res
+    end
+
+
+    sig { params(section_key: ::Integer, type: ::PlexRubySDK::Operations::GetActorsLibraryQueryParamType).returns(::PlexRubySDK::Operations::GetActorsLibraryResponse) }
+    def get_actors_library(section_key, type)
+      # get_actors_library - Get Actors of library media
+      # Retrieves a list of all the actors that are found for the media in this library.
+      # 
+      request = ::PlexRubySDK::Operations::GetActorsLibraryRequest.new(
+        
+        section_key: section_key,
+        type: type
+      )
+      url, params = @sdk_configuration.get_server_details
+      base_url = Utils.template_url(url, params)
+      url = Utils.generate_url(
+        ::PlexRubySDK::Operations::GetActorsLibraryRequest,
+        base_url,
+        '/library/sections/{sectionKey}/actor',
+        request
+      )
+      headers = {}
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetActorsLibraryRequest, request)
+      headers['Accept'] = 'application/json'
+      headers['user-agent'] = @sdk_configuration.user_agent
+
+      r = @sdk_configuration.client.get(url) do |req|
+        req.headers = headers
+        req.params = query_params
+        Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
+      end
+
+      content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
+
+      res = ::PlexRubySDK::Operations::GetActorsLibraryResponse.new(
+        status_code: r.status, content_type: content_type, raw_response: r
+      )
+      if r.status == 200
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetActorsLibraryResponseBody)
+          res.object = out
+        end
+      elsif r.status == 400
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetActorsLibraryBadRequest)
+          res.bad_request = out
+        end
+      elsif r.status == 401
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetActorsLibraryUnauthorized)
           res.unauthorized = out
         end
       elsif r.status == 404
@@ -642,52 +704,51 @@ module PlexRubySDK
     end
 
 
-    sig { params(rating_key: ::Integer).returns(::PlexRubySDK::Operations::GetMetaDataByRatingKeyResponse) }
-    def get_meta_data_by_rating_key(rating_key)
-      # get_meta_data_by_rating_key - Get Metadata by RatingKey
-      # This endpoint will return the metadata of a library item specified with the ratingKey.
+    sig { params(request: T.nilable(::PlexRubySDK::Operations::GetMediaMetaDataRequest)).returns(::PlexRubySDK::Operations::GetMediaMetaDataResponse) }
+    def get_media_meta_data(request)
+      # get_media_meta_data - Get Media Metadata
+      # This endpoint will return all the (meta)data of a library item specified with by the ratingKey.
       # 
-      request = ::PlexRubySDK::Operations::GetMetaDataByRatingKeyRequest.new(
-        
-        rating_key: rating_key
-      )
       url, params = @sdk_configuration.get_server_details
       base_url = Utils.template_url(url, params)
       url = Utils.generate_url(
-        ::PlexRubySDK::Operations::GetMetaDataByRatingKeyRequest,
+        ::PlexRubySDK::Operations::GetMediaMetaDataRequest,
         base_url,
         '/library/metadata/{ratingKey}',
         request
       )
       headers = {}
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetMediaMetaDataRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
       r = @sdk_configuration.client.get(url) do |req|
         req.headers = headers
+        req.params = query_params
         Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
       end
 
       content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
 
-      res = ::PlexRubySDK::Operations::GetMetaDataByRatingKeyResponse.new(
+      res = ::PlexRubySDK::Operations::GetMediaMetaDataResponse.new(
         status_code: r.status, content_type: content_type, raw_response: r
       )
       if r.status == 200
         if Utils.match_content_type(content_type, 'application/json')
-          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetMetaDataByRatingKeyResponseBody)
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetMediaMetaDataResponseBody)
           res.object = out
         end
       elsif r.status == 400
         if Utils.match_content_type(content_type, 'application/json')
-          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetMetaDataByRatingKeyBadRequest)
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetMediaMetaDataBadRequest)
           res.bad_request = out
         end
       elsif r.status == 401
         if Utils.match_content_type(content_type, 'application/json')
-          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetMetaDataByRatingKeyUnauthorized)
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetMediaMetaDataUnauthorized)
           res.unauthorized = out
         end
+      elsif r.status == 404
       end
 
       res

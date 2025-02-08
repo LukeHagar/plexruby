@@ -13,7 +13,7 @@ module PlexRubySDK
 
       # the ID of the playlist
       field :playlist_id, ::Float, { 'path_param': { 'field_name': 'playlistID', 'style': 'simple', 'explode': false } }
-      # The type of media to retrieve.
+      # The type of media to retrieve or filter by.
       # 1 = movie
       # 2 = show
       # 3 = season

@@ -40,9 +40,9 @@ module PlexRubySDK
       @security = security
       @language = 'ruby'
       @openapi_doc_version = '0.0.3'
-      @sdk_version = '0.7.3'
+      @sdk_version = '0.7.4'
       @gen_version = '2.506.0'
-      @user_agent = 'speakeasy-sdk/ruby 0.7.3 2.506.0 0.0.3 plex_ruby_sdk'
+      @user_agent = 'speakeasy-sdk/ruby 0.7.4 2.506.0 0.0.3 plex_ruby_sdk'
     end
 
     sig { returns([String, T::Hash[Symbol, String]]) }

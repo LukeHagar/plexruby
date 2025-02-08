@@ -11,11 +11,11 @@ module PlexRubySDK
     class Guids < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
+      # The GUID value.
+      field :id, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
 
-      field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
 
-
-      sig { params(id: T.nilable(::String)).void }
+      sig { params(id: ::String).void }
       def initialize(id: nil)
         @id = id
       end
