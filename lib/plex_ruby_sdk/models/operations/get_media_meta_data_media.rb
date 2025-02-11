@@ -11,50 +11,63 @@ module PlexRubySDK
     class GetMediaMetaDataMedia < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
-      # Aspect ratio of the video.
-      field :aspect_ratio, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('aspectRatio') } }
-      # Number of audio channels.
-      field :audio_channels, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioChannels') } }
-      # Audio codec used.
-      field :audio_codec, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioCodec') } }
-      # Bitrate in bits per second.
-      field :bitrate, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('bitrate') } }
-      # File container type.
-      field :container, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
-      # Duration of the media in milliseconds.
-      field :duration, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
       # Indicates whether voice activity is detected.
       field :has_voice_activity, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasVoiceActivity') } }
-      # Video height in pixels.
-      field :height, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('height') } }
       # Unique media identifier.
       field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
       # An array of parts for this media item.
       field :part, T::Array[::PlexRubySDK::Operations::GetMediaMetaDataPart], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Part') } }
+      # Aspect ratio of the video.
+      field :aspect_ratio, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('aspectRatio') } }
+      # Number of audio channels.
+      field :audio_channels, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioChannels') } }
+      # Audio codec used.
+      field :audio_codec, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioCodec') } }
+      # The audio profile used for the media (e.g., DTS, Dolby Digital, etc.).
+      field :audio_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioProfile') } }
+      # Bitrate in bits per second.
+      field :bitrate, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('bitrate') } }
+      # File container type.
+      field :container, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
+
+      field :display_offset, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('displayOffset') } }
+      # Duration of the media in milliseconds.
+      field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
+
+      field :has64bit_offsets, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('has64bitOffsets') } }
+      # Video height in pixels.
+      field :height, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('height') } }
+      # Has this media been optimized for streaming. NOTE: This can be 0, 1, false or true
+      field :optimized_for_streaming, T.nilable(::Object), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('optimizedForStreaming') } }
       # Video codec used.
-      field :video_codec, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoCodec') } }
-      # Frame rate of the video (e.g., 24p).
-      field :video_frame_rate, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoFrameRate') } }
+      field :video_codec, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoCodec') } }
+      # Frame rate of the video. Values found include NTSC, PAL, 24p
+      # 
+      field :video_frame_rate, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoFrameRate') } }
       # Video profile (e.g., main 10).
-      field :video_profile, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
+      field :video_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
       # Video resolution (e.g., 4k).
-      field :video_resolution, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoResolution') } }
+      field :video_resolution, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoResolution') } }
       # Video width in pixels.
-      field :width, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('width') } }
+      field :width, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('width') } }
 
 
-      sig { params(aspect_ratio: ::Float, audio_channels: ::Integer, audio_codec: ::String, bitrate: ::Integer, container: ::String, duration: ::Integer, has_voice_activity: T::Boolean, height: ::Integer, id: ::Integer, part: T::Array[::PlexRubySDK::Operations::GetMediaMetaDataPart], video_codec: ::String, video_frame_rate: ::String, video_profile: ::String, video_resolution: ::String, width: ::Integer).void }
-      def initialize(aspect_ratio: nil, audio_channels: nil, audio_codec: nil, bitrate: nil, container: nil, duration: nil, has_voice_activity: nil, height: nil, id: nil, part: nil, video_codec: nil, video_frame_rate: nil, video_profile: nil, video_resolution: nil, width: nil)
+      sig { params(has_voice_activity: T::Boolean, id: ::Integer, part: T::Array[::PlexRubySDK::Operations::GetMediaMetaDataPart], aspect_ratio: T.nilable(::Float), audio_channels: T.nilable(::Integer), audio_codec: T.nilable(::String), audio_profile: T.nilable(::String), bitrate: T.nilable(::Integer), container: T.nilable(::String), display_offset: T.nilable(::Integer), duration: T.nilable(::Integer), has64bit_offsets: T.nilable(T::Boolean), height: T.nilable(::Integer), optimized_for_streaming: T.nilable(::Object), video_codec: T.nilable(::String), video_frame_rate: T.nilable(::String), video_profile: T.nilable(::String), video_resolution: T.nilable(::String), width: T.nilable(::Integer)).void }
+      def initialize(has_voice_activity: nil, id: nil, part: nil, aspect_ratio: nil, audio_channels: nil, audio_codec: nil, audio_profile: nil, bitrate: nil, container: nil, display_offset: nil, duration: nil, has64bit_offsets: nil, height: nil, optimized_for_streaming: nil, video_codec: nil, video_frame_rate: nil, video_profile: nil, video_resolution: nil, width: nil)
+        @has_voice_activity = has_voice_activity
+        @id = id
+        @part = part
         @aspect_ratio = aspect_ratio
         @audio_channels = audio_channels
         @audio_codec = audio_codec
+        @audio_profile = audio_profile
         @bitrate = bitrate
         @container = container
+        @display_offset = display_offset
         @duration = duration
-        @has_voice_activity = has_voice_activity
+        @has64bit_offsets = has64bit_offsets
         @height = height
-        @id = id
-        @part = part
+        @optimized_for_streaming = optimized_for_streaming
         @video_codec = video_codec
         @video_frame_rate = video_frame_rate
         @video_profile = video_profile

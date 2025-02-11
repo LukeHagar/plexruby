@@ -11,40 +11,36 @@ module PlexRubySDK
     class GetGenresLibraryMediaContainer < ::PlexRubySDK::Utils::FieldAugmented
       extend T::Sig
 
-
+      # Indicates whether syncing is allowed.
       field :allow_sync, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
-
+      # URL for the background artwork of the media container.
       field :art, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('art') } }
-
+      # The content type or mode.
       field :content, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('content') } }
-
+      # An plugin identifier for the media container.
       field :identifier, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
-
+      # The prefix used for media tag resource paths.
       field :media_tag_prefix, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagPrefix') } }
-
+      # The version number for media tags.
       field :media_tag_version, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
-
+      # Specifies whether caching is disabled.
       field :nocache, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('nocache') } }
-
-      field :size, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-
+      # Number of media items returned in this response.
+      field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+      # URL for the thumbnail image of the media container.
       field :thumb, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
-
+      # The primary title of the media container.
       field :title1, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title1') } }
-
+      # The secondary title of the media container.
       field :title2, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title2') } }
-
+      # Identifier for the view group layout.
       field :view_group, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewGroup') } }
 
       field :directory, T.nilable(T::Array[::PlexRubySDK::Operations::GetGenresLibraryDirectory]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
 
-      field :offset, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('offset') } }
 
-      field :total_size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('totalSize') } }
-
-
-      sig { params(allow_sync: T::Boolean, art: ::String, content: ::String, identifier: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, nocache: T::Boolean, size: ::Float, thumb: ::String, title1: ::String, title2: ::String, view_group: ::String, directory: T.nilable(T::Array[::PlexRubySDK::Operations::GetGenresLibraryDirectory]), offset: T.nilable(::Integer), total_size: T.nilable(::Integer)).void }
-      def initialize(allow_sync: nil, art: nil, content: nil, identifier: nil, media_tag_prefix: nil, media_tag_version: nil, nocache: nil, size: nil, thumb: nil, title1: nil, title2: nil, view_group: nil, directory: nil, offset: nil, total_size: nil)
+      sig { params(allow_sync: T::Boolean, art: ::String, content: ::String, identifier: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, nocache: T::Boolean, size: ::Integer, thumb: ::String, title1: ::String, title2: ::String, view_group: ::String, directory: T.nilable(T::Array[::PlexRubySDK::Operations::GetGenresLibraryDirectory])).void }
+      def initialize(allow_sync: nil, art: nil, content: nil, identifier: nil, media_tag_prefix: nil, media_tag_version: nil, nocache: nil, size: nil, thumb: nil, title1: nil, title2: nil, view_group: nil, directory: nil)
         @allow_sync = allow_sync
         @art = art
         @content = content
@@ -58,8 +54,6 @@ module PlexRubySDK
         @title2 = title2
         @view_group = view_group
         @directory = directory
-        @offset = offset
-        @total_size = total_size
       end
     end
   end

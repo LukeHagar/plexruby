@@ -7,7 +7,7 @@
 module PlexRubySDK
   module Operations
   
-    # QueryParamIncludeExternalMedia - Whether to include external media in the search results.
+    # QueryParamIncludeExternalMedia
     class QueryParamIncludeExternalMedia < T::Enum
       enums do
         DISABLE = new(0)

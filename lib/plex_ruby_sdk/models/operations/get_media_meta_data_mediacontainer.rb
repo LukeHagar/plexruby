@@ -25,13 +25,13 @@ module PlexRubySDK
       field :media_tag_version, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
       # An array of metadata items.
       field :metadata, T::Array[::PlexRubySDK::Operations::GetMediaMetaDataMetadata], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
-
-      field :size, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+      # Number of media items returned in this response.
+      field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
       # The universally unique identifier for the library section.
       field :library_section_uuid, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionUUID') } }
 
 
-      sig { params(allow_sync: T::Boolean, identifier: ::String, library_section_id: ::Integer, library_section_title: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, metadata: T::Array[::PlexRubySDK::Operations::GetMediaMetaDataMetadata], size: ::Float, library_section_uuid: T.nilable(::String)).void }
+      sig { params(allow_sync: T::Boolean, identifier: ::String, library_section_id: ::Integer, library_section_title: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, metadata: T::Array[::PlexRubySDK::Operations::GetMediaMetaDataMetadata], size: ::Integer, library_section_uuid: T.nilable(::String)).void }
       def initialize(allow_sync: nil, identifier: nil, library_section_id: nil, library_section_title: nil, media_tag_prefix: nil, media_tag_version: nil, metadata: nil, size: nil, library_section_uuid: nil)
         @allow_sync = allow_sync
         @identifier = identifier

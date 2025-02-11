@@ -26,9 +26,11 @@ module PlexRubySDK
 
       field :sort, T.nilable(T::Array[::PlexRubySDK::Operations::GetRecentlyAddedSort]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Sort') } }
 
+      field :subtype, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subtype') } }
 
-      sig { params(active: T::Boolean, key: ::String, title: ::String, type: ::String, field: T.nilable(T::Array[::PlexRubySDK::Operations::GetRecentlyAddedField]), filter: T.nilable(T::Array[::PlexRubySDK::Operations::GetRecentlyAddedFilter]), sort: T.nilable(T::Array[::PlexRubySDK::Operations::GetRecentlyAddedSort])).void }
-      def initialize(active: nil, key: nil, title: nil, type: nil, field: nil, filter: nil, sort: nil)
+
+      sig { params(active: T::Boolean, key: ::String, title: ::String, type: ::String, field: T.nilable(T::Array[::PlexRubySDK::Operations::GetRecentlyAddedField]), filter: T.nilable(T::Array[::PlexRubySDK::Operations::GetRecentlyAddedFilter]), sort: T.nilable(T::Array[::PlexRubySDK::Operations::GetRecentlyAddedSort]), subtype: T.nilable(::String)).void }
+      def initialize(active: nil, key: nil, title: nil, type: nil, field: nil, filter: nil, sort: nil, subtype: nil)
         @active = active
         @key = key
         @title = title
@@ -36,6 +38,7 @@ module PlexRubySDK
         @field = field
         @filter = filter
         @sort = sort
+        @subtype = subtype
       end
     end
   end

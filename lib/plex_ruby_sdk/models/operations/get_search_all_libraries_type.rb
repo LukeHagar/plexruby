@@ -15,6 +15,8 @@ module PlexRubySDK
         TV_SHOW = new('show')
         SEASON = new('season')
         EPISODE = new('episode')
+        ARTIST = new('artist')
+        ALBUM = new('album')
       end
     end
   end

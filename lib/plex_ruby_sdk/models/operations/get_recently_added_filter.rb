@@ -22,14 +22,17 @@ module PlexRubySDK
 
       field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
 
+      field :advanced, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('advanced') } }
 
-      sig { params(filter: ::String, filter_type: ::String, key: ::String, title: ::String, type: ::String).void }
-      def initialize(filter: nil, filter_type: nil, key: nil, title: nil, type: nil)
+
+      sig { params(filter: ::String, filter_type: ::String, key: ::String, title: ::String, type: ::String, advanced: T.nilable(T::Boolean)).void }
+      def initialize(filter: nil, filter_type: nil, key: nil, title: nil, type: nil, advanced: nil)
         @filter = filter
         @filter_type = filter_type
         @key = key
         @title = title
         @type = type
+        @advanced = advanced
       end
     end
   end

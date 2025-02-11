@@ -12,7 +12,7 @@ module PlexRubySDK
       extend T::Sig
 
 
-      field :size, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+      field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
 
       field :allow_sync, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
 
@@ -28,7 +28,7 @@ module PlexRubySDK
       field :total_size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('totalSize') } }
 
 
-      sig { params(size: ::Float, allow_sync: T.nilable(T::Boolean), identifier: T.nilable(::String), meta: T.nilable(::PlexRubySDK::Operations::Meta), metadata: T.nilable(T::Array[::PlexRubySDK::Operations::GetRecentlyAddedMetadata]), offset: T.nilable(::Integer), total_size: T.nilable(::Integer)).void }
+      sig { params(size: ::Integer, allow_sync: T.nilable(T::Boolean), identifier: T.nilable(::String), meta: T.nilable(::PlexRubySDK::Operations::Meta), metadata: T.nilable(T::Array[::PlexRubySDK::Operations::GetRecentlyAddedMetadata]), offset: T.nilable(::Integer), total_size: T.nilable(::Integer)).void }
       def initialize(size: nil, allow_sync: nil, identifier: nil, meta: nil, metadata: nil, offset: nil, total_size: nil)
         @size = size
         @allow_sync = allow_sync

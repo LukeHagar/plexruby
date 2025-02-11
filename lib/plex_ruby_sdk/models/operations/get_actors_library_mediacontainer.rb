@@ -23,8 +23,8 @@ module PlexRubySDK
       field :media_tag_version, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
       # Specifies whether caching is disabled.
       field :nocache, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('nocache') } }
-
-      field :size, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+      # Number of media items returned in this response.
+      field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
       # URL for the thumbnail image of the media container.
       field :thumb, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
       # The primary title of the media container.
@@ -39,7 +39,7 @@ module PlexRubySDK
       field :directory, T.nilable(T::Array[::PlexRubySDK::Operations::GetActorsLibraryDirectory]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
 
 
-      sig { params(allow_sync: T::Boolean, art: ::String, identifier: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, nocache: T::Boolean, size: ::Float, thumb: ::String, title1: ::String, title2: ::String, view_group: ::String, view_mode: ::String, directory: T.nilable(T::Array[::PlexRubySDK::Operations::GetActorsLibraryDirectory])).void }
+      sig { params(allow_sync: T::Boolean, art: ::String, identifier: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, nocache: T::Boolean, size: ::Integer, thumb: ::String, title1: ::String, title2: ::String, view_group: ::String, view_mode: ::String, directory: T.nilable(T::Array[::PlexRubySDK::Operations::GetActorsLibraryDirectory])).void }
       def initialize(allow_sync: nil, art: nil, identifier: nil, media_tag_prefix: nil, media_tag_version: nil, nocache: nil, size: nil, thumb: nil, title1: nil, title2: nil, view_group: nil, view_mode: nil, directory: nil)
         @allow_sync = allow_sync
         @art = art

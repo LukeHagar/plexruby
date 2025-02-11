@@ -14,6 +14,7 @@ API Calls interacting with Plex Media Server Libraries
 * [get_library_details](#get_library_details) - Get Library Details
 * [delete_library](#delete_library) - Delete Library Section
 * [get_library_items](#get_library_items) - Get Library Items
+* [get_all_media_library](#get_all_media_library) - Get all media of library
 * [get_refresh_library_metadata](#get_refresh_library_metadata) - Refresh Metadata Of The Library
 * [get_search_library](#get_search_library) - Search Library
 * [get_genres_library](#get_genres_library) - Get Genres of library media
@@ -349,6 +350,57 @@ end
 
 
 
+## get_all_media_library
+
+Retrieves a list of all general media data for this library.
+
+
+### Example Usage
+
+```ruby
+require 'plex_ruby_sdk'
+
+
+s = ::PlexRubySDK::PlexAPI.new
+s.config_security(
+  ::PlexRubySDK::Shared::Security.new(
+    access_token: "<YOUR_API_KEY_HERE>",
+  )
+)
+
+
+req = ::PlexRubySDK::Operations::GetAllMediaLibraryRequest.new(
+  section_key: 9518,
+  type: ::PlexRubySDK::Operations::GetAllMediaLibraryQueryParamType::TV_SHOW,
+  include_meta: ::PlexRubySDK::Operations::GetAllMediaLibraryQueryParamIncludeMeta::ENABLE,
+  include_guids: ::PlexRubySDK::Operations::QueryParamIncludeGuids::ENABLE,
+  include_advanced: ::PlexRubySDK::Operations::IncludeAdvanced::ENABLE,
+  include_collections: ::PlexRubySDK::Operations::QueryParamIncludeCollections::ENABLE,
+  include_external_media: ::PlexRubySDK::Operations::QueryParamIncludeExternalMedia::ENABLE,
+  x_plex_container_start: 0,
+  x_plex_container_size: 50,
+)
+    
+res = s.library.get_all_media_library(req)
+
+if ! res.object.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                    | [::PlexRubySDK::Operations::GetAllMediaLibraryRequest](../../models/operations/getallmedialibraryrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+
+### Response
+
+**[T.nilable(::PlexRubySDK::Operations::GetAllMediaLibraryResponse)](../../models/operations/getallmedialibraryresponse.md)**
+
+
+
 ## get_refresh_library_metadata
 
 This endpoint Refreshes all the Metadata of the library.
@@ -591,8 +643,8 @@ req = ::PlexRubySDK::Operations::GetSearchAllLibrariesRequest.new(
   search_types: [
     ::PlexRubySDK::Operations::SearchTypes::PEOPLE,
   ],
-  include_collections: ::PlexRubySDK::Operations::QueryParamIncludeCollections::ENABLE,
-  include_external_media: ::PlexRubySDK::Operations::QueryParamIncludeExternalMedia::ENABLE,
+  include_collections: ::PlexRubySDK::Operations::GetSearchAllLibrariesQueryParamIncludeCollections::ENABLE,
+  include_external_media: ::PlexRubySDK::Operations::GetSearchAllLibrariesQueryParamIncludeExternalMedia::ENABLE,
 )
     
 res = s.library.get_search_all_libraries(req)

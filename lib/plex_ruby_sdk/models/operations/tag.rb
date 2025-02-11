@@ -10,7 +10,6 @@ module PlexRubySDK
     # Tag - A key representing a specific tag within the section.
     class Tag < T::Enum
       enums do
-        ALL = new('all')
         UNWATCHED = new('unwatched')
         NEWEST = new('newest')
         RECENTLY_ADDED = new('recentlyAdded')
@@ -18,12 +17,9 @@ module PlexRubySDK
         ON_DECK = new('onDeck')
         COLLECTION = new('collection')
         EDITION = new('edition')
-        GENRE = new('genre')
         YEAR = new('year')
         DECADE = new('decade')
         DIRECTOR = new('director')
-        ACTOR = new('actor')
-        COUNTRY = new('country')
         CONTENT_RATING = new('contentRating')
         RATING = new('rating')
         RESOLUTION = new('resolution')

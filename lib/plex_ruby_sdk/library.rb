@@ -368,6 +368,57 @@ module PlexRubySDK
     end
 
 
+    sig { params(request: T.nilable(::PlexRubySDK::Operations::GetAllMediaLibraryRequest)).returns(::PlexRubySDK::Operations::GetAllMediaLibraryResponse) }
+    def get_all_media_library(request)
+      # get_all_media_library - Get all media of library
+      # Retrieves a list of all general media data for this library.
+      # 
+      url, params = @sdk_configuration.get_server_details
+      base_url = Utils.template_url(url, params)
+      url = Utils.generate_url(
+        ::PlexRubySDK::Operations::GetAllMediaLibraryRequest,
+        base_url,
+        '/library/sections/{sectionKey}/all',
+        request
+      )
+      headers = {}
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::GetAllMediaLibraryRequest, request)
+      headers['Accept'] = 'application/json'
+      headers['user-agent'] = @sdk_configuration.user_agent
+
+      r = @sdk_configuration.client.get(url) do |req|
+        req.headers = headers
+        req.params = query_params
+        Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
+      end
+
+      content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
+
+      res = ::PlexRubySDK::Operations::GetAllMediaLibraryResponse.new(
+        status_code: r.status, content_type: content_type, raw_response: r
+      )
+      if r.status == 200
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetAllMediaLibraryResponseBody)
+          res.object = out
+        end
+      elsif r.status == 400
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetAllMediaLibraryBadRequest)
+          res.bad_request = out
+        end
+      elsif r.status == 401
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetAllMediaLibraryUnauthorized)
+          res.unauthorized = out
+        end
+      elsif r.status == 404
+      end
+
+      res
+    end
+
+
     sig { params(section_key: ::Integer, force: T.nilable(::PlexRubySDK::Operations::Force)).returns(::PlexRubySDK::Operations::GetRefreshLibraryMetadataResponse) }
     def get_refresh_library_metadata(section_key, force = nil)
       # get_refresh_library_metadata - Refresh Metadata Of The Library
