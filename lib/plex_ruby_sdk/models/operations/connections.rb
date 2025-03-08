@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class Connections < ::PlexRubySDK::Utils::FieldAugmented
+    class Connections < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The (ip) address or domain name used for the connection

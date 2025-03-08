@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Ratings < ::PlexRubySDK::Utils::FieldAugmented
+    class Ratings < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The image or reference for the rating.

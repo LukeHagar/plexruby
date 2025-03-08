@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class PostUsersSignInDataResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class PostUsersSignInDataResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

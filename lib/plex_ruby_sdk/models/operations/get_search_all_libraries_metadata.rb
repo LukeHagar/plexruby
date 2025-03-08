@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSearchAllLibrariesMetadata < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSearchAllLibrariesMetadata < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Unix epoch datetime in seconds

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetServerListServer < ::PlexRubySDK::Utils::FieldAugmented
+    class GetServerListServer < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

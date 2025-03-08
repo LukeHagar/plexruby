@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class CreatePlaylistResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class CreatePlaylistResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

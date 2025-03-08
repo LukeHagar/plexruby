@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-    class GetTokenDetailsUnauthorized < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTokenDetailsUnauthorized < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

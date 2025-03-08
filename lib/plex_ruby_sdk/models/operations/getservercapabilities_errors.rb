@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetServerCapabilitiesErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetServerCapabilitiesErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

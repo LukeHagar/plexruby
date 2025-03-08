@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class StartUniversalTranscodeVideoErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class StartUniversalTranscodeVideoErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

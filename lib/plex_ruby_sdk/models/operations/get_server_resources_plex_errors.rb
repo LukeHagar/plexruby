@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetServerResourcesPlexErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetServerResourcesPlexErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

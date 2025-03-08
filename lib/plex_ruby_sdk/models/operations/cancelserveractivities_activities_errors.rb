@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class CancelServerActivitiesActivitiesErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class CancelServerActivitiesActivitiesErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

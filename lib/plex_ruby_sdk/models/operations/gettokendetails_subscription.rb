@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetTokenDetailsSubscription < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTokenDetailsSubscription < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # If the account's Plex Pass subscription is active

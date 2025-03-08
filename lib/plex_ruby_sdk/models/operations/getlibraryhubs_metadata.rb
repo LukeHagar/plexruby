@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetLibraryHubsMetadata < ::PlexRubySDK::Utils::FieldAugmented
+    class GetLibraryHubsMetadata < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

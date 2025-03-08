@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaMetaDataGenre < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaMetaDataGenre < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The filter string for the genre.

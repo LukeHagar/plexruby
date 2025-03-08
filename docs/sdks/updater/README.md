@@ -22,15 +22,12 @@ Querying status of updates
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.updater.get_update_status()
 
 if ! res.object.nil?
@@ -54,15 +51,12 @@ Checking for updates
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.updater.check_for_updates(download=::PlexRubySDK::Operations::Download::ONE)
 
 if res.status_code == 200
@@ -93,15 +87,12 @@ Note that these two parameters are effectively mutually exclusive. The `tonight`
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.updater.apply_updates(tonight=::PlexRubySDK::Operations::Tonight::ONE, skip=::PlexRubySDK::Operations::Skip::ONE)
 
 if res.status_code == 200

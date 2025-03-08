@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-    class CreatePlaylistUnauthorized < ::PlexRubySDK::Utils::FieldAugmented
+    class CreatePlaylistUnauthorized < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

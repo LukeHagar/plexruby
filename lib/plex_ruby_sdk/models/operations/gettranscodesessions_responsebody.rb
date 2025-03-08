@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # The Transcode Sessions
-    class GetTranscodeSessionsResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTranscodeSessionsResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

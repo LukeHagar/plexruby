@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetLibraryHubsCountry < ::PlexRubySDK::Utils::FieldAugmented
+    class GetLibraryHubsCountry < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

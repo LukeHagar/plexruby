@@ -22,15 +22,12 @@ This endpoint will write a single-line log message, including a level and source
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.log.log_line(level=::PlexRubySDK::Operations::Level::THREE, message="Test log message", source="Postman")
 
 if res.status_code == 200
@@ -83,19 +80,16 @@ Ensure each parameter is properly URL-encoded to avoid interpretation issues.
 ```ruby
 require 'plex_ruby_sdk'
 
-
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
 req = "level=4&message=Test%20message%201&source=postman\n" +
 "level=3&message=Test%20message%202&source=postman\n" +
 "level=1&message=Test%20message%203&source=postman"
-    
+
 res = s.log.log_multi_line(req)
 
 if res.status_code == 200
@@ -126,15 +120,12 @@ This endpoint will enable all Plex Media Serverlogs to be sent to the Papertrail
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.log.enable_paper_trail()
 
 if res.status_code == 200

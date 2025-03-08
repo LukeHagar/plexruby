@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Location < ::PlexRubySDK::Utils::FieldAugmented
+    class Location < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

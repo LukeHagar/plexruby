@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class StartUniversalTranscodeResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class StartUniversalTranscodeResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

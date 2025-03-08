@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetTopWatchedContentResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTopWatchedContentResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

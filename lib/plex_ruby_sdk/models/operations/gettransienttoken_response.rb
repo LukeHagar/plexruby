@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetTransientTokenResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTransientTokenResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

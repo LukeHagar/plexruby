@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class UpdatePlayProgressRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class UpdatePlayProgressRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # the media key

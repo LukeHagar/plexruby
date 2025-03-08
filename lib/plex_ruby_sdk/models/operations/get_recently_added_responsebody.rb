@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # A successful response with recently added content.
-    class GetRecentlyAddedResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetRecentlyAddedResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

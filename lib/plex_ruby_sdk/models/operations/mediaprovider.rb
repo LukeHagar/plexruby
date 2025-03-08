@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class MediaProvider < ::PlexRubySDK::Utils::FieldAugmented
+    class MediaProvider < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

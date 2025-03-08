@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Server Preferences
-    class GetServerPreferencesResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetServerPreferencesResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

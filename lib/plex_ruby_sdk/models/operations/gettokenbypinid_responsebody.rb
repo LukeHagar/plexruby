@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # Not Found or Expired
-    class GetTokenByPinIdResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTokenByPinIdResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

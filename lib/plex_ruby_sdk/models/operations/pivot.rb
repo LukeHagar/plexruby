@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Pivot < ::PlexRubySDK::Utils::FieldAugmented
+    class Pivot < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

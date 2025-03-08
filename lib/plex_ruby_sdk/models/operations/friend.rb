@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class Friend < ::PlexRubySDK::Utils::FieldAugmented
+    class Friend < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The account email address

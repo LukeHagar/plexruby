@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSearchLibraryRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSearchLibraryRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The unique key of the Plex library. 

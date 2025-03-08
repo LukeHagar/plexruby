@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # Container holding user and server details.
-    class GetUsersMediaContainer < ::PlexRubySDK::Utils::FieldAugmented
+    class GetUsersMediaContainer < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The friendly name of the Plex instance.

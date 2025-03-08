@@ -27,7 +27,6 @@ module PlexRubySDK
   autoload :Users, 'plex_ruby_sdk/users'
 end
 
-require_relative 'plex_ruby_sdk/utils/t'
 require_relative 'plex_ruby_sdk/utils/utils'
-require_relative 'plex_ruby_sdk/utils/metadata_fields'
+require_relative 'crystalline'
 require_relative 'plex_ruby_sdk/sdkconfiguration'

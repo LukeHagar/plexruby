@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class DeletePlaylistResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class DeletePlaylistResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

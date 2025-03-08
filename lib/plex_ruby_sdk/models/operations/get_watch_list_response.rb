@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetWatchListResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetWatchListResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

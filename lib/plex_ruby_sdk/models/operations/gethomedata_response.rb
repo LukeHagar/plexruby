@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetHomeDataResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetHomeDataResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

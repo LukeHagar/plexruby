@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class UpdatePlaylistResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class UpdatePlaylistResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

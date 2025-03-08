@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class TranscodeSession < ::PlexRubySDK::Utils::FieldAugmented
+    class TranscodeSession < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

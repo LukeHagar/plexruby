@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Device < ::PlexRubySDK::Utils::FieldAugmented
+    class Device < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

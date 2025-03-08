@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class DeleteLibraryErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class DeleteLibraryErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

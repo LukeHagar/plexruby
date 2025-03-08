@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Devices
-    class GetDevicesResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetDevicesResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

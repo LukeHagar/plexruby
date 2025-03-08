@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetLibraryDetailsField < ::PlexRubySDK::Utils::FieldAugmented
+    class GetLibraryDetailsField < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

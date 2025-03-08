@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetStatisticsDevice < ::PlexRubySDK::Utils::FieldAugmented
+    class GetStatisticsDevice < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

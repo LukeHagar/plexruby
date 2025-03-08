@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Session < ::PlexRubySDK::Utils::FieldAugmented
+    class Session < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

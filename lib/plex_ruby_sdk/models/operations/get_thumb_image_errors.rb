@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetThumbImageErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetThumbImageErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

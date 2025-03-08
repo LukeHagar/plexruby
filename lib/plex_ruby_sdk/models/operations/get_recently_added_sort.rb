@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetRecentlyAddedSort < ::PlexRubySDK::Utils::FieldAugmented
+    class GetRecentlyAddedSort < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The direction of the sort. Can be either `asc` or `desc`.

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetDevicesErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetDevicesErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

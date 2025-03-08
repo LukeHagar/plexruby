@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class UserProfile < ::PlexRubySDK::Utils::FieldAugmented
+    class UserProfile < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # If the account has automatically select audio and subtitle tracks enabled

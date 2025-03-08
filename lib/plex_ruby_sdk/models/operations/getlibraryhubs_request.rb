@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetLibraryHubsRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetLibraryHubsRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # the Id of the library to query

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetGlobalHubsRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetGlobalHubsRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The number of items to return with each hub.

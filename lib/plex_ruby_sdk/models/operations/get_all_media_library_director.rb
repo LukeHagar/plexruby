@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetAllMediaLibraryDirector < ::PlexRubySDK::Utils::FieldAugmented
+    class GetAllMediaLibraryDirector < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The role of Director

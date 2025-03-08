@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetRecentlyAddedRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetRecentlyAddedRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The content directory ID.

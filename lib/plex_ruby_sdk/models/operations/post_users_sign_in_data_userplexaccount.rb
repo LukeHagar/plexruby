@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # Returns the user account data with a valid auth token
-    class PostUsersSignInDataUserPlexAccount < ::PlexRubySDK::Utils::FieldAugmented
+    class PostUsersSignInDataUserPlexAccount < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Unknown
@@ -82,8 +82,6 @@ module PlexRubySDK
       field :subscription, ::PlexRubySDK::Operations::PostUsersSignInDataSubscription, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subscription') } }
       # Description of the Plex Pass subscription
       field :subscription_description, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subscriptionDescription') } }
-
-      field :subscriptions, T::Array[::PlexRubySDK::Operations::PostUsersSignInDataAuthenticationSubscription], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subscriptions') } }
       # URL of the account thumbnail
       field :thumb, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
       # The title of the account (username or friendly name)
@@ -103,9 +101,11 @@ module PlexRubySDK
       # [Might be removed] List of account roles. Plexpass membership listed here
       field :roles, T.nilable(T::Array[::String]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('roles') } }
 
+      field :subscriptions, T.nilable(T::Array[::PlexRubySDK::Operations::PostUsersSignInDataAuthenticationSubscription]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subscriptions') } }
 
-      sig { params(ads_consent: T::Boolean, ads_consent_reminder_at: ::Integer, ads_consent_set_at: ::Integer, anonymous: T::Boolean, attribution_partner: ::String, auth_token: ::String, backup_codes_created: T::Boolean, confirmed: T::Boolean, country: ::String, email: ::String, email_only_auth: T::Boolean, entitlements: T::Array[::String], experimental_features: T::Boolean, friendly_name: ::String, guest: T::Boolean, has_password: T::Boolean, home: T::Boolean, home_admin: T::Boolean, home_size: ::Integer, id: ::Integer, joined_at: ::Integer, locale: ::String, mailing_list_active: T::Boolean, mailing_list_status: ::PlexRubySDK::Operations::PostUsersSignInDataMailingListStatus, max_home_size: ::Integer, past_subscriptions: T::Array[::PlexRubySDK::Operations::PastSubscription], profile: ::PlexRubySDK::Operations::PostUsersSignInDataUserProfile, protected: T::Boolean, remember_expires_at: ::Integer, restricted: T::Boolean, scrobble_types: ::String, services: T::Array[::PlexRubySDK::Operations::PostUsersSignInDataServices], subscription: ::PlexRubySDK::Operations::PostUsersSignInDataSubscription, subscription_description: ::String, subscriptions: T::Array[::PlexRubySDK::Operations::PostUsersSignInDataAuthenticationSubscription], thumb: ::String, title: ::String, trials: T::Array[::PlexRubySDK::Operations::Trials], two_factor_enabled: T::Boolean, username: ::String, uuid: ::String, pin: T.nilable(::String), roles: T.nilable(T::Array[::String])).void }
-      def initialize(ads_consent: nil, ads_consent_reminder_at: nil, ads_consent_set_at: nil, anonymous: nil, attribution_partner: nil, auth_token: nil, backup_codes_created: nil, confirmed: nil, country: nil, email: nil, email_only_auth: nil, entitlements: nil, experimental_features: nil, friendly_name: nil, guest: nil, has_password: nil, home: nil, home_admin: nil, home_size: nil, id: nil, joined_at: nil, locale: nil, mailing_list_active: nil, mailing_list_status: nil, max_home_size: nil, past_subscriptions: nil, profile: nil, protected: nil, remember_expires_at: nil, restricted: nil, scrobble_types: nil, services: nil, subscription: nil, subscription_description: nil, subscriptions: nil, thumb: nil, title: nil, trials: nil, two_factor_enabled: nil, username: nil, uuid: nil, pin: nil, roles: nil)
+
+      sig { params(ads_consent: T::Boolean, ads_consent_reminder_at: ::Integer, ads_consent_set_at: ::Integer, anonymous: T::Boolean, attribution_partner: ::String, auth_token: ::String, backup_codes_created: T::Boolean, confirmed: T::Boolean, country: ::String, email: ::String, email_only_auth: T::Boolean, entitlements: T::Array[::String], experimental_features: T::Boolean, friendly_name: ::String, guest: T::Boolean, has_password: T::Boolean, home: T::Boolean, home_admin: T::Boolean, home_size: ::Integer, id: ::Integer, joined_at: ::Integer, locale: ::String, mailing_list_active: T::Boolean, mailing_list_status: ::PlexRubySDK::Operations::PostUsersSignInDataMailingListStatus, max_home_size: ::Integer, past_subscriptions: T::Array[::PlexRubySDK::Operations::PastSubscription], profile: ::PlexRubySDK::Operations::PostUsersSignInDataUserProfile, protected: T::Boolean, remember_expires_at: ::Integer, restricted: T::Boolean, scrobble_types: ::String, services: T::Array[::PlexRubySDK::Operations::PostUsersSignInDataServices], subscription: ::PlexRubySDK::Operations::PostUsersSignInDataSubscription, subscription_description: ::String, thumb: ::String, title: ::String, trials: T::Array[::PlexRubySDK::Operations::Trials], two_factor_enabled: T::Boolean, username: ::String, uuid: ::String, pin: T.nilable(::String), roles: T.nilable(T::Array[::String]), subscriptions: T.nilable(T::Array[::PlexRubySDK::Operations::PostUsersSignInDataAuthenticationSubscription])).void }
+      def initialize(ads_consent: nil, ads_consent_reminder_at: nil, ads_consent_set_at: nil, anonymous: nil, attribution_partner: nil, auth_token: nil, backup_codes_created: nil, confirmed: nil, country: nil, email: nil, email_only_auth: nil, entitlements: nil, experimental_features: nil, friendly_name: nil, guest: nil, has_password: nil, home: nil, home_admin: nil, home_size: nil, id: nil, joined_at: nil, locale: nil, mailing_list_active: nil, mailing_list_status: nil, max_home_size: nil, past_subscriptions: nil, profile: nil, protected: nil, remember_expires_at: nil, restricted: nil, scrobble_types: nil, services: nil, subscription: nil, subscription_description: nil, thumb: nil, title: nil, trials: nil, two_factor_enabled: nil, username: nil, uuid: nil, pin: nil, roles: nil, subscriptions: nil)
         @ads_consent = ads_consent
         @ads_consent_reminder_at = ads_consent_reminder_at
         @ads_consent_set_at = ads_consent_set_at
@@ -140,7 +140,6 @@ module PlexRubySDK
         @services = services
         @subscription = subscription
         @subscription_description = subscription_description
-        @subscriptions = subscriptions
         @thumb = thumb
         @title = title
         @trials = trials
@@ -149,6 +148,7 @@ module PlexRubySDK
         @uuid = uuid
         @pin = pin
         @roles = roles
+        @subscriptions = subscriptions
       end
     end
   end

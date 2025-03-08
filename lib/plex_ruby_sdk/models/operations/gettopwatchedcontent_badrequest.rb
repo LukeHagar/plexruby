@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Bad Request - A parameter was not specified, or was specified incorrectly.
-    class GetTopWatchedContentBadRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTopWatchedContentBadRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

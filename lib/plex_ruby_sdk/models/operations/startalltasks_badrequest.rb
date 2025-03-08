@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Bad Request - A parameter was not specified, or was specified incorrectly.
-    class StartAllTasksBadRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class StartAllTasksBadRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

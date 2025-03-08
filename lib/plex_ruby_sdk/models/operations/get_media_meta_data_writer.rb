@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaMetaDataWriter < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaMetaDataWriter < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The filter string for the role.

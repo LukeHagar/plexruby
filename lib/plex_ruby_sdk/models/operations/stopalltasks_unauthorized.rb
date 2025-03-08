@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-    class StopAllTasksUnauthorized < ::PlexRubySDK::Utils::FieldAugmented
+    class StopAllTasksUnauthorized < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

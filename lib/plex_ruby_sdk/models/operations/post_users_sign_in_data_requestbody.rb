@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # Login credentials
-    class PostUsersSignInDataRequestBody < ::PlexRubySDK::Utils::FieldAugmented
+    class PostUsersSignInDataRequestBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

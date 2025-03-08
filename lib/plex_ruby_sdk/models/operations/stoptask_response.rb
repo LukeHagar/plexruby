@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class StopTaskResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class StopTaskResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

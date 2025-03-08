@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class StartUniversalTranscodeRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class StartUniversalTranscodeRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Whether the media item has MDE

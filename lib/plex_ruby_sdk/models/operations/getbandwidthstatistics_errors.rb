@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetBandwidthStatisticsErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetBandwidthStatisticsErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

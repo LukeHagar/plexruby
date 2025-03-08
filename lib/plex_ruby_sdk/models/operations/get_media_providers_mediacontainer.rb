@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaProvidersMediaContainer < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaProvidersMediaContainer < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

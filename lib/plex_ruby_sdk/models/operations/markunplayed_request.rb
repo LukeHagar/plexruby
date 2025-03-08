@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class MarkUnplayedRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class MarkUnplayedRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The media key to mark as Unplayed

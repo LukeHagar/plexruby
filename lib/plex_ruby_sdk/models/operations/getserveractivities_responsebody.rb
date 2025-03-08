@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # The Server Activities
-    class GetServerActivitiesResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetServerActivitiesResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

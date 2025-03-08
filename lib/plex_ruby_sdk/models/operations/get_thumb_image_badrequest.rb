@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Bad Request - A parameter was not specified, or was specified incorrectly.
-    class GetThumbImageBadRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetThumbImageBadRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

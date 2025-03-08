@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Errors < ::PlexRubySDK::Utils::FieldAugmented
+    class Errors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

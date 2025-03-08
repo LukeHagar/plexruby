@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Part < ::PlexRubySDK::Utils::FieldAugmented
+    class Part < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The container format of the media file.

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetUpdateStatusResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetUpdateStatusResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

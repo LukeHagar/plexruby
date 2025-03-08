@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetPinResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetPinResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

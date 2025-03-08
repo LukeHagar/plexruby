@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # Successful response with media container data in XML
-    class GetUsersResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetUsersResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Container holding user and server details.

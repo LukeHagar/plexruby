@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class DeleteLibraryRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class DeleteLibraryRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The unique key of the Plex library. 

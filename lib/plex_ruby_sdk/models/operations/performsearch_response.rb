@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class PerformSearchResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class PerformSearchResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

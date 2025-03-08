@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSessionHistoryResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSessionHistoryResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

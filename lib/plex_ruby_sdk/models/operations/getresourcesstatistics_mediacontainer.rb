@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetResourcesStatisticsMediaContainer < ::PlexRubySDK::Utils::FieldAugmented
+    class GetResourcesStatisticsMediaContainer < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

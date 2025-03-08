@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Account < ::PlexRubySDK::Utils::FieldAugmented
+    class Account < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

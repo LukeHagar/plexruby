@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetTokenByPinIdRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTokenByPinIdRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)

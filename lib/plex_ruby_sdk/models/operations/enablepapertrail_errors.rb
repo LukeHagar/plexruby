@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class EnablePaperTrailErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class EnablePaperTrailErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

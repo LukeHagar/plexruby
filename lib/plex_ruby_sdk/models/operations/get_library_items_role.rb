@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetLibraryItemsRole < ::PlexRubySDK::Utils::FieldAugmented
+    class GetLibraryItemsRole < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The filter used to find the actor or tag.

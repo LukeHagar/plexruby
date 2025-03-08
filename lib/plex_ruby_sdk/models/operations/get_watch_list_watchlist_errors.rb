@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetWatchListWatchlistErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetWatchListWatchlistErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

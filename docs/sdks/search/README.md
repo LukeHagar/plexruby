@@ -33,15 +33,12 @@ This request is intended to be very fast, and called as the user types.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.search.perform_search(query="dylan", section_id=9372.7, limit=5.0)
 
 if res.status_code == 200
@@ -77,15 +74,12 @@ Results, as well as their containing per-type hubs, contain a `distance` attribu
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.search.perform_voice_search(query="dead+poop", section_id=4094.8, limit=5.0)
 
 if res.status_code == 200
@@ -117,15 +111,12 @@ This will search the database for the string provided.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.search.get_search_results(query="110")
 
 if ! res.object.nil?

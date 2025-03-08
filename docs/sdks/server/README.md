@@ -27,15 +27,12 @@ Get Server Capabilities
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.server.get_server_capabilities()
 
 if ! res.object.nil?
@@ -59,15 +56,12 @@ Get Server Preferences
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.server.get_server_preferences()
 
 if ! res.object.nil?
@@ -91,15 +85,12 @@ Get Available Clients
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.server.get_available_clients()
 
 if ! res.object.nil?
@@ -123,15 +114,12 @@ Get Devices
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.server.get_devices()
 
 if ! res.object.nil?
@@ -155,10 +143,8 @@ This request is useful to determine if the server is online or offline
 ```ruby
 require 'plex_ruby_sdk'
 
-
 s = ::PlexRubySDK::PlexAPI.new
 
-    
 res = s.server.get_server_identity()
 
 if ! res.object.nil?
@@ -182,15 +168,12 @@ Returns MyPlex Account Information
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.server.get_my_plex_account()
 
 if ! res.object.nil?
@@ -215,14 +198,11 @@ Plex's Photo transcoder is used throughout the service to serve images at specif
 ```ruby
 require 'plex_ruby_sdk'
 
-
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
 req = ::PlexRubySDK::Operations::GetResizedPhotoRequest.new(
   width: 110.0,
@@ -233,7 +213,7 @@ req = ::PlexRubySDK::Operations::GetResizedPhotoRequest.new(
   upscale: ::PlexRubySDK::Operations::Upscale::ONE,
   url: "/library/metadata/49564/thumb/1654258204",
 )
-    
+
 res = s.server.get_resized_photo(req)
 
 if res.status_code == 200
@@ -263,15 +243,12 @@ Retrieves media providers and their features from the Plex server.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.server.get_media_providers(x_plex_token="CV5xoxjTpFKUzBTShsaf")
 
 if ! res.object.nil?
@@ -301,15 +278,12 @@ Get Server List
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.server.get_server_list()
 
 if ! res.object.nil?

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetRecentlyAddedLibraryRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetRecentlyAddedLibraryRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The type of media to retrieve or filter by.

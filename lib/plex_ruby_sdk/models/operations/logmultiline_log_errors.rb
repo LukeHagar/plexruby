@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class LogMultiLineLogErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class LogMultiLineLogErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

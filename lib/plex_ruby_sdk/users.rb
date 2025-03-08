@@ -49,12 +49,12 @@ module PlexRubySDK
         res.body = r.env.response_body if Utils.match_content_type(content_type, 'application/xml')
       elsif r.status == 400
         if Utils.match_content_type(content_type, 'application/json')
-          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetUsersBadRequest)
+          out = Crystalline.unmarshal_json(JSON.parse(r.env.response_body), ::PlexRubySDK::Operations::GetUsersBadRequest)
           res.bad_request = out
         end
       elsif r.status == 401
         if Utils.match_content_type(content_type, 'application/json')
-          out = Utils.unmarshal_complex(r.env.response_body, ::PlexRubySDK::Operations::GetUsersUnauthorized)
+          out = Crystalline.unmarshal_json(JSON.parse(r.env.response_body), ::PlexRubySDK::Operations::GetUsersUnauthorized)
           res.unauthorized = out
         end
       end

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSessionHistoryErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSessionHistoryErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

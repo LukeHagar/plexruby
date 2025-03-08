@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetActorsLibraryDirectory < ::PlexRubySDK::Utils::FieldAugmented
+    class GetActorsLibraryDirectory < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # A fast lookup key for the actor relative url.

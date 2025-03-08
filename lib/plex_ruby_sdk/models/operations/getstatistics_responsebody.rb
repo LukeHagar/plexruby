@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Media Statistics
-    class GetStatisticsResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetStatisticsResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

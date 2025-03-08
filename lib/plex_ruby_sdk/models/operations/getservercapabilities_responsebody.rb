@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # The Server Capabilities
-    class GetServerCapabilitiesResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetServerCapabilitiesResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetUsersResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetUsersResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # Bad Request - A parameter was not specified, or was specified incorrectly.
-    class GetWatchListBadRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetWatchListBadRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

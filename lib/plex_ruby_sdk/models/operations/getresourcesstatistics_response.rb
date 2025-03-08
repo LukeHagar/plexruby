@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetResourcesStatisticsResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetResourcesStatisticsResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

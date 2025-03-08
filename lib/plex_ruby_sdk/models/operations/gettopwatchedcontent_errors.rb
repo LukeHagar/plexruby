@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetTopWatchedContentErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTopWatchedContentErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSearchAllLibrariesDirector < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSearchAllLibrariesDirector < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

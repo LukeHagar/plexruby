@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class ResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class ResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

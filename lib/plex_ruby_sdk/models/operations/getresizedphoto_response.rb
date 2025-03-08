@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetResizedPhotoResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetResizedPhotoResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

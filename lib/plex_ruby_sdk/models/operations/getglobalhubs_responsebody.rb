@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # returns global hubs
-    class GetGlobalHubsResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetGlobalHubsResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

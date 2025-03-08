@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetPlaylistContentsDirector < ::PlexRubySDK::Utils::FieldAugmented
+    class GetPlaylistContentsDirector < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

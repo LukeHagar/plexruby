@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Bad Request - A parameter was not specified, or was specified incorrectly.
-    class GetPlaylistBadRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetPlaylistBadRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

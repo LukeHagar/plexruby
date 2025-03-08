@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetFileHashResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetFileHashResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

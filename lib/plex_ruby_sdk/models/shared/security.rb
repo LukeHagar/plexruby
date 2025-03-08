@@ -8,7 +8,7 @@ module PlexRubySDK
   module Shared
   
 
-    class Security < ::PlexRubySDK::Utils::FieldAugmented
+    class Security < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

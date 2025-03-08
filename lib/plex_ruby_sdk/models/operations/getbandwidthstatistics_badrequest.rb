@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Bad Request - A parameter was not specified, or was specified incorrectly.
-    class GetBandwidthStatisticsBadRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetBandwidthStatisticsBadRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

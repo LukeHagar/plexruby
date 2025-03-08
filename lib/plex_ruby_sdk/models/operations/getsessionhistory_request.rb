@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSessionHistoryRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSessionHistoryRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Filter results by those that are related to a specific users id

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class CheckForUpdatesRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class CheckForUpdatesRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Indicate that you want to start download any updates found.

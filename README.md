@@ -47,6 +47,7 @@ The following SDKs are generated from the OpenAPI Specification. They are automa
   * [SDKs](#sdks)
   * [SDK Installation](#sdk-installation)
   * [SDK Example Usage](#sdk-example-usage)
+  * [Authentication](#authentication)
   * [Available Resources and Operations](#available-resources-and-operations)
   * [Server Selection](#server-selection)
 * [Development](#development)
@@ -73,15 +74,12 @@ gem install plex_ruby_sdk
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.server.get_server_capabilities()
 
 if ! res.object.nil?
@@ -90,6 +88,36 @@ end
 
 ```
 <!-- End SDK Example Usage [usage] -->
+
+<!-- Start Authentication [security] -->
+## Authentication
+
+### Per-Client Security Schemes
+
+This SDK supports the following security scheme globally:
+
+| Name           | Type   | Scheme  |
+| -------------- | ------ | ------- |
+| `access_token` | apiKey | API key |
+
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
+```ruby
+require 'plex_ruby_sdk'
+
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
+
+res = s.server.get_server_capabilities()
+
+if ! res.object.nil?
+  # handle response
+end
+
+```
+<!-- End Authentication [security] -->
 
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
@@ -239,27 +267,48 @@ end
 ### Server Variables
 
 The default server `{protocol}://{ip}:{port}` contains variables and is set to `https://10.10.10.47:32400` by default. To override default values, the following parameters are available when initializing the SDK client instance:
- * `protocol (::PlexRubySDK::ServerVariables::ServerProtocol)`
- * `ip (::String)`
- * `port (::String)`
 
-### Override Server URL Per-Client
+| Variable   | Parameter                                                   | Supported Values           | Default         | Description                                    |
+| ---------- | ----------------------------------------------------------- | -------------------------- | --------------- | ---------------------------------------------- |
+| `protocol` | `protocol (::PlexRubySDK::ServerVariables::ServerProtocol)` | - `"http"`<br/>- `"https"` | `"https"`       | The protocol to use for the server connection  |
+| `ip`       | `ip (::String)`                                             | ::String                   | `"10.10.10.47"` | The IP address or hostname of your Plex Server |
+| `port`     | `port (::String)`                                           | ::String                   | `"32400"`       | The port of your Plex Server                   |
 
-The default server can also be overridden globally by passing a URL to the `server_url (String)` optional parameter when initializing the SDK client instance. For example:
+#### Example
+
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      protocol: "https",
+      ip: "e0c3:bcc0:6bac:dccc:c4ec:34b1:ca98:4cb9",
+      port: "40311",
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
+
+res = s.server.get_server_capabilities()
+
+if ! res.object.nil?
+  # handle response
+end
+
+```
+
+### Override Server URL Per-Client
+
+The default server can be overridden globally by passing a URL to the `server_url (String)` optional parameter when initializing the SDK client instance. For example:
+```ruby
+require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
       server_url: "https://10.10.10.47:32400",
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
     )
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
 
-    
 res = s.server.get_server_capabilities()
 
 if ! res.object.nil?
@@ -274,15 +323,12 @@ The server URL can also be overridden on a per-operation basis, provided a serve
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.plex.get_companions_data(server_url: "https://plex.tv/api/v2")
 
 if ! res.response_bodies.nil?

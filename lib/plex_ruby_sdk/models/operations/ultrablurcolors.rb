@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class UltraBlurColors < ::PlexRubySDK::Utils::FieldAugmented
+    class UltraBlurColors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

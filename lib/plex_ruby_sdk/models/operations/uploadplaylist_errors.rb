@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class UploadPlaylistErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class UploadPlaylistErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

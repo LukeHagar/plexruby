@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class EnablePaperTrailResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class EnablePaperTrailResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

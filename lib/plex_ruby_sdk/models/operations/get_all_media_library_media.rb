@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetAllMediaLibraryMedia < ::PlexRubySDK::Utils::FieldAugmented
+    class GetAllMediaLibraryMedia < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Indicates whether voice activity is detected.

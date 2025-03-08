@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetPlaylistContentsErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetPlaylistContentsErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

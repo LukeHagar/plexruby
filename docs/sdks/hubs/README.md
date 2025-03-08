@@ -21,15 +21,12 @@ Get Global Hubs filtered by the parameters provided.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.hubs.get_global_hubs(count=1262.49, only_transient=::PlexRubySDK::Operations::OnlyTransient::ONE)
 
 if ! res.object.nil?
@@ -61,14 +58,11 @@ This endpoint will return the recently added content.
 ```ruby
 require 'plex_ruby_sdk'
 
-
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
 req = ::PlexRubySDK::Operations::GetRecentlyAddedRequest.new(
   content_directory_id: 470161,
@@ -78,7 +72,7 @@ req = ::PlexRubySDK::Operations::GetRecentlyAddedRequest.new(
   x_plex_container_start: 0,
   x_plex_container_size: 50,
 )
-    
+
 res = s.hubs.get_recently_added(req)
 
 if ! res.object.nil?
@@ -109,15 +103,12 @@ This endpoint will return a list of library specific hubs
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.hubs.get_library_hubs(section_id=6728.76, count=639.24, only_transient=::PlexRubySDK::Operations::QueryParamOnlyTransient::ONE)
 
 if ! res.object.nil?

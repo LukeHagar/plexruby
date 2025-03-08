@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetTransientTokenErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTransientTokenErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

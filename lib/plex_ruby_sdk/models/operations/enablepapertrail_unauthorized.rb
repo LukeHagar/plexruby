@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-    class EnablePaperTrailUnauthorized < ::PlexRubySDK::Utils::FieldAugmented
+    class EnablePaperTrailUnauthorized < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

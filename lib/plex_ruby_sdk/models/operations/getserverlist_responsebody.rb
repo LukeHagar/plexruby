@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # List of Servers
-    class GetServerListResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetServerListResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

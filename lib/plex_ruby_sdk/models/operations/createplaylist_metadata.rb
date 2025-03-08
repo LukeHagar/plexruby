@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class CreatePlaylistMetadata < ::PlexRubySDK::Utils::FieldAugmented
+    class CreatePlaylistMetadata < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Guids < ::PlexRubySDK::Utils::FieldAugmented
+    class Guids < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The unique identifier for the Guid. Can be imdb://tt0286347, tmdb://1763, tvdb://2337

@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class Billing < ::PlexRubySDK::Utils::FieldAugmented
+    class Billing < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

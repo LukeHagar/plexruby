@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Release < ::PlexRubySDK::Utils::FieldAugmented
+    class Release < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

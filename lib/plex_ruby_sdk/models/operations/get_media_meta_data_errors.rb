@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaMetaDataErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaMetaDataErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # The contents of the library by section and type
-    class GetSearchLibraryResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSearchLibraryResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

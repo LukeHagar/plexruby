@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class MetaDataRating < ::PlexRubySDK::Utils::FieldAugmented
+    class MetaDataRating < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # A URI or path to the rating image.

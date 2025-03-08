@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class InternalPaymentMethod < ::PlexRubySDK::Utils::FieldAugmented
+    class InternalPaymentMethod < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

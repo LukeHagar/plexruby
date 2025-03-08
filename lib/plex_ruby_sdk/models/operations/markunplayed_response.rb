@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class MarkUnplayedResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class MarkUnplayedResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

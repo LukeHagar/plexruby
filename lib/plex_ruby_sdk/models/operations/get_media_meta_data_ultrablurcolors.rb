@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaMetaDataUltraBlurColors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaMetaDataUltraBlurColors < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The bottom-left color value.

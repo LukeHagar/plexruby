@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetResizedPhotoRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetResizedPhotoRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The width for the resized photo

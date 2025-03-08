@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetUserFriendsErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetUserFriendsErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

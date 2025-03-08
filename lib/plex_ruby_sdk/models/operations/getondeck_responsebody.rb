@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # The on Deck content
-    class GetOnDeckResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetOnDeckResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

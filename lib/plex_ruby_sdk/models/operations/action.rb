@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Action < ::PlexRubySDK::Utils::FieldAugmented
+    class Action < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

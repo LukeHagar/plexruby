@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class CancelServerActivitiesRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class CancelServerActivitiesRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The UUID of the activity to cancel.

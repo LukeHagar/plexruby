@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetOnDeckErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetOnDeckErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

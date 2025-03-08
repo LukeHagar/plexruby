@@ -19,14 +19,11 @@ Get User Watchlist
 ```ruby
 require 'plex_ruby_sdk'
 
-
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
 req = ::PlexRubySDK::Operations::GetWatchListRequest.new(
   filter: ::PlexRubySDK::Operations::Filter::AVAILABLE,
@@ -34,7 +31,7 @@ req = ::PlexRubySDK::Operations::GetWatchListRequest.new(
   x_plex_container_size: 50,
   x_plex_token: "CV5xoxjTpFKUzBTShsaf",
 )
-    
+
 res = s.watchlist.get_watch_list(req)
 
 if ! res.object.nil?

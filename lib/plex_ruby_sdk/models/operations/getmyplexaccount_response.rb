@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMyPlexAccountResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMyPlexAccountResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

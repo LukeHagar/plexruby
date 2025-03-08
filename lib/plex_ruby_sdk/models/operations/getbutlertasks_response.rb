@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetButlerTasksResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetButlerTasksResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

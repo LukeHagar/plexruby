@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetServerResourcesResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetServerResourcesResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSessionHistoryMediaContainer < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSessionHistoryMediaContainer < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

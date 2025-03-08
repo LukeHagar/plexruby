@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Sort < ::PlexRubySDK::Utils::FieldAugmented
+    class Sort < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The direction of the sort. Can be either `asc` or `desc`.

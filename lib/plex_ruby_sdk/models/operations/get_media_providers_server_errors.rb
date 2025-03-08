@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaProvidersServerErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaProvidersServerErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

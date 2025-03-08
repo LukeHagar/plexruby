@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class StopTranscodeSessionErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class StopTranscodeSessionErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

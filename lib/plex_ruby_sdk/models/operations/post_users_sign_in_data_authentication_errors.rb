@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class PostUsersSignInDataAuthenticationErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class PostUsersSignInDataAuthenticationErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

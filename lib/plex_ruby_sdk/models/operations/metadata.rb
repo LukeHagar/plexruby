@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class Metadata < ::PlexRubySDK::Utils::FieldAugmented
+    class Metadata < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

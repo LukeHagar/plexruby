@@ -9,7 +9,7 @@ module PlexRubySDK
   
     # Unknown
     # 
-    class GetAllMediaLibraryMetadata < ::PlexRubySDK::Utils::FieldAugmented
+    class GetAllMediaLibraryMetadata < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

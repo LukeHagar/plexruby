@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetResizedPhotoServerErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetResizedPhotoServerErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

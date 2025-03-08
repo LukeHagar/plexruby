@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetUpdateStatusUpdaterErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetUpdateStatusUpdaterErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

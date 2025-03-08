@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class LogLineRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class LogLineRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # An integer log level to write to the PMS log with.  

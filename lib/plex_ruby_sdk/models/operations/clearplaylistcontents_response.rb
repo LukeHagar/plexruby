@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class ClearPlaylistContentsResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class ClearPlaylistContentsResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

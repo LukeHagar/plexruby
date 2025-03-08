@@ -23,15 +23,12 @@ This endpoint provides the caller with a temporary token with the same access le
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.authentication.get_transient_token(type=::PlexRubySDK::Operations::GetTransientTokenQueryParamType::DELEGATION, scope=::PlexRubySDK::Operations::Scope::ALL)
 
 if res.status_code == 200
@@ -64,15 +61,12 @@ Note: requires Plex Media Server >= 1.15.4.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.authentication.get_source_connection_information(source="server://client-identifier")
 
 if res.status_code == 200
@@ -102,15 +96,12 @@ Get the User data from the provided X-Plex-Token
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.authentication.get_token_details()
 
 if ! res.user_plex_account.nil?
@@ -140,9 +131,7 @@ Sign in user with username and password and return user data with Plex authentic
 ```ruby
 require 'plex_ruby_sdk'
 
-
 s = ::PlexRubySDK::PlexAPI.new
-
 
 req = ::PlexRubySDK::Operations::PostUsersSignInDataRequest.new(
   client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
@@ -156,7 +145,7 @@ req = ::PlexRubySDK::Operations::PostUsersSignInDataRequest.new(
     verification_code: "123456",
   ),
 )
-    
+
 res = s.authentication.post_users_sign_in_data(req)
 
 if ! res.user_plex_account.nil?

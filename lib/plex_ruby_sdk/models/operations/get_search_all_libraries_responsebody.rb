@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # The libraries available on the Server
-    class GetSearchAllLibrariesResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSearchAllLibrariesResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

@@ -35,15 +35,12 @@ This resource returns hash values for local files
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.library.get_file_hash(url="file://C:\Image.png&type=13", type=4462.17)
 
 if res.status_code == 200
@@ -75,14 +72,11 @@ This endpoint will return the recently added content.
 ```ruby
 require 'plex_ruby_sdk'
 
-
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
 req = ::PlexRubySDK::Operations::GetRecentlyAddedLibraryRequest.new(
   content_directory_id: 2,
@@ -106,7 +100,7 @@ req = ::PlexRubySDK::Operations::GetRecentlyAddedLibraryRequest.new(
   x_plex_container_start: 0,
   x_plex_container_size: 50,
 )
-    
+
 res = s.library.get_recently_added_library(req)
 
 if ! res.object.nil?
@@ -142,15 +136,12 @@ This allows a client to provide a rich interface around the media (e.g. allow so
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.library.get_all_libraries()
 
 if ! res.object.nil?
@@ -213,15 +204,12 @@ Each type in the library comes with a set of filters and sorts, aiding in buildi
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.library.get_library_details(section_key=9518, include_details=::PlexRubySDK::Operations::IncludeDetails::ZERO)
 
 if ! res.object.nil?
@@ -252,15 +240,12 @@ Delete a library using a specific section id
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.library.delete_library(section_key=9518)
 
 if res.status_code == 200
@@ -311,14 +296,11 @@ Fetches details from a specific section of the library identified by a section k
 ```ruby
 require 'plex_ruby_sdk'
 
-
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
 req = ::PlexRubySDK::Operations::GetLibraryItemsRequest.new(
   tag: ::PlexRubySDK::Operations::Tag::EDITION,
@@ -329,7 +311,7 @@ req = ::PlexRubySDK::Operations::GetLibraryItemsRequest.new(
   x_plex_container_start: 0,
   x_plex_container_size: 50,
 )
-    
+
 res = s.library.get_library_items(req)
 
 if ! res.object.nil?
@@ -360,14 +342,11 @@ Retrieves a list of all general media data for this library.
 ```ruby
 require 'plex_ruby_sdk'
 
-
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
 req = ::PlexRubySDK::Operations::GetAllMediaLibraryRequest.new(
   section_key: 9518,
@@ -380,7 +359,7 @@ req = ::PlexRubySDK::Operations::GetAllMediaLibraryRequest.new(
   x_plex_container_start: 0,
   x_plex_container_size: 50,
 )
-    
+
 res = s.library.get_all_media_library(req)
 
 if ! res.object.nil?
@@ -411,15 +390,12 @@ This endpoint Refreshes all the Metadata of the library.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.library.get_refresh_library_metadata(section_key=9518, force=::PlexRubySDK::Operations::Force::ONE)
 
 if res.status_code == 200
@@ -468,15 +444,12 @@ Each type in the library comes with a set of filters and sorts, aiding in buildi
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.library.get_search_library(section_key=9518, type=::PlexRubySDK::Operations::GetSearchLibraryQueryParamType::TV_SHOW)
 
 if ! res.object.nil?
@@ -508,15 +481,12 @@ Retrieves a list of all the genres that are found for the media in this library.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.library.get_genres_library(section_key=9518, type=::PlexRubySDK::Operations::GetGenresLibraryQueryParamType::TV_SHOW)
 
 if ! res.object.nil?
@@ -548,15 +518,12 @@ Retrieves a list of all the countries that are found for the media in this libra
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.library.get_countries_library(section_key=9518, type=::PlexRubySDK::Operations::GetCountriesLibraryQueryParamType::TV_SHOW)
 
 if ! res.object.nil?
@@ -588,15 +555,12 @@ Retrieves a list of all the actors that are found for the media in this library.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.library.get_actors_library(section_key=9518, type=::PlexRubySDK::Operations::GetActorsLibraryQueryParamType::TV_SHOW)
 
 if ! res.object.nil?
@@ -628,14 +592,11 @@ Search the provided query across all library sections, or a single section, and 
 ```ruby
 require 'plex_ruby_sdk'
 
-
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
 req = ::PlexRubySDK::Operations::GetSearchAllLibrariesRequest.new(
   query: "<value>",
@@ -646,7 +607,7 @@ req = ::PlexRubySDK::Operations::GetSearchAllLibrariesRequest.new(
   include_collections: ::PlexRubySDK::Operations::GetSearchAllLibrariesQueryParamIncludeCollections::ENABLE,
   include_external_media: ::PlexRubySDK::Operations::GetSearchAllLibrariesQueryParamIncludeExternalMedia::ENABLE,
 )
-    
+
 res = s.library.get_search_all_libraries(req)
 
 if ! res.object.nil?
@@ -677,14 +638,11 @@ This endpoint will return all the (meta)data of a library item specified with by
 ```ruby
 require 'plex_ruby_sdk'
 
-
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
 req = ::PlexRubySDK::Operations::GetMediaMetaDataRequest.new(
   rating_key: 9518,
@@ -702,7 +660,7 @@ req = ::PlexRubySDK::Operations::GetMediaMetaDataRequest.new(
   async_refresh_analysis: true,
   async_refresh_local_media_agent: true,
 )
-    
+
 res = s.library.get_media_meta_data(req)
 
 if ! res.object.nil?
@@ -733,15 +691,12 @@ This endpoint will return the children of of a library item specified with the r
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.library.get_metadata_children(rating_key=1539.14, include_elements="<value>")
 
 if ! res.object.nil?
@@ -773,15 +728,12 @@ This endpoint will return the top watched content from libraries of a certain ty
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.library.get_top_watched_content(type=::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType::TV_SHOW, include_guids=1)
 
 if ! res.object.nil?
@@ -813,15 +765,12 @@ This endpoint will return the on deck content.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.library.get_on_deck()
 
 if ! res.object.nil?

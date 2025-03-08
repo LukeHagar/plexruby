@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetPinErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetPinErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

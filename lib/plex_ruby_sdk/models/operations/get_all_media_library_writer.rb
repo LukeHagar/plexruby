@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetAllMediaLibraryWriter < ::PlexRubySDK::Utils::FieldAugmented
+    class GetAllMediaLibraryWriter < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The role of Writer

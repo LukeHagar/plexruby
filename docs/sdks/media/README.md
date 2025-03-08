@@ -23,15 +23,12 @@ This will mark the provided media key as Played.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.media.mark_played(key=59398.0)
 
 if res.status_code == 200
@@ -61,15 +58,12 @@ This will mark the provided media key as Unplayed.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.media.mark_unplayed(key=59398.0)
 
 if res.status_code == 200
@@ -100,15 +94,12 @@ This API command can be used to update the play progress of a media item.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.media.update_play_progress(key="<key>", time=90000.0, state="played")
 
 if res.status_code == 200
@@ -140,14 +131,11 @@ Gets the banner image of the media item
 ```ruby
 require 'plex_ruby_sdk'
 
-
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
 req = ::PlexRubySDK::Operations::GetBannerImageRequest.new(
   rating_key: 9518,
@@ -157,7 +145,7 @@ req = ::PlexRubySDK::Operations::GetBannerImageRequest.new(
   upscale: 1,
   x_plex_token: "CV5xoxjTpFKUzBTShsaf",
 )
-    
+
 res = s.media.get_banner_image(req)
 
 if ! res.bytes.nil?
@@ -187,14 +175,11 @@ Gets the thumbnail image of the media item
 ```ruby
 require 'plex_ruby_sdk'
 
-
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
 req = ::PlexRubySDK::Operations::GetThumbImageRequest.new(
   rating_key: 9518,
@@ -204,7 +189,7 @@ req = ::PlexRubySDK::Operations::GetThumbImageRequest.new(
   upscale: 1,
   x_plex_token: "CV5xoxjTpFKUzBTShsaf",
 )
-    
+
 res = s.media.get_thumb_image(req)
 
 if ! res.bytes.nil?

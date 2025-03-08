@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetTransientTokenRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTransientTokenRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # `all` - This is the only supported `scope` parameter.

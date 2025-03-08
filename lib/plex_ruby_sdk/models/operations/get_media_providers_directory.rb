@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaProvidersDirectory < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaProvidersDirectory < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

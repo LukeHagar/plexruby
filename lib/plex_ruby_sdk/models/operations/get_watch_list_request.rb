@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetWatchListRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetWatchListRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Filter

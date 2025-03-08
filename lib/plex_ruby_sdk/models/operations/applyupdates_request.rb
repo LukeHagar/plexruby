@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class ApplyUpdatesRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class ApplyUpdatesRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Indicate that the latest version should be marked as skipped. The [Release] entry for this version will have the `state` set to `skipped`.

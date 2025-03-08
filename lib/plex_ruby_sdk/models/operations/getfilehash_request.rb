@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetFileHashRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetFileHashRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # This is the path to the local file, must be prefixed by `file://`

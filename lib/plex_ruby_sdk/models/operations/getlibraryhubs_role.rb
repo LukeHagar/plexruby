@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetLibraryHubsRole < ::PlexRubySDK::Utils::FieldAugmented
+    class GetLibraryHubsRole < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

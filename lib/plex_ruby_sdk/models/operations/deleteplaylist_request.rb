@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class DeletePlaylistRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class DeletePlaylistRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # the ID of the playlist

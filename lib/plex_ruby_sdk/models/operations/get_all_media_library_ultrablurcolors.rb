@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetAllMediaLibraryUltraBlurColors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetAllMediaLibraryUltraBlurColors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

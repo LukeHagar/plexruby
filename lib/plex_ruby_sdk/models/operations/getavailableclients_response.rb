@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetAvailableClientsResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetAvailableClientsResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

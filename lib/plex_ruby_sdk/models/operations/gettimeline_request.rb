@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetTimelineRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTimelineRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The context of the media item

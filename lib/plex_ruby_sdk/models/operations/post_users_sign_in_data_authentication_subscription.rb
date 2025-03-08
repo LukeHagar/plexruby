@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class PostUsersSignInDataAuthenticationSubscription < ::PlexRubySDK::Utils::FieldAugmented
+    class PostUsersSignInDataAuthenticationSubscription < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # If the account's Plex Pass subscription is active

@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class PlexDevice < ::PlexRubySDK::Utils::FieldAugmented
+    class PlexDevice < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

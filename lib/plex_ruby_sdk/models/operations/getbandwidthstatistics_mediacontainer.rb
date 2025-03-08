@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetBandwidthStatisticsMediaContainer < ::PlexRubySDK::Utils::FieldAugmented
+    class GetBandwidthStatisticsMediaContainer < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

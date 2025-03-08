@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # Requests a new pin id used in the authentication flow
-    class GetPinAuthPinContainer < ::PlexRubySDK::Utils::FieldAugmented
+    class GetPinAuthPinContainer < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The X-Client-Identifier used in the request

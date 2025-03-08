@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetPlaylistContentsWriter < ::PlexRubySDK::Utils::FieldAugmented
+    class GetPlaylistContentsWriter < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

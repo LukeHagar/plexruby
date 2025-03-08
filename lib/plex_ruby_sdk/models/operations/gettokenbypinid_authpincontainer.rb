@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # The Pin with a non-null authToken when it has been verified by the user
-    class GetTokenByPinIdAuthPinContainer < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTokenByPinIdAuthPinContainer < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The X-Client-Identifier used in the request

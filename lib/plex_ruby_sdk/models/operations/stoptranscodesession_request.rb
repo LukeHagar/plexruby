@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class StopTranscodeSessionRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class StopTranscodeSessionRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # the Key of the transcode session to stop

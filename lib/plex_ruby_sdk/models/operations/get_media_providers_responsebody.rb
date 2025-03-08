@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Media providers and their features
-    class GetMediaProvidersResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaProvidersResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

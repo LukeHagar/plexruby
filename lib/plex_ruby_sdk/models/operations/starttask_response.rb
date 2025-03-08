@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class StartTaskResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class StartTaskResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

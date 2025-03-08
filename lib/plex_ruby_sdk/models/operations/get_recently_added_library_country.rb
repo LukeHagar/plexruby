@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetRecentlyAddedLibraryCountry < ::PlexRubySDK::Utils::FieldAugmented
+    class GetRecentlyAddedLibraryCountry < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

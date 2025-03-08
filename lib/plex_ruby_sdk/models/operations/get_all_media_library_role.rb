@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetAllMediaLibraryRole < ::PlexRubySDK::Utils::FieldAugmented
+    class GetAllMediaLibraryRole < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The name of the actor for this role

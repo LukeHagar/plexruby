@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetGeoDataPlexErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetGeoDataPlexErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

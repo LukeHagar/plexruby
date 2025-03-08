@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # The children of the library item.
-    class GetMetadataChildrenResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMetadataChildrenResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

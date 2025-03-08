@@ -6,15 +6,10 @@
 require 'date'
 require 'sorbet-runtime'
 require 'base64'
-require_relative './metadata_fields'
 
 module PlexRubySDK
   module Utils
     extend T::Sig
-
-    class FieldAugmented
-      include MetadataFields
-    end
 
     sig { params(val: Object, primitives: T::Boolean).returns(Object) }
     def self.val_to_string(val, primitives: true)
@@ -29,7 +24,7 @@ module PlexRubySDK
       end
     end
 
-    sig { params(headers_params: FieldAugmented, gbls: T.nilable(T::Hash[Symbol, T::Hash[Symbol, T::Hash[Symbol, Object]]])).returns(T::Hash[Symbol, String]) }
+    sig { params(headers_params: ::Crystalline::FieldAugmented, gbls: T.nilable(T::Hash[Symbol, T::Hash[Symbol, T::Hash[Symbol, Object]]])).returns(T::Hash[Symbol, String]) }
     def self.get_headers(headers_params, gbls = nil)
       return {} if headers_params.nil?
 
@@ -95,7 +90,7 @@ module PlexRubySDK
 
     sig do
       params(field_name: String, explode: T::Boolean, obj: Object, delimiter: String,
-             get_field_name_lambda: T.proc.params(obj_field: MetadataFields::Field).returns(String))
+             get_field_name_lambda: T.proc.params(obj_field: ::Crystalline::MetadataFields::Field).returns(String))
         .returns(T::Hash[Symbol, T::Array[String]])
     end
     def self._populate_form(field_name, explode, obj, delimiter, &get_field_name_lambda)
@@ -215,7 +210,7 @@ module PlexRubySDK
       params = {}
 
       serialization = metadata.fetch(:serialization, '')
-      params[metadata.fetch(:field_name, field_name)] = obj.marshal_json if serialization == 'json'
+      params[metadata.fetch(:field_name, field_name)] = obj.to_json if serialization == 'json'
 
       params
     end
@@ -236,7 +231,7 @@ module PlexRubySDK
       _populate_form(field_name, metadata.fetch(:explode, true), obj, delimiter, &get_query_param_field_name)
     end
 
-    sig { params(clazz: Class, query_params: FieldAugmented, gbls: T.nilable(T::Hash[Symbol, T::Hash[Symbol, T::Hash[Symbol, Object]]])).returns(T::Hash[Symbol, T::Array[String]]) }
+    sig { params(clazz: Class, query_params: ::Crystalline::FieldAugmented, gbls: T.nilable(T::Hash[Symbol, T::Hash[Symbol, T::Hash[Symbol, Object]]])).returns(T::Hash[Symbol, T::Array[String]]) }
     def self.get_query_params(clazz, query_params, gbls = nil)
       params = {}
       param_fields = clazz.fields
@@ -280,7 +275,7 @@ module PlexRubySDK
       params
     end
 
-    sig { params(clazz: Class, server_url: String, path: String, path_params: FieldAugmented, gbls: T.nilable(T::Hash[Symbol, T::Hash[Symbol, T::Hash[Symbol, Object]]])).returns(String) }
+    sig { params(clazz: Class, server_url: String, path: String, path_params: ::Crystalline::FieldAugmented, gbls: T.nilable(T::Hash[Symbol, T::Hash[Symbol, T::Hash[Symbol, Object]]])).returns(String) }
     def self.generate_url(clazz, server_url, path, path_params, gbls = nil)
       clazz.fields.each do |f|
         param_metadata = f.metadata[:path_param]
@@ -463,7 +458,7 @@ module PlexRubySDK
       end
     end
 
-    sig { params(req: Faraday::Request, scheme: FieldAugmented).void }
+    sig { params(req: Faraday::Request, scheme: ::Crystalline::FieldAugmented).void }
     def self._parse_basic_auth_scheme(req, scheme)
       username, password = ''
 
@@ -559,7 +554,7 @@ module PlexRubySDK
         .returns([String, Object, T.nilable(T::Array[T::Array[Object]])])
     end
     def self.serialize_content_type(field_name, media_type, request)
-      return media_type, marshal_json_complex(request), nil if media_type.match('(application|text)\/.*?\+*json.*')
+      return media_type, ::Crystalline.marshal_json_complex(request), nil if media_type.match('(application|text)\/.*?\+*json.*')
       return serialize_multipart_form(media_type, request) if media_type.match('multipart\/.*')
       return media_type, serialize_form_data(field_name, request), nil if media_type.match('application\/x-www-form-urlencoded.*')
       return media_type, request, nil if request.is_a?(String) || request.is_a?(Array)
@@ -567,7 +562,7 @@ module PlexRubySDK
       raise StandardError, "invalid request body type #{type(request)} for mediaType {metadata['media_type']}"
     end
 
-    sig { params(field: MetadataFields::Field, data_class: FieldAugmented).returns(Object) }
+    sig { params(field: ::Crystalline::MetadataFields::Field, data_class: ::Crystalline::FieldAugmented).returns(Object) }
     def self.parse_field(field, data_class)
       field_metadata = field.metadata[:metadata_string]
       return nil if field_metadata.nil?
@@ -578,7 +573,7 @@ module PlexRubySDK
       field_value
     end
 
-    sig { params(media_type: String, request: FieldAugmented).returns([String, Object, T::Array[T::Array[Object]]]) }
+    sig { params(media_type: String, request: ::Crystalline::FieldAugmented).returns([String, Object, T::Array[T::Array[Object]]]) }
     def self.serialize_multipart_form(media_type, request)
       form = []
       request_fields = request.fields
@@ -612,7 +607,7 @@ module PlexRubySDK
         elsif field_metadata[:json] == true
           to_append = [
             field_metadata.fetch(:field_name, field.name), [
-              nil, marshal_json_complex(val), 'application/json'
+              nil, ::Crystalline.marshal_json_complex(val), 'application/json'
             ]
           ]
           form.append(to_append)
@@ -657,7 +652,7 @@ module PlexRubySDK
     end
 
     sig do
-      params(field_name: Symbol, data: T.any(FieldAugmented, T::Hash[Symbol, String]))
+      params(field_name: Symbol, data: T.any(::Crystalline::FieldAugmented, T::Hash[Symbol, String]))
         .returns(T::Hash[Symbol, Object])
     end
     def self.serialize_form_data(field_name, data)
@@ -682,7 +677,7 @@ module PlexRubySDK
           field_name = metadata.fetch(:field_name, field.name)
 
           if metadata[:json]
-            form[field_name] = marshal_json_complex(val)
+            form[field_name] = ::Crystalline.marshal_json_complex(val)
           else
             if metadata.fetch(:style, 'form') == 'form'
               form = form.merge(
@@ -729,43 +724,5 @@ module PlexRubySDK
       value
     end
 
-    sig { params(complex: Object).returns(Object) }
-    def self.marshal_json_complex(complex)
-      if complex.is_a? Array
-        complex.map { |v| Utils.marshal_json_complex(v) }.to_json
-      elsif complex.is_a? Hash
-        complex.transform_values { |v| Utils.marshal_json_complex(v) }.to_json
-      elsif complex.respond_to? :marshal_json
-        complex.marshal_json
-      else
-        complex.to_json
-      end
-    end
-
-    sig { params(data: Object, type: Object).returns(Object) }
-    def self.unmarshal_complex(data, type)
-      begin
-        value = unmarshal_json(JSON.parse(data), type)
-      rescue TypeError, JSON::ParserError
-        value = unmarshal_json(data, type)
-      end
-      value
-    end
-
-    sig { params(data: Object, type: Object).returns(Object) }
-    def self.unmarshal_json(data, type)
-      if T.simplifiable? type
-        type = T.simplify_type type
-      end
-      if type.respond_to? :unmarshal_json
-        type.unmarshal_json(data)
-      elsif T.arr? type
-        data.map { |v| Utils.unmarshal_complex(v, T.arr_of(type)) }
-      elsif T.hash? type
-        data.transform_values { |v| Utils.unmarshal_complex(v, T.hash_of(type)) }
-      else
-        data
-      end
-    end
   end
 end

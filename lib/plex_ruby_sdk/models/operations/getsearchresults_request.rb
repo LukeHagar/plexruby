@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSearchResultsRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSearchResultsRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The search query string to use

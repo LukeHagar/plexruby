@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # The details of the library
-    class GetLibraryDetailsResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetLibraryDetailsResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

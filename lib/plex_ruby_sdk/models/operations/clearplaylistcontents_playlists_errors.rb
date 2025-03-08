@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class ClearPlaylistContentsPlaylistsErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class ClearPlaylistContentsPlaylistsErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

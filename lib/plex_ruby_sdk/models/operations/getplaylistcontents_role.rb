@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetPlaylistContentsRole < ::PlexRubySDK::Utils::FieldAugmented
+    class GetPlaylistContentsRole < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

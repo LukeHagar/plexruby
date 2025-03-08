@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaMetaDataImage < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaMetaDataImage < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Alternate text for the image.

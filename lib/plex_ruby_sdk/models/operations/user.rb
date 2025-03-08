@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class User < ::PlexRubySDK::Utils::FieldAugmented
+    class User < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

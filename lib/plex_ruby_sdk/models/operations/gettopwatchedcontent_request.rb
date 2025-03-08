@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetTopWatchedContentRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTopWatchedContentRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The type of media to retrieve or filter by.

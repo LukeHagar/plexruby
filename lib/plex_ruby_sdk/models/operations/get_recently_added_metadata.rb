@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetRecentlyAddedMetadata < ::PlexRubySDK::Utils::FieldAugmented
+    class GetRecentlyAddedMetadata < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Unix epoch datetime in seconds

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class StatisticsBandwidth < ::PlexRubySDK::Utils::FieldAugmented
+    class StatisticsBandwidth < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

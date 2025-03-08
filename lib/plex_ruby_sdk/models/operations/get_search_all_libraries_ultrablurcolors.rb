@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSearchAllLibrariesUltraBlurColors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSearchAllLibrariesUltraBlurColors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

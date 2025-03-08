@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetAllMediaLibraryGenre < ::PlexRubySDK::Utils::FieldAugmented
+    class GetAllMediaLibraryGenre < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The country of origin of this media item

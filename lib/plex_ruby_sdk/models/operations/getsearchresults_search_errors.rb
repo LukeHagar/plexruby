@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSearchResultsSearchErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSearchResultsSearchErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

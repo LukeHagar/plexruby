@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetRefreshLibraryMetadataErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetRefreshLibraryMetadataErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

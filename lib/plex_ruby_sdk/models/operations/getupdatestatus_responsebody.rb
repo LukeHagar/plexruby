@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # The Server Updates
-    class GetUpdateStatusResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetUpdateStatusResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetRecentlyAddedLibraryMedia < ::PlexRubySDK::Utils::FieldAugmented
+    class GetRecentlyAddedLibraryMedia < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

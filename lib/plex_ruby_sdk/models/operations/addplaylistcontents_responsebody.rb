@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Playlist Updated
-    class AddPlaylistContentsResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class AddPlaylistContentsResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

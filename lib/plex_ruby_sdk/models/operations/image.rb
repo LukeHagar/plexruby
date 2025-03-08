@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class Image < ::PlexRubySDK::Utils::FieldAugmented
+    class Image < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

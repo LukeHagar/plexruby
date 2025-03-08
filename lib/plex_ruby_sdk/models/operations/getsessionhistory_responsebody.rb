@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # List of Plex Sessions
-    class GetSessionHistoryResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSessionHistoryResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class CancelServerActivitiesResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class CancelServerActivitiesResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

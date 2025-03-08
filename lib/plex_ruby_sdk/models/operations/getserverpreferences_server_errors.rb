@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetServerPreferencesServerErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetServerPreferencesServerErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

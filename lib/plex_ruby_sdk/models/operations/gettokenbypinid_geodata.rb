@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # Geo location data
-    class GetTokenByPinIdGeoData < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTokenByPinIdGeoData < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The name of the city.

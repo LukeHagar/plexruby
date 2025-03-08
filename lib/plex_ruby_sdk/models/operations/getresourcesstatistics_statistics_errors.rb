@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetResourcesStatisticsStatisticsErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetResourcesStatisticsStatisticsErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

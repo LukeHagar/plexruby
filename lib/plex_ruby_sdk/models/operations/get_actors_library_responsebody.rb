@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Successful response containing media container data.
-    class GetActorsLibraryResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetActorsLibraryResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

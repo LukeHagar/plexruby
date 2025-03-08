@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class DeletePlaylistPlaylistsErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class DeletePlaylistPlaylistsErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

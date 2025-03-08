@@ -25,15 +25,12 @@ Get Companions Data
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.plex.get_companions_data()
 
 if ! res.response_bodies.nil?
@@ -63,15 +60,12 @@ Get friends of provided auth token.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.plex.get_user_friends()
 
 if ! res.friends.nil?
@@ -101,10 +95,8 @@ Returns the geolocation and locale data of the caller
 ```ruby
 require 'plex_ruby_sdk'
 
-
 s = ::PlexRubySDK::PlexAPI.new
 
-    
 res = s.plex.get_geo_data()
 
 if ! res.geo_data.nil?
@@ -134,15 +126,12 @@ Retrieves the home data for the authenticated user, including details like home 
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.plex.get_home_data()
 
 if ! res.object.nil?
@@ -166,15 +155,12 @@ Get Plex server access tokens and server connections
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.plex.get_server_resources(client_id="3381b62b-9ab7-4e37-827b-203e9809eb58", include_https=::PlexRubySDK::Operations::IncludeHttps::ENABLE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ENABLE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ENABLE)
 
 if ! res.plex_devices.nil?
@@ -208,9 +194,7 @@ Retrieve a Pin ID from Plex.tv to use for authentication flows
 ```ruby
 require 'plex_ruby_sdk'
 
-
 s = ::PlexRubySDK::PlexAPI.new
-
 
 req = ::PlexRubySDK::Operations::GetPinRequest.new(
   client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
@@ -219,7 +203,7 @@ req = ::PlexRubySDK::Operations::GetPinRequest.new(
   client_version: "2.4.1",
   platform: "Roku",
 )
-    
+
 res = s.plex.get_pin(req)
 
 if ! res.auth_pin_container.nil?
@@ -250,9 +234,7 @@ Retrieve an Access Token from Plex.tv after the Pin has been authenticated
 ```ruby
 require 'plex_ruby_sdk'
 
-
 s = ::PlexRubySDK::PlexAPI.new
-
 
 req = ::PlexRubySDK::Operations::GetTokenByPinIdRequest.new(
   pin_id: 408895,
@@ -262,7 +244,7 @@ req = ::PlexRubySDK::Operations::GetTokenByPinIdRequest.new(
   client_version: "2.4.1",
   platform: "Roku",
 )
-    
+
 res = s.plex.get_token_by_pin_id(req)
 
 if ! res.auth_pin_container.nil?

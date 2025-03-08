@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class MarkPlayedRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class MarkPlayedRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The media key to mark as played

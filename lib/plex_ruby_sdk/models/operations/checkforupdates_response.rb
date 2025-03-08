@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class CheckForUpdatesResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class CheckForUpdatesResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

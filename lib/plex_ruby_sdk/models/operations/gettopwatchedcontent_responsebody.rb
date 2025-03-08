@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # The metadata of the library item.
-    class GetTopWatchedContentResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTopWatchedContentResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

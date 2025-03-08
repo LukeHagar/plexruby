@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetAllMediaLibraryStream < ::PlexRubySDK::Utils::FieldAugmented
+    class GetAllMediaLibraryStream < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Codec used by the stream.

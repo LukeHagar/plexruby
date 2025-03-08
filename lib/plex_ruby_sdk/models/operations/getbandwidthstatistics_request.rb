@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetBandwidthStatisticsRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetBandwidthStatisticsRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The timespan to retrieve statistics for

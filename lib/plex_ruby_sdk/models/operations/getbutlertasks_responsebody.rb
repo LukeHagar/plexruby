@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # All butler tasks
-    class GetButlerTasksResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetButlerTasksResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

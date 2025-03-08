@@ -20,14 +20,11 @@ Get the timeline for a media item
 ```ruby
 require 'plex_ruby_sdk'
 
-
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
 req = ::PlexRubySDK::Operations::GetTimelineRequest.new(
   rating_key: 23409.0,
@@ -41,7 +38,7 @@ req = ::PlexRubySDK::Operations::GetTimelineRequest.new(
   play_back_time: 2000.0,
   row: 1.0,
 )
-    
+
 res = s.video.get_timeline(req)
 
 if res.status_code == 200
@@ -71,14 +68,11 @@ Begin a Universal Transcode Session
 ```ruby
 require 'plex_ruby_sdk'
 
-
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
 req = ::PlexRubySDK::Operations::StartUniversalTranscodeRequest.new(
   has_mde: 1.0,
@@ -98,7 +92,7 @@ req = ::PlexRubySDK::Operations::StartUniversalTranscodeRequest.new(
   add_debug_overlay: 0.0,
   auto_adjust_quality: 0.0,
 )
-    
+
 res = s.video.start_universal_transcode(req)
 
 if res.status_code == 200

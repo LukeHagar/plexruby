@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetUsersRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetUsersRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)

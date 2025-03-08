@@ -15,11 +15,11 @@ module PlexRubySDK
   ].freeze
   # Contains the list of servers available to the SDK
 
-  class SDKConfiguration < ::PlexRubySDK::Utils::FieldAugmented
+  class SDKConfiguration < ::Crystalline::FieldAugmented
     extend T::Sig
 
     field :client, T.nilable(Faraday::Connection)
-    field :security, T.nilable(::PlexRubySDK::Shared::Security)
+    field :security_source, T.nilable(T.proc.returns(T.nilable(::PlexRubySDK::Shared::Security)))
     field :server_url, T.nilable(String)
     field :server_idx, T.nilable(Integer)
     field :server_params, Array[Hash[Symbol, String]], { 'default_factory': Array}
@@ -30,19 +30,24 @@ module PlexRubySDK
     field :user_agent, String
 
 
-    sig { params(client: Faraday::Connection, security: T.nilable(::PlexRubySDK::Shared::Security), server_url: T.nilable(String), server_idx: T.nilable(Integer), server_params: T::Array[String]).void }
-    def initialize(client, security, server_url, server_idx, server_params)
+
+    sig { params(client: T.nilable(Faraday::Connection), security: T.nilable(::PlexRubySDK::Shared::Security), security_source: T.nilable(T.proc.returns(::PlexRubySDK::Shared::Security)), server_url: T.nilable(String), server_idx: T.nilable(Integer), server_params: T::Array[String]).void }
+    def initialize(client, security, security_source, server_url, server_idx, server_params)
       @client = client
       @server_url = server_url
       @server_idx = server_idx.nil? ? 0 : server_idx
       raise StandardError, "Invalid server index #{server_idx}" if @server_idx.negative? || @server_idx >= SERVERS.length
       @server_params = server_params
-      @security = security
+      if !security_source.nil?
+        @security_source = security_source
+      elsif !security.nil?
+        @security_source = -> { security }
+      end
       @language = 'ruby'
       @openapi_doc_version = '0.0.3'
-      @sdk_version = '0.7.5'
-      @gen_version = '2.506.0'
-      @user_agent = 'speakeasy-sdk/ruby 0.7.5 2.506.0 0.0.3 plex_ruby_sdk'
+      @sdk_version = '0.7.6'
+      @gen_version = '2.545.4'
+      @user_agent = 'speakeasy-sdk/ruby 0.7.6 2.545.4 0.0.3 plex_ruby_sdk'
     end
 
     sig { returns([String, T::Hash[Symbol, String]]) }

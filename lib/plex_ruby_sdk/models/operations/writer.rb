@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Writer < ::PlexRubySDK::Utils::FieldAugmented
+    class Writer < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

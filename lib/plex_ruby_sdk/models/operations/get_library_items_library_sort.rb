@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetLibraryItemsLibrarySort < ::PlexRubySDK::Utils::FieldAugmented
+    class GetLibraryItemsLibrarySort < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The direction of the sort. Can be either `asc` or `desc`.

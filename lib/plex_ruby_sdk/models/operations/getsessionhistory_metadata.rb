@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSessionHistoryMetadata < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSessionHistoryMetadata < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

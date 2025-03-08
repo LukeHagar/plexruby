@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class ClearPlaylistContentsRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class ClearPlaylistContentsRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # the ID of the playlist

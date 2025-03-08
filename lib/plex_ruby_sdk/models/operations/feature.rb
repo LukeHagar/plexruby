@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Feature < ::PlexRubySDK::Utils::FieldAugmented
+    class Feature < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

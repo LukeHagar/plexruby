@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # If the account’s Plex Pass subscription is active
-    class Subscription < ::PlexRubySDK::Utils::FieldAugmented
+    class Subscription < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # If the account's Plex Pass subscription is active

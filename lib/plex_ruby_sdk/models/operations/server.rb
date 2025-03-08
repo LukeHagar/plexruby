@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Server < ::PlexRubySDK::Utils::FieldAugmented
+    class Server < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

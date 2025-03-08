@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetHomeDataPlexErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetHomeDataPlexErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

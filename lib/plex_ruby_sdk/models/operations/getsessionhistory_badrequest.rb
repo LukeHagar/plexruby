@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Bad Request - A parameter was not specified, or was specified incorrectly.
-    class GetSessionHistoryBadRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSessionHistoryBadRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

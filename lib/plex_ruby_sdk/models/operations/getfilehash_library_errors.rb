@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetFileHashLibraryErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetFileHashLibraryErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

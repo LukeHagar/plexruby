@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaMetaDataMediaContainer < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaMetaDataMediaContainer < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Indicates whether syncing is allowed.

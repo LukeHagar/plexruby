@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class StopTaskRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class StopTaskRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The name of the task to be started.

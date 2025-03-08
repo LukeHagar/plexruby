@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSourceConnectionInformationResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSourceConnectionInformationResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

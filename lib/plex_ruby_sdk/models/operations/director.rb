@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Director < ::PlexRubySDK::Utils::FieldAugmented
+    class Director < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

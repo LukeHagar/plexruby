@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Bad Request - A parameter was not specified, or was specified incorrectly.
-    class GetCountriesLibraryBadRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetCountriesLibraryBadRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

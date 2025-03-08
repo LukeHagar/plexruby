@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMetadataChildrenResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMetadataChildrenResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

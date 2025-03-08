@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetTimelineErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTimelineErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

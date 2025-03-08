@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSourceConnectionInformationRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSourceConnectionInformationRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The source identifier with an included prefix.

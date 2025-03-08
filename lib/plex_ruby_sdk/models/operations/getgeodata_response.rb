@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetGeoDataResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetGeoDataResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

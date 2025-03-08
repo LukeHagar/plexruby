@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSessionsStream < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSessionsStream < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

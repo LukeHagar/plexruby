@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetTokenDetailsResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTokenDetailsResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

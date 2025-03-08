@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetAllMediaLibraryPart < ::PlexRubySDK::Utils::FieldAugmented
+    class GetAllMediaLibraryPart < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # File path for the part.

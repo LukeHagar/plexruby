@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetLibraryItemsLibraryErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetLibraryItemsLibraryErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

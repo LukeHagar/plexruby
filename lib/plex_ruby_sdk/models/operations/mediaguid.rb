@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class MediaGuid < ::PlexRubySDK::Utils::FieldAugmented
+    class MediaGuid < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Can be one of the following formats:

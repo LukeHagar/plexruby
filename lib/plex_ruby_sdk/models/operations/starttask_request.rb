@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class StartTaskRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class StartTaskRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # the name of the task to be started.

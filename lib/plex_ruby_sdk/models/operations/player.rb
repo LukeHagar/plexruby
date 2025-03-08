@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Player < ::PlexRubySDK::Utils::FieldAugmented
+    class Player < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

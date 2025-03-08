@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetPlaylistsRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetPlaylistsRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # limit to a type of playlist.

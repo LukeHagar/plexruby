@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetBannerImageResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetBannerImageResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

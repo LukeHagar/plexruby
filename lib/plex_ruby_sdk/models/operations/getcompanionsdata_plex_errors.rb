@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetCompanionsDataPlexErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetCompanionsDataPlexErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

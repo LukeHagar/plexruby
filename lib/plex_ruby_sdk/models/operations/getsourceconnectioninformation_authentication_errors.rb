@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSourceConnectionInformationAuthenticationErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSourceConnectionInformationAuthenticationErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

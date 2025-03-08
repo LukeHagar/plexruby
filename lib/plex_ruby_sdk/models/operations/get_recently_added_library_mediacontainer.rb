@@ -9,7 +9,7 @@ module PlexRubySDK
   
     # The Meta object is only included in the response if the `includeMeta` parameter is set to `1`.
     # 
-    class GetRecentlyAddedLibraryMediaContainer < ::PlexRubySDK::Utils::FieldAugmented
+    class GetRecentlyAddedLibraryMediaContainer < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

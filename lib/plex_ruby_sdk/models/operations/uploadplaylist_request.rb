@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class UploadPlaylistRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class UploadPlaylistRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Force overwriting of duplicate playlists.  

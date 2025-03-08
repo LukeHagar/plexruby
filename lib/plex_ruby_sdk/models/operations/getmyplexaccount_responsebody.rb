@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # MyPlex Account
-    class GetMyPlexAccountResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMyPlexAccountResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

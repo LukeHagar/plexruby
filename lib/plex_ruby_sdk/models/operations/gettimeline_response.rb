@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetTimelineResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTimelineResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

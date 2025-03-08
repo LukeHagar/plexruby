@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class Trials < ::PlexRubySDK::Utils::FieldAugmented
+    class Trials < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetBannerImageRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetBannerImageRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

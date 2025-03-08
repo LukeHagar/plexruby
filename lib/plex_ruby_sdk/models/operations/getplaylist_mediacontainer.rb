@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetPlaylistMediaContainer < ::PlexRubySDK::Utils::FieldAugmented
+    class GetPlaylistMediaContainer < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

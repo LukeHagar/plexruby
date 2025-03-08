@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetDevicesResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetDevicesResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

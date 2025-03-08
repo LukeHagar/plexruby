@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetAllMediaLibraryCollection < ::PlexRubySDK::Utils::FieldAugmented
+    class GetAllMediaLibraryCollection < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The user-made collection this media item belongs to

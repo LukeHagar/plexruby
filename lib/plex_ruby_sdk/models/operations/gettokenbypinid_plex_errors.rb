@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetTokenByPinIdPlexErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTokenByPinIdPlexErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

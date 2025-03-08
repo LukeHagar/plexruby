@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSearchAllLibrariesPart < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSearchAllLibrariesPart < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The container format of the media file.

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaMetaDataCountry < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaMetaDataCountry < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The filter string for the country.

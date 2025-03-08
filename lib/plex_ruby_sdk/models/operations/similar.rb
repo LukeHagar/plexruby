@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Similar < ::PlexRubySDK::Utils::FieldAugmented
+    class Similar < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The filter string for similar items.

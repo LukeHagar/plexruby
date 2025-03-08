@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class StopTaskButlerErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class StopTaskButlerErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

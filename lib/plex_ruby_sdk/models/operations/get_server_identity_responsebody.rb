@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # The Server Identity information
-    class GetServerIdentityResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetServerIdentityResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

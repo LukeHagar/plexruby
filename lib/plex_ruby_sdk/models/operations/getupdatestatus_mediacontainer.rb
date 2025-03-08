@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetUpdateStatusMediaContainer < ::PlexRubySDK::Utils::FieldAugmented
+    class GetUpdateStatusMediaContainer < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

@@ -3,7 +3,8 @@
 # typed: true
 # frozen_string_literal: true
 
-module PlexRubySDK
+module Crystalline
+  extend T::Sig
   module MetadataFields
     extend T::Sig
 
@@ -32,9 +33,13 @@ module PlexRubySDK
         fields << Field.new(field_name, type, metadata)
       end
 
+      def field_augmented?
+        true
+      end
+
       def unmarshal_single(field_type, value, decoder = nil)
-        if field_type.respond_to? :unmarshal_json
-          unmarshalled = field_type.unmarshal_json(value)
+        if field_type.instance_of?(Class) && field_type < ::Crystalline::FieldAugmented
+          unmarshalled = field_type.from_dict(value)
           return unmarshalled
         elsif field_type.to_s == 'Object'
           # rubocop:disable Lint/SuppressedException
@@ -52,14 +57,20 @@ module PlexRubySDK
         end
       end
 
-      sig { params(json_obj: T.any(String, T::Hash[Symbol, String])).returns(Utils::FieldAugmented) }
-      def unmarshal_json(json_obj)
-        to_build = new
+      sig { params(json_obj: T.any(String, T::Hash[Symbol, String])).returns(::Crystalline::FieldAugmented) }
+      def from_json(json_obj)
         begin
           d = JSON.parse(json_obj)
         rescue TypeError, JSON::ParserError
           d = json_obj
         end
+        from_dict(d)
+      end
+
+      sig { params(d: T::Hash[Symbol, String]).returns(::Crystalline::FieldAugmented) }
+      def from_dict(d)
+        to_build = new
+
         fields.each do |field|
           field_type = field.type
           if T.nilable? field_type
@@ -113,15 +124,15 @@ module PlexRubySDK
     end
 
     def marshal_single(field)
-      if field.respond_to? :marshal_json
-        field.marshal_json(encode: false)
+      if field.is_a? ::Crystalline::FieldAugmented
+        field.to_dict
       else
-        Utils.val_to_string(field, primitives: false)
+        ::Crystalline.val_to_string(field, primitives: false)
       end
     end
 
-    def marshal_json(encode: true)
-      d = {}
+    def to_dict
+      result = {}
       fields.sort_by(&:name).each do |field|
         f = send(field.name)
         next if f.nil?
@@ -133,18 +144,20 @@ module PlexRubySDK
           key = field.name
         end
         if f.is_a? Array
-          d[key] = f.map { |o| marshal_single(o) }
+          result[key] = f.map { |o| marshal_single(o) }
         elsif f.is_a? Hash
-          d[key] = f.map { |k, v| [k, marshal_single(v)] }
+          result[key] = f.map { |k, v| [k, marshal_single(v)] }
         else
-          d[key] = marshal_single(f)
+          result[key] = marshal_single(f)
         end
       end
-      if encode
-        JSON.dump(d)
-      else
-        d
-      end
+      result
+    end
+
+    def to_json(*args)
+      JSON.generate(to_dict, *args)
     end
   end
+
+
 end

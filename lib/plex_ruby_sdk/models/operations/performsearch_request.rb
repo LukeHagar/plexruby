@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class PerformSearchRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class PerformSearchRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The query term

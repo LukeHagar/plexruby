@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Country < ::PlexRubySDK::Utils::FieldAugmented
+    class Country < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

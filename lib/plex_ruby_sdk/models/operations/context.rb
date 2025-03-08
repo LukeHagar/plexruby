@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Context < ::PlexRubySDK::Utils::FieldAugmented
+    class Context < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

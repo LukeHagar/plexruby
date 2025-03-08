@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class UpdatePlayProgressMediaErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class UpdatePlayProgressMediaErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

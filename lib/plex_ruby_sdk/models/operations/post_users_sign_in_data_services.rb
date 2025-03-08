@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class PostUsersSignInDataServices < ::PlexRubySDK::Utils::FieldAugmented
+    class PostUsersSignInDataServices < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

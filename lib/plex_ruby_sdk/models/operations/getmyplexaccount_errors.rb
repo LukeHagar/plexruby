@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMyPlexAccountErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMyPlexAccountErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

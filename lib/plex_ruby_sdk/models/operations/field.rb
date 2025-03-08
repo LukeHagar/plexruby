@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Field < ::PlexRubySDK::Utils::FieldAugmented
+    class Field < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

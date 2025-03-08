@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaMetaDataLocation < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaMetaDataLocation < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The file path for the location.

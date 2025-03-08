@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Available Clients
-    class GetAvailableClientsResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetAvailableClientsResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Request Timeout
-    class GetServerIdentityRequestTimeout < ::PlexRubySDK::Utils::FieldAugmented
+    class GetServerIdentityRequestTimeout < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

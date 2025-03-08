@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaProvidersRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaProvidersRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # An authentication token, obtained from plex.tv

@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # Watchlist Data
-    class GetWatchListResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetWatchListResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

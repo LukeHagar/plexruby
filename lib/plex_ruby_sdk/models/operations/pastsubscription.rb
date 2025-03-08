@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class PastSubscription < ::PlexRubySDK::Utils::FieldAugmented
+    class PastSubscription < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

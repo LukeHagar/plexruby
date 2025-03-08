@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Provider < ::PlexRubySDK::Utils::FieldAugmented
+    class Provider < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

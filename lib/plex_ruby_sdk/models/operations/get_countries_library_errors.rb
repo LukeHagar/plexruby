@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetCountriesLibraryErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetCountriesLibraryErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

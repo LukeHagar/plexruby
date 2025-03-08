@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetAllLibrariesResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class GetAllLibrariesResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

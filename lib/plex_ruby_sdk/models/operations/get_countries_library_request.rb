@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetCountriesLibraryRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetCountriesLibraryRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The unique key of the Plex library. 

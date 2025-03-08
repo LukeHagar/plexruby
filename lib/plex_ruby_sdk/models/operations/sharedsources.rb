@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class SharedSources < ::PlexRubySDK::Utils::FieldAugmented
+    class SharedSources < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

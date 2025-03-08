@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # Bad Request - A parameter was not specified, or was specified incorrectly.
-    class GetGeoDataBadRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetGeoDataBadRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

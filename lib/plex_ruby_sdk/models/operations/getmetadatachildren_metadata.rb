@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMetadataChildrenMetadata < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMetadataChildrenMetadata < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

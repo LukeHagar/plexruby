@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaMetaDataPart < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaMetaDataPart < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # File path for the part.

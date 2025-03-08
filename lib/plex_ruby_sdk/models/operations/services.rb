@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class Services < ::PlexRubySDK::Utils::FieldAugmented
+    class Services < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

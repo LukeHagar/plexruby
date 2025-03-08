@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Activity < ::PlexRubySDK::Utils::FieldAugmented
+    class Activity < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

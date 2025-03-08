@@ -16,9 +16,7 @@ Get list of all users that are friends and have library access with the provided
 ```ruby
 require 'plex_ruby_sdk'
 
-
 s = ::PlexRubySDK::PlexAPI.new
-
 
 req = ::PlexRubySDK::Operations::GetUsersRequest.new(
   client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
@@ -35,7 +33,7 @@ req = ::PlexRubySDK::Operations::GetUsersRequest.new(
   platform_version: "4.3 build 1057",
   x_plex_token: "CV5xoxjTpFKUzBTShsaf",
 )
-    
+
 res = s.users.get_users(req)
 
 if ! res.body.nil?

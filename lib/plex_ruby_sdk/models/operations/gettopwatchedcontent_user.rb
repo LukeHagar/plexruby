@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetTopWatchedContentUser < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTopWatchedContentUser < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

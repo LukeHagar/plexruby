@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class MarkUnplayedErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class MarkUnplayedErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

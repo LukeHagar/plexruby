@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSearchAllLibrariesMediaGuid < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSearchAllLibrariesMediaGuid < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # Can be one of the following formats:

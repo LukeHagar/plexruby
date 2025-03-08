@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaMetaDataRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaMetaDataRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # the id of the library item to return the children of.

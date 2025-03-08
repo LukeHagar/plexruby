@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # Home Data
-    class GetHomeDataResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetHomeDataResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

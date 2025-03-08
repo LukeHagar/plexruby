@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # The metadata of the library item.
-    class GetMediaMetaDataResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaMetaDataResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

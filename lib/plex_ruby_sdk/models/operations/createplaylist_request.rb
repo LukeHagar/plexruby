@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class CreatePlaylistRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class CreatePlaylistRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # whether the playlist is smart or not

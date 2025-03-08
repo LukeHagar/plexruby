@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSearchResultsRole < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSearchResultsRole < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

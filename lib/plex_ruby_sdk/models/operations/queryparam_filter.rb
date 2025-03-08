@@ -10,7 +10,7 @@ module PlexRubySDK
     # Filters content by field and direction/equality
     # (Unknown if viewedAt is the only supported column)
     # 
-    class QueryParamFilter < ::PlexRubySDK::Utils::FieldAugmented
+    class QueryParamFilter < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

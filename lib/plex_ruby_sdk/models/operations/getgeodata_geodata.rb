@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # Geo location data
-    class GetGeoDataGeoData < ::PlexRubySDK::Utils::FieldAugmented
+    class GetGeoDataGeoData < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The name of the city.

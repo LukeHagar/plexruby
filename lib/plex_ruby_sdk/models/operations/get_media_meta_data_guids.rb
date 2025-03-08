@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetMediaMetaDataGuids < ::PlexRubySDK::Utils::FieldAugmented
+    class GetMediaMetaDataGuids < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The GUID value.

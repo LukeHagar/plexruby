@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
     # The playlist
-    class GetPlaylistResponseBody < ::PlexRubySDK::Utils::FieldAugmented
+    class GetPlaylistResponseBody < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

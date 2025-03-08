@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Genre < ::PlexRubySDK::Utils::FieldAugmented
+    class Genre < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

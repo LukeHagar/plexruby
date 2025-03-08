@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
     # Bad Request - A parameter was not specified, or was specified incorrectly.
-    class GetTokenByPinIdBadRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTokenByPinIdBadRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

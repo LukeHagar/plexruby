@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class Producer < ::PlexRubySDK::Utils::FieldAugmented
+    class Producer < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # The filter string for the role.

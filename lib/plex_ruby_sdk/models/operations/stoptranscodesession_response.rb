@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class StopTranscodeSessionResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class StopTranscodeSessionResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

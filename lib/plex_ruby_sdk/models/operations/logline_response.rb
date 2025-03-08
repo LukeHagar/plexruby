@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class LogLineResponse < ::PlexRubySDK::Utils::FieldAugmented
+    class LogLineResponse < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # HTTP response content type for this operation

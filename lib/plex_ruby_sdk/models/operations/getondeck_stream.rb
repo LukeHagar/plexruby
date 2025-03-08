@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetOnDeckStream < ::PlexRubySDK::Utils::FieldAugmented
+    class GetOnDeckStream < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetRecentlyAddedFilter < ::PlexRubySDK::Utils::FieldAugmented
+    class GetRecentlyAddedFilter < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

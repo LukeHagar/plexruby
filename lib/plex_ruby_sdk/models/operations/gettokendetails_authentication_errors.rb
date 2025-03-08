@@ -11,7 +11,7 @@ module PlexRubySDK
     ].freeze
   
 
-    class GetTokenDetailsAuthenticationErrors < ::PlexRubySDK::Utils::FieldAugmented
+    class GetTokenDetailsAuthenticationErrors < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSearchResultsCountry < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSearchResultsCountry < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

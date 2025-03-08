@@ -33,14 +33,11 @@ Create a new playlist. By default the playlist is blank. To create a playlist al
 ```ruby
 require 'plex_ruby_sdk'
 
-
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
 req = ::PlexRubySDK::Operations::CreatePlaylistRequest.new(
   title: "<value>",
@@ -48,7 +45,7 @@ req = ::PlexRubySDK::Operations::CreatePlaylistRequest.new(
   smart: ::PlexRubySDK::Operations::Smart::ONE,
   uri: "https://hoarse-testing.info/",
 )
-    
+
 res = s.playlists.create_playlist(req)
 
 if ! res.object.nil?
@@ -78,15 +75,12 @@ Get All Playlists given the specified filters.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.playlists.get_playlists(playlist_type=::PlexRubySDK::Operations::PlaylistType::AUDIO, smart=::PlexRubySDK::Operations::QueryParamSmart::ZERO)
 
 if ! res.object.nil?
@@ -119,15 +113,12 @@ Smart playlist details contain the `content` attribute. This is the content URI 
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.playlists.get_playlist(playlist_id=4109.48)
 
 if ! res.object.nil?
@@ -158,15 +149,12 @@ This endpoint will delete a playlist
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.playlists.delete_playlist(playlist_id=216.22)
 
 if res.status_code == 200
@@ -197,15 +185,12 @@ From PMS version 1.9.1 clients can also edit playlist metadata using this endpoi
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.playlists.update_playlist(playlist_id=3915.0, title="<value>", summary="<value>")
 
 if res.status_code == 200
@@ -241,15 +226,12 @@ Note that for dumb playlists, items have a `playlistItemID` attribute which is u
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.playlists.get_playlist_contents(playlist_id=5004.46, type=::PlexRubySDK::Operations::GetPlaylistContentsQueryParamType::TV_SHOW)
 
 if ! res.object.nil?
@@ -281,15 +263,12 @@ Clears a playlist, only works with dumb playlists. Returns the playlist.
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.playlists.clear_playlist_contents(playlist_id=1893.18)
 
 if res.status_code == 200
@@ -321,15 +300,12 @@ With a smart playlist, passing a new `uri` parameter replaces the rules for the 
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.playlists.add_playlist_contents(playlist_id=8502.01, uri="server://12345/com.plexapp.plugins.library/library/metadata/1", play_queue_id=123.0)
 
 if ! res.object.nil?
@@ -362,15 +338,12 @@ Imports m3u playlists by passing a path on the server to scan for m3u-formatted 
 ```ruby
 require 'plex_ruby_sdk'
 
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
 
-s = ::PlexRubySDK::PlexAPI.new
-s.config_security(
-  ::PlexRubySDK::Shared::Security.new(
-    access_token: "<YOUR_API_KEY_HERE>",
-  )
-)
-
-    
 res = s.playlists.upload_playlist(path="/home/barkley/playlist.m3u", force=::PlexRubySDK::Operations::QueryParamForce::ZERO, section_id=1)
 
 if res.status_code == 200

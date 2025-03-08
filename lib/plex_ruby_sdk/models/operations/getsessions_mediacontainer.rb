@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class GetSessionsMediaContainer < ::PlexRubySDK::Utils::FieldAugmented
+    class GetSessionsMediaContainer < ::Crystalline::FieldAugmented
       extend T::Sig
 
 

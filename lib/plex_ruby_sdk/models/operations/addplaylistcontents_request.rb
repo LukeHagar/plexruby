@@ -8,7 +8,7 @@ module PlexRubySDK
   module Operations
   
 
-    class AddPlaylistContentsRequest < ::PlexRubySDK::Utils::FieldAugmented
+    class AddPlaylistContentsRequest < ::Crystalline::FieldAugmented
       extend T::Sig
 
       # the ID of the playlist
