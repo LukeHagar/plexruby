@@ -24,7 +24,6 @@ API Calls interacting with Plex Media Server Libraries
 * [get_media_meta_data](#get_media_meta_data) - Get Media Metadata
 * [get_metadata_children](#get_metadata_children) - Get Items Children
 * [get_top_watched_content](#get_top_watched_content) - Get Top Watched Content
-* [get_on_deck](#get_on_deck) - Get On Deck
 
 ## get_file_hash
 
@@ -752,34 +751,4 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetTopWatchedContentResponse)](../../models/operations/gettopwatchedcontentresponse.md)**
-
-
-
-## get_on_deck
-
-This endpoint will return the on deck content.
-
-
-### Example Usage
-
-```ruby
-require 'plex_ruby_sdk'
-
-s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
-        access_token: "<YOUR_API_KEY_HERE>",
-      ),
-    )
-
-res = s.library.get_on_deck()
-
-if ! res.object.nil?
-  # handle response
-end
-
-```
-
-### Response
-
-**[T.nilable(::PlexRubySDK::Operations::GetOnDeckResponse)](../../models/operations/getondeckresponse.md)**
 

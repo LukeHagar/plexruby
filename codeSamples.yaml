@@ -641,25 +641,6 @@ actions:
             if ! res.bytes.nil?
               # handle response
             end
-  - target: $["paths"]["/library/onDeck"]["get"]
-    update:
-      x-codeSamples:
-        - lang: ruby
-          label: getOnDeck
-          source: |-
-            require 'plex_ruby_sdk'
-
-            s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
-                    access_token: "<YOUR_API_KEY_HERE>",
-                  ),
-                )
-
-            res = s.library.get_on_deck()
-
-            if ! res.object.nil?
-              # handle response
-            end
   - target: $["paths"]["/library/recentlyAdded"]["get"]
     update:
       x-codeSamples:

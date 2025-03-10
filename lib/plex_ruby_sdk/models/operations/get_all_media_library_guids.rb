@@ -8,10 +8,11 @@ module PlexRubySDK
   module Operations
   
 
-    class GetOnDeckGuids < ::Crystalline::FieldAugmented
+    class GetAllMediaLibraryGuids < ::Crystalline::FieldAugmented
       extend T::Sig
 
-
+      # The unique identifier for the Guid. Can be imdb://tt0286347, tmdb://1763, tvdb://2337
+      # 
       field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
 
 

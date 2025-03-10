@@ -11,7 +11,8 @@ module PlexRubySDK
     class GetAllMediaLibraryGenre < ::Crystalline::FieldAugmented
       extend T::Sig
 
-      # The country of origin of this media item
+      # The genre name of this media-item
+      # 
       field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
 

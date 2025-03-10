@@ -11,11 +11,11 @@ module PlexRubySDK
     class Director < ::Crystalline::FieldAugmented
       extend T::Sig
 
+      # The role of Director
+      field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
-      field :tag, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
-
-      sig { params(tag: T.nilable(::String)).void }
+      sig { params(tag: ::String).void }
       def initialize(tag: nil)
         @tag = tag
       end

@@ -7,15 +7,15 @@
 module PlexRubySDK
   module Operations
   
-
+    # The display tag for the similar item, typically the title.
     class Similar < ::Crystalline::FieldAugmented
       extend T::Sig
 
-      # The filter string for similar items.
+
       field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
-      # The unique similar item identifier.
+
       field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-      # The tag or title of the similar content.
+
       field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
 

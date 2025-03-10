@@ -8,30 +8,30 @@ module PlexRubySDK
   module Operations
   
 
-    class Role < ::Crystalline::FieldAugmented
+    class GetMediaMetaDataProducer < ::Crystalline::FieldAugmented
       extend T::Sig
 
-      # The filter string used to query this actor. For example, it may indicate that this is an actor with a given key.
+      # The filter string for the role.
       field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
-      # Unique identifier for the actor or role.
+      # The unique role identifier.
       field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-      # The display tag for the actor (typically the actor's name).
+      # The actor's name.
       field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
-      # The role played by the actor in the media item.
+      # A key associated with the actor tag.
+      field :tag_key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
+      # The character name or role.
       field :role, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('role') } }
-      # A unique key associated with the actor's tag, used for internal identification.
-      field :tag_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
-      # The URL of the thumbnail image for the actor.
+      # URL for the role thumbnail image.
       field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
 
 
-      sig { params(filter: ::String, id: ::Integer, tag: ::String, role: T.nilable(::String), tag_key: T.nilable(::String), thumb: T.nilable(::String)).void }
-      def initialize(filter: nil, id: nil, tag: nil, role: nil, tag_key: nil, thumb: nil)
+      sig { params(filter: ::String, id: ::Integer, tag: ::String, tag_key: ::String, role: T.nilable(::String), thumb: T.nilable(::String)).void }
+      def initialize(filter: nil, id: nil, tag: nil, tag_key: nil, role: nil, thumb: nil)
         @filter = filter
         @id = id
         @tag = tag
-        @role = role
         @tag_key = tag_key
+        @role = role
         @thumb = thumb
       end
     end

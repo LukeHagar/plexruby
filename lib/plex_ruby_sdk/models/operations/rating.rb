@@ -7,15 +7,15 @@
 module PlexRubySDK
   module Operations
   
-
-    class GetLibraryItemsMetaDataRating < ::Crystalline::FieldAugmented
+    # The type of rating, for example 'audience' or 'critic'.
+    class Rating < ::Crystalline::FieldAugmented
       extend T::Sig
 
-      # A URI or path to the rating image.
+
       field :image, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('image') } }
-      # The type of rating (e.g., audience, critic).
+
       field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
-      # The value of the rating.
+
       field :value, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('value') } }
 
 

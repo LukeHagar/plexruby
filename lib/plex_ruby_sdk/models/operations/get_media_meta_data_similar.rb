@@ -8,25 +8,22 @@ module PlexRubySDK
   module Operations
   
 
-    class Writer < ::Crystalline::FieldAugmented
+    class GetMediaMetaDataSimilar < ::Crystalline::FieldAugmented
       extend T::Sig
 
-      # The filter string used to query this writer.
+      # The filter string for similar items.
       field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
-      # Unique identifier for the writer.
+      # The unique similar item identifier.
       field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-      # The role of Writer
+      # The tag or title of the similar content.
       field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
-      # A unique key associated with the writers tag, used for internal identification.
-      field :tag_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
 
 
-      sig { params(filter: ::String, id: ::Integer, tag: ::String, tag_key: T.nilable(::String)).void }
-      def initialize(filter: nil, id: nil, tag: nil, tag_key: nil)
+      sig { params(filter: ::String, id: ::Integer, tag: ::String).void }
+      def initialize(filter: nil, id: nil, tag: nil)
         @filter = filter
         @id = id
         @tag = tag
-        @tag_key = tag_key
       end
     end
   end

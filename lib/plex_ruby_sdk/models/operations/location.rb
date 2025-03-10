@@ -7,15 +7,15 @@
 module PlexRubySDK
   module Operations
   
-
+    # The folder path for the media item.
     class Location < ::Crystalline::FieldAugmented
       extend T::Sig
 
 
-      field :path, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('path') } }
+      field :path, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('path') } }
 
 
-      sig { params(path: T.nilable(::String)).void }
+      sig { params(path: ::String).void }
       def initialize(path: nil)
         @path = path
       end

@@ -7,16 +7,23 @@
 module PlexRubySDK
   module Operations
   
-
+    # The filter query string for similar items.
     class Genre < ::Crystalline::FieldAugmented
       extend T::Sig
 
 
-      field :tag, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+      field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
+
+      field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+      # The genre name of this media-item
+      # 
+      field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
 
-      sig { params(tag: T.nilable(::String)).void }
-      def initialize(tag: nil)
+      sig { params(filter: ::String, id: ::Integer, tag: ::String).void }
+      def initialize(filter: nil, id: nil, tag: nil)
+        @filter = filter
+        @id = id
         @tag = tag
       end
     end

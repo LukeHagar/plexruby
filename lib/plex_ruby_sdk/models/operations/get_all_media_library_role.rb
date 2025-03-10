@@ -11,7 +11,7 @@ module PlexRubySDK
     class GetAllMediaLibraryRole < ::Crystalline::FieldAugmented
       extend T::Sig
 
-      # The name of the actor for this role
+      # The display tag for the actor (typically the actor's name).
       field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
 

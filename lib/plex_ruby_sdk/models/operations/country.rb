@@ -7,17 +7,23 @@
 module PlexRubySDK
   module Operations
   
-
+    # The filter query string for country media items.
     class Country < ::Crystalline::FieldAugmented
       extend T::Sig
 
 
-      field :tag, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+      field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+      # The country of origin of this media item
+      field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+
+      field :filter, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
 
 
-      sig { params(tag: T.nilable(::String)).void }
-      def initialize(tag: nil)
+      sig { params(id: ::Integer, tag: ::String, filter: T.nilable(::String)).void }
+      def initialize(id: nil, tag: nil, filter: nil)
+        @id = id
         @tag = tag
+        @filter = filter
       end
     end
   end

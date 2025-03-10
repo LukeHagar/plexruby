@@ -21,12 +21,6 @@ module PlexRubySDK
       field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
       # Index of the stream.
       field :index, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('index') } }
-      # Language of the stream.
-      field :language, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('language') } }
-      # ISO language code.
-      field :language_code, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('languageCode') } }
-      # Language tag (e.g., en).
-      field :language_tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('languageTag') } }
       # Stream type (1=video, 2=audio, 3=subtitle).
       field :stream_type, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('streamType') } }
       # Audio channel layout.
@@ -43,6 +37,8 @@ module PlexRubySDK
       field :chroma_location, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('chromaLocation') } }
       # Chroma subsampling format.
       field :chroma_subsampling, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('chromaSubsampling') } }
+
+      field :closed_captions, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('closedCaptions') } }
       # Coded video height.
       field :coded_height, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('codedHeight') } }
       # Coded video width.
@@ -76,6 +72,8 @@ module PlexRubySDK
       # Indicates if the stream is a dub.
       field :dub, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('dub') } }
 
+      field :embedded_in_video, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('embeddedInVideo') } }
+
       field :forced, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('forced') } }
       # Frame rate of the stream.
       field :frame_rate, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('frameRate') } }
@@ -87,6 +85,12 @@ module PlexRubySDK
       field :hearing_impaired, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hearingImpaired') } }
       # Height of the video stream.
       field :height, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('height') } }
+      # Language of the stream.
+      field :language, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('language') } }
+      # ISO language code.
+      field :language_code, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('languageCode') } }
+      # Language tag (e.g., en).
+      field :language_tag, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('languageTag') } }
       # Video level.
       field :level, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('level') } }
       # Indicates if this is the original stream.
@@ -107,16 +111,13 @@ module PlexRubySDK
       field :width, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('width') } }
 
 
-      sig { params(codec: ::String, display_title: ::String, extended_display_title: ::String, id: ::Integer, index: ::Integer, language: ::String, language_code: ::String, language_tag: ::String, stream_type: ::Integer, audio_channel_layout: T.nilable(::String), bit_depth: T.nilable(::Integer), bitrate: T.nilable(::Integer), can_auto_sync: T.nilable(T::Boolean), channels: T.nilable(::Integer), chroma_location: T.nilable(::String), chroma_subsampling: T.nilable(::String), coded_height: T.nilable(::Integer), coded_width: T.nilable(::Integer), color_primaries: T.nilable(::String), color_range: T.nilable(::String), color_space: T.nilable(::String), color_trc: T.nilable(::String), default: T.nilable(T::Boolean), dovibl_compat_id: T.nilable(::Integer), dovibl_present: T.nilable(T::Boolean), doviel_present: T.nilable(T::Boolean), dovi_level: T.nilable(::Integer), dovi_present: T.nilable(T::Boolean), dovi_profile: T.nilable(::Integer), dovirpu_present: T.nilable(T::Boolean), dovi_version: T.nilable(::String), dub: T.nilable(T::Boolean), forced: T.nilable(T::Boolean), frame_rate: T.nilable(::Float), has_scaling_matrix: T.nilable(T::Boolean), header_compression: T.nilable(T::Boolean), hearing_impaired: T.nilable(T::Boolean), height: T.nilable(::Integer), level: T.nilable(::Integer), original: T.nilable(T::Boolean), profile: T.nilable(::String), ref_frames: T.nilable(::Integer), sampling_rate: T.nilable(::Integer), scan_type: T.nilable(::String), selected: T.nilable(T::Boolean), title: T.nilable(::String), width: T.nilable(::Integer)).void }
-      def initialize(codec: nil, display_title: nil, extended_display_title: nil, id: nil, index: nil, language: nil, language_code: nil, language_tag: nil, stream_type: nil, audio_channel_layout: nil, bit_depth: nil, bitrate: nil, can_auto_sync: nil, channels: nil, chroma_location: nil, chroma_subsampling: nil, coded_height: nil, coded_width: nil, color_primaries: nil, color_range: nil, color_space: nil, color_trc: nil, default: nil, dovibl_compat_id: nil, dovibl_present: nil, doviel_present: nil, dovi_level: nil, dovi_present: nil, dovi_profile: nil, dovirpu_present: nil, dovi_version: nil, dub: nil, forced: nil, frame_rate: nil, has_scaling_matrix: nil, header_compression: nil, hearing_impaired: nil, height: nil, level: nil, original: nil, profile: nil, ref_frames: nil, sampling_rate: nil, scan_type: nil, selected: nil, title: nil, width: nil)
+      sig { params(codec: ::String, display_title: ::String, extended_display_title: ::String, id: ::Integer, index: ::Integer, stream_type: ::Integer, audio_channel_layout: T.nilable(::String), bit_depth: T.nilable(::Integer), bitrate: T.nilable(::Integer), can_auto_sync: T.nilable(T::Boolean), channels: T.nilable(::Integer), chroma_location: T.nilable(::String), chroma_subsampling: T.nilable(::String), closed_captions: T.nilable(T::Boolean), coded_height: T.nilable(::Integer), coded_width: T.nilable(::Integer), color_primaries: T.nilable(::String), color_range: T.nilable(::String), color_space: T.nilable(::String), color_trc: T.nilable(::String), default: T.nilable(T::Boolean), dovibl_compat_id: T.nilable(::Integer), dovibl_present: T.nilable(T::Boolean), doviel_present: T.nilable(T::Boolean), dovi_level: T.nilable(::Integer), dovi_present: T.nilable(T::Boolean), dovi_profile: T.nilable(::Integer), dovirpu_present: T.nilable(T::Boolean), dovi_version: T.nilable(::String), dub: T.nilable(T::Boolean), embedded_in_video: T.nilable(::String), forced: T.nilable(T::Boolean), frame_rate: T.nilable(::Float), has_scaling_matrix: T.nilable(T::Boolean), header_compression: T.nilable(T::Boolean), hearing_impaired: T.nilable(T::Boolean), height: T.nilable(::Integer), language: T.nilable(::String), language_code: T.nilable(::String), language_tag: T.nilable(::String), level: T.nilable(::Integer), original: T.nilable(T::Boolean), profile: T.nilable(::String), ref_frames: T.nilable(::Integer), sampling_rate: T.nilable(::Integer), scan_type: T.nilable(::String), selected: T.nilable(T::Boolean), title: T.nilable(::String), width: T.nilable(::Integer)).void }
+      def initialize(codec: nil, display_title: nil, extended_display_title: nil, id: nil, index: nil, stream_type: nil, audio_channel_layout: nil, bit_depth: nil, bitrate: nil, can_auto_sync: nil, channels: nil, chroma_location: nil, chroma_subsampling: nil, closed_captions: nil, coded_height: nil, coded_width: nil, color_primaries: nil, color_range: nil, color_space: nil, color_trc: nil, default: nil, dovibl_compat_id: nil, dovibl_present: nil, doviel_present: nil, dovi_level: nil, dovi_present: nil, dovi_profile: nil, dovirpu_present: nil, dovi_version: nil, dub: nil, embedded_in_video: nil, forced: nil, frame_rate: nil, has_scaling_matrix: nil, header_compression: nil, hearing_impaired: nil, height: nil, language: nil, language_code: nil, language_tag: nil, level: nil, original: nil, profile: nil, ref_frames: nil, sampling_rate: nil, scan_type: nil, selected: nil, title: nil, width: nil)
         @codec = codec
         @display_title = display_title
         @extended_display_title = extended_display_title
         @id = id
         @index = index
-        @language = language
-        @language_code = language_code
-        @language_tag = language_tag
         @stream_type = stream_type
         @audio_channel_layout = audio_channel_layout
         @bit_depth = bit_depth
@@ -125,6 +126,7 @@ module PlexRubySDK
         @channels = channels
         @chroma_location = chroma_location
         @chroma_subsampling = chroma_subsampling
+        @closed_captions = closed_captions
         @coded_height = coded_height
         @coded_width = coded_width
         @color_primaries = color_primaries
@@ -141,12 +143,16 @@ module PlexRubySDK
         @dovirpu_present = dovirpu_present
         @dovi_version = dovi_version
         @dub = dub
+        @embedded_in_video = embedded_in_video
         @forced = forced
         @frame_rate = frame_rate
         @has_scaling_matrix = has_scaling_matrix
         @header_compression = header_compression
         @hearing_impaired = hearing_impaired
         @height = height
+        @language = language
+        @language_code = language_code
+        @language_tag = language_tag
         @level = level
         @original = original
         @profile = profile
