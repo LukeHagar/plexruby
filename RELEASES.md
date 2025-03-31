@@ -747,3 +747,13 @@ Based on:
 - [ruby v0.7.7] .
 ### Releases
 - [Ruby Gems v0.7.7] https://rubygems.org/gems/plex_ruby_sdk/versions/0.7.7 - .
+
+## 2025-03-31 17:51:33
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.526.6 (2.563.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [ruby v0.8.0] .
+### Releases
+- [Ruby Gems v0.8.0] https://rubygems.org/gems/plex_ruby_sdk/versions/0.8.0 - .

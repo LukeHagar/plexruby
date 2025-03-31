@@ -65,7 +65,7 @@ s = ::PlexRubySDK::PlexAPI.new(
     )
 
 req = ::PlexRubySDK::Operations::GetRecentlyAddedRequest.new(
-  content_directory_id: 470161,
+  content_directory_id: 470_161,
   section_id: 2,
   type: ::PlexRubySDK::Operations::Type::TV_SHOW,
   include_meta: ::PlexRubySDK::Operations::IncludeMeta::ENABLE,

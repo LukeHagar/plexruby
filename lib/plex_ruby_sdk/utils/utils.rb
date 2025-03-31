@@ -351,6 +351,15 @@ module PlexRubySDK
       server_url.delete_suffix('/') + path
     end
 
+    sig { params(status: Integer).returns(T::Boolean) }
+    def self.error_status?(status)
+      status_major = status / 100
+      return true if status_major == 4
+      return true if status_major == 5
+
+      false
+    end
+
     sig { params(content_type: String, pattern: String).returns(T::Boolean) }
     def self.match_content_type(content_type, pattern)
       return true if content_type == pattern || ['*', '*/*'].include?(pattern)
@@ -365,6 +374,7 @@ module PlexRubySDK
 
     sig { params(req: Faraday::Request, security: Object).void }
     def self.configure_request_security(req, security)
+      return if security.nil?
       sec_fields = security.fields
       sec_fields.each do |sec_field|
         value = security.send(sec_field.name)

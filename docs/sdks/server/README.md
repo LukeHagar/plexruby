@@ -207,7 +207,7 @@ s = ::PlexRubySDK::PlexAPI.new(
 req = ::PlexRubySDK::Operations::GetResizedPhotoRequest.new(
   width: 110.0,
   height: 165.0,
-  opacity: 643869,
+  opacity: 643_869,
   blur: 0.0,
   min_size: ::PlexRubySDK::Operations::MinSize::ONE,
   upscale: ::PlexRubySDK::Operations::Upscale::ONE,

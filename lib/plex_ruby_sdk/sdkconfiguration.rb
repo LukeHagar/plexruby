@@ -5,7 +5,10 @@
 
 require 'faraday'
 require 'faraday/multipart'
+require 'faraday/retry'
 require 'sorbet-runtime'
+require_relative 'sdk_hooks/hooks'
+require_relative 'utils/retries'
 
 module PlexRubySDK
   extend T::Sig
@@ -19,6 +22,9 @@ module PlexRubySDK
     extend T::Sig
 
     field :client, T.nilable(Faraday::Connection)
+    field :hooks, ::PlexRubySDK::SDKHooks::Hooks
+    field :retry_config, T.nilable(::PlexRubySDK::Utils::RetryConfig)
+    field :timeout, T.nilable(Float)
     field :security_source, T.nilable(T.proc.returns(T.nilable(::PlexRubySDK::Shared::Security)))
     field :server_url, T.nilable(String)
     field :server_idx, T.nilable(Integer)
@@ -29,12 +35,25 @@ module PlexRubySDK
     field :gen_version, String
     field :user_agent, String
 
-
-
-    sig { params(client: T.nilable(Faraday::Connection), security: T.nilable(::PlexRubySDK::Shared::Security), security_source: T.nilable(T.proc.returns(::PlexRubySDK::Shared::Security)), server_url: T.nilable(String), server_idx: T.nilable(Integer), server_params: T::Array[String]).void }
-    def initialize(client, security, security_source, server_url, server_idx, server_params)
+    sig do
+      params(
+        client: T.nilable(Faraday::Connection),
+        hooks: ::PlexRubySDK::SDKHooks::Hooks,
+        retry_config: T.nilable(::PlexRubySDK::Utils::RetryConfig),
+        timeout_ms: T.nilable(Integer),
+        security: T.nilable(::PlexRubySDK::Shared::Security),
+        security_source: T.nilable(T.proc.returns(::PlexRubySDK::Shared::Security)),
+        server_url: T.nilable(String),
+        server_idx: T.nilable(Integer),
+        server_params: T::Array[String]
+      ).void
+    end
+    def initialize(client, hooks, retry_config, timeout_ms, security, security_source, server_url, server_idx, server_params)
       @client = client
+      @hooks = hooks
+      @retry_config = retry_config
       @server_url = server_url
+      @timeout = (timeout_ms.to_f / 1000) unless timeout_ms.nil?
       @server_idx = server_idx.nil? ? 0 : server_idx
       raise StandardError, "Invalid server index #{server_idx}" if @server_idx.negative? || @server_idx >= SERVERS.length
       @server_params = server_params
@@ -45,9 +64,9 @@ module PlexRubySDK
       end
       @language = 'ruby'
       @openapi_doc_version = '0.0.3'
-      @sdk_version = '0.7.7'
-      @gen_version = '2.545.4'
-      @user_agent = 'speakeasy-sdk/ruby 0.7.7 2.545.4 0.0.3 plex_ruby_sdk'
+      @sdk_version = '0.8.0'
+      @gen_version = '2.563.1'
+      @user_agent = 'speakeasy-sdk/ruby 0.8.0 2.563.1 0.0.3 plex_ruby_sdk'
     end
 
     sig { returns([String, T::Hash[Symbol, String]]) }

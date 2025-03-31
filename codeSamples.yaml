@@ -7,7 +7,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getServerCapabilities
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -26,7 +26,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getServerPreferences
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -45,7 +45,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: updatePlayProgress
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -64,7 +64,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: markPlayed
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -83,7 +83,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getTimeline
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -115,7 +115,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: markUnplayed
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -134,7 +134,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getServerActivities
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -153,7 +153,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: cancelServerActivities
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -172,7 +172,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: stopAllTasks
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -191,7 +191,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getButlerTasks
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -210,7 +210,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: startAllTasks
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -229,7 +229,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: stopTask
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -248,7 +248,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: startTask
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -267,7 +267,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getAvailableClients
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -286,7 +286,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getCompanionsData
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -305,7 +305,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getDevices
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -324,7 +324,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getUserFriends
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -343,7 +343,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getGeoData
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -358,7 +358,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getHomeData
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -377,7 +377,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getGlobalHubs
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -396,7 +396,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-recently-added
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -407,7 +407,7 @@ actions:
                 )
 
             req = ::PlexRubySDK::Operations::GetRecentlyAddedRequest.new(
-              content_directory_id: 470161,
+              content_directory_id: 470_161,
               section_id: 2,
               type: ::PlexRubySDK::Operations::Type::TV_SHOW,
               include_meta: ::PlexRubySDK::Operations::IncludeMeta::ENABLE,
@@ -424,7 +424,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: performSearch
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -443,7 +443,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: performVoiceSearch
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -462,7 +462,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getLibraryHubs
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -481,7 +481,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-server-identity
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -496,7 +496,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getTopWatchedContent
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -515,7 +515,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getFileHash
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -534,7 +534,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-media-meta-data
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -570,7 +570,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-banner-image
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -598,7 +598,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getMetadataChildren
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -617,7 +617,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-thumb-image
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -645,7 +645,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-recently-added-library
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -687,7 +687,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-search-all-libraries
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -716,7 +716,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-all-libraries
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -735,7 +735,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-watch-list
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -761,7 +761,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: deleteLibrary
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -780,7 +780,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-library-details
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -799,7 +799,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-actors-library
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -818,7 +818,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-all-media-library
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -849,7 +849,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-countries-library
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -868,7 +868,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-genres-library
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -887,7 +887,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-refresh-library-metadata
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -906,7 +906,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-search-library
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -925,7 +925,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-library-items
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -954,7 +954,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: logLine
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -973,7 +973,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: logMultiLine
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -996,7 +996,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: enablePaperTrail
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1015,7 +1015,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-media-providers
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1034,7 +1034,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getMyPlexAccount
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1053,7 +1053,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getResizedPhoto
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1066,7 +1066,7 @@ actions:
             req = ::PlexRubySDK::Operations::GetResizedPhotoRequest.new(
               width: 110.0,
               height: 165.0,
-              opacity: 643869,
+              opacity: 643_869,
               blur: 0.0,
               min_size: ::PlexRubySDK::Operations::MinSize::ONE,
               upscale: ::PlexRubySDK::Operations::Upscale::ONE,
@@ -1082,7 +1082,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getPin
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1105,14 +1105,14 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getTokenByPinId
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new
 
             req = ::PlexRubySDK::Operations::GetTokenByPinIdRequest.new(
-              pin_id: 408895,
+              pin_id: 408_895,
               client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
               client_name: "Plex for Roku",
               device_nickname: "Roku 3",
@@ -1129,7 +1129,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getPlaylists
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1148,7 +1148,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: createPlaylist
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1174,7 +1174,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: uploadPlaylist
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1193,7 +1193,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: deletePlaylist
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1212,7 +1212,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getPlaylist
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1231,7 +1231,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: updatePlaylist
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1250,7 +1250,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: clearPlaylistContents
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1269,7 +1269,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getPlaylistContents
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1288,7 +1288,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: addPlaylistContents
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1307,7 +1307,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-server-resources
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1326,7 +1326,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getSearchResults
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1345,7 +1345,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getSourceConnectionInformation
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1364,7 +1364,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getTransientToken
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1383,7 +1383,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getServerList
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1402,7 +1402,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getBandwidthStatistics
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1421,7 +1421,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getStatistics
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1440,7 +1440,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getResourcesStatistics
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1459,7 +1459,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getSessions
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1478,7 +1478,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getSessionHistory
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1497,7 +1497,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getTranscodeSessions
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1516,7 +1516,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: stopTranscodeSession
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1535,7 +1535,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: applyUpdates
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1554,7 +1554,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: checkForUpdates
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1573,7 +1573,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getUpdateStatus
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1592,7 +1592,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: getTokenDetails
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1611,7 +1611,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: get-users
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1642,7 +1642,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: post-users-sign-in-data
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 
@@ -1670,7 +1670,7 @@ actions:
     update:
       x-codeSamples:
         - lang: ruby
-          label: startUniversalTranscode
+          label: PlexRuby
           source: |-
             require 'plex_ruby_sdk'
 

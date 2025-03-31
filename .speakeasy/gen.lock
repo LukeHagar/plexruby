@@ -3,17 +3,17 @@ id: aa9449e7-c19d-411d-b8e2-f9c5fe982f6f
 management:
   docChecksum: 68de03e6e877c4fc50ebfdd47bb117ac
   docVersion: 0.0.3
-  speakeasyVersion: 1.513.4
-  generationVersion: 2.545.4
-  releaseVersion: 0.7.7
-  configChecksum: 8d77b95580838252b22ddb9bb7d067a0
+  speakeasyVersion: 1.526.6
+  generationVersion: 2.563.1
+  releaseVersion: 0.8.0
+  configChecksum: 178358599fd9be85132833f6e1c7adc7
   repoURL: https://github.com/LukeHagar/plexruby.git
   repoSubDirectory: .
   installationURL: https://github.com/LukeHagar/plexruby
   published: true
 features:
   ruby:
-    core: 3.5.4
+    core: 3.6.0
     deprecations: 2.81.2
     enums: 2.81.1
     flattening: 2.81.1
@@ -1821,6 +1821,8 @@ generatedFiles:
   - lib/plex_ruby_sdk/playlists.rb
   - lib/plex_ruby_sdk/plex.rb
   - lib/plex_ruby_sdk/plex_api.rb
+  - lib/plex_ruby_sdk/sdk_hooks/hooks.rb
+  - lib/plex_ruby_sdk/sdk_hooks/types.rb
   - lib/plex_ruby_sdk/sdkconfiguration.rb
   - lib/plex_ruby_sdk/search.rb
   - lib/plex_ruby_sdk/server.rb
@@ -1830,6 +1832,7 @@ generatedFiles:
   - lib/plex_ruby_sdk/statistics.rb
   - lib/plex_ruby_sdk/updater.rb
   - lib/plex_ruby_sdk/users.rb
+  - lib/plex_ruby_sdk/utils/retries.rb
   - lib/plex_ruby_sdk/utils/utils.rb
   - lib/plex_ruby_sdk/video.rb
   - lib/plex_ruby_sdk/watchlist.rb
@@ -1844,6 +1847,7 @@ generatedFiles:
   - sorbet/rbi/gems/erubi@1.12.0.rbi
   - sorbet/rbi/gems/faraday-multipart@1.0.4.rbi
   - sorbet/rbi/gems/faraday-net_http@3.0.2.rbi
+  - sorbet/rbi/gems/faraday-retry@2.2.1.rbi
   - sorbet/rbi/gems/faraday@2.7.11.rbi
   - sorbet/rbi/gems/json@2.6.3.rbi
   - sorbet/rbi/gems/language_server-protocol@3.17.0.3.rbi
