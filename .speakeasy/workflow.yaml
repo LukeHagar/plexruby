@@ -12,6 +12,8 @@ targets:
             rubygems:
                 token: $rubygems_auth_token
         codeSamples:
+            labelOverride: 
+                fixedValue: PlexRuby
             output: codeSamples.yaml
             registry:
                 location: registry.speakeasyapi.dev/plexapi/plexapi/code-samples-ruby-plexruby
