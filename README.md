@@ -167,6 +167,10 @@ end
 * [get_actors_library](docs/sdks/library/README.md#get_actors_library) - Get Actors of library media
 * [get_search_all_libraries](docs/sdks/library/README.md#get_search_all_libraries) - Search All Libraries
 * [get_media_meta_data](docs/sdks/library/README.md#get_media_meta_data) - Get Media Metadata
+* [get_media_arts](docs/sdks/library/README.md#get_media_arts) - Get Media Background Artwork
+* [post_media_arts](docs/sdks/library/README.md#post_media_arts) - Upload Media Background Artwork
+* [get_media_posters](docs/sdks/library/README.md#get_media_posters) - Get Media Posters
+* [post_media_poster](docs/sdks/library/README.md#post_media_poster) - Upload Media Poster
 * [get_metadata_children](docs/sdks/library/README.md#get_metadata_children) - Get Items Children
 * [get_top_watched_content](docs/sdks/library/README.md#get_top_watched_content) - Get Top Watched Content
 

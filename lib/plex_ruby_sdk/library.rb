@@ -1523,6 +1523,400 @@ module PlexRubySDK
     end
 
 
+    sig { params(rating_key: ::Integer, timeout_ms: T.nilable(Integer)).returns(::PlexRubySDK::Operations::GetMediaArtsResponse) }
+    def get_media_arts(rating_key, timeout_ms = nil)
+      # get_media_arts - Get Media Background Artwork
+      # Returns the background artwork for a library item.
+      request = ::PlexRubySDK::Operations::GetMediaArtsRequest.new(
+        
+        rating_key: rating_key
+      )
+      url, params = @sdk_configuration.get_server_details
+      base_url = Utils.template_url(url, params)
+      url = Utils.generate_url(
+        ::PlexRubySDK::Operations::GetMediaArtsRequest,
+        base_url,
+        '/library/metadata/{ratingKey}/arts',
+        request
+      )
+      headers = {}
+      headers['Accept'] = 'application/json'
+      headers['user-agent'] = @sdk_configuration.user_agent
+
+      security = !@sdk_configuration.nil? && !@sdk_configuration.security_source.nil? ? @sdk_configuration.security_source.call : nil
+
+      timeout = (timeout_ms.to_f / 1000) unless timeout_ms.nil?
+      timeout ||= @sdk_configuration.timeout
+
+      connection = @sdk_configuration.client
+
+      hook_ctx = SDKHooks::HookContext.new(
+        base_url: base_url,
+        oauth2_scopes: nil,
+        operation_id: 'get-media-arts',
+        security_source: @sdk_configuration.security_source
+      )
+
+      error = T.let(nil, T.nilable(StandardError))
+      r = T.let(nil, T.nilable(Faraday::Response))
+      
+      begin
+        r = connection.get(url) do |req|
+          req.headers.merge!(headers)
+          req.options.timeout = timeout unless timeout.nil?
+          Utils.configure_request_security(req, security)
+
+          @sdk_configuration.hooks.before_request(
+            hook_ctx: SDKHooks::BeforeRequestHookContext.new(
+              hook_ctx: hook_ctx
+            ),
+            request: req
+          )
+        end
+      rescue StandardError => e
+        error = e
+      ensure
+        if r.nil? || Utils.error_status?(r.status)
+          r = @sdk_configuration.hooks.after_error(
+            error: error,
+            hook_ctx: SDKHooks::AfterErrorHookContext.new(
+              hook_ctx: hook_ctx
+            ),
+            response: r
+          )
+        else
+          r = @sdk_configuration.hooks.after_success(
+            hook_ctx: SDKHooks::AfterSuccessHookContext.new(
+              hook_ctx: hook_ctx
+            ),
+            response: r
+          )
+        end
+        
+        if r.nil?
+          raise error if !error.nil?
+          raise 'no response'
+        end
+      end
+
+      content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
+
+      res = ::PlexRubySDK::Operations::GetMediaArtsResponse.new(
+        status_code: r.status, content_type: content_type, raw_response: r
+      )
+      if r.status == 200
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Crystalline.unmarshal_json(JSON.parse(r.env.response_body), ::PlexRubySDK::Operations::GetMediaArtsResponseBody)
+          res.object = out
+        end
+      elsif r.status == 404
+      end
+
+      res
+    end
+
+
+    sig { params(rating_key: ::Integer, url: T.nilable(::String), request_body: T.nilable(::String), timeout_ms: T.nilable(Integer)).returns(::PlexRubySDK::Operations::PostMediaArtsResponse) }
+    def post_media_arts(rating_key, url = nil, request_body = nil, timeout_ms = nil)
+      # post_media_arts - Upload Media Background Artwork
+      # Uploads an image to use as the background artwork for a library item, either from a local file or a remote URL
+      request = ::PlexRubySDK::Operations::PostMediaArtsRequest.new(
+        
+        rating_key: rating_key,
+        url: url,
+        request_body: request_body
+      )
+      url, params = @sdk_configuration.get_server_details
+      base_url = Utils.template_url(url, params)
+      url = Utils.generate_url(
+        ::PlexRubySDK::Operations::PostMediaArtsRequest,
+        base_url,
+        '/library/metadata/{ratingKey}/arts',
+        request
+      )
+      headers = {}
+      req_content_type, data, form = Utils.serialize_request_body(request, :request_body, :raw)
+      headers['content-type'] = req_content_type
+
+      if form
+        body = Utils.encode_form(form)
+      elsif Utils.match_content_type(req_content_type, 'application/x-www-form-urlencoded')
+        body = URI.encode_www_form(data)
+      else
+        body = data
+      end
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::PostMediaArtsRequest, request)
+      headers['Accept'] = '*/*'
+      headers['user-agent'] = @sdk_configuration.user_agent
+
+      security = !@sdk_configuration.nil? && !@sdk_configuration.security_source.nil? ? @sdk_configuration.security_source.call : nil
+
+      timeout = (timeout_ms.to_f / 1000) unless timeout_ms.nil?
+      timeout ||= @sdk_configuration.timeout
+
+      connection = @sdk_configuration.client
+
+      hook_ctx = SDKHooks::HookContext.new(
+        base_url: base_url,
+        oauth2_scopes: nil,
+        operation_id: 'post-media-arts',
+        security_source: @sdk_configuration.security_source
+      )
+
+      error = T.let(nil, T.nilable(StandardError))
+      r = T.let(nil, T.nilable(Faraday::Response))
+      
+      begin
+        r = connection.post(url) do |req|
+          req.body = body
+          req.headers.merge!(headers)
+          req.options.timeout = timeout unless timeout.nil?
+          req.params = query_params
+          Utils.configure_request_security(req, security)
+
+          @sdk_configuration.hooks.before_request(
+            hook_ctx: SDKHooks::BeforeRequestHookContext.new(
+              hook_ctx: hook_ctx
+            ),
+            request: req
+          )
+        end
+      rescue StandardError => e
+        error = e
+      ensure
+        if r.nil? || Utils.error_status?(r.status)
+          r = @sdk_configuration.hooks.after_error(
+            error: error,
+            hook_ctx: SDKHooks::AfterErrorHookContext.new(
+              hook_ctx: hook_ctx
+            ),
+            response: r
+          )
+        else
+          r = @sdk_configuration.hooks.after_success(
+            hook_ctx: SDKHooks::AfterSuccessHookContext.new(
+              hook_ctx: hook_ctx
+            ),
+            response: r
+          )
+        end
+        
+        if r.nil?
+          raise error if !error.nil?
+          raise 'no response'
+        end
+      end
+
+      content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
+
+      res = ::PlexRubySDK::Operations::PostMediaArtsResponse.new(
+        status_code: r.status, content_type: content_type, raw_response: r
+      )
+      if r.status == 200
+      elsif r.status == 404
+      end
+
+      res
+    end
+
+
+    sig { params(rating_key: ::Integer, timeout_ms: T.nilable(Integer)).returns(::PlexRubySDK::Operations::GetMediaPostersResponse) }
+    def get_media_posters(rating_key, timeout_ms = nil)
+      # get_media_posters - Get Media Posters
+      # Returns the available posters for a library item.
+      request = ::PlexRubySDK::Operations::GetMediaPostersRequest.new(
+        
+        rating_key: rating_key
+      )
+      url, params = @sdk_configuration.get_server_details
+      base_url = Utils.template_url(url, params)
+      url = Utils.generate_url(
+        ::PlexRubySDK::Operations::GetMediaPostersRequest,
+        base_url,
+        '/library/metadata/{ratingKey}/posters',
+        request
+      )
+      headers = {}
+      headers['Accept'] = 'application/json'
+      headers['user-agent'] = @sdk_configuration.user_agent
+
+      security = !@sdk_configuration.nil? && !@sdk_configuration.security_source.nil? ? @sdk_configuration.security_source.call : nil
+
+      timeout = (timeout_ms.to_f / 1000) unless timeout_ms.nil?
+      timeout ||= @sdk_configuration.timeout
+
+      connection = @sdk_configuration.client
+
+      hook_ctx = SDKHooks::HookContext.new(
+        base_url: base_url,
+        oauth2_scopes: nil,
+        operation_id: 'get-media-posters',
+        security_source: @sdk_configuration.security_source
+      )
+
+      error = T.let(nil, T.nilable(StandardError))
+      r = T.let(nil, T.nilable(Faraday::Response))
+      
+      begin
+        r = connection.get(url) do |req|
+          req.headers.merge!(headers)
+          req.options.timeout = timeout unless timeout.nil?
+          Utils.configure_request_security(req, security)
+
+          @sdk_configuration.hooks.before_request(
+            hook_ctx: SDKHooks::BeforeRequestHookContext.new(
+              hook_ctx: hook_ctx
+            ),
+            request: req
+          )
+        end
+      rescue StandardError => e
+        error = e
+      ensure
+        if r.nil? || Utils.error_status?(r.status)
+          r = @sdk_configuration.hooks.after_error(
+            error: error,
+            hook_ctx: SDKHooks::AfterErrorHookContext.new(
+              hook_ctx: hook_ctx
+            ),
+            response: r
+          )
+        else
+          r = @sdk_configuration.hooks.after_success(
+            hook_ctx: SDKHooks::AfterSuccessHookContext.new(
+              hook_ctx: hook_ctx
+            ),
+            response: r
+          )
+        end
+        
+        if r.nil?
+          raise error if !error.nil?
+          raise 'no response'
+        end
+      end
+
+      content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
+
+      res = ::PlexRubySDK::Operations::GetMediaPostersResponse.new(
+        status_code: r.status, content_type: content_type, raw_response: r
+      )
+      if r.status == 200
+        if Utils.match_content_type(content_type, 'application/json')
+          out = Crystalline.unmarshal_json(JSON.parse(r.env.response_body), ::PlexRubySDK::Operations::GetMediaPostersResponseBody)
+          res.object = out
+        end
+      elsif r.status == 404
+      end
+
+      res
+    end
+
+
+    sig { params(rating_key: ::Integer, url: T.nilable(::String), request_body: T.nilable(::String), timeout_ms: T.nilable(Integer)).returns(::PlexRubySDK::Operations::PostMediaPosterResponse) }
+    def post_media_poster(rating_key, url = nil, request_body = nil, timeout_ms = nil)
+      # post_media_poster - Upload Media Poster
+      # Uploads a poster to a library item, either from a local file or a remote URL
+      request = ::PlexRubySDK::Operations::PostMediaPosterRequest.new(
+        
+        rating_key: rating_key,
+        url: url,
+        request_body: request_body
+      )
+      url, params = @sdk_configuration.get_server_details
+      base_url = Utils.template_url(url, params)
+      url = Utils.generate_url(
+        ::PlexRubySDK::Operations::PostMediaPosterRequest,
+        base_url,
+        '/library/metadata/{ratingKey}/posters',
+        request
+      )
+      headers = {}
+      req_content_type, data, form = Utils.serialize_request_body(request, :request_body, :raw)
+      headers['content-type'] = req_content_type
+
+      if form
+        body = Utils.encode_form(form)
+      elsif Utils.match_content_type(req_content_type, 'application/x-www-form-urlencoded')
+        body = URI.encode_www_form(data)
+      else
+        body = data
+      end
+      query_params = Utils.get_query_params(::PlexRubySDK::Operations::PostMediaPosterRequest, request)
+      headers['Accept'] = '*/*'
+      headers['user-agent'] = @sdk_configuration.user_agent
+
+      security = !@sdk_configuration.nil? && !@sdk_configuration.security_source.nil? ? @sdk_configuration.security_source.call : nil
+
+      timeout = (timeout_ms.to_f / 1000) unless timeout_ms.nil?
+      timeout ||= @sdk_configuration.timeout
+
+      connection = @sdk_configuration.client
+
+      hook_ctx = SDKHooks::HookContext.new(
+        base_url: base_url,
+        oauth2_scopes: nil,
+        operation_id: 'post-media-poster',
+        security_source: @sdk_configuration.security_source
+      )
+
+      error = T.let(nil, T.nilable(StandardError))
+      r = T.let(nil, T.nilable(Faraday::Response))
+      
+      begin
+        r = connection.post(url) do |req|
+          req.body = body
+          req.headers.merge!(headers)
+          req.options.timeout = timeout unless timeout.nil?
+          req.params = query_params
+          Utils.configure_request_security(req, security)
+
+          @sdk_configuration.hooks.before_request(
+            hook_ctx: SDKHooks::BeforeRequestHookContext.new(
+              hook_ctx: hook_ctx
+            ),
+            request: req
+          )
+        end
+      rescue StandardError => e
+        error = e
+      ensure
+        if r.nil? || Utils.error_status?(r.status)
+          r = @sdk_configuration.hooks.after_error(
+            error: error,
+            hook_ctx: SDKHooks::AfterErrorHookContext.new(
+              hook_ctx: hook_ctx
+            ),
+            response: r
+          )
+        else
+          r = @sdk_configuration.hooks.after_success(
+            hook_ctx: SDKHooks::AfterSuccessHookContext.new(
+              hook_ctx: hook_ctx
+            ),
+            response: r
+          )
+        end
+        
+        if r.nil?
+          raise error if !error.nil?
+          raise 'no response'
+        end
+      end
+
+      content_type = r.headers.fetch('Content-Type', 'application/octet-stream')
+
+      res = ::PlexRubySDK::Operations::PostMediaPosterResponse.new(
+        status_code: r.status, content_type: content_type, raw_response: r
+      )
+      if r.status == 200
+      elsif r.status == 404
+      end
+
+      res
+    end
+
+
     sig { params(rating_key: ::Float, include_elements: T.nilable(::String), timeout_ms: T.nilable(Integer)).returns(::PlexRubySDK::Operations::GetMetadataChildrenResponse) }
     def get_metadata_children(rating_key, include_elements = nil, timeout_ms = nil)
       # get_metadata_children - Get Items Children

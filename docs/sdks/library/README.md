@@ -22,6 +22,10 @@ API Calls interacting with Plex Media Server Libraries
 * [get_actors_library](#get_actors_library) - Get Actors of library media
 * [get_search_all_libraries](#get_search_all_libraries) - Search All Libraries
 * [get_media_meta_data](#get_media_meta_data) - Get Media Metadata
+* [get_media_arts](#get_media_arts) - Get Media Background Artwork
+* [post_media_arts](#post_media_arts) - Upload Media Background Artwork
+* [get_media_posters](#get_media_posters) - Get Media Posters
+* [post_media_poster](#post_media_poster) - Upload Media Poster
 * [get_metadata_children](#get_metadata_children) - Get Items Children
 * [get_top_watched_content](#get_top_watched_content) - Get Top Watched Content
 
@@ -677,6 +681,150 @@ end
 ### Response
 
 **[T.nilable(::PlexRubySDK::Operations::GetMediaMetaDataResponse)](../../models/operations/getmediametadataresponse.md)**
+
+
+
+## get_media_arts
+
+Returns the background artwork for a library item.
+
+### Example Usage
+
+```ruby
+require 'plex_ruby_sdk'
+
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
+
+res = s.library.get_media_arts(rating_key=16_099)
+
+if ! res.object.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                            | Type                                                 | Required                                             | Description                                          | Example                                              |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| `rating_key`                                         | *::Integer*                                          | :heavy_check_mark:                                   | the id of the library item to return the artwork of. | 16099                                                |
+
+### Response
+
+**[T.nilable(::PlexRubySDK::Operations::GetMediaArtsResponse)](../../models/operations/getmediaartsresponse.md)**
+
+
+
+## post_media_arts
+
+Uploads an image to use as the background artwork for a library item, either from a local file or a remote URL
+
+### Example Usage
+
+```ruby
+require 'plex_ruby_sdk'
+
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
+
+res = s.library.post_media_arts(rating_key=2268, url="https://api.mediux.pro/assets/fcfdc487-dd07-4993-a0c1-0a3015362e5b", request_body="0xee51EFC6De".encode())
+
+if res.status_code == 200
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        | Example                                                            |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `rating_key`                                                       | *::Integer*                                                        | :heavy_check_mark:                                                 | the id of the library item to return the posters of.               | 2268                                                               |
+| `url`                                                              | *T.nilable(::String)*                                              | :heavy_minus_sign:                                                 | The URL of the image, if uploading a remote image                  | https://api.mediux.pro/assets/fcfdc487-dd07-4993-a0c1-0a3015362e5b |
+| `request_body`                                                     | *T.nilable(::String)*                                              | :heavy_minus_sign:                                                 | The contents of the image, if uploading a local file               |                                                                    |
+
+### Response
+
+**[T.nilable(::PlexRubySDK::Operations::PostMediaArtsResponse)](../../models/operations/postmediaartsresponse.md)**
+
+
+
+## get_media_posters
+
+Returns the available posters for a library item.
+
+### Example Usage
+
+```ruby
+require 'plex_ruby_sdk'
+
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
+
+res = s.library.get_media_posters(rating_key=16_099)
+
+if ! res.object.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                            | Type                                                 | Required                                             | Description                                          | Example                                              |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| `rating_key`                                         | *::Integer*                                          | :heavy_check_mark:                                   | the id of the library item to return the posters of. | 16099                                                |
+
+### Response
+
+**[T.nilable(::PlexRubySDK::Operations::GetMediaPostersResponse)](../../models/operations/getmediapostersresponse.md)**
+
+
+
+## post_media_poster
+
+Uploads a poster to a library item, either from a local file or a remote URL
+
+### Example Usage
+
+```ruby
+require 'plex_ruby_sdk'
+
+s = ::PlexRubySDK::PlexAPI.new(
+      security: ::PlexRubySDK::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
+
+res = s.library.post_media_poster(rating_key=2268, url="https://api.mediux.pro/assets/fcfdc487-dd07-4993-a0c1-0a3015362e5b", request_body="0x7C3d45ad4B".encode())
+
+if res.status_code == 200
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        | Example                                                            |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `rating_key`                                                       | *::Integer*                                                        | :heavy_check_mark:                                                 | the id of the library item to return the posters of.               | 2268                                                               |
+| `url`                                                              | *T.nilable(::String)*                                              | :heavy_minus_sign:                                                 | The URL of the image, if uploading a remote image                  | https://api.mediux.pro/assets/fcfdc487-dd07-4993-a0c1-0a3015362e5b |
+| `request_body`                                                     | *T.nilable(::String)*                                              | :heavy_minus_sign:                                                 | The contents of the image, if uploading a local file               |                                                                    |
+
+### Response
+
+**[T.nilable(::PlexRubySDK::Operations::PostMediaPosterResponse)](../../models/operations/postmediaposterresponse.md)**
 
 
 
