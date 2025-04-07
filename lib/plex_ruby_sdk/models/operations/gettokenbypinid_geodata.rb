@@ -52,6 +52,22 @@ module PlexRubySDK
         @subdivisions = subdivisions
         @time_zone = time_zone
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @city == other.city
+        return false unless @code == other.code
+        return false unless @continent_code == other.continent_code
+        return false unless @coordinates == other.coordinates
+        return false unless @country == other.country
+        return false unless @european_union_member == other.european_union_member
+        return false unless @in_privacy_restricted_country == other.in_privacy_restricted_country
+        return false unless @in_privacy_restricted_region == other.in_privacy_restricted_region
+        return false unless @postal_code == other.postal_code
+        return false unless @subdivisions == other.subdivisions
+        return false unless @time_zone == other.time_zone
+        true
+      end
     end
   end
 end

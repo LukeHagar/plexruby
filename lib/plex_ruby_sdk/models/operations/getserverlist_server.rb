@@ -34,6 +34,17 @@ module PlexRubySDK
         @port = port
         @version = version
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @address == other.address
+        return false unless @host == other.host
+        return false unless @machine_identifier == other.machine_identifier
+        return false unless @name == other.name
+        return false unless @port == other.port
+        return false unless @version == other.version
+        true
+      end
     end
   end
 end

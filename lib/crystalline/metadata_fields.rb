@@ -80,6 +80,10 @@ module Crystalline
           key = "#{field.name}="
           lookup = field.metadata.fetch(:format_json, {}).fetch(:letter_case, nil).call
           value = d[lookup]
+          
+          # If field is not nilable, and the value is not in the dict, raise a KeyError
+          raise KeyError, "key #{lookup} not found in hash" if value.nil? && !T.nilable?(field.type)
+          # If field is nilable, and the value is not in the dict, just move to the next field
           next if value.nil?
 
           if T.arr? field_type
@@ -93,12 +97,41 @@ module Crystalline
             unmarshalled_hash = value.map { |k, v| [k, unmarshal_single(val_type, v)] }.to_h
             # rubocop:enable Style/HashTransformValues
             to_build.send(key, unmarshalled_hash)
+          elsif T.union? field_type
+            discriminator = field.metadata.fetch(:discriminator, nil)
+            if !discriminator.nil?
+              type_to_deserialize = value.fetch(discriminator)
+              type_to_deserialize = T.get_union_types(field_type).find { |t| t.name.split('::').last == type_to_deserialize }              
+              unmarshalled_val = Crystalline.unmarshal_json(value, type_to_deserialize)
+              to_build.send(key, unmarshalled_val)
+            else
+              union_types = T.get_union_types(field_type)
+              union_types = union_types.sort_by { |klass| Crystalline.non_nilable_attr_count(klass) }
+
+              union_types.each do |union_type|
+                begin
+                  unmarshalled_val = Crystalline.unmarshal_json(value, union_type)
+                  to_build.send(key, unmarshalled_val)
+                rescue TypeError
+                  next
+                rescue NoMethodError
+                  next
+                rescue KeyError
+                  next
+                end
+                break
+              end
+            end
+          elsif field_type.instance_of?(Class) && field_type < ::Crystalline::FieldAugmented
+            unmarshalled = Crystalline.unmarshal_json(value, field_type)
+            to_build.send(key, unmarshalled)
           else
             decoder = field.metadata.fetch(:format_json, {}).fetch(:decoder, nil)
             final_value = unmarshal_single(field_type, value, decoder)
             to_build.send(key, final_value)
           end
         end
+
         to_build
       end
     end

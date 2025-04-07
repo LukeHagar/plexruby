@@ -22,6 +22,13 @@ module PlexRubySDK
         @server = server
         @size = size
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @server == other.server
+        return false unless @size == other.size
+        true
+      end
     end
   end
 end

@@ -55,7 +55,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-watch-list',
         security_source: @sdk_configuration.security_source
       )

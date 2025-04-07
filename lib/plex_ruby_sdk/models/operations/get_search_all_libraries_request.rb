@@ -35,6 +35,17 @@ module PlexRubySDK
         @limit = limit
         @search_types = search_types
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @client_id == other.client_id
+        return false unless @query == other.query
+        return false unless @include_collections == other.include_collections
+        return false unless @include_external_media == other.include_external_media
+        return false unless @limit == other.limit
+        return false unless @search_types == other.search_types
+        true
+      end
     end
   end
 end

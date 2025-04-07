@@ -46,6 +46,21 @@ module PlexRubySDK
         @state = state
         @time = time
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @context == other.context
+        return false unless @duration == other.duration
+        return false unless @has_mde == other.has_mde
+        return false unless @key == other.key
+        return false unless @play_back_time == other.play_back_time
+        return false unless @play_queue_item_id == other.play_queue_item_id
+        return false unless @rating_key == other.rating_key
+        return false unless @row == other.row
+        return false unless @state == other.state
+        return false unless @time == other.time
+        true
+      end
     end
   end
 end

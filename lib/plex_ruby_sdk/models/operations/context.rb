@@ -19,6 +19,12 @@ module PlexRubySDK
       def initialize(library_section_id: nil)
         @library_section_id = library_section_id
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @library_section_id == other.library_section_id
+        true
+      end
     end
   end
 end

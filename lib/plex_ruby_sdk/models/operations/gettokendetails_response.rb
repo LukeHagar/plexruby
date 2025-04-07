@@ -37,6 +37,17 @@ module PlexRubySDK
         @unauthorized = unauthorized
         @user_plex_account = user_plex_account
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @content_type == other.content_type
+        return false unless @raw_response == other.raw_response
+        return false unless @status_code == other.status_code
+        return false unless @bad_request == other.bad_request
+        return false unless @unauthorized == other.unauthorized
+        return false unless @user_plex_account == other.user_plex_account
+        true
+      end
     end
   end
 end

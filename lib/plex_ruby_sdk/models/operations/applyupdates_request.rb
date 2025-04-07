@@ -22,6 +22,13 @@ module PlexRubySDK
         @skip = skip
         @tonight = tonight
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @skip == other.skip
+        return false unless @tonight == other.tonight
+        true
+      end
     end
   end
 end

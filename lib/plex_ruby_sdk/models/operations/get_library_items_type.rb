@@ -40,6 +40,19 @@ module PlexRubySDK
         @sort = sort
         @subtype = subtype
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @active == other.active
+        return false unless @key == other.key
+        return false unless @title == other.title
+        return false unless @type == other.type
+        return false unless @field == other.field
+        return false unless @filter == other.filter
+        return false unless @sort == other.sort
+        return false unless @subtype == other.subtype
+        true
+      end
     end
   end
 end

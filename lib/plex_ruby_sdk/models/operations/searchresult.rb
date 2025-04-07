@@ -22,6 +22,13 @@ module PlexRubySDK
         @metadata = metadata
         @score = score
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @metadata == other.metadata
+        return false unless @score == other.score
+        true
+      end
     end
   end
 end

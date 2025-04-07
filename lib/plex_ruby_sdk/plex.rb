@@ -74,7 +74,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getCompanionsData',
         security_source: @sdk_configuration.security_source
       )
@@ -168,7 +168,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getUserFriends',
         security_source: @sdk_configuration.security_source
       )
@@ -260,7 +260,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getGeoData',
         security_source: nil
       )
@@ -352,7 +352,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getHomeData',
         security_source: @sdk_configuration.security_source
       )
@@ -454,7 +454,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-server-resources',
         security_source: @sdk_configuration.security_source
       )
@@ -548,7 +548,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getPin',
         security_source: nil
       )
@@ -640,7 +640,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getTokenByPinId',
         security_source: nil
       )

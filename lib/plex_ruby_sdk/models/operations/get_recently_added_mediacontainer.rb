@@ -38,6 +38,18 @@ module PlexRubySDK
         @meta = meta
         @metadata = metadata
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @allow_sync == other.allow_sync
+        return false unless @identifier == other.identifier
+        return false unless @offset == other.offset
+        return false unless @size == other.size
+        return false unless @total_size == other.total_size
+        return false unless @meta == other.meta
+        return false unless @metadata == other.metadata
+        true
+      end
     end
   end
 end

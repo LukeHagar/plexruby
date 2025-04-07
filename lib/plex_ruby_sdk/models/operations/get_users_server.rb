@@ -46,6 +46,20 @@ module PlexRubySDK
         @pending = pending
         @server_id = server_id
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @all_libraries == other.all_libraries
+        return false unless @id == other.id
+        return false unless @last_seen_at == other.last_seen_at
+        return false unless @machine_identifier == other.machine_identifier
+        return false unless @name == other.name
+        return false unless @num_libraries == other.num_libraries
+        return false unless @owned == other.owned
+        return false unless @pending == other.pending
+        return false unless @server_id == other.server_id
+        true
+      end
     end
   end
 end

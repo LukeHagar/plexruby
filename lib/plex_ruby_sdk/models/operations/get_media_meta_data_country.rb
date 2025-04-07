@@ -25,6 +25,14 @@ module PlexRubySDK
         @id = id
         @tag = tag
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @filter == other.filter
+        return false unless @id == other.id
+        return false unless @tag == other.tag
+        true
+      end
     end
   end
 end

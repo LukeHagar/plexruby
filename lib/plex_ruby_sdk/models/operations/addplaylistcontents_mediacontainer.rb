@@ -28,6 +28,15 @@ module PlexRubySDK
         @metadata = metadata
         @size = size
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @leaf_count_added == other.leaf_count_added
+        return false unless @leaf_count_requested == other.leaf_count_requested
+        return false unless @metadata == other.metadata
+        return false unless @size == other.size
+        true
+      end
     end
   end
 end

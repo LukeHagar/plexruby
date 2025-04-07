@@ -76,6 +76,31 @@ module PlexRubySDK
         @selected = selected
         @stream_type = stream_type
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @album_gain == other.album_gain
+        return false unless @album_peak == other.album_peak
+        return false unless @album_range == other.album_range
+        return false unless @audio_channel_layout == other.audio_channel_layout
+        return false unless @bit_depth == other.bit_depth
+        return false unless @bitrate == other.bitrate
+        return false unless @channels == other.channels
+        return false unless @codec == other.codec
+        return false unless @display_title == other.display_title
+        return false unless @extended_display_title == other.extended_display_title
+        return false unless @gain == other.gain
+        return false unless @id == other.id
+        return false unless @index == other.index
+        return false unless @location == other.location
+        return false unless @loudness == other.loudness
+        return false unless @lra == other.lra
+        return false unless @peak == other.peak
+        return false unless @sampling_rate == other.sampling_rate
+        return false unless @selected == other.selected
+        return false unless @stream_type == other.stream_type
+        true
+      end
     end
   end
 end

@@ -70,6 +70,29 @@ module PlexRubySDK
         @video_resolution = video_resolution
         @width = width
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @container == other.container
+        return false unless @id == other.id
+        return false unless @part == other.part
+        return false unless @aspect_ratio == other.aspect_ratio
+        return false unless @audio_channels == other.audio_channels
+        return false unless @audio_codec == other.audio_codec
+        return false unless @audio_profile == other.audio_profile
+        return false unless @bitrate == other.bitrate
+        return false unless @duration == other.duration
+        return false unless @has64bit_offsets == other.has64bit_offsets
+        return false unless @has_voice_activity == other.has_voice_activity
+        return false unless @height == other.height
+        return false unless @optimized_for_streaming == other.optimized_for_streaming
+        return false unless @video_codec == other.video_codec
+        return false unless @video_frame_rate == other.video_frame_rate
+        return false unless @video_profile == other.video_profile
+        return false unless @video_resolution == other.video_resolution
+        return false unless @width == other.width
+        true
+      end
     end
   end
 end

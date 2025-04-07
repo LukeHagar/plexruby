@@ -43,7 +43,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getServerCapabilities',
         security_source: @sdk_configuration.security_source
       )
@@ -136,7 +136,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getServerPreferences',
         security_source: @sdk_configuration.security_source
       )
@@ -229,7 +229,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getAvailableClients',
         security_source: @sdk_configuration.security_source
       )
@@ -322,7 +322,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getDevices',
         security_source: @sdk_configuration.security_source
       )
@@ -413,7 +413,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-server-identity',
         security_source: nil
       )
@@ -500,7 +500,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getMyPlexAccount',
         security_source: @sdk_configuration.security_source
       )
@@ -595,7 +595,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getResizedPhoto',
         security_source: @sdk_configuration.security_source
       )
@@ -689,7 +689,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-media-providers',
         security_source: @sdk_configuration.security_source
       )
@@ -782,7 +782,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getServerList',
         security_source: @sdk_configuration.security_source
       )

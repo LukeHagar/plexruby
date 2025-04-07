@@ -25,6 +25,14 @@ module PlexRubySDK
         @limit = limit
         @section_id = section_id
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @query == other.query
+        return false unless @limit == other.limit
+        return false unless @section_id == other.section_id
+        true
+      end
     end
   end
 end

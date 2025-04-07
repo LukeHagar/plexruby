@@ -28,6 +28,15 @@ module PlexRubySDK
         @size = size
         @statistics_bandwidth = statistics_bandwidth
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @account == other.account
+        return false unless @device == other.device
+        return false unless @size == other.size
+        return false unless @statistics_bandwidth == other.statistics_bandwidth
+        true
+      end
     end
   end
 end

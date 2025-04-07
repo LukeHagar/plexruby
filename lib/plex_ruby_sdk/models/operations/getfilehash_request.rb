@@ -22,6 +22,13 @@ module PlexRubySDK
         @url = url
         @type = type
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @url == other.url
+        return false unless @type == other.type
+        true
+      end
     end
   end
 end

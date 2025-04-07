@@ -22,6 +22,13 @@ module PlexRubySDK
         @scope = scope
         @type = type
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @scope == other.scope
+        return false unless @type == other.type
+        true
+      end
     end
   end
 end

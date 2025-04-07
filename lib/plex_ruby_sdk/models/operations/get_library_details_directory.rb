@@ -31,6 +31,16 @@ module PlexRubySDK
         @secondary = secondary
         @title = title
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @key == other.key
+        return false unless @prompt == other.prompt
+        return false unless @search == other.search
+        return false unless @secondary == other.secondary
+        return false unless @title == other.title
+        true
+      end
     end
   end
 end

@@ -31,6 +31,16 @@ module PlexRubySDK
         @object = object
         @request_timeout = request_timeout
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @content_type == other.content_type
+        return false unless @raw_response == other.raw_response
+        return false unless @status_code == other.status_code
+        return false unless @object == other.object
+        return false unless @request_timeout == other.request_timeout
+        true
+      end
     end
   end
 end

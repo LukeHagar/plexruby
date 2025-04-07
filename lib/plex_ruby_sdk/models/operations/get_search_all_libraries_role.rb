@@ -34,6 +34,17 @@ module PlexRubySDK
         @tag_key = tag_key
         @thumb = thumb
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @filter == other.filter
+        return false unless @id == other.id
+        return false unless @role == other.role
+        return false unless @tag == other.tag
+        return false unless @tag_key == other.tag_key
+        return false unless @thumb == other.thumb
+        true
+      end
     end
   end
 end

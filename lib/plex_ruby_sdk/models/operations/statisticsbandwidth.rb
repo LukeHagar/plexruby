@@ -34,6 +34,17 @@ module PlexRubySDK
         @lan = lan
         @timespan = timespan
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @account_id == other.account_id
+        return false unless @at == other.at
+        return false unless @bytes == other.bytes
+        return false unless @device_id == other.device_id
+        return false unless @lan == other.lan
+        return false unless @timespan == other.timespan
+        true
+      end
     end
   end
 end

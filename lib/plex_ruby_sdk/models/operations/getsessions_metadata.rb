@@ -130,6 +130,49 @@ module PlexRubySDK
         @user = user
         @view_offset = view_offset
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @added_at == other.added_at
+        return false unless @art == other.art
+        return false unless @duration == other.duration
+        return false unless @grandparent_art == other.grandparent_art
+        return false unless @grandparent_guid == other.grandparent_guid
+        return false unless @grandparent_key == other.grandparent_key
+        return false unless @grandparent_rating_key == other.grandparent_rating_key
+        return false unless @grandparent_thumb == other.grandparent_thumb
+        return false unless @grandparent_title == other.grandparent_title
+        return false unless @guid == other.guid
+        return false unless @index == other.index
+        return false unless @key == other.key
+        return false unless @library_section_id == other.library_section_id
+        return false unless @library_section_key == other.library_section_key
+        return false unless @library_section_title == other.library_section_title
+        return false unless @media == other.media
+        return false unless @music_analysis_version == other.music_analysis_version
+        return false unless @original_title == other.original_title
+        return false unless @parent_guid == other.parent_guid
+        return false unless @parent_index == other.parent_index
+        return false unless @parent_key == other.parent_key
+        return false unless @parent_rating_key == other.parent_rating_key
+        return false unless @parent_studio == other.parent_studio
+        return false unless @parent_thumb == other.parent_thumb
+        return false unless @parent_title == other.parent_title
+        return false unless @parent_year == other.parent_year
+        return false unless @player == other.player
+        return false unless @rating_count == other.rating_count
+        return false unless @rating_key == other.rating_key
+        return false unless @session == other.session
+        return false unless @session_key == other.session_key
+        return false unless @thumb == other.thumb
+        return false unless @title == other.title
+        return false unless @title_sort == other.title_sort
+        return false unless @type == other.type
+        return false unless @updated_at == other.updated_at
+        return false unless @user == other.user
+        return false unless @view_offset == other.view_offset
+        true
+      end
     end
   end
 end

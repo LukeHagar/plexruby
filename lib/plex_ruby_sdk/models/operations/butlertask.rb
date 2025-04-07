@@ -34,6 +34,17 @@ module PlexRubySDK
         @schedule_randomized = schedule_randomized
         @title = title
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @description == other.description
+        return false unless @enabled == other.enabled
+        return false unless @interval == other.interval
+        return false unless @name == other.name
+        return false unless @schedule_randomized == other.schedule_randomized
+        return false unless @title == other.title
+        true
+      end
     end
   end
 end

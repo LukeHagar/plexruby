@@ -34,6 +34,17 @@ module PlexRubySDK
         @process_memory_utilization = process_memory_utilization
         @timespan = timespan
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @at == other.at
+        return false unless @host_cpu_utilization == other.host_cpu_utilization
+        return false unless @host_memory_utilization == other.host_memory_utilization
+        return false unless @process_cpu_utilization == other.process_cpu_utilization
+        return false unless @process_memory_utilization == other.process_memory_utilization
+        return false unless @timespan == other.timespan
+        true
+      end
     end
   end
 end

@@ -25,6 +25,14 @@ module PlexRubySDK
         @id = id
         @location = location
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @bandwidth == other.bandwidth
+        return false unless @id == other.id
+        return false unless @location == other.location
+        true
+      end
     end
   end
 end

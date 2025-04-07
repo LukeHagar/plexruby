@@ -34,6 +34,17 @@ module PlexRubySDK
         @width = width
         @x_plex_token = x_plex_token
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @height == other.height
+        return false unless @min_size == other.min_size
+        return false unless @rating_key == other.rating_key
+        return false unless @upscale == other.upscale
+        return false unless @width == other.width
+        return false unless @x_plex_token == other.x_plex_token
+        true
+      end
     end
   end
 end

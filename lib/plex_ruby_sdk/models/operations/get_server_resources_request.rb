@@ -33,6 +33,15 @@ module PlexRubySDK
         @include_i_pv6 = include_i_pv6
         @include_relay = include_relay
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @client_id == other.client_id
+        return false unless @include_https == other.include_https
+        return false unless @include_i_pv6 == other.include_i_pv6
+        return false unless @include_relay == other.include_relay
+        true
+      end
     end
   end
 end

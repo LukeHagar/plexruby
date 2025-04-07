@@ -31,6 +31,16 @@ module PlexRubySDK
         @uri = uri
         @play_queue_id = play_queue_id
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @smart == other.smart
+        return false unless @title == other.title
+        return false unless @type == other.type
+        return false unless @uri == other.uri
+        return false unless @play_queue_id == other.play_queue_id
+        true
+      end
     end
   end
 end

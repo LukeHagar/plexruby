@@ -25,6 +25,14 @@ module PlexRubySDK
         @request_body = request_body
         @url = url
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @rating_key == other.rating_key
+        return false unless @request_body == other.request_body
+        return false unless @url == other.url
+        true
+      end
     end
   end
 end

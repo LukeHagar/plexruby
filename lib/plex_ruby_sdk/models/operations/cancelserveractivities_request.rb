@@ -19,6 +19,12 @@ module PlexRubySDK
       def initialize(activity_uuid: nil)
         @activity_uuid = activity_uuid
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @activity_uuid == other.activity_uuid
+        true
+      end
     end
   end
 end

@@ -74,6 +74,30 @@ module PlexRubySDK
         @meta = meta
         @metadata = metadata
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @allow_sync == other.allow_sync
+        return false unless @art == other.art
+        return false unless @content == other.content
+        return false unless @identifier == other.identifier
+        return false unless @library_section_id == other.library_section_id
+        return false unless @library_section_title == other.library_section_title
+        return false unless @media_tag_prefix == other.media_tag_prefix
+        return false unless @media_tag_version == other.media_tag_version
+        return false unless @nocache == other.nocache
+        return false unless @offset == other.offset
+        return false unless @size == other.size
+        return false unless @thumb == other.thumb
+        return false unless @title1 == other.title1
+        return false unless @title2 == other.title2
+        return false unless @total_size == other.total_size
+        return false unless @view_group == other.view_group
+        return false unless @library_section_uuid == other.library_section_uuid
+        return false unless @meta == other.meta
+        return false unless @metadata == other.metadata
+        true
+      end
     end
   end
 end

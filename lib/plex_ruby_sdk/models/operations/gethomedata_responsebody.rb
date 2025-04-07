@@ -34,6 +34,17 @@ module PlexRubySDK
         @name = name
         @subscription = subscription
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @guest_enabled == other.guest_enabled
+        return false unless @guest_user_id == other.guest_user_id
+        return false unless @guest_user_uuid == other.guest_user_uuid
+        return false unless @id == other.id
+        return false unless @name == other.name
+        return false unless @subscription == other.subscription
+        true
+      end
     end
   end
 end

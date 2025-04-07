@@ -29,6 +29,13 @@ module PlexRubySDK
         @type = type
         @include_guids = include_guids
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @type == other.type
+        return false unless @include_guids == other.include_guids
+        true
+      end
     end
   end
 end

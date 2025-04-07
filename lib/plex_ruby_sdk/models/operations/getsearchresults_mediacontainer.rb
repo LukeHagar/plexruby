@@ -34,6 +34,17 @@ module PlexRubySDK
         @provider = provider
         @size = size
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @identifier == other.identifier
+        return false unless @media_tag_prefix == other.media_tag_prefix
+        return false unless @media_tag_version == other.media_tag_version
+        return false unless @metadata == other.metadata
+        return false unless @provider == other.provider
+        return false unless @size == other.size
+        true
+      end
     end
   end
 end

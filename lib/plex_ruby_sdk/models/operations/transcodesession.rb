@@ -88,6 +88,35 @@ module PlexRubySDK
         @video_codec = video_codec
         @video_decision = video_decision
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @audio_channels == other.audio_channels
+        return false unless @audio_codec == other.audio_codec
+        return false unless @audio_decision == other.audio_decision
+        return false unless @complete == other.complete
+        return false unless @container == other.container
+        return false unless @context == other.context
+        return false unless @duration == other.duration
+        return false unless @error == other.error
+        return false unless @key == other.key
+        return false unless @max_offset_available == other.max_offset_available
+        return false unless @min_offset_available == other.min_offset_available
+        return false unless @progress == other.progress
+        return false unless @protocol == other.protocol
+        return false unless @remaining == other.remaining
+        return false unless @size == other.size
+        return false unless @source_audio_codec == other.source_audio_codec
+        return false unless @source_video_codec == other.source_video_codec
+        return false unless @speed == other.speed
+        return false unless @subtitle_decision == other.subtitle_decision
+        return false unless @throttled == other.throttled
+        return false unless @time_stamp == other.time_stamp
+        return false unless @transcode_hw_requested == other.transcode_hw_requested
+        return false unless @video_codec == other.video_codec
+        return false unless @video_decision == other.video_decision
+        true
+      end
     end
   end
 end

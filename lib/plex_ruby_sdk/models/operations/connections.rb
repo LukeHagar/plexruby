@@ -40,6 +40,18 @@ module PlexRubySDK
         @relay = relay
         @uri = uri
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @address == other.address
+        return false unless @i_pv6 == other.i_pv6
+        return false unless @local == other.local
+        return false unless @port == other.port
+        return false unless @protocol == other.protocol
+        return false unless @relay == other.relay
+        return false unless @uri == other.uri
+        true
+      end
     end
   end
 end

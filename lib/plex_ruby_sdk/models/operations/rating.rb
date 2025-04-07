@@ -25,6 +25,14 @@ module PlexRubySDK
         @type = type
         @value = value
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @image == other.image
+        return false unless @type == other.type
+        return false unless @value == other.value
+        true
+      end
     end
   end
 end

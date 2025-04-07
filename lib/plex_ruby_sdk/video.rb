@@ -44,7 +44,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getTimeline',
         security_source: @sdk_configuration.security_source
       )
@@ -135,7 +135,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'startUniversalTranscode',
         security_source: @sdk_configuration.security_source
       )

@@ -43,6 +43,20 @@ module PlexRubySDK
         @smart = smart
         @title = title
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @composite == other.composite
+        return false unless @duration == other.duration
+        return false unless @leaf_count == other.leaf_count
+        return false unless @metadata == other.metadata
+        return false unless @playlist_type == other.playlist_type
+        return false unless @rating_key == other.rating_key
+        return false unless @size == other.size
+        return false unless @smart == other.smart
+        return false unless @title == other.title
+        true
+      end
     end
   end
 end

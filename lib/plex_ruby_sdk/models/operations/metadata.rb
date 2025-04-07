@@ -124,6 +124,46 @@ module PlexRubySDK
         @user_state = user_state
         @year = year
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @added_at == other.added_at
+        return false unless @art == other.art
+        return false unless @audience_rating == other.audience_rating
+        return false unless @audience_rating_image == other.audience_rating_image
+        return false unless @availability_id == other.availability_id
+        return false unless @banner == other.banner
+        return false unless @child_count == other.child_count
+        return false unless @content_rating == other.content_rating
+        return false unless @duration == other.duration
+        return false unless @expires_at == other.expires_at
+        return false unless @guid == other.guid
+        return false unless @image == other.image
+        return false unless @imdb_rating_count == other.imdb_rating_count
+        return false unless @is_continuing_series == other.is_continuing_series
+        return false unless @key == other.key
+        return false unless @leaf_count == other.leaf_count
+        return false unless @originally_available_at == other.originally_available_at
+        return false unless @original_title == other.original_title
+        return false unless @playable_key == other.playable_key
+        return false unless @public_pages_url == other.public_pages_url
+        return false unless @rating == other.rating
+        return false unless @rating_image == other.rating_image
+        return false unless @rating_key == other.rating_key
+        return false unless @skip_children == other.skip_children
+        return false unless @slug == other.slug
+        return false unless @streaming_media_id == other.streaming_media_id
+        return false unless @studio == other.studio
+        return false unless @subtype == other.subtype
+        return false unless @tagline == other.tagline
+        return false unless @theme == other.theme
+        return false unless @thumb == other.thumb
+        return false unless @title == other.title
+        return false unless @type == other.type
+        return false unless @user_state == other.user_state
+        return false unless @year == other.year
+        true
+      end
     end
   end
 end

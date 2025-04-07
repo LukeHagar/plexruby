@@ -40,6 +40,19 @@ module PlexRubySDK
         @part = part
         @selected = selected
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @audio_channels == other.audio_channels
+        return false unless @audio_codec == other.audio_codec
+        return false unless @bitrate == other.bitrate
+        return false unless @container == other.container
+        return false unless @duration == other.duration
+        return false unless @id == other.id
+        return false unless @part == other.part
+        return false unless @selected == other.selected
+        true
+      end
     end
   end
 end

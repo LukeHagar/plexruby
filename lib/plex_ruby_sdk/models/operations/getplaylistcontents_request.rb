@@ -28,6 +28,13 @@ module PlexRubySDK
         @playlist_id = playlist_id
         @type = type
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @playlist_id == other.playlist_id
+        return false unless @type == other.type
+        true
+      end
     end
   end
 end

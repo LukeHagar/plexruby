@@ -60,6 +60,20 @@ module PlexRubySDK
         @x_plex_container_size = x_plex_container_size
         @x_plex_container_start = x_plex_container_start
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @filter == other.filter
+        return false unless @x_plex_token == other.x_plex_token
+        return false unless @include_collections == other.include_collections
+        return false unless @include_external_media == other.include_external_media
+        return false unless @libtype == other.libtype
+        return false unless @maxresults == other.maxresults
+        return false unless @sort == other.sort
+        return false unless @x_plex_container_size == other.x_plex_container_size
+        return false unless @x_plex_container_start == other.x_plex_container_start
+        true
+      end
     end
   end
 end

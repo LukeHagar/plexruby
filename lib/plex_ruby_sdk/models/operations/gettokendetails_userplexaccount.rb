@@ -144,6 +144,52 @@ module PlexRubySDK
         @roles = roles
         @subscriptions = subscriptions
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @ads_consent == other.ads_consent
+        return false unless @ads_consent_reminder_at == other.ads_consent_reminder_at
+        return false unless @ads_consent_set_at == other.ads_consent_set_at
+        return false unless @anonymous == other.anonymous
+        return false unless @attribution_partner == other.attribution_partner
+        return false unless @auth_token == other.auth_token
+        return false unless @backup_codes_created == other.backup_codes_created
+        return false unless @confirmed == other.confirmed
+        return false unless @country == other.country
+        return false unless @email == other.email
+        return false unless @email_only_auth == other.email_only_auth
+        return false unless @entitlements == other.entitlements
+        return false unless @experimental_features == other.experimental_features
+        return false unless @friendly_name == other.friendly_name
+        return false unless @guest == other.guest
+        return false unless @has_password == other.has_password
+        return false unless @home == other.home
+        return false unless @home_admin == other.home_admin
+        return false unless @home_size == other.home_size
+        return false unless @id == other.id
+        return false unless @joined_at == other.joined_at
+        return false unless @locale == other.locale
+        return false unless @mailing_list_active == other.mailing_list_active
+        return false unless @mailing_list_status == other.mailing_list_status
+        return false unless @max_home_size == other.max_home_size
+        return false unless @profile == other.profile
+        return false unless @protected == other.protected
+        return false unless @remember_expires_at == other.remember_expires_at
+        return false unless @restricted == other.restricted
+        return false unless @scrobble_types == other.scrobble_types
+        return false unless @services == other.services
+        return false unless @subscription == other.subscription
+        return false unless @subscription_description == other.subscription_description
+        return false unless @thumb == other.thumb
+        return false unless @title == other.title
+        return false unless @two_factor_enabled == other.two_factor_enabled
+        return false unless @username == other.username
+        return false unless @uuid == other.uuid
+        return false unless @pin == other.pin
+        return false unless @roles == other.roles
+        return false unless @subscriptions == other.subscriptions
+        true
+      end
     end
   end
 end

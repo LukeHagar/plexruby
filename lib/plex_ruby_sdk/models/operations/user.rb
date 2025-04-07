@@ -79,6 +79,31 @@ module PlexRubySDK
         @filter_television = filter_television
         @recommendations_playlist_id = recommendations_playlist_id
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @allow_camera_upload == other.allow_camera_upload
+        return false unless @allow_channels == other.allow_channels
+        return false unless @allow_subtitle_admin == other.allow_subtitle_admin
+        return false unless @allow_sync == other.allow_sync
+        return false unless @allow_tuners == other.allow_tuners
+        return false unless @email == other.email
+        return false unless @home == other.home
+        return false unless @id == other.id
+        return false unless @protected == other.protected
+        return false unless @restricted == other.restricted
+        return false unless @server == other.server
+        return false unless @thumb == other.thumb
+        return false unless @title == other.title
+        return false unless @username == other.username
+        return false unless @filter_all == other.filter_all
+        return false unless @filter_movies == other.filter_movies
+        return false unless @filter_music == other.filter_music
+        return false unless @filter_photos == other.filter_photos
+        return false unless @filter_television == other.filter_television
+        return false unless @recommendations_playlist_id == other.recommendations_playlist_id
+        true
+      end
     end
   end
 end

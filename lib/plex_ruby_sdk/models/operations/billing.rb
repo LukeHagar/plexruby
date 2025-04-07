@@ -25,6 +25,13 @@ module PlexRubySDK
         @internal_payment_method = internal_payment_method
         @payment_method_id = payment_method_id
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @internal_payment_method == other.internal_payment_method
+        return false unless @payment_method_id == other.payment_method_id
+        true
+      end
     end
   end
 end

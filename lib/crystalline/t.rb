@@ -27,11 +27,17 @@ module T
   end
 
   def self.nilable?(t)
-    t.respond_to? :unwrap_nilable
+    # in sorbet all `T.any` types provide unwrap_nilable for some reason
+    # So, in order to make this check more robust, we check if the type responds to the `types` method, and if so, whether
+    # one of those types is NilClass.  For non-nilable unions, `types` will return a valid list that does not include NilClass
+    return false unless t.respond_to?(:unwrap_nilable)
+    return true unless t.respond_to?(:types)
+    t.types.map { |tt| simplify_type(tt) }.include?(NilClass)
   end
 
   def self.nilable_of(t)
-    if t.respond_to? :unwrap_nilable
+    
+    if nilable t
       return simplify_type t.unwrap_nilable
     end
     nil
@@ -47,6 +53,19 @@ module T
     end
     t
   end
+
+    
+  def self.union?(t)
+    return false unless t.respond_to? :types
+    return false if t.types.any? { |tt| get_raw_type(tt) == TrueClass }
+    return false if t.types.length == 2 && t.types.any? { |tt| get_raw_type(tt) == NilClass }
+    t.types.length > 1
+  end
+
+  def self.get_union_types(t)
+    t.types.map { |tt| get_raw_type(tt) }
+  end
+
 
   def self.get_raw_type(t)
     if t.respond_to? :raw_type

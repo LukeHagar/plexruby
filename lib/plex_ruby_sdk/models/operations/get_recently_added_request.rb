@@ -50,6 +50,18 @@ module PlexRubySDK
         @x_plex_container_size = x_plex_container_size
         @x_plex_container_start = x_plex_container_start
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @content_directory_id == other.content_directory_id
+        return false unless @type == other.type
+        return false unless @include_meta == other.include_meta
+        return false unless @pinned_content_directory_id == other.pinned_content_directory_id
+        return false unless @section_id == other.section_id
+        return false unless @x_plex_container_size == other.x_plex_container_size
+        return false unless @x_plex_container_start == other.x_plex_container_start
+        true
+      end
     end
   end
 end

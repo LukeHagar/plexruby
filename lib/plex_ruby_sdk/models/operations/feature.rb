@@ -37,6 +37,18 @@ module PlexRubySDK
         @scrobble_key = scrobble_key
         @unscrobble_key = unscrobble_key
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @type == other.type
+        return false unless @action == other.action
+        return false unless @directory == other.directory
+        return false unless @flavor == other.flavor
+        return false unless @key == other.key
+        return false unless @scrobble_key == other.scrobble_key
+        return false unless @unscrobble_key == other.unscrobble_key
+        true
+      end
     end
   end
 end

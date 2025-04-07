@@ -34,6 +34,16 @@ module PlexRubySDK
         @status = status
         @token = token
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @endpoint == other.endpoint
+        return false unless @identifier == other.identifier
+        return false unless @secret == other.secret
+        return false unless @status == other.status
+        return false unless @token == other.token
+        true
+      end
     end
   end
 end

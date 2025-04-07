@@ -31,6 +31,15 @@ module PlexRubySDK
         @remember_me = remember_me
         @verification_code = verification_code
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @login == other.login
+        return false unless @password == other.password
+        return false unless @remember_me == other.remember_me
+        return false unless @verification_code == other.verification_code
+        true
+      end
     end
   end
 end

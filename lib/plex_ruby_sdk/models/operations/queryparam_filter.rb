@@ -17,6 +17,11 @@ module PlexRubySDK
 
       
       def initialize; end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        true
+      end
     end
   end
 end

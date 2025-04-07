@@ -64,6 +64,26 @@ module PlexRubySDK
         @transfer = transfer
         @type = type
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @billing == other.billing
+        return false unless @canceled == other.canceled
+        return false unless @can_convert == other.can_convert
+        return false unless @can_downgrade == other.can_downgrade
+        return false unless @can_reactivate == other.can_reactivate
+        return false unless @can_upgrade == other.can_upgrade
+        return false unless @ends_at == other.ends_at
+        return false unless @grace_period == other.grace_period
+        return false unless @id == other.id
+        return false unless @mode == other.mode
+        return false unless @on_hold == other.on_hold
+        return false unless @renews_at == other.renews_at
+        return false unless @state == other.state
+        return false unless @transfer == other.transfer
+        return false unless @type == other.type
+        true
+      end
     end
   end
 end

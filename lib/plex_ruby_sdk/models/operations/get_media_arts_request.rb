@@ -19,6 +19,12 @@ module PlexRubySDK
       def initialize(rating_key: nil)
         @rating_key = rating_key
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @rating_key == other.rating_key
+        true
+      end
     end
   end
 end

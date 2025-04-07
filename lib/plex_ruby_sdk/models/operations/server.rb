@@ -49,6 +49,22 @@ module PlexRubySDK
         @protocol_version = protocol_version
         @version = version
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @address == other.address
+        return false unless @device_class == other.device_class
+        return false unless @host == other.host
+        return false unless @machine_identifier == other.machine_identifier
+        return false unless @name == other.name
+        return false unless @port == other.port
+        return false unless @product == other.product
+        return false unless @protocol == other.protocol
+        return false unless @protocol_capabilities == other.protocol_capabilities
+        return false unless @protocol_version == other.protocol_version
+        return false unless @version == other.version
+        true
+      end
     end
   end
 end

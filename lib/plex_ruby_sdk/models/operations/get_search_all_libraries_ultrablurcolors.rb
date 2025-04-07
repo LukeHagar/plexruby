@@ -28,6 +28,15 @@ module PlexRubySDK
         @top_left = top_left
         @top_right = top_right
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @bottom_left == other.bottom_left
+        return false unless @bottom_right == other.bottom_right
+        return false unless @top_left == other.top_left
+        return false unless @top_right == other.top_right
+        true
+      end
     end
   end
 end

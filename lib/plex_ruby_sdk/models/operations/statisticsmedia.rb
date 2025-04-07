@@ -37,6 +37,18 @@ module PlexRubySDK
         @metadata_type = metadata_type
         @timespan = timespan
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @account_id == other.account_id
+        return false unless @at == other.at
+        return false unless @count == other.count
+        return false unless @device_id == other.device_id
+        return false unless @duration == other.duration
+        return false unless @metadata_type == other.metadata_type
+        return false unless @timespan == other.timespan
+        true
+      end
     end
   end
 end

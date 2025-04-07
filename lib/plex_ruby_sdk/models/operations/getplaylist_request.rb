@@ -19,6 +19,12 @@ module PlexRubySDK
       def initialize(playlist_id: nil)
         @playlist_id = playlist_id
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @playlist_id == other.playlist_id
+        true
+      end
     end
   end
 end

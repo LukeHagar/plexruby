@@ -50,7 +50,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'createPlaylist',
         security_source: @sdk_configuration.security_source
       )
@@ -150,7 +150,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getPlaylists',
         security_source: @sdk_configuration.security_source
       )
@@ -255,7 +255,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getPlaylist',
         security_source: @sdk_configuration.security_source
       )
@@ -358,7 +358,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'deletePlaylist',
         security_source: @sdk_configuration.security_source
       )
@@ -460,7 +460,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'updatePlaylist',
         security_source: @sdk_configuration.security_source
       )
@@ -565,7 +565,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getPlaylistContents',
         security_source: @sdk_configuration.security_source
       )
@@ -669,7 +669,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'clearPlaylistContents',
         security_source: @sdk_configuration.security_source
       )
@@ -772,7 +772,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'addPlaylistContents',
         security_source: @sdk_configuration.security_source
       )
@@ -874,7 +874,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'uploadPlaylist',
         security_source: @sdk_configuration.security_source
       )

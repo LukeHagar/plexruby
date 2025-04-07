@@ -33,6 +33,15 @@ module PlexRubySDK
         @library_section_id = library_section_id
         @sort = sort
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @account_id == other.account_id
+        return false unless @filter == other.filter
+        return false unless @library_section_id == other.library_section_id
+        return false unless @sort == other.sort
+        true
+      end
     end
   end
 end

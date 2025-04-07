@@ -49,7 +49,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getGlobalHubs',
         security_source: @sdk_configuration.security_source
       )
@@ -145,7 +145,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-recently-added',
         security_source: @sdk_configuration.security_source
       )
@@ -243,7 +243,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getLibraryHubs',
         security_source: @sdk_configuration.security_source
       )

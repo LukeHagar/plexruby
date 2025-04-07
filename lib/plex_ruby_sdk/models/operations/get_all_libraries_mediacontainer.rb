@@ -11,22 +11,31 @@ module PlexRubySDK
     class GetAllLibrariesMediaContainer < ::Crystalline::FieldAugmented
       extend T::Sig
 
-
+      # Indicates whether syncing is allowed.
       field :allow_sync, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
-
-      field :directory, T::Array[::PlexRubySDK::Operations::GetAllLibrariesDirectory], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
-
+      # Number of media items returned in this response.
       field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-
+      # The primary title of the media container.
       field :title1, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title1') } }
 
+      field :directory, T.nilable(T::Array[::PlexRubySDK::Operations::GetAllLibrariesDirectory]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
 
-      sig { params(allow_sync: T::Boolean, directory: T::Array[::PlexRubySDK::Operations::GetAllLibrariesDirectory], size: ::Integer, title1: ::String).void }
-      def initialize(allow_sync: nil, directory: nil, size: nil, title1: nil)
+
+      sig { params(allow_sync: T::Boolean, size: ::Integer, title1: ::String, directory: T.nilable(T::Array[::PlexRubySDK::Operations::GetAllLibrariesDirectory])).void }
+      def initialize(allow_sync: nil, size: nil, title1: nil, directory: nil)
         @allow_sync = allow_sync
-        @directory = directory
         @size = size
         @title1 = title1
+        @directory = directory
+      end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @allow_sync == other.allow_sync
+        return false unless @size == other.size
+        return false unless @title1 == other.title1
+        return false unless @directory == other.directory
+        true
       end
     end
   end

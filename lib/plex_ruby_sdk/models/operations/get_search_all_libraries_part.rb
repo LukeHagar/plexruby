@@ -56,6 +56,24 @@ module PlexRubySDK
         @stream = stream
         @video_profile = video_profile
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @container == other.container
+        return false unless @file == other.file
+        return false unless @id == other.id
+        return false unless @key == other.key
+        return false unless @size == other.size
+        return false unless @audio_profile == other.audio_profile
+        return false unless @duration == other.duration
+        return false unless @has64bit_offsets == other.has64bit_offsets
+        return false unless @has_thumbnail == other.has_thumbnail
+        return false unless @indexes == other.indexes
+        return false unless @optimized_for_streaming == other.optimized_for_streaming
+        return false unless @stream == other.stream
+        return false unless @video_profile == other.video_profile
+        true
+      end
     end
   end
 end

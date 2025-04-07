@@ -48,7 +48,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getStatistics',
         security_source: @sdk_configuration.security_source
       )
@@ -147,7 +147,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getResourcesStatistics',
         security_source: @sdk_configuration.security_source
       )
@@ -246,7 +246,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getBandwidthStatistics',
         security_source: @sdk_configuration.security_source
       )

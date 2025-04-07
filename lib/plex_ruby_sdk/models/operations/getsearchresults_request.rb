@@ -19,6 +19,12 @@ module PlexRubySDK
       def initialize(query: nil)
         @query = query
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @query == other.query
+        true
+      end
     end
   end
 end

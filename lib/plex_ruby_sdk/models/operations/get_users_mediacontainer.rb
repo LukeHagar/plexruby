@@ -37,6 +37,17 @@ module PlexRubySDK
         @total_size = total_size
         @user = user
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @friendly_name == other.friendly_name
+        return false unless @identifier == other.identifier
+        return false unless @machine_identifier == other.machine_identifier
+        return false unless @size == other.size
+        return false unless @total_size == other.total_size
+        return false unless @user == other.user
+        true
+      end
     end
   end
 end

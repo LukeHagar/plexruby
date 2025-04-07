@@ -22,6 +22,12 @@ module PlexRubySDK
       def initialize(errors: nil)
         @errors = errors
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @errors == other.errors
+        true
+      end
     end
   end
 end

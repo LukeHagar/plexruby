@@ -58,6 +58,25 @@ module PlexRubySDK
         @include_reviews = include_reviews
         @include_stations = include_stations
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @rating_key == other.rating_key
+        return false unless @async_augment_metadata == other.async_augment_metadata
+        return false unless @async_check_files == other.async_check_files
+        return false unless @async_refresh_analysis == other.async_refresh_analysis
+        return false unless @async_refresh_local_media_agent == other.async_refresh_local_media_agent
+        return false unless @include_chapters == other.include_chapters
+        return false unless @include_concerts == other.include_concerts
+        return false unless @include_external_media == other.include_external_media
+        return false unless @include_extras == other.include_extras
+        return false unless @include_on_deck == other.include_on_deck
+        return false unless @include_popular_leaves == other.include_popular_leaves
+        return false unless @include_preferences == other.include_preferences
+        return false unless @include_reviews == other.include_reviews
+        return false unless @include_stations == other.include_stations
+        true
+      end
     end
   end
 end

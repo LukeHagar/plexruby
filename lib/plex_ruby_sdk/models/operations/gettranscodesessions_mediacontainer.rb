@@ -22,6 +22,13 @@ module PlexRubySDK
         @size = size
         @transcode_session = transcode_session
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @size == other.size
+        return false unless @transcode_session == other.transcode_session
+        true
+      end
     end
   end
 end

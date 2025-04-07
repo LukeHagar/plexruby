@@ -40,6 +40,19 @@ module PlexRubySDK
         @subtitle_mode = subtitle_mode
         @thumb = thumb
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @auto_select_audio == other.auto_select_audio
+        return false unless @default_audio_language == other.default_audio_language
+        return false unless @default_subtitle_language == other.default_subtitle_language
+        return false unless @id == other.id
+        return false unless @key == other.key
+        return false unless @name == other.name
+        return false unless @subtitle_mode == other.subtitle_mode
+        return false unless @thumb == other.thumb
+        true
+      end
     end
   end
 end

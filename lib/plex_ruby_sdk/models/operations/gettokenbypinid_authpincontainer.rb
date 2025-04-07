@@ -55,6 +55,23 @@ module PlexRubySDK
         @auth_token = auth_token
         @new_registration = new_registration
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @client_identifier == other.client_identifier
+        return false unless @code == other.code
+        return false unless @created_at == other.created_at
+        return false unless @expires_at == other.expires_at
+        return false unless @expires_in == other.expires_in
+        return false unless @id == other.id
+        return false unless @location == other.location
+        return false unless @product == other.product
+        return false unless @qr == other.qr
+        return false unless @trusted == other.trusted
+        return false unless @auth_token == other.auth_token
+        return false unless @new_registration == other.new_registration
+        true
+      end
     end
   end
 end

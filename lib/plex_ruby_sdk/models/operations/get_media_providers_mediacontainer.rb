@@ -148,6 +148,55 @@ module PlexRubySDK
         @version = version
         @voice_search = voice_search
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @allow_camera_upload == other.allow_camera_upload
+        return false unless @allow_channel_access == other.allow_channel_access
+        return false unless @allow_sharing == other.allow_sharing
+        return false unless @allow_sync == other.allow_sync
+        return false unless @allow_tuners == other.allow_tuners
+        return false unless @background_processing == other.background_processing
+        return false unless @certificate == other.certificate
+        return false unless @companion_proxy == other.companion_proxy
+        return false unless @country_code == other.country_code
+        return false unless @diagnostics == other.diagnostics
+        return false unless @event_stream == other.event_stream
+        return false unless @friendly_name == other.friendly_name
+        return false unless @livetv == other.livetv
+        return false unless @machine_identifier == other.machine_identifier
+        return false unless @media_provider == other.media_provider
+        return false unless @music_analysis == other.music_analysis
+        return false unless @my_plex == other.my_plex
+        return false unless @my_plex_mapping_state == other.my_plex_mapping_state
+        return false unless @my_plex_signin_state == other.my_plex_signin_state
+        return false unless @my_plex_subscription == other.my_plex_subscription
+        return false unless @my_plex_username == other.my_plex_username
+        return false unless @offline_transcode == other.offline_transcode
+        return false unless @owner_features == other.owner_features
+        return false unless @platform == other.platform
+        return false unless @platform_version == other.platform_version
+        return false unless @plugin_host == other.plugin_host
+        return false unless @push_notifications == other.push_notifications
+        return false unless @read_only_libraries == other.read_only_libraries
+        return false unless @size == other.size
+        return false unless @streaming_brain_abr_version == other.streaming_brain_abr_version
+        return false unless @streaming_brain_version == other.streaming_brain_version
+        return false unless @sync == other.sync
+        return false unless @transcoder_active_video_sessions == other.transcoder_active_video_sessions
+        return false unless @transcoder_audio == other.transcoder_audio
+        return false unless @transcoder_lyrics == other.transcoder_lyrics
+        return false unless @transcoder_subtitles == other.transcoder_subtitles
+        return false unless @transcoder_video == other.transcoder_video
+        return false unless @transcoder_video_bitrates == other.transcoder_video_bitrates
+        return false unless @transcoder_video_qualities == other.transcoder_video_qualities
+        return false unless @transcoder_video_resolutions == other.transcoder_video_resolutions
+        return false unless @updated_at == other.updated_at
+        return false unless @updater == other.updater
+        return false unless @version == other.version
+        return false unless @voice_search == other.voice_search
+        true
+      end
     end
   end
 end

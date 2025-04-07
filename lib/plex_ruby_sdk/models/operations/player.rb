@@ -61,6 +61,26 @@ module PlexRubySDK
         @user_id = user_id
         @version = version
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @address == other.address
+        return false unless @local == other.local
+        return false unless @machine_identifier == other.machine_identifier
+        return false unless @model == other.model
+        return false unless @platform == other.platform
+        return false unless @platform_version == other.platform_version
+        return false unless @product == other.product
+        return false unless @profile == other.profile
+        return false unless @relayed == other.relayed
+        return false unless @remote_public_address == other.remote_public_address
+        return false unless @secure == other.secure
+        return false unless @state == other.state
+        return false unless @title == other.title
+        return false unless @user_id == other.user_id
+        return false unless @version == other.version
+        true
+      end
     end
   end
 end

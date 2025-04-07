@@ -34,6 +34,17 @@ module PlexRubySDK
         @state = state
         @version = version
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @added == other.added
+        return false unless @download_url == other.download_url
+        return false unless @fixed == other.fixed
+        return false unless @key == other.key
+        return false unless @state == other.state
+        return false unless @version == other.version
+        true
+      end
     end
   end
 end

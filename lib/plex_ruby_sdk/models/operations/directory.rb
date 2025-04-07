@@ -25,6 +25,14 @@ module PlexRubySDK
         @key = key
         @title = title
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @count == other.count
+        return false unless @key == other.key
+        return false unless @title == other.title
+        true
+      end
     end
   end
 end

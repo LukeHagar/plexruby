@@ -24,6 +24,13 @@ module PlexRubySDK
         @section_key = section_key
         @force = force
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @section_key == other.section_key
+        return false unless @force == other.force
+        true
+      end
     end
   end
 end

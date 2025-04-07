@@ -43,7 +43,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getButlerTasks',
         security_source: @sdk_configuration.security_source
       )
@@ -141,7 +141,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'startAllTasks',
         security_source: @sdk_configuration.security_source
       )
@@ -231,7 +231,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'stopAllTasks',
         security_source: @sdk_configuration.security_source
       )
@@ -334,7 +334,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'startTask',
         security_source: @sdk_configuration.security_source
       )
@@ -433,7 +433,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'stopTask',
         security_source: @sdk_configuration.security_source
       )

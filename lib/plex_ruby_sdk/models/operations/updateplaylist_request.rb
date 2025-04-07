@@ -25,6 +25,14 @@ module PlexRubySDK
         @summary = summary
         @title = title
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @playlist_id == other.playlist_id
+        return false unless @summary == other.summary
+        return false unless @title == other.title
+        true
+      end
     end
   end
 end

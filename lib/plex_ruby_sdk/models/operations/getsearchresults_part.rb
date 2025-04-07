@@ -40,6 +40,19 @@ module PlexRubySDK
         @size = size
         @video_profile = video_profile
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @audio_profile == other.audio_profile
+        return false unless @container == other.container
+        return false unless @duration == other.duration
+        return false unless @file == other.file
+        return false unless @id == other.id
+        return false unless @key == other.key
+        return false unless @size == other.size
+        return false unless @video_profile == other.video_profile
+        true
+      end
     end
   end
 end

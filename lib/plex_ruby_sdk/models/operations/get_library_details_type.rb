@@ -37,6 +37,18 @@ module PlexRubySDK
         @title = title
         @type = type
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @active == other.active
+        return false unless @field == other.field
+        return false unless @filter == other.filter
+        return false unless @key == other.key
+        return false unless @sort == other.sort
+        return false unless @title == other.title
+        return false unless @type == other.type
+        true
+      end
     end
   end
 end

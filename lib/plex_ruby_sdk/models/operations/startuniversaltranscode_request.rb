@@ -64,6 +64,27 @@ module PlexRubySDK
         @subtites = subtites
         @subtitle_size = subtitle_size
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @has_mde == other.has_mde
+        return false unless @media_index == other.media_index
+        return false unless @part_index == other.part_index
+        return false unless @path == other.path
+        return false unless @protocol == other.protocol
+        return false unless @add_debug_overlay == other.add_debug_overlay
+        return false unless @audio_boost == other.audio_boost
+        return false unless @auto_adjust_quality == other.auto_adjust_quality
+        return false unless @direct_play == other.direct_play
+        return false unless @direct_stream == other.direct_stream
+        return false unless @fast_seek == other.fast_seek
+        return false unless @location == other.location
+        return false unless @media_buffer_size == other.media_buffer_size
+        return false unless @session == other.session
+        return false unless @subtites == other.subtites
+        return false unless @subtitle_size == other.subtitle_size
+        true
+      end
     end
   end
 end

@@ -31,6 +31,14 @@ module PlexRubySDK
         @message = message
         @source = source
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @level == other.level
+        return false unless @message == other.message
+        return false unless @source == other.source
+        true
+      end
     end
   end
 end

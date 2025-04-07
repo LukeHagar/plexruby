@@ -23,6 +23,13 @@ module PlexRubySDK
         @field_type = field_type
         @type = type
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @field_type == other.field_type
+        return false unless @type == other.type
+        true
+      end
     end
   end
 end

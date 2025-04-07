@@ -25,6 +25,14 @@ module PlexRubySDK
         @count = count
         @only_transient = only_transient
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @section_id == other.section_id
+        return false unless @count == other.count
+        return false unless @only_transient == other.only_transient
+        true
+      end
     end
   end
 end

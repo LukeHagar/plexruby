@@ -48,7 +48,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'markPlayed',
         security_source: @sdk_configuration.security_source
       )
@@ -143,7 +143,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'markUnplayed',
         security_source: @sdk_configuration.security_source
       )
@@ -241,7 +241,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'updatePlayProgress',
         security_source: @sdk_configuration.security_source
       )
@@ -337,7 +337,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-banner-image',
         security_source: @sdk_configuration.security_source
       )
@@ -435,7 +435,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-thumb-image',
         security_source: @sdk_configuration.security_source
       )

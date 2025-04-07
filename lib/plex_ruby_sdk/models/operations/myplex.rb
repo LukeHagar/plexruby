@@ -52,6 +52,23 @@ module PlexRubySDK
         @subscription_state = subscription_state
         @username = username
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @auth_token == other.auth_token
+        return false unless @mapping_error == other.mapping_error
+        return false unless @mapping_state == other.mapping_state
+        return false unless @private_address == other.private_address
+        return false unless @private_port == other.private_port
+        return false unless @public_address == other.public_address
+        return false unless @public_port == other.public_port
+        return false unless @sign_in_state == other.sign_in_state
+        return false unless @subscription_active == other.subscription_active
+        return false unless @subscription_features == other.subscription_features
+        return false unless @subscription_state == other.subscription_state
+        return false unless @username == other.username
+        true
+      end
     end
   end
 end

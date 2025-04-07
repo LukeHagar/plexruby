@@ -46,6 +46,21 @@ module PlexRubySDK
         @type = type
         @value = value
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @advanced == other.advanced
+        return false unless @default == other.default
+        return false unless @enum_values == other.enum_values
+        return false unless @group == other.group
+        return false unless @hidden == other.hidden
+        return false unless @id == other.id
+        return false unless @label == other.label
+        return false unless @summary == other.summary
+        return false unless @type == other.type
+        return false unless @value == other.value
+        true
+      end
     end
   end
 end

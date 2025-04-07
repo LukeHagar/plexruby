@@ -40,6 +40,19 @@ module PlexRubySDK
         @user_id = user_id
         @uuid = uuid
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @cancellable == other.cancellable
+        return false unless @context == other.context
+        return false unless @progress == other.progress
+        return false unless @subtitle == other.subtitle
+        return false unless @title == other.title
+        return false unless @type == other.type
+        return false unless @user_id == other.user_id
+        return false unless @uuid == other.uuid
+        true
+      end
     end
   end
 end

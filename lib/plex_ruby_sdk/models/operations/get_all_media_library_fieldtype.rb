@@ -22,6 +22,13 @@ module PlexRubySDK
         @operator = operator
         @type = type
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @operator == other.operator
+        return false unless @type == other.type
+        true
+      end
     end
   end
 end

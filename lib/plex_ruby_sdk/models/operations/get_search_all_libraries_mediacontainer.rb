@@ -22,6 +22,13 @@ module PlexRubySDK
         @search_result = search_result
         @size = size
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @search_result == other.search_result
+        return false unless @size == other.size
+        true
+      end
     end
   end
 end

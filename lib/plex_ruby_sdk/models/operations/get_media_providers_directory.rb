@@ -58,6 +58,25 @@ module PlexRubySDK
         @updated_at = updated_at
         @uuid = uuid
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @agent == other.agent
+        return false unless @hub_key == other.hub_key
+        return false unless @id == other.id
+        return false unless @key == other.key
+        return false unless @language == other.language
+        return false unless @pivot == other.pivot
+        return false unless @refreshing == other.refreshing
+        return false unless @scanned_at == other.scanned_at
+        return false unless @scanner == other.scanner
+        return false unless @subtype == other.subtype
+        return false unless @title == other.title
+        return false unless @type == other.type
+        return false unless @updated_at == other.updated_at
+        return false unless @uuid == other.uuid
+        true
+      end
     end
   end
 end

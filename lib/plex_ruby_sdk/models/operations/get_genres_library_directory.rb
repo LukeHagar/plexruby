@@ -28,6 +28,15 @@ module PlexRubySDK
         @title = title
         @type = type
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @fast_key == other.fast_key
+        return false unless @key == other.key
+        return false unless @title == other.title
+        return false unless @type == other.type
+        true
+      end
     end
   end
 end

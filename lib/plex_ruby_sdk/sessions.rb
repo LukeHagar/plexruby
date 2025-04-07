@@ -43,7 +43,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getSessions',
         security_source: @sdk_configuration.security_source
       )
@@ -144,7 +144,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getSessionHistory',
         security_source: @sdk_configuration.security_source
       )
@@ -238,7 +238,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getTranscodeSessions',
         security_source: @sdk_configuration.security_source
       )
@@ -340,7 +340,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'stopTranscodeSession',
         security_source: @sdk_configuration.security_source
       )

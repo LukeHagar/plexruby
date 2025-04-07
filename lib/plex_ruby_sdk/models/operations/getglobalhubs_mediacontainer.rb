@@ -28,6 +28,15 @@ module PlexRubySDK
         @identifier = identifier
         @size = size
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @allow_sync == other.allow_sync
+        return false unless @hub == other.hub
+        return false unless @identifier == other.identifier
+        return false unless @size == other.size
+        true
+      end
     end
   end
 end

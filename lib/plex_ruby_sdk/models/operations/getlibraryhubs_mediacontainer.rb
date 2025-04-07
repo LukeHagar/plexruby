@@ -37,6 +37,18 @@ module PlexRubySDK
         @library_section_uuid = library_section_uuid
         @size = size
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @allow_sync == other.allow_sync
+        return false unless @hub == other.hub
+        return false unless @identifier == other.identifier
+        return false unless @library_section_id == other.library_section_id
+        return false unless @library_section_title == other.library_section_title
+        return false unless @library_section_uuid == other.library_section_uuid
+        return false unless @size == other.size
+        true
+      end
     end
   end
 end

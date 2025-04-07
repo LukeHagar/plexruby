@@ -55,6 +55,23 @@ module PlexRubySDK
         @username = username
         @uuid = uuid
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @email == other.email
+        return false unless @friendly_name == other.friendly_name
+        return false unless @home == other.home
+        return false unless @id == other.id
+        return false unless @restricted == other.restricted
+        return false unless @shared_servers == other.shared_servers
+        return false unless @shared_sources == other.shared_sources
+        return false unless @status == other.status
+        return false unless @thumb == other.thumb
+        return false unless @title == other.title
+        return false unless @username == other.username
+        return false unless @uuid == other.uuid
+        true
+      end
     end
   end
 end

@@ -22,6 +22,13 @@ module PlexRubySDK
         @size = size
         @statistics_resources = statistics_resources
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @size == other.size
+        return false unless @statistics_resources == other.statistics_resources
+        true
+      end
     end
   end
 end

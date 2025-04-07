@@ -21,6 +21,12 @@ module PlexRubySDK
       def initialize(timespan: nil)
         @timespan = timespan
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @timespan == other.timespan
+        true
+      end
     end
   end
 end

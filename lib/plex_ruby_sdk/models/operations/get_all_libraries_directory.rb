@@ -11,59 +11,58 @@ module PlexRubySDK
     class GetAllLibrariesDirectory < ::Crystalline::FieldAugmented
       extend T::Sig
 
-
+      # The Plex agent used to match and retrieve media metadata.
       field :agent, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('agent') } }
-
+      # Indicates whether syncing is allowed.
       field :allow_sync, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
-
+      # URL for the background artwork of the media container.
       field :art, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('art') } }
-
+      # The relative path to the composite media item.
       field :composite, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('composite') } }
-
+      # UNKNOWN
       field :content, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('content') } }
-      # Unix epoch datetime in seconds
+      # The number of seconds since the content was last changed relative to now.
       field :content_changed_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('contentChangedAt') } }
-      # Unix epoch datetime in seconds
-      field :created_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('createdAt') } }
-
+      # UNKNOWN
       field :directory, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('directory') } }
-
+      # UNKNOWN
       field :filters, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filters') } }
 
-      field :hidden, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hidden') } }
-
+      field :hidden, ::PlexRubySDK::Operations::Hidden, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hidden'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::Hidden, false) } }
+      # The library key representing the unique identifier
       field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
+      # The Plex library language that has been set
       field :language, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('language') } }
 
       field :location, T::Array[::PlexRubySDK::Operations::GetAllLibrariesLocation], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Location') } }
-
+      # Indicates whether the library is currently being refreshed or updated
       field :refreshing, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('refreshing') } }
       # Unix epoch datetime in seconds
       field :scanned_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('scannedAt') } }
-
+      # UNKNOWN
       field :scanner, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('scanner') } }
-
+      # URL for the thumbnail image of the media container.
       field :thumb, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
-
+      # The title of the library
       field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
 
-      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+      field :type, ::PlexRubySDK::Operations::GetAllLibrariesType, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetAllLibrariesType, false) } }
       # Unix epoch datetime in seconds
       field :updated_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('updatedAt') } }
-
+      # The universally unique identifier for the library.
       field :uuid, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('uuid') } }
 
+      field :created_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('createdAt') } }
 
-      sig { params(agent: ::String, allow_sync: T::Boolean, art: ::String, composite: ::String, content: T::Boolean, content_changed_at: ::Integer, created_at: ::Integer, directory: T::Boolean, filters: T::Boolean, hidden: ::Integer, key: ::String, language: ::String, location: T::Array[::PlexRubySDK::Operations::GetAllLibrariesLocation], refreshing: T::Boolean, scanned_at: ::Integer, scanner: ::String, thumb: ::String, title: ::String, type: ::String, updated_at: ::Integer, uuid: ::String).void }
-      def initialize(agent: nil, allow_sync: nil, art: nil, composite: nil, content: nil, content_changed_at: nil, created_at: nil, directory: nil, filters: nil, hidden: nil, key: nil, language: nil, location: nil, refreshing: nil, scanned_at: nil, scanner: nil, thumb: nil, title: nil, type: nil, updated_at: nil, uuid: nil)
+
+      sig { params(agent: ::String, allow_sync: T::Boolean, art: ::String, composite: ::String, content: T::Boolean, content_changed_at: ::Integer, directory: T::Boolean, filters: T::Boolean, hidden: ::PlexRubySDK::Operations::Hidden, key: ::String, language: ::String, location: T::Array[::PlexRubySDK::Operations::GetAllLibrariesLocation], refreshing: T::Boolean, scanned_at: ::Integer, scanner: ::String, thumb: ::String, title: ::String, type: ::PlexRubySDK::Operations::GetAllLibrariesType, updated_at: ::Integer, uuid: ::String, created_at: T.nilable(::Integer)).void }
+      def initialize(agent: nil, allow_sync: nil, art: nil, composite: nil, content: nil, content_changed_at: nil, directory: nil, filters: nil, hidden: nil, key: nil, language: nil, location: nil, refreshing: nil, scanned_at: nil, scanner: nil, thumb: nil, title: nil, type: nil, updated_at: nil, uuid: nil, created_at: nil)
         @agent = agent
         @allow_sync = allow_sync
         @art = art
         @composite = composite
         @content = content
         @content_changed_at = content_changed_at
-        @created_at = created_at
         @directory = directory
         @filters = filters
         @hidden = hidden
@@ -78,6 +77,33 @@ module PlexRubySDK
         @type = type
         @updated_at = updated_at
         @uuid = uuid
+        @created_at = created_at
+      end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @agent == other.agent
+        return false unless @allow_sync == other.allow_sync
+        return false unless @art == other.art
+        return false unless @composite == other.composite
+        return false unless @content == other.content
+        return false unless @content_changed_at == other.content_changed_at
+        return false unless @directory == other.directory
+        return false unless @filters == other.filters
+        return false unless @hidden == other.hidden
+        return false unless @key == other.key
+        return false unless @language == other.language
+        return false unless @location == other.location
+        return false unless @refreshing == other.refreshing
+        return false unless @scanned_at == other.scanned_at
+        return false unless @scanner == other.scanner
+        return false unless @thumb == other.thumb
+        return false unless @title == other.title
+        return false unless @type == other.type
+        return false unless @updated_at == other.updated_at
+        return false unless @uuid == other.uuid
+        return false unless @created_at == other.created_at
+        true
       end
     end
   end

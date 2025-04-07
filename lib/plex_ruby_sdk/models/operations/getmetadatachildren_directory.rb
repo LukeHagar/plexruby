@@ -31,6 +31,16 @@ module PlexRubySDK
         @title = title
         @viewed_leaf_count = viewed_leaf_count
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @key == other.key
+        return false unless @leaf_count == other.leaf_count
+        return false unless @thumb == other.thumb
+        return false unless @title == other.title
+        return false unless @viewed_leaf_count == other.viewed_leaf_count
+        true
+      end
     end
   end
 end

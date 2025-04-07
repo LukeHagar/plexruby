@@ -28,6 +28,15 @@ module PlexRubySDK
         @status_code = status_code
         @object = object
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @content_type == other.content_type
+        return false unless @raw_response == other.raw_response
+        return false unless @status_code == other.status_code
+        return false unless @object == other.object
+        true
+      end
     end
   end
 end

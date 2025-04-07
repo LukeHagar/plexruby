@@ -97,6 +97,38 @@ module PlexRubySDK
         @view_count = view_count
         @viewed_leaf_count = viewed_leaf_count
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @added_at == other.added_at
+        return false unless @art == other.art
+        return false unless @guid == other.guid
+        return false unless @index == other.index
+        return false unless @key == other.key
+        return false unless @last_rated_at == other.last_rated_at
+        return false unless @last_viewed_at == other.last_viewed_at
+        return false unless @leaf_count == other.leaf_count
+        return false unless @parent_guid == other.parent_guid
+        return false unless @parent_index == other.parent_index
+        return false unless @parent_key == other.parent_key
+        return false unless @parent_rating_key == other.parent_rating_key
+        return false unless @parent_studio == other.parent_studio
+        return false unless @parent_theme == other.parent_theme
+        return false unless @parent_thumb == other.parent_thumb
+        return false unless @parent_title == other.parent_title
+        return false unless @parent_year == other.parent_year
+        return false unless @rating_key == other.rating_key
+        return false unless @skip_count == other.skip_count
+        return false unless @summary == other.summary
+        return false unless @thumb == other.thumb
+        return false unless @title == other.title
+        return false unless @type == other.type
+        return false unless @updated_at == other.updated_at
+        return false unless @user_rating == other.user_rating
+        return false unless @view_count == other.view_count
+        return false unless @viewed_leaf_count == other.viewed_leaf_count
+        true
+      end
     end
   end
 end

@@ -67,6 +67,28 @@ module PlexRubySDK
         @updated_at = updated_at
         @view_count = view_count
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @added_at == other.added_at
+        return false unless @composite == other.composite
+        return false unless @duration == other.duration
+        return false unless @guid == other.guid
+        return false unless @icon == other.icon
+        return false unless @key == other.key
+        return false unless @last_viewed_at == other.last_viewed_at
+        return false unless @leaf_count == other.leaf_count
+        return false unless @playlist_type == other.playlist_type
+        return false unless @rating_key == other.rating_key
+        return false unless @smart == other.smart
+        return false unless @summary == other.summary
+        return false unless @title == other.title
+        return false unless @title_sort == other.title_sort
+        return false unless @type == other.type
+        return false unless @updated_at == other.updated_at
+        return false unless @view_count == other.view_count
+        true
+      end
     end
   end
 end

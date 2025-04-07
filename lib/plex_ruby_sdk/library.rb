@@ -49,7 +49,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getFileHash',
         security_source: @sdk_configuration.security_source
       )
@@ -141,7 +141,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-recently-added-library',
         security_source: @sdk_configuration.security_source
       )
@@ -241,7 +241,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-all-libraries',
         security_source: @sdk_configuration.security_source
       )
@@ -384,7 +384,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-library-details',
         security_source: @sdk_configuration.security_source
       )
@@ -487,7 +487,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'deleteLibrary',
         security_source: @sdk_configuration.security_source
       )
@@ -603,7 +603,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-library-items',
         security_source: @sdk_configuration.security_source
       )
@@ -704,7 +704,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-all-media-library',
         security_source: @sdk_configuration.security_source
       )
@@ -811,7 +811,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-refresh-library-metadata',
         security_source: @sdk_configuration.security_source
       )
@@ -930,7 +930,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-search-library',
         security_source: @sdk_configuration.security_source
       )
@@ -1036,7 +1036,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-genres-library',
         security_source: @sdk_configuration.security_source
       )
@@ -1143,7 +1143,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-countries-library',
         security_source: @sdk_configuration.security_source
       )
@@ -1250,7 +1250,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-actors-library',
         security_source: @sdk_configuration.security_source
       )
@@ -1347,7 +1347,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-search-all-libraries',
         security_source: @sdk_configuration.security_source
       )
@@ -1448,7 +1448,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-media-meta-data',
         security_source: @sdk_configuration.security_source
       )
@@ -1552,7 +1552,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-media-arts',
         security_source: @sdk_configuration.security_source
       )
@@ -1658,7 +1658,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'post-media-arts',
         security_source: @sdk_configuration.security_source
       )
@@ -1749,7 +1749,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'get-media-posters',
         security_source: @sdk_configuration.security_source
       )
@@ -1855,7 +1855,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'post-media-poster',
         security_source: @sdk_configuration.security_source
       )
@@ -1949,7 +1949,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getMetadataChildren',
         security_source: @sdk_configuration.security_source
       )
@@ -2050,7 +2050,7 @@ module PlexRubySDK
 
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
-        oauth2_scopes: nil,
+        oauth2_scopes: [],
         operation_id: 'getTopWatchedContent',
         security_source: @sdk_configuration.security_source
       )

@@ -28,6 +28,15 @@ module PlexRubySDK
         @tag = tag
         @tag_key = tag_key
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @filter == other.filter
+        return false unless @id == other.id
+        return false unless @tag == other.tag
+        return false unless @tag_key == other.tag_key
+        true
+      end
     end
   end
 end

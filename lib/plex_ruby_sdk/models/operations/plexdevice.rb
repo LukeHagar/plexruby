@@ -91,6 +91,35 @@ module PlexRubySDK
         @source_title = source_title
         @synced = synced
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @access_token == other.access_token
+        return false unless @client_identifier == other.client_identifier
+        return false unless @connections == other.connections
+        return false unless @created_at == other.created_at
+        return false unless @device == other.device
+        return false unless @dns_rebinding_protection == other.dns_rebinding_protection
+        return false unless @home == other.home
+        return false unless @https_required == other.https_required
+        return false unless @last_seen_at == other.last_seen_at
+        return false unless @name == other.name
+        return false unless @nat_loopback_supported == other.nat_loopback_supported
+        return false unless @owned == other.owned
+        return false unless @owner_id == other.owner_id
+        return false unless @platform == other.platform
+        return false unless @platform_version == other.platform_version
+        return false unless @presence == other.presence
+        return false unless @product == other.product
+        return false unless @product_version == other.product_version
+        return false unless @provides == other.provides
+        return false unless @public_address == other.public_address
+        return false unless @public_address_matches == other.public_address_matches
+        return false unless @relay == other.relay
+        return false unless @source_title == other.source_title
+        return false unless @synced == other.synced
+        true
+      end
     end
   end
 end

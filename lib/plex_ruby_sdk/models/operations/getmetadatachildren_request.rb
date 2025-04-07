@@ -23,6 +23,13 @@ module PlexRubySDK
         @rating_key = rating_key
         @include_elements = include_elements
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @rating_key == other.rating_key
+        return false unless @include_elements == other.include_elements
+        true
+      end
     end
   end
 end

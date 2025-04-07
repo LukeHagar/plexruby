@@ -40,6 +40,17 @@ module PlexRubySDK
         @platform = platform
         @strong = strong
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @client_id == other.client_id
+        return false unless @client_name == other.client_name
+        return false unless @client_version == other.client_version
+        return false unless @device_nickname == other.device_nickname
+        return false unless @platform == other.platform
+        return false unless @strong == other.strong
+        true
+      end
     end
   end
 end

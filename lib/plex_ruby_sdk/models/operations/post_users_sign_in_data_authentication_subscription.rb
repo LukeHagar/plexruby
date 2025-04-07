@@ -37,6 +37,17 @@ module PlexRubySDK
         @status = status
         @subscribed_at = subscribed_at
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @active == other.active
+        return false unless @features == other.features
+        return false unless @payment_service == other.payment_service
+        return false unless @plan == other.plan
+        return false unless @status == other.status
+        return false unless @subscribed_at == other.subscribed_at
+        true
+      end
     end
   end
 end

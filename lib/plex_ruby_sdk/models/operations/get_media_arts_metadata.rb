@@ -31,6 +31,16 @@ module PlexRubySDK
         @thumb = thumb
         @provider = provider
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @key == other.key
+        return false unless @rating_key == other.rating_key
+        return false unless @selected == other.selected
+        return false unless @thumb == other.thumb
+        return false unless @provider == other.provider
+        true
+      end
     end
   end
 end

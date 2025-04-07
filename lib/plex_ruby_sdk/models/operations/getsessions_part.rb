@@ -46,6 +46,21 @@ module PlexRubySDK
         @size = size
         @stream = stream
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @container == other.container
+        return false unless @decision == other.decision
+        return false unless @duration == other.duration
+        return false unless @file == other.file
+        return false unless @has_thumbnail == other.has_thumbnail
+        return false unless @id == other.id
+        return false unless @key == other.key
+        return false unless @selected == other.selected
+        return false unless @size == other.size
+        return false unless @stream == other.stream
+        true
+      end
     end
   end
 end

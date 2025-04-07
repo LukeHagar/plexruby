@@ -34,6 +34,17 @@ module PlexRubySDK
         @size = size
         @status = status
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @can_install == other.can_install
+        return false unless @checked_at == other.checked_at
+        return false unless @download_url == other.download_url
+        return false unless @release == other.release
+        return false unless @size == other.size
+        return false unless @status == other.status
+        true
+      end
     end
   end
 end

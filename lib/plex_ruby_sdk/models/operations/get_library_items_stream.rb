@@ -130,6 +130,49 @@ module PlexRubySDK
         @title = title
         @width = width
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @codec == other.codec
+        return false unless @id == other.id
+        return false unless @index == other.index
+        return false unless @stream_type == other.stream_type
+        return false unless @audio_channel_layout == other.audio_channel_layout
+        return false unless @bit_depth == other.bit_depth
+        return false unless @bitrate == other.bitrate
+        return false unless @can_auto_sync == other.can_auto_sync
+        return false unless @channels == other.channels
+        return false unless @chroma_location == other.chroma_location
+        return false unless @chroma_subsampling == other.chroma_subsampling
+        return false unless @closed_captions == other.closed_captions
+        return false unless @coded_height == other.coded_height
+        return false unless @coded_width == other.coded_width
+        return false unless @color_primaries == other.color_primaries
+        return false unless @color_range == other.color_range
+        return false unless @color_space == other.color_space
+        return false unless @color_trc == other.color_trc
+        return false unless @default == other.default
+        return false unless @display_title == other.display_title
+        return false unless @embedded_in_video == other.embedded_in_video
+        return false unless @extended_display_title == other.extended_display_title
+        return false unless @frame_rate == other.frame_rate
+        return false unless @has_scaling_matrix == other.has_scaling_matrix
+        return false unless @hearing_impaired == other.hearing_impaired
+        return false unless @height == other.height
+        return false unless @language == other.language
+        return false unless @language_code == other.language_code
+        return false unless @language_tag == other.language_tag
+        return false unless @level == other.level
+        return false unless @profile == other.profile
+        return false unless @ref_frames == other.ref_frames
+        return false unless @sampling_rate == other.sampling_rate
+        return false unless @scan_type == other.scan_type
+        return false unless @selected == other.selected
+        return false unless @stream_identifier == other.stream_identifier
+        return false unless @title == other.title
+        return false unless @width == other.width
+        true
+      end
     end
   end
 end

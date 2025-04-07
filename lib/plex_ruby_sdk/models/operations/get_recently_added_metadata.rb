@@ -242,6 +242,86 @@ module PlexRubySDK
         @writer = writer
         @year = year
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @added_at == other.added_at
+        return false unless @art == other.art
+        return false unless @audience_rating == other.audience_rating
+        return false unless @child_count == other.child_count
+        return false unless @duration == other.duration
+        return false unless @guid == other.guid
+        return false unless @index == other.index
+        return false unless @key == other.key
+        return false unless @library_section_id == other.library_section_id
+        return false unless @library_section_key == other.library_section_key
+        return false unless @library_section_title == other.library_section_title
+        return false unless @originally_available_at == other.originally_available_at
+        return false unless @parent_studio == other.parent_studio
+        return false unless @parent_theme == other.parent_theme
+        return false unless @rating == other.rating
+        return false unless @rating_key == other.rating_key
+        return false unless @season_count == other.season_count
+        return false unless @slug == other.slug
+        return false unless @summary == other.summary
+        return false unless @tagline == other.tagline
+        return false unless @theme == other.theme
+        return false unless @thumb == other.thumb
+        return false unless @title == other.title
+        return false unless @title_sort == other.title_sort
+        return false unless @type == other.type
+        return false unless @audience_rating_image == other.audience_rating_image
+        return false unless @chapter_source == other.chapter_source
+        return false unless @collection == other.collection
+        return false unless @content_rating == other.content_rating
+        return false unless @country == other.country
+        return false unless @created_at_accuracy == other.created_at_accuracy
+        return false unless @created_at_tz_offset == other.created_at_tz_offset
+        return false unless @director == other.director
+        return false unless @genre == other.genre
+        return false unless @grandparent_art == other.grandparent_art
+        return false unless @grandparent_guid == other.grandparent_guid
+        return false unless @grandparent_key == other.grandparent_key
+        return false unless @grandparent_rating_key == other.grandparent_rating_key
+        return false unless @grandparent_slug == other.grandparent_slug
+        return false unless @grandparent_theme == other.grandparent_theme
+        return false unless @grandparent_thumb == other.grandparent_thumb
+        return false unless @grandparent_title == other.grandparent_title
+        return false unless @guids == other.guids
+        return false unless @image == other.image
+        return false unless @last_rated_at == other.last_rated_at
+        return false unless @last_viewed_at == other.last_viewed_at
+        return false unless @leaf_count == other.leaf_count
+        return false unless @location == other.location
+        return false unless @media == other.media
+        return false unless @original_title == other.original_title
+        return false unless @parent_guid == other.parent_guid
+        return false unless @parent_index == other.parent_index
+        return false unless @parent_key == other.parent_key
+        return false unless @parent_rating_key == other.parent_rating_key
+        return false unless @parent_slug == other.parent_slug
+        return false unless @parent_thumb == other.parent_thumb
+        return false unless @parent_title == other.parent_title
+        return false unless @parent_year == other.parent_year
+        return false unless @primary_extra_key == other.primary_extra_key
+        return false unless @producer == other.producer
+        return false unless @rating1 == other.rating1
+        return false unless @rating_image == other.rating_image
+        return false unless @role == other.role
+        return false unless @similar == other.similar
+        return false unless @skip_count == other.skip_count
+        return false unless @studio == other.studio
+        return false unless @subtype == other.subtype
+        return false unless @ultra_blur_colors == other.ultra_blur_colors
+        return false unless @updated_at == other.updated_at
+        return false unless @user_rating == other.user_rating
+        return false unless @view_count == other.view_count
+        return false unless @viewed_leaf_count == other.viewed_leaf_count
+        return false unless @view_offset == other.view_offset
+        return false unless @writer == other.writer
+        return false unless @year == other.year
+        true
+      end
     end
   end
 end

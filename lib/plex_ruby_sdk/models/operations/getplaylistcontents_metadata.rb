@@ -112,6 +112,43 @@ module PlexRubySDK
         @writer = writer
         @year = year
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @added_at == other.added_at
+        return false unless @art == other.art
+        return false unless @audience_rating == other.audience_rating
+        return false unless @audience_rating_image == other.audience_rating_image
+        return false unless @content_rating == other.content_rating
+        return false unless @country == other.country
+        return false unless @director == other.director
+        return false unless @duration == other.duration
+        return false unless @genre == other.genre
+        return false unless @guid == other.guid
+        return false unless @has_premium_extras == other.has_premium_extras
+        return false unless @has_premium_primary_extra == other.has_premium_primary_extra
+        return false unless @key == other.key
+        return false unless @library_section_id == other.library_section_id
+        return false unless @library_section_key == other.library_section_key
+        return false unless @library_section_title == other.library_section_title
+        return false unless @media == other.media
+        return false unless @originally_available_at == other.originally_available_at
+        return false unless @rating == other.rating
+        return false unless @rating_image == other.rating_image
+        return false unless @rating_key == other.rating_key
+        return false unless @role == other.role
+        return false unless @studio == other.studio
+        return false unless @summary == other.summary
+        return false unless @tagline == other.tagline
+        return false unless @thumb == other.thumb
+        return false unless @title == other.title
+        return false unless @title_sort == other.title_sort
+        return false unless @type == other.type
+        return false unless @updated_at == other.updated_at
+        return false unless @writer == other.writer
+        return false unless @year == other.year
+        true
+      end
     end
   end
 end

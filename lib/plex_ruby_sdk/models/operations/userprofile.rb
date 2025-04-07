@@ -43,6 +43,19 @@ module PlexRubySDK
         @media_reviews_visibility = media_reviews_visibility
         @watched_indicator = watched_indicator
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @auto_select_audio == other.auto_select_audio
+        return false unless @auto_select_subtitle == other.auto_select_subtitle
+        return false unless @default_audio_language == other.default_audio_language
+        return false unless @default_subtitle_accessibility == other.default_subtitle_accessibility
+        return false unless @default_subtitle_forced == other.default_subtitle_forced
+        return false unless @default_subtitle_language == other.default_subtitle_language
+        return false unless @media_reviews_visibility == other.media_reviews_visibility
+        return false unless @watched_indicator == other.watched_indicator
+        true
+      end
     end
   end
 end

@@ -11,9 +11,9 @@ module PlexRubySDK
     class GetAllLibrariesLocation < ::Crystalline::FieldAugmented
       extend T::Sig
 
-
+      # The ID of the location.
       field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-
+      # The path to the media item.
       field :path, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('path') } }
 
 
@@ -21,6 +21,13 @@ module PlexRubySDK
       def initialize(id: nil, path: nil)
         @id = id
         @path = path
+      end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @id == other.id
+        return false unless @path == other.path
+        true
       end
     end
   end

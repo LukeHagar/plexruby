@@ -73,6 +73,30 @@ module PlexRubySDK
         @type = type
         @viewed_at = viewed_at
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @account_id == other.account_id
+        return false unless @device_id == other.device_id
+        return false unless @grandparent_art == other.grandparent_art
+        return false unless @grandparent_key == other.grandparent_key
+        return false unless @grandparent_thumb == other.grandparent_thumb
+        return false unless @grandparent_title == other.grandparent_title
+        return false unless @history_key == other.history_key
+        return false unless @index == other.index
+        return false unless @key == other.key
+        return false unless @library_section_id == other.library_section_id
+        return false unless @originally_available_at == other.originally_available_at
+        return false unless @parent_index == other.parent_index
+        return false unless @parent_key == other.parent_key
+        return false unless @parent_thumb == other.parent_thumb
+        return false unless @rating_key == other.rating_key
+        return false unless @thumb == other.thumb
+        return false unless @title == other.title
+        return false unless @type == other.type
+        return false unless @viewed_at == other.viewed_at
+        true
+      end
     end
   end
 end

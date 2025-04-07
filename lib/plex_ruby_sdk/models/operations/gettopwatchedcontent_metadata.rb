@@ -112,6 +112,43 @@ module PlexRubySDK
         @viewed_leaf_count = viewed_leaf_count
         @year = year
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @added_at == other.added_at
+        return false unless @art == other.art
+        return false unless @audience_rating == other.audience_rating
+        return false unless @audience_rating_image == other.audience_rating_image
+        return false unless @child_count == other.child_count
+        return false unless @content_rating == other.content_rating
+        return false unless @country == other.country
+        return false unless @duration == other.duration
+        return false unless @genre == other.genre
+        return false unless @global_view_count == other.global_view_count
+        return false unless @guid == other.guid
+        return false unless @guids == other.guids
+        return false unless @index == other.index
+        return false unless @key == other.key
+        return false unless @leaf_count == other.leaf_count
+        return false unless @library_section_id == other.library_section_id
+        return false unless @library_section_key == other.library_section_key
+        return false unless @library_section_title == other.library_section_title
+        return false unless @originally_available_at == other.originally_available_at
+        return false unless @rating_key == other.rating_key
+        return false unless @role == other.role
+        return false unless @slug == other.slug
+        return false unless @studio == other.studio
+        return false unless @summary == other.summary
+        return false unless @tagline == other.tagline
+        return false unless @thumb == other.thumb
+        return false unless @title == other.title
+        return false unless @type == other.type
+        return false unless @updated_at == other.updated_at
+        return false unless @user == other.user
+        return false unless @viewed_leaf_count == other.viewed_leaf_count
+        return false unless @year == other.year
+        true
+      end
     end
   end
 end

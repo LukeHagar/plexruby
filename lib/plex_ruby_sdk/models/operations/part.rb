@@ -36,7 +36,7 @@ module PlexRubySDK
 
       field :indexes, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('indexes') } }
       # Has this media been optimized for streaming. NOTE: This can be 0, 1, false or true
-      field :optimized_for_streaming, T.nilable(::Object), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('optimizedForStreaming') } }
+      field :optimized_for_streaming, T.nilable(T.any(::PlexRubySDK::Operations::GetRecentlyAddedOptimizedForStreaming1, T::Boolean)), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('optimizedForStreaming') } }
 
       field :packet_length, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('packetLength') } }
       # An array of streams for this part.
@@ -45,7 +45,7 @@ module PlexRubySDK
       field :video_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
 
 
-      sig { params(file: ::String, id: ::Integer, key: ::String, size: ::Integer, accessible: T.nilable(T::Boolean), audio_profile: T.nilable(::String), container: T.nilable(::String), duration: T.nilable(::Integer), exists: T.nilable(T::Boolean), has64bit_offsets: T.nilable(T::Boolean), has_thumbnail: T.nilable(::PlexRubySDK::Operations::HasThumbnail), indexes: T.nilable(::String), optimized_for_streaming: T.nilable(::Object), packet_length: T.nilable(::Integer), stream: T.nilable(T::Array[::PlexRubySDK::Operations::Stream]), video_profile: T.nilable(::String)).void }
+      sig { params(file: ::String, id: ::Integer, key: ::String, size: ::Integer, accessible: T.nilable(T::Boolean), audio_profile: T.nilable(::String), container: T.nilable(::String), duration: T.nilable(::Integer), exists: T.nilable(T::Boolean), has64bit_offsets: T.nilable(T::Boolean), has_thumbnail: T.nilable(::PlexRubySDK::Operations::HasThumbnail), indexes: T.nilable(::String), optimized_for_streaming: T.nilable(T.any(::PlexRubySDK::Operations::GetRecentlyAddedOptimizedForStreaming1, T::Boolean)), packet_length: T.nilable(::Integer), stream: T.nilable(T::Array[::PlexRubySDK::Operations::Stream]), video_profile: T.nilable(::String)).void }
       def initialize(file: nil, id: nil, key: nil, size: nil, accessible: nil, audio_profile: nil, container: nil, duration: nil, exists: nil, has64bit_offsets: nil, has_thumbnail: nil, indexes: nil, optimized_for_streaming: nil, packet_length: nil, stream: nil, video_profile: nil)
         @file = file
         @id = id
@@ -63,6 +63,27 @@ module PlexRubySDK
         @packet_length = packet_length
         @stream = stream
         @video_profile = video_profile
+      end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @file == other.file
+        return false unless @id == other.id
+        return false unless @key == other.key
+        return false unless @size == other.size
+        return false unless @accessible == other.accessible
+        return false unless @audio_profile == other.audio_profile
+        return false unless @container == other.container
+        return false unless @duration == other.duration
+        return false unless @exists == other.exists
+        return false unless @has64bit_offsets == other.has64bit_offsets
+        return false unless @has_thumbnail == other.has_thumbnail
+        return false unless @indexes == other.indexes
+        return false unless @optimized_for_streaming == other.optimized_for_streaming
+        return false unless @packet_length == other.packet_length
+        return false unless @stream == other.stream
+        return false unless @video_profile == other.video_profile
+        true
       end
     end
   end

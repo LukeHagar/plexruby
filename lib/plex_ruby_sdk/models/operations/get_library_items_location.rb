@@ -19,6 +19,12 @@ module PlexRubySDK
       def initialize(path: nil)
         @path = path
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @path == other.path
+        true
+      end
     end
   end
 end

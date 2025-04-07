@@ -19,6 +19,12 @@ module PlexRubySDK
       def initialize(butler_task: nil)
         @butler_task = butler_task
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @butler_task == other.butler_task
+        true
+      end
     end
   end
 end

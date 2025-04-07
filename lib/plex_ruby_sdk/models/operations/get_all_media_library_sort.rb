@@ -42,6 +42,19 @@ module PlexRubySDK
         @desc_key = desc_key
         @first_character_key = first_character_key
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @default_direction == other.default_direction
+        return false unless @key == other.key
+        return false unless @title == other.title
+        return false unless @active == other.active
+        return false unless @active_direction == other.active_direction
+        return false unless @default == other.default
+        return false unless @desc_key == other.desc_key
+        return false unless @first_character_key == other.first_character_key
+        true
+      end
     end
   end
 end

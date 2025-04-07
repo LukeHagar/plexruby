@@ -19,6 +19,12 @@ module PlexRubySDK
       def initialize(access_token: nil)
         @access_token = access_token
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @access_token == other.access_token
+        true
+      end
     end
   end
 end

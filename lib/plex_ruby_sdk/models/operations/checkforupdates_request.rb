@@ -19,6 +19,12 @@ module PlexRubySDK
       def initialize(download: nil)
         @download = download
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @download == other.download
+        true
+      end
     end
   end
 end

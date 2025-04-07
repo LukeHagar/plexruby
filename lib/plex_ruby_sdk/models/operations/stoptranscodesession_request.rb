@@ -19,6 +19,12 @@ module PlexRubySDK
       def initialize(session_key: nil)
         @session_key = session_key
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @session_key == other.session_key
+        true
+      end
     end
   end
 end

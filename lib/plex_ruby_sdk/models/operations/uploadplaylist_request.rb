@@ -35,6 +35,14 @@ module PlexRubySDK
         @path = path
         @section_id = section_id
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @force == other.force
+        return false unless @path == other.path
+        return false unless @section_id == other.section_id
+        true
+      end
     end
   end
 end

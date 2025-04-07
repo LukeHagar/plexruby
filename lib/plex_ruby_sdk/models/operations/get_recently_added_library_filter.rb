@@ -34,6 +34,17 @@ module PlexRubySDK
         @type = type
         @advanced = advanced
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @filter == other.filter
+        return false unless @filter_type == other.filter_type
+        return false unless @key == other.key
+        return false unless @title == other.title
+        return false unless @type == other.type
+        return false unless @advanced == other.advanced
+        true
+      end
     end
   end
 end

@@ -28,6 +28,15 @@ module PlexRubySDK
         @size = size
         @version = version
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @claimed == other.claimed
+        return false unless @machine_identifier == other.machine_identifier
+        return false unless @size == other.size
+        return false unless @version == other.version
+        true
+      end
     end
   end
 end

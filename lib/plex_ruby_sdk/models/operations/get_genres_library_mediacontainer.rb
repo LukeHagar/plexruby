@@ -55,6 +55,24 @@ module PlexRubySDK
         @view_group = view_group
         @directory = directory
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @allow_sync == other.allow_sync
+        return false unless @art == other.art
+        return false unless @content == other.content
+        return false unless @identifier == other.identifier
+        return false unless @media_tag_prefix == other.media_tag_prefix
+        return false unless @media_tag_version == other.media_tag_version
+        return false unless @nocache == other.nocache
+        return false unless @size == other.size
+        return false unless @thumb == other.thumb
+        return false unless @title1 == other.title1
+        return false unless @title2 == other.title2
+        return false unless @view_group == other.view_group
+        return false unless @directory == other.directory
+        true
+      end
     end
   end
 end

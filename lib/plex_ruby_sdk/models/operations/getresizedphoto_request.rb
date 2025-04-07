@@ -37,6 +37,18 @@ module PlexRubySDK
         @url = url
         @width = width
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @blur == other.blur
+        return false unless @height == other.height
+        return false unless @min_size == other.min_size
+        return false unless @opacity == other.opacity
+        return false unless @upscale == other.upscale
+        return false unless @url == other.url
+        return false unless @width == other.width
+        true
+      end
     end
   end
 end

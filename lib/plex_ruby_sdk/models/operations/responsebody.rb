@@ -37,6 +37,17 @@ module PlexRubySDK
         @title = title
         @token = token
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @base_url == other.base_url
+        return false unless @identifier == other.identifier
+        return false unless @link_url == other.link_url
+        return false unless @provides == other.provides
+        return false unless @title == other.title
+        return false unless @token == other.token
+        true
+      end
     end
   end
 end

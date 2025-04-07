@@ -21,6 +21,12 @@ module PlexRubySDK
       def initialize(section_key: nil)
         @section_key = section_key
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @section_key == other.section_key
+        true
+      end
     end
   end
 end

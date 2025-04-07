@@ -564,7 +564,7 @@ module PlexRubySDK
         .returns([String, Object, T.nilable(T::Array[T::Array[Object]])])
     end
     def self.serialize_content_type(field_name, media_type, request)
-      return media_type, ::Crystalline.marshal_json_complex(request), nil if media_type.match('(application|text)\/.*?\+*json.*')
+      return media_type, ::Crystalline.to_json(request), nil if media_type.match('(application|text)\/.*?\+*json.*')
       return serialize_multipart_form(media_type, request) if media_type.match('multipart\/.*')
       return media_type, serialize_form_data(field_name, request), nil if media_type.match('application\/x-www-form-urlencoded.*')
       return media_type, request, nil if request.is_a?(String) || request.is_a?(Array)
@@ -617,7 +617,7 @@ module PlexRubySDK
         elsif field_metadata[:json] == true
           to_append = [
             field_metadata.fetch(:field_name, field.name), [
-              nil, ::Crystalline.marshal_json_complex(val), 'application/json'
+              nil, ::Crystalline.to_json(val), 'application/json'
             ]
           ]
           form.append(to_append)
@@ -687,7 +687,7 @@ module PlexRubySDK
           field_name = metadata.fetch(:field_name, field.name)
 
           if metadata[:json]
-            form[field_name] = ::Crystalline.marshal_json_complex(val)
+            form[field_name] = ::Crystalline.to_json(val)
           else
             if metadata.fetch(:style, 'form') == 'form'
               form = form.merge(

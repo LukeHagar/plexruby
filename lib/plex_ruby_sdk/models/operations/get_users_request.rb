@@ -58,6 +58,24 @@ module PlexRubySDK
         @x_plex_language = x_plex_language
         @x_plex_session_id = x_plex_session_id
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @client_id == other.client_id
+        return false unless @x_plex_token == other.x_plex_token
+        return false unless @client_features == other.client_features
+        return false unless @client_name == other.client_name
+        return false unless @client_version == other.client_version
+        return false unless @device_name == other.device_name
+        return false unless @device_nickname == other.device_nickname
+        return false unless @device_screen_resolution == other.device_screen_resolution
+        return false unless @model == other.model
+        return false unless @platform == other.platform
+        return false unless @platform_version == other.platform_version
+        return false unless @x_plex_language == other.x_plex_language
+        return false unless @x_plex_session_id == other.x_plex_session_id
+        true
+      end
     end
   end
 end

@@ -26,6 +26,13 @@ module PlexRubySDK
         @section_key = section_key
         @include_details = include_details
       end
+
+      def ==(other)
+        return false unless other.is_a? self.class
+        return false unless @section_key == other.section_key
+        return false unless @include_details == other.include_details
+        true
+      end
     end
   end
 end
