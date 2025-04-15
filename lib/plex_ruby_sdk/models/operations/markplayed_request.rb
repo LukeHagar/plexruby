@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class MarkPlayedRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class MarkPlayedRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The media key to mark as played
-      field :key, ::Float, { 'query_param': { 'field_name': 'key', 'style': 'form', 'explode': true } }
+        # The media key to mark as played
+        field :key, ::Float, { 'query_param': { 'field_name': 'key', 'style': 'form', 'explode': true } }
 
 
-      sig { params(key: ::Float).void }
-      def initialize(key: nil)
-        @key = key
-      end
+        sig { params(key: ::Float).void }
+        def initialize(key: nil)
+          @key = key
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @key == other.key
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @key == other.key
+          true
+        end
       end
     end
   end

@@ -5,16 +5,18 @@
 
 
 module PlexRubySDK
-  module Operations
-    ALLOW_SUBTITLE_ADMIN_SERVERS = [
-      'https://plex.tv/api'
-    ].freeze
-  
-    # AllowSubtitleAdmin - Indicates if the user can manage subtitles.
-    class AllowSubtitleAdmin < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+      ALLOW_SUBTITLE_ADMIN_SERVERS = [
+        'https://plex.tv/api'
+      ].freeze
+    
+      # AllowSubtitleAdmin - Indicates if the user can manage subtitles.
+      class AllowSubtitleAdmin < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

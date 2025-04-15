@@ -5,13 +5,15 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # Skip - Indicate that the latest version should be marked as skipped. The [Release] entry for this version will have the `state` set to `skipped`.
-    class Skip < T::Enum
-      enums do
-        ZERO = new(0)
-        ONE = new(1)
+  module Models
+    module Operations
+    
+      # Skip - Indicate that the latest version should be marked as skipped. The [Release] entry for this version will have the `state` set to `skipped`.
+      class Skip < T::Enum
+        enums do
+          ZERO = new(0)
+          ONE = new(1)
+        end
       end
     end
   end

@@ -75,7 +75,7 @@ gem install plex_ruby_sdk
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -105,7 +105,7 @@ You can set the security parameters through the `security` optional parameter wh
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -271,11 +271,11 @@ end
 
 The default server `{protocol}://{ip}:{port}` contains variables and is set to `https://10.10.10.47:32400` by default. To override default values, the following parameters are available when initializing the SDK client instance:
 
-| Variable   | Parameter                                                   | Supported Values           | Default         | Description                                    |
-| ---------- | ----------------------------------------------------------- | -------------------------- | --------------- | ---------------------------------------------- |
-| `protocol` | `protocol (::PlexRubySDK::ServerVariables::ServerProtocol)` | - `"http"`<br/>- `"https"` | `"https"`       | The protocol to use for the server connection  |
-| `ip`       | `ip (::String)`                                             | ::String                   | `"10.10.10.47"` | The IP address or hostname of your Plex Server |
-| `port`     | `port (::String)`                                           | ::String                   | `"32400"`       | The port of your Plex Server                   |
+| Variable   | Parameter                                                           | Supported Values           | Default         | Description                                    |
+| ---------- | ------------------------------------------------------------------- | -------------------------- | --------------- | ---------------------------------------------- |
+| `protocol` | `protocol (::PlexRubySDK::Models::ServerVariables::ServerProtocol)` | - `"http"`<br/>- `"https"` | `"https"`       | The protocol to use for the server connection  |
+| `ip`       | `ip (::String)`                                                     | ::String                   | `"10.10.10.47"` | The IP address or hostname of your Plex Server |
+| `port`     | `port (::String)`                                                   | ::String                   | `"32400"`       | The port of your Plex Server                   |
 
 #### Example
 
@@ -286,7 +286,7 @@ s = ::PlexRubySDK::PlexAPI.new(
       protocol: "https",
       ip: "e0c3:bcc0:6bac:dccc:c4ec:34b1:ca98:4cb9",
       port: "40311",
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -307,7 +307,7 @@ require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
       server_url: "https://10.10.10.47:32400",
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -327,7 +327,7 @@ The server URL can also be overridden on a per-operation basis, provided a serve
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )

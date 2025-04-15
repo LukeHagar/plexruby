@@ -5,13 +5,15 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetSearchAllLibrariesOptimizedForStreaming < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+      class GetSearchAllLibrariesOptimizedForStreaming < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

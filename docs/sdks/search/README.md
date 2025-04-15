@@ -34,7 +34,7 @@ This request is intended to be very fast, and called as the user types.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -57,7 +57,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::PerformSearchResponse)](../../models/operations/performsearchresponse.md)**
+**[T.nilable(Models::Operations::PerformSearchResponse)](../../models/operations/performsearchresponse.md)**
 
 
 
@@ -75,7 +75,7 @@ Results, as well as their containing per-type hubs, contain a `distance` attribu
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -98,7 +98,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::PerformVoiceSearchResponse)](../../models/operations/performvoicesearchresponse.md)**
+**[T.nilable(Models::Operations::PerformVoiceSearchResponse)](../../models/operations/performvoicesearchresponse.md)**
 
 
 
@@ -112,7 +112,7 @@ This will search the database for the string provided.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -133,5 +133,5 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetSearchResultsResponse)](../../models/operations/getsearchresultsresponse.md)**
+**[T.nilable(Models::Operations::GetSearchResultsResponse)](../../models/operations/getsearchresultsresponse.md)**
 

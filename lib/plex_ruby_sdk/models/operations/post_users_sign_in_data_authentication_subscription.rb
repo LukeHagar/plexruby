@@ -5,48 +5,51 @@
 
 
 module PlexRubySDK
-  module Operations
-    POST_USERS_SIGN_IN_DATA_AUTHENTICATION_SUBSCRIPTION_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
+  module Models
+    module Operations
+      POST_USERS_SIGN_IN_DATA_AUTHENTICATION_SUBSCRIPTION_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
 
-    class PostUsersSignInDataAuthenticationSubscription < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class PostUsersSignInDataAuthenticationSubscription
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # If the account's Plex Pass subscription is active
-      field :active, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('active') } }
-      # List of features allowed on your Plex Pass subscription
-      field :features, T.nilable(T::Array[::String]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('features') } }
-      # Payment service used for your Plex Pass subscription
-      field :payment_service, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('paymentService') } }
-      # Name of Plex Pass subscription plan
-      field :plan, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('plan') } }
-      # String representation of subscriptionActive
-      field :status, T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataAuthenticationResponseStatus), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('status'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::PostUsersSignInDataAuthenticationResponseStatus, true) } }
-      # Date the account subscribed to Plex Pass
-      field :subscribed_at, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subscribedAt') } }
+        # If the account's Plex Pass subscription is active
+        field :active, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('active') } }
+        # List of features allowed on your Plex Pass subscription
+        field :features, T.nilable(T::Array[::String]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('features') } }
+        # Payment service used for your Plex Pass subscription
+        field :payment_service, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('paymentService') } }
+        # Name of Plex Pass subscription plan
+        field :plan, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('plan') } }
+        # String representation of subscriptionActive
+        field :status, T.nilable(Models::Operations::PostUsersSignInDataAuthenticationResponseStatus), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('status'), 'decoder': Utils.enum_from_string(Models::Operations::PostUsersSignInDataAuthenticationResponseStatus, true) } }
+        # Date the account subscribed to Plex Pass
+        field :subscribed_at, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subscribedAt') } }
 
 
-      sig { params(active: T.nilable(T::Boolean), features: T.nilable(T::Array[::String]), payment_service: T.nilable(::String), plan: T.nilable(::String), status: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataAuthenticationResponseStatus), subscribed_at: T.nilable(::String)).void }
-      def initialize(active: nil, features: nil, payment_service: nil, plan: nil, status: nil, subscribed_at: nil)
-        @active = active
-        @features = features
-        @payment_service = payment_service
-        @plan = plan
-        @status = status
-        @subscribed_at = subscribed_at
-      end
+        sig { params(active: T.nilable(T::Boolean), features: T.nilable(T::Array[::String]), payment_service: T.nilable(::String), plan: T.nilable(::String), status: T.nilable(Models::Operations::PostUsersSignInDataAuthenticationResponseStatus), subscribed_at: T.nilable(::String)).void }
+        def initialize(active: nil, features: nil, payment_service: nil, plan: nil, status: nil, subscribed_at: nil)
+          @active = active
+          @features = features
+          @payment_service = payment_service
+          @plan = plan
+          @status = status
+          @subscribed_at = subscribed_at
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @active == other.active
-        return false unless @features == other.features
-        return false unless @payment_service == other.payment_service
-        return false unless @plan == other.plan
-        return false unless @status == other.status
-        return false unless @subscribed_at == other.subscribed_at
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @active == other.active
+          return false unless @features == other.features
+          return false unless @payment_service == other.payment_service
+          return false unless @plan == other.plan
+          return false unless @status == other.status
+          return false unless @subscribed_at == other.subscribed_at
+          true
+        end
       end
     end
   end

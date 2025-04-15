@@ -5,13 +5,15 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # GetAllMediaLibraryHasThumbnail - Indicates if the part has a thumbnail.
-    class GetAllMediaLibraryHasThumbnail < T::Enum
-      enums do
-        FALSE = new('0')
-        TRUE = new('1')
+  module Models
+    module Operations
+    
+      # GetAllMediaLibraryHasThumbnail - Indicates if the part has a thumbnail.
+      class GetAllMediaLibraryHasThumbnail < T::Enum
+        enums do
+          FALSE = new('0')
+          TRUE = new('1')
+        end
       end
     end
   end

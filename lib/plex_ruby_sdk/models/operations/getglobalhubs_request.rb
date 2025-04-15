@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetGlobalHubsRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetGlobalHubsRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The number of items to return with each hub.
-      field :count, T.nilable(::Float), { 'query_param': { 'field_name': 'count', 'style': 'form', 'explode': true } }
-      # Only return hubs which are "transient", meaning those which are prone to changing after media playback or addition (e.g. On Deck, or Recently Added).
-      field :only_transient, T.nilable(::PlexRubySDK::Operations::OnlyTransient), { 'query_param': { 'field_name': 'onlyTransient', 'style': 'form', 'explode': true } }
+        # The number of items to return with each hub.
+        field :count, T.nilable(::Float), { 'query_param': { 'field_name': 'count', 'style': 'form', 'explode': true } }
+        # Only return hubs which are "transient", meaning those which are prone to changing after media playback or addition (e.g. On Deck, or Recently Added).
+        field :only_transient, T.nilable(Models::Operations::OnlyTransient), { 'query_param': { 'field_name': 'onlyTransient', 'style': 'form', 'explode': true } }
 
 
-      sig { params(count: T.nilable(::Float), only_transient: T.nilable(::PlexRubySDK::Operations::OnlyTransient)).void }
-      def initialize(count: nil, only_transient: nil)
-        @count = count
-        @only_transient = only_transient
-      end
+        sig { params(count: T.nilable(::Float), only_transient: T.nilable(Models::Operations::OnlyTransient)).void }
+        def initialize(count: nil, only_transient: nil)
+          @count = count
+          @only_transient = only_transient
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @count == other.count
-        return false unless @only_transient == other.only_transient
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @count == other.count
+          return false unless @only_transient == other.only_transient
+          true
+        end
       end
     end
   end

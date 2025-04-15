@@ -5,65 +5,68 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class Server < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :address, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('address') } }
-
-      field :device_class, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('deviceClass') } }
-
-      field :host, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('host') } }
-
-      field :machine_identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('machineIdentifier') } }
-
-      field :name, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('name') } }
-
-      field :port, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('port') } }
-
-      field :product, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('product') } }
-
-      field :protocol, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('protocol') } }
-
-      field :protocol_capabilities, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('protocolCapabilities') } }
-
-      field :protocol_version, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('protocolVersion') } }
-
-      field :version, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('version') } }
+      class Server
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(address: T.nilable(::String), device_class: T.nilable(::String), host: T.nilable(::String), machine_identifier: T.nilable(::String), name: T.nilable(::String), port: T.nilable(::Float), product: T.nilable(::String), protocol: T.nilable(::String), protocol_capabilities: T.nilable(::String), protocol_version: T.nilable(::Float), version: T.nilable(::String)).void }
-      def initialize(address: nil, device_class: nil, host: nil, machine_identifier: nil, name: nil, port: nil, product: nil, protocol: nil, protocol_capabilities: nil, protocol_version: nil, version: nil)
-        @address = address
-        @device_class = device_class
-        @host = host
-        @machine_identifier = machine_identifier
-        @name = name
-        @port = port
-        @product = product
-        @protocol = protocol
-        @protocol_capabilities = protocol_capabilities
-        @protocol_version = protocol_version
-        @version = version
-      end
+        field :address, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('address') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @address == other.address
-        return false unless @device_class == other.device_class
-        return false unless @host == other.host
-        return false unless @machine_identifier == other.machine_identifier
-        return false unless @name == other.name
-        return false unless @port == other.port
-        return false unless @product == other.product
-        return false unless @protocol == other.protocol
-        return false unless @protocol_capabilities == other.protocol_capabilities
-        return false unless @protocol_version == other.protocol_version
-        return false unless @version == other.version
-        true
+        field :device_class, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('deviceClass') } }
+
+        field :host, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('host') } }
+
+        field :machine_identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('machineIdentifier') } }
+
+        field :name, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('name') } }
+
+        field :port, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('port') } }
+
+        field :product, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('product') } }
+
+        field :protocol, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('protocol') } }
+
+        field :protocol_capabilities, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('protocolCapabilities') } }
+
+        field :protocol_version, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('protocolVersion') } }
+
+        field :version, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('version') } }
+
+
+        sig { params(address: T.nilable(::String), device_class: T.nilable(::String), host: T.nilable(::String), machine_identifier: T.nilable(::String), name: T.nilable(::String), port: T.nilable(::Float), product: T.nilable(::String), protocol: T.nilable(::String), protocol_capabilities: T.nilable(::String), protocol_version: T.nilable(::Float), version: T.nilable(::String)).void }
+        def initialize(address: nil, device_class: nil, host: nil, machine_identifier: nil, name: nil, port: nil, product: nil, protocol: nil, protocol_capabilities: nil, protocol_version: nil, version: nil)
+          @address = address
+          @device_class = device_class
+          @host = host
+          @machine_identifier = machine_identifier
+          @name = name
+          @port = port
+          @product = product
+          @protocol = protocol
+          @protocol_capabilities = protocol_capabilities
+          @protocol_version = protocol_version
+          @version = version
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @address == other.address
+          return false unless @device_class == other.device_class
+          return false unless @host == other.host
+          return false unless @machine_identifier == other.machine_identifier
+          return false unless @name == other.name
+          return false unless @port == other.port
+          return false unless @product == other.product
+          return false unless @protocol == other.protocol
+          return false unless @protocol_capabilities == other.protocol_capabilities
+          return false unless @protocol_version == other.protocol_version
+          return false unless @version == other.version
+          true
+        end
       end
     end
   end

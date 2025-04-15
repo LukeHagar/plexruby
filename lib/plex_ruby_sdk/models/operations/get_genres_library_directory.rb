@@ -5,37 +5,40 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetGenresLibraryDirectory < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :fast_key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('fastKey') } }
-
-      field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-
-      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+      class GetGenresLibraryDirectory
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(fast_key: ::String, key: ::String, title: ::String, type: ::String).void }
-      def initialize(fast_key: nil, key: nil, title: nil, type: nil)
-        @fast_key = fast_key
-        @key = key
-        @title = title
-        @type = type
-      end
+        field :fast_key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('fastKey') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @fast_key == other.fast_key
-        return false unless @key == other.key
-        return false unless @title == other.title
-        return false unless @type == other.type
-        true
+        field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+        field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+        field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+
+
+        sig { params(fast_key: ::String, key: ::String, title: ::String, type: ::String).void }
+        def initialize(fast_key: nil, key: nil, title: nil, type: nil)
+          @fast_key = fast_key
+          @key = key
+          @title = title
+          @type = type
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @fast_key == other.fast_key
+          return false unless @key == other.key
+          return false unless @title == other.title
+          return false unless @type == other.type
+          true
+        end
       end
     end
   end

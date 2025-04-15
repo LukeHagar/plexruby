@@ -5,13 +5,15 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # IncludeAdvanced
-    class IncludeAdvanced < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+    
+      # IncludeAdvanced
+      class IncludeAdvanced < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

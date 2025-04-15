@@ -5,37 +5,40 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetGlobalHubsMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :allow_sync, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
-
-      field :hub, T.nilable(T::Array[::PlexRubySDK::Operations::Hub]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Hub') } }
-
-      field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
-
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+      class GetGlobalHubsMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(allow_sync: T.nilable(T::Boolean), hub: T.nilable(T::Array[::PlexRubySDK::Operations::Hub]), identifier: T.nilable(::String), size: T.nilable(::Integer)).void }
-      def initialize(allow_sync: nil, hub: nil, identifier: nil, size: nil)
-        @allow_sync = allow_sync
-        @hub = hub
-        @identifier = identifier
-        @size = size
-      end
+        field :allow_sync, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @allow_sync == other.allow_sync
-        return false unless @hub == other.hub
-        return false unless @identifier == other.identifier
-        return false unless @size == other.size
-        true
+        field :hub, T.nilable(T::Array[Models::Operations::Hub]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Hub') } }
+
+        field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
+
+        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+
+        sig { params(allow_sync: T.nilable(T::Boolean), hub: T.nilable(T::Array[Models::Operations::Hub]), identifier: T.nilable(::String), size: T.nilable(::Integer)).void }
+        def initialize(allow_sync: nil, hub: nil, identifier: nil, size: nil)
+          @allow_sync = allow_sync
+          @hub = hub
+          @identifier = identifier
+          @size = size
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @allow_sync == other.allow_sync
+          return false unless @hub == other.hub
+          return false unless @identifier == other.identifier
+          return false unless @size == other.size
+          true
+        end
       end
     end
   end

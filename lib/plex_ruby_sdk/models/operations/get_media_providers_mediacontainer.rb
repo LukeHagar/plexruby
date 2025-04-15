@@ -5,197 +5,200 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetMediaProvidersMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :allow_camera_upload, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowCameraUpload') } }
-
-      field :allow_channel_access, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowChannelAccess') } }
-
-      field :allow_sharing, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSharing') } }
-
-      field :allow_sync, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
-
-      field :allow_tuners, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowTuners') } }
-
-      field :background_processing, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('backgroundProcessing') } }
-
-      field :certificate, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('certificate') } }
-
-      field :companion_proxy, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('companionProxy') } }
-
-      field :country_code, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('countryCode') } }
-
-      field :diagnostics, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('diagnostics') } }
-
-      field :event_stream, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('eventStream') } }
-
-      field :friendly_name, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('friendlyName') } }
-
-      field :livetv, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('livetv') } }
-
-      field :machine_identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('machineIdentifier') } }
-
-      field :media_provider, T.nilable(T::Array[::PlexRubySDK::Operations::MediaProvider]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('MediaProvider') } }
-
-      field :music_analysis, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('musicAnalysis') } }
-
-      field :my_plex, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('myPlex') } }
-
-      field :my_plex_mapping_state, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('myPlexMappingState') } }
-
-      field :my_plex_signin_state, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('myPlexSigninState') } }
-
-      field :my_plex_subscription, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('myPlexSubscription') } }
-
-      field :my_plex_username, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('myPlexUsername') } }
-
-      field :offline_transcode, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('offlineTranscode') } }
-
-      field :owner_features, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ownerFeatures') } }
-
-      field :platform, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('platform') } }
-
-      field :platform_version, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('platformVersion') } }
-
-      field :plugin_host, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('pluginHost') } }
-
-      field :push_notifications, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('pushNotifications') } }
-
-      field :read_only_libraries, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('readOnlyLibraries') } }
-
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-
-      field :streaming_brain_abr_version, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('streamingBrainABRVersion') } }
-
-      field :streaming_brain_version, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('streamingBrainVersion') } }
-
-      field :sync, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('sync') } }
-
-      field :transcoder_active_video_sessions, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderActiveVideoSessions') } }
-
-      field :transcoder_audio, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderAudio') } }
-
-      field :transcoder_lyrics, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderLyrics') } }
-
-      field :transcoder_subtitles, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderSubtitles') } }
-
-      field :transcoder_video, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderVideo') } }
-
-      field :transcoder_video_bitrates, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderVideoBitrates') } }
-
-      field :transcoder_video_qualities, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderVideoQualities') } }
-
-      field :transcoder_video_resolutions, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderVideoResolutions') } }
-
-      field :updated_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('updatedAt') } }
-
-      field :updater, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('updater') } }
-
-      field :version, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('version') } }
-
-      field :voice_search, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('voiceSearch') } }
+      class GetMediaProvidersMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(allow_camera_upload: T.nilable(T::Boolean), allow_channel_access: T.nilable(T::Boolean), allow_sharing: T.nilable(T::Boolean), allow_sync: T.nilable(T::Boolean), allow_tuners: T.nilable(T::Boolean), background_processing: T.nilable(T::Boolean), certificate: T.nilable(T::Boolean), companion_proxy: T.nilable(T::Boolean), country_code: T.nilable(::String), diagnostics: T.nilable(::String), event_stream: T.nilable(T::Boolean), friendly_name: T.nilable(::String), livetv: T.nilable(::Integer), machine_identifier: T.nilable(::String), media_provider: T.nilable(T::Array[::PlexRubySDK::Operations::MediaProvider]), music_analysis: T.nilable(::Integer), my_plex: T.nilable(T::Boolean), my_plex_mapping_state: T.nilable(::String), my_plex_signin_state: T.nilable(::String), my_plex_subscription: T.nilable(T::Boolean), my_plex_username: T.nilable(::String), offline_transcode: T.nilable(::Integer), owner_features: T.nilable(::String), platform: T.nilable(::String), platform_version: T.nilable(::String), plugin_host: T.nilable(T::Boolean), push_notifications: T.nilable(T::Boolean), read_only_libraries: T.nilable(T::Boolean), size: T.nilable(::Integer), streaming_brain_abr_version: T.nilable(::Integer), streaming_brain_version: T.nilable(::Integer), sync: T.nilable(T::Boolean), transcoder_active_video_sessions: T.nilable(::Integer), transcoder_audio: T.nilable(T::Boolean), transcoder_lyrics: T.nilable(T::Boolean), transcoder_subtitles: T.nilable(T::Boolean), transcoder_video: T.nilable(T::Boolean), transcoder_video_bitrates: T.nilable(::String), transcoder_video_qualities: T.nilable(::String), transcoder_video_resolutions: T.nilable(::String), updated_at: T.nilable(::Integer), updater: T.nilable(T::Boolean), version: T.nilable(::String), voice_search: T.nilable(T::Boolean)).void }
-      def initialize(allow_camera_upload: nil, allow_channel_access: nil, allow_sharing: nil, allow_sync: nil, allow_tuners: nil, background_processing: nil, certificate: nil, companion_proxy: nil, country_code: nil, diagnostics: nil, event_stream: nil, friendly_name: nil, livetv: nil, machine_identifier: nil, media_provider: nil, music_analysis: nil, my_plex: nil, my_plex_mapping_state: nil, my_plex_signin_state: nil, my_plex_subscription: nil, my_plex_username: nil, offline_transcode: nil, owner_features: nil, platform: nil, platform_version: nil, plugin_host: nil, push_notifications: nil, read_only_libraries: nil, size: nil, streaming_brain_abr_version: nil, streaming_brain_version: nil, sync: nil, transcoder_active_video_sessions: nil, transcoder_audio: nil, transcoder_lyrics: nil, transcoder_subtitles: nil, transcoder_video: nil, transcoder_video_bitrates: nil, transcoder_video_qualities: nil, transcoder_video_resolutions: nil, updated_at: nil, updater: nil, version: nil, voice_search: nil)
-        @allow_camera_upload = allow_camera_upload
-        @allow_channel_access = allow_channel_access
-        @allow_sharing = allow_sharing
-        @allow_sync = allow_sync
-        @allow_tuners = allow_tuners
-        @background_processing = background_processing
-        @certificate = certificate
-        @companion_proxy = companion_proxy
-        @country_code = country_code
-        @diagnostics = diagnostics
-        @event_stream = event_stream
-        @friendly_name = friendly_name
-        @livetv = livetv
-        @machine_identifier = machine_identifier
-        @media_provider = media_provider
-        @music_analysis = music_analysis
-        @my_plex = my_plex
-        @my_plex_mapping_state = my_plex_mapping_state
-        @my_plex_signin_state = my_plex_signin_state
-        @my_plex_subscription = my_plex_subscription
-        @my_plex_username = my_plex_username
-        @offline_transcode = offline_transcode
-        @owner_features = owner_features
-        @platform = platform
-        @platform_version = platform_version
-        @plugin_host = plugin_host
-        @push_notifications = push_notifications
-        @read_only_libraries = read_only_libraries
-        @size = size
-        @streaming_brain_abr_version = streaming_brain_abr_version
-        @streaming_brain_version = streaming_brain_version
-        @sync = sync
-        @transcoder_active_video_sessions = transcoder_active_video_sessions
-        @transcoder_audio = transcoder_audio
-        @transcoder_lyrics = transcoder_lyrics
-        @transcoder_subtitles = transcoder_subtitles
-        @transcoder_video = transcoder_video
-        @transcoder_video_bitrates = transcoder_video_bitrates
-        @transcoder_video_qualities = transcoder_video_qualities
-        @transcoder_video_resolutions = transcoder_video_resolutions
-        @updated_at = updated_at
-        @updater = updater
-        @version = version
-        @voice_search = voice_search
-      end
+        field :allow_camera_upload, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowCameraUpload') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @allow_camera_upload == other.allow_camera_upload
-        return false unless @allow_channel_access == other.allow_channel_access
-        return false unless @allow_sharing == other.allow_sharing
-        return false unless @allow_sync == other.allow_sync
-        return false unless @allow_tuners == other.allow_tuners
-        return false unless @background_processing == other.background_processing
-        return false unless @certificate == other.certificate
-        return false unless @companion_proxy == other.companion_proxy
-        return false unless @country_code == other.country_code
-        return false unless @diagnostics == other.diagnostics
-        return false unless @event_stream == other.event_stream
-        return false unless @friendly_name == other.friendly_name
-        return false unless @livetv == other.livetv
-        return false unless @machine_identifier == other.machine_identifier
-        return false unless @media_provider == other.media_provider
-        return false unless @music_analysis == other.music_analysis
-        return false unless @my_plex == other.my_plex
-        return false unless @my_plex_mapping_state == other.my_plex_mapping_state
-        return false unless @my_plex_signin_state == other.my_plex_signin_state
-        return false unless @my_plex_subscription == other.my_plex_subscription
-        return false unless @my_plex_username == other.my_plex_username
-        return false unless @offline_transcode == other.offline_transcode
-        return false unless @owner_features == other.owner_features
-        return false unless @platform == other.platform
-        return false unless @platform_version == other.platform_version
-        return false unless @plugin_host == other.plugin_host
-        return false unless @push_notifications == other.push_notifications
-        return false unless @read_only_libraries == other.read_only_libraries
-        return false unless @size == other.size
-        return false unless @streaming_brain_abr_version == other.streaming_brain_abr_version
-        return false unless @streaming_brain_version == other.streaming_brain_version
-        return false unless @sync == other.sync
-        return false unless @transcoder_active_video_sessions == other.transcoder_active_video_sessions
-        return false unless @transcoder_audio == other.transcoder_audio
-        return false unless @transcoder_lyrics == other.transcoder_lyrics
-        return false unless @transcoder_subtitles == other.transcoder_subtitles
-        return false unless @transcoder_video == other.transcoder_video
-        return false unless @transcoder_video_bitrates == other.transcoder_video_bitrates
-        return false unless @transcoder_video_qualities == other.transcoder_video_qualities
-        return false unless @transcoder_video_resolutions == other.transcoder_video_resolutions
-        return false unless @updated_at == other.updated_at
-        return false unless @updater == other.updater
-        return false unless @version == other.version
-        return false unless @voice_search == other.voice_search
-        true
+        field :allow_channel_access, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowChannelAccess') } }
+
+        field :allow_sharing, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSharing') } }
+
+        field :allow_sync, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
+
+        field :allow_tuners, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowTuners') } }
+
+        field :background_processing, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('backgroundProcessing') } }
+
+        field :certificate, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('certificate') } }
+
+        field :companion_proxy, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('companionProxy') } }
+
+        field :country_code, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('countryCode') } }
+
+        field :diagnostics, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('diagnostics') } }
+
+        field :event_stream, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('eventStream') } }
+
+        field :friendly_name, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('friendlyName') } }
+
+        field :livetv, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('livetv') } }
+
+        field :machine_identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('machineIdentifier') } }
+
+        field :media_provider, T.nilable(T::Array[Models::Operations::MediaProvider]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('MediaProvider') } }
+
+        field :music_analysis, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('musicAnalysis') } }
+
+        field :my_plex, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('myPlex') } }
+
+        field :my_plex_mapping_state, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('myPlexMappingState') } }
+
+        field :my_plex_signin_state, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('myPlexSigninState') } }
+
+        field :my_plex_subscription, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('myPlexSubscription') } }
+
+        field :my_plex_username, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('myPlexUsername') } }
+
+        field :offline_transcode, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('offlineTranscode') } }
+
+        field :owner_features, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ownerFeatures') } }
+
+        field :platform, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('platform') } }
+
+        field :platform_version, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('platformVersion') } }
+
+        field :plugin_host, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('pluginHost') } }
+
+        field :push_notifications, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('pushNotifications') } }
+
+        field :read_only_libraries, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('readOnlyLibraries') } }
+
+        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+        field :streaming_brain_abr_version, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('streamingBrainABRVersion') } }
+
+        field :streaming_brain_version, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('streamingBrainVersion') } }
+
+        field :sync, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('sync') } }
+
+        field :transcoder_active_video_sessions, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderActiveVideoSessions') } }
+
+        field :transcoder_audio, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderAudio') } }
+
+        field :transcoder_lyrics, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderLyrics') } }
+
+        field :transcoder_subtitles, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderSubtitles') } }
+
+        field :transcoder_video, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderVideo') } }
+
+        field :transcoder_video_bitrates, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderVideoBitrates') } }
+
+        field :transcoder_video_qualities, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderVideoQualities') } }
+
+        field :transcoder_video_resolutions, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transcoderVideoResolutions') } }
+
+        field :updated_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('updatedAt') } }
+
+        field :updater, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('updater') } }
+
+        field :version, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('version') } }
+
+        field :voice_search, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('voiceSearch') } }
+
+
+        sig { params(allow_camera_upload: T.nilable(T::Boolean), allow_channel_access: T.nilable(T::Boolean), allow_sharing: T.nilable(T::Boolean), allow_sync: T.nilable(T::Boolean), allow_tuners: T.nilable(T::Boolean), background_processing: T.nilable(T::Boolean), certificate: T.nilable(T::Boolean), companion_proxy: T.nilable(T::Boolean), country_code: T.nilable(::String), diagnostics: T.nilable(::String), event_stream: T.nilable(T::Boolean), friendly_name: T.nilable(::String), livetv: T.nilable(::Integer), machine_identifier: T.nilable(::String), media_provider: T.nilable(T::Array[Models::Operations::MediaProvider]), music_analysis: T.nilable(::Integer), my_plex: T.nilable(T::Boolean), my_plex_mapping_state: T.nilable(::String), my_plex_signin_state: T.nilable(::String), my_plex_subscription: T.nilable(T::Boolean), my_plex_username: T.nilable(::String), offline_transcode: T.nilable(::Integer), owner_features: T.nilable(::String), platform: T.nilable(::String), platform_version: T.nilable(::String), plugin_host: T.nilable(T::Boolean), push_notifications: T.nilable(T::Boolean), read_only_libraries: T.nilable(T::Boolean), size: T.nilable(::Integer), streaming_brain_abr_version: T.nilable(::Integer), streaming_brain_version: T.nilable(::Integer), sync: T.nilable(T::Boolean), transcoder_active_video_sessions: T.nilable(::Integer), transcoder_audio: T.nilable(T::Boolean), transcoder_lyrics: T.nilable(T::Boolean), transcoder_subtitles: T.nilable(T::Boolean), transcoder_video: T.nilable(T::Boolean), transcoder_video_bitrates: T.nilable(::String), transcoder_video_qualities: T.nilable(::String), transcoder_video_resolutions: T.nilable(::String), updated_at: T.nilable(::Integer), updater: T.nilable(T::Boolean), version: T.nilable(::String), voice_search: T.nilable(T::Boolean)).void }
+        def initialize(allow_camera_upload: nil, allow_channel_access: nil, allow_sharing: nil, allow_sync: nil, allow_tuners: nil, background_processing: nil, certificate: nil, companion_proxy: nil, country_code: nil, diagnostics: nil, event_stream: nil, friendly_name: nil, livetv: nil, machine_identifier: nil, media_provider: nil, music_analysis: nil, my_plex: nil, my_plex_mapping_state: nil, my_plex_signin_state: nil, my_plex_subscription: nil, my_plex_username: nil, offline_transcode: nil, owner_features: nil, platform: nil, platform_version: nil, plugin_host: nil, push_notifications: nil, read_only_libraries: nil, size: nil, streaming_brain_abr_version: nil, streaming_brain_version: nil, sync: nil, transcoder_active_video_sessions: nil, transcoder_audio: nil, transcoder_lyrics: nil, transcoder_subtitles: nil, transcoder_video: nil, transcoder_video_bitrates: nil, transcoder_video_qualities: nil, transcoder_video_resolutions: nil, updated_at: nil, updater: nil, version: nil, voice_search: nil)
+          @allow_camera_upload = allow_camera_upload
+          @allow_channel_access = allow_channel_access
+          @allow_sharing = allow_sharing
+          @allow_sync = allow_sync
+          @allow_tuners = allow_tuners
+          @background_processing = background_processing
+          @certificate = certificate
+          @companion_proxy = companion_proxy
+          @country_code = country_code
+          @diagnostics = diagnostics
+          @event_stream = event_stream
+          @friendly_name = friendly_name
+          @livetv = livetv
+          @machine_identifier = machine_identifier
+          @media_provider = media_provider
+          @music_analysis = music_analysis
+          @my_plex = my_plex
+          @my_plex_mapping_state = my_plex_mapping_state
+          @my_plex_signin_state = my_plex_signin_state
+          @my_plex_subscription = my_plex_subscription
+          @my_plex_username = my_plex_username
+          @offline_transcode = offline_transcode
+          @owner_features = owner_features
+          @platform = platform
+          @platform_version = platform_version
+          @plugin_host = plugin_host
+          @push_notifications = push_notifications
+          @read_only_libraries = read_only_libraries
+          @size = size
+          @streaming_brain_abr_version = streaming_brain_abr_version
+          @streaming_brain_version = streaming_brain_version
+          @sync = sync
+          @transcoder_active_video_sessions = transcoder_active_video_sessions
+          @transcoder_audio = transcoder_audio
+          @transcoder_lyrics = transcoder_lyrics
+          @transcoder_subtitles = transcoder_subtitles
+          @transcoder_video = transcoder_video
+          @transcoder_video_bitrates = transcoder_video_bitrates
+          @transcoder_video_qualities = transcoder_video_qualities
+          @transcoder_video_resolutions = transcoder_video_resolutions
+          @updated_at = updated_at
+          @updater = updater
+          @version = version
+          @voice_search = voice_search
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @allow_camera_upload == other.allow_camera_upload
+          return false unless @allow_channel_access == other.allow_channel_access
+          return false unless @allow_sharing == other.allow_sharing
+          return false unless @allow_sync == other.allow_sync
+          return false unless @allow_tuners == other.allow_tuners
+          return false unless @background_processing == other.background_processing
+          return false unless @certificate == other.certificate
+          return false unless @companion_proxy == other.companion_proxy
+          return false unless @country_code == other.country_code
+          return false unless @diagnostics == other.diagnostics
+          return false unless @event_stream == other.event_stream
+          return false unless @friendly_name == other.friendly_name
+          return false unless @livetv == other.livetv
+          return false unless @machine_identifier == other.machine_identifier
+          return false unless @media_provider == other.media_provider
+          return false unless @music_analysis == other.music_analysis
+          return false unless @my_plex == other.my_plex
+          return false unless @my_plex_mapping_state == other.my_plex_mapping_state
+          return false unless @my_plex_signin_state == other.my_plex_signin_state
+          return false unless @my_plex_subscription == other.my_plex_subscription
+          return false unless @my_plex_username == other.my_plex_username
+          return false unless @offline_transcode == other.offline_transcode
+          return false unless @owner_features == other.owner_features
+          return false unless @platform == other.platform
+          return false unless @platform_version == other.platform_version
+          return false unless @plugin_host == other.plugin_host
+          return false unless @push_notifications == other.push_notifications
+          return false unless @read_only_libraries == other.read_only_libraries
+          return false unless @size == other.size
+          return false unless @streaming_brain_abr_version == other.streaming_brain_abr_version
+          return false unless @streaming_brain_version == other.streaming_brain_version
+          return false unless @sync == other.sync
+          return false unless @transcoder_active_video_sessions == other.transcoder_active_video_sessions
+          return false unless @transcoder_audio == other.transcoder_audio
+          return false unless @transcoder_lyrics == other.transcoder_lyrics
+          return false unless @transcoder_subtitles == other.transcoder_subtitles
+          return false unless @transcoder_video == other.transcoder_video
+          return false unless @transcoder_video_bitrates == other.transcoder_video_bitrates
+          return false unless @transcoder_video_qualities == other.transcoder_video_qualities
+          return false unless @transcoder_video_resolutions == other.transcoder_video_resolutions
+          return false unless @updated_at == other.updated_at
+          return false unless @updater == other.updater
+          return false unless @version == other.version
+          return false unless @voice_search == other.voice_search
+          true
+        end
       end
     end
   end

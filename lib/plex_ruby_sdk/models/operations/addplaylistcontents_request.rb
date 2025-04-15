@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class AddPlaylistContentsRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class AddPlaylistContentsRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # the ID of the playlist
-      field :playlist_id, ::Float, { 'path_param': { 'field_name': 'playlistID', 'style': 'simple', 'explode': false } }
-      # the content URI for the playlist
-      field :uri, ::String, { 'query_param': { 'field_name': 'uri', 'style': 'form', 'explode': true } }
-      # the play queue to add to a playlist
-      field :play_queue_id, T.nilable(::Float), { 'query_param': { 'field_name': 'playQueueID', 'style': 'form', 'explode': true } }
+        # the ID of the playlist
+        field :playlist_id, ::Float, { 'path_param': { 'field_name': 'playlistID', 'style': 'simple', 'explode': false } }
+        # the content URI for the playlist
+        field :uri, ::String, { 'query_param': { 'field_name': 'uri', 'style': 'form', 'explode': true } }
+        # the play queue to add to a playlist
+        field :play_queue_id, T.nilable(::Float), { 'query_param': { 'field_name': 'playQueueID', 'style': 'form', 'explode': true } }
 
 
-      sig { params(playlist_id: ::Float, uri: ::String, play_queue_id: T.nilable(::Float)).void }
-      def initialize(playlist_id: nil, uri: nil, play_queue_id: nil)
-        @playlist_id = playlist_id
-        @uri = uri
-        @play_queue_id = play_queue_id
-      end
+        sig { params(playlist_id: ::Float, uri: ::String, play_queue_id: T.nilable(::Float)).void }
+        def initialize(playlist_id: nil, uri: nil, play_queue_id: nil)
+          @playlist_id = playlist_id
+          @uri = uri
+          @play_queue_id = play_queue_id
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @playlist_id == other.playlist_id
-        return false unless @uri == other.uri
-        return false unless @play_queue_id == other.play_queue_id
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @playlist_id == other.playlist_id
+          return false unless @uri == other.uri
+          return false unless @play_queue_id == other.play_queue_id
+          true
+        end
       end
     end
   end

@@ -5,42 +5,45 @@
 
 
 module PlexRubySDK
-  module Operations
-    GET_SERVER_RESOURCES_REQUEST_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
+  module Models
+    module Operations
+      GET_SERVER_RESOURCES_REQUEST_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
 
-    class GetServerResourcesRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetServerResourcesRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
-      field :client_id, ::String, { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
-      # Include Https entries in the results
-      field :include_https, T.nilable(::PlexRubySDK::Operations::IncludeHttps), { 'query_param': { 'field_name': 'includeHttps', 'style': 'form', 'explode': true } }
-      # Include IPv6 entries in the results
-      field :include_i_pv6, T.nilable(::PlexRubySDK::Operations::IncludeIPv6), { 'query_param': { 'field_name': 'includeIPv6', 'style': 'form', 'explode': true } }
-      # Include Relay addresses in the results 
-      # E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400
-      # 
-      field :include_relay, T.nilable(::PlexRubySDK::Operations::IncludeRelay), { 'query_param': { 'field_name': 'includeRelay', 'style': 'form', 'explode': true } }
+        # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
+        field :client_id, ::String, { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
+        # Include Https entries in the results
+        field :include_https, T.nilable(Models::Operations::IncludeHttps), { 'query_param': { 'field_name': 'includeHttps', 'style': 'form', 'explode': true } }
+        # Include IPv6 entries in the results
+        field :include_i_pv6, T.nilable(Models::Operations::IncludeIPv6), { 'query_param': { 'field_name': 'includeIPv6', 'style': 'form', 'explode': true } }
+        # Include Relay addresses in the results 
+        # E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400
+        # 
+        field :include_relay, T.nilable(Models::Operations::IncludeRelay), { 'query_param': { 'field_name': 'includeRelay', 'style': 'form', 'explode': true } }
 
 
-      sig { params(client_id: ::String, include_https: T.nilable(::PlexRubySDK::Operations::IncludeHttps), include_i_pv6: T.nilable(::PlexRubySDK::Operations::IncludeIPv6), include_relay: T.nilable(::PlexRubySDK::Operations::IncludeRelay)).void }
-      def initialize(client_id: nil, include_https: nil, include_i_pv6: nil, include_relay: nil)
-        @client_id = client_id
-        @include_https = include_https
-        @include_i_pv6 = include_i_pv6
-        @include_relay = include_relay
-      end
+        sig { params(client_id: ::String, include_https: T.nilable(Models::Operations::IncludeHttps), include_i_pv6: T.nilable(Models::Operations::IncludeIPv6), include_relay: T.nilable(Models::Operations::IncludeRelay)).void }
+        def initialize(client_id: nil, include_https: nil, include_i_pv6: nil, include_relay: nil)
+          @client_id = client_id
+          @include_https = include_https
+          @include_i_pv6 = include_i_pv6
+          @include_relay = include_relay
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @client_id == other.client_id
-        return false unless @include_https == other.include_https
-        return false unless @include_i_pv6 == other.include_i_pv6
-        return false unless @include_relay == other.include_relay
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @client_id == other.client_id
+          return false unless @include_https == other.include_https
+          return false unless @include_i_pv6 == other.include_i_pv6
+          return false unless @include_relay == other.include_relay
+          true
+        end
       end
     end
   end

@@ -5,48 +5,51 @@
 
 
 module PlexRubySDK
-  module Operations
-    POST_USERS_SIGN_IN_DATA_REQUEST_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
+  module Models
+    module Operations
+      POST_USERS_SIGN_IN_DATA_REQUEST_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
 
-    class PostUsersSignInDataRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class PostUsersSignInDataRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
-      field :client_id, ::String, { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
-      # The name of the client application. (Plex Web, Plex Media Server, etc.)
-      field :client_name, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Product', 'style': 'simple', 'explode': false } }
-      # The version of the client application.
-      field :client_version, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Version', 'style': 'simple', 'explode': false } }
-      # A relatively friendly name for the client device
-      field :device_nickname, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Device', 'style': 'simple', 'explode': false } }
-      # The platform of the client application.
-      field :platform, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Platform', 'style': 'simple', 'explode': false } }
-      # Login credentials
-      field :request_body, T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataRequestBody), { 'request': { 'media_type': 'application/x-www-form-urlencoded' } }
+        # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
+        field :client_id, ::String, { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
+        # The name of the client application. (Plex Web, Plex Media Server, etc.)
+        field :client_name, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Product', 'style': 'simple', 'explode': false } }
+        # The version of the client application.
+        field :client_version, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Version', 'style': 'simple', 'explode': false } }
+        # A relatively friendly name for the client device
+        field :device_nickname, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Device', 'style': 'simple', 'explode': false } }
+        # The platform of the client application.
+        field :platform, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Platform', 'style': 'simple', 'explode': false } }
+        # Login credentials
+        field :request_body, T.nilable(Models::Operations::PostUsersSignInDataRequestBody), { 'request': { 'media_type': 'application/x-www-form-urlencoded' } }
 
 
-      sig { params(client_id: ::String, client_name: T.nilable(::String), client_version: T.nilable(::String), device_nickname: T.nilable(::String), platform: T.nilable(::String), request_body: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataRequestBody)).void }
-      def initialize(client_id: nil, client_name: nil, client_version: nil, device_nickname: nil, platform: nil, request_body: nil)
-        @client_id = client_id
-        @client_name = client_name
-        @client_version = client_version
-        @device_nickname = device_nickname
-        @platform = platform
-        @request_body = request_body
-      end
+        sig { params(client_id: ::String, client_name: T.nilable(::String), client_version: T.nilable(::String), device_nickname: T.nilable(::String), platform: T.nilable(::String), request_body: T.nilable(Models::Operations::PostUsersSignInDataRequestBody)).void }
+        def initialize(client_id: nil, client_name: nil, client_version: nil, device_nickname: nil, platform: nil, request_body: nil)
+          @client_id = client_id
+          @client_name = client_name
+          @client_version = client_version
+          @device_nickname = device_nickname
+          @platform = platform
+          @request_body = request_body
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @client_id == other.client_id
-        return false unless @client_name == other.client_name
-        return false unless @client_version == other.client_version
-        return false unless @device_nickname == other.device_nickname
-        return false unless @platform == other.platform
-        return false unless @request_body == other.request_body
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @client_id == other.client_id
+          return false unless @client_name == other.client_name
+          return false unless @client_version == other.client_version
+          return false unless @device_nickname == other.device_nickname
+          return false unless @platform == other.platform
+          return false unless @request_body == other.request_body
+          true
+        end
       end
     end
   end

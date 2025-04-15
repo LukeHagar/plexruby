@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class StopTranscodeSessionRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class StopTranscodeSessionRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # the Key of the transcode session to stop
-      field :session_key, ::String, { 'path_param': { 'field_name': 'sessionKey', 'style': 'simple', 'explode': false } }
+        # the Key of the transcode session to stop
+        field :session_key, ::String, { 'path_param': { 'field_name': 'sessionKey', 'style': 'simple', 'explode': false } }
 
 
-      sig { params(session_key: ::String).void }
-      def initialize(session_key: nil)
-        @session_key = session_key
-      end
+        sig { params(session_key: ::String).void }
+        def initialize(session_key: nil)
+          @session_key = session_key
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @session_key == other.session_key
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @session_key == other.session_key
+          true
+        end
       end
     end
   end

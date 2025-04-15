@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetTopWatchedContentUser < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetTopWatchedContentUser
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      field :id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+        field :id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
 
 
-      sig { params(id: T.nilable(::Integer)).void }
-      def initialize(id: nil)
-        @id = id
-      end
+        sig { params(id: T.nilable(::Integer)).void }
+        def initialize(id: nil)
+          @id = id
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @id == other.id
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @id == other.id
+          true
+        end
       end
     end
   end

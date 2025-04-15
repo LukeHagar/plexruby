@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetTranscodeSessionsMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-
-      field :transcode_session, T.nilable(T::Array[::PlexRubySDK::Operations::TranscodeSession]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('TranscodeSession') } }
+      class GetTranscodeSessionsMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(size: T.nilable(::Integer), transcode_session: T.nilable(T::Array[::PlexRubySDK::Operations::TranscodeSession])).void }
-      def initialize(size: nil, transcode_session: nil)
-        @size = size
-        @transcode_session = transcode_session
-      end
+        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @size == other.size
-        return false unless @transcode_session == other.transcode_session
-        true
+        field :transcode_session, T.nilable(T::Array[Models::Operations::TranscodeSession]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('TranscodeSession') } }
+
+
+        sig { params(size: T.nilable(::Integer), transcode_session: T.nilable(T::Array[Models::Operations::TranscodeSession])).void }
+        def initialize(size: nil, transcode_session: nil)
+          @size = size
+          @transcode_session = transcode_session
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @size == other.size
+          return false unless @transcode_session == other.transcode_session
+          true
+        end
       end
     end
   end

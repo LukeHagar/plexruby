@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetSessionsUser < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-
-      field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
-
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+      class GetSessionsUser
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(id: T.nilable(::String), thumb: T.nilable(::String), title: T.nilable(::String)).void }
-      def initialize(id: nil, thumb: nil, title: nil)
-        @id = id
-        @thumb = thumb
-        @title = title
-      end
+        field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @id == other.id
-        return false unless @thumb == other.thumb
-        return false unless @title == other.title
-        true
+        field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
+
+        field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+
+        sig { params(id: T.nilable(::String), thumb: T.nilable(::String), title: T.nilable(::String)).void }
+        def initialize(id: nil, thumb: nil, title: nil)
+          @id = id
+          @thumb = thumb
+          @title = title
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @id == other.id
+          return false unless @thumb == other.thumb
+          return false unless @title == other.title
+          true
+        end
       end
     end
   end

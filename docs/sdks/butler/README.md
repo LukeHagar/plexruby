@@ -24,7 +24,7 @@ Returns a list of butler tasks
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -39,7 +39,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetButlerTasksResponse)](../../models/operations/getbutlertasksresponse.md)**
+**[T.nilable(Models::Operations::GetButlerTasksResponse)](../../models/operations/getbutlertasksresponse.md)**
 
 
 
@@ -58,7 +58,7 @@ This endpoint will attempt to start all Butler tasks that are enabled in the set
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -73,7 +73,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::StartAllTasksResponse)](../../models/operations/startalltasksresponse.md)**
+**[T.nilable(Models::Operations::StartAllTasksResponse)](../../models/operations/startalltasksresponse.md)**
 
 
 
@@ -88,7 +88,7 @@ This endpoint will stop all currently running tasks and remove any scheduled tas
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -103,7 +103,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::StopAllTasksResponse)](../../models/operations/stopalltasksresponse.md)**
+**[T.nilable(Models::Operations::StopAllTasksResponse)](../../models/operations/stopalltasksresponse.md)**
 
 
 
@@ -122,12 +122,12 @@ This endpoint will attempt to start a single Butler task that is enabled in the 
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-res = s.butler.start_task(task_name=::PlexRubySDK::Operations::TaskName::CLEAN_OLD_BUNDLES)
+res = s.butler.start_task(task_name=Models::Operations::TaskName::CLEAN_OLD_BUNDLES)
 
 if res.status_code == 200
   # handle response
@@ -137,13 +137,13 @@ end
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `task_name`                                                                | [::PlexRubySDK::Operations::TaskName](../../models/operations/taskname.md) | :heavy_check_mark:                                                         | the name of the task to be started.                                        |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `task_name`                                                         | [Models::Operations::TaskName](../../models/operations/taskname.md) | :heavy_check_mark:                                                  | the name of the task to be started.                                 |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::StartTaskResponse)](../../models/operations/starttaskresponse.md)**
+**[T.nilable(Models::Operations::StartTaskResponse)](../../models/operations/starttaskresponse.md)**
 
 
 
@@ -158,12 +158,12 @@ This endpoint will stop a currently running task by name, or remove it from the 
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-res = s.butler.stop_task(task_name=::PlexRubySDK::Operations::PathParamTaskName::BACKUP_DATABASE)
+res = s.butler.stop_task(task_name=Models::Operations::PathParamTaskName::BACKUP_DATABASE)
 
 if res.status_code == 200
   # handle response
@@ -173,11 +173,11 @@ end
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `task_name`                                                                                  | [::PlexRubySDK::Operations::PathParamTaskName](../../models/operations/pathparamtaskname.md) | :heavy_check_mark:                                                                           | The name of the task to be started.                                                          |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `task_name`                                                                           | [Models::Operations::PathParamTaskName](../../models/operations/pathparamtaskname.md) | :heavy_check_mark:                                                                    | The name of the task to be started.                                                   |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::StopTaskResponse)](../../models/operations/stoptaskresponse.md)**
+**[T.nilable(Models::Operations::StopTaskResponse)](../../models/operations/stoptaskresponse.md)**
 

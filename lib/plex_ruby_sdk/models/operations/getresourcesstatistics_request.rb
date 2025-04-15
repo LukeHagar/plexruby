@@ -5,27 +5,30 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetResourcesStatisticsRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetResourcesStatisticsRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The timespan to retrieve statistics for
-      # the exact meaning of this parameter is not known
-      # 
-      field :timespan, T.nilable(::Integer), { 'query_param': { 'field_name': 'timespan', 'style': 'form', 'explode': true } }
+        # The timespan to retrieve statistics for
+        # the exact meaning of this parameter is not known
+        # 
+        field :timespan, T.nilable(::Integer), { 'query_param': { 'field_name': 'timespan', 'style': 'form', 'explode': true } }
 
 
-      sig { params(timespan: T.nilable(::Integer)).void }
-      def initialize(timespan: nil)
-        @timespan = timespan
-      end
+        sig { params(timespan: T.nilable(::Integer)).void }
+        def initialize(timespan: nil)
+          @timespan = timespan
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @timespan == other.timespan
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @timespan == other.timespan
+          true
+        end
       end
     end
   end

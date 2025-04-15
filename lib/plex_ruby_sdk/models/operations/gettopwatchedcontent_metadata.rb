@@ -5,149 +5,152 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetTopWatchedContentMetadata < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :added_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('addedAt') } }
-
-      field :art, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('art') } }
-
-      field :audience_rating, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audienceRating') } }
-
-      field :audience_rating_image, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audienceRatingImage') } }
-
-      field :child_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('childCount') } }
-
-      field :content_rating, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('contentRating') } }
-
-      field :country, T.nilable(T::Array[::PlexRubySDK::Operations::GetTopWatchedContentCountry]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Country') } }
-
-      field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
-
-      field :genre, T.nilable(T::Array[::PlexRubySDK::Operations::GetTopWatchedContentGenre]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Genre') } }
-
-      field :global_view_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('globalViewCount') } }
-
-      field :guid, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('guid') } }
-
-      field :guids, T.nilable(T::Array[::PlexRubySDK::Operations::GetTopWatchedContentGuids]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Guid') } }
-
-      field :index, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('index') } }
-
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :leaf_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('leafCount') } }
-
-      field :library_section_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
-
-      field :library_section_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionKey') } }
-
-      field :library_section_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionTitle') } }
-
-      field :originally_available_at, T.nilable(::Date), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originallyAvailableAt'), 'decoder': Utils.date_from_iso_format(true) } }
-
-      field :rating_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingKey') } }
-
-      field :role, T.nilable(T::Array[::PlexRubySDK::Operations::GetTopWatchedContentRole]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Role') } }
-
-      field :slug, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('slug') } }
-
-      field :studio, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('studio') } }
-
-      field :summary, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('summary') } }
-
-      field :tagline, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagline') } }
-
-      field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
-
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-
-      field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
-
-      field :updated_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('updatedAt') } }
-
-      field :user, T.nilable(T::Array[::PlexRubySDK::Operations::GetTopWatchedContentUser]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('User') } }
-
-      field :viewed_leaf_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewedLeafCount') } }
-
-      field :year, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('year') } }
+      class GetTopWatchedContentMetadata
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(added_at: T.nilable(::Integer), art: T.nilable(::String), audience_rating: T.nilable(::Float), audience_rating_image: T.nilable(::String), child_count: T.nilable(::Integer), content_rating: T.nilable(::String), country: T.nilable(T::Array[::PlexRubySDK::Operations::GetTopWatchedContentCountry]), duration: T.nilable(::Integer), genre: T.nilable(T::Array[::PlexRubySDK::Operations::GetTopWatchedContentGenre]), global_view_count: T.nilable(::Integer), guid: T.nilable(::String), guids: T.nilable(T::Array[::PlexRubySDK::Operations::GetTopWatchedContentGuids]), index: T.nilable(::Integer), key: T.nilable(::String), leaf_count: T.nilable(::Integer), library_section_id: T.nilable(::Integer), library_section_key: T.nilable(::String), library_section_title: T.nilable(::String), originally_available_at: T.nilable(::Date), rating_key: T.nilable(::String), role: T.nilable(T::Array[::PlexRubySDK::Operations::GetTopWatchedContentRole]), slug: T.nilable(::String), studio: T.nilable(::String), summary: T.nilable(::String), tagline: T.nilable(::String), thumb: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String), updated_at: T.nilable(::Integer), user: T.nilable(T::Array[::PlexRubySDK::Operations::GetTopWatchedContentUser]), viewed_leaf_count: T.nilable(::Integer), year: T.nilable(::Integer)).void }
-      def initialize(added_at: nil, art: nil, audience_rating: nil, audience_rating_image: nil, child_count: nil, content_rating: nil, country: nil, duration: nil, genre: nil, global_view_count: nil, guid: nil, guids: nil, index: nil, key: nil, leaf_count: nil, library_section_id: nil, library_section_key: nil, library_section_title: nil, originally_available_at: nil, rating_key: nil, role: nil, slug: nil, studio: nil, summary: nil, tagline: nil, thumb: nil, title: nil, type: nil, updated_at: nil, user: nil, viewed_leaf_count: nil, year: nil)
-        @added_at = added_at
-        @art = art
-        @audience_rating = audience_rating
-        @audience_rating_image = audience_rating_image
-        @child_count = child_count
-        @content_rating = content_rating
-        @country = country
-        @duration = duration
-        @genre = genre
-        @global_view_count = global_view_count
-        @guid = guid
-        @guids = guids
-        @index = index
-        @key = key
-        @leaf_count = leaf_count
-        @library_section_id = library_section_id
-        @library_section_key = library_section_key
-        @library_section_title = library_section_title
-        @originally_available_at = originally_available_at
-        @rating_key = rating_key
-        @role = role
-        @slug = slug
-        @studio = studio
-        @summary = summary
-        @tagline = tagline
-        @thumb = thumb
-        @title = title
-        @type = type
-        @updated_at = updated_at
-        @user = user
-        @viewed_leaf_count = viewed_leaf_count
-        @year = year
-      end
+        field :added_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('addedAt') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @added_at == other.added_at
-        return false unless @art == other.art
-        return false unless @audience_rating == other.audience_rating
-        return false unless @audience_rating_image == other.audience_rating_image
-        return false unless @child_count == other.child_count
-        return false unless @content_rating == other.content_rating
-        return false unless @country == other.country
-        return false unless @duration == other.duration
-        return false unless @genre == other.genre
-        return false unless @global_view_count == other.global_view_count
-        return false unless @guid == other.guid
-        return false unless @guids == other.guids
-        return false unless @index == other.index
-        return false unless @key == other.key
-        return false unless @leaf_count == other.leaf_count
-        return false unless @library_section_id == other.library_section_id
-        return false unless @library_section_key == other.library_section_key
-        return false unless @library_section_title == other.library_section_title
-        return false unless @originally_available_at == other.originally_available_at
-        return false unless @rating_key == other.rating_key
-        return false unless @role == other.role
-        return false unless @slug == other.slug
-        return false unless @studio == other.studio
-        return false unless @summary == other.summary
-        return false unless @tagline == other.tagline
-        return false unless @thumb == other.thumb
-        return false unless @title == other.title
-        return false unless @type == other.type
-        return false unless @updated_at == other.updated_at
-        return false unless @user == other.user
-        return false unless @viewed_leaf_count == other.viewed_leaf_count
-        return false unless @year == other.year
-        true
+        field :art, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('art') } }
+
+        field :audience_rating, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audienceRating') } }
+
+        field :audience_rating_image, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audienceRatingImage') } }
+
+        field :child_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('childCount') } }
+
+        field :content_rating, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('contentRating') } }
+
+        field :country, T.nilable(T::Array[Models::Operations::GetTopWatchedContentCountry]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Country') } }
+
+        field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
+
+        field :genre, T.nilable(T::Array[Models::Operations::GetTopWatchedContentGenre]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Genre') } }
+
+        field :global_view_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('globalViewCount') } }
+
+        field :guid, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('guid') } }
+
+        field :guids, T.nilable(T::Array[Models::Operations::GetTopWatchedContentGuids]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Guid') } }
+
+        field :index, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('index') } }
+
+        field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+        field :leaf_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('leafCount') } }
+
+        field :library_section_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
+
+        field :library_section_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionKey') } }
+
+        field :library_section_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionTitle') } }
+
+        field :originally_available_at, T.nilable(::Date), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originallyAvailableAt'), 'decoder': Utils.date_from_iso_format(true) } }
+
+        field :rating_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingKey') } }
+
+        field :role, T.nilable(T::Array[Models::Operations::GetTopWatchedContentRole]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Role') } }
+
+        field :slug, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('slug') } }
+
+        field :studio, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('studio') } }
+
+        field :summary, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('summary') } }
+
+        field :tagline, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagline') } }
+
+        field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
+
+        field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+        field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+
+        field :updated_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('updatedAt') } }
+
+        field :user, T.nilable(T::Array[Models::Operations::GetTopWatchedContentUser]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('User') } }
+
+        field :viewed_leaf_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewedLeafCount') } }
+
+        field :year, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('year') } }
+
+
+        sig { params(added_at: T.nilable(::Integer), art: T.nilable(::String), audience_rating: T.nilable(::Float), audience_rating_image: T.nilable(::String), child_count: T.nilable(::Integer), content_rating: T.nilable(::String), country: T.nilable(T::Array[Models::Operations::GetTopWatchedContentCountry]), duration: T.nilable(::Integer), genre: T.nilable(T::Array[Models::Operations::GetTopWatchedContentGenre]), global_view_count: T.nilable(::Integer), guid: T.nilable(::String), guids: T.nilable(T::Array[Models::Operations::GetTopWatchedContentGuids]), index: T.nilable(::Integer), key: T.nilable(::String), leaf_count: T.nilable(::Integer), library_section_id: T.nilable(::Integer), library_section_key: T.nilable(::String), library_section_title: T.nilable(::String), originally_available_at: T.nilable(::Date), rating_key: T.nilable(::String), role: T.nilable(T::Array[Models::Operations::GetTopWatchedContentRole]), slug: T.nilable(::String), studio: T.nilable(::String), summary: T.nilable(::String), tagline: T.nilable(::String), thumb: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String), updated_at: T.nilable(::Integer), user: T.nilable(T::Array[Models::Operations::GetTopWatchedContentUser]), viewed_leaf_count: T.nilable(::Integer), year: T.nilable(::Integer)).void }
+        def initialize(added_at: nil, art: nil, audience_rating: nil, audience_rating_image: nil, child_count: nil, content_rating: nil, country: nil, duration: nil, genre: nil, global_view_count: nil, guid: nil, guids: nil, index: nil, key: nil, leaf_count: nil, library_section_id: nil, library_section_key: nil, library_section_title: nil, originally_available_at: nil, rating_key: nil, role: nil, slug: nil, studio: nil, summary: nil, tagline: nil, thumb: nil, title: nil, type: nil, updated_at: nil, user: nil, viewed_leaf_count: nil, year: nil)
+          @added_at = added_at
+          @art = art
+          @audience_rating = audience_rating
+          @audience_rating_image = audience_rating_image
+          @child_count = child_count
+          @content_rating = content_rating
+          @country = country
+          @duration = duration
+          @genre = genre
+          @global_view_count = global_view_count
+          @guid = guid
+          @guids = guids
+          @index = index
+          @key = key
+          @leaf_count = leaf_count
+          @library_section_id = library_section_id
+          @library_section_key = library_section_key
+          @library_section_title = library_section_title
+          @originally_available_at = originally_available_at
+          @rating_key = rating_key
+          @role = role
+          @slug = slug
+          @studio = studio
+          @summary = summary
+          @tagline = tagline
+          @thumb = thumb
+          @title = title
+          @type = type
+          @updated_at = updated_at
+          @user = user
+          @viewed_leaf_count = viewed_leaf_count
+          @year = year
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @added_at == other.added_at
+          return false unless @art == other.art
+          return false unless @audience_rating == other.audience_rating
+          return false unless @audience_rating_image == other.audience_rating_image
+          return false unless @child_count == other.child_count
+          return false unless @content_rating == other.content_rating
+          return false unless @country == other.country
+          return false unless @duration == other.duration
+          return false unless @genre == other.genre
+          return false unless @global_view_count == other.global_view_count
+          return false unless @guid == other.guid
+          return false unless @guids == other.guids
+          return false unless @index == other.index
+          return false unless @key == other.key
+          return false unless @leaf_count == other.leaf_count
+          return false unless @library_section_id == other.library_section_id
+          return false unless @library_section_key == other.library_section_key
+          return false unless @library_section_title == other.library_section_title
+          return false unless @originally_available_at == other.originally_available_at
+          return false unless @rating_key == other.rating_key
+          return false unless @role == other.role
+          return false unless @slug == other.slug
+          return false unless @studio == other.studio
+          return false unless @summary == other.summary
+          return false unless @tagline == other.tagline
+          return false unless @thumb == other.thumb
+          return false unless @title == other.title
+          return false unless @type == other.type
+          return false unless @updated_at == other.updated_at
+          return false unless @user == other.user
+          return false unless @viewed_leaf_count == other.viewed_leaf_count
+          return false unless @year == other.year
+          true
+        end
       end
     end
   end

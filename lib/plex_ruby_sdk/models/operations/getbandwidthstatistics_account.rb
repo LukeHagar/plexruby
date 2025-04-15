@@ -5,53 +5,56 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetBandwidthStatisticsAccount < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :auto_select_audio, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('autoSelectAudio') } }
-
-      field :default_audio_language, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('defaultAudioLanguage') } }
-
-      field :default_subtitle_language, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('defaultSubtitleLanguage') } }
-
-      field :id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :name, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('name') } }
-
-      field :subtitle_mode, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subtitleMode') } }
-
-      field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
+      class GetBandwidthStatisticsAccount
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(auto_select_audio: T.nilable(T::Boolean), default_audio_language: T.nilable(::String), default_subtitle_language: T.nilable(::String), id: T.nilable(::Integer), key: T.nilable(::String), name: T.nilable(::String), subtitle_mode: T.nilable(::Integer), thumb: T.nilable(::String)).void }
-      def initialize(auto_select_audio: nil, default_audio_language: nil, default_subtitle_language: nil, id: nil, key: nil, name: nil, subtitle_mode: nil, thumb: nil)
-        @auto_select_audio = auto_select_audio
-        @default_audio_language = default_audio_language
-        @default_subtitle_language = default_subtitle_language
-        @id = id
-        @key = key
-        @name = name
-        @subtitle_mode = subtitle_mode
-        @thumb = thumb
-      end
+        field :auto_select_audio, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('autoSelectAudio') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @auto_select_audio == other.auto_select_audio
-        return false unless @default_audio_language == other.default_audio_language
-        return false unless @default_subtitle_language == other.default_subtitle_language
-        return false unless @id == other.id
-        return false unless @key == other.key
-        return false unless @name == other.name
-        return false unless @subtitle_mode == other.subtitle_mode
-        return false unless @thumb == other.thumb
-        true
+        field :default_audio_language, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('defaultAudioLanguage') } }
+
+        field :default_subtitle_language, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('defaultSubtitleLanguage') } }
+
+        field :id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+
+        field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+        field :name, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('name') } }
+
+        field :subtitle_mode, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subtitleMode') } }
+
+        field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
+
+
+        sig { params(auto_select_audio: T.nilable(T::Boolean), default_audio_language: T.nilable(::String), default_subtitle_language: T.nilable(::String), id: T.nilable(::Integer), key: T.nilable(::String), name: T.nilable(::String), subtitle_mode: T.nilable(::Integer), thumb: T.nilable(::String)).void }
+        def initialize(auto_select_audio: nil, default_audio_language: nil, default_subtitle_language: nil, id: nil, key: nil, name: nil, subtitle_mode: nil, thumb: nil)
+          @auto_select_audio = auto_select_audio
+          @default_audio_language = default_audio_language
+          @default_subtitle_language = default_subtitle_language
+          @id = id
+          @key = key
+          @name = name
+          @subtitle_mode = subtitle_mode
+          @thumb = thumb
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @auto_select_audio == other.auto_select_audio
+          return false unless @default_audio_language == other.default_audio_language
+          return false unless @default_subtitle_language == other.default_subtitle_language
+          return false unless @id == other.id
+          return false unless @key == other.key
+          return false unless @name == other.name
+          return false unless @subtitle_mode == other.subtitle_mode
+          return false unless @thumb == other.thumb
+          true
+        end
       end
     end
   end

@@ -5,28 +5,31 @@
 
 
 module PlexRubySDK
-  module Operations
-    GET_USERS_RESPONSE_BODY_SERVERS = [
-      'https://plex.tv/api'
-    ].freeze
-  
-    # Successful response with media container data in XML
-    class GetUsersResponseBody < ::Crystalline::FieldAugmented
-      extend T::Sig
+  module Models
+    module Operations
+      GET_USERS_RESPONSE_BODY_SERVERS = [
+        'https://plex.tv/api'
+      ].freeze
+    
+      # Successful response with media container data in XML
+      class GetUsersResponseBody
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # Container holding user and server details.
-      field :media_container, T.nilable(::PlexRubySDK::Operations::GetUsersMediaContainer)
+        # Container holding user and server details.
+        field :media_container, T.nilable(Models::Operations::GetUsersMediaContainer)
 
 
-      sig { params(media_container: T.nilable(::PlexRubySDK::Operations::GetUsersMediaContainer)).void }
-      def initialize(media_container: nil)
-        @media_container = media_container
-      end
+        sig { params(media_container: T.nilable(Models::Operations::GetUsersMediaContainer)).void }
+        def initialize(media_container: nil)
+          @media_container = media_container
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @media_container == other.media_container
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @media_container == other.media_container
+          true
+        end
       end
     end
   end

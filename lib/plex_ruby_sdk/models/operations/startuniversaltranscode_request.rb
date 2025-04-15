@@ -5,85 +5,88 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class StartUniversalTranscodeRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class StartUniversalTranscodeRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # Whether the media item has MDE
-      field :has_mde, ::Float, { 'query_param': { 'field_name': 'hasMDE', 'style': 'form', 'explode': true } }
-      # The index of the media item to transcode
-      field :media_index, ::Float, { 'query_param': { 'field_name': 'mediaIndex', 'style': 'form', 'explode': true } }
-      # The index of the part to transcode
-      field :part_index, ::Float, { 'query_param': { 'field_name': 'partIndex', 'style': 'form', 'explode': true } }
-      # The path to the media item to transcode
-      field :path, ::String, { 'query_param': { 'field_name': 'path', 'style': 'form', 'explode': true } }
-      # The protocol to use for the transcode session
-      field :protocol, ::String, { 'query_param': { 'field_name': 'protocol', 'style': 'form', 'explode': true } }
-      # Whether to add a debug overlay or not
-      field :add_debug_overlay, T.nilable(::Float), { 'query_param': { 'field_name': 'addDebugOverlay', 'style': 'form', 'explode': true } }
-      # The audio boost
-      field :audio_boost, T.nilable(::Float), { 'query_param': { 'field_name': 'audioBoost', 'style': 'form', 'explode': true } }
-      # Whether to auto adjust quality or not
-      field :auto_adjust_quality, T.nilable(::Float), { 'query_param': { 'field_name': 'autoAdjustQuality', 'style': 'form', 'explode': true } }
-      # Whether to use direct play or not
-      field :direct_play, T.nilable(::Float), { 'query_param': { 'field_name': 'directPlay', 'style': 'form', 'explode': true } }
-      # Whether to use direct stream or not
-      field :direct_stream, T.nilable(::Float), { 'query_param': { 'field_name': 'directStream', 'style': 'form', 'explode': true } }
-      # Whether to use fast seek or not
-      field :fast_seek, T.nilable(::Float), { 'query_param': { 'field_name': 'fastSeek', 'style': 'form', 'explode': true } }
-      # The location of the transcode session
-      field :location, T.nilable(::String), { 'query_param': { 'field_name': 'location', 'style': 'form', 'explode': true } }
-      # The size of the media buffer
-      field :media_buffer_size, T.nilable(::Float), { 'query_param': { 'field_name': 'mediaBufferSize', 'style': 'form', 'explode': true } }
-      # The session ID
-      field :session, T.nilable(::String), { 'query_param': { 'field_name': 'session', 'style': 'form', 'explode': true } }
-      # The subtitles
-      field :subtites, T.nilable(::String), { 'query_param': { 'field_name': 'subtites', 'style': 'form', 'explode': true } }
-      # The size of the subtitles
-      field :subtitle_size, T.nilable(::Float), { 'query_param': { 'field_name': 'subtitleSize', 'style': 'form', 'explode': true } }
+        # Whether the media item has MDE
+        field :has_mde, ::Float, { 'query_param': { 'field_name': 'hasMDE', 'style': 'form', 'explode': true } }
+        # The index of the media item to transcode
+        field :media_index, ::Float, { 'query_param': { 'field_name': 'mediaIndex', 'style': 'form', 'explode': true } }
+        # The index of the part to transcode
+        field :part_index, ::Float, { 'query_param': { 'field_name': 'partIndex', 'style': 'form', 'explode': true } }
+        # The path to the media item to transcode
+        field :path, ::String, { 'query_param': { 'field_name': 'path', 'style': 'form', 'explode': true } }
+        # The protocol to use for the transcode session
+        field :protocol, ::String, { 'query_param': { 'field_name': 'protocol', 'style': 'form', 'explode': true } }
+        # Whether to add a debug overlay or not
+        field :add_debug_overlay, T.nilable(::Float), { 'query_param': { 'field_name': 'addDebugOverlay', 'style': 'form', 'explode': true } }
+        # The audio boost
+        field :audio_boost, T.nilable(::Float), { 'query_param': { 'field_name': 'audioBoost', 'style': 'form', 'explode': true } }
+        # Whether to auto adjust quality or not
+        field :auto_adjust_quality, T.nilable(::Float), { 'query_param': { 'field_name': 'autoAdjustQuality', 'style': 'form', 'explode': true } }
+        # Whether to use direct play or not
+        field :direct_play, T.nilable(::Float), { 'query_param': { 'field_name': 'directPlay', 'style': 'form', 'explode': true } }
+        # Whether to use direct stream or not
+        field :direct_stream, T.nilable(::Float), { 'query_param': { 'field_name': 'directStream', 'style': 'form', 'explode': true } }
+        # Whether to use fast seek or not
+        field :fast_seek, T.nilable(::Float), { 'query_param': { 'field_name': 'fastSeek', 'style': 'form', 'explode': true } }
+        # The location of the transcode session
+        field :location, T.nilable(::String), { 'query_param': { 'field_name': 'location', 'style': 'form', 'explode': true } }
+        # The size of the media buffer
+        field :media_buffer_size, T.nilable(::Float), { 'query_param': { 'field_name': 'mediaBufferSize', 'style': 'form', 'explode': true } }
+        # The session ID
+        field :session, T.nilable(::String), { 'query_param': { 'field_name': 'session', 'style': 'form', 'explode': true } }
+        # The subtitles
+        field :subtites, T.nilable(::String), { 'query_param': { 'field_name': 'subtites', 'style': 'form', 'explode': true } }
+        # The size of the subtitles
+        field :subtitle_size, T.nilable(::Float), { 'query_param': { 'field_name': 'subtitleSize', 'style': 'form', 'explode': true } }
 
 
-      sig { params(has_mde: ::Float, media_index: ::Float, part_index: ::Float, path: ::String, protocol: ::String, add_debug_overlay: T.nilable(::Float), audio_boost: T.nilable(::Float), auto_adjust_quality: T.nilable(::Float), direct_play: T.nilable(::Float), direct_stream: T.nilable(::Float), fast_seek: T.nilable(::Float), location: T.nilable(::String), media_buffer_size: T.nilable(::Float), session: T.nilable(::String), subtites: T.nilable(::String), subtitle_size: T.nilable(::Float)).void }
-      def initialize(has_mde: nil, media_index: nil, part_index: nil, path: nil, protocol: nil, add_debug_overlay: nil, audio_boost: nil, auto_adjust_quality: nil, direct_play: nil, direct_stream: nil, fast_seek: nil, location: nil, media_buffer_size: nil, session: nil, subtites: nil, subtitle_size: nil)
-        @has_mde = has_mde
-        @media_index = media_index
-        @part_index = part_index
-        @path = path
-        @protocol = protocol
-        @add_debug_overlay = add_debug_overlay
-        @audio_boost = audio_boost
-        @auto_adjust_quality = auto_adjust_quality
-        @direct_play = direct_play
-        @direct_stream = direct_stream
-        @fast_seek = fast_seek
-        @location = location
-        @media_buffer_size = media_buffer_size
-        @session = session
-        @subtites = subtites
-        @subtitle_size = subtitle_size
-      end
+        sig { params(has_mde: ::Float, media_index: ::Float, part_index: ::Float, path: ::String, protocol: ::String, add_debug_overlay: T.nilable(::Float), audio_boost: T.nilable(::Float), auto_adjust_quality: T.nilable(::Float), direct_play: T.nilable(::Float), direct_stream: T.nilable(::Float), fast_seek: T.nilable(::Float), location: T.nilable(::String), media_buffer_size: T.nilable(::Float), session: T.nilable(::String), subtites: T.nilable(::String), subtitle_size: T.nilable(::Float)).void }
+        def initialize(has_mde: nil, media_index: nil, part_index: nil, path: nil, protocol: nil, add_debug_overlay: nil, audio_boost: nil, auto_adjust_quality: nil, direct_play: nil, direct_stream: nil, fast_seek: nil, location: nil, media_buffer_size: nil, session: nil, subtites: nil, subtitle_size: nil)
+          @has_mde = has_mde
+          @media_index = media_index
+          @part_index = part_index
+          @path = path
+          @protocol = protocol
+          @add_debug_overlay = add_debug_overlay
+          @audio_boost = audio_boost
+          @auto_adjust_quality = auto_adjust_quality
+          @direct_play = direct_play
+          @direct_stream = direct_stream
+          @fast_seek = fast_seek
+          @location = location
+          @media_buffer_size = media_buffer_size
+          @session = session
+          @subtites = subtites
+          @subtitle_size = subtitle_size
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @has_mde == other.has_mde
-        return false unless @media_index == other.media_index
-        return false unless @part_index == other.part_index
-        return false unless @path == other.path
-        return false unless @protocol == other.protocol
-        return false unless @add_debug_overlay == other.add_debug_overlay
-        return false unless @audio_boost == other.audio_boost
-        return false unless @auto_adjust_quality == other.auto_adjust_quality
-        return false unless @direct_play == other.direct_play
-        return false unless @direct_stream == other.direct_stream
-        return false unless @fast_seek == other.fast_seek
-        return false unless @location == other.location
-        return false unless @media_buffer_size == other.media_buffer_size
-        return false unless @session == other.session
-        return false unless @subtites == other.subtites
-        return false unless @subtitle_size == other.subtitle_size
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @has_mde == other.has_mde
+          return false unless @media_index == other.media_index
+          return false unless @part_index == other.part_index
+          return false unless @path == other.path
+          return false unless @protocol == other.protocol
+          return false unless @add_debug_overlay == other.add_debug_overlay
+          return false unless @audio_boost == other.audio_boost
+          return false unless @auto_adjust_quality == other.auto_adjust_quality
+          return false unless @direct_play == other.direct_play
+          return false unless @direct_stream == other.direct_stream
+          return false unless @fast_seek == other.fast_seek
+          return false unless @location == other.location
+          return false unless @media_buffer_size == other.media_buffer_size
+          return false unless @session == other.session
+          return false unless @subtites == other.subtites
+          return false unless @subtitle_size == other.subtitle_size
+          true
+        end
       end
     end
   end

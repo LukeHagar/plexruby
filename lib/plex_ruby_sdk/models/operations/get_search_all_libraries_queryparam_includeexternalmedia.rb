@@ -5,13 +5,15 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # GetSearchAllLibrariesQueryParamIncludeExternalMedia - Whether to include external media in the search results.
-    class GetSearchAllLibrariesQueryParamIncludeExternalMedia < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+    
+      # GetSearchAllLibrariesQueryParamIncludeExternalMedia - Whether to include external media in the search results.
+      class GetSearchAllLibrariesQueryParamIncludeExternalMedia < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class UpdatePlaylistRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class UpdatePlaylistRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # the ID of the playlist
-      field :playlist_id, ::Float, { 'path_param': { 'field_name': 'playlistID', 'style': 'simple', 'explode': false } }
-      # summary description of the playlist
-      field :summary, T.nilable(::String), { 'query_param': { 'field_name': 'summary', 'style': 'form', 'explode': true } }
-      # name of the playlist
-      field :title, T.nilable(::String), { 'query_param': { 'field_name': 'title', 'style': 'form', 'explode': true } }
+        # the ID of the playlist
+        field :playlist_id, ::Float, { 'path_param': { 'field_name': 'playlistID', 'style': 'simple', 'explode': false } }
+        # summary description of the playlist
+        field :summary, T.nilable(::String), { 'query_param': { 'field_name': 'summary', 'style': 'form', 'explode': true } }
+        # name of the playlist
+        field :title, T.nilable(::String), { 'query_param': { 'field_name': 'title', 'style': 'form', 'explode': true } }
 
 
-      sig { params(playlist_id: ::Float, summary: T.nilable(::String), title: T.nilable(::String)).void }
-      def initialize(playlist_id: nil, summary: nil, title: nil)
-        @playlist_id = playlist_id
-        @summary = summary
-        @title = title
-      end
+        sig { params(playlist_id: ::Float, summary: T.nilable(::String), title: T.nilable(::String)).void }
+        def initialize(playlist_id: nil, summary: nil, title: nil)
+          @playlist_id = playlist_id
+          @summary = summary
+          @title = title
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @playlist_id == other.playlist_id
-        return false unless @summary == other.summary
-        return false unless @title == other.title
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @playlist_id == other.playlist_id
+          return false unless @summary == other.summary
+          return false unless @title == other.title
+          true
+        end
       end
     end
   end

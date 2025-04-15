@@ -5,45 +5,48 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class Pivot < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :context, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('context') } }
-
-      field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :symbol, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('symbol') } }
-
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-
-      field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+      class Pivot
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(context: T.nilable(::String), id: T.nilable(::String), key: T.nilable(::String), symbol: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String)).void }
-      def initialize(context: nil, id: nil, key: nil, symbol: nil, title: nil, type: nil)
-        @context = context
-        @id = id
-        @key = key
-        @symbol = symbol
-        @title = title
-        @type = type
-      end
+        field :context, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('context') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @context == other.context
-        return false unless @id == other.id
-        return false unless @key == other.key
-        return false unless @symbol == other.symbol
-        return false unless @title == other.title
-        return false unless @type == other.type
-        true
+        field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+
+        field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+        field :symbol, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('symbol') } }
+
+        field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+        field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+
+
+        sig { params(context: T.nilable(::String), id: T.nilable(::String), key: T.nilable(::String), symbol: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String)).void }
+        def initialize(context: nil, id: nil, key: nil, symbol: nil, title: nil, type: nil)
+          @context = context
+          @id = id
+          @key = key
+          @symbol = symbol
+          @title = title
+          @type = type
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @context == other.context
+          return false unless @id == other.id
+          return false unless @key == other.key
+          return false unless @symbol == other.symbol
+          return false unless @title == other.title
+          return false unless @type == other.type
+          true
+        end
       end
     end
   end

@@ -5,49 +5,52 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class StatisticsMedia < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :account_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('accountID') } }
-
-      field :at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('at') } }
-
-      field :count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('count') } }
-
-      field :device_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('deviceID') } }
-
-      field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
-
-      field :metadata_type, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('metadataType') } }
-
-      field :timespan, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('timespan') } }
+      class StatisticsMedia
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(account_id: T.nilable(::Integer), at: T.nilable(::Integer), count: T.nilable(::Integer), device_id: T.nilable(::Integer), duration: T.nilable(::Integer), metadata_type: T.nilable(::Integer), timespan: T.nilable(::Integer)).void }
-      def initialize(account_id: nil, at: nil, count: nil, device_id: nil, duration: nil, metadata_type: nil, timespan: nil)
-        @account_id = account_id
-        @at = at
-        @count = count
-        @device_id = device_id
-        @duration = duration
-        @metadata_type = metadata_type
-        @timespan = timespan
-      end
+        field :account_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('accountID') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @account_id == other.account_id
-        return false unless @at == other.at
-        return false unless @count == other.count
-        return false unless @device_id == other.device_id
-        return false unless @duration == other.duration
-        return false unless @metadata_type == other.metadata_type
-        return false unless @timespan == other.timespan
-        true
+        field :at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('at') } }
+
+        field :count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('count') } }
+
+        field :device_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('deviceID') } }
+
+        field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
+
+        field :metadata_type, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('metadataType') } }
+
+        field :timespan, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('timespan') } }
+
+
+        sig { params(account_id: T.nilable(::Integer), at: T.nilable(::Integer), count: T.nilable(::Integer), device_id: T.nilable(::Integer), duration: T.nilable(::Integer), metadata_type: T.nilable(::Integer), timespan: T.nilable(::Integer)).void }
+        def initialize(account_id: nil, at: nil, count: nil, device_id: nil, duration: nil, metadata_type: nil, timespan: nil)
+          @account_id = account_id
+          @at = at
+          @count = count
+          @device_id = device_id
+          @duration = duration
+          @metadata_type = metadata_type
+          @timespan = timespan
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @account_id == other.account_id
+          return false unless @at == other.at
+          return false unless @count == other.count
+          return false unless @device_id == other.device_id
+          return false unless @duration == other.duration
+          return false unless @metadata_type == other.metadata_type
+          return false unless @timespan == other.timespan
+          true
+        end
       end
     end
   end

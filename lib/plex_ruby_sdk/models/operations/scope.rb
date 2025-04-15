@@ -5,12 +5,14 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # Scope - `all` - This is the only supported `scope` parameter.
-    class Scope < T::Enum
-      enums do
-        ALL = new('all')
+  module Models
+    module Operations
+    
+      # Scope - `all` - This is the only supported `scope` parameter.
+      class Scope < T::Enum
+        enums do
+          ALL = new('all')
+        end
       end
     end
   end

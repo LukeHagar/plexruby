@@ -5,37 +5,40 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetStatisticsMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :account, T.nilable(T::Array[::PlexRubySDK::Operations::Account]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Account') } }
-
-      field :device, T.nilable(T::Array[::PlexRubySDK::Operations::GetStatisticsDevice]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Device') } }
-
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-
-      field :statistics_media, T.nilable(T::Array[::PlexRubySDK::Operations::StatisticsMedia]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('StatisticsMedia') } }
+      class GetStatisticsMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(account: T.nilable(T::Array[::PlexRubySDK::Operations::Account]), device: T.nilable(T::Array[::PlexRubySDK::Operations::GetStatisticsDevice]), size: T.nilable(::Integer), statistics_media: T.nilable(T::Array[::PlexRubySDK::Operations::StatisticsMedia])).void }
-      def initialize(account: nil, device: nil, size: nil, statistics_media: nil)
-        @account = account
-        @device = device
-        @size = size
-        @statistics_media = statistics_media
-      end
+        field :account, T.nilable(T::Array[Models::Operations::Account]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Account') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @account == other.account
-        return false unless @device == other.device
-        return false unless @size == other.size
-        return false unless @statistics_media == other.statistics_media
-        true
+        field :device, T.nilable(T::Array[Models::Operations::GetStatisticsDevice]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Device') } }
+
+        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+        field :statistics_media, T.nilable(T::Array[Models::Operations::StatisticsMedia]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('StatisticsMedia') } }
+
+
+        sig { params(account: T.nilable(T::Array[Models::Operations::Account]), device: T.nilable(T::Array[Models::Operations::GetStatisticsDevice]), size: T.nilable(::Integer), statistics_media: T.nilable(T::Array[Models::Operations::StatisticsMedia])).void }
+        def initialize(account: nil, device: nil, size: nil, statistics_media: nil)
+          @account = account
+          @device = device
+          @size = size
+          @statistics_media = statistics_media
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @account == other.account
+          return false unless @device == other.device
+          return false unless @size == other.size
+          return false unless @statistics_media == other.statistics_media
+          true
+        end
       end
     end
   end

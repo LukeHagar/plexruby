@@ -39,7 +39,7 @@ This resource returns hash values for local files
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -61,7 +61,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetFileHashResponse)](../../models/operations/getfilehashresponse.md)**
+**[T.nilable(Models::Operations::GetFileHashResponse)](../../models/operations/getfilehashresponse.md)**
 
 
 
@@ -76,12 +76,12 @@ This endpoint will return the recently added content.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-req = ::PlexRubySDK::Operations::GetRecentlyAddedLibraryRequest.new(
+req = Models::Operations::GetRecentlyAddedLibraryRequest.new(
   content_directory_id: 2,
   pinned_content_directory_id: [
     3,
@@ -98,8 +98,8 @@ req = ::PlexRubySDK::Operations::GetRecentlyAddedLibraryRequest.new(
     17,
   ],
   section_id: 2,
-  type: ::PlexRubySDK::Operations::QueryParamType::TV_SHOW,
-  include_meta: ::PlexRubySDK::Operations::QueryParamIncludeMeta::ENABLE,
+  type: Models::Operations::QueryParamType::TV_SHOW,
+  include_meta: Models::Operations::QueryParamIncludeMeta::ENABLE,
   x_plex_container_start: 0,
   x_plex_container_size: 50,
 )
@@ -114,13 +114,13 @@ end
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [::PlexRubySDK::Operations::GetRecentlyAddedLibraryRequest](../../models/operations/getrecentlyaddedlibraryrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                       | [Models::Operations::GetRecentlyAddedLibraryRequest](../../models/operations/getrecentlyaddedlibraryrequest.md) | :heavy_check_mark:                                                                                              | The request object to use for the request.                                                                      |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetRecentlyAddedLibraryResponse)](../../models/operations/getrecentlyaddedlibraryresponse.md)**
+**[T.nilable(Models::Operations::GetRecentlyAddedLibraryResponse)](../../models/operations/getrecentlyaddedlibraryresponse.md)**
 
 
 
@@ -140,7 +140,7 @@ This allows a client to provide a rich interface around the media (e.g. allow so
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -155,7 +155,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetAllLibrariesResponse)](../../models/operations/getalllibrariesresponse.md)**
+**[T.nilable(Models::Operations::GetAllLibrariesResponse)](../../models/operations/getalllibrariesresponse.md)**
 
 
 
@@ -208,12 +208,12 @@ Each type in the library comes with a set of filters and sorts, aiding in buildi
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-res = s.library.get_library_details(section_key=9518, include_details=::PlexRubySDK::Operations::IncludeDetails::ZERO)
+res = s.library.get_library_details(section_key=9518, include_details=Models::Operations::IncludeDetails::ZERO)
 
 if ! res.object.nil?
   # handle response
@@ -226,11 +226,11 @@ end
 | Parameter                                                                                                                                                                                  | Type                                                                                                                                                                                       | Required                                                                                                                                                                                   | Description                                                                                                                                                                                | Example                                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `section_key`                                                                                                                                                                              | *::Integer*                                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                         | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/>                                                                                      | 9518                                                                                                                                                                                       |
-| `include_details`                                                                                                                                                                          | [T.nilable(::PlexRubySDK::Operations::IncludeDetails)](../../models/operations/includedetails.md)                                                                                          | :heavy_minus_sign:                                                                                                                                                                         | Whether or not to include details for a section (types, filters, and sorts). <br/>Only exists for backwards compatibility, media providers other than the server libraries have it on always.<br/> |                                                                                                                                                                                            |
+| `include_details`                                                                                                                                                                          | [T.nilable(Models::Operations::IncludeDetails)](../../models/operations/includedetails.md)                                                                                                 | :heavy_minus_sign:                                                                                                                                                                         | Whether or not to include details for a section (types, filters, and sorts). <br/>Only exists for backwards compatibility, media providers other than the server libraries have it on always.<br/> |                                                                                                                                                                                            |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetLibraryDetailsResponse)](../../models/operations/getlibrarydetailsresponse.md)**
+**[T.nilable(Models::Operations::GetLibraryDetailsResponse)](../../models/operations/getlibrarydetailsresponse.md)**
 
 
 
@@ -244,7 +244,7 @@ Delete a library using a specific section id
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -265,7 +265,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::DeleteLibraryResponse)](../../models/operations/deletelibraryresponse.md)**
+**[T.nilable(Models::Operations::DeleteLibraryResponse)](../../models/operations/deletelibraryresponse.md)**
 
 
 
@@ -300,17 +300,17 @@ Fetches details from a specific section of the library identified by a section k
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-req = ::PlexRubySDK::Operations::GetLibraryItemsRequest.new(
-  tag: ::PlexRubySDK::Operations::Tag::EDITION,
-  include_guids: ::PlexRubySDK::Operations::IncludeGuids::ENABLE,
-  type: ::PlexRubySDK::Operations::GetLibraryItemsQueryParamType::TV_SHOW,
+req = Models::Operations::GetLibraryItemsRequest.new(
+  tag: Models::Operations::Tag::EDITION,
+  include_guids: Models::Operations::IncludeGuids::ENABLE,
+  type: Models::Operations::GetLibraryItemsQueryParamType::TV_SHOW,
   section_key: 9518,
-  include_meta: ::PlexRubySDK::Operations::GetLibraryItemsQueryParamIncludeMeta::ENABLE,
+  include_meta: Models::Operations::GetLibraryItemsQueryParamIncludeMeta::ENABLE,
   x_plex_container_start: 0,
   x_plex_container_size: 50,
 )
@@ -325,13 +325,13 @@ end
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [::PlexRubySDK::Operations::GetLibraryItemsRequest](../../models/operations/getlibraryitemsrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [Models::Operations::GetLibraryItemsRequest](../../models/operations/getlibraryitemsrequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetLibraryItemsResponse)](../../models/operations/getlibraryitemsresponse.md)**
+**[T.nilable(Models::Operations::GetLibraryItemsResponse)](../../models/operations/getlibraryitemsresponse.md)**
 
 
 
@@ -346,19 +346,19 @@ Retrieves a list of all general media data for this library.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-req = ::PlexRubySDK::Operations::GetAllMediaLibraryRequest.new(
+req = Models::Operations::GetAllMediaLibraryRequest.new(
   section_key: 9518,
-  type: ::PlexRubySDK::Operations::GetAllMediaLibraryQueryParamType::TV_SHOW,
-  include_meta: ::PlexRubySDK::Operations::GetAllMediaLibraryQueryParamIncludeMeta::ENABLE,
-  include_guids: ::PlexRubySDK::Operations::QueryParamIncludeGuids::ENABLE,
-  include_advanced: ::PlexRubySDK::Operations::IncludeAdvanced::ENABLE,
-  include_collections: ::PlexRubySDK::Operations::QueryParamIncludeCollections::ENABLE,
-  include_external_media: ::PlexRubySDK::Operations::QueryParamIncludeExternalMedia::ENABLE,
+  type: Models::Operations::GetAllMediaLibraryQueryParamType::TV_SHOW,
+  include_meta: Models::Operations::GetAllMediaLibraryQueryParamIncludeMeta::ENABLE,
+  include_guids: Models::Operations::QueryParamIncludeGuids::ENABLE,
+  include_advanced: Models::Operations::IncludeAdvanced::ENABLE,
+  include_collections: Models::Operations::QueryParamIncludeCollections::ENABLE,
+  include_external_media: Models::Operations::QueryParamIncludeExternalMedia::ENABLE,
   x_plex_container_start: 0,
   x_plex_container_size: 50,
 )
@@ -373,13 +373,13 @@ end
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [::PlexRubySDK::Operations::GetAllMediaLibraryRequest](../../models/operations/getallmedialibraryrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `request`                                                                                             | [Models::Operations::GetAllMediaLibraryRequest](../../models/operations/getallmedialibraryrequest.md) | :heavy_check_mark:                                                                                    | The request object to use for the request.                                                            |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetAllMediaLibraryResponse)](../../models/operations/getallmedialibraryresponse.md)**
+**[T.nilable(Models::Operations::GetAllMediaLibraryResponse)](../../models/operations/getallmedialibraryresponse.md)**
 
 
 
@@ -394,12 +394,12 @@ This endpoint Refreshes all the Metadata of the library.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-res = s.library.get_refresh_library_metadata(section_key=9518, force=::PlexRubySDK::Operations::Force::ONE)
+res = s.library.get_refresh_library_metadata(section_key=9518, force=Models::Operations::Force::ONE)
 
 if res.status_code == 200
   # handle response
@@ -412,11 +412,11 @@ end
 | Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `section_key`                                                                                 | *::Integer*                                                                                   | :heavy_check_mark:                                                                            | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/> | 9518                                                                                          |
-| `force`                                                                                       | [T.nilable(::PlexRubySDK::Operations::Force)](../../models/operations/force.md)               | :heavy_minus_sign:                                                                            | Force the refresh even if the library is already being refreshed.                             | 0                                                                                             |
+| `force`                                                                                       | [T.nilable(Models::Operations::Force)](../../models/operations/force.md)                      | :heavy_minus_sign:                                                                            | Force the refresh even if the library is already being refreshed.                             | 0                                                                                             |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetRefreshLibraryMetadataResponse)](../../models/operations/getrefreshlibrarymetadataresponse.md)**
+**[T.nilable(Models::Operations::GetRefreshLibraryMetadataResponse)](../../models/operations/getrefreshlibrarymetadataresponse.md)**
 
 
 
@@ -448,12 +448,12 @@ Each type in the library comes with a set of filters and sorts, aiding in buildi
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-res = s.library.get_search_library(section_key=9518, type=::PlexRubySDK::Operations::GetSearchLibraryQueryParamType::TV_SHOW)
+res = s.library.get_search_library(section_key=9518, type=Models::Operations::GetSearchLibraryQueryParamType::TV_SHOW)
 
 if ! res.object.nil?
   # handle response
@@ -466,11 +466,11 @@ end
 | Parameter                                                                                                                                                                                    | Type                                                                                                                                                                                         | Required                                                                                                                                                                                     | Description                                                                                                                                                                                  | Example                                                                                                                                                                                      |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `section_key`                                                                                                                                                                                | *::Integer*                                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                                           | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/>                                                                                        | 9518                                                                                                                                                                                         |
-| `type`                                                                                                                                                                                       | [::PlexRubySDK::Operations::GetSearchLibraryQueryParamType](../../models/operations/getsearchlibraryqueryparamtype.md)                                                                       | :heavy_check_mark:                                                                                                                                                                           | The type of media to retrieve or filter by.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                                            |
+| `type`                                                                                                                                                                                       | [Models::Operations::GetSearchLibraryQueryParamType](../../models/operations/getsearchlibraryqueryparamtype.md)                                                                              | :heavy_check_mark:                                                                                                                                                                           | The type of media to retrieve or filter by.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                                            |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetSearchLibraryResponse)](../../models/operations/getsearchlibraryresponse.md)**
+**[T.nilable(Models::Operations::GetSearchLibraryResponse)](../../models/operations/getsearchlibraryresponse.md)**
 
 
 
@@ -485,12 +485,12 @@ Retrieves a list of all the genres that are found for the media in this library.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-res = s.library.get_genres_library(section_key=9518, type=::PlexRubySDK::Operations::GetGenresLibraryQueryParamType::TV_SHOW)
+res = s.library.get_genres_library(section_key=9518, type=Models::Operations::GetGenresLibraryQueryParamType::TV_SHOW)
 
 if ! res.object.nil?
   # handle response
@@ -503,11 +503,11 @@ end
 | Parameter                                                                                                                                                                                    | Type                                                                                                                                                                                         | Required                                                                                                                                                                                     | Description                                                                                                                                                                                  | Example                                                                                                                                                                                      |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `section_key`                                                                                                                                                                                | *::Integer*                                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                                           | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/>                                                                                        | 9518                                                                                                                                                                                         |
-| `type`                                                                                                                                                                                       | [::PlexRubySDK::Operations::GetGenresLibraryQueryParamType](../../models/operations/getgenreslibraryqueryparamtype.md)                                                                       | :heavy_check_mark:                                                                                                                                                                           | The type of media to retrieve or filter by.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                                            |
+| `type`                                                                                                                                                                                       | [Models::Operations::GetGenresLibraryQueryParamType](../../models/operations/getgenreslibraryqueryparamtype.md)                                                                              | :heavy_check_mark:                                                                                                                                                                           | The type of media to retrieve or filter by.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                                            |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetGenresLibraryResponse)](../../models/operations/getgenreslibraryresponse.md)**
+**[T.nilable(Models::Operations::GetGenresLibraryResponse)](../../models/operations/getgenreslibraryresponse.md)**
 
 
 
@@ -522,12 +522,12 @@ Retrieves a list of all the countries that are found for the media in this libra
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-res = s.library.get_countries_library(section_key=9518, type=::PlexRubySDK::Operations::GetCountriesLibraryQueryParamType::TV_SHOW)
+res = s.library.get_countries_library(section_key=9518, type=Models::Operations::GetCountriesLibraryQueryParamType::TV_SHOW)
 
 if ! res.object.nil?
   # handle response
@@ -540,11 +540,11 @@ end
 | Parameter                                                                                                                                                                                    | Type                                                                                                                                                                                         | Required                                                                                                                                                                                     | Description                                                                                                                                                                                  | Example                                                                                                                                                                                      |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `section_key`                                                                                                                                                                                | *::Integer*                                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                                           | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/>                                                                                        | 9518                                                                                                                                                                                         |
-| `type`                                                                                                                                                                                       | [::PlexRubySDK::Operations::GetCountriesLibraryQueryParamType](../../models/operations/getcountrieslibraryqueryparamtype.md)                                                                 | :heavy_check_mark:                                                                                                                                                                           | The type of media to retrieve or filter by.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                                            |
+| `type`                                                                                                                                                                                       | [Models::Operations::GetCountriesLibraryQueryParamType](../../models/operations/getcountrieslibraryqueryparamtype.md)                                                                        | :heavy_check_mark:                                                                                                                                                                           | The type of media to retrieve or filter by.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                                            |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetCountriesLibraryResponse)](../../models/operations/getcountrieslibraryresponse.md)**
+**[T.nilable(Models::Operations::GetCountriesLibraryResponse)](../../models/operations/getcountrieslibraryresponse.md)**
 
 
 
@@ -559,12 +559,12 @@ Retrieves a list of all the actors that are found for the media in this library.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-res = s.library.get_actors_library(section_key=9518, type=::PlexRubySDK::Operations::GetActorsLibraryQueryParamType::TV_SHOW)
+res = s.library.get_actors_library(section_key=9518, type=Models::Operations::GetActorsLibraryQueryParamType::TV_SHOW)
 
 if ! res.object.nil?
   # handle response
@@ -577,11 +577,11 @@ end
 | Parameter                                                                                                                                                                                    | Type                                                                                                                                                                                         | Required                                                                                                                                                                                     | Description                                                                                                                                                                                  | Example                                                                                                                                                                                      |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `section_key`                                                                                                                                                                                | *::Integer*                                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                                           | The unique key of the Plex library. <br/>Note: This is unique in the context of the Plex server.<br/>                                                                                        | 9518                                                                                                                                                                                         |
-| `type`                                                                                                                                                                                       | [::PlexRubySDK::Operations::GetActorsLibraryQueryParamType](../../models/operations/getactorslibraryqueryparamtype.md)                                                                       | :heavy_check_mark:                                                                                                                                                                           | The type of media to retrieve or filter by.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                                            |
+| `type`                                                                                                                                                                                       | [Models::Operations::GetActorsLibraryQueryParamType](../../models/operations/getactorslibraryqueryparamtype.md)                                                                              | :heavy_check_mark:                                                                                                                                                                           | The type of media to retrieve or filter by.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                                            |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetActorsLibraryResponse)](../../models/operations/getactorslibraryresponse.md)**
+**[T.nilable(Models::Operations::GetActorsLibraryResponse)](../../models/operations/getactorslibraryresponse.md)**
 
 
 
@@ -596,19 +596,19 @@ Search the provided query across all library sections, or a single section, and 
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-req = ::PlexRubySDK::Operations::GetSearchAllLibrariesRequest.new(
+req = Models::Operations::GetSearchAllLibrariesRequest.new(
   query: "<value>",
   client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
   search_types: [
-    ::PlexRubySDK::Operations::SearchTypes::PEOPLE,
+    Models::Operations::SearchTypes::PEOPLE,
   ],
-  include_collections: ::PlexRubySDK::Operations::GetSearchAllLibrariesQueryParamIncludeCollections::ENABLE,
-  include_external_media: ::PlexRubySDK::Operations::GetSearchAllLibrariesQueryParamIncludeExternalMedia::ENABLE,
+  include_collections: Models::Operations::GetSearchAllLibrariesQueryParamIncludeCollections::ENABLE,
+  include_external_media: Models::Operations::GetSearchAllLibrariesQueryParamIncludeExternalMedia::ENABLE,
 )
 
 res = s.library.get_search_all_libraries(req)
@@ -621,13 +621,13 @@ end
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [::PlexRubySDK::Operations::GetSearchAllLibrariesRequest](../../models/operations/getsearchalllibrariesrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                   | [Models::Operations::GetSearchAllLibrariesRequest](../../models/operations/getsearchalllibrariesrequest.md) | :heavy_check_mark:                                                                                          | The request object to use for the request.                                                                  |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesResponse)](../../models/operations/getsearchalllibrariesresponse.md)**
+**[T.nilable(Models::Operations::GetSearchAllLibrariesResponse)](../../models/operations/getsearchalllibrariesresponse.md)**
 
 
 
@@ -642,12 +642,12 @@ This endpoint will return all the (meta)data of a library item specified with by
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-req = ::PlexRubySDK::Operations::GetMediaMetaDataRequest.new(
+req = Models::Operations::GetMediaMetaDataRequest.new(
   rating_key: 9518,
   include_concerts: true,
   include_extras: true,
@@ -674,13 +674,13 @@ end
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [::PlexRubySDK::Operations::GetMediaMetaDataRequest](../../models/operations/getmediametadatarequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [Models::Operations::GetMediaMetaDataRequest](../../models/operations/getmediametadatarequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetMediaMetaDataResponse)](../../models/operations/getmediametadataresponse.md)**
+**[T.nilable(Models::Operations::GetMediaMetaDataResponse)](../../models/operations/getmediametadataresponse.md)**
 
 
 
@@ -694,7 +694,7 @@ Returns the background artwork for a library item.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -715,7 +715,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetMediaArtsResponse)](../../models/operations/getmediaartsresponse.md)**
+**[T.nilable(Models::Operations::GetMediaArtsResponse)](../../models/operations/getmediaartsresponse.md)**
 
 
 
@@ -729,7 +729,7 @@ Uploads an image to use as the background artwork for a library item, either fro
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -752,7 +752,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::PostMediaArtsResponse)](../../models/operations/postmediaartsresponse.md)**
+**[T.nilable(Models::Operations::PostMediaArtsResponse)](../../models/operations/postmediaartsresponse.md)**
 
 
 
@@ -766,7 +766,7 @@ Returns the available posters for a library item.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -787,7 +787,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetMediaPostersResponse)](../../models/operations/getmediapostersresponse.md)**
+**[T.nilable(Models::Operations::GetMediaPostersResponse)](../../models/operations/getmediapostersresponse.md)**
 
 
 
@@ -801,7 +801,7 @@ Uploads a poster to a library item, either from a local file or a remote URL
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -824,7 +824,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::PostMediaPosterResponse)](../../models/operations/postmediaposterresponse.md)**
+**[T.nilable(Models::Operations::PostMediaPosterResponse)](../../models/operations/postmediaposterresponse.md)**
 
 
 
@@ -839,7 +839,7 @@ This endpoint will return the children of of a library item specified with the r
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -861,7 +861,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetMetadataChildrenResponse)](../../models/operations/getmetadatachildrenresponse.md)**
+**[T.nilable(Models::Operations::GetMetadataChildrenResponse)](../../models/operations/getmetadatachildrenresponse.md)**
 
 
 
@@ -876,12 +876,12 @@ This endpoint will return the top watched content from libraries of a certain ty
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-res = s.library.get_top_watched_content(type=::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType::TV_SHOW, include_guids=1)
+res = s.library.get_top_watched_content(type=Models::Operations::GetTopWatchedContentQueryParamType::TV_SHOW, include_guids=1)
 
 if ! res.object.nil?
   # handle response
@@ -893,10 +893,10 @@ end
 
 | Parameter                                                                                                                                                                                    | Type                                                                                                                                                                                         | Required                                                                                                                                                                                     | Description                                                                                                                                                                                  | Example                                                                                                                                                                                      |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `type`                                                                                                                                                                                       | [::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType](../../models/operations/gettopwatchedcontentqueryparamtype.md)                                                               | :heavy_check_mark:                                                                                                                                                                           | The type of media to retrieve or filter by.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                                            |
+| `type`                                                                                                                                                                                       | [Models::Operations::GetTopWatchedContentQueryParamType](../../models/operations/gettopwatchedcontentqueryparamtype.md)                                                                      | :heavy_check_mark:                                                                                                                                                                           | The type of media to retrieve or filter by.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                                            |
 | `include_guids`                                                                                                                                                                              | *T.nilable(::Integer)*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                           | Adds the Guids object to the response<br/>                                                                                                                                                   | 1                                                                                                                                                                                            |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetTopWatchedContentResponse)](../../models/operations/gettopwatchedcontentresponse.md)**
+**[T.nilable(Models::Operations::GetTopWatchedContentResponse)](../../models/operations/gettopwatchedcontentresponse.md)**
 

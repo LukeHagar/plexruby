@@ -5,69 +5,72 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class MyPlex < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :auth_token, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('authToken') } }
-
-      field :mapping_error, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mappingError') } }
-
-      field :mapping_state, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mappingState') } }
-
-      field :private_address, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('privateAddress') } }
-
-      field :private_port, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('privatePort') } }
-
-      field :public_address, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('publicAddress') } }
-
-      field :public_port, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('publicPort') } }
-
-      field :sign_in_state, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('signInState') } }
-
-      field :subscription_active, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subscriptionActive') } }
-
-      field :subscription_features, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subscriptionFeatures') } }
-
-      field :subscription_state, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subscriptionState') } }
-
-      field :username, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('username') } }
+      class MyPlex
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(auth_token: T.nilable(::String), mapping_error: T.nilable(::String), mapping_state: T.nilable(::String), private_address: T.nilable(::String), private_port: T.nilable(::Float), public_address: T.nilable(::String), public_port: T.nilable(::Float), sign_in_state: T.nilable(::String), subscription_active: T.nilable(T::Boolean), subscription_features: T.nilable(::String), subscription_state: T.nilable(::String), username: T.nilable(::String)).void }
-      def initialize(auth_token: nil, mapping_error: nil, mapping_state: nil, private_address: nil, private_port: nil, public_address: nil, public_port: nil, sign_in_state: nil, subscription_active: nil, subscription_features: nil, subscription_state: nil, username: nil)
-        @auth_token = auth_token
-        @mapping_error = mapping_error
-        @mapping_state = mapping_state
-        @private_address = private_address
-        @private_port = private_port
-        @public_address = public_address
-        @public_port = public_port
-        @sign_in_state = sign_in_state
-        @subscription_active = subscription_active
-        @subscription_features = subscription_features
-        @subscription_state = subscription_state
-        @username = username
-      end
+        field :auth_token, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('authToken') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @auth_token == other.auth_token
-        return false unless @mapping_error == other.mapping_error
-        return false unless @mapping_state == other.mapping_state
-        return false unless @private_address == other.private_address
-        return false unless @private_port == other.private_port
-        return false unless @public_address == other.public_address
-        return false unless @public_port == other.public_port
-        return false unless @sign_in_state == other.sign_in_state
-        return false unless @subscription_active == other.subscription_active
-        return false unless @subscription_features == other.subscription_features
-        return false unless @subscription_state == other.subscription_state
-        return false unless @username == other.username
-        true
+        field :mapping_error, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mappingError') } }
+
+        field :mapping_state, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mappingState') } }
+
+        field :private_address, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('privateAddress') } }
+
+        field :private_port, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('privatePort') } }
+
+        field :public_address, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('publicAddress') } }
+
+        field :public_port, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('publicPort') } }
+
+        field :sign_in_state, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('signInState') } }
+
+        field :subscription_active, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subscriptionActive') } }
+
+        field :subscription_features, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subscriptionFeatures') } }
+
+        field :subscription_state, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subscriptionState') } }
+
+        field :username, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('username') } }
+
+
+        sig { params(auth_token: T.nilable(::String), mapping_error: T.nilable(::String), mapping_state: T.nilable(::String), private_address: T.nilable(::String), private_port: T.nilable(::Float), public_address: T.nilable(::String), public_port: T.nilable(::Float), sign_in_state: T.nilable(::String), subscription_active: T.nilable(T::Boolean), subscription_features: T.nilable(::String), subscription_state: T.nilable(::String), username: T.nilable(::String)).void }
+        def initialize(auth_token: nil, mapping_error: nil, mapping_state: nil, private_address: nil, private_port: nil, public_address: nil, public_port: nil, sign_in_state: nil, subscription_active: nil, subscription_features: nil, subscription_state: nil, username: nil)
+          @auth_token = auth_token
+          @mapping_error = mapping_error
+          @mapping_state = mapping_state
+          @private_address = private_address
+          @private_port = private_port
+          @public_address = public_address
+          @public_port = public_port
+          @sign_in_state = sign_in_state
+          @subscription_active = subscription_active
+          @subscription_features = subscription_features
+          @subscription_state = subscription_state
+          @username = username
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @auth_token == other.auth_token
+          return false unless @mapping_error == other.mapping_error
+          return false unless @mapping_state == other.mapping_state
+          return false unless @private_address == other.private_address
+          return false unless @private_port == other.private_port
+          return false unless @public_address == other.public_address
+          return false unless @public_port == other.public_port
+          return false unless @sign_in_state == other.sign_in_state
+          return false unless @subscription_active == other.subscription_active
+          return false unless @subscription_features == other.subscription_features
+          return false unless @subscription_state == other.subscription_state
+          return false unless @username == other.username
+          true
+        end
       end
     end
   end

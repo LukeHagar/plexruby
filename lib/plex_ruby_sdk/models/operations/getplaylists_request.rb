@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetPlaylistsRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetPlaylistsRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # limit to a type of playlist.
-      field :playlist_type, T.nilable(::PlexRubySDK::Operations::PlaylistType), { 'query_param': { 'field_name': 'playlistType', 'style': 'form', 'explode': true } }
-      # type of playlists to return (default is all).
-      field :smart, T.nilable(::PlexRubySDK::Operations::QueryParamSmart), { 'query_param': { 'field_name': 'smart', 'style': 'form', 'explode': true } }
+        # limit to a type of playlist.
+        field :playlist_type, T.nilable(Models::Operations::PlaylistType), { 'query_param': { 'field_name': 'playlistType', 'style': 'form', 'explode': true } }
+        # type of playlists to return (default is all).
+        field :smart, T.nilable(Models::Operations::QueryParamSmart), { 'query_param': { 'field_name': 'smart', 'style': 'form', 'explode': true } }
 
 
-      sig { params(playlist_type: T.nilable(::PlexRubySDK::Operations::PlaylistType), smart: T.nilable(::PlexRubySDK::Operations::QueryParamSmart)).void }
-      def initialize(playlist_type: nil, smart: nil)
-        @playlist_type = playlist_type
-        @smart = smart
-      end
+        sig { params(playlist_type: T.nilable(Models::Operations::PlaylistType), smart: T.nilable(Models::Operations::QueryParamSmart)).void }
+        def initialize(playlist_type: nil, smart: nil)
+          @playlist_type = playlist_type
+          @smart = smart
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @playlist_type == other.playlist_type
-        return false unless @smart == other.smart
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @playlist_type == other.playlist_type
+          return false unless @smart == other.smart
+          true
+        end
       end
     end
   end

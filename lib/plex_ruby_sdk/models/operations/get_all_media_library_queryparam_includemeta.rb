@@ -5,14 +5,16 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # GetAllMediaLibraryQueryParamIncludeMeta - Adds the Meta object to the response
-    # 
-    class GetAllMediaLibraryQueryParamIncludeMeta < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+    
+      # GetAllMediaLibraryQueryParamIncludeMeta - Adds the Meta object to the response
+      # 
+      class GetAllMediaLibraryQueryParamIncludeMeta < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

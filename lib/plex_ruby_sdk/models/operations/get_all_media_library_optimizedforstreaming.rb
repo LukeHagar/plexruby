@@ -5,20 +5,23 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # Has this media been optimized for streaming. NOTE: This can be 0, 1, false or true
-    class GetAllMediaLibraryOptimizedForStreaming < ::Crystalline::FieldAugmented
-      extend T::Sig
+  module Models
+    module Operations
+    
+      # Has this media been optimized for streaming. NOTE: This can be 0, 1, false or true
+      class GetAllMediaLibraryOptimizedForStreaming
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
 
-      
-      def initialize; end
+        
+        def initialize; end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          true
+        end
       end
     end
   end

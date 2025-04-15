@@ -18,7 +18,7 @@ require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new
 
-req = ::PlexRubySDK::Operations::GetUsersRequest.new(
+req = Models::Operations::GetUsersRequest.new(
   client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
   client_name: "Plex for Roku",
   device_nickname: "Roku 3",
@@ -44,12 +44,12 @@ end
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [::PlexRubySDK::Operations::GetUsersRequest](../../models/operations/getusersrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `server_url`                                                                             | *String*                                                                                 | :heavy_minus_sign:                                                                       | An optional server URL to use.                                                           |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [Models::Operations::GetUsersRequest](../../models/operations/getusersrequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| `server_url`                                                                      | *String*                                                                          | :heavy_minus_sign:                                                                | An optional server URL to use.                                                    |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetUsersResponse)](../../models/operations/getusersresponse.md)**
+**[T.nilable(Models::Operations::GetUsersResponse)](../../models/operations/getusersresponse.md)**
 

@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class SearchResult < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :metadata, ::PlexRubySDK::Operations::GetSearchAllLibrariesMetadata, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
-
-      field :score, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('score') } }
+      class SearchResult
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(metadata: ::PlexRubySDK::Operations::GetSearchAllLibrariesMetadata, score: ::Float).void }
-      def initialize(metadata: nil, score: nil)
-        @metadata = metadata
-        @score = score
-      end
+        field :metadata, Models::Operations::GetSearchAllLibrariesMetadata, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @metadata == other.metadata
-        return false unless @score == other.score
-        true
+        field :score, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('score') } }
+
+
+        sig { params(metadata: Models::Operations::GetSearchAllLibrariesMetadata, score: ::Float).void }
+        def initialize(metadata: nil, score: nil)
+          @metadata = metadata
+          @score = score
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @metadata == other.metadata
+          return false unless @score == other.score
+          true
+        end
       end
     end
   end

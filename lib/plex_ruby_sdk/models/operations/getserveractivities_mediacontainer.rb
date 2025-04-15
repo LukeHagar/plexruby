@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetServerActivitiesMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :activity, T.nilable(T::Array[::PlexRubySDK::Operations::Activity]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Activity') } }
-
-      field :size, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+      class GetServerActivitiesMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(activity: T.nilable(T::Array[::PlexRubySDK::Operations::Activity]), size: T.nilable(::Float)).void }
-      def initialize(activity: nil, size: nil)
-        @activity = activity
-        @size = size
-      end
+        field :activity, T.nilable(T::Array[Models::Operations::Activity]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Activity') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @activity == other.activity
-        return false unless @size == other.size
-        true
+        field :size, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+
+        sig { params(activity: T.nilable(T::Array[Models::Operations::Activity]), size: T.nilable(::Float)).void }
+        def initialize(activity: nil, size: nil)
+          @activity = activity
+          @size = size
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @activity == other.activity
+          return false unless @size == other.size
+          true
+        end
       end
     end
   end

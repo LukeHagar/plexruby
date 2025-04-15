@@ -5,77 +5,80 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetMediaMetaDataRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetMediaMetaDataRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # the id of the library item to return the children of.
-      field :rating_key, ::Integer, { 'path_param': { 'field_name': 'ratingKey', 'style': 'simple', 'explode': false } }
-      # Trigger asynchronous metadata augmentation.
-      field :async_augment_metadata, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'asyncAugmentMetadata', 'style': 'form', 'explode': true } }
-      # Trigger asynchronous file checking.
-      field :async_check_files, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'asyncCheckFiles', 'style': 'form', 'explode': true } }
-      # Trigger asynchronous refresh of analysis.
-      field :async_refresh_analysis, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'asyncRefreshAnalysis', 'style': 'form', 'explode': true } }
-      # Trigger asynchronous refresh of the local media agent.
-      field :async_refresh_local_media_agent, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'asyncRefreshLocalMediaAgent', 'style': 'form', 'explode': true } }
-      # Include chapter details.
-      field :include_chapters, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeChapters', 'style': 'form', 'explode': true } }
-      # Include concerts data if set to true.
-      field :include_concerts, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeConcerts', 'style': 'form', 'explode': true } }
-      # Include external media data.
-      field :include_external_media, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeExternalMedia', 'style': 'form', 'explode': true } }
-      # Include extra content (e.g. bonus features).
-      field :include_extras, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeExtras', 'style': 'form', 'explode': true } }
-      # Include on-deck items.
-      field :include_on_deck, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeOnDeck', 'style': 'form', 'explode': true } }
-      # Include popular leaves (episodes/chapters).
-      field :include_popular_leaves, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includePopularLeaves', 'style': 'form', 'explode': true } }
-      # Include preferences information.
-      field :include_preferences, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includePreferences', 'style': 'form', 'explode': true } }
-      # Include reviews for the content.
-      field :include_reviews, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeReviews', 'style': 'form', 'explode': true } }
-      # Include station data.
-      field :include_stations, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeStations', 'style': 'form', 'explode': true } }
+        # the id of the library item to return the children of.
+        field :rating_key, ::Integer, { 'path_param': { 'field_name': 'ratingKey', 'style': 'simple', 'explode': false } }
+        # Trigger asynchronous metadata augmentation.
+        field :async_augment_metadata, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'asyncAugmentMetadata', 'style': 'form', 'explode': true } }
+        # Trigger asynchronous file checking.
+        field :async_check_files, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'asyncCheckFiles', 'style': 'form', 'explode': true } }
+        # Trigger asynchronous refresh of analysis.
+        field :async_refresh_analysis, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'asyncRefreshAnalysis', 'style': 'form', 'explode': true } }
+        # Trigger asynchronous refresh of the local media agent.
+        field :async_refresh_local_media_agent, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'asyncRefreshLocalMediaAgent', 'style': 'form', 'explode': true } }
+        # Include chapter details.
+        field :include_chapters, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeChapters', 'style': 'form', 'explode': true } }
+        # Include concerts data if set to true.
+        field :include_concerts, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeConcerts', 'style': 'form', 'explode': true } }
+        # Include external media data.
+        field :include_external_media, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeExternalMedia', 'style': 'form', 'explode': true } }
+        # Include extra content (e.g. bonus features).
+        field :include_extras, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeExtras', 'style': 'form', 'explode': true } }
+        # Include on-deck items.
+        field :include_on_deck, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeOnDeck', 'style': 'form', 'explode': true } }
+        # Include popular leaves (episodes/chapters).
+        field :include_popular_leaves, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includePopularLeaves', 'style': 'form', 'explode': true } }
+        # Include preferences information.
+        field :include_preferences, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includePreferences', 'style': 'form', 'explode': true } }
+        # Include reviews for the content.
+        field :include_reviews, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeReviews', 'style': 'form', 'explode': true } }
+        # Include station data.
+        field :include_stations, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeStations', 'style': 'form', 'explode': true } }
 
 
-      sig { params(rating_key: ::Integer, async_augment_metadata: T.nilable(T::Boolean), async_check_files: T.nilable(T::Boolean), async_refresh_analysis: T.nilable(T::Boolean), async_refresh_local_media_agent: T.nilable(T::Boolean), include_chapters: T.nilable(T::Boolean), include_concerts: T.nilable(T::Boolean), include_external_media: T.nilable(T::Boolean), include_extras: T.nilable(T::Boolean), include_on_deck: T.nilable(T::Boolean), include_popular_leaves: T.nilable(T::Boolean), include_preferences: T.nilable(T::Boolean), include_reviews: T.nilable(T::Boolean), include_stations: T.nilable(T::Boolean)).void }
-      def initialize(rating_key: nil, async_augment_metadata: nil, async_check_files: nil, async_refresh_analysis: nil, async_refresh_local_media_agent: nil, include_chapters: nil, include_concerts: nil, include_external_media: nil, include_extras: nil, include_on_deck: nil, include_popular_leaves: nil, include_preferences: nil, include_reviews: nil, include_stations: nil)
-        @rating_key = rating_key
-        @async_augment_metadata = async_augment_metadata
-        @async_check_files = async_check_files
-        @async_refresh_analysis = async_refresh_analysis
-        @async_refresh_local_media_agent = async_refresh_local_media_agent
-        @include_chapters = include_chapters
-        @include_concerts = include_concerts
-        @include_external_media = include_external_media
-        @include_extras = include_extras
-        @include_on_deck = include_on_deck
-        @include_popular_leaves = include_popular_leaves
-        @include_preferences = include_preferences
-        @include_reviews = include_reviews
-        @include_stations = include_stations
-      end
+        sig { params(rating_key: ::Integer, async_augment_metadata: T.nilable(T::Boolean), async_check_files: T.nilable(T::Boolean), async_refresh_analysis: T.nilable(T::Boolean), async_refresh_local_media_agent: T.nilable(T::Boolean), include_chapters: T.nilable(T::Boolean), include_concerts: T.nilable(T::Boolean), include_external_media: T.nilable(T::Boolean), include_extras: T.nilable(T::Boolean), include_on_deck: T.nilable(T::Boolean), include_popular_leaves: T.nilable(T::Boolean), include_preferences: T.nilable(T::Boolean), include_reviews: T.nilable(T::Boolean), include_stations: T.nilable(T::Boolean)).void }
+        def initialize(rating_key: nil, async_augment_metadata: nil, async_check_files: nil, async_refresh_analysis: nil, async_refresh_local_media_agent: nil, include_chapters: nil, include_concerts: nil, include_external_media: nil, include_extras: nil, include_on_deck: nil, include_popular_leaves: nil, include_preferences: nil, include_reviews: nil, include_stations: nil)
+          @rating_key = rating_key
+          @async_augment_metadata = async_augment_metadata
+          @async_check_files = async_check_files
+          @async_refresh_analysis = async_refresh_analysis
+          @async_refresh_local_media_agent = async_refresh_local_media_agent
+          @include_chapters = include_chapters
+          @include_concerts = include_concerts
+          @include_external_media = include_external_media
+          @include_extras = include_extras
+          @include_on_deck = include_on_deck
+          @include_popular_leaves = include_popular_leaves
+          @include_preferences = include_preferences
+          @include_reviews = include_reviews
+          @include_stations = include_stations
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @rating_key == other.rating_key
-        return false unless @async_augment_metadata == other.async_augment_metadata
-        return false unless @async_check_files == other.async_check_files
-        return false unless @async_refresh_analysis == other.async_refresh_analysis
-        return false unless @async_refresh_local_media_agent == other.async_refresh_local_media_agent
-        return false unless @include_chapters == other.include_chapters
-        return false unless @include_concerts == other.include_concerts
-        return false unless @include_external_media == other.include_external_media
-        return false unless @include_extras == other.include_extras
-        return false unless @include_on_deck == other.include_on_deck
-        return false unless @include_popular_leaves == other.include_popular_leaves
-        return false unless @include_preferences == other.include_preferences
-        return false unless @include_reviews == other.include_reviews
-        return false unless @include_stations == other.include_stations
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @rating_key == other.rating_key
+          return false unless @async_augment_metadata == other.async_augment_metadata
+          return false unless @async_check_files == other.async_check_files
+          return false unless @async_refresh_analysis == other.async_refresh_analysis
+          return false unless @async_refresh_local_media_agent == other.async_refresh_local_media_agent
+          return false unless @include_chapters == other.include_chapters
+          return false unless @include_concerts == other.include_concerts
+          return false unless @include_external_media == other.include_external_media
+          return false unless @include_extras == other.include_extras
+          return false unless @include_on_deck == other.include_on_deck
+          return false unless @include_popular_leaves == other.include_popular_leaves
+          return false unless @include_preferences == other.include_preferences
+          return false unless @include_reviews == other.include_reviews
+          return false unless @include_stations == other.include_stations
+          true
+        end
       end
     end
   end

@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetMediaProvidersRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetMediaProvidersRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # An authentication token, obtained from plex.tv
-      field :x_plex_token, ::String, { 'header': { 'field_name': 'X-Plex-Token', 'style': 'simple', 'explode': false } }
+        # An authentication token, obtained from plex.tv
+        field :x_plex_token, ::String, { 'header': { 'field_name': 'X-Plex-Token', 'style': 'simple', 'explode': false } }
 
 
-      sig { params(x_plex_token: ::String).void }
-      def initialize(x_plex_token: nil)
-        @x_plex_token = x_plex_token
-      end
+        sig { params(x_plex_token: ::String).void }
+        def initialize(x_plex_token: nil)
+          @x_plex_token = x_plex_token
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @x_plex_token == other.x_plex_token
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @x_plex_token == other.x_plex_token
+          true
+        end
       end
     end
   end

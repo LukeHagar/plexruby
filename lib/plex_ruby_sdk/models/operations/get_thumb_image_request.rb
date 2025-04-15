@@ -5,45 +5,48 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetThumbImageRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :height, ::Integer, { 'query_param': { 'field_name': 'height', 'style': 'form', 'explode': true } }
-
-      field :min_size, ::Integer, { 'query_param': { 'field_name': 'minSize', 'style': 'form', 'explode': true } }
-      # the id of the library item to return the children of.
-      field :rating_key, ::Integer, { 'path_param': { 'field_name': 'ratingKey', 'style': 'simple', 'explode': false } }
-
-      field :upscale, ::Integer, { 'query_param': { 'field_name': 'upscale', 'style': 'form', 'explode': true } }
-
-      field :width, ::Integer, { 'query_param': { 'field_name': 'width', 'style': 'form', 'explode': true } }
-      # An authentication token, obtained from plex.tv
-      field :x_plex_token, ::String, { 'header': { 'field_name': 'X-Plex-Token', 'style': 'simple', 'explode': false } }
+      class GetThumbImageRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(height: ::Integer, min_size: ::Integer, rating_key: ::Integer, upscale: ::Integer, width: ::Integer, x_plex_token: ::String).void }
-      def initialize(height: nil, min_size: nil, rating_key: nil, upscale: nil, width: nil, x_plex_token: nil)
-        @height = height
-        @min_size = min_size
-        @rating_key = rating_key
-        @upscale = upscale
-        @width = width
-        @x_plex_token = x_plex_token
-      end
+        field :height, ::Integer, { 'query_param': { 'field_name': 'height', 'style': 'form', 'explode': true } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @height == other.height
-        return false unless @min_size == other.min_size
-        return false unless @rating_key == other.rating_key
-        return false unless @upscale == other.upscale
-        return false unless @width == other.width
-        return false unless @x_plex_token == other.x_plex_token
-        true
+        field :min_size, ::Integer, { 'query_param': { 'field_name': 'minSize', 'style': 'form', 'explode': true } }
+        # the id of the library item to return the children of.
+        field :rating_key, ::Integer, { 'path_param': { 'field_name': 'ratingKey', 'style': 'simple', 'explode': false } }
+
+        field :upscale, ::Integer, { 'query_param': { 'field_name': 'upscale', 'style': 'form', 'explode': true } }
+
+        field :width, ::Integer, { 'query_param': { 'field_name': 'width', 'style': 'form', 'explode': true } }
+        # An authentication token, obtained from plex.tv
+        field :x_plex_token, ::String, { 'header': { 'field_name': 'X-Plex-Token', 'style': 'simple', 'explode': false } }
+
+
+        sig { params(height: ::Integer, min_size: ::Integer, rating_key: ::Integer, upscale: ::Integer, width: ::Integer, x_plex_token: ::String).void }
+        def initialize(height: nil, min_size: nil, rating_key: nil, upscale: nil, width: nil, x_plex_token: nil)
+          @height = height
+          @min_size = min_size
+          @rating_key = rating_key
+          @upscale = upscale
+          @width = width
+          @x_plex_token = x_plex_token
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @height == other.height
+          return false unless @min_size == other.min_size
+          return false unless @rating_key == other.rating_key
+          return false unless @upscale == other.upscale
+          return false unless @width == other.width
+          return false unless @x_plex_token == other.x_plex_token
+          true
+        end
       end
     end
   end

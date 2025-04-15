@@ -5,15 +5,17 @@
 
 
 module PlexRubySDK
-  module Operations
-    POST_USERS_SIGN_IN_DATA_STATE_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
+  module Models
+    module Operations
+      POST_USERS_SIGN_IN_DATA_STATE_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
 
-    class PostUsersSignInDataState < T::Enum
-      enums do
-        ENDED = new('ended')
+      class PostUsersSignInDataState < T::Enum
+        enums do
+          ENDED = new('ended')
+        end
       end
     end
   end

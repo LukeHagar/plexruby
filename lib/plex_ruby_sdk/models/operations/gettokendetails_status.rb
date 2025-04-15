@@ -5,16 +5,18 @@
 
 
 module PlexRubySDK
-  module Operations
-    GET_TOKEN_DETAILS_STATUS_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
+  module Models
+    module Operations
+      GET_TOKEN_DETAILS_STATUS_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
 
-    class GetTokenDetailsStatus < T::Enum
-      enums do
-        ONLINE = new('online')
-        OFFLINE = new('offline')
+      class GetTokenDetailsStatus < T::Enum
+        enums do
+          ONLINE = new('online')
+          OFFLINE = new('offline')
+        end
       end
     end
   end

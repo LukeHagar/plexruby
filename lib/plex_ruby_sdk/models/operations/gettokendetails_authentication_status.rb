@@ -5,16 +5,18 @@
 
 
 module PlexRubySDK
-  module Operations
-    GET_TOKEN_DETAILS_AUTHENTICATION_STATUS_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
-    # GetTokenDetailsAuthenticationStatus - String representation of subscriptionActive
-    class GetTokenDetailsAuthenticationStatus < T::Enum
-      enums do
-        INACTIVE = new('Inactive')
-        ACTIVE = new('Active')
+  module Models
+    module Operations
+      GET_TOKEN_DETAILS_AUTHENTICATION_STATUS_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
+      # GetTokenDetailsAuthenticationStatus - String representation of subscriptionActive
+      class GetTokenDetailsAuthenticationStatus < T::Enum
+        enums do
+          INACTIVE = new('Inactive')
+          ACTIVE = new('Active')
+        end
       end
     end
   end

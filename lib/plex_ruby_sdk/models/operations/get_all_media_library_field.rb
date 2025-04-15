@@ -5,37 +5,40 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetAllMediaLibraryField < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-
-      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
-
-      field :sub_type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subType') } }
+      class GetAllMediaLibraryField
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(key: ::String, title: ::String, type: ::String, sub_type: T.nilable(::String)).void }
-      def initialize(key: nil, title: nil, type: nil, sub_type: nil)
-        @key = key
-        @title = title
-        @type = type
-        @sub_type = sub_type
-      end
+        field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @key == other.key
-        return false unless @title == other.title
-        return false unless @type == other.type
-        return false unless @sub_type == other.sub_type
-        true
+        field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+        field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+
+        field :sub_type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subType') } }
+
+
+        sig { params(key: ::String, title: ::String, type: ::String, sub_type: T.nilable(::String)).void }
+        def initialize(key: nil, title: nil, type: nil, sub_type: nil)
+          @key = key
+          @title = title
+          @type = type
+          @sub_type = sub_type
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @key == other.key
+          return false unless @title == other.title
+          return false unless @type == other.type
+          return false unless @sub_type == other.sub_type
+          true
+        end
       end
     end
   end

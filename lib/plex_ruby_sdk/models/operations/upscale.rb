@@ -5,13 +5,15 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # Upscale - allow images to be resized beyond native dimensions.
-    class Upscale < T::Enum
-      enums do
-        ZERO = new(0)
-        ONE = new(1)
+  module Models
+    module Operations
+    
+      # Upscale - allow images to be resized beyond native dimensions.
+      class Upscale < T::Enum
+        enums do
+          ZERO = new(0)
+          ONE = new(1)
+        end
       end
     end
   end

@@ -5,16 +5,18 @@
 
 
 module PlexRubySDK
-  module Operations
-    PENDING_SERVERS = [
-      'https://plex.tv/api'
-    ].freeze
-  
-    # Pending - Indicates if the server is pending approval.
-    class Pending < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+      PENDING_SERVERS = [
+        'https://plex.tv/api'
+      ].freeze
+    
+      # Pending - Indicates if the server is pending approval.
+      class Pending < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

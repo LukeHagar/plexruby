@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class CheckForUpdatesRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class CheckForUpdatesRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # Indicate that you want to start download any updates found.
-      field :download, T.nilable(::PlexRubySDK::Operations::Download), { 'query_param': { 'field_name': 'download', 'style': 'form', 'explode': true } }
+        # Indicate that you want to start download any updates found.
+        field :download, T.nilable(Models::Operations::Download), { 'query_param': { 'field_name': 'download', 'style': 'form', 'explode': true } }
 
 
-      sig { params(download: T.nilable(::PlexRubySDK::Operations::Download)).void }
-      def initialize(download: nil)
-        @download = download
-      end
+        sig { params(download: T.nilable(Models::Operations::Download)).void }
+        def initialize(download: nil)
+          @download = download
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @download == other.download
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @download == other.download
+          true
+        end
       end
     end
   end

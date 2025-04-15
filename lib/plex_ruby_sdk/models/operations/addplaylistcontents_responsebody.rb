@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # Playlist Updated
-    class AddPlaylistContentsResponseBody < ::Crystalline::FieldAugmented
-      extend T::Sig
+  module Models
+    module Operations
+    
+      # Playlist Updated
+      class AddPlaylistContentsResponseBody
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      field :media_container, T.nilable(::PlexRubySDK::Operations::AddPlaylistContentsMediaContainer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('MediaContainer') } }
+        field :media_container, T.nilable(Models::Operations::AddPlaylistContentsMediaContainer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('MediaContainer') } }
 
 
-      sig { params(media_container: T.nilable(::PlexRubySDK::Operations::AddPlaylistContentsMediaContainer)).void }
-      def initialize(media_container: nil)
-        @media_container = media_container
-      end
+        sig { params(media_container: T.nilable(Models::Operations::AddPlaylistContentsMediaContainer)).void }
+        def initialize(media_container: nil)
+          @media_container = media_container
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @media_container == other.media_container
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @media_container == other.media_container
+          true
+        end
       end
     end
   end

@@ -5,41 +5,44 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class MediaProvider < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :feature, T.nilable(T::Array[::PlexRubySDK::Operations::Feature]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Feature') } }
-
-      field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
-
-      field :protocols, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('protocols') } }
-
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-
-      field :types, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('types') } }
+      class MediaProvider
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(feature: T.nilable(T::Array[::PlexRubySDK::Operations::Feature]), identifier: T.nilable(::String), protocols: T.nilable(::String), title: T.nilable(::String), types: T.nilable(::String)).void }
-      def initialize(feature: nil, identifier: nil, protocols: nil, title: nil, types: nil)
-        @feature = feature
-        @identifier = identifier
-        @protocols = protocols
-        @title = title
-        @types = types
-      end
+        field :feature, T.nilable(T::Array[Models::Operations::Feature]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Feature') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @feature == other.feature
-        return false unless @identifier == other.identifier
-        return false unless @protocols == other.protocols
-        return false unless @title == other.title
-        return false unless @types == other.types
-        true
+        field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
+
+        field :protocols, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('protocols') } }
+
+        field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+        field :types, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('types') } }
+
+
+        sig { params(feature: T.nilable(T::Array[Models::Operations::Feature]), identifier: T.nilable(::String), protocols: T.nilable(::String), title: T.nilable(::String), types: T.nilable(::String)).void }
+        def initialize(feature: nil, identifier: nil, protocols: nil, title: nil, types: nil)
+          @feature = feature
+          @identifier = identifier
+          @protocols = protocols
+          @title = title
+          @types = types
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @feature == other.feature
+          return false unless @identifier == other.identifier
+          return false unless @protocols == other.protocols
+          return false unless @title == other.title
+          return false unless @types == other.types
+          true
+        end
       end
     end
   end

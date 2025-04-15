@@ -5,36 +5,39 @@
 
 
 module PlexRubySDK
-  module Operations
-    IMAGE_SERVERS = [
-      'https://metadata.provider.plex.tv'
-    ].freeze
-  
+  module Models
+    module Operations
+      IMAGE_SERVERS = [
+        'https://metadata.provider.plex.tv'
+      ].freeze
+    
 
-    class Image < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :alt, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('alt') } }
-
-      field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
-
-      field :url, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('url') } }
+      class Image
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(alt: T.nilable(::String), type: T.nilable(::String), url: T.nilable(::String)).void }
-      def initialize(alt: nil, type: nil, url: nil)
-        @alt = alt
-        @type = type
-        @url = url
-      end
+        field :alt, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('alt') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @alt == other.alt
-        return false unless @type == other.type
-        return false unless @url == other.url
-        true
+        field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+
+        field :url, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('url') } }
+
+
+        sig { params(alt: T.nilable(::String), type: T.nilable(::String), url: T.nilable(::String)).void }
+        def initialize(alt: nil, type: nil, url: nil)
+          @alt = alt
+          @type = type
+          @url = url
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @alt == other.alt
+          return false unless @type == other.type
+          return false unless @url == other.url
+          true
+        end
       end
     end
   end

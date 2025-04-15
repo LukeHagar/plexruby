@@ -5,39 +5,42 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class LogLineRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class LogLineRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # An integer log level to write to the PMS log with.  
-      # 0: Error  
-      # 1: Warning  
-      # 2: Info  
-      # 3: Debug  
-      # 4: Verbose
-      # 
-      field :level, ::PlexRubySDK::Operations::Level, { 'query_param': { 'field_name': 'level', 'style': 'form', 'explode': true } }
-      # The text of the message to write to the log.
-      field :message, ::String, { 'query_param': { 'field_name': 'message', 'style': 'form', 'explode': true } }
-      # a string indicating the source of the message.
-      field :source, ::String, { 'query_param': { 'field_name': 'source', 'style': 'form', 'explode': true } }
+        # An integer log level to write to the PMS log with.  
+        # 0: Error  
+        # 1: Warning  
+        # 2: Info  
+        # 3: Debug  
+        # 4: Verbose
+        # 
+        field :level, Models::Operations::Level, { 'query_param': { 'field_name': 'level', 'style': 'form', 'explode': true } }
+        # The text of the message to write to the log.
+        field :message, ::String, { 'query_param': { 'field_name': 'message', 'style': 'form', 'explode': true } }
+        # a string indicating the source of the message.
+        field :source, ::String, { 'query_param': { 'field_name': 'source', 'style': 'form', 'explode': true } }
 
 
-      sig { params(level: ::PlexRubySDK::Operations::Level, message: ::String, source: ::String).void }
-      def initialize(level: nil, message: nil, source: nil)
-        @level = level
-        @message = message
-        @source = source
-      end
+        sig { params(level: Models::Operations::Level, message: ::String, source: ::String).void }
+        def initialize(level: nil, message: nil, source: nil)
+          @level = level
+          @message = message
+          @source = source
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @level == other.level
-        return false unless @message == other.message
-        return false unless @source == other.source
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @level == other.level
+          return false unless @message == other.message
+          return false unless @source == other.source
+          true
+        end
       end
     end
   end

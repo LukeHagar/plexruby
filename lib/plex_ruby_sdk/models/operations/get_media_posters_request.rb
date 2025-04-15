@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetMediaPostersRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetMediaPostersRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # the id of the library item to return the posters of.
-      field :rating_key, ::Integer, { 'path_param': { 'field_name': 'ratingKey', 'style': 'simple', 'explode': false } }
+        # the id of the library item to return the posters of.
+        field :rating_key, ::Integer, { 'path_param': { 'field_name': 'ratingKey', 'style': 'simple', 'explode': false } }
 
 
-      sig { params(rating_key: ::Integer).void }
-      def initialize(rating_key: nil)
-        @rating_key = rating_key
-      end
+        sig { params(rating_key: ::Integer).void }
+        def initialize(rating_key: nil)
+          @rating_key = rating_key
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @rating_key == other.rating_key
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @rating_key == other.rating_key
+          true
+        end
       end
     end
   end

@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetLibraryDetailsRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetLibraryDetailsRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The unique key of the Plex library. 
-      # Note: This is unique in the context of the Plex server.
-      # 
-      field :section_key, ::Integer, { 'path_param': { 'field_name': 'sectionKey', 'style': 'simple', 'explode': false } }
-      # Whether or not to include details for a section (types, filters, and sorts). 
-      # Only exists for backwards compatibility, media providers other than the server libraries have it on always.
-      # 
-      field :include_details, T.nilable(::PlexRubySDK::Operations::IncludeDetails), { 'query_param': { 'field_name': 'includeDetails', 'style': 'form', 'explode': true } }
+        # The unique key of the Plex library. 
+        # Note: This is unique in the context of the Plex server.
+        # 
+        field :section_key, ::Integer, { 'path_param': { 'field_name': 'sectionKey', 'style': 'simple', 'explode': false } }
+        # Whether or not to include details for a section (types, filters, and sorts). 
+        # Only exists for backwards compatibility, media providers other than the server libraries have it on always.
+        # 
+        field :include_details, T.nilable(Models::Operations::IncludeDetails), { 'query_param': { 'field_name': 'includeDetails', 'style': 'form', 'explode': true } }
 
 
-      sig { params(section_key: ::Integer, include_details: T.nilable(::PlexRubySDK::Operations::IncludeDetails)).void }
-      def initialize(section_key: nil, include_details: nil)
-        @section_key = section_key
-        @include_details = include_details
-      end
+        sig { params(section_key: ::Integer, include_details: T.nilable(Models::Operations::IncludeDetails)).void }
+        def initialize(section_key: nil, include_details: nil)
+          @section_key = section_key
+          @include_details = include_details
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @section_key == other.section_key
-        return false unless @include_details == other.include_details
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @section_key == other.section_key
+          return false unless @include_details == other.include_details
+          true
+        end
       end
     end
   end

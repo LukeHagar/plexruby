@@ -5,45 +5,48 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetMediaMetaDataWriter < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetMediaMetaDataWriter
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The filter string for the role.
-      field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
-      # The unique role identifier.
-      field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-      # The actor's name.
-      field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
-      # A key associated with the actor tag.
-      field :tag_key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
-      # The character name or role.
-      field :role, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('role') } }
-      # URL for the role thumbnail image.
-      field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
+        # The filter string for the role.
+        field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
+        # The unique role identifier.
+        field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+        # The actor's name.
+        field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+        # A key associated with the actor tag.
+        field :tag_key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
+        # The character name or role.
+        field :role, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('role') } }
+        # URL for the role thumbnail image.
+        field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
 
 
-      sig { params(filter: ::String, id: ::Integer, tag: ::String, tag_key: ::String, role: T.nilable(::String), thumb: T.nilable(::String)).void }
-      def initialize(filter: nil, id: nil, tag: nil, tag_key: nil, role: nil, thumb: nil)
-        @filter = filter
-        @id = id
-        @tag = tag
-        @tag_key = tag_key
-        @role = role
-        @thumb = thumb
-      end
+        sig { params(filter: ::String, id: ::Integer, tag: ::String, tag_key: ::String, role: T.nilable(::String), thumb: T.nilable(::String)).void }
+        def initialize(filter: nil, id: nil, tag: nil, tag_key: nil, role: nil, thumb: nil)
+          @filter = filter
+          @id = id
+          @tag = tag
+          @tag_key = tag_key
+          @role = role
+          @thumb = thumb
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @filter == other.filter
-        return false unless @id == other.id
-        return false unless @tag == other.tag
-        return false unless @tag_key == other.tag_key
-        return false unless @role == other.role
-        return false unless @thumb == other.thumb
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @filter == other.filter
+          return false unless @id == other.id
+          return false unless @tag == other.tag
+          return false unless @tag_key == other.tag_key
+          return false unless @role == other.role
+          return false unless @thumb == other.thumb
+          true
+        end
       end
     end
   end

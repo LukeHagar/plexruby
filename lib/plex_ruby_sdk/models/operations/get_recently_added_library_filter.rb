@@ -5,45 +5,48 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetRecentlyAddedLibraryFilter < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
-
-      field :filter_type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filterType') } }
-
-      field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-
-      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
-
-      field :advanced, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('advanced') } }
+      class GetRecentlyAddedLibraryFilter
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(filter: ::String, filter_type: ::String, key: ::String, title: ::String, type: ::String, advanced: T.nilable(T::Boolean)).void }
-      def initialize(filter: nil, filter_type: nil, key: nil, title: nil, type: nil, advanced: nil)
-        @filter = filter
-        @filter_type = filter_type
-        @key = key
-        @title = title
-        @type = type
-        @advanced = advanced
-      end
+        field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @filter == other.filter
-        return false unless @filter_type == other.filter_type
-        return false unless @key == other.key
-        return false unless @title == other.title
-        return false unless @type == other.type
-        return false unless @advanced == other.advanced
-        true
+        field :filter_type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filterType') } }
+
+        field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+        field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+        field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+
+        field :advanced, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('advanced') } }
+
+
+        sig { params(filter: ::String, filter_type: ::String, key: ::String, title: ::String, type: ::String, advanced: T.nilable(T::Boolean)).void }
+        def initialize(filter: nil, filter_type: nil, key: nil, title: nil, type: nil, advanced: nil)
+          @filter = filter
+          @filter_type = filter_type
+          @key = key
+          @title = title
+          @type = type
+          @advanced = advanced
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @filter == other.filter
+          return false unless @filter_type == other.filter_type
+          return false unless @key == other.key
+          return false unless @title == other.title
+          return false unless @type == other.type
+          return false unless @advanced == other.advanced
+          true
+        end
       end
     end
   end

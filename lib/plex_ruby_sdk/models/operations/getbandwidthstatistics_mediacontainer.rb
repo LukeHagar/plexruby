@@ -5,37 +5,40 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetBandwidthStatisticsMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :account, T.nilable(T::Array[::PlexRubySDK::Operations::GetBandwidthStatisticsAccount]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Account') } }
-
-      field :device, T.nilable(T::Array[::PlexRubySDK::Operations::GetBandwidthStatisticsDevice]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Device') } }
-
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-
-      field :statistics_bandwidth, T.nilable(T::Array[::PlexRubySDK::Operations::StatisticsBandwidth]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('StatisticsBandwidth') } }
+      class GetBandwidthStatisticsMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(account: T.nilable(T::Array[::PlexRubySDK::Operations::GetBandwidthStatisticsAccount]), device: T.nilable(T::Array[::PlexRubySDK::Operations::GetBandwidthStatisticsDevice]), size: T.nilable(::Integer), statistics_bandwidth: T.nilable(T::Array[::PlexRubySDK::Operations::StatisticsBandwidth])).void }
-      def initialize(account: nil, device: nil, size: nil, statistics_bandwidth: nil)
-        @account = account
-        @device = device
-        @size = size
-        @statistics_bandwidth = statistics_bandwidth
-      end
+        field :account, T.nilable(T::Array[Models::Operations::GetBandwidthStatisticsAccount]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Account') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @account == other.account
-        return false unless @device == other.device
-        return false unless @size == other.size
-        return false unless @statistics_bandwidth == other.statistics_bandwidth
-        true
+        field :device, T.nilable(T::Array[Models::Operations::GetBandwidthStatisticsDevice]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Device') } }
+
+        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+        field :statistics_bandwidth, T.nilable(T::Array[Models::Operations::StatisticsBandwidth]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('StatisticsBandwidth') } }
+
+
+        sig { params(account: T.nilable(T::Array[Models::Operations::GetBandwidthStatisticsAccount]), device: T.nilable(T::Array[Models::Operations::GetBandwidthStatisticsDevice]), size: T.nilable(::Integer), statistics_bandwidth: T.nilable(T::Array[Models::Operations::StatisticsBandwidth])).void }
+        def initialize(account: nil, device: nil, size: nil, statistics_bandwidth: nil)
+          @account = account
+          @device = device
+          @size = size
+          @statistics_bandwidth = statistics_bandwidth
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @account == other.account
+          return false unless @device == other.device
+          return false unless @size == other.size
+          return false unless @statistics_bandwidth == other.statistics_bandwidth
+          true
+        end
       end
     end
   end

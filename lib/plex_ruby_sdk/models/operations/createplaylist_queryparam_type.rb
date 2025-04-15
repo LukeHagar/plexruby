@@ -5,14 +5,16 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # CreatePlaylistQueryParamType - type of playlist to create
-    class CreatePlaylistQueryParamType < T::Enum
-      enums do
-        AUDIO = new('audio')
-        VIDEO = new('video')
-        PHOTO = new('photo')
+  module Models
+    module Operations
+    
+      # CreatePlaylistQueryParamType - type of playlist to create
+      class CreatePlaylistQueryParamType < T::Enum
+        enums do
+          AUDIO = new('audio')
+          VIDEO = new('video')
+          PHOTO = new('photo')
+        end
       end
     end
   end

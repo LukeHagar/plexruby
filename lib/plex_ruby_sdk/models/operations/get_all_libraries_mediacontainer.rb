@@ -5,37 +5,40 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetAllLibrariesMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetAllLibrariesMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # Indicates whether syncing is allowed.
-      field :allow_sync, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
-      # Number of media items returned in this response.
-      field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-      # The primary title of the media container.
-      field :title1, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title1') } }
+        # Indicates whether syncing is allowed.
+        field :allow_sync, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
+        # Number of media items returned in this response.
+        field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+        # The primary title of the media container.
+        field :title1, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title1') } }
 
-      field :directory, T.nilable(T::Array[::PlexRubySDK::Operations::GetAllLibrariesDirectory]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
+        field :directory, T.nilable(T::Array[Models::Operations::GetAllLibrariesDirectory]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
 
 
-      sig { params(allow_sync: T::Boolean, size: ::Integer, title1: ::String, directory: T.nilable(T::Array[::PlexRubySDK::Operations::GetAllLibrariesDirectory])).void }
-      def initialize(allow_sync: nil, size: nil, title1: nil, directory: nil)
-        @allow_sync = allow_sync
-        @size = size
-        @title1 = title1
-        @directory = directory
-      end
+        sig { params(allow_sync: T::Boolean, size: ::Integer, title1: ::String, directory: T.nilable(T::Array[Models::Operations::GetAllLibrariesDirectory])).void }
+        def initialize(allow_sync: nil, size: nil, title1: nil, directory: nil)
+          @allow_sync = allow_sync
+          @size = size
+          @title1 = title1
+          @directory = directory
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @allow_sync == other.allow_sync
-        return false unless @size == other.size
-        return false unless @title1 == other.title1
-        return false unless @directory == other.directory
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @allow_sync == other.allow_sync
+          return false unless @size == other.size
+          return false unless @title1 == other.title1
+          return false unless @directory == other.directory
+          true
+        end
       end
     end
   end

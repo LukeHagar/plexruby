@@ -5,60 +5,63 @@
 
 
 module PlexRubySDK
-  module Operations
-    GET_USERS_SERVER_SERVERS = [
-      'https://plex.tv/api'
-    ].freeze
-  
+  module Models
+    module Operations
+      GET_USERS_SERVER_SERVERS = [
+        'https://plex.tv/api'
+      ].freeze
+    
 
-    class GetUsersServer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :all_libraries, ::PlexRubySDK::Operations::AllLibraries
-      # Unique ID of the server of the connected user
-      field :id, ::Integer
-
-      field :last_seen_at, ::Integer
-      # Machine identifier of the Plex server.
-      field :machine_identifier, ::String
-      # Name of the Plex server of the connected user.
-      field :name, ::String
-      # Number of libraries in the server this user has access to.
-      field :num_libraries, ::Integer
-
-      field :owned, ::PlexRubySDK::Operations::Owned
-
-      field :pending, ::PlexRubySDK::Operations::Pending
-      # ID of the actual Plex server.
-      field :server_id, ::Integer
+      class GetUsersServer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(all_libraries: ::PlexRubySDK::Operations::AllLibraries, id: ::Integer, last_seen_at: ::Integer, machine_identifier: ::String, name: ::String, num_libraries: ::Integer, owned: ::PlexRubySDK::Operations::Owned, pending: ::PlexRubySDK::Operations::Pending, server_id: ::Integer).void }
-      def initialize(all_libraries: nil, id: nil, last_seen_at: nil, machine_identifier: nil, name: nil, num_libraries: nil, owned: nil, pending: nil, server_id: nil)
-        @all_libraries = all_libraries
-        @id = id
-        @last_seen_at = last_seen_at
-        @machine_identifier = machine_identifier
-        @name = name
-        @num_libraries = num_libraries
-        @owned = owned
-        @pending = pending
-        @server_id = server_id
-      end
+        field :all_libraries, Models::Operations::AllLibraries
+        # Unique ID of the server of the connected user
+        field :id, ::Integer
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @all_libraries == other.all_libraries
-        return false unless @id == other.id
-        return false unless @last_seen_at == other.last_seen_at
-        return false unless @machine_identifier == other.machine_identifier
-        return false unless @name == other.name
-        return false unless @num_libraries == other.num_libraries
-        return false unless @owned == other.owned
-        return false unless @pending == other.pending
-        return false unless @server_id == other.server_id
-        true
+        field :last_seen_at, ::Integer
+        # Machine identifier of the Plex server.
+        field :machine_identifier, ::String
+        # Name of the Plex server of the connected user.
+        field :name, ::String
+        # Number of libraries in the server this user has access to.
+        field :num_libraries, ::Integer
+
+        field :owned, Models::Operations::Owned
+
+        field :pending, Models::Operations::Pending
+        # ID of the actual Plex server.
+        field :server_id, ::Integer
+
+
+        sig { params(all_libraries: Models::Operations::AllLibraries, id: ::Integer, last_seen_at: ::Integer, machine_identifier: ::String, name: ::String, num_libraries: ::Integer, owned: Models::Operations::Owned, pending: Models::Operations::Pending, server_id: ::Integer).void }
+        def initialize(all_libraries: nil, id: nil, last_seen_at: nil, machine_identifier: nil, name: nil, num_libraries: nil, owned: nil, pending: nil, server_id: nil)
+          @all_libraries = all_libraries
+          @id = id
+          @last_seen_at = last_seen_at
+          @machine_identifier = machine_identifier
+          @name = name
+          @num_libraries = num_libraries
+          @owned = owned
+          @pending = pending
+          @server_id = server_id
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @all_libraries == other.all_libraries
+          return false unless @id == other.id
+          return false unless @last_seen_at == other.last_seen_at
+          return false unless @machine_identifier == other.machine_identifier
+          return false unless @name == other.name
+          return false unless @num_libraries == other.num_libraries
+          return false unless @owned == other.owned
+          return false unless @pending == other.pending
+          return false unless @server_id == other.server_id
+          true
+        end
       end
     end
   end

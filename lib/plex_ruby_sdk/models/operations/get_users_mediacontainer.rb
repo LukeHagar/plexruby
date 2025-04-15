@@ -5,48 +5,51 @@
 
 
 module PlexRubySDK
-  module Operations
-    GET_USERS_MEDIA_CONTAINER_SERVERS = [
-      'https://plex.tv/api'
-    ].freeze
-  
-    # Container holding user and server details.
-    class GetUsersMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
+  module Models
+    module Operations
+      GET_USERS_MEDIA_CONTAINER_SERVERS = [
+        'https://plex.tv/api'
+      ].freeze
+    
+      # Container holding user and server details.
+      class GetUsersMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The friendly name of the Plex instance.
-      field :friendly_name, ::String
+        # The friendly name of the Plex instance.
+        field :friendly_name, ::String
 
-      field :identifier, ::String
-      # Unique Machine identifier of the Plex server.
-      field :machine_identifier, ::String
-      # Number of users in the current response.
-      field :size, ::Integer
-      # Total number of users.
-      field :total_size, ::Integer
-      # List of users with access to the Plex server.
-      field :user, T::Array[::PlexRubySDK::Operations::User]
+        field :identifier, ::String
+        # Unique Machine identifier of the Plex server.
+        field :machine_identifier, ::String
+        # Number of users in the current response.
+        field :size, ::Integer
+        # Total number of users.
+        field :total_size, ::Integer
+        # List of users with access to the Plex server.
+        field :user, T::Array[Models::Operations::User]
 
 
-      sig { params(friendly_name: ::String, identifier: ::String, machine_identifier: ::String, size: ::Integer, total_size: ::Integer, user: T::Array[::PlexRubySDK::Operations::User]).void }
-      def initialize(friendly_name: nil, identifier: nil, machine_identifier: nil, size: nil, total_size: nil, user: nil)
-        @friendly_name = friendly_name
-        @identifier = identifier
-        @machine_identifier = machine_identifier
-        @size = size
-        @total_size = total_size
-        @user = user
-      end
+        sig { params(friendly_name: ::String, identifier: ::String, machine_identifier: ::String, size: ::Integer, total_size: ::Integer, user: T::Array[Models::Operations::User]).void }
+        def initialize(friendly_name: nil, identifier: nil, machine_identifier: nil, size: nil, total_size: nil, user: nil)
+          @friendly_name = friendly_name
+          @identifier = identifier
+          @machine_identifier = machine_identifier
+          @size = size
+          @total_size = total_size
+          @user = user
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @friendly_name == other.friendly_name
-        return false unless @identifier == other.identifier
-        return false unless @machine_identifier == other.machine_identifier
-        return false unless @size == other.size
-        return false unless @total_size == other.total_size
-        return false unless @user == other.user
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @friendly_name == other.friendly_name
+          return false unless @identifier == other.identifier
+          return false unless @machine_identifier == other.machine_identifier
+          return false unless @size == other.size
+          return false unless @total_size == other.total_size
+          return false unless @user == other.user
+          true
+        end
       end
     end
   end

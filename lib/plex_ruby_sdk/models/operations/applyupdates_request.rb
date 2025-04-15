@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class ApplyUpdatesRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class ApplyUpdatesRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # Indicate that the latest version should be marked as skipped. The [Release] entry for this version will have the `state` set to `skipped`.
-      field :skip, T.nilable(::PlexRubySDK::Operations::Skip), { 'query_param': { 'field_name': 'skip', 'style': 'form', 'explode': true } }
-      # Indicate that you want the update to run during the next Butler execution. Omitting this or setting it to false indicates that the update should install
-      field :tonight, T.nilable(::PlexRubySDK::Operations::Tonight), { 'query_param': { 'field_name': 'tonight', 'style': 'form', 'explode': true } }
+        # Indicate that the latest version should be marked as skipped. The [Release] entry for this version will have the `state` set to `skipped`.
+        field :skip, T.nilable(Models::Operations::Skip), { 'query_param': { 'field_name': 'skip', 'style': 'form', 'explode': true } }
+        # Indicate that you want the update to run during the next Butler execution. Omitting this or setting it to false indicates that the update should install
+        field :tonight, T.nilable(Models::Operations::Tonight), { 'query_param': { 'field_name': 'tonight', 'style': 'form', 'explode': true } }
 
 
-      sig { params(skip: T.nilable(::PlexRubySDK::Operations::Skip), tonight: T.nilable(::PlexRubySDK::Operations::Tonight)).void }
-      def initialize(skip: nil, tonight: nil)
-        @skip = skip
-        @tonight = tonight
-      end
+        sig { params(skip: T.nilable(Models::Operations::Skip), tonight: T.nilable(Models::Operations::Tonight)).void }
+        def initialize(skip: nil, tonight: nil)
+          @skip = skip
+          @tonight = tonight
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @skip == other.skip
-        return false unless @tonight == other.tonight
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @skip == other.skip
+          return false unless @tonight == other.tonight
+          true
+        end
       end
     end
   end

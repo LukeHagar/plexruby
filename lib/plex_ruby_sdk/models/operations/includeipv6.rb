@@ -5,16 +5,18 @@
 
 
 module PlexRubySDK
-  module Operations
-    INCLUDE_I_PV6_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
-    # IncludeIPv6 - Include IPv6 entries in the results
-    class IncludeIPv6 < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+      INCLUDE_I_PV6_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
+      # IncludeIPv6 - Include IPv6 entries in the results
+      class IncludeIPv6 < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

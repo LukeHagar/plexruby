@@ -38,7 +38,7 @@ module Crystalline
       end
 
       def unmarshal_single(field_type, value, decoder = nil)
-        if field_type.instance_of?(Class) && field_type < ::Crystalline::FieldAugmented
+        if field_type.instance_of?(Class) && field_type.include?(::Crystalline::MetadataFields)
           unmarshalled = field_type.from_dict(value)
           return unmarshalled
         elsif field_type.to_s == 'Object'
@@ -57,7 +57,7 @@ module Crystalline
         end
       end
 
-      sig { params(json_obj: T.any(String, T::Hash[Symbol, String])).returns(::Crystalline::FieldAugmented) }
+      sig { params(json_obj: T.any(String, T::Hash[Symbol, String])).returns(Object) }
       def from_json(json_obj)
         begin
           d = JSON.parse(json_obj)
@@ -67,7 +67,7 @@ module Crystalline
         from_dict(d)
       end
 
-      sig { params(d: T::Hash[Symbol, String]).returns(::Crystalline::FieldAugmented) }
+      sig { params(d: T::Hash[Symbol, String]).returns(Object) }
       def from_dict(d)
         to_build = new
 
@@ -122,7 +122,7 @@ module Crystalline
                 break
               end
             end
-          elsif field_type.instance_of?(Class) && field_type < ::Crystalline::FieldAugmented
+          elsif field_type.instance_of?(Class) && field_type.include?(::Crystalline::MetadataFields)
             unmarshalled = Crystalline.unmarshal_json(value, field_type)
             to_build.send(key, unmarshalled)
           else
@@ -157,7 +157,7 @@ module Crystalline
     end
 
     def marshal_single(field)
-      if field.is_a? ::Crystalline::FieldAugmented
+      if field.class.include? ::Crystalline::MetadataFields
         field.to_dict
       else
         ::Crystalline.val_to_string(field, primitives: false)

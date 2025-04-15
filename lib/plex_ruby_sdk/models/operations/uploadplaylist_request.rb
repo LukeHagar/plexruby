@@ -5,43 +5,46 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class UploadPlaylistRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class UploadPlaylistRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # Force overwriting of duplicate playlists.  
-      # By default, a playlist file uploaded with the same path will overwrite the existing playlist. 
-      # The `force` argument is used to disable overwriting.  
-      # If the `force` argument is set to 0, a new playlist will be created suffixed with the date and time that the duplicate was uploaded.
-      # 
-      field :force, ::PlexRubySDK::Operations::QueryParamForce, { 'query_param': { 'field_name': 'force', 'style': 'form', 'explode': true } }
-      # absolute path to a directory on the server where m3u files are stored, or the absolute path to a playlist file on the server. 
-      # If the `path` argument is a directory, that path will be scanned for playlist files to be processed. 
-      # Each file in that directory creates a separate playlist, with a name based on the filename of the file that created it. 
-      # The GUID of each playlist is based on the filename. 
-      # If the `path` argument is a file, that file will be used to create a new playlist, with the name based on the filename of the file that created it. 
-      # The GUID of each playlist is based on the filename.
-      # 
-      field :path, ::String, { 'query_param': { 'field_name': 'path', 'style': 'form', 'explode': true } }
-      # Possibly the section ID to upload the playlist to, we are not certain.
-      field :section_id, ::Integer, { 'query_param': { 'field_name': 'sectionID', 'style': 'form', 'explode': true } }
+        # Force overwriting of duplicate playlists.  
+        # By default, a playlist file uploaded with the same path will overwrite the existing playlist. 
+        # The `force` argument is used to disable overwriting.  
+        # If the `force` argument is set to 0, a new playlist will be created suffixed with the date and time that the duplicate was uploaded.
+        # 
+        field :force, Models::Operations::QueryParamForce, { 'query_param': { 'field_name': 'force', 'style': 'form', 'explode': true } }
+        # absolute path to a directory on the server where m3u files are stored, or the absolute path to a playlist file on the server. 
+        # If the `path` argument is a directory, that path will be scanned for playlist files to be processed. 
+        # Each file in that directory creates a separate playlist, with a name based on the filename of the file that created it. 
+        # The GUID of each playlist is based on the filename. 
+        # If the `path` argument is a file, that file will be used to create a new playlist, with the name based on the filename of the file that created it. 
+        # The GUID of each playlist is based on the filename.
+        # 
+        field :path, ::String, { 'query_param': { 'field_name': 'path', 'style': 'form', 'explode': true } }
+        # Possibly the section ID to upload the playlist to, we are not certain.
+        field :section_id, ::Integer, { 'query_param': { 'field_name': 'sectionID', 'style': 'form', 'explode': true } }
 
 
-      sig { params(force: ::PlexRubySDK::Operations::QueryParamForce, path: ::String, section_id: ::Integer).void }
-      def initialize(force: nil, path: nil, section_id: nil)
-        @force = force
-        @path = path
-        @section_id = section_id
-      end
+        sig { params(force: Models::Operations::QueryParamForce, path: ::String, section_id: ::Integer).void }
+        def initialize(force: nil, path: nil, section_id: nil)
+          @force = force
+          @path = path
+          @section_id = section_id
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @force == other.force
-        return false unless @path == other.path
-        return false unless @section_id == other.section_id
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @force == other.force
+          return false unless @path == other.path
+          return false unless @section_id == other.section_id
+          true
+        end
       end
     end
   end

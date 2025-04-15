@@ -5,69 +5,72 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetLibraryHubsHub < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :context, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('context') } }
-
-      field :hub_identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hubIdentifier') } }
-
-      field :hub_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hubKey') } }
-
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :metadata, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryHubsMetadata]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
-
-      field :more, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('more') } }
-
-      field :promoted, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('promoted') } }
-
-      field :random, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('random') } }
-
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-
-      field :style, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('style') } }
-
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-
-      field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+      class GetLibraryHubsHub
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(context: T.nilable(::String), hub_identifier: T.nilable(::String), hub_key: T.nilable(::String), key: T.nilable(::String), metadata: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryHubsMetadata]), more: T.nilable(T::Boolean), promoted: T.nilable(T::Boolean), random: T.nilable(T::Boolean), size: T.nilable(::Integer), style: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String)).void }
-      def initialize(context: nil, hub_identifier: nil, hub_key: nil, key: nil, metadata: nil, more: nil, promoted: nil, random: nil, size: nil, style: nil, title: nil, type: nil)
-        @context = context
-        @hub_identifier = hub_identifier
-        @hub_key = hub_key
-        @key = key
-        @metadata = metadata
-        @more = more
-        @promoted = promoted
-        @random = random
-        @size = size
-        @style = style
-        @title = title
-        @type = type
-      end
+        field :context, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('context') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @context == other.context
-        return false unless @hub_identifier == other.hub_identifier
-        return false unless @hub_key == other.hub_key
-        return false unless @key == other.key
-        return false unless @metadata == other.metadata
-        return false unless @more == other.more
-        return false unless @promoted == other.promoted
-        return false unless @random == other.random
-        return false unless @size == other.size
-        return false unless @style == other.style
-        return false unless @title == other.title
-        return false unless @type == other.type
-        true
+        field :hub_identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hubIdentifier') } }
+
+        field :hub_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hubKey') } }
+
+        field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+        field :metadata, T.nilable(T::Array[Models::Operations::GetLibraryHubsMetadata]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
+
+        field :more, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('more') } }
+
+        field :promoted, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('promoted') } }
+
+        field :random, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('random') } }
+
+        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+        field :style, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('style') } }
+
+        field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+        field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+
+
+        sig { params(context: T.nilable(::String), hub_identifier: T.nilable(::String), hub_key: T.nilable(::String), key: T.nilable(::String), metadata: T.nilable(T::Array[Models::Operations::GetLibraryHubsMetadata]), more: T.nilable(T::Boolean), promoted: T.nilable(T::Boolean), random: T.nilable(T::Boolean), size: T.nilable(::Integer), style: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String)).void }
+        def initialize(context: nil, hub_identifier: nil, hub_key: nil, key: nil, metadata: nil, more: nil, promoted: nil, random: nil, size: nil, style: nil, title: nil, type: nil)
+          @context = context
+          @hub_identifier = hub_identifier
+          @hub_key = hub_key
+          @key = key
+          @metadata = metadata
+          @more = more
+          @promoted = promoted
+          @random = random
+          @size = size
+          @style = style
+          @title = title
+          @type = type
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @context == other.context
+          return false unless @hub_identifier == other.hub_identifier
+          return false unless @hub_key == other.hub_key
+          return false unless @key == other.key
+          return false unless @metadata == other.metadata
+          return false unless @more == other.more
+          return false unless @promoted == other.promoted
+          return false unless @random == other.random
+          return false unless @size == other.size
+          return false unless @style == other.style
+          return false unless @title == other.title
+          return false unless @type == other.type
+          true
+        end
       end
     end
   end

@@ -5,17 +5,19 @@
 
 
 module PlexRubySDK
-  module Operations
-    LIBTYPE_SERVERS = [
-      'https://metadata.provider.plex.tv'
-    ].freeze
-  
-    # Libtype - The type of library to filter. Can be "movie" or "show", or all if not present.
-    # 
-    class Libtype < T::Enum
-      enums do
-        MOVIE = new('movie')
-        SHOW = new('show')
+  module Models
+    module Operations
+      LIBTYPE_SERVERS = [
+        'https://metadata.provider.plex.tv'
+      ].freeze
+    
+      # Libtype - The type of library to filter. Can be "movie" or "show", or all if not present.
+      # 
+      class Libtype < T::Enum
+        enums do
+          MOVIE = new('movie')
+          SHOW = new('show')
+        end
       end
     end
   end

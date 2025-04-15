@@ -5,48 +5,43 @@
 
 
 module PlexRubySDK
-  module Operations
-    GET_USER_FRIENDS_RESPONSE_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
+  module Models
+    module Operations
+      GET_USER_FRIENDS_RESPONSE_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
 
-    class GetUserFriendsResponse < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetUserFriendsResponse
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # HTTP response content type for this operation
-      field :content_type, ::String
-      # Raw HTTP response; suitable for custom response parsing
-      field :raw_response, ::Faraday::Response
-      # HTTP response status code for this operation
-      field :status_code, ::Integer
-      # Bad Request - A parameter was not specified, or was specified incorrectly.
-      field :bad_request, T.nilable(::PlexRubySDK::Operations::GetUserFriendsBadRequest)
-      # Friends Data
-      field :friends, T.nilable(T::Array[::PlexRubySDK::Operations::Friend])
-      # Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-      field :unauthorized, T.nilable(::PlexRubySDK::Operations::GetUserFriendsUnauthorized)
+        # HTTP response content type for this operation
+        field :content_type, ::String
+        # Raw HTTP response; suitable for custom response parsing
+        field :raw_response, ::Faraday::Response
+        # HTTP response status code for this operation
+        field :status_code, ::Integer
+        # Friends Data
+        field :friends, T.nilable(T::Array[Models::Operations::Friend])
 
 
-      sig { params(content_type: ::String, raw_response: ::Faraday::Response, status_code: ::Integer, bad_request: T.nilable(::PlexRubySDK::Operations::GetUserFriendsBadRequest), friends: T.nilable(T::Array[::PlexRubySDK::Operations::Friend]), unauthorized: T.nilable(::PlexRubySDK::Operations::GetUserFriendsUnauthorized)).void }
-      def initialize(content_type: nil, raw_response: nil, status_code: nil, bad_request: nil, friends: nil, unauthorized: nil)
-        @content_type = content_type
-        @raw_response = raw_response
-        @status_code = status_code
-        @bad_request = bad_request
-        @friends = friends
-        @unauthorized = unauthorized
-      end
+        sig { params(content_type: ::String, raw_response: ::Faraday::Response, status_code: ::Integer, friends: T.nilable(T::Array[Models::Operations::Friend])).void }
+        def initialize(content_type: nil, raw_response: nil, status_code: nil, friends: nil)
+          @content_type = content_type
+          @raw_response = raw_response
+          @status_code = status_code
+          @friends = friends
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @content_type == other.content_type
-        return false unless @raw_response == other.raw_response
-        return false unless @status_code == other.status_code
-        return false unless @bad_request == other.bad_request
-        return false unless @friends == other.friends
-        return false unless @unauthorized == other.unauthorized
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @content_type == other.content_type
+          return false unless @raw_response == other.raw_response
+          return false unless @status_code == other.status_code
+          return false unless @friends == other.friends
+          true
+        end
       end
     end
   end

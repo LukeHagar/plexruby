@@ -5,15 +5,17 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # IncludeDetails - Whether or not to include details for a section (types, filters, and sorts). 
-    # Only exists for backwards compatibility, media providers other than the server libraries have it on always.
-    # 
-    class IncludeDetails < T::Enum
-      enums do
-        ZERO = new(0)
-        ONE = new(1)
+  module Models
+    module Operations
+    
+      # IncludeDetails - Whether or not to include details for a section (types, filters, and sorts). 
+      # Only exists for backwards compatibility, media providers other than the server libraries have it on always.
+      # 
+      class IncludeDetails < T::Enum
+        enums do
+          ZERO = new(0)
+          ONE = new(1)
+        end
       end
     end
   end

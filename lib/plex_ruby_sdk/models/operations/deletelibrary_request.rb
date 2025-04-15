@@ -5,27 +5,30 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class DeleteLibraryRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class DeleteLibraryRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The unique key of the Plex library. 
-      # Note: This is unique in the context of the Plex server.
-      # 
-      field :section_key, ::Integer, { 'path_param': { 'field_name': 'sectionKey', 'style': 'simple', 'explode': false } }
+        # The unique key of the Plex library. 
+        # Note: This is unique in the context of the Plex server.
+        # 
+        field :section_key, ::Integer, { 'path_param': { 'field_name': 'sectionKey', 'style': 'simple', 'explode': false } }
 
 
-      sig { params(section_key: ::Integer).void }
-      def initialize(section_key: nil)
-        @section_key = section_key
-      end
+        sig { params(section_key: ::Integer).void }
+        def initialize(section_key: nil)
+          @section_key = section_key
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @section_key == other.section_key
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @section_key == other.section_key
+          true
+        end
       end
     end
   end

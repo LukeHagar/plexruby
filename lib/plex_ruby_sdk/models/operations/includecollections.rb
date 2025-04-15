@@ -5,17 +5,19 @@
 
 
 module PlexRubySDK
-  module Operations
-    INCLUDE_COLLECTIONS_SERVERS = [
-      'https://metadata.provider.plex.tv'
-    ].freeze
-  
-    # IncludeCollections - include collections in the results
-    # 
-    class IncludeCollections < T::Enum
-      enums do
-        ONE = new(1)
-        ZERO = new(0)
+  module Models
+    module Operations
+      INCLUDE_COLLECTIONS_SERVERS = [
+        'https://metadata.provider.plex.tv'
+      ].freeze
+    
+      # IncludeCollections - include collections in the results
+      # 
+      class IncludeCollections < T::Enum
+        enums do
+          ONE = new(1)
+          ZERO = new(0)
+        end
       end
     end
   end

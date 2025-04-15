@@ -5,51 +5,54 @@
 
 
 module PlexRubySDK
-  module Operations
-    GET_PIN_REQUEST_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
+  module Models
+    module Operations
+      GET_PIN_REQUEST_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
 
-    class GetPinRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetPinRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
-      field :client_id, ::String, { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
-      # The name of the client application. (Plex Web, Plex Media Server, etc.)
-      field :client_name, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Product', 'style': 'simple', 'explode': false } }
-      # The version of the client application.
-      field :client_version, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Version', 'style': 'simple', 'explode': false } }
-      # A relatively friendly name for the client device
-      field :device_nickname, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Device', 'style': 'simple', 'explode': false } }
-      # The platform of the client application.
-      field :platform, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Platform', 'style': 'simple', 'explode': false } }
-      # Determines the kind of code returned by the API call
-      # Strong codes are used for Pin authentication flows
-      # Non-Strong codes are used for `Plex.tv/link`
-      # 
-      field :strong, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'strong', 'style': 'form', 'explode': true } }
+        # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
+        field :client_id, ::String, { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
+        # The name of the client application. (Plex Web, Plex Media Server, etc.)
+        field :client_name, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Product', 'style': 'simple', 'explode': false } }
+        # The version of the client application.
+        field :client_version, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Version', 'style': 'simple', 'explode': false } }
+        # A relatively friendly name for the client device
+        field :device_nickname, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Device', 'style': 'simple', 'explode': false } }
+        # The platform of the client application.
+        field :platform, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Platform', 'style': 'simple', 'explode': false } }
+        # Determines the kind of code returned by the API call
+        # Strong codes are used for Pin authentication flows
+        # Non-Strong codes are used for `Plex.tv/link`
+        # 
+        field :strong, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'strong', 'style': 'form', 'explode': true } }
 
 
-      sig { params(client_id: ::String, client_name: T.nilable(::String), client_version: T.nilable(::String), device_nickname: T.nilable(::String), platform: T.nilable(::String), strong: T.nilable(T::Boolean)).void }
-      def initialize(client_id: nil, client_name: nil, client_version: nil, device_nickname: nil, platform: nil, strong: nil)
-        @client_id = client_id
-        @client_name = client_name
-        @client_version = client_version
-        @device_nickname = device_nickname
-        @platform = platform
-        @strong = strong
-      end
+        sig { params(client_id: ::String, client_name: T.nilable(::String), client_version: T.nilable(::String), device_nickname: T.nilable(::String), platform: T.nilable(::String), strong: T.nilable(T::Boolean)).void }
+        def initialize(client_id: nil, client_name: nil, client_version: nil, device_nickname: nil, platform: nil, strong: nil)
+          @client_id = client_id
+          @client_name = client_name
+          @client_version = client_version
+          @device_nickname = device_nickname
+          @platform = platform
+          @strong = strong
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @client_id == other.client_id
-        return false unless @client_name == other.client_name
-        return false unless @client_version == other.client_version
-        return false unless @device_nickname == other.device_nickname
-        return false unless @platform == other.platform
-        return false unless @strong == other.strong
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @client_id == other.client_id
+          return false unless @client_name == other.client_name
+          return false unless @client_version == other.client_version
+          return false unless @device_nickname == other.device_nickname
+          return false unless @platform == other.platform
+          return false unless @strong == other.strong
+          true
+        end
       end
     end
   end

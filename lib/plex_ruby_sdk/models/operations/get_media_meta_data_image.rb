@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetMediaMetaDataImage < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetMediaMetaDataImage
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # Alternate text for the image.
-      field :alt, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('alt') } }
-      # The type of image (e.g., coverPoster, background, clearLogo).
-      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
-      # The URL of the image.
-      field :url, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('url') } }
+        # Alternate text for the image.
+        field :alt, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('alt') } }
+        # The type of image (e.g., coverPoster, background, clearLogo).
+        field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+        # The URL of the image.
+        field :url, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('url') } }
 
 
-      sig { params(alt: ::String, type: ::String, url: ::String).void }
-      def initialize(alt: nil, type: nil, url: nil)
-        @alt = alt
-        @type = type
-        @url = url
-      end
+        sig { params(alt: ::String, type: ::String, url: ::String).void }
+        def initialize(alt: nil, type: nil, url: nil)
+          @alt = alt
+          @type = type
+          @url = url
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @alt == other.alt
-        return false unless @type == other.type
-        return false unless @url == other.url
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @alt == other.alt
+          return false unless @type == other.type
+          return false unless @url == other.url
+          true
+        end
       end
     end
   end

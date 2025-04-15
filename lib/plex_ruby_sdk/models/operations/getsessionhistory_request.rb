@@ -5,42 +5,45 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetSessionHistoryRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetSessionHistoryRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # Filter results by those that are related to a specific users id
-      # 
-      field :account_id, T.nilable(::Integer), { 'query_param': { 'field_name': 'accountId', 'style': 'form', 'explode': true } }
-      # Filters content by field and direction/equality
-      # (Unknown if viewedAt is the only supported column)
-      # 
-      field :filter, T.nilable(::PlexRubySDK::Operations::QueryParamFilter), { 'query_param': { 'field_name': 'filter', 'style': 'form', 'explode': true } }
-      # Filters the results based on the id of a valid library section
-      # 
-      field :library_section_id, T.nilable(::Integer), { 'query_param': { 'field_name': 'librarySectionID', 'style': 'form', 'explode': true } }
-      # Sorts the results by the specified field followed by the direction (asc, desc)
-      # 
-      field :sort, T.nilable(::String), { 'query_param': { 'field_name': 'sort', 'style': 'form', 'explode': true } }
+        # Filter results by those that are related to a specific users id
+        # 
+        field :account_id, T.nilable(::Integer), { 'query_param': { 'field_name': 'accountId', 'style': 'form', 'explode': true } }
+        # Filters content by field and direction/equality
+        # (Unknown if viewedAt is the only supported column)
+        # 
+        field :filter, T.nilable(Models::Operations::QueryParamFilter), { 'query_param': { 'field_name': 'filter', 'style': 'form', 'explode': true } }
+        # Filters the results based on the id of a valid library section
+        # 
+        field :library_section_id, T.nilable(::Integer), { 'query_param': { 'field_name': 'librarySectionID', 'style': 'form', 'explode': true } }
+        # Sorts the results by the specified field followed by the direction (asc, desc)
+        # 
+        field :sort, T.nilable(::String), { 'query_param': { 'field_name': 'sort', 'style': 'form', 'explode': true } }
 
 
-      sig { params(account_id: T.nilable(::Integer), filter: T.nilable(::PlexRubySDK::Operations::QueryParamFilter), library_section_id: T.nilable(::Integer), sort: T.nilable(::String)).void }
-      def initialize(account_id: nil, filter: nil, library_section_id: nil, sort: nil)
-        @account_id = account_id
-        @filter = filter
-        @library_section_id = library_section_id
-        @sort = sort
-      end
+        sig { params(account_id: T.nilable(::Integer), filter: T.nilable(Models::Operations::QueryParamFilter), library_section_id: T.nilable(::Integer), sort: T.nilable(::String)).void }
+        def initialize(account_id: nil, filter: nil, library_section_id: nil, sort: nil)
+          @account_id = account_id
+          @filter = filter
+          @library_section_id = library_section_id
+          @sort = sort
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @account_id == other.account_id
-        return false unless @filter == other.filter
-        return false unless @library_section_id == other.library_section_id
-        return false unless @sort == other.sort
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @account_id == other.account_id
+          return false unless @filter == other.filter
+          return false unless @library_section_id == other.library_section_id
+          return false unless @sort == other.sort
+          true
+        end
       end
     end
   end

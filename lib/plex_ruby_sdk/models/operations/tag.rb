@@ -5,27 +5,29 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # Tag - A key representing a specific tag within the section.
-    class Tag < T::Enum
-      enums do
-        UNWATCHED = new('unwatched')
-        NEWEST = new('newest')
-        RECENTLY_ADDED = new('recentlyAdded')
-        RECENTLY_VIEWED = new('recentlyViewed')
-        ON_DECK = new('onDeck')
-        COLLECTION = new('collection')
-        EDITION = new('edition')
-        YEAR = new('year')
-        DECADE = new('decade')
-        DIRECTOR = new('director')
-        CONTENT_RATING = new('contentRating')
-        RATING = new('rating')
-        RESOLUTION = new('resolution')
-        FIRST_CHARACTER = new('firstCharacter')
-        FOLDER = new('folder')
-        ALBUMS = new('albums')
+  module Models
+    module Operations
+    
+      # Tag - A key representing a specific tag within the section.
+      class Tag < T::Enum
+        enums do
+          UNWATCHED = new('unwatched')
+          NEWEST = new('newest')
+          RECENTLY_ADDED = new('recentlyAdded')
+          RECENTLY_VIEWED = new('recentlyViewed')
+          ON_DECK = new('onDeck')
+          COLLECTION = new('collection')
+          EDITION = new('edition')
+          YEAR = new('year')
+          DECADE = new('decade')
+          DIRECTOR = new('director')
+          CONTENT_RATING = new('contentRating')
+          RATING = new('rating')
+          RESOLUTION = new('resolution')
+          FIRST_CHARACTER = new('firstCharacter')
+          FOLDER = new('folder')
+          ALBUMS = new('albums')
+        end
       end
     end
   end

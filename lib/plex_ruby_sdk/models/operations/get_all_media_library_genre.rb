@@ -5,26 +5,29 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetAllMediaLibraryGenre < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetAllMediaLibraryGenre
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The genre name of this media-item
-      # 
-      field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+        # The genre name of this media-item
+        # 
+        field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
 
-      sig { params(tag: ::String).void }
-      def initialize(tag: nil)
-        @tag = tag
-      end
+        sig { params(tag: ::String).void }
+        def initialize(tag: nil)
+          @tag = tag
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @tag == other.tag
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @tag == other.tag
+          true
+        end
       end
     end
   end

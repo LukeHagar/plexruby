@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetServerPreferencesMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :setting, T.nilable(T::Array[::PlexRubySDK::Operations::Setting]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Setting') } }
-
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+      class GetServerPreferencesMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(setting: T.nilable(T::Array[::PlexRubySDK::Operations::Setting]), size: T.nilable(::Integer)).void }
-      def initialize(setting: nil, size: nil)
-        @setting = setting
-        @size = size
-      end
+        field :setting, T.nilable(T::Array[Models::Operations::Setting]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Setting') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @setting == other.setting
-        return false unless @size == other.size
-        true
+        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+
+        sig { params(setting: T.nilable(T::Array[Models::Operations::Setting]), size: T.nilable(::Integer)).void }
+        def initialize(setting: nil, size: nil)
+          @setting = setting
+          @size = size
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @setting == other.setting
+          return false unless @size == other.size
+          true
+        end
       end
     end
   end

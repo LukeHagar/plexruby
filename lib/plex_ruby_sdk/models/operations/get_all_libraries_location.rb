@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetAllLibrariesLocation < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetAllLibrariesLocation
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The ID of the location.
-      field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-      # The path to the media item.
-      field :path, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('path') } }
+        # The ID of the location.
+        field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+        # The path to the media item.
+        field :path, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('path') } }
 
 
-      sig { params(id: ::Integer, path: ::String).void }
-      def initialize(id: nil, path: nil)
-        @id = id
-        @path = path
-      end
+        sig { params(id: ::Integer, path: ::String).void }
+        def initialize(id: nil, path: nil)
+          @id = id
+          @path = path
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @id == other.id
-        return false unless @path == other.path
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @id == other.id
+          return false unless @path == other.path
+          true
+        end
       end
     end
   end

@@ -5,37 +5,40 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetServerIdentityMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :claimed, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('claimed') } }
-
-      field :machine_identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('machineIdentifier') } }
-
-      field :size, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-
-      field :version, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('version') } }
+      class GetServerIdentityMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(claimed: T.nilable(T::Boolean), machine_identifier: T.nilable(::String), size: T.nilable(::Float), version: T.nilable(::String)).void }
-      def initialize(claimed: nil, machine_identifier: nil, size: nil, version: nil)
-        @claimed = claimed
-        @machine_identifier = machine_identifier
-        @size = size
-        @version = version
-      end
+        field :claimed, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('claimed') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @claimed == other.claimed
-        return false unless @machine_identifier == other.machine_identifier
-        return false unless @size == other.size
-        return false unless @version == other.version
-        true
+        field :machine_identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('machineIdentifier') } }
+
+        field :size, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+        field :version, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('version') } }
+
+
+        sig { params(claimed: T.nilable(T::Boolean), machine_identifier: T.nilable(::String), size: T.nilable(::Float), version: T.nilable(::String)).void }
+        def initialize(claimed: nil, machine_identifier: nil, size: nil, version: nil)
+          @claimed = claimed
+          @machine_identifier = machine_identifier
+          @size = size
+          @version = version
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @claimed == other.claimed
+          return false unless @machine_identifier == other.machine_identifier
+          return false unless @size == other.size
+          return false unless @version == other.version
+          true
+        end
       end
     end
   end

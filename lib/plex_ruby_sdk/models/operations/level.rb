@@ -5,22 +5,24 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # Level - An integer log level to write to the PMS log with.  
-    # 0: Error  
-    # 1: Warning  
-    # 2: Info  
-    # 3: Debug  
-    # 4: Verbose
-    # 
-    class Level < T::Enum
-      enums do
-        ZERO = new(0)
-        ONE = new(1)
-        TWO = new(2)
-        THREE = new(3)
-        FOUR = new(4)
+  module Models
+    module Operations
+    
+      # Level - An integer log level to write to the PMS log with.  
+      # 0: Error  
+      # 1: Warning  
+      # 2: Info  
+      # 3: Debug  
+      # 4: Verbose
+      # 
+      class Level < T::Enum
+        enums do
+          ZERO = new(0)
+          ONE = new(1)
+          TWO = new(2)
+          THREE = new(3)
+          FOUR = new(4)
+        end
       end
     end
   end

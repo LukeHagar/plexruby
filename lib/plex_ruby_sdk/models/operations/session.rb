@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class Session < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :bandwidth, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('bandwidth') } }
-
-      field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-
-      field :location, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('location') } }
+      class Session
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(bandwidth: T.nilable(::Integer), id: T.nilable(::String), location: T.nilable(::String)).void }
-      def initialize(bandwidth: nil, id: nil, location: nil)
-        @bandwidth = bandwidth
-        @id = id
-        @location = location
-      end
+        field :bandwidth, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('bandwidth') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @bandwidth == other.bandwidth
-        return false unless @id == other.id
-        return false unless @location == other.location
-        true
+        field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+
+        field :location, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('location') } }
+
+
+        sig { params(bandwidth: T.nilable(::Integer), id: T.nilable(::String), location: T.nilable(::String)).void }
+        def initialize(bandwidth: nil, id: nil, location: nil)
+          @bandwidth = bandwidth
+          @id = id
+          @location = location
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @bandwidth == other.bandwidth
+          return false unless @id == other.id
+          return false unless @location == other.location
+          true
+        end
       end
     end
   end

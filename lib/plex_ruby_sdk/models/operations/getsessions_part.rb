@@ -5,61 +5,64 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetSessionsPart < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :container, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
-
-      field :decision, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('decision') } }
-
-      field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
-
-      field :file, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('file') } }
-
-      field :has_thumbnail, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasThumbnail') } }
-
-      field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :selected, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('selected') } }
-
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-
-      field :stream, T.nilable(T::Array[::PlexRubySDK::Operations::GetSessionsStream]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Stream') } }
+      class GetSessionsPart
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(container: T.nilable(::String), decision: T.nilable(::String), duration: T.nilable(::Integer), file: T.nilable(::String), has_thumbnail: T.nilable(::String), id: T.nilable(::String), key: T.nilable(::String), selected: T.nilable(T::Boolean), size: T.nilable(::Integer), stream: T.nilable(T::Array[::PlexRubySDK::Operations::GetSessionsStream])).void }
-      def initialize(container: nil, decision: nil, duration: nil, file: nil, has_thumbnail: nil, id: nil, key: nil, selected: nil, size: nil, stream: nil)
-        @container = container
-        @decision = decision
-        @duration = duration
-        @file = file
-        @has_thumbnail = has_thumbnail
-        @id = id
-        @key = key
-        @selected = selected
-        @size = size
-        @stream = stream
-      end
+        field :container, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @container == other.container
-        return false unless @decision == other.decision
-        return false unless @duration == other.duration
-        return false unless @file == other.file
-        return false unless @has_thumbnail == other.has_thumbnail
-        return false unless @id == other.id
-        return false unless @key == other.key
-        return false unless @selected == other.selected
-        return false unless @size == other.size
-        return false unless @stream == other.stream
-        true
+        field :decision, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('decision') } }
+
+        field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
+
+        field :file, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('file') } }
+
+        field :has_thumbnail, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasThumbnail') } }
+
+        field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+
+        field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+        field :selected, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('selected') } }
+
+        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+        field :stream, T.nilable(T::Array[Models::Operations::GetSessionsStream]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Stream') } }
+
+
+        sig { params(container: T.nilable(::String), decision: T.nilable(::String), duration: T.nilable(::Integer), file: T.nilable(::String), has_thumbnail: T.nilable(::String), id: T.nilable(::String), key: T.nilable(::String), selected: T.nilable(T::Boolean), size: T.nilable(::Integer), stream: T.nilable(T::Array[Models::Operations::GetSessionsStream])).void }
+        def initialize(container: nil, decision: nil, duration: nil, file: nil, has_thumbnail: nil, id: nil, key: nil, selected: nil, size: nil, stream: nil)
+          @container = container
+          @decision = decision
+          @duration = duration
+          @file = file
+          @has_thumbnail = has_thumbnail
+          @id = id
+          @key = key
+          @selected = selected
+          @size = size
+          @stream = stream
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @container == other.container
+          return false unless @decision == other.decision
+          return false unless @duration == other.duration
+          return false unless @file == other.file
+          return false unless @has_thumbnail == other.has_thumbnail
+          return false unless @id == other.id
+          return false unless @key == other.key
+          return false unless @selected == other.selected
+          return false unless @size == other.size
+          return false unless @stream == other.stream
+          true
+        end
       end
     end
   end

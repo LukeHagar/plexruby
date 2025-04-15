@@ -5,13 +5,15 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class OptimizedForStreaming1 < T::Enum
-      enums do
-        ZERO = new(0)
-        ONE = new(1)
+      class OptimizedForStreaming1 < T::Enum
+        enums do
+          ZERO = new(0)
+          ONE = new(1)
+        end
       end
     end
   end

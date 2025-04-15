@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetLibraryDetailsOperator < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+      class GetLibraryDetailsOperator
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(key: T.nilable(::String), title: T.nilable(::String)).void }
-      def initialize(key: nil, title: nil)
-        @key = key
-        @title = title
-      end
+        field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @key == other.key
-        return false unless @title == other.title
-        true
+        field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+
+        sig { params(key: T.nilable(::String), title: T.nilable(::String)).void }
+        def initialize(key: nil, title: nil)
+          @key = key
+          @title = title
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @key == other.key
+          return false unless @title == other.title
+          true
+        end
       end
     end
   end

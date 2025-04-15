@@ -5,16 +5,18 @@
 
 
 module PlexRubySDK
-  module Operations
-    ALL_LIBRARIES_SERVERS = [
-      'https://plex.tv/api'
-    ].freeze
-  
-    # AllLibraries - Indicates if the user has access to all libraries.
-    class AllLibraries < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+      ALL_LIBRARIES_SERVERS = [
+        'https://plex.tv/api'
+      ].freeze
+    
+      # AllLibraries - Indicates if the user has access to all libraries.
+      class AllLibraries < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

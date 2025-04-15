@@ -5,12 +5,14 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # GetTransientTokenQueryParamType - `delegation` - This is the only supported `type` parameter.
-    class GetTransientTokenQueryParamType < T::Enum
-      enums do
-        DELEGATION = new('delegation')
+  module Models
+    module Operations
+    
+      # GetTransientTokenQueryParamType - `delegation` - This is the only supported `type` parameter.
+      class GetTransientTokenQueryParamType < T::Enum
+        enums do
+          DELEGATION = new('delegation')
+        end
       end
     end
   end

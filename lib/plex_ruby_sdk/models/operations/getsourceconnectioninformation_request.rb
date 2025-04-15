@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetSourceConnectionInformationRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetSourceConnectionInformationRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The source identifier with an included prefix.
-      field :source, ::String, { 'query_param': { 'field_name': 'source', 'style': 'form', 'explode': true } }
+        # The source identifier with an included prefix.
+        field :source, ::String, { 'query_param': { 'field_name': 'source', 'style': 'form', 'explode': true } }
 
 
-      sig { params(source: ::String).void }
-      def initialize(source: nil)
-        @source = source
-      end
+        sig { params(source: ::String).void }
+        def initialize(source: nil)
+          @source = source
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @source == other.source
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @source == other.source
+          true
+        end
       end
     end
   end

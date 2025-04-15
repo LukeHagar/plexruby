@@ -23,9 +23,9 @@ module PlexRubySDK
         client: T.nilable(Faraday::Connection),
         retry_config: T.nilable(::PlexRubySDK::Utils::RetryConfig),
         timeout_ms: T.nilable(Integer),
-        security: T.nilable(::PlexRubySDK::Shared::Security),
-        security_source: T.nilable(T.proc.returns(::PlexRubySDK::Shared::Security)),
-        protocol: T.nilable(::PlexRubySDK::ServerVariables::ServerProtocol),
+        security: T.nilable(Models::Shared::Security),
+        security_source: T.nilable(T.proc.returns(Models::Shared::Security)),
+        protocol: T.nilable(::PlexRubySDK::Models::ServerVariables::ServerProtocol),
         ip: T.nilable(::String),
         port: T.nilable(::String),
         server_idx: T.nilable(Integer),
@@ -38,9 +38,9 @@ module PlexRubySDK
       # @param [T.nilable(Faraday::Connection)] client The faraday HTTP client to use for all operations
       # @param [T.nilable(::PlexRubySDK::Utils::RetryConfig)] retry_config The retry configuration to use for all operations
       # @param [T.nilable(Integer)] timeout_ms Request timeout in milliseconds for all operations
-      # @param [T.nilable(::PlexRubySDK::Shared::Security)] security: The security details required for authentication
-      # @param [T.proc.returns(T.nilable(::PlexRubySDK::Shared::Security))] security_source: A function that returns security details required for authentication
-      # @param [T.nilable(::PlexRubySDK::ServerVariables::ServerProtocol)] protocol: Allows setting the protocol variable for url substitution
+      # @param [T.nilable(Models::Shared::Security)] security: The security details required for authentication
+      # @param [T.proc.returns(T.nilable(Models::Shared::Security))] security_source: A function that returns security details required for authentication
+      # @param [T.nilable(::PlexRubySDK::Models::ServerVariables::ServerProtocol)] protocol: Allows setting the protocol variable for url substitution
       # @param [T.nilable(::String)] ip: Allows setting the ip variable for url substitution
       # @param [T.nilable(::String)] port: Allows setting the port variable for url substitution
       # @param [T.nilable(::Integer)] server_idx The index of the server to use for all operations

@@ -4,7 +4,9 @@
 # frozen_string_literal: true
 
 module PlexRubySDK
-  module Shared
-    autoload :Security, 'plex_ruby_sdk/models/shared/security.rb'
+  module Models
+    module Shared
+      autoload :Security, 'plex_ruby_sdk/models/shared/security.rb'
+    end
   end
 end

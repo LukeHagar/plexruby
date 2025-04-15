@@ -23,7 +23,7 @@ This will retrieve the "Now Playing" Information of the PMS.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -38,7 +38,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetSessionsResponse)](../../models/operations/getsessionsresponse.md)**
+**[T.nilable(Models::Operations::GetSessionsResponse)](../../models/operations/getsessionsresponse.md)**
 
 
 
@@ -52,12 +52,12 @@ This will Retrieve a listing of all history views.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-res = s.sessions.get_session_history(sort="<value>", account_id=1, filter=::PlexRubySDK::Operations::QueryParamFilter.new(), library_section_id=12)
+res = s.sessions.get_session_history(sort="<value>", account_id=1, filter=Models::Operations::QueryParamFilter.new(), library_section_id=12)
 
 if ! res.object.nil?
   # handle response
@@ -71,12 +71,12 @@ end
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `sort`                                                                                                                                                                                        | *T.nilable(::String)*                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                            | Sorts the results by the specified field followed by the direction (asc, desc)<br/>                                                                                                           |                                                                                                                                                                                               |
 | `account_id`                                                                                                                                                                                  | *T.nilable(::Integer)*                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                            | Filter results by those that are related to a specific users id<br/>                                                                                                                          | 1                                                                                                                                                                                             |
-| `filter`                                                                                                                                                                                      | [T.nilable(::PlexRubySDK::Operations::QueryParamFilter)](../../models/operations/queryparamfilter.md)                                                                                         | :heavy_minus_sign:                                                                                                                                                                            | Filters content by field and direction/equality<br/>(Unknown if viewedAt is the only supported column)<br/>                                                                                   | {<br/>"viewed-at-greater-than": {<br/>"value": "viewedAt\u003e"<br/>},<br/>"viewed-at-greater-than-or-equal-to": {<br/>"value": "viewedAt\u003e=\u003e"<br/>},<br/>"viewed-at-less-than": {<br/>"value": "viewedAt\u003c"<br/>}<br/>} |
+| `filter`                                                                                                                                                                                      | [T.nilable(Models::Operations::QueryParamFilter)](../../models/operations/queryparamfilter.md)                                                                                                | :heavy_minus_sign:                                                                                                                                                                            | Filters content by field and direction/equality<br/>(Unknown if viewedAt is the only supported column)<br/>                                                                                   | {<br/>"viewed-at-greater-than": {<br/>"value": "viewedAt\u003e"<br/>},<br/>"viewed-at-greater-than-or-equal-to": {<br/>"value": "viewedAt\u003e=\u003e"<br/>},<br/>"viewed-at-less-than": {<br/>"value": "viewedAt\u003c"<br/>}<br/>} |
 | `library_section_id`                                                                                                                                                                          | *T.nilable(::Integer)*                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                            | Filters the results based on the id of a valid library section<br/>                                                                                                                           | 12                                                                                                                                                                                            |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetSessionHistoryResponse)](../../models/operations/getsessionhistoryresponse.md)**
+**[T.nilable(Models::Operations::GetSessionHistoryResponse)](../../models/operations/getsessionhistoryresponse.md)**
 
 
 
@@ -90,7 +90,7 @@ Get Transcode Sessions
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -105,7 +105,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetTranscodeSessionsResponse)](../../models/operations/gettranscodesessionsresponse.md)**
+**[T.nilable(Models::Operations::GetTranscodeSessionsResponse)](../../models/operations/gettranscodesessionsresponse.md)**
 
 
 
@@ -119,7 +119,7 @@ Stop a Transcode Session
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -140,5 +140,5 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::StopTranscodeSessionResponse)](../../models/operations/stoptranscodesessionresponse.md)**
+**[T.nilable(Models::Operations::StopTranscodeSessionResponse)](../../models/operations/stoptranscodesessionresponse.md)**
 

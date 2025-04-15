@@ -5,22 +5,25 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # Filters content by field and direction/equality
-    # (Unknown if viewedAt is the only supported column)
-    # 
-    class QueryParamFilter < ::Crystalline::FieldAugmented
-      extend T::Sig
+  module Models
+    module Operations
+    
+      # Filters content by field and direction/equality
+      # (Unknown if viewedAt is the only supported column)
+      # 
+      class QueryParamFilter
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
 
-      
-      def initialize; end
+        
+        def initialize; end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          true
+        end
       end
     end
   end

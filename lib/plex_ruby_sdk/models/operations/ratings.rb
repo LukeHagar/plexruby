@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class Ratings < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class Ratings
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The image or reference for the rating.
-      field :image, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('image') } }
-      # The type of rating (e.g., audience, critic).
-      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
-      # The rating value.
-      field :value, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('value') } }
+        # The image or reference for the rating.
+        field :image, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('image') } }
+        # The type of rating (e.g., audience, critic).
+        field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+        # The rating value.
+        field :value, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('value') } }
 
 
-      sig { params(image: ::String, type: ::String, value: ::Float).void }
-      def initialize(image: nil, type: nil, value: nil)
-        @image = image
-        @type = type
-        @value = value
-      end
+        sig { params(image: ::String, type: ::String, value: ::Float).void }
+        def initialize(image: nil, type: nil, value: nil)
+          @image = image
+          @type = type
+          @value = value
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @image == other.image
-        return false unless @type == other.type
-        return false unless @value == other.value
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @image == other.image
+          return false unless @type == other.type
+          return false unless @value == other.value
+          true
+        end
       end
     end
   end

@@ -5,41 +5,44 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetMediaArtsMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetMediaArtsMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # An plugin identifier for the media container.
-      field :identifier, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
-      # The prefix used for media tag resource paths.
-      field :media_tag_prefix, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagPrefix') } }
-      # The version number for media tags.
-      field :media_tag_version, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
+        # An plugin identifier for the media container.
+        field :identifier, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
+        # The prefix used for media tag resource paths.
+        field :media_tag_prefix, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagPrefix') } }
+        # The version number for media tags.
+        field :media_tag_version, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
 
-      field :metadata, T::Array[::PlexRubySDK::Operations::GetMediaArtsMetadata], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
-      # Number of media items returned in this response.
-      field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+        field :metadata, T::Array[Models::Operations::GetMediaArtsMetadata], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
+        # Number of media items returned in this response.
+        field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
 
 
-      sig { params(identifier: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, metadata: T::Array[::PlexRubySDK::Operations::GetMediaArtsMetadata], size: ::Integer).void }
-      def initialize(identifier: nil, media_tag_prefix: nil, media_tag_version: nil, metadata: nil, size: nil)
-        @identifier = identifier
-        @media_tag_prefix = media_tag_prefix
-        @media_tag_version = media_tag_version
-        @metadata = metadata
-        @size = size
-      end
+        sig { params(identifier: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, metadata: T::Array[Models::Operations::GetMediaArtsMetadata], size: ::Integer).void }
+        def initialize(identifier: nil, media_tag_prefix: nil, media_tag_version: nil, metadata: nil, size: nil)
+          @identifier = identifier
+          @media_tag_prefix = media_tag_prefix
+          @media_tag_version = media_tag_version
+          @metadata = metadata
+          @size = size
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @identifier == other.identifier
-        return false unless @media_tag_prefix == other.media_tag_prefix
-        return false unless @media_tag_version == other.media_tag_version
-        return false unless @metadata == other.metadata
-        return false unless @size == other.size
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @identifier == other.identifier
+          return false unless @media_tag_prefix == other.media_tag_prefix
+          return false unless @media_tag_version == other.media_tag_version
+          return false unless @metadata == other.metadata
+          return false unless @size == other.size
+          true
+        end
       end
     end
   end

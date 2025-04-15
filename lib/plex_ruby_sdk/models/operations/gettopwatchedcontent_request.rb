@@ -5,36 +5,39 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetTopWatchedContentRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetTopWatchedContentRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The type of media to retrieve or filter by.
-      # 1 = movie
-      # 2 = show
-      # 3 = season
-      # 4 = episode
-      # E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
-      # 
-      field :type, ::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType, { 'query_param': { 'field_name': 'type', 'style': 'form', 'explode': true } }
-      # Adds the Guids object to the response
-      # 
-      field :include_guids, T.nilable(::Integer), { 'query_param': { 'field_name': 'includeGuids', 'style': 'form', 'explode': true } }
+        # The type of media to retrieve or filter by.
+        # 1 = movie
+        # 2 = show
+        # 3 = season
+        # 4 = episode
+        # E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
+        # 
+        field :type, Models::Operations::GetTopWatchedContentQueryParamType, { 'query_param': { 'field_name': 'type', 'style': 'form', 'explode': true } }
+        # Adds the Guids object to the response
+        # 
+        field :include_guids, T.nilable(::Integer), { 'query_param': { 'field_name': 'includeGuids', 'style': 'form', 'explode': true } }
 
 
-      sig { params(type: ::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType, include_guids: T.nilable(::Integer)).void }
-      def initialize(type: nil, include_guids: nil)
-        @type = type
-        @include_guids = include_guids
-      end
+        sig { params(type: Models::Operations::GetTopWatchedContentQueryParamType, include_guids: T.nilable(::Integer)).void }
+        def initialize(type: nil, include_guids: nil)
+          @type = type
+          @include_guids = include_guids
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @type == other.type
-        return false unless @include_guids == other.include_guids
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @type == other.type
+          return false unless @include_guids == other.include_guids
+          true
+        end
       end
     end
   end

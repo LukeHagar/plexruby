@@ -24,7 +24,7 @@ This will mark the provided media key as Played.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -45,7 +45,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::MarkPlayedResponse)](../../models/operations/markplayedresponse.md)**
+**[T.nilable(Models::Operations::MarkPlayedResponse)](../../models/operations/markplayedresponse.md)**
 
 
 
@@ -59,7 +59,7 @@ This will mark the provided media key as Unplayed.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -80,7 +80,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::MarkUnplayedResponse)](../../models/operations/markunplayedresponse.md)**
+**[T.nilable(Models::Operations::MarkUnplayedResponse)](../../models/operations/markunplayedresponse.md)**
 
 
 
@@ -95,7 +95,7 @@ This API command can be used to update the play progress of a media item.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -118,7 +118,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::UpdatePlayProgressResponse)](../../models/operations/updateplayprogressresponse.md)**
+**[T.nilable(Models::Operations::UpdatePlayProgressResponse)](../../models/operations/updateplayprogressresponse.md)**
 
 
 
@@ -132,12 +132,12 @@ Gets the banner image of the media item
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-req = ::PlexRubySDK::Operations::GetBannerImageRequest.new(
+req = Models::Operations::GetBannerImageRequest.new(
   rating_key: 9518,
   width: 396,
   height: 396,
@@ -156,13 +156,13 @@ end
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [::PlexRubySDK::Operations::GetBannerImageRequest](../../models/operations/getbannerimagerequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [Models::Operations::GetBannerImageRequest](../../models/operations/getbannerimagerequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetBannerImageResponse)](../../models/operations/getbannerimageresponse.md)**
+**[T.nilable(Models::Operations::GetBannerImageResponse)](../../models/operations/getbannerimageresponse.md)**
 
 
 
@@ -176,12 +176,12 @@ Gets the thumbnail image of the media item
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-req = ::PlexRubySDK::Operations::GetThumbImageRequest.new(
+req = Models::Operations::GetThumbImageRequest.new(
   rating_key: 9518,
   width: 396,
   height: 396,
@@ -200,11 +200,11 @@ end
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [::PlexRubySDK::Operations::GetThumbImageRequest](../../models/operations/getthumbimagerequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [Models::Operations::GetThumbImageRequest](../../models/operations/getthumbimagerequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetThumbImageResponse)](../../models/operations/getthumbimageresponse.md)**
+**[T.nilable(Models::Operations::GetThumbImageResponse)](../../models/operations/getthumbimageresponse.md)**
 

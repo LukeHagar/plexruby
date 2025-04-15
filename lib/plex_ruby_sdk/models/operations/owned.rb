@@ -5,16 +5,18 @@
 
 
 module PlexRubySDK
-  module Operations
-    OWNED_SERVERS = [
-      'https://plex.tv/api'
-    ].freeze
-  
-    # Owned - Indicates if the user owns the server.
-    class Owned < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+      OWNED_SERVERS = [
+        'https://plex.tv/api'
+      ].freeze
+    
+      # Owned - Indicates if the user owns the server.
+      class Owned < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

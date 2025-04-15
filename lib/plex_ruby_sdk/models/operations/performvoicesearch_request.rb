@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class PerformVoiceSearchRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class PerformVoiceSearchRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The query term
-      field :query, ::String, { 'query_param': { 'field_name': 'query', 'style': 'form', 'explode': true } }
-      # The number of items to return per hub
-      field :limit, T.nilable(::Float), { 'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': true } }
-      # This gives context to the search, and can result in re-ordering of search result hubs
-      field :section_id, T.nilable(::Float), { 'query_param': { 'field_name': 'sectionId', 'style': 'form', 'explode': true } }
+        # The query term
+        field :query, ::String, { 'query_param': { 'field_name': 'query', 'style': 'form', 'explode': true } }
+        # The number of items to return per hub
+        field :limit, T.nilable(::Float), { 'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': true } }
+        # This gives context to the search, and can result in re-ordering of search result hubs
+        field :section_id, T.nilable(::Float), { 'query_param': { 'field_name': 'sectionId', 'style': 'form', 'explode': true } }
 
 
-      sig { params(query: ::String, limit: T.nilable(::Float), section_id: T.nilable(::Float)).void }
-      def initialize(query: nil, limit: nil, section_id: nil)
-        @query = query
-        @limit = limit
-        @section_id = section_id
-      end
+        sig { params(query: ::String, limit: T.nilable(::Float), section_id: T.nilable(::Float)).void }
+        def initialize(query: nil, limit: nil, section_id: nil)
+          @query = query
+          @limit = limit
+          @section_id = section_id
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @query == other.query
-        return false unless @limit == other.limit
-        return false unless @section_id == other.section_id
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @query == other.query
+          return false unless @limit == other.limit
+          return false unless @section_id == other.section_id
+          true
+        end
       end
     end
   end

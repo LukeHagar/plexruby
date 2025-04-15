@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class UpdatePlayProgressRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class UpdatePlayProgressRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # the media key
-      field :key, ::String, { 'query_param': { 'field_name': 'key', 'style': 'form', 'explode': true } }
-      # The playback state of the media item.
-      field :state, ::String, { 'query_param': { 'field_name': 'state', 'style': 'form', 'explode': true } }
-      # The time, in milliseconds, used to set the media playback progress.
-      field :time, ::Float, { 'query_param': { 'field_name': 'time', 'style': 'form', 'explode': true } }
+        # the media key
+        field :key, ::String, { 'query_param': { 'field_name': 'key', 'style': 'form', 'explode': true } }
+        # The playback state of the media item.
+        field :state, ::String, { 'query_param': { 'field_name': 'state', 'style': 'form', 'explode': true } }
+        # The time, in milliseconds, used to set the media playback progress.
+        field :time, ::Float, { 'query_param': { 'field_name': 'time', 'style': 'form', 'explode': true } }
 
 
-      sig { params(key: ::String, state: ::String, time: ::Float).void }
-      def initialize(key: nil, state: nil, time: nil)
-        @key = key
-        @state = state
-        @time = time
-      end
+        sig { params(key: ::String, state: ::String, time: ::Float).void }
+        def initialize(key: nil, state: nil, time: nil)
+          @key = key
+          @state = state
+          @time = time
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @key == other.key
-        return false unless @state == other.state
-        return false unless @time == other.time
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @key == other.key
+          return false unless @state == other.state
+          return false unless @time == other.time
+          true
+        end
       end
     end
   end

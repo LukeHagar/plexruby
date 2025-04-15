@@ -5,15 +5,17 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetLibraryItemsLibraryResponse200Type < T::Enum
-      enums do
-        COVER_POSTER = new('coverPoster')
-        BACKGROUND = new('background')
-        SNAPSHOT = new('snapshot')
-        CLEAR_LOGO = new('clearLogo')
+      class GetLibraryItemsLibraryResponse200Type < T::Enum
+        enums do
+          COVER_POSTER = new('coverPoster')
+          BACKGROUND = new('background')
+          SNAPSHOT = new('snapshot')
+          CLEAR_LOGO = new('clearLogo')
+        end
       end
     end
   end

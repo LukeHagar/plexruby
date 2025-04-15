@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetLibraryDetailsFieldType < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :operator, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsOperator]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Operator') } }
-
-      field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+      class GetLibraryDetailsFieldType
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(operator: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsOperator]), type: T.nilable(::String)).void }
-      def initialize(operator: nil, type: nil)
-        @operator = operator
-        @type = type
-      end
+        field :operator, T.nilable(T::Array[Models::Operations::GetLibraryDetailsOperator]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Operator') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @operator == other.operator
-        return false unless @type == other.type
-        true
+        field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+
+
+        sig { params(operator: T.nilable(T::Array[Models::Operations::GetLibraryDetailsOperator]), type: T.nilable(::String)).void }
+        def initialize(operator: nil, type: nil)
+          @operator = operator
+          @type = type
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @operator == other.operator
+          return false unless @type == other.type
+          true
+        end
       end
     end
   end

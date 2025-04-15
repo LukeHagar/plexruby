@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetRecentlyAddedImage < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :alt, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('alt') } }
-
-      field :type, ::PlexRubySDK::Operations::GetRecentlyAddedHubsResponseType, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetRecentlyAddedHubsResponseType, false) } }
-
-      field :url, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('url') } }
+      class GetRecentlyAddedImage
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(alt: ::String, type: ::PlexRubySDK::Operations::GetRecentlyAddedHubsResponseType, url: ::String).void }
-      def initialize(alt: nil, type: nil, url: nil)
-        @alt = alt
-        @type = type
-        @url = url
-      end
+        field :alt, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('alt') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @alt == other.alt
-        return false unless @type == other.type
-        return false unless @url == other.url
-        true
+        field :type, Models::Operations::GetRecentlyAddedHubsResponseType, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type'), 'decoder': Utils.enum_from_string(Models::Operations::GetRecentlyAddedHubsResponseType, false) } }
+
+        field :url, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('url') } }
+
+
+        sig { params(alt: ::String, type: Models::Operations::GetRecentlyAddedHubsResponseType, url: ::String).void }
+        def initialize(alt: nil, type: nil, url: nil)
+          @alt = alt
+          @type = type
+          @url = url
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @alt == other.alt
+          return false unless @type == other.type
+          return false unless @url == other.url
+          true
+        end
       end
     end
   end

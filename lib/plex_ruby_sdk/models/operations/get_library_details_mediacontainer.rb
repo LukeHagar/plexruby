@@ -5,81 +5,84 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetLibraryDetailsMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :allow_sync, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
-
-      field :art, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('art') } }
-
-      field :content, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('content') } }
-
-      field :directory, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsDirectory]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
-
-      field :field_type, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsFieldType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('FieldType') } }
-
-      field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
-
-      field :library_section_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
-
-      field :media_tag_prefix, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagPrefix') } }
-
-      field :media_tag_version, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
-
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-
-      field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
-
-      field :title1, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title1') } }
-
-      field :type, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Type') } }
-
-      field :view_group, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewGroup') } }
-
-      field :view_mode, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewMode') } }
+      class GetLibraryDetailsMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(allow_sync: T.nilable(T::Boolean), art: T.nilable(::String), content: T.nilable(::String), directory: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsDirectory]), field_type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsFieldType]), identifier: T.nilable(::String), library_section_id: T.nilable(::Integer), media_tag_prefix: T.nilable(::String), media_tag_version: T.nilable(::Integer), size: T.nilable(::Integer), thumb: T.nilable(::String), title1: T.nilable(::String), type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryDetailsType]), view_group: T.nilable(::String), view_mode: T.nilable(::Integer)).void }
-      def initialize(allow_sync: nil, art: nil, content: nil, directory: nil, field_type: nil, identifier: nil, library_section_id: nil, media_tag_prefix: nil, media_tag_version: nil, size: nil, thumb: nil, title1: nil, type: nil, view_group: nil, view_mode: nil)
-        @allow_sync = allow_sync
-        @art = art
-        @content = content
-        @directory = directory
-        @field_type = field_type
-        @identifier = identifier
-        @library_section_id = library_section_id
-        @media_tag_prefix = media_tag_prefix
-        @media_tag_version = media_tag_version
-        @size = size
-        @thumb = thumb
-        @title1 = title1
-        @type = type
-        @view_group = view_group
-        @view_mode = view_mode
-      end
+        field :allow_sync, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @allow_sync == other.allow_sync
-        return false unless @art == other.art
-        return false unless @content == other.content
-        return false unless @directory == other.directory
-        return false unless @field_type == other.field_type
-        return false unless @identifier == other.identifier
-        return false unless @library_section_id == other.library_section_id
-        return false unless @media_tag_prefix == other.media_tag_prefix
-        return false unless @media_tag_version == other.media_tag_version
-        return false unless @size == other.size
-        return false unless @thumb == other.thumb
-        return false unless @title1 == other.title1
-        return false unless @type == other.type
-        return false unless @view_group == other.view_group
-        return false unless @view_mode == other.view_mode
-        true
+        field :art, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('art') } }
+
+        field :content, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('content') } }
+
+        field :directory, T.nilable(T::Array[Models::Operations::GetLibraryDetailsDirectory]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
+
+        field :field_type, T.nilable(T::Array[Models::Operations::GetLibraryDetailsFieldType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('FieldType') } }
+
+        field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
+
+        field :library_section_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
+
+        field :media_tag_prefix, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagPrefix') } }
+
+        field :media_tag_version, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
+
+        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+        field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
+
+        field :title1, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title1') } }
+
+        field :type, T.nilable(T::Array[Models::Operations::GetLibraryDetailsType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Type') } }
+
+        field :view_group, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewGroup') } }
+
+        field :view_mode, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewMode') } }
+
+
+        sig { params(allow_sync: T.nilable(T::Boolean), art: T.nilable(::String), content: T.nilable(::String), directory: T.nilable(T::Array[Models::Operations::GetLibraryDetailsDirectory]), field_type: T.nilable(T::Array[Models::Operations::GetLibraryDetailsFieldType]), identifier: T.nilable(::String), library_section_id: T.nilable(::Integer), media_tag_prefix: T.nilable(::String), media_tag_version: T.nilable(::Integer), size: T.nilable(::Integer), thumb: T.nilable(::String), title1: T.nilable(::String), type: T.nilable(T::Array[Models::Operations::GetLibraryDetailsType]), view_group: T.nilable(::String), view_mode: T.nilable(::Integer)).void }
+        def initialize(allow_sync: nil, art: nil, content: nil, directory: nil, field_type: nil, identifier: nil, library_section_id: nil, media_tag_prefix: nil, media_tag_version: nil, size: nil, thumb: nil, title1: nil, type: nil, view_group: nil, view_mode: nil)
+          @allow_sync = allow_sync
+          @art = art
+          @content = content
+          @directory = directory
+          @field_type = field_type
+          @identifier = identifier
+          @library_section_id = library_section_id
+          @media_tag_prefix = media_tag_prefix
+          @media_tag_version = media_tag_version
+          @size = size
+          @thumb = thumb
+          @title1 = title1
+          @type = type
+          @view_group = view_group
+          @view_mode = view_mode
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @allow_sync == other.allow_sync
+          return false unless @art == other.art
+          return false unless @content == other.content
+          return false unless @directory == other.directory
+          return false unless @field_type == other.field_type
+          return false unless @identifier == other.identifier
+          return false unless @library_section_id == other.library_section_id
+          return false unless @media_tag_prefix == other.media_tag_prefix
+          return false unless @media_tag_version == other.media_tag_version
+          return false unless @size == other.size
+          return false unless @thumb == other.thumb
+          return false unless @title1 == other.title1
+          return false unless @type == other.type
+          return false unless @view_group == other.view_group
+          return false unless @view_mode == other.view_mode
+          true
+        end
       end
     end
   end

@@ -5,25 +5,27 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # PathParamTaskName - The name of the task to be started.
-    class PathParamTaskName < T::Enum
-      enums do
-        BACKUP_DATABASE = new('BackupDatabase')
-        BUILD_GRACENOTE_COLLECTIONS = new('BuildGracenoteCollections')
-        CHECK_FOR_UPDATES = new('CheckForUpdates')
-        CLEAN_OLD_BUNDLES = new('CleanOldBundles')
-        CLEAN_OLD_CACHE_FILES = new('CleanOldCacheFiles')
-        DEEP_MEDIA_ANALYSIS = new('DeepMediaAnalysis')
-        GENERATE_AUTO_TAGS = new('GenerateAutoTags')
-        GENERATE_CHAPTER_THUMBS = new('GenerateChapterThumbs')
-        GENERATE_MEDIA_INDEX_FILES = new('GenerateMediaIndexFiles')
-        OPTIMIZE_DATABASE = new('OptimizeDatabase')
-        REFRESH_LIBRARIES = new('RefreshLibraries')
-        REFRESH_LOCAL_MEDIA = new('RefreshLocalMedia')
-        REFRESH_PERIODIC_METADATA = new('RefreshPeriodicMetadata')
-        UPGRADE_MEDIA_ANALYSIS = new('UpgradeMediaAnalysis')
+  module Models
+    module Operations
+    
+      # PathParamTaskName - The name of the task to be started.
+      class PathParamTaskName < T::Enum
+        enums do
+          BACKUP_DATABASE = new('BackupDatabase')
+          BUILD_GRACENOTE_COLLECTIONS = new('BuildGracenoteCollections')
+          CHECK_FOR_UPDATES = new('CheckForUpdates')
+          CLEAN_OLD_BUNDLES = new('CleanOldBundles')
+          CLEAN_OLD_CACHE_FILES = new('CleanOldCacheFiles')
+          DEEP_MEDIA_ANALYSIS = new('DeepMediaAnalysis')
+          GENERATE_AUTO_TAGS = new('GenerateAutoTags')
+          GENERATE_CHAPTER_THUMBS = new('GenerateChapterThumbs')
+          GENERATE_MEDIA_INDEX_FILES = new('GenerateMediaIndexFiles')
+          OPTIMIZE_DATABASE = new('OptimizeDatabase')
+          REFRESH_LIBRARIES = new('RefreshLibraries')
+          REFRESH_LOCAL_MEDIA = new('RefreshLocalMedia')
+          REFRESH_PERIODIC_METADATA = new('RefreshPeriodicMetadata')
+          UPGRADE_MEDIA_ANALYSIS = new('UpgradeMediaAnalysis')
+        end
       end
     end
   end

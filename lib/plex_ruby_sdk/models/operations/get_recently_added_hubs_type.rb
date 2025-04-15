@@ -5,18 +5,20 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # GetRecentlyAddedHubsType - The type of media content
-    # 
-    class GetRecentlyAddedHubsType < T::Enum
-      enums do
-        MOVIE = new('movie')
-        TV_SHOW = new('show')
-        SEASON = new('season')
-        EPISODE = new('episode')
-        ARTIST = new('artist')
-        ALBUM = new('album')
+  module Models
+    module Operations
+    
+      # GetRecentlyAddedHubsType - The type of media content
+      # 
+      class GetRecentlyAddedHubsType < T::Enum
+        enums do
+          MOVIE = new('movie')
+          TV_SHOW = new('show')
+          SEASON = new('season')
+          EPISODE = new('episode')
+          ARTIST = new('artist')
+          ALBUM = new('album')
+        end
       end
     end
   end

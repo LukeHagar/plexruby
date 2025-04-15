@@ -5,16 +5,18 @@
 
 
 module PlexRubySDK
-  module Operations
-    POST_USERS_SIGN_IN_DATA_MAILING_LIST_STATUS_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
-    # PostUsersSignInDataMailingListStatus - Your current mailing list status (active or unsubscribed)
-    class PostUsersSignInDataMailingListStatus < T::Enum
-      enums do
-        ACTIVE = new('active')
-        UNSUBSCRIBED = new('unsubscribed')
+  module Models
+    module Operations
+      POST_USERS_SIGN_IN_DATA_MAILING_LIST_STATUS_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
+      # PostUsersSignInDataMailingListStatus - Your current mailing list status (active or unsubscribed)
+      class PostUsersSignInDataMailingListStatus < T::Enum
+        enums do
+          ACTIVE = new('active')
+          UNSUBSCRIBED = new('unsubscribed')
+        end
       end
     end
   end

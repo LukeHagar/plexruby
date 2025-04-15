@@ -5,37 +5,40 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class Writer < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class Writer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The filter string used to query this writer.
-      field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
-      # Unique identifier for the writer.
-      field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-      # The role of Writer
-      field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
-      # A unique key associated with the writers tag, used for internal identification.
-      field :tag_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
+        # The filter string used to query this writer.
+        field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
+        # Unique identifier for the writer.
+        field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+        # The role of Writer
+        field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+        # A unique key associated with the writers tag, used for internal identification.
+        field :tag_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
 
 
-      sig { params(filter: ::String, id: ::Integer, tag: ::String, tag_key: T.nilable(::String)).void }
-      def initialize(filter: nil, id: nil, tag: nil, tag_key: nil)
-        @filter = filter
-        @id = id
-        @tag = tag
-        @tag_key = tag_key
-      end
+        sig { params(filter: ::String, id: ::Integer, tag: ::String, tag_key: T.nilable(::String)).void }
+        def initialize(filter: nil, id: nil, tag: nil, tag_key: nil)
+          @filter = filter
+          @id = id
+          @tag = tag
+          @tag_key = tag_key
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @filter == other.filter
-        return false unless @id == other.id
-        return false unless @tag == other.tag
-        return false unless @tag_key == other.tag_key
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @filter == other.filter
+          return false unless @id == other.id
+          return false unless @tag == other.tag
+          return false unless @tag_key == other.tag_key
+          true
+        end
       end
     end
   end

@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetAllMediaLibraryRole < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetAllMediaLibraryRole
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The display tag for the actor (typically the actor's name).
-      field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+        # The display tag for the actor (typically the actor's name).
+        field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
 
-      sig { params(tag: ::String).void }
-      def initialize(tag: nil)
-        @tag = tag
-      end
+        sig { params(tag: ::String).void }
+        def initialize(tag: nil)
+          @tag = tag
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @tag == other.tag
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @tag == other.tag
+          true
+        end
       end
     end
   end

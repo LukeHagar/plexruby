@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class CreatePlaylistMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :metadata, T.nilable(T::Array[::PlexRubySDK::Operations::CreatePlaylistMetadata]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
-
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+      class CreatePlaylistMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(metadata: T.nilable(T::Array[::PlexRubySDK::Operations::CreatePlaylistMetadata]), size: T.nilable(::Integer)).void }
-      def initialize(metadata: nil, size: nil)
-        @metadata = metadata
-        @size = size
-      end
+        field :metadata, T.nilable(T::Array[Models::Operations::CreatePlaylistMetadata]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @metadata == other.metadata
-        return false unless @size == other.size
-        true
+        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+
+        sig { params(metadata: T.nilable(T::Array[Models::Operations::CreatePlaylistMetadata]), size: T.nilable(::Integer)).void }
+        def initialize(metadata: nil, size: nil)
+          @metadata = metadata
+          @size = size
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @metadata == other.metadata
+          return false unless @size == other.size
+          true
+        end
       end
     end
   end

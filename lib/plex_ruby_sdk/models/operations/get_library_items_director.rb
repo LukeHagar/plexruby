@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetLibraryItemsDirector < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetLibraryItemsDirector
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      field :tag, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+        field :tag, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
 
-      sig { params(tag: T.nilable(::String)).void }
-      def initialize(tag: nil)
-        @tag = tag
-      end
+        sig { params(tag: T.nilable(::String)).void }
+        def initialize(tag: nil)
+          @tag = tag
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @tag == other.tag
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @tag == other.tag
+          true
+        end
       end
     end
   end

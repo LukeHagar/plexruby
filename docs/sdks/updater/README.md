@@ -23,7 +23,7 @@ Querying status of updates
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -38,7 +38,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetUpdateStatusResponse)](../../models/operations/getupdatestatusresponse.md)**
+**[T.nilable(Models::Operations::GetUpdateStatusResponse)](../../models/operations/getupdatestatusresponse.md)**
 
 
 
@@ -52,12 +52,12 @@ Checking for updates
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-res = s.updater.check_for_updates(download=::PlexRubySDK::Operations::Download::ONE)
+res = s.updater.check_for_updates(download=Models::Operations::Download::ONE)
 
 if res.status_code == 200
   # handle response
@@ -67,13 +67,13 @@ end
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           | Example                                                                               |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `download`                                                                            | [T.nilable(::PlexRubySDK::Operations::Download)](../../models/operations/download.md) | :heavy_minus_sign:                                                                    | Indicate that you want to start download any updates found.                           | 1                                                                                     |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    | Example                                                                        |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `download`                                                                     | [T.nilable(Models::Operations::Download)](../../models/operations/download.md) | :heavy_minus_sign:                                                             | Indicate that you want to start download any updates found.                    | 1                                                                              |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::CheckForUpdatesResponse)](../../models/operations/checkforupdatesresponse.md)**
+**[T.nilable(Models::Operations::CheckForUpdatesResponse)](../../models/operations/checkforupdatesresponse.md)**
 
 
 
@@ -88,12 +88,12 @@ Note that these two parameters are effectively mutually exclusive. The `tonight`
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-res = s.updater.apply_updates(tonight=::PlexRubySDK::Operations::Tonight::ONE, skip=::PlexRubySDK::Operations::Skip::ONE)
+res = s.updater.apply_updates(tonight=Models::Operations::Tonight::ONE, skip=Models::Operations::Skip::ONE)
 
 if res.status_code == 200
   # handle response
@@ -105,10 +105,10 @@ end
 
 | Parameter                                                                                                                                                | Type                                                                                                                                                     | Required                                                                                                                                                 | Description                                                                                                                                              | Example                                                                                                                                                  |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `tonight`                                                                                                                                                | [T.nilable(::PlexRubySDK::Operations::Tonight)](../../models/operations/tonight.md)                                                                      | :heavy_minus_sign:                                                                                                                                       | Indicate that you want the update to run during the next Butler execution. Omitting this or setting it to false indicates that the update should install | 1                                                                                                                                                        |
-| `skip`                                                                                                                                                   | [T.nilable(::PlexRubySDK::Operations::Skip)](../../models/operations/skip.md)                                                                            | :heavy_minus_sign:                                                                                                                                       | Indicate that the latest version should be marked as skipped. The [Release] entry for this version will have the `state` set to `skipped`.               | 1                                                                                                                                                        |
+| `tonight`                                                                                                                                                | [T.nilable(Models::Operations::Tonight)](../../models/operations/tonight.md)                                                                             | :heavy_minus_sign:                                                                                                                                       | Indicate that you want the update to run during the next Butler execution. Omitting this or setting it to false indicates that the update should install | 1                                                                                                                                                        |
+| `skip`                                                                                                                                                   | [T.nilable(Models::Operations::Skip)](../../models/operations/skip.md)                                                                                   | :heavy_minus_sign:                                                                                                                                       | Indicate that the latest version should be marked as skipped. The [Release] entry for this version will have the `state` set to `skipped`.               | 1                                                                                                                                                        |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::ApplyUpdatesResponse)](../../models/operations/applyupdatesresponse.md)**
+**[T.nilable(Models::Operations::ApplyUpdatesResponse)](../../models/operations/applyupdatesresponse.md)**
 

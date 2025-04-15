@@ -12,7 +12,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -31,7 +31,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -50,7 +50,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -69,7 +69,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -88,15 +88,15 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            req = ::PlexRubySDK::Operations::GetTimelineRequest.new(
+            req = Models::Operations::GetTimelineRequest.new(
               rating_key: 23409.0,
               key: "/library/metadata/23409",
-              state: ::PlexRubySDK::Operations::State::PLAYING,
+              state: Models::Operations::State::PLAYING,
               has_mde: 1.0,
               time: 2000.0,
               duration: 10000.0,
@@ -120,7 +120,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -139,7 +139,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -158,7 +158,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -177,7 +177,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -196,7 +196,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -215,7 +215,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -234,12 +234,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.butler.stop_task(task_name=::PlexRubySDK::Operations::PathParamTaskName::BACKUP_DATABASE)
+            res = s.butler.stop_task(task_name=Models::Operations::PathParamTaskName::BACKUP_DATABASE)
 
             if res.status_code == 200
               # handle response
@@ -253,12 +253,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.butler.start_task(task_name=::PlexRubySDK::Operations::TaskName::CLEAN_OLD_BUNDLES)
+            res = s.butler.start_task(task_name=Models::Operations::TaskName::CLEAN_OLD_BUNDLES)
 
             if res.status_code == 200
               # handle response
@@ -272,7 +272,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -291,7 +291,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -310,7 +310,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -329,7 +329,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -363,7 +363,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -382,12 +382,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.hubs.get_global_hubs(count=1262.49, only_transient=::PlexRubySDK::Operations::OnlyTransient::ONE)
+            res = s.hubs.get_global_hubs(count=1262.49, only_transient=Models::Operations::OnlyTransient::ONE)
 
             if ! res.object.nil?
               # handle response
@@ -401,16 +401,16 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            req = ::PlexRubySDK::Operations::GetRecentlyAddedRequest.new(
+            req = Models::Operations::GetRecentlyAddedRequest.new(
               content_directory_id: 470_161,
               section_id: 2,
-              type: ::PlexRubySDK::Operations::Type::TV_SHOW,
-              include_meta: ::PlexRubySDK::Operations::IncludeMeta::ENABLE,
+              type: Models::Operations::Type::TV_SHOW,
+              include_meta: Models::Operations::IncludeMeta::ENABLE,
               x_plex_container_start: 0,
               x_plex_container_size: 50,
             )
@@ -429,7 +429,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -448,7 +448,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -467,12 +467,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.hubs.get_library_hubs(section_id=6728.76, count=639.24, only_transient=::PlexRubySDK::Operations::QueryParamOnlyTransient::ONE)
+            res = s.hubs.get_library_hubs(section_id=6728.76, count=639.24, only_transient=Models::Operations::QueryParamOnlyTransient::ONE)
 
             if ! res.object.nil?
               # handle response
@@ -501,12 +501,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.library.get_top_watched_content(type=::PlexRubySDK::Operations::GetTopWatchedContentQueryParamType::TV_SHOW, include_guids=1)
+            res = s.library.get_top_watched_content(type=Models::Operations::GetTopWatchedContentQueryParamType::TV_SHOW, include_guids=1)
 
             if ! res.object.nil?
               # handle response
@@ -520,7 +520,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -539,12 +539,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            req = ::PlexRubySDK::Operations::GetMediaMetaDataRequest.new(
+            req = Models::Operations::GetMediaMetaDataRequest.new(
               rating_key: 9518,
               include_concerts: true,
               include_extras: true,
@@ -575,7 +575,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -594,7 +594,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -613,12 +613,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            req = ::PlexRubySDK::Operations::GetBannerImageRequest.new(
+            req = Models::Operations::GetBannerImageRequest.new(
               rating_key: 9518,
               width: 396,
               height: 396,
@@ -641,7 +641,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -660,7 +660,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -679,7 +679,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -698,12 +698,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            req = ::PlexRubySDK::Operations::GetThumbImageRequest.new(
+            req = Models::Operations::GetThumbImageRequest.new(
               rating_key: 9518,
               width: 396,
               height: 396,
@@ -726,12 +726,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            req = ::PlexRubySDK::Operations::GetRecentlyAddedLibraryRequest.new(
+            req = Models::Operations::GetRecentlyAddedLibraryRequest.new(
               content_directory_id: 2,
               pinned_content_directory_id: [
                 3,
@@ -748,8 +748,8 @@ actions:
                 17,
               ],
               section_id: 2,
-              type: ::PlexRubySDK::Operations::QueryParamType::TV_SHOW,
-              include_meta: ::PlexRubySDK::Operations::QueryParamIncludeMeta::ENABLE,
+              type: Models::Operations::QueryParamType::TV_SHOW,
+              include_meta: Models::Operations::QueryParamIncludeMeta::ENABLE,
               x_plex_container_start: 0,
               x_plex_container_size: 50,
             )
@@ -768,19 +768,19 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            req = ::PlexRubySDK::Operations::GetSearchAllLibrariesRequest.new(
+            req = Models::Operations::GetSearchAllLibrariesRequest.new(
               query: "<value>",
               client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
               search_types: [
-                ::PlexRubySDK::Operations::SearchTypes::PEOPLE,
+                Models::Operations::SearchTypes::PEOPLE,
               ],
-              include_collections: ::PlexRubySDK::Operations::GetSearchAllLibrariesQueryParamIncludeCollections::ENABLE,
-              include_external_media: ::PlexRubySDK::Operations::GetSearchAllLibrariesQueryParamIncludeExternalMedia::ENABLE,
+              include_collections: Models::Operations::GetSearchAllLibrariesQueryParamIncludeCollections::ENABLE,
+              include_external_media: Models::Operations::GetSearchAllLibrariesQueryParamIncludeExternalMedia::ENABLE,
             )
 
             res = s.library.get_search_all_libraries(req)
@@ -797,7 +797,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -816,13 +816,13 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            req = ::PlexRubySDK::Operations::GetWatchListRequest.new(
-              filter: ::PlexRubySDK::Operations::Filter::AVAILABLE,
+            req = Models::Operations::GetWatchListRequest.new(
+              filter: Models::Operations::Filter::AVAILABLE,
               x_plex_container_start: 0,
               x_plex_container_size: 50,
               x_plex_token: "CV5xoxjTpFKUzBTShsaf",
@@ -842,7 +842,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -861,12 +861,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.library.get_library_details(section_key=9518, include_details=::PlexRubySDK::Operations::IncludeDetails::ZERO)
+            res = s.library.get_library_details(section_key=9518, include_details=Models::Operations::IncludeDetails::ZERO)
 
             if ! res.object.nil?
               # handle response
@@ -880,12 +880,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.library.get_actors_library(section_key=9518, type=::PlexRubySDK::Operations::GetActorsLibraryQueryParamType::TV_SHOW)
+            res = s.library.get_actors_library(section_key=9518, type=Models::Operations::GetActorsLibraryQueryParamType::TV_SHOW)
 
             if ! res.object.nil?
               # handle response
@@ -899,19 +899,19 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            req = ::PlexRubySDK::Operations::GetAllMediaLibraryRequest.new(
+            req = Models::Operations::GetAllMediaLibraryRequest.new(
               section_key: 9518,
-              type: ::PlexRubySDK::Operations::GetAllMediaLibraryQueryParamType::TV_SHOW,
-              include_meta: ::PlexRubySDK::Operations::GetAllMediaLibraryQueryParamIncludeMeta::ENABLE,
-              include_guids: ::PlexRubySDK::Operations::QueryParamIncludeGuids::ENABLE,
-              include_advanced: ::PlexRubySDK::Operations::IncludeAdvanced::ENABLE,
-              include_collections: ::PlexRubySDK::Operations::QueryParamIncludeCollections::ENABLE,
-              include_external_media: ::PlexRubySDK::Operations::QueryParamIncludeExternalMedia::ENABLE,
+              type: Models::Operations::GetAllMediaLibraryQueryParamType::TV_SHOW,
+              include_meta: Models::Operations::GetAllMediaLibraryQueryParamIncludeMeta::ENABLE,
+              include_guids: Models::Operations::QueryParamIncludeGuids::ENABLE,
+              include_advanced: Models::Operations::IncludeAdvanced::ENABLE,
+              include_collections: Models::Operations::QueryParamIncludeCollections::ENABLE,
+              include_external_media: Models::Operations::QueryParamIncludeExternalMedia::ENABLE,
               x_plex_container_start: 0,
               x_plex_container_size: 50,
             )
@@ -930,12 +930,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.library.get_countries_library(section_key=9518, type=::PlexRubySDK::Operations::GetCountriesLibraryQueryParamType::TV_SHOW)
+            res = s.library.get_countries_library(section_key=9518, type=Models::Operations::GetCountriesLibraryQueryParamType::TV_SHOW)
 
             if ! res.object.nil?
               # handle response
@@ -949,12 +949,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.library.get_genres_library(section_key=9518, type=::PlexRubySDK::Operations::GetGenresLibraryQueryParamType::TV_SHOW)
+            res = s.library.get_genres_library(section_key=9518, type=Models::Operations::GetGenresLibraryQueryParamType::TV_SHOW)
 
             if ! res.object.nil?
               # handle response
@@ -968,12 +968,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.library.get_refresh_library_metadata(section_key=9518, force=::PlexRubySDK::Operations::Force::ONE)
+            res = s.library.get_refresh_library_metadata(section_key=9518, force=Models::Operations::Force::ONE)
 
             if res.status_code == 200
               # handle response
@@ -987,12 +987,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.library.get_search_library(section_key=9518, type=::PlexRubySDK::Operations::GetSearchLibraryQueryParamType::TV_SHOW)
+            res = s.library.get_search_library(section_key=9518, type=Models::Operations::GetSearchLibraryQueryParamType::TV_SHOW)
 
             if ! res.object.nil?
               # handle response
@@ -1006,17 +1006,17 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            req = ::PlexRubySDK::Operations::GetLibraryItemsRequest.new(
-              tag: ::PlexRubySDK::Operations::Tag::EDITION,
-              include_guids: ::PlexRubySDK::Operations::IncludeGuids::ENABLE,
-              type: ::PlexRubySDK::Operations::GetLibraryItemsQueryParamType::TV_SHOW,
+            req = Models::Operations::GetLibraryItemsRequest.new(
+              tag: Models::Operations::Tag::EDITION,
+              include_guids: Models::Operations::IncludeGuids::ENABLE,
+              type: Models::Operations::GetLibraryItemsQueryParamType::TV_SHOW,
               section_key: 9518,
-              include_meta: ::PlexRubySDK::Operations::GetLibraryItemsQueryParamIncludeMeta::ENABLE,
+              include_meta: Models::Operations::GetLibraryItemsQueryParamIncludeMeta::ENABLE,
               x_plex_container_start: 0,
               x_plex_container_size: 50,
             )
@@ -1035,12 +1035,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.log.log_line(level=::PlexRubySDK::Operations::Level::THREE, message="Test log message", source="Postman")
+            res = s.log.log_line(level=Models::Operations::Level::THREE, message="Test log message", source="Postman")
 
             if res.status_code == 200
               # handle response
@@ -1054,7 +1054,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1077,7 +1077,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1096,7 +1096,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1115,7 +1115,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1134,18 +1134,18 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            req = ::PlexRubySDK::Operations::GetResizedPhotoRequest.new(
+            req = Models::Operations::GetResizedPhotoRequest.new(
               width: 110.0,
               height: 165.0,
               opacity: 643_869,
               blur: 0.0,
-              min_size: ::PlexRubySDK::Operations::MinSize::ONE,
-              upscale: ::PlexRubySDK::Operations::Upscale::ONE,
+              min_size: Models::Operations::MinSize::ONE,
+              upscale: Models::Operations::Upscale::ONE,
               url: "/library/metadata/49564/thumb/1654258204",
             )
 
@@ -1164,7 +1164,7 @@ actions:
 
             s = ::PlexRubySDK::PlexAPI.new
 
-            req = ::PlexRubySDK::Operations::GetPinRequest.new(
+            req = Models::Operations::GetPinRequest.new(
               client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
               client_name: "Plex for Roku",
               device_nickname: "Roku 3",
@@ -1187,7 +1187,7 @@ actions:
 
             s = ::PlexRubySDK::PlexAPI.new
 
-            req = ::PlexRubySDK::Operations::GetTokenByPinIdRequest.new(
+            req = Models::Operations::GetTokenByPinIdRequest.new(
               pin_id: 408_895,
               client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
               client_name: "Plex for Roku",
@@ -1210,12 +1210,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.playlists.get_playlists(playlist_type=::PlexRubySDK::Operations::PlaylistType::AUDIO, smart=::PlexRubySDK::Operations::QueryParamSmart::ZERO)
+            res = s.playlists.get_playlists(playlist_type=Models::Operations::PlaylistType::AUDIO, smart=Models::Operations::QueryParamSmart::ZERO)
 
             if ! res.object.nil?
               # handle response
@@ -1229,15 +1229,15 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            req = ::PlexRubySDK::Operations::CreatePlaylistRequest.new(
+            req = Models::Operations::CreatePlaylistRequest.new(
               title: "<value>",
-              type: ::PlexRubySDK::Operations::CreatePlaylistQueryParamType::PHOTO,
-              smart: ::PlexRubySDK::Operations::Smart::ONE,
+              type: Models::Operations::CreatePlaylistQueryParamType::PHOTO,
+              smart: Models::Operations::Smart::ONE,
               uri: "https://hoarse-testing.info/",
             )
 
@@ -1255,12 +1255,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.playlists.upload_playlist(path="/home/barkley/playlist.m3u", force=::PlexRubySDK::Operations::QueryParamForce::ZERO, section_id=1)
+            res = s.playlists.upload_playlist(path="/home/barkley/playlist.m3u", force=Models::Operations::QueryParamForce::ZERO, section_id=1)
 
             if res.status_code == 200
               # handle response
@@ -1274,7 +1274,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1293,7 +1293,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1312,7 +1312,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1331,7 +1331,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1350,12 +1350,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.playlists.get_playlist_contents(playlist_id=5004.46, type=::PlexRubySDK::Operations::GetPlaylistContentsQueryParamType::TV_SHOW)
+            res = s.playlists.get_playlist_contents(playlist_id=5004.46, type=Models::Operations::GetPlaylistContentsQueryParamType::TV_SHOW)
 
             if ! res.object.nil?
               # handle response
@@ -1369,7 +1369,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1388,12 +1388,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.plex.get_server_resources(client_id="3381b62b-9ab7-4e37-827b-203e9809eb58", include_https=::PlexRubySDK::Operations::IncludeHttps::ENABLE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ENABLE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ENABLE)
+            res = s.plex.get_server_resources(client_id="3381b62b-9ab7-4e37-827b-203e9809eb58", include_https=Models::Operations::IncludeHttps::ENABLE, include_relay=Models::Operations::IncludeRelay::ENABLE, include_i_pv6=Models::Operations::IncludeIPv6::ENABLE)
 
             if ! res.plex_devices.nil?
               # handle response
@@ -1407,7 +1407,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1426,7 +1426,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1445,12 +1445,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.authentication.get_transient_token(type=::PlexRubySDK::Operations::GetTransientTokenQueryParamType::DELEGATION, scope=::PlexRubySDK::Operations::Scope::ALL)
+            res = s.authentication.get_transient_token(type=Models::Operations::GetTransientTokenQueryParamType::DELEGATION, scope=Models::Operations::Scope::ALL)
 
             if res.status_code == 200
               # handle response
@@ -1464,7 +1464,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1483,7 +1483,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1502,7 +1502,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1521,7 +1521,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1540,7 +1540,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1559,12 +1559,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.sessions.get_session_history(sort="<value>", account_id=1, filter=::PlexRubySDK::Operations::QueryParamFilter.new(), library_section_id=12)
+            res = s.sessions.get_session_history(sort="<value>", account_id=1, filter=Models::Operations::QueryParamFilter.new(), library_section_id=12)
 
             if ! res.object.nil?
               # handle response
@@ -1578,7 +1578,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1597,7 +1597,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1616,12 +1616,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.updater.apply_updates(tonight=::PlexRubySDK::Operations::Tonight::ONE, skip=::PlexRubySDK::Operations::Skip::ONE)
+            res = s.updater.apply_updates(tonight=Models::Operations::Tonight::ONE, skip=Models::Operations::Skip::ONE)
 
             if res.status_code == 200
               # handle response
@@ -1635,12 +1635,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            res = s.updater.check_for_updates(download=::PlexRubySDK::Operations::Download::ONE)
+            res = s.updater.check_for_updates(download=Models::Operations::Download::ONE)
 
             if res.status_code == 200
               # handle response
@@ -1654,7 +1654,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1673,7 +1673,7 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
@@ -1693,7 +1693,7 @@ actions:
 
             s = ::PlexRubySDK::PlexAPI.new
 
-            req = ::PlexRubySDK::Operations::GetUsersRequest.new(
+            req = Models::Operations::GetUsersRequest.new(
               client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
               client_name: "Plex for Roku",
               device_nickname: "Roku 3",
@@ -1724,13 +1724,13 @@ actions:
 
             s = ::PlexRubySDK::PlexAPI.new
 
-            req = ::PlexRubySDK::Operations::PostUsersSignInDataRequest.new(
+            req = Models::Operations::PostUsersSignInDataRequest.new(
               client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
               client_name: "Plex for Roku",
               device_nickname: "Roku 3",
               client_version: "2.4.1",
               platform: "Roku",
-              request_body: ::PlexRubySDK::Operations::PostUsersSignInDataRequestBody.new(
+              request_body: Models::Operations::PostUsersSignInDataRequestBody.new(
                 login: "username@email.com",
                 password: "password123",
                 verification_code: "123456",
@@ -1751,12 +1751,12 @@ actions:
             require 'plex_ruby_sdk'
 
             s = ::PlexRubySDK::PlexAPI.new(
-                  security: ::PlexRubySDK::Shared::Security.new(
+                  security: Models::Shared::Security.new(
                     access_token: "<YOUR_API_KEY_HERE>",
                   ),
                 )
 
-            req = ::PlexRubySDK::Operations::StartUniversalTranscodeRequest.new(
+            req = Models::Operations::StartUniversalTranscodeRequest.new(
               has_mde: 1.0,
               path: "/library/metadata/23409",
               media_index: 0.0,

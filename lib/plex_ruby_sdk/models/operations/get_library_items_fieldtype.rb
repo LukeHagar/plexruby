@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetLibraryItemsFieldType < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :operator, T::Array[::PlexRubySDK::Operations::GetLibraryItemsOperator], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Operator') } }
-
-      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+      class GetLibraryItemsFieldType
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(operator: T::Array[::PlexRubySDK::Operations::GetLibraryItemsOperator], type: ::String).void }
-      def initialize(operator: nil, type: nil)
-        @operator = operator
-        @type = type
-      end
+        field :operator, T::Array[Models::Operations::GetLibraryItemsOperator], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Operator') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @operator == other.operator
-        return false unless @type == other.type
-        true
+        field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+
+
+        sig { params(operator: T::Array[Models::Operations::GetLibraryItemsOperator], type: ::String).void }
+        def initialize(operator: nil, type: nil)
+          @operator = operator
+          @type = type
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @operator == other.operator
+          return false unless @type == other.type
+          true
+        end
       end
     end
   end

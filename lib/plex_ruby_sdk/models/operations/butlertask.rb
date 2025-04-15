@@ -5,45 +5,48 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class ButlerTask < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :description, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('description') } }
-
-      field :enabled, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('enabled') } }
-
-      field :interval, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('interval') } }
-
-      field :name, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('name') } }
-
-      field :schedule_randomized, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('scheduleRandomized') } }
-
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+      class ButlerTask
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(description: T.nilable(::String), enabled: T.nilable(T::Boolean), interval: T.nilable(::Float), name: T.nilable(::String), schedule_randomized: T.nilable(T::Boolean), title: T.nilable(::String)).void }
-      def initialize(description: nil, enabled: nil, interval: nil, name: nil, schedule_randomized: nil, title: nil)
-        @description = description
-        @enabled = enabled
-        @interval = interval
-        @name = name
-        @schedule_randomized = schedule_randomized
-        @title = title
-      end
+        field :description, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('description') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @description == other.description
-        return false unless @enabled == other.enabled
-        return false unless @interval == other.interval
-        return false unless @name == other.name
-        return false unless @schedule_randomized == other.schedule_randomized
-        return false unless @title == other.title
-        true
+        field :enabled, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('enabled') } }
+
+        field :interval, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('interval') } }
+
+        field :name, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('name') } }
+
+        field :schedule_randomized, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('scheduleRandomized') } }
+
+        field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+
+        sig { params(description: T.nilable(::String), enabled: T.nilable(T::Boolean), interval: T.nilable(::Float), name: T.nilable(::String), schedule_randomized: T.nilable(T::Boolean), title: T.nilable(::String)).void }
+        def initialize(description: nil, enabled: nil, interval: nil, name: nil, schedule_randomized: nil, title: nil)
+          @description = description
+          @enabled = enabled
+          @interval = interval
+          @name = name
+          @schedule_randomized = schedule_randomized
+          @title = title
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @description == other.description
+          return false unless @enabled == other.enabled
+          return false unless @interval == other.interval
+          return false unless @name == other.name
+          return false unless @schedule_randomized == other.schedule_randomized
+          return false unless @title == other.title
+          true
+        end
       end
     end
   end

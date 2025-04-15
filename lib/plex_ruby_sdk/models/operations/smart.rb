@@ -5,13 +5,15 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # Smart - whether the playlist is smart or not
-    class Smart < T::Enum
-      enums do
-        ZERO = new(0)
-        ONE = new(1)
+  module Models
+    module Operations
+    
+      # Smart - whether the playlist is smart or not
+      class Smart < T::Enum
+        enums do
+          ZERO = new(0)
+          ONE = new(1)
+        end
       end
     end
   end

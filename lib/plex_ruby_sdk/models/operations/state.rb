@@ -5,14 +5,16 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # State - The state of the media item
-    class State < T::Enum
-      enums do
-        PLAYING = new('playing')
-        PAUSED = new('paused')
-        STOPPED = new('stopped')
+  module Models
+    module Operations
+    
+      # State - The state of the media item
+      class State < T::Enum
+        enums do
+          PLAYING = new('playing')
+          PAUSED = new('paused')
+          STOPPED = new('stopped')
+        end
       end
     end
   end

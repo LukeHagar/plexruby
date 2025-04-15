@@ -5,32 +5,35 @@
 
 
 module PlexRubySDK
-  module Operations
-    BILLING_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
+  module Models
+    module Operations
+      BILLING_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
 
-    class Billing < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :internal_payment_method, ::PlexRubySDK::Operations::InternalPaymentMethod, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('internalPaymentMethod') } }
-
-      field :payment_method_id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('paymentMethodId') } }
+      class Billing
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(internal_payment_method: ::PlexRubySDK::Operations::InternalPaymentMethod, payment_method_id: ::Integer).void }
-      def initialize(internal_payment_method: nil, payment_method_id: nil)
-        @internal_payment_method = internal_payment_method
-        @payment_method_id = payment_method_id
-      end
+        field :internal_payment_method, Models::Operations::InternalPaymentMethod, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('internalPaymentMethod') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @internal_payment_method == other.internal_payment_method
-        return false unless @payment_method_id == other.payment_method_id
-        true
+        field :payment_method_id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('paymentMethodId') } }
+
+
+        sig { params(internal_payment_method: Models::Operations::InternalPaymentMethod, payment_method_id: ::Integer).void }
+        def initialize(internal_payment_method: nil, payment_method_id: nil)
+          @internal_payment_method = internal_payment_method
+          @payment_method_id = payment_method_id
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @internal_payment_method == other.internal_payment_method
+          return false unless @payment_method_id == other.payment_method_id
+          true
+        end
       end
     end
   end

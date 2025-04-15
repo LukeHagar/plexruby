@@ -5,17 +5,19 @@
 
 
 module PlexRubySDK
-  module Operations
-    INCLUDE_EXTERNAL_MEDIA_SERVERS = [
-      'https://metadata.provider.plex.tv'
-    ].freeze
-  
-    # IncludeExternalMedia - include external media in the results
-    # 
-    class IncludeExternalMedia < T::Enum
-      enums do
-        ONE = new(1)
-        ZERO = new(0)
+  module Models
+    module Operations
+      INCLUDE_EXTERNAL_MEDIA_SERVERS = [
+        'https://metadata.provider.plex.tv'
+      ].freeze
+    
+      # IncludeExternalMedia - include external media in the results
+      # 
+      class IncludeExternalMedia < T::Enum
+        enums do
+          ONE = new(1)
+          ZERO = new(0)
+        end
       end
     end
   end

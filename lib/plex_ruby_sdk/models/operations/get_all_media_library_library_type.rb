@@ -5,18 +5,20 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # GetAllMediaLibraryLibraryType - The type of media content
-    # 
-    class GetAllMediaLibraryLibraryType < T::Enum
-      enums do
-        MOVIE = new('movie')
-        TV_SHOW = new('show')
-        SEASON = new('season')
-        EPISODE = new('episode')
-        ARTIST = new('artist')
-        ALBUM = new('album')
+  module Models
+    module Operations
+    
+      # GetAllMediaLibraryLibraryType - The type of media content
+      # 
+      class GetAllMediaLibraryLibraryType < T::Enum
+        enums do
+          MOVIE = new('movie')
+          TV_SHOW = new('show')
+          SEASON = new('season')
+          EPISODE = new('episode')
+          ARTIST = new('artist')
+          ALBUM = new('album')
+        end
       end
     end
   end

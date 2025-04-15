@@ -5,41 +5,44 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetMediaPostersMetadata < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetMediaPostersMetadata
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The URL of the poster.
-      field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-      # The URL of the poster.
-      field :rating_key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingKey') } }
-      # Whether this is the selected poster.
-      field :selected, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('selected') } }
-      # The URL of the poster thumbnail.
-      field :thumb, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
-      # The provider of the poster.
-      field :provider, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('provider') } }
+        # The URL of the poster.
+        field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+        # The URL of the poster.
+        field :rating_key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingKey') } }
+        # Whether this is the selected poster.
+        field :selected, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('selected') } }
+        # The URL of the poster thumbnail.
+        field :thumb, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
+        # The provider of the poster.
+        field :provider, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('provider') } }
 
 
-      sig { params(key: ::String, rating_key: ::String, selected: T::Boolean, thumb: ::String, provider: T.nilable(::String)).void }
-      def initialize(key: nil, rating_key: nil, selected: nil, thumb: nil, provider: nil)
-        @key = key
-        @rating_key = rating_key
-        @selected = selected
-        @thumb = thumb
-        @provider = provider
-      end
+        sig { params(key: ::String, rating_key: ::String, selected: T::Boolean, thumb: ::String, provider: T.nilable(::String)).void }
+        def initialize(key: nil, rating_key: nil, selected: nil, thumb: nil, provider: nil)
+          @key = key
+          @rating_key = rating_key
+          @selected = selected
+          @thumb = thumb
+          @provider = provider
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @key == other.key
-        return false unless @rating_key == other.rating_key
-        return false unless @selected == other.selected
-        return false unless @thumb == other.thumb
-        return false unless @provider == other.provider
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @key == other.key
+          return false unless @rating_key == other.rating_key
+          return false unless @selected == other.selected
+          return false unless @thumb == other.thumb
+          return false unless @provider == other.provider
+          true
+        end
       end
     end
   end

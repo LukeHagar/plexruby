@@ -5,13 +5,15 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # Download - Indicate that you want to start download any updates found.
-    class Download < T::Enum
-      enums do
-        ZERO = new(0)
-        ONE = new(1)
+  module Models
+    module Operations
+    
+      # Download - Indicate that you want to start download any updates found.
+      class Download < T::Enum
+        enums do
+          ZERO = new(0)
+          ONE = new(1)
+        end
       end
     end
   end

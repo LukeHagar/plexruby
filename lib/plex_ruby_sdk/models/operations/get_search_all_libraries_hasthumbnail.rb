@@ -5,13 +5,15 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetSearchAllLibrariesHasThumbnail < T::Enum
-      enums do
-        FALSE = new('0')
-        TRUE = new('1')
+      class GetSearchAllLibrariesHasThumbnail < T::Enum
+        enums do
+          FALSE = new('0')
+          TRUE = new('1')
+        end
       end
     end
   end

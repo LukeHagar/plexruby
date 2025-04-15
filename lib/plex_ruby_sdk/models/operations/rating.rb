@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # The type of rating, for example 'audience' or 'critic'.
-    class Rating < ::Crystalline::FieldAugmented
-      extend T::Sig
+  module Models
+    module Operations
+    
+      # The type of rating, for example 'audience' or 'critic'.
+      class Rating
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      field :image, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('image') } }
+        field :image, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('image') } }
 
-      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+        field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
 
-      field :value, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('value') } }
+        field :value, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('value') } }
 
 
-      sig { params(image: ::String, type: ::String, value: ::Float).void }
-      def initialize(image: nil, type: nil, value: nil)
-        @image = image
-        @type = type
-        @value = value
-      end
+        sig { params(image: ::String, type: ::String, value: ::Float).void }
+        def initialize(image: nil, type: nil, value: nil)
+          @image = image
+          @type = type
+          @value = value
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @image == other.image
-        return false unless @type == other.type
-        return false unless @value == other.value
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @image == other.image
+          return false unless @type == other.type
+          return false unless @value == other.value
+          true
+        end
       end
     end
   end

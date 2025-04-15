@@ -5,15 +5,17 @@
 
 
 module PlexRubySDK
-  module Operations
-    STATUS_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
-    # Status - Current friend request status
-    class Status < T::Enum
-      enums do
-        ACCEPTED = new('accepted')
+  module Models
+    module Operations
+      STATUS_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
+      # Status - Current friend request status
+      class Status < T::Enum
+        enums do
+          ACCEPTED = new('accepted')
+        end
       end
     end
   end

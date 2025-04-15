@@ -5,48 +5,43 @@
 
 
 module PlexRubySDK
-  module Operations
-    POST_USERS_SIGN_IN_DATA_RESPONSE_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
+  module Models
+    module Operations
+      POST_USERS_SIGN_IN_DATA_RESPONSE_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
 
-    class PostUsersSignInDataResponse < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class PostUsersSignInDataResponse
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # HTTP response content type for this operation
-      field :content_type, ::String
-      # Raw HTTP response; suitable for custom response parsing
-      field :raw_response, ::Faraday::Response
-      # HTTP response status code for this operation
-      field :status_code, ::Integer
-      # Bad Request - A parameter was not specified, or was specified incorrectly.
-      field :bad_request, T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataBadRequest)
-      # Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-      field :unauthorized, T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataUnauthorized)
-      # Returns the user account data with a valid auth token
-      field :user_plex_account, T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataUserPlexAccount)
+        # HTTP response content type for this operation
+        field :content_type, ::String
+        # Raw HTTP response; suitable for custom response parsing
+        field :raw_response, ::Faraday::Response
+        # HTTP response status code for this operation
+        field :status_code, ::Integer
+        # Returns the user account data with a valid auth token
+        field :user_plex_account, T.nilable(Models::Operations::PostUsersSignInDataUserPlexAccount)
 
 
-      sig { params(content_type: ::String, raw_response: ::Faraday::Response, status_code: ::Integer, bad_request: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataBadRequest), unauthorized: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataUnauthorized), user_plex_account: T.nilable(::PlexRubySDK::Operations::PostUsersSignInDataUserPlexAccount)).void }
-      def initialize(content_type: nil, raw_response: nil, status_code: nil, bad_request: nil, unauthorized: nil, user_plex_account: nil)
-        @content_type = content_type
-        @raw_response = raw_response
-        @status_code = status_code
-        @bad_request = bad_request
-        @unauthorized = unauthorized
-        @user_plex_account = user_plex_account
-      end
+        sig { params(content_type: ::String, raw_response: ::Faraday::Response, status_code: ::Integer, user_plex_account: T.nilable(Models::Operations::PostUsersSignInDataUserPlexAccount)).void }
+        def initialize(content_type: nil, raw_response: nil, status_code: nil, user_plex_account: nil)
+          @content_type = content_type
+          @raw_response = raw_response
+          @status_code = status_code
+          @user_plex_account = user_plex_account
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @content_type == other.content_type
-        return false unless @raw_response == other.raw_response
-        return false unless @status_code == other.status_code
-        return false unless @bad_request == other.bad_request
-        return false unless @unauthorized == other.unauthorized
-        return false unless @user_plex_account == other.user_plex_account
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @content_type == other.content_type
+          return false unless @raw_response == other.raw_response
+          return false unless @status_code == other.status_code
+          return false unless @user_plex_account == other.user_plex_account
+          true
+        end
       end
     end
   end

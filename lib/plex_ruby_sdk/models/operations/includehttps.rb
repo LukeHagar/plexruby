@@ -5,16 +5,18 @@
 
 
 module PlexRubySDK
-  module Operations
-    INCLUDE_HTTPS_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
-    # IncludeHttps - Include Https entries in the results
-    class IncludeHttps < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+      INCLUDE_HTTPS_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
+      # IncludeHttps - Include Https entries in the results
+      class IncludeHttps < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

@@ -5,45 +5,48 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetUpdateStatusMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :can_install, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('canInstall') } }
-
-      field :checked_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('checkedAt') } }
-
-      field :download_url, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('downloadURL') } }
-
-      field :release, T.nilable(T::Array[::PlexRubySDK::Operations::Release]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Release') } }
-
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-
-      field :status, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('status') } }
+      class GetUpdateStatusMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(can_install: T.nilable(T::Boolean), checked_at: T.nilable(::Integer), download_url: T.nilable(::String), release: T.nilable(T::Array[::PlexRubySDK::Operations::Release]), size: T.nilable(::Integer), status: T.nilable(::Integer)).void }
-      def initialize(can_install: nil, checked_at: nil, download_url: nil, release: nil, size: nil, status: nil)
-        @can_install = can_install
-        @checked_at = checked_at
-        @download_url = download_url
-        @release = release
-        @size = size
-        @status = status
-      end
+        field :can_install, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('canInstall') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @can_install == other.can_install
-        return false unless @checked_at == other.checked_at
-        return false unless @download_url == other.download_url
-        return false unless @release == other.release
-        return false unless @size == other.size
-        return false unless @status == other.status
-        true
+        field :checked_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('checkedAt') } }
+
+        field :download_url, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('downloadURL') } }
+
+        field :release, T.nilable(T::Array[Models::Operations::Release]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Release') } }
+
+        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+        field :status, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('status') } }
+
+
+        sig { params(can_install: T.nilable(T::Boolean), checked_at: T.nilable(::Integer), download_url: T.nilable(::String), release: T.nilable(T::Array[Models::Operations::Release]), size: T.nilable(::Integer), status: T.nilable(::Integer)).void }
+        def initialize(can_install: nil, checked_at: nil, download_url: nil, release: nil, size: nil, status: nil)
+          @can_install = can_install
+          @checked_at = checked_at
+          @download_url = download_url
+          @release = release
+          @size = size
+          @status = status
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @can_install == other.can_install
+          return false unless @checked_at == other.checked_at
+          return false unless @download_url == other.download_url
+          return false unless @release == other.release
+          return false unless @size == other.size
+          return false unless @status == other.status
+          true
+        end
       end
     end
   end

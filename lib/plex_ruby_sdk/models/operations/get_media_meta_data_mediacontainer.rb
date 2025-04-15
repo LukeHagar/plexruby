@@ -5,57 +5,60 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetMediaMetaDataMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetMediaMetaDataMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # Indicates whether syncing is allowed.
-      field :allow_sync, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
-      # An plugin identifier for the media container.
-      field :identifier, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
-      # The unique identifier for the library section.
-      field :library_section_id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
-      # The title of the library section.
-      field :library_section_title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionTitle') } }
-      # The prefix used for media tag resource paths.
-      field :media_tag_prefix, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagPrefix') } }
-      # The version number for media tags.
-      field :media_tag_version, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
-      # An array of metadata items.
-      field :metadata, T::Array[::PlexRubySDK::Operations::GetMediaMetaDataMetadata], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
-      # Number of media items returned in this response.
-      field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-      # The universally unique identifier for the library section.
-      field :library_section_uuid, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionUUID') } }
+        # Indicates whether syncing is allowed.
+        field :allow_sync, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
+        # An plugin identifier for the media container.
+        field :identifier, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
+        # The unique identifier for the library section.
+        field :library_section_id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
+        # The title of the library section.
+        field :library_section_title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionTitle') } }
+        # The prefix used for media tag resource paths.
+        field :media_tag_prefix, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagPrefix') } }
+        # The version number for media tags.
+        field :media_tag_version, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
+        # An array of metadata items.
+        field :metadata, T::Array[Models::Operations::GetMediaMetaDataMetadata], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
+        # Number of media items returned in this response.
+        field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+        # The universally unique identifier for the library section.
+        field :library_section_uuid, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionUUID') } }
 
 
-      sig { params(allow_sync: T::Boolean, identifier: ::String, library_section_id: ::Integer, library_section_title: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, metadata: T::Array[::PlexRubySDK::Operations::GetMediaMetaDataMetadata], size: ::Integer, library_section_uuid: T.nilable(::String)).void }
-      def initialize(allow_sync: nil, identifier: nil, library_section_id: nil, library_section_title: nil, media_tag_prefix: nil, media_tag_version: nil, metadata: nil, size: nil, library_section_uuid: nil)
-        @allow_sync = allow_sync
-        @identifier = identifier
-        @library_section_id = library_section_id
-        @library_section_title = library_section_title
-        @media_tag_prefix = media_tag_prefix
-        @media_tag_version = media_tag_version
-        @metadata = metadata
-        @size = size
-        @library_section_uuid = library_section_uuid
-      end
+        sig { params(allow_sync: T::Boolean, identifier: ::String, library_section_id: ::Integer, library_section_title: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, metadata: T::Array[Models::Operations::GetMediaMetaDataMetadata], size: ::Integer, library_section_uuid: T.nilable(::String)).void }
+        def initialize(allow_sync: nil, identifier: nil, library_section_id: nil, library_section_title: nil, media_tag_prefix: nil, media_tag_version: nil, metadata: nil, size: nil, library_section_uuid: nil)
+          @allow_sync = allow_sync
+          @identifier = identifier
+          @library_section_id = library_section_id
+          @library_section_title = library_section_title
+          @media_tag_prefix = media_tag_prefix
+          @media_tag_version = media_tag_version
+          @metadata = metadata
+          @size = size
+          @library_section_uuid = library_section_uuid
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @allow_sync == other.allow_sync
-        return false unless @identifier == other.identifier
-        return false unless @library_section_id == other.library_section_id
-        return false unless @library_section_title == other.library_section_title
-        return false unless @media_tag_prefix == other.media_tag_prefix
-        return false unless @media_tag_version == other.media_tag_version
-        return false unless @metadata == other.metadata
-        return false unless @size == other.size
-        return false unless @library_section_uuid == other.library_section_uuid
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @allow_sync == other.allow_sync
+          return false unless @identifier == other.identifier
+          return false unless @library_section_id == other.library_section_id
+          return false unless @library_section_title == other.library_section_title
+          return false unless @media_tag_prefix == other.media_tag_prefix
+          return false unless @media_tag_version == other.media_tag_version
+          return false unless @metadata == other.metadata
+          return false unless @size == other.size
+          return false unless @library_section_uuid == other.library_section_uuid
+          true
+        end
       end
     end
   end

@@ -5,35 +5,38 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetPlaylistContentsRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetPlaylistContentsRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # the ID of the playlist
-      field :playlist_id, ::Float, { 'path_param': { 'field_name': 'playlistID', 'style': 'simple', 'explode': false } }
-      # The type of media to retrieve or filter by.
-      # 1 = movie
-      # 2 = show
-      # 3 = season
-      # 4 = episode
-      # E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
-      # 
-      field :type, ::PlexRubySDK::Operations::GetPlaylistContentsQueryParamType, { 'query_param': { 'field_name': 'type', 'style': 'form', 'explode': true } }
+        # the ID of the playlist
+        field :playlist_id, ::Float, { 'path_param': { 'field_name': 'playlistID', 'style': 'simple', 'explode': false } }
+        # The type of media to retrieve or filter by.
+        # 1 = movie
+        # 2 = show
+        # 3 = season
+        # 4 = episode
+        # E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
+        # 
+        field :type, Models::Operations::GetPlaylistContentsQueryParamType, { 'query_param': { 'field_name': 'type', 'style': 'form', 'explode': true } }
 
 
-      sig { params(playlist_id: ::Float, type: ::PlexRubySDK::Operations::GetPlaylistContentsQueryParamType).void }
-      def initialize(playlist_id: nil, type: nil)
-        @playlist_id = playlist_id
-        @type = type
-      end
+        sig { params(playlist_id: ::Float, type: Models::Operations::GetPlaylistContentsQueryParamType).void }
+        def initialize(playlist_id: nil, type: nil)
+          @playlist_id = playlist_id
+          @type = type
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @playlist_id == other.playlist_id
-        return false unless @type == other.type
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @playlist_id == other.playlist_id
+          return false unless @type == other.type
+          true
+        end
       end
     end
   end

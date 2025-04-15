@@ -5,41 +5,44 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class CreatePlaylistRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class CreatePlaylistRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # whether the playlist is smart or not
-      field :smart, ::PlexRubySDK::Operations::Smart, { 'query_param': { 'field_name': 'smart', 'style': 'form', 'explode': true } }
-      # name of the playlist
-      field :title, ::String, { 'query_param': { 'field_name': 'title', 'style': 'form', 'explode': true } }
-      # type of playlist to create
-      field :type, ::PlexRubySDK::Operations::CreatePlaylistQueryParamType, { 'query_param': { 'field_name': 'type', 'style': 'form', 'explode': true } }
-      # the content URI for the playlist
-      field :uri, ::String, { 'query_param': { 'field_name': 'uri', 'style': 'form', 'explode': true } }
-      # the play queue to copy to a playlist
-      field :play_queue_id, T.nilable(::Float), { 'query_param': { 'field_name': 'playQueueID', 'style': 'form', 'explode': true } }
+        # whether the playlist is smart or not
+        field :smart, Models::Operations::Smart, { 'query_param': { 'field_name': 'smart', 'style': 'form', 'explode': true } }
+        # name of the playlist
+        field :title, ::String, { 'query_param': { 'field_name': 'title', 'style': 'form', 'explode': true } }
+        # type of playlist to create
+        field :type, Models::Operations::CreatePlaylistQueryParamType, { 'query_param': { 'field_name': 'type', 'style': 'form', 'explode': true } }
+        # the content URI for the playlist
+        field :uri, ::String, { 'query_param': { 'field_name': 'uri', 'style': 'form', 'explode': true } }
+        # the play queue to copy to a playlist
+        field :play_queue_id, T.nilable(::Float), { 'query_param': { 'field_name': 'playQueueID', 'style': 'form', 'explode': true } }
 
 
-      sig { params(smart: ::PlexRubySDK::Operations::Smart, title: ::String, type: ::PlexRubySDK::Operations::CreatePlaylistQueryParamType, uri: ::String, play_queue_id: T.nilable(::Float)).void }
-      def initialize(smart: nil, title: nil, type: nil, uri: nil, play_queue_id: nil)
-        @smart = smart
-        @title = title
-        @type = type
-        @uri = uri
-        @play_queue_id = play_queue_id
-      end
+        sig { params(smart: Models::Operations::Smart, title: ::String, type: Models::Operations::CreatePlaylistQueryParamType, uri: ::String, play_queue_id: T.nilable(::Float)).void }
+        def initialize(smart: nil, title: nil, type: nil, uri: nil, play_queue_id: nil)
+          @smart = smart
+          @title = title
+          @type = type
+          @uri = uri
+          @play_queue_id = play_queue_id
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @smart == other.smart
-        return false unless @title == other.title
-        return false unless @type == other.type
-        return false unless @uri == other.uri
-        return false unless @play_queue_id == other.play_queue_id
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @smart == other.smart
+          return false unless @title == other.title
+          return false unless @type == other.type
+          return false unless @uri == other.uri
+          return false unless @play_queue_id == other.play_queue_id
+          true
+        end
       end
     end
   end

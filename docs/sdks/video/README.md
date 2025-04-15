@@ -21,15 +21,15 @@ Get the timeline for a media item
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-req = ::PlexRubySDK::Operations::GetTimelineRequest.new(
+req = Models::Operations::GetTimelineRequest.new(
   rating_key: 23409.0,
   key: "/library/metadata/23409",
-  state: ::PlexRubySDK::Operations::State::PLAYING,
+  state: Models::Operations::State::PLAYING,
   has_mde: 1.0,
   time: 2000.0,
   duration: 10000.0,
@@ -49,13 +49,13 @@ end
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [::PlexRubySDK::Operations::GetTimelineRequest](../../models/operations/gettimelinerequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [Models::Operations::GetTimelineRequest](../../models/operations/gettimelinerequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetTimelineResponse)](../../models/operations/gettimelineresponse.md)**
+**[T.nilable(Models::Operations::GetTimelineResponse)](../../models/operations/gettimelineresponse.md)**
 
 
 
@@ -69,12 +69,12 @@ Begin a Universal Transcode Session
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-req = ::PlexRubySDK::Operations::StartUniversalTranscodeRequest.new(
+req = Models::Operations::StartUniversalTranscodeRequest.new(
   has_mde: 1.0,
   path: "/library/metadata/23409",
   media_index: 0.0,
@@ -103,11 +103,11 @@ end
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [::PlexRubySDK::Operations::StartUniversalTranscodeRequest](../../models/operations/startuniversaltranscoderequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                       | [Models::Operations::StartUniversalTranscodeRequest](../../models/operations/startuniversaltranscoderequest.md) | :heavy_check_mark:                                                                                              | The request object to use for the request.                                                                      |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::StartUniversalTranscodeResponse)](../../models/operations/startuniversaltranscoderesponse.md)**
+**[T.nilable(Models::Operations::StartUniversalTranscodeResponse)](../../models/operations/startuniversaltranscoderesponse.md)**
 

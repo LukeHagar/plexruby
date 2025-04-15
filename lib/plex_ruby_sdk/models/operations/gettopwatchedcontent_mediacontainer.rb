@@ -5,45 +5,48 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetTopWatchedContentMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :allow_sync, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
-
-      field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
-
-      field :media_tag_prefix, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagPrefix') } }
-
-      field :media_tag_version, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
-
-      field :metadata, T.nilable(T::Array[::PlexRubySDK::Operations::GetTopWatchedContentMetadata]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
-
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+      class GetTopWatchedContentMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(allow_sync: T.nilable(T::Boolean), identifier: T.nilable(::String), media_tag_prefix: T.nilable(::String), media_tag_version: T.nilable(::Integer), metadata: T.nilable(T::Array[::PlexRubySDK::Operations::GetTopWatchedContentMetadata]), size: T.nilable(::Integer)).void }
-      def initialize(allow_sync: nil, identifier: nil, media_tag_prefix: nil, media_tag_version: nil, metadata: nil, size: nil)
-        @allow_sync = allow_sync
-        @identifier = identifier
-        @media_tag_prefix = media_tag_prefix
-        @media_tag_version = media_tag_version
-        @metadata = metadata
-        @size = size
-      end
+        field :allow_sync, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @allow_sync == other.allow_sync
-        return false unless @identifier == other.identifier
-        return false unless @media_tag_prefix == other.media_tag_prefix
-        return false unless @media_tag_version == other.media_tag_version
-        return false unless @metadata == other.metadata
-        return false unless @size == other.size
-        true
+        field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
+
+        field :media_tag_prefix, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagPrefix') } }
+
+        field :media_tag_version, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
+
+        field :metadata, T.nilable(T::Array[Models::Operations::GetTopWatchedContentMetadata]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
+
+        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+
+        sig { params(allow_sync: T.nilable(T::Boolean), identifier: T.nilable(::String), media_tag_prefix: T.nilable(::String), media_tag_version: T.nilable(::Integer), metadata: T.nilable(T::Array[Models::Operations::GetTopWatchedContentMetadata]), size: T.nilable(::Integer)).void }
+        def initialize(allow_sync: nil, identifier: nil, media_tag_prefix: nil, media_tag_version: nil, metadata: nil, size: nil)
+          @allow_sync = allow_sync
+          @identifier = identifier
+          @media_tag_prefix = media_tag_prefix
+          @media_tag_version = media_tag_version
+          @metadata = metadata
+          @size = size
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @allow_sync == other.allow_sync
+          return false unless @identifier == other.identifier
+          return false unless @media_tag_prefix == other.media_tag_prefix
+          return false unless @media_tag_version == other.media_tag_version
+          return false unless @metadata == other.metadata
+          return false unless @size == other.size
+          true
+        end
       end
     end
   end

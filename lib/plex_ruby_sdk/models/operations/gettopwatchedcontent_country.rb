@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetTopWatchedContentCountry < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :filter, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
-
-      field :id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-
-      field :tag, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+      class GetTopWatchedContentCountry
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(filter: T.nilable(::String), id: T.nilable(::Integer), tag: T.nilable(::String)).void }
-      def initialize(filter: nil, id: nil, tag: nil)
-        @filter = filter
-        @id = id
-        @tag = tag
-      end
+        field :filter, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @filter == other.filter
-        return false unless @id == other.id
-        return false unless @tag == other.tag
-        true
+        field :id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+
+        field :tag, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+
+
+        sig { params(filter: T.nilable(::String), id: T.nilable(::Integer), tag: T.nilable(::String)).void }
+        def initialize(filter: nil, id: nil, tag: nil)
+          @filter = filter
+          @id = id
+          @tag = tag
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @filter == other.filter
+          return false unless @id == other.id
+          return false unless @tag == other.tag
+          true
+        end
       end
     end
   end

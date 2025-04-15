@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # All butler tasks
-    class GetButlerTasksResponseBody < ::Crystalline::FieldAugmented
-      extend T::Sig
+  module Models
+    module Operations
+    
+      # All butler tasks
+      class GetButlerTasksResponseBody
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      field :butler_tasks, T.nilable(::PlexRubySDK::Operations::ButlerTasks), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ButlerTasks') } }
+        field :butler_tasks, T.nilable(Models::Operations::ButlerTasks), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ButlerTasks') } }
 
 
-      sig { params(butler_tasks: T.nilable(::PlexRubySDK::Operations::ButlerTasks)).void }
-      def initialize(butler_tasks: nil)
-        @butler_tasks = butler_tasks
-      end
+        sig { params(butler_tasks: T.nilable(Models::Operations::ButlerTasks)).void }
+        def initialize(butler_tasks: nil)
+          @butler_tasks = butler_tasks
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @butler_tasks == other.butler_tasks
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @butler_tasks == other.butler_tasks
+          true
+        end
       end
     end
   end

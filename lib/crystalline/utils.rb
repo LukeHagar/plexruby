@@ -8,17 +8,13 @@ require 'sorbet-runtime'
 module Crystalline
   extend T::Sig
 
-  class FieldAugmented
-    include MetadataFields
-  end
-
   sig { params(complex: Object).returns(Object) }
   def self.to_dict(complex)
     if complex.is_a? Array
       complex.map { |v| Crystalline.to_dict(v) }
     elsif complex.is_a? Hash
       complex.transform_values { |v| Crystalline.to_dict(v) }
-    elsif complex.is_a? Crystalline::FieldAugmented
+    elsif complex.respond_to?(:class) && complex.class.include?(::Crystalline::MetadataFields)
       complex.to_dict
     else
       val_to_string complex, primitives: false
@@ -34,7 +30,7 @@ module Crystalline
     if T.simplifiable? type
       type = T.simplify_type type
     end
-    if type.instance_of?(Class) && type < ::Crystalline::FieldAugmented
+    if type.instance_of?(Class) && type.include?(::Crystalline::MetadataFields)
       type.from_dict(data)
     elsif T.arr? type
       data.map { |v| Crystalline.unmarshal_json(v, T.arr_of(type)) }

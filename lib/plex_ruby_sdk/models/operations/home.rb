@@ -5,16 +5,18 @@
 
 
 module PlexRubySDK
-  module Operations
-    HOME_SERVERS = [
-      'https://plex.tv/api'
-    ].freeze
-  
-    # Home - Indicates if the user is part of a home group.
-    class Home < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+      HOME_SERVERS = [
+        'https://plex.tv/api'
+      ].freeze
+    
+      # Home - Indicates if the user is part of a home group.
+      class Home < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

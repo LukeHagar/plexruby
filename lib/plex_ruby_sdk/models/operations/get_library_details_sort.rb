@@ -5,45 +5,48 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetLibraryDetailsSort < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :default, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('default') } }
-
-      field :default_direction, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('defaultDirection') } }
-
-      field :desc_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('descKey') } }
-
-      field :first_character_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('firstCharacterKey') } }
-
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+      class GetLibraryDetailsSort
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(default: T.nilable(::String), default_direction: T.nilable(::String), desc_key: T.nilable(::String), first_character_key: T.nilable(::String), key: T.nilable(::String), title: T.nilable(::String)).void }
-      def initialize(default: nil, default_direction: nil, desc_key: nil, first_character_key: nil, key: nil, title: nil)
-        @default = default
-        @default_direction = default_direction
-        @desc_key = desc_key
-        @first_character_key = first_character_key
-        @key = key
-        @title = title
-      end
+        field :default, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('default') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @default == other.default
-        return false unless @default_direction == other.default_direction
-        return false unless @desc_key == other.desc_key
-        return false unless @first_character_key == other.first_character_key
-        return false unless @key == other.key
-        return false unless @title == other.title
-        true
+        field :default_direction, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('defaultDirection') } }
+
+        field :desc_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('descKey') } }
+
+        field :first_character_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('firstCharacterKey') } }
+
+        field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+        field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+
+        sig { params(default: T.nilable(::String), default_direction: T.nilable(::String), desc_key: T.nilable(::String), first_character_key: T.nilable(::String), key: T.nilable(::String), title: T.nilable(::String)).void }
+        def initialize(default: nil, default_direction: nil, desc_key: nil, first_character_key: nil, key: nil, title: nil)
+          @default = default
+          @default_direction = default_direction
+          @desc_key = desc_key
+          @first_character_key = first_character_key
+          @key = key
+          @title = title
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @default == other.default
+          return false unless @default_direction == other.default_direction
+          return false unless @desc_key == other.desc_key
+          return false unless @first_character_key == other.first_character_key
+          return false unless @key == other.key
+          return false unless @title == other.title
+          true
+        end
       end
     end
   end

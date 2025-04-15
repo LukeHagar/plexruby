@@ -5,26 +5,29 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetAllMediaLibraryGuids < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetAllMediaLibraryGuids
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The unique identifier for the Guid. Can be imdb://tt0286347, tmdb://1763, tvdb://2337
-      # 
-      field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+        # The unique identifier for the Guid. Can be imdb://tt0286347, tmdb://1763, tvdb://2337
+        # 
+        field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
 
 
-      sig { params(id: T.nilable(::String)).void }
-      def initialize(id: nil)
-        @id = id
-      end
+        sig { params(id: T.nilable(::String)).void }
+        def initialize(id: nil)
+          @id = id
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @id == other.id
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @id == other.id
+          true
+        end
       end
     end
   end

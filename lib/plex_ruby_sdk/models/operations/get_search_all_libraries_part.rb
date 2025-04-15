@@ -5,74 +5,77 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetSearchAllLibrariesPart < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetSearchAllLibrariesPart
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The container format of the media file.
-      # 
-      field :container, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
+        # The container format of the media file.
+        # 
+        field :container, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
 
-      field :file, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('file') } }
+        field :file, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('file') } }
 
-      field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+        field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
 
-      field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+        field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
 
-      field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+        field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
 
-      field :audio_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioProfile') } }
+        field :audio_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioProfile') } }
 
-      field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
+        field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
 
-      field :has64bit_offsets, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('has64bitOffsets') } }
+        field :has64bit_offsets, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('has64bitOffsets') } }
 
-      field :has_thumbnail, T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesHasThumbnail), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasThumbnail'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetSearchAllLibrariesHasThumbnail, true) } }
+        field :has_thumbnail, T.nilable(Models::Operations::GetSearchAllLibrariesHasThumbnail), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasThumbnail'), 'decoder': Utils.enum_from_string(Models::Operations::GetSearchAllLibrariesHasThumbnail, true) } }
 
-      field :indexes, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('indexes') } }
+        field :indexes, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('indexes') } }
 
-      field :optimized_for_streaming, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('optimizedForStreaming') } }
+        field :optimized_for_streaming, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('optimizedForStreaming') } }
 
-      field :stream, T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesStream]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Stream') } }
+        field :stream, T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesStream]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Stream') } }
 
-      field :video_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
+        field :video_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
 
 
-      sig { params(container: ::String, file: ::String, id: ::Integer, key: ::String, size: ::Integer, audio_profile: T.nilable(::String), duration: T.nilable(::Integer), has64bit_offsets: T.nilable(T::Boolean), has_thumbnail: T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesHasThumbnail), indexes: T.nilable(::String), optimized_for_streaming: T.nilable(T::Boolean), stream: T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesStream]), video_profile: T.nilable(::String)).void }
-      def initialize(container: nil, file: nil, id: nil, key: nil, size: nil, audio_profile: nil, duration: nil, has64bit_offsets: nil, has_thumbnail: nil, indexes: nil, optimized_for_streaming: nil, stream: nil, video_profile: nil)
-        @container = container
-        @file = file
-        @id = id
-        @key = key
-        @size = size
-        @audio_profile = audio_profile
-        @duration = duration
-        @has64bit_offsets = has64bit_offsets
-        @has_thumbnail = has_thumbnail
-        @indexes = indexes
-        @optimized_for_streaming = optimized_for_streaming
-        @stream = stream
-        @video_profile = video_profile
-      end
+        sig { params(container: ::String, file: ::String, id: ::Integer, key: ::String, size: ::Integer, audio_profile: T.nilable(::String), duration: T.nilable(::Integer), has64bit_offsets: T.nilable(T::Boolean), has_thumbnail: T.nilable(Models::Operations::GetSearchAllLibrariesHasThumbnail), indexes: T.nilable(::String), optimized_for_streaming: T.nilable(T::Boolean), stream: T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesStream]), video_profile: T.nilable(::String)).void }
+        def initialize(container: nil, file: nil, id: nil, key: nil, size: nil, audio_profile: nil, duration: nil, has64bit_offsets: nil, has_thumbnail: nil, indexes: nil, optimized_for_streaming: nil, stream: nil, video_profile: nil)
+          @container = container
+          @file = file
+          @id = id
+          @key = key
+          @size = size
+          @audio_profile = audio_profile
+          @duration = duration
+          @has64bit_offsets = has64bit_offsets
+          @has_thumbnail = has_thumbnail
+          @indexes = indexes
+          @optimized_for_streaming = optimized_for_streaming
+          @stream = stream
+          @video_profile = video_profile
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @container == other.container
-        return false unless @file == other.file
-        return false unless @id == other.id
-        return false unless @key == other.key
-        return false unless @size == other.size
-        return false unless @audio_profile == other.audio_profile
-        return false unless @duration == other.duration
-        return false unless @has64bit_offsets == other.has64bit_offsets
-        return false unless @has_thumbnail == other.has_thumbnail
-        return false unless @indexes == other.indexes
-        return false unless @optimized_for_streaming == other.optimized_for_streaming
-        return false unless @stream == other.stream
-        return false unless @video_profile == other.video_profile
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @container == other.container
+          return false unless @file == other.file
+          return false unless @id == other.id
+          return false unless @key == other.key
+          return false unless @size == other.size
+          return false unless @audio_profile == other.audio_profile
+          return false unless @duration == other.duration
+          return false unless @has64bit_offsets == other.has64bit_offsets
+          return false unless @has_thumbnail == other.has_thumbnail
+          return false unless @indexes == other.indexes
+          return false unless @optimized_for_streaming == other.optimized_for_streaming
+          return false unless @stream == other.stream
+          return false unless @video_profile == other.video_profile
+          true
+        end
       end
     end
   end

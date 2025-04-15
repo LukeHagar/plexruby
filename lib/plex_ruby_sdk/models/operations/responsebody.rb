@@ -5,48 +5,51 @@
 
 
 module PlexRubySDK
-  module Operations
-    RESPONSE_BODY_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
+  module Models
+    module Operations
+      RESPONSE_BODY_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
 
-    class ResponseBody < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :base_url, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('baseURL') } }
-
-      field :identifier, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
-
-      field :link_url, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('linkURL') } }
-
-      field :provides, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('provides') } }
-
-      field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-      # The plex authtoken used to identify with
-      field :token, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('token') } }
+      class ResponseBody
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(base_url: ::String, identifier: ::String, link_url: ::String, provides: ::String, title: ::String, token: ::String).void }
-      def initialize(base_url: nil, identifier: nil, link_url: nil, provides: nil, title: nil, token: nil)
-        @base_url = base_url
-        @identifier = identifier
-        @link_url = link_url
-        @provides = provides
-        @title = title
-        @token = token
-      end
+        field :base_url, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('baseURL') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @base_url == other.base_url
-        return false unless @identifier == other.identifier
-        return false unless @link_url == other.link_url
-        return false unless @provides == other.provides
-        return false unless @title == other.title
-        return false unless @token == other.token
-        true
+        field :identifier, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
+
+        field :link_url, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('linkURL') } }
+
+        field :provides, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('provides') } }
+
+        field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+        # The plex authtoken used to identify with
+        field :token, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('token') } }
+
+
+        sig { params(base_url: ::String, identifier: ::String, link_url: ::String, provides: ::String, title: ::String, token: ::String).void }
+        def initialize(base_url: nil, identifier: nil, link_url: nil, provides: nil, title: nil, token: nil)
+          @base_url = base_url
+          @identifier = identifier
+          @link_url = link_url
+          @provides = provides
+          @title = title
+          @token = token
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @base_url == other.base_url
+          return false unless @identifier == other.identifier
+          return false unless @link_url == other.link_url
+          return false unless @provides == other.provides
+          return false unless @title == other.title
+          return false unless @token == other.token
+          true
+        end
       end
     end
   end

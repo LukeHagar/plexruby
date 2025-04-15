@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class Directory < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :count, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('count') } }
-
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+      class Directory
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(count: T.nilable(::Float), key: T.nilable(::String), title: T.nilable(::String)).void }
-      def initialize(count: nil, key: nil, title: nil)
-        @count = count
-        @key = key
-        @title = title
-      end
+        field :count, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('count') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @count == other.count
-        return false unless @key == other.key
-        return false unless @title == other.title
-        true
+        field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+        field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+
+        sig { params(count: T.nilable(::Float), key: T.nilable(::String), title: T.nilable(::String)).void }
+        def initialize(count: nil, key: nil, title: nil)
+          @count = count
+          @key = key
+          @title = title
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @count == other.count
+          return false unless @key == other.key
+          return false unless @title == other.title
+          true
+        end
       end
     end
   end

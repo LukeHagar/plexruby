@@ -26,7 +26,7 @@ Get Companions Data
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -47,7 +47,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetCompanionsDataResponse)](../../models/operations/getcompanionsdataresponse.md)**
+**[T.nilable(Models::Operations::GetCompanionsDataResponse)](../../models/operations/getcompanionsdataresponse.md)**
 
 
 
@@ -61,7 +61,7 @@ Get friends of provided auth token.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -82,7 +82,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetUserFriendsResponse)](../../models/operations/getuserfriendsresponse.md)**
+**[T.nilable(Models::Operations::GetUserFriendsResponse)](../../models/operations/getuserfriendsresponse.md)**
 
 
 
@@ -113,7 +113,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetGeoDataResponse)](../../models/operations/getgeodataresponse.md)**
+**[T.nilable(Models::Operations::GetGeoDataResponse)](../../models/operations/getgeodataresponse.md)**
 
 
 
@@ -127,7 +127,7 @@ Retrieves the home data for the authenticated user, including details like home 
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -142,7 +142,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetHomeDataResponse)](../../models/operations/gethomedataresponse.md)**
+**[T.nilable(Models::Operations::GetHomeDataResponse)](../../models/operations/gethomedataresponse.md)**
 
 
 
@@ -156,12 +156,12 @@ Get Plex server access tokens and server connections
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-res = s.plex.get_server_resources(client_id="3381b62b-9ab7-4e37-827b-203e9809eb58", include_https=::PlexRubySDK::Operations::IncludeHttps::ENABLE, include_relay=::PlexRubySDK::Operations::IncludeRelay::ENABLE, include_i_pv6=::PlexRubySDK::Operations::IncludeIPv6::ENABLE)
+res = s.plex.get_server_resources(client_id="3381b62b-9ab7-4e37-827b-203e9809eb58", include_https=Models::Operations::IncludeHttps::ENABLE, include_relay=Models::Operations::IncludeRelay::ENABLE, include_i_pv6=Models::Operations::IncludeIPv6::ENABLE)
 
 if ! res.plex_devices.nil?
   # handle response
@@ -174,14 +174,14 @@ end
 | Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        | Example                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
 | `client_id`                                                                                                        | *::String*                                                                                                         | :heavy_check_mark:                                                                                                 | An opaque identifier unique to the client (UUID, serial number, or other unique device ID)                         | 3381b62b-9ab7-4e37-827b-203e9809eb58                                                                               |
-| `include_https`                                                                                                    | [T.nilable(::PlexRubySDK::Operations::IncludeHttps)](../../models/operations/includehttps.md)                      | :heavy_minus_sign:                                                                                                 | Include Https entries in the results                                                                               | 1                                                                                                                  |
-| `include_relay`                                                                                                    | [T.nilable(::PlexRubySDK::Operations::IncludeRelay)](../../models/operations/includerelay.md)                      | :heavy_minus_sign:                                                                                                 | Include Relay addresses in the results <br/>E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400<br/> | 1                                                                                                                  |
-| `include_i_pv6`                                                                                                    | [T.nilable(::PlexRubySDK::Operations::IncludeIPv6)](../../models/operations/includeipv6.md)                        | :heavy_minus_sign:                                                                                                 | Include IPv6 entries in the results                                                                                | 1                                                                                                                  |
+| `include_https`                                                                                                    | [T.nilable(Models::Operations::IncludeHttps)](../../models/operations/includehttps.md)                             | :heavy_minus_sign:                                                                                                 | Include Https entries in the results                                                                               | 1                                                                                                                  |
+| `include_relay`                                                                                                    | [T.nilable(Models::Operations::IncludeRelay)](../../models/operations/includerelay.md)                             | :heavy_minus_sign:                                                                                                 | Include Relay addresses in the results <br/>E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400<br/> | 1                                                                                                                  |
+| `include_i_pv6`                                                                                                    | [T.nilable(Models::Operations::IncludeIPv6)](../../models/operations/includeipv6.md)                               | :heavy_minus_sign:                                                                                                 | Include IPv6 entries in the results                                                                                | 1                                                                                                                  |
 | `server_url`                                                                                                       | *String*                                                                                                           | :heavy_minus_sign:                                                                                                 | An optional server URL to use.                                                                                     | http://localhost:8080                                                                                              |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetServerResourcesResponse)](../../models/operations/getserverresourcesresponse.md)**
+**[T.nilable(Models::Operations::GetServerResourcesResponse)](../../models/operations/getserverresourcesresponse.md)**
 
 
 
@@ -196,7 +196,7 @@ require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new
 
-req = ::PlexRubySDK::Operations::GetPinRequest.new(
+req = Models::Operations::GetPinRequest.new(
   client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
   client_name: "Plex for Roku",
   device_nickname: "Roku 3",
@@ -214,14 +214,14 @@ end
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [::PlexRubySDK::Operations::GetPinRequest](../../models/operations/getpinrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `server_url`                                                                         | *String*                                                                             | :heavy_minus_sign:                                                                   | An optional server URL to use.                                                       |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [Models::Operations::GetPinRequest](../../models/operations/getpinrequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| `server_url`                                                                  | *String*                                                                      | :heavy_minus_sign:                                                            | An optional server URL to use.                                                |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetPinResponse)](../../models/operations/getpinresponse.md)**
+**[T.nilable(Models::Operations::GetPinResponse)](../../models/operations/getpinresponse.md)**
 
 
 
@@ -236,7 +236,7 @@ require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new
 
-req = ::PlexRubySDK::Operations::GetTokenByPinIdRequest.new(
+req = Models::Operations::GetTokenByPinIdRequest.new(
   pin_id: 408_895,
   client_id: "3381b62b-9ab7-4e37-827b-203e9809eb58",
   client_name: "Plex for Roku",
@@ -255,12 +255,12 @@ end
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [::PlexRubySDK::Operations::GetTokenByPinIdRequest](../../models/operations/gettokenbypinidrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `server_url`                                                                                           | *String*                                                                                               | :heavy_minus_sign:                                                                                     | An optional server URL to use.                                                                         |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [Models::Operations::GetTokenByPinIdRequest](../../models/operations/gettokenbypinidrequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| `server_url`                                                                                    | *String*                                                                                        | :heavy_minus_sign:                                                                              | An optional server URL to use.                                                                  |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetTokenByPinIdResponse)](../../models/operations/gettokenbypinidresponse.md)**
+**[T.nilable(Models::Operations::GetTokenByPinIdResponse)](../../models/operations/gettokenbypinidresponse.md)**
 

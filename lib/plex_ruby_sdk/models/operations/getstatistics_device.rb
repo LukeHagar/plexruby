@@ -5,41 +5,44 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetStatisticsDevice < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :client_identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('clientIdentifier') } }
-
-      field :created_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('createdAt') } }
-
-      field :id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-
-      field :name, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('name') } }
-
-      field :platform, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('platform') } }
+      class GetStatisticsDevice
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(client_identifier: T.nilable(::String), created_at: T.nilable(::Integer), id: T.nilable(::Integer), name: T.nilable(::String), platform: T.nilable(::String)).void }
-      def initialize(client_identifier: nil, created_at: nil, id: nil, name: nil, platform: nil)
-        @client_identifier = client_identifier
-        @created_at = created_at
-        @id = id
-        @name = name
-        @platform = platform
-      end
+        field :client_identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('clientIdentifier') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @client_identifier == other.client_identifier
-        return false unless @created_at == other.created_at
-        return false unless @id == other.id
-        return false unless @name == other.name
-        return false unless @platform == other.platform
-        true
+        field :created_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('createdAt') } }
+
+        field :id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+
+        field :name, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('name') } }
+
+        field :platform, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('platform') } }
+
+
+        sig { params(client_identifier: T.nilable(::String), created_at: T.nilable(::Integer), id: T.nilable(::Integer), name: T.nilable(::String), platform: T.nilable(::String)).void }
+        def initialize(client_identifier: nil, created_at: nil, id: nil, name: nil, platform: nil)
+          @client_identifier = client_identifier
+          @created_at = created_at
+          @id = id
+          @name = name
+          @platform = platform
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @client_identifier == other.client_identifier
+          return false unless @created_at == other.created_at
+          return false unless @id == other.id
+          return false unless @name == other.name
+          return false unless @platform == other.platform
+          true
+        end
       end
     end
   end

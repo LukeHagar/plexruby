@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # The display tag for the similar item, typically the title.
-    class Similar < ::Crystalline::FieldAugmented
-      extend T::Sig
+  module Models
+    module Operations
+    
+      # The display tag for the similar item, typically the title.
+      class Similar
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
+        field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
 
-      field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+        field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
 
-      field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+        field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
 
-      sig { params(filter: ::String, id: ::Integer, tag: ::String).void }
-      def initialize(filter: nil, id: nil, tag: nil)
-        @filter = filter
-        @id = id
-        @tag = tag
-      end
+        sig { params(filter: ::String, id: ::Integer, tag: ::String).void }
+        def initialize(filter: nil, id: nil, tag: nil)
+          @filter = filter
+          @id = id
+          @tag = tag
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @filter == other.filter
-        return false unless @id == other.id
-        return false unless @tag == other.tag
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @filter == other.filter
+          return false unless @id == other.id
+          return false unless @tag == other.tag
+          true
+        end
       end
     end
   end

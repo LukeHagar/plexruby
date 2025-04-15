@@ -5,81 +5,84 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class Player < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :address, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('address') } }
-
-      field :local, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('local') } }
-
-      field :machine_identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('machineIdentifier') } }
-
-      field :model, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('model') } }
-
-      field :platform, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('platform') } }
-
-      field :platform_version, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('platformVersion') } }
-
-      field :product, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('product') } }
-
-      field :profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('profile') } }
-
-      field :relayed, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('relayed') } }
-
-      field :remote_public_address, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('remotePublicAddress') } }
-
-      field :secure, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('secure') } }
-
-      field :state, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('state') } }
-
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-
-      field :user_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('userID') } }
-
-      field :version, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('version') } }
+      class Player
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(address: T.nilable(::String), local: T.nilable(T::Boolean), machine_identifier: T.nilable(::String), model: T.nilable(::String), platform: T.nilable(::String), platform_version: T.nilable(::String), product: T.nilable(::String), profile: T.nilable(::String), relayed: T.nilable(T::Boolean), remote_public_address: T.nilable(::String), secure: T.nilable(T::Boolean), state: T.nilable(::String), title: T.nilable(::String), user_id: T.nilable(::Integer), version: T.nilable(::String)).void }
-      def initialize(address: nil, local: nil, machine_identifier: nil, model: nil, platform: nil, platform_version: nil, product: nil, profile: nil, relayed: nil, remote_public_address: nil, secure: nil, state: nil, title: nil, user_id: nil, version: nil)
-        @address = address
-        @local = local
-        @machine_identifier = machine_identifier
-        @model = model
-        @platform = platform
-        @platform_version = platform_version
-        @product = product
-        @profile = profile
-        @relayed = relayed
-        @remote_public_address = remote_public_address
-        @secure = secure
-        @state = state
-        @title = title
-        @user_id = user_id
-        @version = version
-      end
+        field :address, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('address') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @address == other.address
-        return false unless @local == other.local
-        return false unless @machine_identifier == other.machine_identifier
-        return false unless @model == other.model
-        return false unless @platform == other.platform
-        return false unless @platform_version == other.platform_version
-        return false unless @product == other.product
-        return false unless @profile == other.profile
-        return false unless @relayed == other.relayed
-        return false unless @remote_public_address == other.remote_public_address
-        return false unless @secure == other.secure
-        return false unless @state == other.state
-        return false unless @title == other.title
-        return false unless @user_id == other.user_id
-        return false unless @version == other.version
-        true
+        field :local, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('local') } }
+
+        field :machine_identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('machineIdentifier') } }
+
+        field :model, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('model') } }
+
+        field :platform, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('platform') } }
+
+        field :platform_version, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('platformVersion') } }
+
+        field :product, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('product') } }
+
+        field :profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('profile') } }
+
+        field :relayed, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('relayed') } }
+
+        field :remote_public_address, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('remotePublicAddress') } }
+
+        field :secure, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('secure') } }
+
+        field :state, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('state') } }
+
+        field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+        field :user_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('userID') } }
+
+        field :version, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('version') } }
+
+
+        sig { params(address: T.nilable(::String), local: T.nilable(T::Boolean), machine_identifier: T.nilable(::String), model: T.nilable(::String), platform: T.nilable(::String), platform_version: T.nilable(::String), product: T.nilable(::String), profile: T.nilable(::String), relayed: T.nilable(T::Boolean), remote_public_address: T.nilable(::String), secure: T.nilable(T::Boolean), state: T.nilable(::String), title: T.nilable(::String), user_id: T.nilable(::Integer), version: T.nilable(::String)).void }
+        def initialize(address: nil, local: nil, machine_identifier: nil, model: nil, platform: nil, platform_version: nil, product: nil, profile: nil, relayed: nil, remote_public_address: nil, secure: nil, state: nil, title: nil, user_id: nil, version: nil)
+          @address = address
+          @local = local
+          @machine_identifier = machine_identifier
+          @model = model
+          @platform = platform
+          @platform_version = platform_version
+          @product = product
+          @profile = profile
+          @relayed = relayed
+          @remote_public_address = remote_public_address
+          @secure = secure
+          @state = state
+          @title = title
+          @user_id = user_id
+          @version = version
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @address == other.address
+          return false unless @local == other.local
+          return false unless @machine_identifier == other.machine_identifier
+          return false unless @model == other.model
+          return false unless @platform == other.platform
+          return false unless @platform_version == other.platform_version
+          return false unless @product == other.product
+          return false unless @profile == other.profile
+          return false unless @relayed == other.relayed
+          return false unless @remote_public_address == other.remote_public_address
+          return false unless @secure == other.secure
+          return false unless @state == other.state
+          return false unless @title == other.title
+          return false unless @user_id == other.user_id
+          return false unless @version == other.version
+          true
+        end
       end
     end
   end

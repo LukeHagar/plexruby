@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetMediaMetaDataSimilar < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetMediaMetaDataSimilar
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The filter string for similar items.
-      field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
-      # The unique similar item identifier.
-      field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-      # The tag or title of the similar content.
-      field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+        # The filter string for similar items.
+        field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
+        # The unique similar item identifier.
+        field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+        # The tag or title of the similar content.
+        field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
 
-      sig { params(filter: ::String, id: ::Integer, tag: ::String).void }
-      def initialize(filter: nil, id: nil, tag: nil)
-        @filter = filter
-        @id = id
-        @tag = tag
-      end
+        sig { params(filter: ::String, id: ::Integer, tag: ::String).void }
+        def initialize(filter: nil, id: nil, tag: nil)
+          @filter = filter
+          @id = id
+          @tag = tag
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @filter == other.filter
-        return false unless @id == other.id
-        return false unless @tag == other.tag
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @filter == other.filter
+          return false unless @id == other.id
+          return false unless @tag == other.tag
+          true
+        end
       end
     end
   end

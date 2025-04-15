@@ -5,45 +5,48 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetServerListServer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :address, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('address') } }
-
-      field :host, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('host') } }
-
-      field :machine_identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('machineIdentifier') } }
-
-      field :name, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('name') } }
-
-      field :port, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('port') } }
-
-      field :version, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('version') } }
+      class GetServerListServer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(address: T.nilable(::String), host: T.nilable(::String), machine_identifier: T.nilable(::String), name: T.nilable(::String), port: T.nilable(::Float), version: T.nilable(::String)).void }
-      def initialize(address: nil, host: nil, machine_identifier: nil, name: nil, port: nil, version: nil)
-        @address = address
-        @host = host
-        @machine_identifier = machine_identifier
-        @name = name
-        @port = port
-        @version = version
-      end
+        field :address, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('address') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @address == other.address
-        return false unless @host == other.host
-        return false unless @machine_identifier == other.machine_identifier
-        return false unless @name == other.name
-        return false unless @port == other.port
-        return false unless @version == other.version
-        true
+        field :host, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('host') } }
+
+        field :machine_identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('machineIdentifier') } }
+
+        field :name, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('name') } }
+
+        field :port, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('port') } }
+
+        field :version, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('version') } }
+
+
+        sig { params(address: T.nilable(::String), host: T.nilable(::String), machine_identifier: T.nilable(::String), name: T.nilable(::String), port: T.nilable(::Float), version: T.nilable(::String)).void }
+        def initialize(address: nil, host: nil, machine_identifier: nil, name: nil, port: nil, version: nil)
+          @address = address
+          @host = host
+          @machine_identifier = machine_identifier
+          @name = name
+          @port = port
+          @version = version
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @address == other.address
+          return false unless @host == other.host
+          return false unless @machine_identifier == other.machine_identifier
+          return false unless @name == other.name
+          return false unless @port == other.port
+          return false unless @version == other.version
+          true
+        end
       end
     end
   end

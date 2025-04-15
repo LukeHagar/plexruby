@@ -5,72 +5,75 @@
 
 
 module PlexRubySDK
-  module Operations
-    FRIEND_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
+  module Models
+    module Operations
+      FRIEND_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
 
-    class Friend < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class Friend
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The account email address
-      field :email, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('email') } }
-      # The account full name
-      field :friendly_name, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('friendlyName') } }
-      # If the account is a Plex Home user
-      field :home, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('home') } }
-      # The Plex account ID
-      field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-      # If the account is a Plex Home managed user
-      field :restricted, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('restricted') } }
+        # The account email address
+        field :email, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('email') } }
+        # The account full name
+        field :friendly_name, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('friendlyName') } }
+        # If the account is a Plex Home user
+        field :home, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('home') } }
+        # The Plex account ID
+        field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+        # If the account is a Plex Home managed user
+        field :restricted, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('restricted') } }
 
-      field :shared_servers, T::Array[::PlexRubySDK::Operations::SharedServers], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('sharedServers') } }
+        field :shared_servers, T::Array[Models::Operations::SharedServers], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('sharedServers') } }
 
-      field :shared_sources, T::Array[::PlexRubySDK::Operations::SharedSources], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('sharedSources') } }
-      # Current friend request status
-      field :status, ::PlexRubySDK::Operations::Status, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('status'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::Status, false) } }
-      # URL of the account thumbnail
-      field :thumb, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
-      # The title of the account (username or friendly name)
-      field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-      # The account username
-      field :username, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('username') } }
-      # The account Universally Unique Identifier (UUID)
-      field :uuid, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('uuid') } }
+        field :shared_sources, T::Array[Models::Operations::SharedSources], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('sharedSources') } }
+        # Current friend request status
+        field :status, Models::Operations::Status, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('status'), 'decoder': Utils.enum_from_string(Models::Operations::Status, false) } }
+        # URL of the account thumbnail
+        field :thumb, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
+        # The title of the account (username or friendly name)
+        field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+        # The account username
+        field :username, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('username') } }
+        # The account Universally Unique Identifier (UUID)
+        field :uuid, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('uuid') } }
 
 
-      sig { params(email: ::String, friendly_name: ::String, home: T::Boolean, id: ::Integer, restricted: T::Boolean, shared_servers: T::Array[::PlexRubySDK::Operations::SharedServers], shared_sources: T::Array[::PlexRubySDK::Operations::SharedSources], status: ::PlexRubySDK::Operations::Status, thumb: ::String, title: ::String, username: ::String, uuid: ::String).void }
-      def initialize(email: nil, friendly_name: nil, home: nil, id: nil, restricted: nil, shared_servers: nil, shared_sources: nil, status: nil, thumb: nil, title: nil, username: nil, uuid: nil)
-        @email = email
-        @friendly_name = friendly_name
-        @home = home
-        @id = id
-        @restricted = restricted
-        @shared_servers = shared_servers
-        @shared_sources = shared_sources
-        @status = status
-        @thumb = thumb
-        @title = title
-        @username = username
-        @uuid = uuid
-      end
+        sig { params(email: ::String, friendly_name: ::String, home: T::Boolean, id: ::Integer, restricted: T::Boolean, shared_servers: T::Array[Models::Operations::SharedServers], shared_sources: T::Array[Models::Operations::SharedSources], status: Models::Operations::Status, thumb: ::String, title: ::String, username: ::String, uuid: ::String).void }
+        def initialize(email: nil, friendly_name: nil, home: nil, id: nil, restricted: nil, shared_servers: nil, shared_sources: nil, status: nil, thumb: nil, title: nil, username: nil, uuid: nil)
+          @email = email
+          @friendly_name = friendly_name
+          @home = home
+          @id = id
+          @restricted = restricted
+          @shared_servers = shared_servers
+          @shared_sources = shared_sources
+          @status = status
+          @thumb = thumb
+          @title = title
+          @username = username
+          @uuid = uuid
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @email == other.email
-        return false unless @friendly_name == other.friendly_name
-        return false unless @home == other.home
-        return false unless @id == other.id
-        return false unless @restricted == other.restricted
-        return false unless @shared_servers == other.shared_servers
-        return false unless @shared_sources == other.shared_sources
-        return false unless @status == other.status
-        return false unless @thumb == other.thumb
-        return false unless @title == other.title
-        return false unless @username == other.username
-        return false unless @uuid == other.uuid
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @email == other.email
+          return false unless @friendly_name == other.friendly_name
+          return false unless @home == other.home
+          return false unless @id == other.id
+          return false unless @restricted == other.restricted
+          return false unless @shared_servers == other.shared_servers
+          return false unless @shared_sources == other.shared_sources
+          return false unless @status == other.status
+          return false unless @thumb == other.thumb
+          return false unless @title == other.title
+          return false unless @username == other.username
+          return false unless @uuid == other.uuid
+          true
+        end
       end
     end
   end

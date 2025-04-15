@@ -5,41 +5,44 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetLibraryDetailsDirectory < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :prompt, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('prompt') } }
-
-      field :search, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('search') } }
-
-      field :secondary, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('secondary') } }
-
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+      class GetLibraryDetailsDirectory
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(key: T.nilable(::String), prompt: T.nilable(::String), search: T.nilable(T::Boolean), secondary: T.nilable(T::Boolean), title: T.nilable(::String)).void }
-      def initialize(key: nil, prompt: nil, search: nil, secondary: nil, title: nil)
-        @key = key
-        @prompt = prompt
-        @search = search
-        @secondary = secondary
-        @title = title
-      end
+        field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @key == other.key
-        return false unless @prompt == other.prompt
-        return false unless @search == other.search
-        return false unless @secondary == other.secondary
-        return false unless @title == other.title
-        true
+        field :prompt, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('prompt') } }
+
+        field :search, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('search') } }
+
+        field :secondary, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('secondary') } }
+
+        field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+
+        sig { params(key: T.nilable(::String), prompt: T.nilable(::String), search: T.nilable(T::Boolean), secondary: T.nilable(T::Boolean), title: T.nilable(::String)).void }
+        def initialize(key: nil, prompt: nil, search: nil, secondary: nil, title: nil)
+          @key = key
+          @prompt = prompt
+          @search = search
+          @secondary = secondary
+          @title = title
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @key == other.key
+          return false unless @prompt == other.prompt
+          return false unless @search == other.search
+          return false unless @secondary == other.secondary
+          return false unless @title == other.title
+          true
+        end
       end
     end
   end

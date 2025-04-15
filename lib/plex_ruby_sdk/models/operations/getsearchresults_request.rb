@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetSearchResultsRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetSearchResultsRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The search query string to use
-      field :query, ::String, { 'query_param': { 'field_name': 'query', 'style': 'form', 'explode': true } }
+        # The search query string to use
+        field :query, ::String, { 'query_param': { 'field_name': 'query', 'style': 'form', 'explode': true } }
 
 
-      sig { params(query: ::String).void }
-      def initialize(query: nil)
-        @query = query
-      end
+        sig { params(query: ::String).void }
+        def initialize(query: nil)
+          @query = query
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @query == other.query
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @query == other.query
+          true
+        end
       end
     end
   end

@@ -5,49 +5,52 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class Feature < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
-
-      field :action, T.nilable(T::Array[::PlexRubySDK::Operations::Action]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Action') } }
-
-      field :directory, T.nilable(T::Array[::PlexRubySDK::Operations::GetMediaProvidersDirectory]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
-
-      field :flavor, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('flavor') } }
-
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :scrobble_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('scrobbleKey') } }
-
-      field :unscrobble_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('unscrobbleKey') } }
+      class Feature
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(type: ::String, action: T.nilable(T::Array[::PlexRubySDK::Operations::Action]), directory: T.nilable(T::Array[::PlexRubySDK::Operations::GetMediaProvidersDirectory]), flavor: T.nilable(::String), key: T.nilable(::String), scrobble_key: T.nilable(::String), unscrobble_key: T.nilable(::String)).void }
-      def initialize(type: nil, action: nil, directory: nil, flavor: nil, key: nil, scrobble_key: nil, unscrobble_key: nil)
-        @type = type
-        @action = action
-        @directory = directory
-        @flavor = flavor
-        @key = key
-        @scrobble_key = scrobble_key
-        @unscrobble_key = unscrobble_key
-      end
+        field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @type == other.type
-        return false unless @action == other.action
-        return false unless @directory == other.directory
-        return false unless @flavor == other.flavor
-        return false unless @key == other.key
-        return false unless @scrobble_key == other.scrobble_key
-        return false unless @unscrobble_key == other.unscrobble_key
-        true
+        field :action, T.nilable(T::Array[Models::Operations::Action]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Action') } }
+
+        field :directory, T.nilable(T::Array[Models::Operations::GetMediaProvidersDirectory]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
+
+        field :flavor, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('flavor') } }
+
+        field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+        field :scrobble_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('scrobbleKey') } }
+
+        field :unscrobble_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('unscrobbleKey') } }
+
+
+        sig { params(type: ::String, action: T.nilable(T::Array[Models::Operations::Action]), directory: T.nilable(T::Array[Models::Operations::GetMediaProvidersDirectory]), flavor: T.nilable(::String), key: T.nilable(::String), scrobble_key: T.nilable(::String), unscrobble_key: T.nilable(::String)).void }
+        def initialize(type: nil, action: nil, directory: nil, flavor: nil, key: nil, scrobble_key: nil, unscrobble_key: nil)
+          @type = type
+          @action = action
+          @directory = directory
+          @flavor = flavor
+          @key = key
+          @scrobble_key = scrobble_key
+          @unscrobble_key = unscrobble_key
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @type == other.type
+          return false unless @action == other.action
+          return false unless @directory == other.directory
+          return false unless @flavor == other.flavor
+          return false unless @key == other.key
+          return false unless @scrobble_key == other.scrobble_key
+          return false unless @unscrobble_key == other.unscrobble_key
+          true
+        end
       end
     end
   end

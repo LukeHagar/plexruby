@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # A successful response with recently added content.
-    class GetRecentlyAddedResponseBody < ::Crystalline::FieldAugmented
-      extend T::Sig
+  module Models
+    module Operations
+    
+      # A successful response with recently added content.
+      class GetRecentlyAddedResponseBody
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      field :media_container, T.nilable(::PlexRubySDK::Operations::GetRecentlyAddedMediaContainer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('MediaContainer') } }
+        field :media_container, T.nilable(Models::Operations::GetRecentlyAddedMediaContainer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('MediaContainer') } }
 
 
-      sig { params(media_container: T.nilable(::PlexRubySDK::Operations::GetRecentlyAddedMediaContainer)).void }
-      def initialize(media_container: nil)
-        @media_container = media_container
-      end
+        sig { params(media_container: T.nilable(Models::Operations::GetRecentlyAddedMediaContainer)).void }
+        def initialize(media_container: nil)
+          @media_container = media_container
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @media_container == other.media_container
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @media_container == other.media_container
+          true
+        end
       end
     end
   end

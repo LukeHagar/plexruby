@@ -5,52 +5,55 @@
 
 
 module PlexRubySDK
-  module Operations
-    GET_WATCH_LIST_RESPONSE_BODY_SERVERS = [
-      'https://metadata.provider.plex.tv'
-    ].freeze
-  
-    # Watchlist Data
-    class GetWatchListResponseBody < ::Crystalline::FieldAugmented
-      extend T::Sig
+  module Models
+    module Operations
+      GET_WATCH_LIST_RESPONSE_BODY_SERVERS = [
+        'https://metadata.provider.plex.tv'
+      ].freeze
+    
+      # Watchlist Data
+      class GetWatchListResponseBody
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
+        field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
 
-      field :library_section_id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
+        field :library_section_id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
 
-      field :library_section_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionTitle') } }
+        field :library_section_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionTitle') } }
 
-      field :metadata, T.nilable(T::Array[::PlexRubySDK::Operations::Metadata]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
+        field :metadata, T.nilable(T::Array[Models::Operations::Metadata]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
 
-      field :offset, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('offset') } }
+        field :offset, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('offset') } }
 
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
 
-      field :total_size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('totalSize') } }
+        field :total_size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('totalSize') } }
 
 
-      sig { params(identifier: T.nilable(::String), library_section_id: T.nilable(::String), library_section_title: T.nilable(::String), metadata: T.nilable(T::Array[::PlexRubySDK::Operations::Metadata]), offset: T.nilable(::Integer), size: T.nilable(::Integer), total_size: T.nilable(::Integer)).void }
-      def initialize(identifier: nil, library_section_id: nil, library_section_title: nil, metadata: nil, offset: nil, size: nil, total_size: nil)
-        @identifier = identifier
-        @library_section_id = library_section_id
-        @library_section_title = library_section_title
-        @metadata = metadata
-        @offset = offset
-        @size = size
-        @total_size = total_size
-      end
+        sig { params(identifier: T.nilable(::String), library_section_id: T.nilable(::String), library_section_title: T.nilable(::String), metadata: T.nilable(T::Array[Models::Operations::Metadata]), offset: T.nilable(::Integer), size: T.nilable(::Integer), total_size: T.nilable(::Integer)).void }
+        def initialize(identifier: nil, library_section_id: nil, library_section_title: nil, metadata: nil, offset: nil, size: nil, total_size: nil)
+          @identifier = identifier
+          @library_section_id = library_section_id
+          @library_section_title = library_section_title
+          @metadata = metadata
+          @offset = offset
+          @size = size
+          @total_size = total_size
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @identifier == other.identifier
-        return false unless @library_section_id == other.library_section_id
-        return false unless @library_section_title == other.library_section_title
-        return false unless @metadata == other.metadata
-        return false unless @offset == other.offset
-        return false unless @size == other.size
-        return false unless @total_size == other.total_size
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @identifier == other.identifier
+          return false unless @library_section_id == other.library_section_id
+          return false unless @library_section_title == other.library_section_title
+          return false unless @metadata == other.metadata
+          return false unless @offset == other.offset
+          return false unless @size == other.size
+          return false unless @total_size == other.total_size
+          true
+        end
       end
     end
   end

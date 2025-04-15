@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # The filter query string for country media items.
-    class Country < ::Crystalline::FieldAugmented
-      extend T::Sig
+  module Models
+    module Operations
+    
+      # The filter query string for country media items.
+      class Country
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-      # The country of origin of this media item
-      field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+        field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+        # The country of origin of this media item
+        field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
-      field :filter, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
+        field :filter, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
 
 
-      sig { params(id: ::Integer, tag: ::String, filter: T.nilable(::String)).void }
-      def initialize(id: nil, tag: nil, filter: nil)
-        @id = id
-        @tag = tag
-        @filter = filter
-      end
+        sig { params(id: ::Integer, tag: ::String, filter: T.nilable(::String)).void }
+        def initialize(id: nil, tag: nil, filter: nil)
+          @id = id
+          @tag = tag
+          @filter = filter
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @id == other.id
-        return false unless @tag == other.tag
-        return false unless @filter == other.filter
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @id == other.id
+          return false unless @tag == other.tag
+          return false unless @filter == other.filter
+          true
+        end
       end
     end
   end

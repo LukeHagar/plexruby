@@ -5,17 +5,19 @@
 
 
 module PlexRubySDK
-  module Operations
-    FILTER_SERVERS = [
-      'https://metadata.provider.plex.tv'
-    ].freeze
-  
-    # Filter - Filter
-    class Filter < T::Enum
-      enums do
-        ALL = new('all')
-        AVAILABLE = new('available')
-        RELEASED = new('released')
+  module Models
+    module Operations
+      FILTER_SERVERS = [
+        'https://metadata.provider.plex.tv'
+      ].freeze
+    
+      # Filter - Filter
+      class Filter < T::Enum
+        enums do
+          ALL = new('all')
+          AVAILABLE = new('available')
+          RELEASED = new('released')
+        end
       end
     end
   end

@@ -5,45 +5,48 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class StatisticsResources < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('at') } }
-
-      field :host_cpu_utilization, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hostCpuUtilization') } }
-
-      field :host_memory_utilization, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hostMemoryUtilization') } }
-
-      field :process_cpu_utilization, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('processCpuUtilization') } }
-
-      field :process_memory_utilization, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('processMemoryUtilization') } }
-
-      field :timespan, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('timespan') } }
+      class StatisticsResources
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(at: T.nilable(::Integer), host_cpu_utilization: T.nilable(::Float), host_memory_utilization: T.nilable(::Float), process_cpu_utilization: T.nilable(::Float), process_memory_utilization: T.nilable(::Float), timespan: T.nilable(::Integer)).void }
-      def initialize(at: nil, host_cpu_utilization: nil, host_memory_utilization: nil, process_cpu_utilization: nil, process_memory_utilization: nil, timespan: nil)
-        @at = at
-        @host_cpu_utilization = host_cpu_utilization
-        @host_memory_utilization = host_memory_utilization
-        @process_cpu_utilization = process_cpu_utilization
-        @process_memory_utilization = process_memory_utilization
-        @timespan = timespan
-      end
+        field :at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('at') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @at == other.at
-        return false unless @host_cpu_utilization == other.host_cpu_utilization
-        return false unless @host_memory_utilization == other.host_memory_utilization
-        return false unless @process_cpu_utilization == other.process_cpu_utilization
-        return false unless @process_memory_utilization == other.process_memory_utilization
-        return false unless @timespan == other.timespan
-        true
+        field :host_cpu_utilization, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hostCpuUtilization') } }
+
+        field :host_memory_utilization, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hostMemoryUtilization') } }
+
+        field :process_cpu_utilization, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('processCpuUtilization') } }
+
+        field :process_memory_utilization, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('processMemoryUtilization') } }
+
+        field :timespan, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('timespan') } }
+
+
+        sig { params(at: T.nilable(::Integer), host_cpu_utilization: T.nilable(::Float), host_memory_utilization: T.nilable(::Float), process_cpu_utilization: T.nilable(::Float), process_memory_utilization: T.nilable(::Float), timespan: T.nilable(::Integer)).void }
+        def initialize(at: nil, host_cpu_utilization: nil, host_memory_utilization: nil, process_cpu_utilization: nil, process_memory_utilization: nil, timespan: nil)
+          @at = at
+          @host_cpu_utilization = host_cpu_utilization
+          @host_memory_utilization = host_memory_utilization
+          @process_cpu_utilization = process_cpu_utilization
+          @process_memory_utilization = process_memory_utilization
+          @timespan = timespan
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @at == other.at
+          return false unless @host_cpu_utilization == other.host_cpu_utilization
+          return false unless @host_memory_utilization == other.host_memory_utilization
+          return false unless @process_cpu_utilization == other.process_cpu_utilization
+          return false unless @process_memory_utilization == other.process_memory_utilization
+          return false unless @timespan == other.timespan
+          true
+        end
       end
     end
   end

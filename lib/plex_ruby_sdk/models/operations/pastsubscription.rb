@@ -5,84 +5,87 @@
 
 
 module PlexRubySDK
-  module Operations
-    PAST_SUBSCRIPTION_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
+  module Models
+    module Operations
+      PAST_SUBSCRIPTION_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
 
-    class PastSubscription < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :billing, ::PlexRubySDK::Operations::Billing, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('billing') } }
-
-      field :canceled, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('canceled') } }
-
-      field :can_convert, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('canConvert') } }
-
-      field :can_downgrade, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('canDowngrade') } }
-
-      field :can_reactivate, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('canReactivate') } }
-
-      field :can_upgrade, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('canUpgrade') } }
-
-      field :ends_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('endsAt') } }
-
-      field :grace_period, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('gracePeriod') } }
-
-      field :id, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-
-      field :mode, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mode') } }
-
-      field :on_hold, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('onHold') } }
-
-      field :renews_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('renewsAt') } }
-
-      field :state, ::PlexRubySDK::Operations::PostUsersSignInDataState, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('state'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::PostUsersSignInDataState, false) } }
-
-      field :transfer, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transfer') } }
-
-      field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+      class PastSubscription
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(billing: ::PlexRubySDK::Operations::Billing, canceled: T::Boolean, can_convert: T::Boolean, can_downgrade: T::Boolean, can_reactivate: T::Boolean, can_upgrade: T::Boolean, ends_at: ::Integer, grace_period: T::Boolean, id: ::String, mode: ::String, on_hold: T::Boolean, renews_at: ::Integer, state: ::PlexRubySDK::Operations::PostUsersSignInDataState, transfer: ::String, type: ::String).void }
-      def initialize(billing: nil, canceled: nil, can_convert: nil, can_downgrade: nil, can_reactivate: nil, can_upgrade: nil, ends_at: nil, grace_period: nil, id: nil, mode: nil, on_hold: nil, renews_at: nil, state: nil, transfer: nil, type: nil)
-        @billing = billing
-        @canceled = canceled
-        @can_convert = can_convert
-        @can_downgrade = can_downgrade
-        @can_reactivate = can_reactivate
-        @can_upgrade = can_upgrade
-        @ends_at = ends_at
-        @grace_period = grace_period
-        @id = id
-        @mode = mode
-        @on_hold = on_hold
-        @renews_at = renews_at
-        @state = state
-        @transfer = transfer
-        @type = type
-      end
+        field :billing, Models::Operations::Billing, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('billing') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @billing == other.billing
-        return false unless @canceled == other.canceled
-        return false unless @can_convert == other.can_convert
-        return false unless @can_downgrade == other.can_downgrade
-        return false unless @can_reactivate == other.can_reactivate
-        return false unless @can_upgrade == other.can_upgrade
-        return false unless @ends_at == other.ends_at
-        return false unless @grace_period == other.grace_period
-        return false unless @id == other.id
-        return false unless @mode == other.mode
-        return false unless @on_hold == other.on_hold
-        return false unless @renews_at == other.renews_at
-        return false unless @state == other.state
-        return false unless @transfer == other.transfer
-        return false unless @type == other.type
-        true
+        field :canceled, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('canceled') } }
+
+        field :can_convert, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('canConvert') } }
+
+        field :can_downgrade, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('canDowngrade') } }
+
+        field :can_reactivate, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('canReactivate') } }
+
+        field :can_upgrade, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('canUpgrade') } }
+
+        field :ends_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('endsAt') } }
+
+        field :grace_period, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('gracePeriod') } }
+
+        field :id, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+
+        field :mode, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mode') } }
+
+        field :on_hold, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('onHold') } }
+
+        field :renews_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('renewsAt') } }
+
+        field :state, Models::Operations::PostUsersSignInDataState, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('state'), 'decoder': Utils.enum_from_string(Models::Operations::PostUsersSignInDataState, false) } }
+
+        field :transfer, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('transfer') } }
+
+        field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+
+
+        sig { params(billing: Models::Operations::Billing, canceled: T::Boolean, can_convert: T::Boolean, can_downgrade: T::Boolean, can_reactivate: T::Boolean, can_upgrade: T::Boolean, ends_at: ::Integer, grace_period: T::Boolean, id: ::String, mode: ::String, on_hold: T::Boolean, renews_at: ::Integer, state: Models::Operations::PostUsersSignInDataState, transfer: ::String, type: ::String).void }
+        def initialize(billing: nil, canceled: nil, can_convert: nil, can_downgrade: nil, can_reactivate: nil, can_upgrade: nil, ends_at: nil, grace_period: nil, id: nil, mode: nil, on_hold: nil, renews_at: nil, state: nil, transfer: nil, type: nil)
+          @billing = billing
+          @canceled = canceled
+          @can_convert = can_convert
+          @can_downgrade = can_downgrade
+          @can_reactivate = can_reactivate
+          @can_upgrade = can_upgrade
+          @ends_at = ends_at
+          @grace_period = grace_period
+          @id = id
+          @mode = mode
+          @on_hold = on_hold
+          @renews_at = renews_at
+          @state = state
+          @transfer = transfer
+          @type = type
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @billing == other.billing
+          return false unless @canceled == other.canceled
+          return false unless @can_convert == other.can_convert
+          return false unless @can_downgrade == other.can_downgrade
+          return false unless @can_reactivate == other.can_reactivate
+          return false unless @can_upgrade == other.can_upgrade
+          return false unless @ends_at == other.ends_at
+          return false unless @grace_period == other.grace_period
+          return false unless @id == other.id
+          return false unless @mode == other.mode
+          return false unless @on_hold == other.on_hold
+          return false unless @renews_at == other.renews_at
+          return false unless @state == other.state
+          return false unless @transfer == other.transfer
+          return false unless @type == other.type
+          true
+        end
       end
     end
   end

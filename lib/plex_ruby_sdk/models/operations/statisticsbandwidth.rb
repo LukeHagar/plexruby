@@ -5,45 +5,48 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class StatisticsBandwidth < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :account_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('accountID') } }
-
-      field :at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('at') } }
-
-      field :bytes, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('bytes') } }
-
-      field :device_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('deviceID') } }
-
-      field :lan, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('lan') } }
-
-      field :timespan, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('timespan') } }
+      class StatisticsBandwidth
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(account_id: T.nilable(::Integer), at: T.nilable(::Integer), bytes: T.nilable(::Integer), device_id: T.nilable(::Integer), lan: T.nilable(T::Boolean), timespan: T.nilable(::Integer)).void }
-      def initialize(account_id: nil, at: nil, bytes: nil, device_id: nil, lan: nil, timespan: nil)
-        @account_id = account_id
-        @at = at
-        @bytes = bytes
-        @device_id = device_id
-        @lan = lan
-        @timespan = timespan
-      end
+        field :account_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('accountID') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @account_id == other.account_id
-        return false unless @at == other.at
-        return false unless @bytes == other.bytes
-        return false unless @device_id == other.device_id
-        return false unless @lan == other.lan
-        return false unless @timespan == other.timespan
-        true
+        field :at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('at') } }
+
+        field :bytes, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('bytes') } }
+
+        field :device_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('deviceID') } }
+
+        field :lan, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('lan') } }
+
+        field :timespan, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('timespan') } }
+
+
+        sig { params(account_id: T.nilable(::Integer), at: T.nilable(::Integer), bytes: T.nilable(::Integer), device_id: T.nilable(::Integer), lan: T.nilable(T::Boolean), timespan: T.nilable(::Integer)).void }
+        def initialize(account_id: nil, at: nil, bytes: nil, device_id: nil, lan: nil, timespan: nil)
+          @account_id = account_id
+          @at = at
+          @bytes = bytes
+          @device_id = device_id
+          @lan = lan
+          @timespan = timespan
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @account_id == other.account_id
+          return false unless @at == other.at
+          return false unless @bytes == other.bytes
+          return false unless @device_id == other.device_id
+          return false unless @lan == other.lan
+          return false unless @timespan == other.timespan
+          true
+        end
       end
     end
   end

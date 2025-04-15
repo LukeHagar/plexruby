@@ -20,13 +20,13 @@ Get User Watchlist
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-req = ::PlexRubySDK::Operations::GetWatchListRequest.new(
-  filter: ::PlexRubySDK::Operations::Filter::AVAILABLE,
+req = Models::Operations::GetWatchListRequest.new(
+  filter: Models::Operations::Filter::AVAILABLE,
   x_plex_container_start: 0,
   x_plex_container_size: 50,
   x_plex_token: "CV5xoxjTpFKUzBTShsaf",
@@ -42,12 +42,12 @@ end
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [::PlexRubySDK::Operations::GetWatchListRequest](../../models/operations/getwatchlistrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `server_url`                                                                                     | *String*                                                                                         | :heavy_minus_sign:                                                                               | An optional server URL to use.                                                                   |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [Models::Operations::GetWatchListRequest](../../models/operations/getwatchlistrequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| `server_url`                                                                              | *String*                                                                                  | :heavy_minus_sign:                                                                        | An optional server URL to use.                                                            |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetWatchListResponse)](../../models/operations/getwatchlistresponse.md)**
+**[T.nilable(Models::Operations::GetWatchListResponse)](../../models/operations/getwatchlistresponse.md)**
 

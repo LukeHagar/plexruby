@@ -5,30 +5,33 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # The Meta object is only included in the response if the `includeMeta` parameter is set to `1`.
-    # 
-    class GetLibraryItemsMeta < ::Crystalline::FieldAugmented
-      extend T::Sig
+  module Models
+    module Operations
+    
+      # The Meta object is only included in the response if the `includeMeta` parameter is set to `1`.
+      # 
+      class GetLibraryItemsMeta
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      field :field_type, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsLibraryFieldType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('FieldType') } }
+        field :field_type, T.nilable(T::Array[Models::Operations::GetLibraryItemsLibraryFieldType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('FieldType') } }
 
-      field :type, T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsLibraryResponseType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Type') } }
+        field :type, T.nilable(T::Array[Models::Operations::GetLibraryItemsLibraryResponseType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Type') } }
 
 
-      sig { params(field_type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsLibraryFieldType]), type: T.nilable(T::Array[::PlexRubySDK::Operations::GetLibraryItemsLibraryResponseType])).void }
-      def initialize(field_type: nil, type: nil)
-        @field_type = field_type
-        @type = type
-      end
+        sig { params(field_type: T.nilable(T::Array[Models::Operations::GetLibraryItemsLibraryFieldType]), type: T.nilable(T::Array[Models::Operations::GetLibraryItemsLibraryResponseType])).void }
+        def initialize(field_type: nil, type: nil)
+          @field_type = field_type
+          @type = type
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @field_type == other.field_type
-        return false unless @type == other.type
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @field_type == other.field_type
+          return false unless @type == other.type
+          true
+        end
       end
     end
   end

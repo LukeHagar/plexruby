@@ -5,23 +5,26 @@
 
 
 module PlexRubySDK
-  module Operations
-    SHARED_SERVERS_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
+  module Models
+    module Operations
+      SHARED_SERVERS_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
 
-    class SharedServers < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class SharedServers
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
 
-      
-      def initialize; end
+        
+        def initialize; end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          true
+        end
       end
     end
   end

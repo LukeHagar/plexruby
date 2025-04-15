@@ -5,14 +5,16 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # GetSearchAllLibrariesEpisodeSort - Setting that indicates how episodes are sorted for the show. (-1 = Library default, 0 = Oldest first, 1 = Newest first).
-    class GetSearchAllLibrariesEpisodeSort < T::Enum
-      enums do
-        LIBRARY_DEFAULT = new('-1')
-        OLDEST_FIRST = new('0')
-        NEWEST_FIRST = new('1')
+  module Models
+    module Operations
+    
+      # GetSearchAllLibrariesEpisodeSort - Setting that indicates how episodes are sorted for the show. (-1 = Library default, 0 = Oldest first, 1 = Newest first).
+      class GetSearchAllLibrariesEpisodeSort < T::Enum
+        enums do
+          LIBRARY_DEFAULT = new('-1')
+          OLDEST_FIRST = new('0')
+          NEWEST_FIRST = new('1')
+        end
       end
     end
   end

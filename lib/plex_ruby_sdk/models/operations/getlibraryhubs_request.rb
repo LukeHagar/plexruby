@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetLibraryHubsRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetLibraryHubsRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # the Id of the library to query
-      field :section_id, ::Float, { 'path_param': { 'field_name': 'sectionId', 'style': 'simple', 'explode': false } }
-      # The number of items to return with each hub.
-      field :count, T.nilable(::Float), { 'query_param': { 'field_name': 'count', 'style': 'form', 'explode': true } }
-      # Only return hubs which are "transient", meaning those which are prone to changing after media playback or addition (e.g. On Deck, or Recently Added).
-      field :only_transient, T.nilable(::PlexRubySDK::Operations::QueryParamOnlyTransient), { 'query_param': { 'field_name': 'onlyTransient', 'style': 'form', 'explode': true } }
+        # the Id of the library to query
+        field :section_id, ::Float, { 'path_param': { 'field_name': 'sectionId', 'style': 'simple', 'explode': false } }
+        # The number of items to return with each hub.
+        field :count, T.nilable(::Float), { 'query_param': { 'field_name': 'count', 'style': 'form', 'explode': true } }
+        # Only return hubs which are "transient", meaning those which are prone to changing after media playback or addition (e.g. On Deck, or Recently Added).
+        field :only_transient, T.nilable(Models::Operations::QueryParamOnlyTransient), { 'query_param': { 'field_name': 'onlyTransient', 'style': 'form', 'explode': true } }
 
 
-      sig { params(section_id: ::Float, count: T.nilable(::Float), only_transient: T.nilable(::PlexRubySDK::Operations::QueryParamOnlyTransient)).void }
-      def initialize(section_id: nil, count: nil, only_transient: nil)
-        @section_id = section_id
-        @count = count
-        @only_transient = only_transient
-      end
+        sig { params(section_id: ::Float, count: T.nilable(::Float), only_transient: T.nilable(Models::Operations::QueryParamOnlyTransient)).void }
+        def initialize(section_id: nil, count: nil, only_transient: nil)
+          @section_id = section_id
+          @count = count
+          @only_transient = only_transient
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @section_id == other.section_id
-        return false unless @count == other.count
-        return false unless @only_transient == other.only_transient
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @section_id == other.section_id
+          return false unless @count == other.count
+          return false unless @only_transient == other.only_transient
+          true
+        end
       end
     end
   end

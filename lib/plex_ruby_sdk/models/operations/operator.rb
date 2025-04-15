@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class Operator < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+      class Operator
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(key: ::String, title: ::String).void }
-      def initialize(key: nil, title: nil)
-        @key = key
-        @title = title
-      end
+        field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @key == other.key
-        return false unless @title == other.title
-        true
+        field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+
+        sig { params(key: ::String, title: ::String).void }
+        def initialize(key: nil, title: nil)
+          @key = key
+          @title = title
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @key == other.key
+          return false unless @title == other.title
+          true
+        end
       end
     end
   end

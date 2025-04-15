@@ -5,53 +5,56 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetSessionsMedia < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :audio_channels, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioChannels') } }
-
-      field :audio_codec, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioCodec') } }
-
-      field :bitrate, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('bitrate') } }
-
-      field :container, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
-
-      field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
-
-      field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-
-      field :part, T.nilable(T::Array[::PlexRubySDK::Operations::GetSessionsPart]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Part') } }
-
-      field :selected, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('selected') } }
+      class GetSessionsMedia
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(audio_channels: T.nilable(::Integer), audio_codec: T.nilable(::String), bitrate: T.nilable(::Integer), container: T.nilable(::String), duration: T.nilable(::Integer), id: T.nilable(::String), part: T.nilable(T::Array[::PlexRubySDK::Operations::GetSessionsPart]), selected: T.nilable(T::Boolean)).void }
-      def initialize(audio_channels: nil, audio_codec: nil, bitrate: nil, container: nil, duration: nil, id: nil, part: nil, selected: nil)
-        @audio_channels = audio_channels
-        @audio_codec = audio_codec
-        @bitrate = bitrate
-        @container = container
-        @duration = duration
-        @id = id
-        @part = part
-        @selected = selected
-      end
+        field :audio_channels, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioChannels') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @audio_channels == other.audio_channels
-        return false unless @audio_codec == other.audio_codec
-        return false unless @bitrate == other.bitrate
-        return false unless @container == other.container
-        return false unless @duration == other.duration
-        return false unless @id == other.id
-        return false unless @part == other.part
-        return false unless @selected == other.selected
-        true
+        field :audio_codec, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioCodec') } }
+
+        field :bitrate, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('bitrate') } }
+
+        field :container, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
+
+        field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
+
+        field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+
+        field :part, T.nilable(T::Array[Models::Operations::GetSessionsPart]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Part') } }
+
+        field :selected, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('selected') } }
+
+
+        sig { params(audio_channels: T.nilable(::Integer), audio_codec: T.nilable(::String), bitrate: T.nilable(::Integer), container: T.nilable(::String), duration: T.nilable(::Integer), id: T.nilable(::String), part: T.nilable(T::Array[Models::Operations::GetSessionsPart]), selected: T.nilable(T::Boolean)).void }
+        def initialize(audio_channels: nil, audio_codec: nil, bitrate: nil, container: nil, duration: nil, id: nil, part: nil, selected: nil)
+          @audio_channels = audio_channels
+          @audio_codec = audio_codec
+          @bitrate = bitrate
+          @container = container
+          @duration = duration
+          @id = id
+          @part = part
+          @selected = selected
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @audio_channels == other.audio_channels
+          return false unless @audio_codec == other.audio_codec
+          return false unless @bitrate == other.bitrate
+          return false unless @container == other.container
+          return false unless @duration == other.duration
+          return false unless @id == other.id
+          return false unless @part == other.part
+          return false unless @selected == other.selected
+          true
+        end
       end
     end
   end

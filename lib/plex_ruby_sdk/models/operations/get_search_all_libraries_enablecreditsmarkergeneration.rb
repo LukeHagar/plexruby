@@ -5,13 +5,15 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # GetSearchAllLibrariesEnableCreditsMarkerGeneration - Setting that indicates if credits markers detection is enabled. (-1 = Library default, 0 = Disabled).
-    class GetSearchAllLibrariesEnableCreditsMarkerGeneration < T::Enum
-      enums do
-        LIBRARY_DEFAULT = new('-1')
-        DISABLED = new('0')
+  module Models
+    module Operations
+    
+      # GetSearchAllLibrariesEnableCreditsMarkerGeneration - Setting that indicates if credits markers detection is enabled. (-1 = Library default, 0 = Disabled).
+      class GetSearchAllLibrariesEnableCreditsMarkerGeneration < T::Enum
+        enums do
+          LIBRARY_DEFAULT = new('-1')
+          DISABLED = new('0')
+        end
       end
     end
   end

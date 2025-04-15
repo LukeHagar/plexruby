@@ -5,14 +5,16 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # PlaylistType - limit to a type of playlist.
-    class PlaylistType < T::Enum
-      enums do
-        AUDIO = new('audio')
-        VIDEO = new('video')
-        PHOTO = new('photo')
+  module Models
+    module Operations
+    
+      # PlaylistType - limit to a type of playlist.
+      class PlaylistType < T::Enum
+        enums do
+          AUDIO = new('audio')
+          VIDEO = new('video')
+          PHOTO = new('photo')
+        end
       end
     end
   end

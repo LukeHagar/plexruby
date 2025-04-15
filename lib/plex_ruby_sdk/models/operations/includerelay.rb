@@ -5,18 +5,20 @@
 
 
 module PlexRubySDK
-  module Operations
-    INCLUDE_RELAY_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
-    # IncludeRelay - Include Relay addresses in the results 
-    # E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400
-    # 
-    class IncludeRelay < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+      INCLUDE_RELAY_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
+      # IncludeRelay - Include Relay addresses in the results 
+      # E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400
+      # 
+      class IncludeRelay < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

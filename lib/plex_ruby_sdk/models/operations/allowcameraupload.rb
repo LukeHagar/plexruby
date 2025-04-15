@@ -5,16 +5,18 @@
 
 
 module PlexRubySDK
-  module Operations
-    ALLOW_CAMERA_UPLOAD_SERVERS = [
-      'https://plex.tv/api'
-    ].freeze
-  
-    # AllowCameraUpload - Indicates if the user is allowed to upload from a camera.
-    class AllowCameraUpload < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+      ALLOW_CAMERA_UPLOAD_SERVERS = [
+        'https://plex.tv/api'
+      ].freeze
+    
+      # AllowCameraUpload - Indicates if the user is allowed to upload from a camera.
+      class AllowCameraUpload < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

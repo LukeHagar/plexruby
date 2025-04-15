@@ -5,53 +5,56 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetSearchResultsPart < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :audio_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioProfile') } }
-
-      field :container, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
-
-      field :duration, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
-
-      field :file, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('file') } }
-
-      field :id, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :size, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-
-      field :video_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
+      class GetSearchResultsPart
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(audio_profile: T.nilable(::String), container: T.nilable(::String), duration: T.nilable(::Float), file: T.nilable(::String), id: T.nilable(::Float), key: T.nilable(::String), size: T.nilable(::Float), video_profile: T.nilable(::String)).void }
-      def initialize(audio_profile: nil, container: nil, duration: nil, file: nil, id: nil, key: nil, size: nil, video_profile: nil)
-        @audio_profile = audio_profile
-        @container = container
-        @duration = duration
-        @file = file
-        @id = id
-        @key = key
-        @size = size
-        @video_profile = video_profile
-      end
+        field :audio_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioProfile') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @audio_profile == other.audio_profile
-        return false unless @container == other.container
-        return false unless @duration == other.duration
-        return false unless @file == other.file
-        return false unless @id == other.id
-        return false unless @key == other.key
-        return false unless @size == other.size
-        return false unless @video_profile == other.video_profile
-        true
+        field :container, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
+
+        field :duration, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
+
+        field :file, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('file') } }
+
+        field :id, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+
+        field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+        field :size, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+        field :video_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
+
+
+        sig { params(audio_profile: T.nilable(::String), container: T.nilable(::String), duration: T.nilable(::Float), file: T.nilable(::String), id: T.nilable(::Float), key: T.nilable(::String), size: T.nilable(::Float), video_profile: T.nilable(::String)).void }
+        def initialize(audio_profile: nil, container: nil, duration: nil, file: nil, id: nil, key: nil, size: nil, video_profile: nil)
+          @audio_profile = audio_profile
+          @container = container
+          @duration = duration
+          @file = file
+          @id = id
+          @key = key
+          @size = size
+          @video_profile = video_profile
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @audio_profile == other.audio_profile
+          return false unless @container == other.container
+          return false unless @duration == other.duration
+          return false unless @file == other.file
+          return false unless @id == other.id
+          return false unless @key == other.key
+          return false unless @size == other.size
+          return false unless @video_profile == other.video_profile
+          true
+        end
       end
     end
   end

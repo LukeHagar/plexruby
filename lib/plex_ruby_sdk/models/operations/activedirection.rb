@@ -5,14 +5,16 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # ActiveDirection - The direction of the sort. Can be either `asc` or `desc`.
-    # 
-    class ActiveDirection < T::Enum
-      enums do
-        ASCENDING = new('asc')
-        DESCENDING = new('desc')
+  module Models
+    module Operations
+    
+      # ActiveDirection - The direction of the sort. Can be either `asc` or `desc`.
+      # 
+      class ActiveDirection < T::Enum
+        enums do
+          ASCENDING = new('asc')
+          DESCENDING = new('desc')
+        end
       end
     end
   end

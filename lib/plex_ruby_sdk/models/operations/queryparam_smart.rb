@@ -5,13 +5,15 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # QueryParamSmart - type of playlists to return (default is all).
-    class QueryParamSmart < T::Enum
-      enums do
-        ZERO = new(0)
-        ONE = new(1)
+  module Models
+    module Operations
+    
+      # QueryParamSmart - type of playlists to return (default is all).
+      class QueryParamSmart < T::Enum
+        enums do
+          ZERO = new(0)
+          ONE = new(1)
+        end
       end
     end
   end

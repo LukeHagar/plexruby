@@ -5,50 +5,53 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetRecentlyAddedMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetRecentlyAddedMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # Indicates whether syncing is allowed.
-      field :allow_sync, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
-      # An plugin identifier for the media container.
-      field :identifier, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
-      # Offset value for pagination.
-      field :offset, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('offset') } }
-      # Number of media items returned in this response.
-      field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-      # Total number of media items in the library.
-      field :total_size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('totalSize') } }
-      # The Meta object is only included in the response if the `includeMeta` parameter is set to `1`.
-      # 
-      field :meta, T.nilable(::PlexRubySDK::Operations::Meta), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Meta') } }
-      # An array of metadata items.
-      field :metadata, T.nilable(T::Array[::PlexRubySDK::Operations::GetRecentlyAddedMetadata]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
+        # Indicates whether syncing is allowed.
+        field :allow_sync, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
+        # An plugin identifier for the media container.
+        field :identifier, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
+        # Offset value for pagination.
+        field :offset, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('offset') } }
+        # Number of media items returned in this response.
+        field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+        # Total number of media items in the library.
+        field :total_size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('totalSize') } }
+        # The Meta object is only included in the response if the `includeMeta` parameter is set to `1`.
+        # 
+        field :meta, T.nilable(Models::Operations::Meta), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Meta') } }
+        # An array of metadata items.
+        field :metadata, T.nilable(T::Array[Models::Operations::GetRecentlyAddedMetadata]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
 
 
-      sig { params(allow_sync: T::Boolean, identifier: ::String, offset: ::Integer, size: ::Integer, total_size: ::Integer, meta: T.nilable(::PlexRubySDK::Operations::Meta), metadata: T.nilable(T::Array[::PlexRubySDK::Operations::GetRecentlyAddedMetadata])).void }
-      def initialize(allow_sync: nil, identifier: nil, offset: nil, size: nil, total_size: nil, meta: nil, metadata: nil)
-        @allow_sync = allow_sync
-        @identifier = identifier
-        @offset = offset
-        @size = size
-        @total_size = total_size
-        @meta = meta
-        @metadata = metadata
-      end
+        sig { params(allow_sync: T::Boolean, identifier: ::String, offset: ::Integer, size: ::Integer, total_size: ::Integer, meta: T.nilable(Models::Operations::Meta), metadata: T.nilable(T::Array[Models::Operations::GetRecentlyAddedMetadata])).void }
+        def initialize(allow_sync: nil, identifier: nil, offset: nil, size: nil, total_size: nil, meta: nil, metadata: nil)
+          @allow_sync = allow_sync
+          @identifier = identifier
+          @offset = offset
+          @size = size
+          @total_size = total_size
+          @meta = meta
+          @metadata = metadata
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @allow_sync == other.allow_sync
-        return false unless @identifier == other.identifier
-        return false unless @offset == other.offset
-        return false unless @size == other.size
-        return false unless @total_size == other.total_size
-        return false unless @meta == other.meta
-        return false unless @metadata == other.metadata
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @allow_sync == other.allow_sync
+          return false unless @identifier == other.identifier
+          return false unless @offset == other.offset
+          return false unless @size == other.size
+          return false unless @total_size == other.total_size
+          return false unless @meta == other.meta
+          return false unless @metadata == other.metadata
+          true
+        end
       end
     end
   end

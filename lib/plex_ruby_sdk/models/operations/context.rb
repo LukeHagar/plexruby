@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class Context < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class Context
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      field :library_section_id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
+        field :library_section_id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
 
 
-      sig { params(library_section_id: T.nilable(::String)).void }
-      def initialize(library_section_id: nil)
-        @library_section_id = library_section_id
-      end
+        sig { params(library_section_id: T.nilable(::String)).void }
+        def initialize(library_section_id: nil)
+          @library_section_id = library_section_id
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @library_section_id == other.library_section_id
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @library_section_id == other.library_section_id
+          true
+        end
       end
     end
   end

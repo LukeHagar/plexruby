@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # The folder path for the media item.
-    class Location < ::Crystalline::FieldAugmented
-      extend T::Sig
+  module Models
+    module Operations
+    
+      # The folder path for the media item.
+      class Location
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      field :path, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('path') } }
+        field :path, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('path') } }
 
 
-      sig { params(path: ::String).void }
-      def initialize(path: nil)
-        @path = path
-      end
+        sig { params(path: ::String).void }
+        def initialize(path: nil)
+          @path = path
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @path == other.path
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @path == other.path
+          true
+        end
       end
     end
   end

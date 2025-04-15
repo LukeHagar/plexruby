@@ -5,16 +5,18 @@
 
 
 module PlexRubySDK
-  module Operations
-    MEDIA_REVIEWS_VISIBILITY_SERVERS = [
-      'https://plex.tv/api/v2'
-    ].freeze
-  
-    # MediaReviewsVisibility - Whether or not the account has media reviews visibility enabled
-    class MediaReviewsVisibility < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+      MEDIA_REVIEWS_VISIBILITY_SERVERS = [
+        'https://plex.tv/api/v2'
+      ].freeze
+    
+      # MediaReviewsVisibility - Whether or not the account has media reviews visibility enabled
+      class MediaReviewsVisibility < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

@@ -23,12 +23,12 @@ This endpoint will write a single-line log message, including a level and source
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-res = s.log.log_line(level=::PlexRubySDK::Operations::Level::THREE, message="Test log message", source="Postman")
+res = s.log.log_line(level=Models::Operations::Level::THREE, message="Test log message", source="Postman")
 
 if res.status_code == 200
   # handle response
@@ -40,13 +40,13 @@ end
 
 | Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   | Example                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `level`                                                                                                       | [::PlexRubySDK::Operations::Level](../../models/operations/level.md)                                          | :heavy_check_mark:                                                                                            | An integer log level to write to the PMS log with.  <br/>0: Error  <br/>1: Warning  <br/>2: Info  <br/>3: Debug  <br/>4: Verbose<br/> |                                                                                                               |
+| `level`                                                                                                       | [Models::Operations::Level](../../models/operations/level.md)                                                 | :heavy_check_mark:                                                                                            | An integer log level to write to the PMS log with.  <br/>0: Error  <br/>1: Warning  <br/>2: Info  <br/>3: Debug  <br/>4: Verbose<br/> |                                                                                                               |
 | `message`                                                                                                     | *::String*                                                                                                    | :heavy_check_mark:                                                                                            | The text of the message to write to the log.                                                                  | Test log message                                                                                              |
 | `source`                                                                                                      | *::String*                                                                                                    | :heavy_check_mark:                                                                                            | a string indicating the source of the message.                                                                | Postman                                                                                                       |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::LogLineResponse)](../../models/operations/loglineresponse.md)**
+**[T.nilable(Models::Operations::LogLineResponse)](../../models/operations/loglineresponse.md)**
 
 
 
@@ -81,7 +81,7 @@ Ensure each parameter is properly URL-encoded to avoid interpretation issues.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -106,7 +106,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::LogMultiLineResponse)](../../models/operations/logmultilineresponse.md)**
+**[T.nilable(Models::Operations::LogMultiLineResponse)](../../models/operations/logmultilineresponse.md)**
 
 
 
@@ -121,7 +121,7 @@ This endpoint will enable all Plex Media Serverlogs to be sent to the Papertrail
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -136,5 +136,5 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::EnablePaperTrailResponse)](../../models/operations/enablepapertrailresponse.md)**
+**[T.nilable(Models::Operations::EnablePaperTrailResponse)](../../models/operations/enablepapertrailresponse.md)**
 

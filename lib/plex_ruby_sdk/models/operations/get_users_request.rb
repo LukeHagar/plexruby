@@ -5,76 +5,79 @@
 
 
 module PlexRubySDK
-  module Operations
-    GET_USERS_REQUEST_SERVERS = [
-      'https://plex.tv/api'
-    ].freeze
-  
+  module Models
+    module Operations
+      GET_USERS_REQUEST_SERVERS = [
+        'https://plex.tv/api'
+      ].freeze
+    
 
-    class GetUsersRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetUsersRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
-      field :client_id, ::String, { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
-      # An authentication token, obtained from plex.tv
-      field :x_plex_token, ::String, { 'header': { 'field_name': 'X-Plex-Token', 'style': 'simple', 'explode': false } }
-      # The features of the client application. This is used to track the client application and its usage. (external-media,indirect-media,hub-style-list)
-      field :client_features, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Features', 'style': 'simple', 'explode': false } }
-      # The name of the client application. (Plex Web, Plex Media Server, etc.)
-      field :client_name, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Product', 'style': 'simple', 'explode': false } }
-      # The version of the client application.
-      field :client_version, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Version', 'style': 'simple', 'explode': false } }
-      # The name of the device the client application is running on. This is used to track the client application and its usage. (Chrome, Safari, etc.)
-      field :device_name, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Device-Name', 'style': 'simple', 'explode': false } }
-      # A relatively friendly name for the client device
-      field :device_nickname, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Device', 'style': 'simple', 'explode': false } }
-      # The resolution of the device the client application is running on. This is used to track the client application and its usage. (1487x1165,2560x1440)
-      field :device_screen_resolution, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Device-Screen-Resolution', 'style': 'simple', 'explode': false } }
-      # A potentially less friendly identifier for the device model
-      field :model, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Model', 'style': 'simple', 'explode': false } }
-      # The platform of the client application.
-      field :platform, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Platform', 'style': 'simple', 'explode': false } }
-      # The version of the platform
-      field :platform_version, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Platform-Version', 'style': 'simple', 'explode': false } }
-      # The language of the client application.
-      field :x_plex_language, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Language', 'style': 'simple', 'explode': false } }
-      # The session ID of the client application. This is used to track the client application and its usage. (97e136ef-4ddd-4ff3-89a7-a5820c96c2ca)
-      field :x_plex_session_id, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Session-Id', 'style': 'simple', 'explode': false } }
+        # An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
+        field :client_id, ::String, { 'header': { 'field_name': 'X-Plex-Client-Identifier', 'style': 'simple', 'explode': false } }
+        # An authentication token, obtained from plex.tv
+        field :x_plex_token, ::String, { 'header': { 'field_name': 'X-Plex-Token', 'style': 'simple', 'explode': false } }
+        # The features of the client application. This is used to track the client application and its usage. (external-media,indirect-media,hub-style-list)
+        field :client_features, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Features', 'style': 'simple', 'explode': false } }
+        # The name of the client application. (Plex Web, Plex Media Server, etc.)
+        field :client_name, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Product', 'style': 'simple', 'explode': false } }
+        # The version of the client application.
+        field :client_version, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Version', 'style': 'simple', 'explode': false } }
+        # The name of the device the client application is running on. This is used to track the client application and its usage. (Chrome, Safari, etc.)
+        field :device_name, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Device-Name', 'style': 'simple', 'explode': false } }
+        # A relatively friendly name for the client device
+        field :device_nickname, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Device', 'style': 'simple', 'explode': false } }
+        # The resolution of the device the client application is running on. This is used to track the client application and its usage. (1487x1165,2560x1440)
+        field :device_screen_resolution, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Device-Screen-Resolution', 'style': 'simple', 'explode': false } }
+        # A potentially less friendly identifier for the device model
+        field :model, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Model', 'style': 'simple', 'explode': false } }
+        # The platform of the client application.
+        field :platform, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Platform', 'style': 'simple', 'explode': false } }
+        # The version of the platform
+        field :platform_version, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Platform-Version', 'style': 'simple', 'explode': false } }
+        # The language of the client application.
+        field :x_plex_language, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Language', 'style': 'simple', 'explode': false } }
+        # The session ID of the client application. This is used to track the client application and its usage. (97e136ef-4ddd-4ff3-89a7-a5820c96c2ca)
+        field :x_plex_session_id, T.nilable(::String), { 'header': { 'field_name': 'X-Plex-Session-Id', 'style': 'simple', 'explode': false } }
 
 
-      sig { params(client_id: ::String, x_plex_token: ::String, client_features: T.nilable(::String), client_name: T.nilable(::String), client_version: T.nilable(::String), device_name: T.nilable(::String), device_nickname: T.nilable(::String), device_screen_resolution: T.nilable(::String), model: T.nilable(::String), platform: T.nilable(::String), platform_version: T.nilable(::String), x_plex_language: T.nilable(::String), x_plex_session_id: T.nilable(::String)).void }
-      def initialize(client_id: nil, x_plex_token: nil, client_features: nil, client_name: nil, client_version: nil, device_name: nil, device_nickname: nil, device_screen_resolution: nil, model: nil, platform: nil, platform_version: nil, x_plex_language: nil, x_plex_session_id: nil)
-        @client_id = client_id
-        @x_plex_token = x_plex_token
-        @client_features = client_features
-        @client_name = client_name
-        @client_version = client_version
-        @device_name = device_name
-        @device_nickname = device_nickname
-        @device_screen_resolution = device_screen_resolution
-        @model = model
-        @platform = platform
-        @platform_version = platform_version
-        @x_plex_language = x_plex_language
-        @x_plex_session_id = x_plex_session_id
-      end
+        sig { params(client_id: ::String, x_plex_token: ::String, client_features: T.nilable(::String), client_name: T.nilable(::String), client_version: T.nilable(::String), device_name: T.nilable(::String), device_nickname: T.nilable(::String), device_screen_resolution: T.nilable(::String), model: T.nilable(::String), platform: T.nilable(::String), platform_version: T.nilable(::String), x_plex_language: T.nilable(::String), x_plex_session_id: T.nilable(::String)).void }
+        def initialize(client_id: nil, x_plex_token: nil, client_features: nil, client_name: nil, client_version: nil, device_name: nil, device_nickname: nil, device_screen_resolution: nil, model: nil, platform: nil, platform_version: nil, x_plex_language: nil, x_plex_session_id: nil)
+          @client_id = client_id
+          @x_plex_token = x_plex_token
+          @client_features = client_features
+          @client_name = client_name
+          @client_version = client_version
+          @device_name = device_name
+          @device_nickname = device_nickname
+          @device_screen_resolution = device_screen_resolution
+          @model = model
+          @platform = platform
+          @platform_version = platform_version
+          @x_plex_language = x_plex_language
+          @x_plex_session_id = x_plex_session_id
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @client_id == other.client_id
-        return false unless @x_plex_token == other.x_plex_token
-        return false unless @client_features == other.client_features
-        return false unless @client_name == other.client_name
-        return false unless @client_version == other.client_version
-        return false unless @device_name == other.device_name
-        return false unless @device_nickname == other.device_nickname
-        return false unless @device_screen_resolution == other.device_screen_resolution
-        return false unless @model == other.model
-        return false unless @platform == other.platform
-        return false unless @platform_version == other.platform_version
-        return false unless @x_plex_language == other.x_plex_language
-        return false unless @x_plex_session_id == other.x_plex_session_id
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @client_id == other.client_id
+          return false unless @x_plex_token == other.x_plex_token
+          return false unless @client_features == other.client_features
+          return false unless @client_name == other.client_name
+          return false unless @client_version == other.client_version
+          return false unless @device_name == other.device_name
+          return false unless @device_nickname == other.device_nickname
+          return false unless @device_screen_resolution == other.device_screen_resolution
+          return false unless @model == other.model
+          return false unless @platform == other.platform
+          return false unless @platform_version == other.platform_version
+          return false unless @x_plex_language == other.x_plex_language
+          return false unless @x_plex_session_id == other.x_plex_session_id
+          true
+        end
       end
     end
   end

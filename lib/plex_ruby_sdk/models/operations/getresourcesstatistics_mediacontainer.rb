@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetResourcesStatisticsMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
-
-      field :statistics_resources, T.nilable(T::Array[::PlexRubySDK::Operations::StatisticsResources]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('StatisticsResources') } }
+      class GetResourcesStatisticsMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(size: T.nilable(::Integer), statistics_resources: T.nilable(T::Array[::PlexRubySDK::Operations::StatisticsResources])).void }
-      def initialize(size: nil, statistics_resources: nil)
-        @size = size
-        @statistics_resources = statistics_resources
-      end
+        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @size == other.size
-        return false unless @statistics_resources == other.statistics_resources
-        true
+        field :statistics_resources, T.nilable(T::Array[Models::Operations::StatisticsResources]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('StatisticsResources') } }
+
+
+        sig { params(size: T.nilable(::Integer), statistics_resources: T.nilable(T::Array[Models::Operations::StatisticsResources])).void }
+        def initialize(size: nil, statistics_resources: nil)
+          @size = size
+          @statistics_resources = statistics_resources
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @size == other.size
+          return false unless @statistics_resources == other.statistics_resources
+          true
+        end
       end
     end
   end

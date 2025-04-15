@@ -5,33 +5,36 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetDevicesMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :device, T.nilable(T::Array[::PlexRubySDK::Operations::Device]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Device') } }
-
-      field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
-
-      field :size, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+      class GetDevicesMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(device: T.nilable(T::Array[::PlexRubySDK::Operations::Device]), identifier: T.nilable(::String), size: T.nilable(::Float)).void }
-      def initialize(device: nil, identifier: nil, size: nil)
-        @device = device
-        @identifier = identifier
-        @size = size
-      end
+        field :device, T.nilable(T::Array[Models::Operations::Device]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Device') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @device == other.device
-        return false unless @identifier == other.identifier
-        return false unless @size == other.size
-        true
+        field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
+
+        field :size, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+
+        sig { params(device: T.nilable(T::Array[Models::Operations::Device]), identifier: T.nilable(::String), size: T.nilable(::Float)).void }
+        def initialize(device: nil, identifier: nil, size: nil)
+          @device = device
+          @identifier = identifier
+          @size = size
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @device == other.device
+          return false unless @identifier == other.identifier
+          return false unless @size == other.size
+          true
+        end
       end
     end
   end

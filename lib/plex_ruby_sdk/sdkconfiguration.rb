@@ -18,14 +18,16 @@ module PlexRubySDK
   ].freeze
   # Contains the list of servers available to the SDK
 
-  class SDKConfiguration < ::Crystalline::FieldAugmented
+  class SDKConfiguration
     extend T::Sig
+    include Crystalline::MetadataFields
+
 
     field :client, T.nilable(Faraday::Connection)
     field :hooks, ::PlexRubySDK::SDKHooks::Hooks
     field :retry_config, T.nilable(::PlexRubySDK::Utils::RetryConfig)
     field :timeout, T.nilable(Float)
-    field :security_source, T.nilable(T.proc.returns(T.nilable(::PlexRubySDK::Shared::Security)))
+    field :security_source, T.nilable(T.proc.returns(T.nilable(Models::Shared::Security)))
     field :server_url, T.nilable(String)
     field :server_idx, T.nilable(Integer)
     field :server_params, Array[Hash[Symbol, String]], { 'default_factory': Array}
@@ -41,8 +43,8 @@ module PlexRubySDK
         hooks: ::PlexRubySDK::SDKHooks::Hooks,
         retry_config: T.nilable(::PlexRubySDK::Utils::RetryConfig),
         timeout_ms: T.nilable(Integer),
-        security: T.nilable(::PlexRubySDK::Shared::Security),
-        security_source: T.nilable(T.proc.returns(::PlexRubySDK::Shared::Security)),
+        security: T.nilable(Models::Shared::Security),
+        security_source: T.nilable(T.proc.returns(Models::Shared::Security)),
         server_url: T.nilable(String),
         server_idx: T.nilable(Integer),
         server_params: T::Array[String]
@@ -64,9 +66,9 @@ module PlexRubySDK
       end
       @language = 'ruby'
       @openapi_doc_version = '0.0.3'
-      @sdk_version = '0.9.0'
-      @gen_version = '2.566.5'
-      @user_agent = 'speakeasy-sdk/ruby 0.9.0 2.566.5 0.0.3 plex_ruby_sdk'
+      @sdk_version = '0.10.0'
+      @gen_version = '2.570.4'
+      @user_agent = 'speakeasy-sdk/ruby 0.10.0 2.570.4 0.0.3 plex_ruby_sdk'
     end
 
     sig { returns([String, T::Hash[Symbol, String]]) }

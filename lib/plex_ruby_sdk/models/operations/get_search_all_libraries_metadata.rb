@@ -5,337 +5,340 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetSearchAllLibrariesMetadata < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetSearchAllLibrariesMetadata
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # Unix epoch datetime in seconds
-      field :added_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('addedAt') } }
+        # Unix epoch datetime in seconds
+        field :added_at, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('addedAt') } }
 
-      field :guid, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('guid') } }
+        field :guid, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('guid') } }
 
-      field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-      # The rating key (Media ID) of this media item.
-      # Note: This is always an integer, but is represented as a string in the API.
-      # 
-      field :rating_key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingKey') } }
+        field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+        # The rating key (Media ID) of this media item.
+        # Note: This is always an integer, but is represented as a string in the API.
+        # 
+        field :rating_key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingKey') } }
 
-      field :summary, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('summary') } }
+        field :summary, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('summary') } }
 
-      field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-      # The type of media content
-      # 
-      field :type, ::PlexRubySDK::Operations::GetSearchAllLibrariesType, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetSearchAllLibrariesType, false) } }
+        field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+        # The type of media content
+        # 
+        field :type, Models::Operations::GetSearchAllLibrariesType, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type'), 'decoder': Utils.enum_from_string(Models::Operations::GetSearchAllLibrariesType, false) } }
 
-      field :art, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('art') } }
+        field :art, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('art') } }
 
-      field :audience_rating, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audienceRating') } }
+        field :audience_rating, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audienceRating') } }
 
-      field :audience_rating_image, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audienceRatingImage') } }
+        field :audience_rating_image, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audienceRatingImage') } }
 
-      field :banner, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('banner') } }
+        field :banner, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('banner') } }
 
-      field :chapter_source, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('chapterSource') } }
+        field :chapter_source, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('chapterSource') } }
 
-      field :child_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('childCount') } }
+        field :child_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('childCount') } }
 
-      field :collection, T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesCollection]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Collection') } }
+        field :collection, T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesCollection]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Collection') } }
 
-      field :content_rating, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('contentRating') } }
+        field :content_rating, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('contentRating') } }
 
-      field :country, T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesCountry]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Country') } }
+        field :country, T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesCountry]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Country') } }
 
-      field :director, T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesDirector]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Director') } }
+        field :director, T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesDirector]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Director') } }
 
-      field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
-      # Setting that indicates if credits markers detection is enabled. (-1 = Library default, 0 = Disabled).
-      field :enable_credits_marker_generation, T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesEnableCreditsMarkerGeneration), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('enableCreditsMarkerGeneration'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetSearchAllLibrariesEnableCreditsMarkerGeneration, true) } }
-      # Setting that indicates how episodes are sorted for the show. (-1 = Library default, 0 = Oldest first, 1 = Newest first).
-      field :episode_sort, T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesEpisodeSort), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('episodeSort'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetSearchAllLibrariesEpisodeSort, true) } }
-      # Setting that indicates if seasons are set to hidden for the show. (-1 = Library default, 0 = Hide, 1 = Show).
-      field :flatten_seasons, T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesFlattenSeasons), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('flattenSeasons'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetSearchAllLibrariesFlattenSeasons, true) } }
+        field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
+        # Setting that indicates if credits markers detection is enabled. (-1 = Library default, 0 = Disabled).
+        field :enable_credits_marker_generation, T.nilable(Models::Operations::GetSearchAllLibrariesEnableCreditsMarkerGeneration), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('enableCreditsMarkerGeneration'), 'decoder': Utils.enum_from_string(Models::Operations::GetSearchAllLibrariesEnableCreditsMarkerGeneration, true) } }
+        # Setting that indicates how episodes are sorted for the show. (-1 = Library default, 0 = Oldest first, 1 = Newest first).
+        field :episode_sort, T.nilable(Models::Operations::GetSearchAllLibrariesEpisodeSort), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('episodeSort'), 'decoder': Utils.enum_from_string(Models::Operations::GetSearchAllLibrariesEpisodeSort, true) } }
+        # Setting that indicates if seasons are set to hidden for the show. (-1 = Library default, 0 = Hide, 1 = Show).
+        field :flatten_seasons, T.nilable(Models::Operations::GetSearchAllLibrariesFlattenSeasons), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('flattenSeasons'), 'decoder': Utils.enum_from_string(Models::Operations::GetSearchAllLibrariesFlattenSeasons, true) } }
 
-      field :genre, T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesGenre]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Genre') } }
+        field :genre, T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesGenre]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Genre') } }
 
-      field :grandparent_art, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentArt') } }
+        field :grandparent_art, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentArt') } }
 
-      field :grandparent_guid, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentGuid') } }
+        field :grandparent_guid, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentGuid') } }
 
-      field :grandparent_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentKey') } }
+        field :grandparent_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentKey') } }
 
-      field :grandparent_rating_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentRatingKey') } }
+        field :grandparent_rating_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentRatingKey') } }
 
-      field :grandparent_slug, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentSlug') } }
+        field :grandparent_slug, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentSlug') } }
 
-      field :grandparent_theme, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentTheme') } }
+        field :grandparent_theme, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentTheme') } }
 
-      field :grandparent_thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentThumb') } }
+        field :grandparent_thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentThumb') } }
 
-      field :grandparent_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentTitle') } }
+        field :grandparent_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('grandparentTitle') } }
 
-      field :has_premium_extras, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasPremiumExtras') } }
+        field :has_premium_extras, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasPremiumExtras') } }
 
-      field :has_premium_primary_extra, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasPremiumPrimaryExtra') } }
+        field :has_premium_primary_extra, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasPremiumPrimaryExtra') } }
 
-      field :image, T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesImage]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Image') } }
+        field :image, T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesImage]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Image') } }
 
-      field :index, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('index') } }
+        field :index, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('index') } }
 
-      field :last_viewed_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('lastViewedAt') } }
+        field :last_viewed_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('lastViewedAt') } }
 
-      field :leaf_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('leafCount') } }
+        field :leaf_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('leafCount') } }
 
-      field :library_section_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
+        field :library_section_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
 
-      field :library_section_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionKey') } }
+        field :library_section_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionKey') } }
 
-      field :library_section_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionTitle') } }
+        field :library_section_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionTitle') } }
 
-      field :location, T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesLocation]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Location') } }
-      # The Media object is only included when type query is `4` or higher.
-      # 
-      field :media, T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesMedia]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Media') } }
-      # The Guid object is only included in the response if the `includeGuids` parameter is set to `1`.
-      # 
-      field :media_guid, T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesMediaGuid]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Guid') } }
+        field :location, T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesLocation]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Location') } }
+        # The Media object is only included when type query is `4` or higher.
+        # 
+        field :media, T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesMedia]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Media') } }
+        # The Guid object is only included in the response if the `includeGuids` parameter is set to `1`.
+        # 
+        field :media_guid, T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesMediaGuid]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Guid') } }
 
-      field :meta_data_rating, T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesMetaDataRating]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Rating') } }
+        field :meta_data_rating, T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesMetaDataRating]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Rating') } }
 
-      field :originally_available_at, T.nilable(::Date), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originallyAvailableAt'), 'decoder': Utils.date_from_iso_format(true) } }
+        field :originally_available_at, T.nilable(::Date), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originallyAvailableAt'), 'decoder': Utils.date_from_iso_format(true) } }
 
-      field :original_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originalTitle') } }
+        field :original_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originalTitle') } }
 
-      field :parent_guid, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentGuid') } }
+        field :parent_guid, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentGuid') } }
 
-      field :parent_index, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentIndex') } }
+        field :parent_index, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentIndex') } }
 
-      field :parent_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentKey') } }
-      # The rating key of the parent item.
-      # 
-      field :parent_rating_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentRatingKey') } }
+        field :parent_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentKey') } }
+        # The rating key of the parent item.
+        # 
+        field :parent_rating_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentRatingKey') } }
 
-      field :parent_slug, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentSlug') } }
+        field :parent_slug, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentSlug') } }
 
-      field :parent_studio, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentStudio') } }
+        field :parent_studio, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentStudio') } }
 
-      field :parent_theme, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentTheme') } }
+        field :parent_theme, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentTheme') } }
 
-      field :parent_thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentThumb') } }
+        field :parent_thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentThumb') } }
 
-      field :parent_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentTitle') } }
+        field :parent_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentTitle') } }
 
-      field :parent_year, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentYear') } }
-
-      field :primary_extra_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('primaryExtraKey') } }
-
-      field :rating, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('rating') } }
-
-      field :rating_image, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingImage') } }
-
-      field :role, T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesRole]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Role') } }
-
-      field :season_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('seasonCount') } }
-      # Setting that indicates the episode ordering for the show.
-      # None = Library default,
-      # tmdbAiring = The Movie Database (Aired),
-      # aired = TheTVDB (Aired),
-      # dvd = TheTVDB (DVD),
-      # absolute = TheTVDB (Absolute)).
-      # 
-      field :show_ordering, T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesShowOrdering), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('showOrdering'), 'decoder': Utils.enum_from_string(::PlexRubySDK::Operations::GetSearchAllLibrariesShowOrdering, true) } }
-
-      field :skip_children, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('skipChildren') } }
-
-      field :skip_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('skipCount') } }
-
-      field :slug, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('slug') } }
-
-      field :studio, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('studio') } }
-
-      field :tagline, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagline') } }
-
-      field :theme, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('theme') } }
-
-      field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
-
-      field :title_sort, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('titleSort') } }
-
-      field :ultra_blur_colors, T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesUltraBlurColors), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('UltraBlurColors') } }
-      # Unix epoch datetime in seconds
-      field :updated_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('updatedAt') } }
-
-      field :view_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewCount') } }
-
-      field :viewed_leaf_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewedLeafCount') } }
-
-      field :view_offset, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewOffset') } }
-
-      field :writer, T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesWriter]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Writer') } }
-
-      field :year, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('year') } }
-
-
-      sig { params(added_at: ::Integer, guid: ::String, key: ::String, rating_key: ::String, summary: ::String, title: ::String, type: ::PlexRubySDK::Operations::GetSearchAllLibrariesType, art: T.nilable(::String), audience_rating: T.nilable(::Float), audience_rating_image: T.nilable(::String), banner: T.nilable(::String), chapter_source: T.nilable(::String), child_count: T.nilable(::Integer), collection: T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesCollection]), content_rating: T.nilable(::String), country: T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesCountry]), director: T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesDirector]), duration: T.nilable(::Integer), enable_credits_marker_generation: T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesEnableCreditsMarkerGeneration), episode_sort: T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesEpisodeSort), flatten_seasons: T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesFlattenSeasons), genre: T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesGenre]), grandparent_art: T.nilable(::String), grandparent_guid: T.nilable(::String), grandparent_key: T.nilable(::String), grandparent_rating_key: T.nilable(::String), grandparent_slug: T.nilable(::String), grandparent_theme: T.nilable(::String), grandparent_thumb: T.nilable(::String), grandparent_title: T.nilable(::String), has_premium_extras: T.nilable(::String), has_premium_primary_extra: T.nilable(::String), image: T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesImage]), index: T.nilable(::Integer), last_viewed_at: T.nilable(::Integer), leaf_count: T.nilable(::Integer), library_section_id: T.nilable(::Integer), library_section_key: T.nilable(::String), library_section_title: T.nilable(::String), location: T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesLocation]), media: T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesMedia]), media_guid: T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesMediaGuid]), meta_data_rating: T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesMetaDataRating]), originally_available_at: T.nilable(::Date), original_title: T.nilable(::String), parent_guid: T.nilable(::String), parent_index: T.nilable(::Integer), parent_key: T.nilable(::String), parent_rating_key: T.nilable(::String), parent_slug: T.nilable(::String), parent_studio: T.nilable(::String), parent_theme: T.nilable(::String), parent_thumb: T.nilable(::String), parent_title: T.nilable(::String), parent_year: T.nilable(::Integer), primary_extra_key: T.nilable(::String), rating: T.nilable(::Float), rating_image: T.nilable(::String), role: T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesRole]), season_count: T.nilable(::Integer), show_ordering: T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesShowOrdering), skip_children: T.nilable(T::Boolean), skip_count: T.nilable(::Integer), slug: T.nilable(::String), studio: T.nilable(::String), tagline: T.nilable(::String), theme: T.nilable(::String), thumb: T.nilable(::String), title_sort: T.nilable(::String), ultra_blur_colors: T.nilable(::PlexRubySDK::Operations::GetSearchAllLibrariesUltraBlurColors), updated_at: T.nilable(::Integer), view_count: T.nilable(::Integer), viewed_leaf_count: T.nilable(::Integer), view_offset: T.nilable(::Integer), writer: T.nilable(T::Array[::PlexRubySDK::Operations::GetSearchAllLibrariesWriter]), year: T.nilable(::Integer)).void }
-      def initialize(added_at: nil, guid: nil, key: nil, rating_key: nil, summary: nil, title: nil, type: nil, art: nil, audience_rating: nil, audience_rating_image: nil, banner: nil, chapter_source: nil, child_count: nil, collection: nil, content_rating: nil, country: nil, director: nil, duration: nil, enable_credits_marker_generation: nil, episode_sort: nil, flatten_seasons: nil, genre: nil, grandparent_art: nil, grandparent_guid: nil, grandparent_key: nil, grandparent_rating_key: nil, grandparent_slug: nil, grandparent_theme: nil, grandparent_thumb: nil, grandparent_title: nil, has_premium_extras: nil, has_premium_primary_extra: nil, image: nil, index: nil, last_viewed_at: nil, leaf_count: nil, library_section_id: nil, library_section_key: nil, library_section_title: nil, location: nil, media: nil, media_guid: nil, meta_data_rating: nil, originally_available_at: nil, original_title: nil, parent_guid: nil, parent_index: nil, parent_key: nil, parent_rating_key: nil, parent_slug: nil, parent_studio: nil, parent_theme: nil, parent_thumb: nil, parent_title: nil, parent_year: nil, primary_extra_key: nil, rating: nil, rating_image: nil, role: nil, season_count: nil, show_ordering: nil, skip_children: nil, skip_count: nil, slug: nil, studio: nil, tagline: nil, theme: nil, thumb: nil, title_sort: nil, ultra_blur_colors: nil, updated_at: nil, view_count: nil, viewed_leaf_count: nil, view_offset: nil, writer: nil, year: nil)
-        @added_at = added_at
-        @guid = guid
-        @key = key
-        @rating_key = rating_key
-        @summary = summary
-        @title = title
-        @type = type
-        @art = art
-        @audience_rating = audience_rating
-        @audience_rating_image = audience_rating_image
-        @banner = banner
-        @chapter_source = chapter_source
-        @child_count = child_count
-        @collection = collection
-        @content_rating = content_rating
-        @country = country
-        @director = director
-        @duration = duration
-        @enable_credits_marker_generation = enable_credits_marker_generation
-        @episode_sort = episode_sort
-        @flatten_seasons = flatten_seasons
-        @genre = genre
-        @grandparent_art = grandparent_art
-        @grandparent_guid = grandparent_guid
-        @grandparent_key = grandparent_key
-        @grandparent_rating_key = grandparent_rating_key
-        @grandparent_slug = grandparent_slug
-        @grandparent_theme = grandparent_theme
-        @grandparent_thumb = grandparent_thumb
-        @grandparent_title = grandparent_title
-        @has_premium_extras = has_premium_extras
-        @has_premium_primary_extra = has_premium_primary_extra
-        @image = image
-        @index = index
-        @last_viewed_at = last_viewed_at
-        @leaf_count = leaf_count
-        @library_section_id = library_section_id
-        @library_section_key = library_section_key
-        @library_section_title = library_section_title
-        @location = location
-        @media = media
-        @media_guid = media_guid
-        @meta_data_rating = meta_data_rating
-        @originally_available_at = originally_available_at
-        @original_title = original_title
-        @parent_guid = parent_guid
-        @parent_index = parent_index
-        @parent_key = parent_key
-        @parent_rating_key = parent_rating_key
-        @parent_slug = parent_slug
-        @parent_studio = parent_studio
-        @parent_theme = parent_theme
-        @parent_thumb = parent_thumb
-        @parent_title = parent_title
-        @parent_year = parent_year
-        @primary_extra_key = primary_extra_key
-        @rating = rating
-        @rating_image = rating_image
-        @role = role
-        @season_count = season_count
-        @show_ordering = show_ordering
-        @skip_children = skip_children
-        @skip_count = skip_count
-        @slug = slug
-        @studio = studio
-        @tagline = tagline
-        @theme = theme
-        @thumb = thumb
-        @title_sort = title_sort
-        @ultra_blur_colors = ultra_blur_colors
-        @updated_at = updated_at
-        @view_count = view_count
-        @viewed_leaf_count = viewed_leaf_count
-        @view_offset = view_offset
-        @writer = writer
-        @year = year
-      end
-
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @added_at == other.added_at
-        return false unless @guid == other.guid
-        return false unless @key == other.key
-        return false unless @rating_key == other.rating_key
-        return false unless @summary == other.summary
-        return false unless @title == other.title
-        return false unless @type == other.type
-        return false unless @art == other.art
-        return false unless @audience_rating == other.audience_rating
-        return false unless @audience_rating_image == other.audience_rating_image
-        return false unless @banner == other.banner
-        return false unless @chapter_source == other.chapter_source
-        return false unless @child_count == other.child_count
-        return false unless @collection == other.collection
-        return false unless @content_rating == other.content_rating
-        return false unless @country == other.country
-        return false unless @director == other.director
-        return false unless @duration == other.duration
-        return false unless @enable_credits_marker_generation == other.enable_credits_marker_generation
-        return false unless @episode_sort == other.episode_sort
-        return false unless @flatten_seasons == other.flatten_seasons
-        return false unless @genre == other.genre
-        return false unless @grandparent_art == other.grandparent_art
-        return false unless @grandparent_guid == other.grandparent_guid
-        return false unless @grandparent_key == other.grandparent_key
-        return false unless @grandparent_rating_key == other.grandparent_rating_key
-        return false unless @grandparent_slug == other.grandparent_slug
-        return false unless @grandparent_theme == other.grandparent_theme
-        return false unless @grandparent_thumb == other.grandparent_thumb
-        return false unless @grandparent_title == other.grandparent_title
-        return false unless @has_premium_extras == other.has_premium_extras
-        return false unless @has_premium_primary_extra == other.has_premium_primary_extra
-        return false unless @image == other.image
-        return false unless @index == other.index
-        return false unless @last_viewed_at == other.last_viewed_at
-        return false unless @leaf_count == other.leaf_count
-        return false unless @library_section_id == other.library_section_id
-        return false unless @library_section_key == other.library_section_key
-        return false unless @library_section_title == other.library_section_title
-        return false unless @location == other.location
-        return false unless @media == other.media
-        return false unless @media_guid == other.media_guid
-        return false unless @meta_data_rating == other.meta_data_rating
-        return false unless @originally_available_at == other.originally_available_at
-        return false unless @original_title == other.original_title
-        return false unless @parent_guid == other.parent_guid
-        return false unless @parent_index == other.parent_index
-        return false unless @parent_key == other.parent_key
-        return false unless @parent_rating_key == other.parent_rating_key
-        return false unless @parent_slug == other.parent_slug
-        return false unless @parent_studio == other.parent_studio
-        return false unless @parent_theme == other.parent_theme
-        return false unless @parent_thumb == other.parent_thumb
-        return false unless @parent_title == other.parent_title
-        return false unless @parent_year == other.parent_year
-        return false unless @primary_extra_key == other.primary_extra_key
-        return false unless @rating == other.rating
-        return false unless @rating_image == other.rating_image
-        return false unless @role == other.role
-        return false unless @season_count == other.season_count
-        return false unless @show_ordering == other.show_ordering
-        return false unless @skip_children == other.skip_children
-        return false unless @skip_count == other.skip_count
-        return false unless @slug == other.slug
-        return false unless @studio == other.studio
-        return false unless @tagline == other.tagline
-        return false unless @theme == other.theme
-        return false unless @thumb == other.thumb
-        return false unless @title_sort == other.title_sort
-        return false unless @ultra_blur_colors == other.ultra_blur_colors
-        return false unless @updated_at == other.updated_at
-        return false unless @view_count == other.view_count
-        return false unless @viewed_leaf_count == other.viewed_leaf_count
-        return false unless @view_offset == other.view_offset
-        return false unless @writer == other.writer
-        return false unless @year == other.year
-        true
+        field :parent_year, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentYear') } }
+
+        field :primary_extra_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('primaryExtraKey') } }
+
+        field :rating, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('rating') } }
+
+        field :rating_image, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingImage') } }
+
+        field :role, T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesRole]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Role') } }
+
+        field :season_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('seasonCount') } }
+        # Setting that indicates the episode ordering for the show.
+        # None = Library default,
+        # tmdbAiring = The Movie Database (Aired),
+        # aired = TheTVDB (Aired),
+        # dvd = TheTVDB (DVD),
+        # absolute = TheTVDB (Absolute)).
+        # 
+        field :show_ordering, T.nilable(Models::Operations::GetSearchAllLibrariesShowOrdering), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('showOrdering'), 'decoder': Utils.enum_from_string(Models::Operations::GetSearchAllLibrariesShowOrdering, true) } }
+
+        field :skip_children, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('skipChildren') } }
+
+        field :skip_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('skipCount') } }
+
+        field :slug, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('slug') } }
+
+        field :studio, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('studio') } }
+
+        field :tagline, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagline') } }
+
+        field :theme, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('theme') } }
+
+        field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
+
+        field :title_sort, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('titleSort') } }
+
+        field :ultra_blur_colors, T.nilable(Models::Operations::GetSearchAllLibrariesUltraBlurColors), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('UltraBlurColors') } }
+        # Unix epoch datetime in seconds
+        field :updated_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('updatedAt') } }
+
+        field :view_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewCount') } }
+
+        field :viewed_leaf_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewedLeafCount') } }
+
+        field :view_offset, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewOffset') } }
+
+        field :writer, T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesWriter]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Writer') } }
+
+        field :year, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('year') } }
+
+
+        sig { params(added_at: ::Integer, guid: ::String, key: ::String, rating_key: ::String, summary: ::String, title: ::String, type: Models::Operations::GetSearchAllLibrariesType, art: T.nilable(::String), audience_rating: T.nilable(::Float), audience_rating_image: T.nilable(::String), banner: T.nilable(::String), chapter_source: T.nilable(::String), child_count: T.nilable(::Integer), collection: T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesCollection]), content_rating: T.nilable(::String), country: T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesCountry]), director: T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesDirector]), duration: T.nilable(::Integer), enable_credits_marker_generation: T.nilable(Models::Operations::GetSearchAllLibrariesEnableCreditsMarkerGeneration), episode_sort: T.nilable(Models::Operations::GetSearchAllLibrariesEpisodeSort), flatten_seasons: T.nilable(Models::Operations::GetSearchAllLibrariesFlattenSeasons), genre: T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesGenre]), grandparent_art: T.nilable(::String), grandparent_guid: T.nilable(::String), grandparent_key: T.nilable(::String), grandparent_rating_key: T.nilable(::String), grandparent_slug: T.nilable(::String), grandparent_theme: T.nilable(::String), grandparent_thumb: T.nilable(::String), grandparent_title: T.nilable(::String), has_premium_extras: T.nilable(::String), has_premium_primary_extra: T.nilable(::String), image: T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesImage]), index: T.nilable(::Integer), last_viewed_at: T.nilable(::Integer), leaf_count: T.nilable(::Integer), library_section_id: T.nilable(::Integer), library_section_key: T.nilable(::String), library_section_title: T.nilable(::String), location: T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesLocation]), media: T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesMedia]), media_guid: T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesMediaGuid]), meta_data_rating: T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesMetaDataRating]), originally_available_at: T.nilable(::Date), original_title: T.nilable(::String), parent_guid: T.nilable(::String), parent_index: T.nilable(::Integer), parent_key: T.nilable(::String), parent_rating_key: T.nilable(::String), parent_slug: T.nilable(::String), parent_studio: T.nilable(::String), parent_theme: T.nilable(::String), parent_thumb: T.nilable(::String), parent_title: T.nilable(::String), parent_year: T.nilable(::Integer), primary_extra_key: T.nilable(::String), rating: T.nilable(::Float), rating_image: T.nilable(::String), role: T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesRole]), season_count: T.nilable(::Integer), show_ordering: T.nilable(Models::Operations::GetSearchAllLibrariesShowOrdering), skip_children: T.nilable(T::Boolean), skip_count: T.nilable(::Integer), slug: T.nilable(::String), studio: T.nilable(::String), tagline: T.nilable(::String), theme: T.nilable(::String), thumb: T.nilable(::String), title_sort: T.nilable(::String), ultra_blur_colors: T.nilable(Models::Operations::GetSearchAllLibrariesUltraBlurColors), updated_at: T.nilable(::Integer), view_count: T.nilable(::Integer), viewed_leaf_count: T.nilable(::Integer), view_offset: T.nilable(::Integer), writer: T.nilable(T::Array[Models::Operations::GetSearchAllLibrariesWriter]), year: T.nilable(::Integer)).void }
+        def initialize(added_at: nil, guid: nil, key: nil, rating_key: nil, summary: nil, title: nil, type: nil, art: nil, audience_rating: nil, audience_rating_image: nil, banner: nil, chapter_source: nil, child_count: nil, collection: nil, content_rating: nil, country: nil, director: nil, duration: nil, enable_credits_marker_generation: nil, episode_sort: nil, flatten_seasons: nil, genre: nil, grandparent_art: nil, grandparent_guid: nil, grandparent_key: nil, grandparent_rating_key: nil, grandparent_slug: nil, grandparent_theme: nil, grandparent_thumb: nil, grandparent_title: nil, has_premium_extras: nil, has_premium_primary_extra: nil, image: nil, index: nil, last_viewed_at: nil, leaf_count: nil, library_section_id: nil, library_section_key: nil, library_section_title: nil, location: nil, media: nil, media_guid: nil, meta_data_rating: nil, originally_available_at: nil, original_title: nil, parent_guid: nil, parent_index: nil, parent_key: nil, parent_rating_key: nil, parent_slug: nil, parent_studio: nil, parent_theme: nil, parent_thumb: nil, parent_title: nil, parent_year: nil, primary_extra_key: nil, rating: nil, rating_image: nil, role: nil, season_count: nil, show_ordering: nil, skip_children: nil, skip_count: nil, slug: nil, studio: nil, tagline: nil, theme: nil, thumb: nil, title_sort: nil, ultra_blur_colors: nil, updated_at: nil, view_count: nil, viewed_leaf_count: nil, view_offset: nil, writer: nil, year: nil)
+          @added_at = added_at
+          @guid = guid
+          @key = key
+          @rating_key = rating_key
+          @summary = summary
+          @title = title
+          @type = type
+          @art = art
+          @audience_rating = audience_rating
+          @audience_rating_image = audience_rating_image
+          @banner = banner
+          @chapter_source = chapter_source
+          @child_count = child_count
+          @collection = collection
+          @content_rating = content_rating
+          @country = country
+          @director = director
+          @duration = duration
+          @enable_credits_marker_generation = enable_credits_marker_generation
+          @episode_sort = episode_sort
+          @flatten_seasons = flatten_seasons
+          @genre = genre
+          @grandparent_art = grandparent_art
+          @grandparent_guid = grandparent_guid
+          @grandparent_key = grandparent_key
+          @grandparent_rating_key = grandparent_rating_key
+          @grandparent_slug = grandparent_slug
+          @grandparent_theme = grandparent_theme
+          @grandparent_thumb = grandparent_thumb
+          @grandparent_title = grandparent_title
+          @has_premium_extras = has_premium_extras
+          @has_premium_primary_extra = has_premium_primary_extra
+          @image = image
+          @index = index
+          @last_viewed_at = last_viewed_at
+          @leaf_count = leaf_count
+          @library_section_id = library_section_id
+          @library_section_key = library_section_key
+          @library_section_title = library_section_title
+          @location = location
+          @media = media
+          @media_guid = media_guid
+          @meta_data_rating = meta_data_rating
+          @originally_available_at = originally_available_at
+          @original_title = original_title
+          @parent_guid = parent_guid
+          @parent_index = parent_index
+          @parent_key = parent_key
+          @parent_rating_key = parent_rating_key
+          @parent_slug = parent_slug
+          @parent_studio = parent_studio
+          @parent_theme = parent_theme
+          @parent_thumb = parent_thumb
+          @parent_title = parent_title
+          @parent_year = parent_year
+          @primary_extra_key = primary_extra_key
+          @rating = rating
+          @rating_image = rating_image
+          @role = role
+          @season_count = season_count
+          @show_ordering = show_ordering
+          @skip_children = skip_children
+          @skip_count = skip_count
+          @slug = slug
+          @studio = studio
+          @tagline = tagline
+          @theme = theme
+          @thumb = thumb
+          @title_sort = title_sort
+          @ultra_blur_colors = ultra_blur_colors
+          @updated_at = updated_at
+          @view_count = view_count
+          @viewed_leaf_count = viewed_leaf_count
+          @view_offset = view_offset
+          @writer = writer
+          @year = year
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @added_at == other.added_at
+          return false unless @guid == other.guid
+          return false unless @key == other.key
+          return false unless @rating_key == other.rating_key
+          return false unless @summary == other.summary
+          return false unless @title == other.title
+          return false unless @type == other.type
+          return false unless @art == other.art
+          return false unless @audience_rating == other.audience_rating
+          return false unless @audience_rating_image == other.audience_rating_image
+          return false unless @banner == other.banner
+          return false unless @chapter_source == other.chapter_source
+          return false unless @child_count == other.child_count
+          return false unless @collection == other.collection
+          return false unless @content_rating == other.content_rating
+          return false unless @country == other.country
+          return false unless @director == other.director
+          return false unless @duration == other.duration
+          return false unless @enable_credits_marker_generation == other.enable_credits_marker_generation
+          return false unless @episode_sort == other.episode_sort
+          return false unless @flatten_seasons == other.flatten_seasons
+          return false unless @genre == other.genre
+          return false unless @grandparent_art == other.grandparent_art
+          return false unless @grandparent_guid == other.grandparent_guid
+          return false unless @grandparent_key == other.grandparent_key
+          return false unless @grandparent_rating_key == other.grandparent_rating_key
+          return false unless @grandparent_slug == other.grandparent_slug
+          return false unless @grandparent_theme == other.grandparent_theme
+          return false unless @grandparent_thumb == other.grandparent_thumb
+          return false unless @grandparent_title == other.grandparent_title
+          return false unless @has_premium_extras == other.has_premium_extras
+          return false unless @has_premium_primary_extra == other.has_premium_primary_extra
+          return false unless @image == other.image
+          return false unless @index == other.index
+          return false unless @last_viewed_at == other.last_viewed_at
+          return false unless @leaf_count == other.leaf_count
+          return false unless @library_section_id == other.library_section_id
+          return false unless @library_section_key == other.library_section_key
+          return false unless @library_section_title == other.library_section_title
+          return false unless @location == other.location
+          return false unless @media == other.media
+          return false unless @media_guid == other.media_guid
+          return false unless @meta_data_rating == other.meta_data_rating
+          return false unless @originally_available_at == other.originally_available_at
+          return false unless @original_title == other.original_title
+          return false unless @parent_guid == other.parent_guid
+          return false unless @parent_index == other.parent_index
+          return false unless @parent_key == other.parent_key
+          return false unless @parent_rating_key == other.parent_rating_key
+          return false unless @parent_slug == other.parent_slug
+          return false unless @parent_studio == other.parent_studio
+          return false unless @parent_theme == other.parent_theme
+          return false unless @parent_thumb == other.parent_thumb
+          return false unless @parent_title == other.parent_title
+          return false unless @parent_year == other.parent_year
+          return false unless @primary_extra_key == other.primary_extra_key
+          return false unless @rating == other.rating
+          return false unless @rating_image == other.rating_image
+          return false unless @role == other.role
+          return false unless @season_count == other.season_count
+          return false unless @show_ordering == other.show_ordering
+          return false unless @skip_children == other.skip_children
+          return false unless @skip_count == other.skip_count
+          return false unless @slug == other.slug
+          return false unless @studio == other.studio
+          return false unless @tagline == other.tagline
+          return false unless @theme == other.theme
+          return false unless @thumb == other.thumb
+          return false unless @title_sort == other.title_sort
+          return false unless @ultra_blur_colors == other.ultra_blur_colors
+          return false unless @updated_at == other.updated_at
+          return false unless @view_count == other.view_count
+          return false unless @viewed_leaf_count == other.viewed_leaf_count
+          return false unless @view_offset == other.view_offset
+          return false unless @writer == other.writer
+          return false unless @year == other.year
+          true
+        end
       end
     end
   end

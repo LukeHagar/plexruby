@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetPlaylistRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class GetPlaylistRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # the ID of the playlist
-      field :playlist_id, ::Float, { 'path_param': { 'field_name': 'playlistID', 'style': 'simple', 'explode': false } }
+        # the ID of the playlist
+        field :playlist_id, ::Float, { 'path_param': { 'field_name': 'playlistID', 'style': 'simple', 'explode': false } }
 
 
-      sig { params(playlist_id: ::Float).void }
-      def initialize(playlist_id: nil)
-        @playlist_id = playlist_id
-      end
+        sig { params(playlist_id: ::Float).void }
+        def initialize(playlist_id: nil)
+          @playlist_id = playlist_id
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @playlist_id == other.playlist_id
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @playlist_id == other.playlist_id
+          true
+        end
       end
     end
   end

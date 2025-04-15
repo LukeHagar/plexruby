@@ -22,7 +22,7 @@ This will return the media statistics for the server
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -43,7 +43,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetStatisticsResponse)](../../models/operations/getstatisticsresponse.md)**
+**[T.nilable(Models::Operations::GetStatisticsResponse)](../../models/operations/getstatisticsresponse.md)**
 
 
 
@@ -57,7 +57,7 @@ This will return the resources for the server
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -78,7 +78,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetResourcesStatisticsResponse)](../../models/operations/getresourcesstatisticsresponse.md)**
+**[T.nilable(Models::Operations::GetResourcesStatisticsResponse)](../../models/operations/getresourcesstatisticsresponse.md)**
 
 
 
@@ -92,7 +92,7 @@ This will return the bandwidth statistics for the server
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -113,5 +113,5 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetBandwidthStatisticsResponse)](../../models/operations/getbandwidthstatisticsresponse.md)**
+**[T.nilable(Models::Operations::GetBandwidthStatisticsResponse)](../../models/operations/getbandwidthstatisticsresponse.md)**
 

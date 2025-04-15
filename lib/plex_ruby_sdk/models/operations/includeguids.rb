@@ -5,14 +5,16 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # IncludeGuids - Adds the Guids object to the response
-    # 
-    class IncludeGuids < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+    
+      # IncludeGuids - Adds the Guids object to the response
+      # 
+      class IncludeGuids < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

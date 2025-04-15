@@ -5,13 +5,15 @@
 
 
 module PlexRubySDK
-  module Operations
-  
-    # GetSearchAllLibrariesQueryParamIncludeCollections - Whether to include collections in the search results.
-    class GetSearchAllLibrariesQueryParamIncludeCollections < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+    
+      # GetSearchAllLibrariesQueryParamIncludeCollections - Whether to include collections in the search results.
+      class GetSearchAllLibrariesQueryParamIncludeCollections < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

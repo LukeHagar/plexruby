@@ -5,16 +5,18 @@
 
 
 module PlexRubySDK
-  module Operations
-    ALLOW_SYNC_SERVERS = [
-      'https://plex.tv/api'
-    ].freeze
-  
-    # AllowSync - Indicates if the user is allowed to sync media.
-    class AllowSync < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+      ALLOW_SYNC_SERVERS = [
+        'https://plex.tv/api'
+      ].freeze
+    
+      # AllowSync - Indicates if the user is allowed to sync media.
+      class AllowSync < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

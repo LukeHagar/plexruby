@@ -5,25 +5,28 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class StopTaskRequest < ::Crystalline::FieldAugmented
-      extend T::Sig
+      class StopTaskRequest
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      # The name of the task to be started.
-      field :task_name, ::PlexRubySDK::Operations::PathParamTaskName, { 'path_param': { 'field_name': 'taskName', 'style': 'simple', 'explode': false } }
+        # The name of the task to be started.
+        field :task_name, Models::Operations::PathParamTaskName, { 'path_param': { 'field_name': 'taskName', 'style': 'simple', 'explode': false } }
 
 
-      sig { params(task_name: ::PlexRubySDK::Operations::PathParamTaskName).void }
-      def initialize(task_name: nil)
-        @task_name = task_name
-      end
+        sig { params(task_name: Models::Operations::PathParamTaskName).void }
+        def initialize(task_name: nil)
+          @task_name = task_name
+        end
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @task_name == other.task_name
-        true
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @task_name == other.task_name
+          true
+        end
       end
     end
   end

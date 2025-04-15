@@ -28,7 +28,7 @@ Get Server Capabilities
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -43,7 +43,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetServerCapabilitiesResponse)](../../models/operations/getservercapabilitiesresponse.md)**
+**[T.nilable(Models::Operations::GetServerCapabilitiesResponse)](../../models/operations/getservercapabilitiesresponse.md)**
 
 
 
@@ -57,7 +57,7 @@ Get Server Preferences
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -72,7 +72,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetServerPreferencesResponse)](../../models/operations/getserverpreferencesresponse.md)**
+**[T.nilable(Models::Operations::GetServerPreferencesResponse)](../../models/operations/getserverpreferencesresponse.md)**
 
 
 
@@ -86,7 +86,7 @@ Get Available Clients
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -101,7 +101,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetAvailableClientsResponse)](../../models/operations/getavailableclientsresponse.md)**
+**[T.nilable(Models::Operations::GetAvailableClientsResponse)](../../models/operations/getavailableclientsresponse.md)**
 
 
 
@@ -115,7 +115,7 @@ Get Devices
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -130,7 +130,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetDevicesResponse)](../../models/operations/getdevicesresponse.md)**
+**[T.nilable(Models::Operations::GetDevicesResponse)](../../models/operations/getdevicesresponse.md)**
 
 
 
@@ -155,7 +155,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetServerIdentityResponse)](../../models/operations/getserveridentityresponse.md)**
+**[T.nilable(Models::Operations::GetServerIdentityResponse)](../../models/operations/getserveridentityresponse.md)**
 
 
 
@@ -169,7 +169,7 @@ Returns MyPlex Account Information
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -184,7 +184,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetMyPlexAccountResponse)](../../models/operations/getmyplexaccountresponse.md)**
+**[T.nilable(Models::Operations::GetMyPlexAccountResponse)](../../models/operations/getmyplexaccountresponse.md)**
 
 
 
@@ -199,18 +199,18 @@ Plex's Photo transcoder is used throughout the service to serve images at specif
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
 
-req = ::PlexRubySDK::Operations::GetResizedPhotoRequest.new(
+req = Models::Operations::GetResizedPhotoRequest.new(
   width: 110.0,
   height: 165.0,
   opacity: 643_869,
   blur: 0.0,
-  min_size: ::PlexRubySDK::Operations::MinSize::ONE,
-  upscale: ::PlexRubySDK::Operations::Upscale::ONE,
+  min_size: Models::Operations::MinSize::ONE,
+  upscale: Models::Operations::Upscale::ONE,
   url: "/library/metadata/49564/thumb/1654258204",
 )
 
@@ -224,13 +224,13 @@ end
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [::PlexRubySDK::Operations::GetResizedPhotoRequest](../../models/operations/getresizedphotorequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [Models::Operations::GetResizedPhotoRequest](../../models/operations/getresizedphotorequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetResizedPhotoResponse)](../../models/operations/getresizedphotoresponse.md)**
+**[T.nilable(Models::Operations::GetResizedPhotoResponse)](../../models/operations/getresizedphotoresponse.md)**
 
 
 
@@ -244,7 +244,7 @@ Retrieves media providers and their features from the Plex server.
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -265,7 +265,7 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetMediaProvidersResponse)](../../models/operations/getmediaprovidersresponse.md)**
+**[T.nilable(Models::Operations::GetMediaProvidersResponse)](../../models/operations/getmediaprovidersresponse.md)**
 
 
 
@@ -279,7 +279,7 @@ Get Server List
 require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
-      security: ::PlexRubySDK::Shared::Security.new(
+      security: Models::Shared::Security.new(
         access_token: "<YOUR_API_KEY_HERE>",
       ),
     )
@@ -294,5 +294,5 @@ end
 
 ### Response
 
-**[T.nilable(::PlexRubySDK::Operations::GetServerListResponse)](../../models/operations/getserverlistresponse.md)**
+**[T.nilable(Models::Operations::GetServerListResponse)](../../models/operations/getserverlistresponse.md)**
 

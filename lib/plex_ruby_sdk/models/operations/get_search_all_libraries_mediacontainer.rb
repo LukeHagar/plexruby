@@ -5,29 +5,32 @@
 
 
 module PlexRubySDK
-  module Operations
-  
+  module Models
+    module Operations
+    
 
-    class GetSearchAllLibrariesMediaContainer < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :search_result, T::Array[::PlexRubySDK::Operations::SearchResult], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('SearchResult') } }
-
-      field :size, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+      class GetSearchAllLibrariesMediaContainer
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(search_result: T::Array[::PlexRubySDK::Operations::SearchResult], size: ::Float).void }
-      def initialize(search_result: nil, size: nil)
-        @search_result = search_result
-        @size = size
-      end
+        field :search_result, T::Array[Models::Operations::SearchResult], { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('SearchResult') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @search_result == other.search_result
-        return false unless @size == other.size
-        true
+        field :size, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
+
+
+        sig { params(search_result: T::Array[Models::Operations::SearchResult], size: ::Float).void }
+        def initialize(search_result: nil, size: nil)
+          @search_result = search_result
+          @size = size
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @search_result == other.search_result
+          return false unless @size == other.size
+          true
+        end
       end
     end
   end

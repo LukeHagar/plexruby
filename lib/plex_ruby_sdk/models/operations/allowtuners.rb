@@ -5,16 +5,18 @@
 
 
 module PlexRubySDK
-  module Operations
-    ALLOW_TUNERS_SERVERS = [
-      'https://plex.tv/api'
-    ].freeze
-  
-    # AllowTuners - Indicates if the user is allowed to use tuners.
-    class AllowTuners < T::Enum
-      enums do
-        DISABLE = new(0)
-        ENABLE = new(1)
+  module Models
+    module Operations
+      ALLOW_TUNERS_SERVERS = [
+        'https://plex.tv/api'
+      ].freeze
+    
+      # AllowTuners - Indicates if the user is allowed to use tuners.
+      class AllowTuners < T::Enum
+        enums do
+          DISABLE = new(0)
+          ENABLE = new(1)
+        end
       end
     end
   end

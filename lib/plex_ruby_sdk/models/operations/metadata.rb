@@ -5,164 +5,167 @@
 
 
 module PlexRubySDK
-  module Operations
-    METADATA_SERVERS = [
-      'https://metadata.provider.plex.tv'
-    ].freeze
-  
+  module Models
+    module Operations
+      METADATA_SERVERS = [
+        'https://metadata.provider.plex.tv'
+      ].freeze
+    
 
-    class Metadata < ::Crystalline::FieldAugmented
-      extend T::Sig
-
-
-      field :added_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('addedAt') } }
-
-      field :art, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('art') } }
-
-      field :audience_rating, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audienceRating') } }
-
-      field :audience_rating_image, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audienceRatingImage') } }
-
-      field :availability_id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('availabilityId') } }
-
-      field :banner, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('banner') } }
-
-      field :child_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('childCount') } }
-
-      field :content_rating, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('contentRating') } }
-
-      field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
-
-      field :expires_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('expiresAt') } }
-
-      field :guid, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('guid') } }
-
-      field :image, T.nilable(T::Array[::PlexRubySDK::Operations::Image]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Image') } }
-
-      field :imdb_rating_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('imdbRatingCount') } }
-
-      field :is_continuing_series, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('isContinuingSeries') } }
-
-      field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-      field :leaf_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('leafCount') } }
-
-      field :originally_available_at, T.nilable(::Date), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originallyAvailableAt'), 'decoder': Utils.date_from_iso_format(true) } }
-
-      field :original_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originalTitle') } }
-
-      field :playable_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('playableKey') } }
-
-      field :public_pages_url, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('publicPagesURL') } }
-
-      field :rating, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('rating') } }
-
-      field :rating_image, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingImage') } }
-
-      field :rating_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingKey') } }
-
-      field :skip_children, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('skipChildren') } }
-
-      field :slug, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('slug') } }
-
-      field :streaming_media_id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('streamingMediaId') } }
-
-      field :studio, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('studio') } }
-
-      field :subtype, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subtype') } }
-
-      field :tagline, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagline') } }
-
-      field :theme, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('theme') } }
-
-      field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
-
-      field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-
-      field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
-
-      field :user_state, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('userState') } }
-
-      field :year, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('year') } }
+      class Metadata
+        extend T::Sig
+        include Crystalline::MetadataFields
 
 
-      sig { params(added_at: T.nilable(::Integer), art: T.nilable(::String), audience_rating: T.nilable(::Float), audience_rating_image: T.nilable(::String), availability_id: T.nilable(::String), banner: T.nilable(::String), child_count: T.nilable(::Integer), content_rating: T.nilable(::String), duration: T.nilable(::Integer), expires_at: T.nilable(::Integer), guid: T.nilable(::String), image: T.nilable(T::Array[::PlexRubySDK::Operations::Image]), imdb_rating_count: T.nilable(::Integer), is_continuing_series: T.nilable(T::Boolean), key: T.nilable(::String), leaf_count: T.nilable(::Integer), originally_available_at: T.nilable(::Date), original_title: T.nilable(::String), playable_key: T.nilable(::String), public_pages_url: T.nilable(::String), rating: T.nilable(::Float), rating_image: T.nilable(::String), rating_key: T.nilable(::String), skip_children: T.nilable(T::Boolean), slug: T.nilable(::String), streaming_media_id: T.nilable(::String), studio: T.nilable(::String), subtype: T.nilable(::String), tagline: T.nilable(::String), theme: T.nilable(::String), thumb: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String), user_state: T.nilable(T::Boolean), year: T.nilable(::Integer)).void }
-      def initialize(added_at: nil, art: nil, audience_rating: nil, audience_rating_image: nil, availability_id: nil, banner: nil, child_count: nil, content_rating: nil, duration: nil, expires_at: nil, guid: nil, image: nil, imdb_rating_count: nil, is_continuing_series: nil, key: nil, leaf_count: nil, originally_available_at: nil, original_title: nil, playable_key: nil, public_pages_url: nil, rating: nil, rating_image: nil, rating_key: nil, skip_children: nil, slug: nil, streaming_media_id: nil, studio: nil, subtype: nil, tagline: nil, theme: nil, thumb: nil, title: nil, type: nil, user_state: nil, year: nil)
-        @added_at = added_at
-        @art = art
-        @audience_rating = audience_rating
-        @audience_rating_image = audience_rating_image
-        @availability_id = availability_id
-        @banner = banner
-        @child_count = child_count
-        @content_rating = content_rating
-        @duration = duration
-        @expires_at = expires_at
-        @guid = guid
-        @image = image
-        @imdb_rating_count = imdb_rating_count
-        @is_continuing_series = is_continuing_series
-        @key = key
-        @leaf_count = leaf_count
-        @originally_available_at = originally_available_at
-        @original_title = original_title
-        @playable_key = playable_key
-        @public_pages_url = public_pages_url
-        @rating = rating
-        @rating_image = rating_image
-        @rating_key = rating_key
-        @skip_children = skip_children
-        @slug = slug
-        @streaming_media_id = streaming_media_id
-        @studio = studio
-        @subtype = subtype
-        @tagline = tagline
-        @theme = theme
-        @thumb = thumb
-        @title = title
-        @type = type
-        @user_state = user_state
-        @year = year
-      end
+        field :added_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('addedAt') } }
 
-      def ==(other)
-        return false unless other.is_a? self.class
-        return false unless @added_at == other.added_at
-        return false unless @art == other.art
-        return false unless @audience_rating == other.audience_rating
-        return false unless @audience_rating_image == other.audience_rating_image
-        return false unless @availability_id == other.availability_id
-        return false unless @banner == other.banner
-        return false unless @child_count == other.child_count
-        return false unless @content_rating == other.content_rating
-        return false unless @duration == other.duration
-        return false unless @expires_at == other.expires_at
-        return false unless @guid == other.guid
-        return false unless @image == other.image
-        return false unless @imdb_rating_count == other.imdb_rating_count
-        return false unless @is_continuing_series == other.is_continuing_series
-        return false unless @key == other.key
-        return false unless @leaf_count == other.leaf_count
-        return false unless @originally_available_at == other.originally_available_at
-        return false unless @original_title == other.original_title
-        return false unless @playable_key == other.playable_key
-        return false unless @public_pages_url == other.public_pages_url
-        return false unless @rating == other.rating
-        return false unless @rating_image == other.rating_image
-        return false unless @rating_key == other.rating_key
-        return false unless @skip_children == other.skip_children
-        return false unless @slug == other.slug
-        return false unless @streaming_media_id == other.streaming_media_id
-        return false unless @studio == other.studio
-        return false unless @subtype == other.subtype
-        return false unless @tagline == other.tagline
-        return false unless @theme == other.theme
-        return false unless @thumb == other.thumb
-        return false unless @title == other.title
-        return false unless @type == other.type
-        return false unless @user_state == other.user_state
-        return false unless @year == other.year
-        true
+        field :art, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('art') } }
+
+        field :audience_rating, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audienceRating') } }
+
+        field :audience_rating_image, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audienceRatingImage') } }
+
+        field :availability_id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('availabilityId') } }
+
+        field :banner, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('banner') } }
+
+        field :child_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('childCount') } }
+
+        field :content_rating, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('contentRating') } }
+
+        field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
+
+        field :expires_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('expiresAt') } }
+
+        field :guid, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('guid') } }
+
+        field :image, T.nilable(T::Array[Models::Operations::Image]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Image') } }
+
+        field :imdb_rating_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('imdbRatingCount') } }
+
+        field :is_continuing_series, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('isContinuingSeries') } }
+
+        field :key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
+
+        field :leaf_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('leafCount') } }
+
+        field :originally_available_at, T.nilable(::Date), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originallyAvailableAt'), 'decoder': Utils.date_from_iso_format(true) } }
+
+        field :original_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originalTitle') } }
+
+        field :playable_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('playableKey') } }
+
+        field :public_pages_url, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('publicPagesURL') } }
+
+        field :rating, T.nilable(::Float), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('rating') } }
+
+        field :rating_image, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingImage') } }
+
+        field :rating_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('ratingKey') } }
+
+        field :skip_children, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('skipChildren') } }
+
+        field :slug, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('slug') } }
+
+        field :streaming_media_id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('streamingMediaId') } }
+
+        field :studio, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('studio') } }
+
+        field :subtype, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('subtype') } }
+
+        field :tagline, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagline') } }
+
+        field :theme, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('theme') } }
+
+        field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
+
+        field :title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
+
+        field :type, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
+
+        field :user_state, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('userState') } }
+
+        field :year, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('year') } }
+
+
+        sig { params(added_at: T.nilable(::Integer), art: T.nilable(::String), audience_rating: T.nilable(::Float), audience_rating_image: T.nilable(::String), availability_id: T.nilable(::String), banner: T.nilable(::String), child_count: T.nilable(::Integer), content_rating: T.nilable(::String), duration: T.nilable(::Integer), expires_at: T.nilable(::Integer), guid: T.nilable(::String), image: T.nilable(T::Array[Models::Operations::Image]), imdb_rating_count: T.nilable(::Integer), is_continuing_series: T.nilable(T::Boolean), key: T.nilable(::String), leaf_count: T.nilable(::Integer), originally_available_at: T.nilable(::Date), original_title: T.nilable(::String), playable_key: T.nilable(::String), public_pages_url: T.nilable(::String), rating: T.nilable(::Float), rating_image: T.nilable(::String), rating_key: T.nilable(::String), skip_children: T.nilable(T::Boolean), slug: T.nilable(::String), streaming_media_id: T.nilable(::String), studio: T.nilable(::String), subtype: T.nilable(::String), tagline: T.nilable(::String), theme: T.nilable(::String), thumb: T.nilable(::String), title: T.nilable(::String), type: T.nilable(::String), user_state: T.nilable(T::Boolean), year: T.nilable(::Integer)).void }
+        def initialize(added_at: nil, art: nil, audience_rating: nil, audience_rating_image: nil, availability_id: nil, banner: nil, child_count: nil, content_rating: nil, duration: nil, expires_at: nil, guid: nil, image: nil, imdb_rating_count: nil, is_continuing_series: nil, key: nil, leaf_count: nil, originally_available_at: nil, original_title: nil, playable_key: nil, public_pages_url: nil, rating: nil, rating_image: nil, rating_key: nil, skip_children: nil, slug: nil, streaming_media_id: nil, studio: nil, subtype: nil, tagline: nil, theme: nil, thumb: nil, title: nil, type: nil, user_state: nil, year: nil)
+          @added_at = added_at
+          @art = art
+          @audience_rating = audience_rating
+          @audience_rating_image = audience_rating_image
+          @availability_id = availability_id
+          @banner = banner
+          @child_count = child_count
+          @content_rating = content_rating
+          @duration = duration
+          @expires_at = expires_at
+          @guid = guid
+          @image = image
+          @imdb_rating_count = imdb_rating_count
+          @is_continuing_series = is_continuing_series
+          @key = key
+          @leaf_count = leaf_count
+          @originally_available_at = originally_available_at
+          @original_title = original_title
+          @playable_key = playable_key
+          @public_pages_url = public_pages_url
+          @rating = rating
+          @rating_image = rating_image
+          @rating_key = rating_key
+          @skip_children = skip_children
+          @slug = slug
+          @streaming_media_id = streaming_media_id
+          @studio = studio
+          @subtype = subtype
+          @tagline = tagline
+          @theme = theme
+          @thumb = thumb
+          @title = title
+          @type = type
+          @user_state = user_state
+          @year = year
+        end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          return false unless @added_at == other.added_at
+          return false unless @art == other.art
+          return false unless @audience_rating == other.audience_rating
+          return false unless @audience_rating_image == other.audience_rating_image
+          return false unless @availability_id == other.availability_id
+          return false unless @banner == other.banner
+          return false unless @child_count == other.child_count
+          return false unless @content_rating == other.content_rating
+          return false unless @duration == other.duration
+          return false unless @expires_at == other.expires_at
+          return false unless @guid == other.guid
+          return false unless @image == other.image
+          return false unless @imdb_rating_count == other.imdb_rating_count
+          return false unless @is_continuing_series == other.is_continuing_series
+          return false unless @key == other.key
+          return false unless @leaf_count == other.leaf_count
+          return false unless @originally_available_at == other.originally_available_at
+          return false unless @original_title == other.original_title
+          return false unless @playable_key == other.playable_key
+          return false unless @public_pages_url == other.public_pages_url
+          return false unless @rating == other.rating
+          return false unless @rating_image == other.rating_image
+          return false unless @rating_key == other.rating_key
+          return false unless @skip_children == other.skip_children
+          return false unless @slug == other.slug
+          return false unless @streaming_media_id == other.streaming_media_id
+          return false unless @studio == other.studio
+          return false unless @subtype == other.subtype
+          return false unless @tagline == other.tagline
+          return false unless @theme == other.theme
+          return false unless @thumb == other.thumb
+          return false unless @title == other.title
+          return false unless @type == other.type
+          return false unless @user_state == other.user_state
+          return false unless @year == other.year
+          true
+        end
       end
     end
   end
