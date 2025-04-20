@@ -49,6 +49,7 @@ The following SDKs are generated from the OpenAPI Specification. They are automa
   * [SDK Example Usage](#sdk-example-usage)
   * [Authentication](#authentication)
   * [Available Resources and Operations](#available-resources-and-operations)
+  * [Error Handling](#error-handling)
   * [Server Selection](#server-selection)
 * [Development](#development)
   * [Maturity](#maturity)
@@ -263,6 +264,59 @@ end
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
+
+<!-- Start Error Handling [errors] -->
+## Error Handling
+
+Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an error.
+
+By default an API error will raise a `Errors::APIError`, which has the following properties:
+
+| Property       | Type                                    | Description           |
+|----------------|-----------------------------------------|-----------------------|
+| `message`     | *string*                                 | The error message     |
+| `status_code`  | *int*                                   | The HTTP status code  |
+| `raw_response` | *Faraday::Response*                     | The raw HTTP response |
+| `body`        | *string*                                 | The response content  |
+
+When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `get_server_capabilities` method throws the following exceptions:
+
+| Error Type                                        | Status Code | Content Type     |
+| ------------------------------------------------- | ----------- | ---------------- |
+| Models::Errors::GetServerCapabilitiesBadRequest   | 400         | application/json |
+| Models::Errors::GetServerCapabilitiesUnauthorized | 401         | application/json |
+| Errors::APIError                                  | 4XX, 5XX    | \*/\*            |
+
+### Example
+
+```ruby
+require 'plex_ruby_sdk'
+
+s = ::PlexRubySDK::PlexAPI.new(
+      security: Models::Shared::Security.new(
+        access_token: "<YOUR_API_KEY_HERE>",
+      ),
+    )
+
+begin
+    res = s.server.get_server_capabilities()
+
+    if ! res.object.nil?
+      # handle response
+    end
+rescue Models::Errors::GetServerCapabilitiesBadRequest => e
+  # handle $e->$container data
+  throw $e;
+rescue Models::Errors::GetServerCapabilitiesUnauthorized => e
+  # handle $e->$container data
+  throw $e;
+rescue Errors::APIError => e
+  # handle default exception
+  raise e
+end
+
+```
+<!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
 ## Server Selection

@@ -17,7 +17,7 @@ module PlexRubySDK
         # Note: This is unique in the context of the Plex server.
         # 
         field :section_key, ::Integer, { 'path_param': { 'field_name': 'sectionKey', 'style': 'simple', 'explode': false } }
-        # Whether or not to include details for a section (types, filters, and sorts). 
+        # Whether or not to include details for a section (types, filters, and sorts).
         # Only exists for backwards compatibility, media providers other than the server libraries have it on always.
         # 
         field :include_details, T.nilable(Models::Operations::IncludeDetails), { 'query_param': { 'field_name': 'includeDetails', 'style': 'form', 'explode': true } }

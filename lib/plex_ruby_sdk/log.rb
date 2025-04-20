@@ -155,13 +155,13 @@ module PlexRubySDK
     sig { params(request: ::String, timeout_ms: T.nilable(Integer)).returns(Models::Operations::LogMultiLineResponse) }
     def log_multi_line(request, timeout_ms = nil)
       # log_multi_line - Logging a multi-line message
-      # This endpoint allows for the batch addition of log entries to the main Plex Media Server log.  
-      # It accepts a text/plain request body, where each line represents a distinct log entry.  
-      # Each log entry consists of URL-encoded key-value pairs, specifying log attributes such as 'level', 'message', and 'source'.  
+      # This endpoint allows for the batch addition of log entries to the main Plex Media Server log.
+      # It accepts a text/plain request body, where each line represents a distinct log entry.
+      # Each log entry consists of URL-encoded key-value pairs, specifying log attributes such as 'level', 'message', and 'source'.
       # 
-      # Log entries are separated by a newline character (`\n`).  
-      # Each entry's parameters should be URL-encoded to ensure accurate parsing and handling of special characters.  
-      # This method is efficient for logging multiple entries in a single API call, reducing the overhead of multiple individual requests.  
+      # Log entries are separated by a newline character (`\n`).
+      # Each entry's parameters should be URL-encoded to ensure accurate parsing and handling of special characters.
+      # This method is efficient for logging multiple entries in a single API call, reducing the overhead of multiple individual requests.
       # 
       # The 'level' parameter specifies the log entry's severity or importance, with the following integer values:
       # - `0`: Error - Critical issues that require immediate attention.

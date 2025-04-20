@@ -420,14 +420,14 @@ module PlexRubySDK
       # get_library_details - Get Library Details
       # ## Library Details Endpoint
       # 
-      # This endpoint provides comprehensive details about the library, focusing on organizational aspects rather than the content itself.   
+      # This endpoint provides comprehensive details about the library, focusing on organizational aspects rather than the content itself.
       # 
       # The details include:
       # 
       # ### Directories
       # Organized into three categories:
       # 
-      # - **Primary Directories**: 
+      # - **Primary Directories**:
       #   - Used in some clients for quick access to media subsets (e.g., "All", "On Deck").
       #   - Most can be replicated via media queries.
       #   - Customizable by users.
