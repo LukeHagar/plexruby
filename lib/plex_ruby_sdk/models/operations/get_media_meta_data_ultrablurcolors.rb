@@ -13,13 +13,13 @@ module PlexRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-        # The bottom-left color value.
+
         field :bottom_left, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('bottomLeft') } }
-        # The bottom-right color value.
+
         field :bottom_right, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('bottomRight') } }
-        # The top-left color value.
+
         field :top_left, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('topLeft') } }
-        # The top-right color value.
+
         field :top_right, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('topRight') } }
 
 

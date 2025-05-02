@@ -13,27 +13,27 @@ module PlexRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-        # The filter string for the role.
+        # The filter string used to query this actor. For example, it may indicate that this is an actor with a given key.
         field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
-        # The unique role identifier.
+        # Unique identifier for the actor or role.
         field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-        # The actor's name.
+        # The display tag for the actor (typically the actor's name).
         field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
-        # A key associated with the actor tag.
-        field :tag_key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
-        # The character name or role.
+        # The role played by the actor in the media item.
         field :role, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('role') } }
-        # URL for the role thumbnail image.
+        # A unique key associated with the actor's tag, used for internal identification.
+        field :tag_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
+        # The URL of the thumbnail image for the actor.
         field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
 
 
-        sig { params(filter: ::String, id: ::Integer, tag: ::String, tag_key: ::String, role: T.nilable(::String), thumb: T.nilable(::String)).void }
-        def initialize(filter: nil, id: nil, tag: nil, tag_key: nil, role: nil, thumb: nil)
+        sig { params(filter: ::String, id: ::Integer, tag: ::String, role: T.nilable(::String), tag_key: T.nilable(::String), thumb: T.nilable(::String)).void }
+        def initialize(filter: nil, id: nil, tag: nil, role: nil, tag_key: nil, thumb: nil)
           @filter = filter
           @id = id
           @tag = tag
-          @tag_key = tag_key
           @role = role
+          @tag_key = tag_key
           @thumb = thumb
         end
 
@@ -42,8 +42,8 @@ module PlexRubySDK
           return false unless @filter == other.filter
           return false unless @id == other.id
           return false unless @tag == other.tag
-          return false unless @tag_key == other.tag_key
           return false unless @role == other.role
+          return false unless @tag_key == other.tag_key
           return false unless @thumb == other.thumb
           true
         end

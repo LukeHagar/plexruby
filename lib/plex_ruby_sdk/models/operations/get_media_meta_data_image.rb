@@ -13,15 +13,15 @@ module PlexRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-        # Alternate text for the image.
+
         field :alt, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('alt') } }
-        # The type of image (e.g., coverPoster, background, clearLogo).
-        field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
-        # The URL of the image.
+
+        field :type, Models::Operations::GetMediaMetaDataLibraryType, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type'), 'decoder': Utils.enum_from_string(Models::Operations::GetMediaMetaDataLibraryType, false) } }
+
         field :url, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('url') } }
 
 
-        sig { params(alt: ::String, type: ::String, url: ::String).void }
+        sig { params(alt: ::String, type: Models::Operations::GetMediaMetaDataLibraryType, url: ::String).void }
         def initialize(alt: nil, type: nil, url: nil)
           @alt = alt
           @type = type

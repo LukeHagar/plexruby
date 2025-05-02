@@ -8,31 +8,31 @@ module PlexRubySDK
   module Models
     module Operations
     
-
+      # The filter query string for country media items.
       class GetMediaMetaDataCountry
         extend T::Sig
         include Crystalline::MetadataFields
 
-        # The filter string for the country.
-        field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
-        # The unique country identifier.
+
         field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-        # The country name.
+        # The country of origin of this media item
         field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
+        field :filter, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
 
-        sig { params(filter: ::String, id: ::Integer, tag: ::String).void }
-        def initialize(filter: nil, id: nil, tag: nil)
-          @filter = filter
+
+        sig { params(id: ::Integer, tag: ::String, filter: T.nilable(::String)).void }
+        def initialize(id: nil, tag: nil, filter: nil)
           @id = id
           @tag = tag
+          @filter = filter
         end
 
         def ==(other)
           return false unless other.is_a? self.class
-          return false unless @filter == other.filter
           return false unless @id == other.id
           return false unless @tag == other.tag
+          return false unless @filter == other.filter
           true
         end
       end

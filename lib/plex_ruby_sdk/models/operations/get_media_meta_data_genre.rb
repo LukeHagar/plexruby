@@ -8,16 +8,17 @@ module PlexRubySDK
   module Models
     module Operations
     
-
+      # The filter query string for similar items.
       class GetMediaMetaDataGenre
         extend T::Sig
         include Crystalline::MetadataFields
 
-        # The filter string for the genre.
+
         field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
-        # The unique genre identifier.
+
         field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
-        # The genre name.
+        # The genre name of this media-item
+        # 
         field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
 
