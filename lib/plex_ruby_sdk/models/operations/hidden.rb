@@ -8,11 +8,12 @@ module PlexRubySDK
   module Models
     module Operations
     
-      # Hidden - UNKNOWN
+      # Hidden - The Plex library visibility setting
       class Hidden < T::Enum
         enums do
-          DISABLE = new(0)
-          ENABLE = new(1)
+          VISIBLE = new(0)
+          EXCLUDE_HOME_SCREEN = new(1)
+          EXCLUDE_HOME_SCREEN_AND_GLOBAL_SEARCH = new(2)
         end
       end
     end

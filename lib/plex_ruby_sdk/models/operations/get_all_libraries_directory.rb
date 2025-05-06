@@ -31,7 +31,7 @@ module PlexRubySDK
         field :directory, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('directory') } }
         # UNKNOWN
         field :filters, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filters') } }
-
+        # The Plex library visibility setting
         field :hidden, Models::Operations::Hidden, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hidden'), 'decoder': Utils.enum_from_string(Models::Operations::Hidden, false) } }
         # The library key representing the unique identifier
         field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }

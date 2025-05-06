@@ -66,9 +66,9 @@ module PlexRubySDK
       end
       @language = 'ruby'
       @openapi_doc_version = '0.0.3'
-      @sdk_version = '0.12.1'
+      @sdk_version = '0.13.1'
       @gen_version = '2.570.4'
-      @user_agent = 'speakeasy-sdk/ruby 0.12.1 2.570.4 0.0.3 plex_ruby_sdk'
+      @user_agent = 'speakeasy-sdk/ruby 0.13.1 2.570.4 0.0.3 plex_ruby_sdk'
     end
 
     sig { returns([String, T::Hash[Symbol, String]]) }

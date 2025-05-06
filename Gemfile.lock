@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    plex_ruby_sdk (0.12.1)
+    plex_ruby_sdk (0.13.1)
       faraday
       faraday-multipart
       faraday-retry (~> 2.2.1)
