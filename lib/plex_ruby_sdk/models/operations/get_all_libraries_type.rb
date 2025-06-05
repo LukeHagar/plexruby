@@ -17,6 +17,10 @@ module PlexRubySDK
           EPISODE = new('episode')
           ARTIST = new('artist')
           ALBUM = new('album')
+          TRACK = new('track')
+          PHOTO_ALBUM = new('photoalbum')
+          PHOTO = new('photo')
+          COLLECTION = new('collection')
         end
       end
     end

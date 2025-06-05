@@ -27,7 +27,7 @@ module PlexRubySDK
         field :summary, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('summary') } }
 
         field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-        # The type of media content
+        # The type of media content in the Plex library. This can represent videos, music, or photos.
         # 
         field :type, Models::Operations::GetSearchAllLibrariesType, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type'), 'decoder': Utils.enum_from_string(Models::Operations::GetSearchAllLibrariesType, false) } }
 

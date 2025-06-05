@@ -21,12 +21,12 @@ module PlexRubySDK
         # E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
         # 
         field :type, Models::Operations::GetTopWatchedContentQueryParamType, { 'query_param': { 'field_name': 'type', 'style': 'form', 'explode': true } }
-        # Adds the Guids object to the response
+        # Adds the Guid object to the response
         # 
-        field :include_guids, T.nilable(::Integer), { 'query_param': { 'field_name': 'includeGuids', 'style': 'form', 'explode': true } }
+        field :include_guids, T.nilable(Models::Operations::GetTopWatchedContentQueryParamIncludeGuids), { 'query_param': { 'field_name': 'includeGuids', 'style': 'form', 'explode': true } }
 
 
-        sig { params(type: Models::Operations::GetTopWatchedContentQueryParamType, include_guids: T.nilable(::Integer)).void }
+        sig { params(type: Models::Operations::GetTopWatchedContentQueryParamType, include_guids: T.nilable(Models::Operations::GetTopWatchedContentQueryParamIncludeGuids)).void }
         def initialize(type: nil, include_guids: nil)
           @type = type
           @include_guids = include_guids

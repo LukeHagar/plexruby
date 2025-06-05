@@ -14,7 +14,7 @@ API Calls interacting with Plex Media Server Libraries
 * [get_library_details](#get_library_details) - Get Library Details
 * [delete_library](#delete_library) - Delete Library Section
 * [get_library_items](#get_library_items) - Get Library Items
-* [get_all_media_library](#get_all_media_library) - Get all media of library
+* [get_library_sections_all](#get_library_sections_all) - Get Library section media by tag ALL
 * [get_refresh_library_metadata](#get_refresh_library_metadata) - Refresh Metadata Of The Library
 * [get_search_library](#get_search_library) - Search Library
 * [get_genres_library](#get_genres_library) - Get Genres of library media
@@ -335,7 +335,7 @@ end
 
 
 
-## get_all_media_library
+## get_library_sections_all
 
 Retrieves a list of all general media data for this library.
 
@@ -351,10 +351,10 @@ s = ::PlexRubySDK::PlexAPI.new(
       ),
     )
 
-req = Models::Operations::GetAllMediaLibraryRequest.new(
+req = Models::Operations::GetLibrarySectionsAllRequest.new(
   section_key: 9518,
-  type: Models::Operations::GetAllMediaLibraryQueryParamType::TV_SHOW,
-  include_meta: Models::Operations::GetAllMediaLibraryQueryParamIncludeMeta::ENABLE,
+  type: Models::Operations::GetLibrarySectionsAllQueryParamType::TV_SHOW,
+  include_meta: Models::Operations::GetLibrarySectionsAllQueryParamIncludeMeta::ENABLE,
   include_guids: Models::Operations::QueryParamIncludeGuids::ENABLE,
   include_advanced: Models::Operations::IncludeAdvanced::ENABLE,
   include_collections: Models::Operations::QueryParamIncludeCollections::ENABLE,
@@ -363,7 +363,7 @@ req = Models::Operations::GetAllMediaLibraryRequest.new(
   x_plex_container_size: 50,
 )
 
-res = s.library.get_all_media_library(req)
+res = s.library.get_library_sections_all(req)
 
 if ! res.object.nil?
   # handle response
@@ -373,13 +373,13 @@ end
 
 ### Parameters
 
-| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `request`                                                                                             | [Models::Operations::GetAllMediaLibraryRequest](../../models/operations/getallmedialibraryrequest.md) | :heavy_check_mark:                                                                                    | The request object to use for the request.                                                            |
+| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                   | [Models::Operations::GetLibrarySectionsAllRequest](../../models/operations/getlibrarysectionsallrequest.md) | :heavy_check_mark:                                                                                          | The request object to use for the request.                                                                  |
 
 ### Response
 
-**[T.nilable(Models::Operations::GetAllMediaLibraryResponse)](../../models/operations/getallmedialibraryresponse.md)**
+**[T.nilable(Models::Operations::GetLibrarySectionsAllResponse)](../../models/operations/getlibrarysectionsallresponse.md)**
 
 
 
@@ -633,7 +633,8 @@ end
 
 ## get_media_meta_data
 
-This endpoint will return all the (meta)data of a library item specified with by the ratingKey.
+This endpoint will return all the (meta)data of one or more library items specified by the ratingKey.
+Multiple rating keys can be provided as a comma-separated list (e.g., "21119,21617").
 
 
 ### Example Usage
@@ -648,7 +649,7 @@ s = ::PlexRubySDK::PlexAPI.new(
     )
 
 req = Models::Operations::GetMediaMetaDataRequest.new(
-  rating_key: 9518,
+  rating_key: "21119,21617",
   include_concerts: true,
   include_extras: true,
   include_on_deck: true,
@@ -881,7 +882,7 @@ s = ::PlexRubySDK::PlexAPI.new(
       ),
     )
 
-res = s.library.get_top_watched_content(type=Models::Operations::GetTopWatchedContentQueryParamType::TV_SHOW, include_guids=1)
+res = s.library.get_top_watched_content(type=Models::Operations::GetTopWatchedContentQueryParamType::TV_SHOW, include_guids=Models::Operations::GetTopWatchedContentQueryParamIncludeGuids::ENABLE)
 
 if ! res.object.nil?
   # handle response
@@ -894,7 +895,7 @@ end
 | Parameter                                                                                                                                                                                    | Type                                                                                                                                                                                         | Required                                                                                                                                                                                     | Description                                                                                                                                                                                  | Example                                                                                                                                                                                      |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `type`                                                                                                                                                                                       | [Models::Operations::GetTopWatchedContentQueryParamType](../../models/operations/gettopwatchedcontentqueryparamtype.md)                                                                      | :heavy_check_mark:                                                                                                                                                                           | The type of media to retrieve or filter by.<br/>1 = movie<br/>2 = show<br/>3 = season<br/>4 = episode<br/>E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries<br/> | 2                                                                                                                                                                                            |
-| `include_guids`                                                                                                                                                                              | *T.nilable(::Integer)*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                           | Adds the Guids object to the response<br/>                                                                                                                                                   | 1                                                                                                                                                                                            |
+| `include_guids`                                                                                                                                                                              | [T.nilable(Models::Operations::GetTopWatchedContentQueryParamIncludeGuids)](../../models/operations/gettopwatchedcontentqueryparamincludeguids.md)                                           | :heavy_minus_sign:                                                                                                                                                                           | Adds the Guid object to the response<br/>                                                                                                                                                    | 1                                                                                                                                                                                            |
 
 ### Response
 

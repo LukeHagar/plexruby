@@ -21,9 +21,11 @@ module PlexRubySDK
           TV_SHOW = new(2)
           SEASON = new(3)
           EPISODE = new(4)
-          AUDIO = new(8)
-          ALBUM = new(9)
-          TRACK = new(10)
+          ARTIST = new(5)
+          ALBUM = new(6)
+          TRACK = new(7)
+          PHOTO_ALBUM = new(8)
+          PHOTO = new(9)
         end
       end
     end

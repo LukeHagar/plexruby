@@ -19,13 +19,13 @@ module PlexRubySDK
         field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
         # The role of Director
         field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
-        # A unique key associated with the director's tag, used for internal identification.
-        field :tag_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
-        # The URL of the thumbnail image for the director.
+        # A unique 24-character hexadecimal key associated with the director's tag, used for internal identification.
+        field :tag_key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
+        # The absolute URL of the thumbnail image for the director.
         field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
 
 
-        sig { params(filter: ::String, id: ::Integer, tag: ::String, tag_key: T.nilable(::String), thumb: T.nilable(::String)).void }
+        sig { params(filter: ::String, id: ::Integer, tag: ::String, tag_key: ::String, thumb: T.nilable(::String)).void }
         def initialize(filter: nil, id: nil, tag: nil, tag_key: nil, thumb: nil)
           @filter = filter
           @id = id

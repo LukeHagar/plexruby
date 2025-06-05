@@ -19,16 +19,19 @@ module PlexRubySDK
         field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
         # The role of Writer
         field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
-        # A unique key associated with the writers tag, used for internal identification.
+        # A 24-character hexadecimal unique key associated with the writer’s tag, used for internal identification.
         field :tag_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
+        # The absolute URL of the thumbnail image for the writer.
+        field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
 
 
-        sig { params(filter: ::String, id: ::Integer, tag: ::String, tag_key: T.nilable(::String)).void }
-        def initialize(filter: nil, id: nil, tag: nil, tag_key: nil)
+        sig { params(filter: ::String, id: ::Integer, tag: ::String, tag_key: T.nilable(::String), thumb: T.nilable(::String)).void }
+        def initialize(filter: nil, id: nil, tag: nil, tag_key: nil, thumb: nil)
           @filter = filter
           @id = id
           @tag = tag
           @tag_key = tag_key
+          @thumb = thumb
         end
 
         def ==(other)
@@ -37,6 +40,7 @@ module PlexRubySDK
           return false unless @id == other.id
           return false unless @tag == other.tag
           return false unless @tag_key == other.tag_key
+          return false unless @thumb == other.thumb
           true
         end
       end

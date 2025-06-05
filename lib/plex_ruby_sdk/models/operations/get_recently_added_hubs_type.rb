@@ -8,7 +8,7 @@ module PlexRubySDK
   module Models
     module Operations
     
-      # GetRecentlyAddedHubsType - The type of media content
+      # GetRecentlyAddedHubsType - The type of media content in the Plex library. This can represent videos, music, or photos.
       # 
       class GetRecentlyAddedHubsType < T::Enum
         enums do
@@ -18,6 +18,10 @@ module PlexRubySDK
           EPISODE = new('episode')
           ARTIST = new('artist')
           ALBUM = new('album')
+          TRACK = new('track')
+          PHOTO_ALBUM = new('photoalbum')
+          PHOTO = new('photo')
+          COLLECTION = new('collection')
         end
       end
     end

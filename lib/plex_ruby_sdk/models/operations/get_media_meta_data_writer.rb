@@ -19,9 +19,9 @@ module PlexRubySDK
         field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
         # The role of Writer
         field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
-        # A unique key associated with the writers tag, used for internal identification.
+        # A 24-character hexadecimal unique key associated with the writer’s tag, used for internal identification.
         field :tag_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
-        # The URL of the thumbnail image for the writer.
+        # The absolute URL of the thumbnail image for the writer.
         field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
 
 

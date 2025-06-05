@@ -13,7 +13,8 @@ module PlexRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-        # The GUID value.
+        # The unique identifier for the Guid. Can be prefixed with imdb://, tmdb://, tvdb://
+        # 
         field :id, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
 
 

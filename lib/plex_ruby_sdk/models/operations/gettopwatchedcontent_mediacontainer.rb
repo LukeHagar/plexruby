@@ -13,28 +13,28 @@ module PlexRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-
-        field :allow_sync, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
-
-        field :identifier, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
-
-        field :media_tag_prefix, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagPrefix') } }
-
-        field :media_tag_version, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
+        # Indicates whether syncing is allowed.
+        field :allow_sync, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('allowSync') } }
+        # An plugin identifier for the media container.
+        field :identifier, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('identifier') } }
+        # The prefix used for media tag resource paths.
+        field :media_tag_prefix, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagPrefix') } }
+        # The version number for media tags.
+        field :media_tag_version, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('mediaTagVersion') } }
+        # Number of media items returned in this response.
+        field :size, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
 
         field :metadata, T.nilable(T::Array[Models::Operations::GetTopWatchedContentMetadata]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
 
-        field :size, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('size') } }
 
-
-        sig { params(allow_sync: T.nilable(T::Boolean), identifier: T.nilable(::String), media_tag_prefix: T.nilable(::String), media_tag_version: T.nilable(::Integer), metadata: T.nilable(T::Array[Models::Operations::GetTopWatchedContentMetadata]), size: T.nilable(::Integer)).void }
-        def initialize(allow_sync: nil, identifier: nil, media_tag_prefix: nil, media_tag_version: nil, metadata: nil, size: nil)
+        sig { params(allow_sync: T::Boolean, identifier: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, size: ::Integer, metadata: T.nilable(T::Array[Models::Operations::GetTopWatchedContentMetadata])).void }
+        def initialize(allow_sync: nil, identifier: nil, media_tag_prefix: nil, media_tag_version: nil, size: nil, metadata: nil)
           @allow_sync = allow_sync
           @identifier = identifier
           @media_tag_prefix = media_tag_prefix
           @media_tag_version = media_tag_version
-          @metadata = metadata
           @size = size
+          @metadata = metadata
         end
 
         def ==(other)
@@ -43,8 +43,8 @@ module PlexRubySDK
           return false unless @identifier == other.identifier
           return false unless @media_tag_prefix == other.media_tag_prefix
           return false unless @media_tag_version == other.media_tag_version
-          return false unless @metadata == other.metadata
           return false unless @size == other.size
+          return false unless @metadata == other.metadata
           true
         end
       end

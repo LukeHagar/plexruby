@@ -506,7 +506,7 @@ actions:
                   ),
                 )
 
-            res = s.library.get_top_watched_content(type=Models::Operations::GetTopWatchedContentQueryParamType::TV_SHOW, include_guids=1)
+            res = s.library.get_top_watched_content(type=Models::Operations::GetTopWatchedContentQueryParamType::TV_SHOW, include_guids=Models::Operations::GetTopWatchedContentQueryParamIncludeGuids::ENABLE)
 
             if ! res.object.nil?
               # handle response
@@ -545,7 +545,7 @@ actions:
                 )
 
             req = Models::Operations::GetMediaMetaDataRequest.new(
-              rating_key: 9518,
+              rating_key: "21119,21617",
               include_concerts: true,
               include_extras: true,
               include_on_deck: true,
@@ -904,10 +904,10 @@ actions:
                   ),
                 )
 
-            req = Models::Operations::GetAllMediaLibraryRequest.new(
+            req = Models::Operations::GetLibrarySectionsAllRequest.new(
               section_key: 9518,
-              type: Models::Operations::GetAllMediaLibraryQueryParamType::TV_SHOW,
-              include_meta: Models::Operations::GetAllMediaLibraryQueryParamIncludeMeta::ENABLE,
+              type: Models::Operations::GetLibrarySectionsAllQueryParamType::TV_SHOW,
+              include_meta: Models::Operations::GetLibrarySectionsAllQueryParamIncludeMeta::ENABLE,
               include_guids: Models::Operations::QueryParamIncludeGuids::ENABLE,
               include_advanced: Models::Operations::IncludeAdvanced::ENABLE,
               include_collections: Models::Operations::QueryParamIncludeCollections::ENABLE,
@@ -916,7 +916,7 @@ actions:
               x_plex_container_size: 50,
             )
 
-            res = s.library.get_all_media_library(req)
+            res = s.library.get_library_sections_all(req)
 
             if ! res.object.nil?
               # handle response

@@ -14,25 +14,27 @@ module PlexRubySDK
         include Crystalline::MetadataFields
 
 
+        field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
+        # The unique identifier for the country.
+        # NOTE: This is different for each Plex server and is not globally unique.
+        # 
         field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
         # The country of origin of this media item
         field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
-        field :filter, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
 
-
-        sig { params(id: ::Integer, tag: ::String, filter: T.nilable(::String)).void }
-        def initialize(id: nil, tag: nil, filter: nil)
+        sig { params(filter: ::String, id: ::Integer, tag: ::String).void }
+        def initialize(filter: nil, id: nil, tag: nil)
+          @filter = filter
           @id = id
           @tag = tag
-          @filter = filter
         end
 
         def ==(other)
           return false unless other.is_a? self.class
+          return false unless @filter == other.filter
           return false unless @id == other.id
           return false unless @tag == other.tag
-          return false unless @filter == other.filter
           true
         end
       end

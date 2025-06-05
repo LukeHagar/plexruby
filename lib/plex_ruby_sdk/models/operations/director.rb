@@ -13,18 +13,34 @@ module PlexRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
+        # The filter string used to query this director.
+        field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
+        # Unique identifier for the director.
+        field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
         # The role of Director
         field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+        # A unique 24-character hexadecimal key associated with the director's tag, used for internal identification.
+        field :tag_key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tagKey') } }
+        # The absolute URL of the thumbnail image for the director.
+        field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
 
 
-        sig { params(tag: ::String).void }
-        def initialize(tag: nil)
+        sig { params(filter: ::String, id: ::Integer, tag: ::String, tag_key: ::String, thumb: T.nilable(::String)).void }
+        def initialize(filter: nil, id: nil, tag: nil, tag_key: nil, thumb: nil)
+          @filter = filter
+          @id = id
           @tag = tag
+          @tag_key = tag_key
+          @thumb = thumb
         end
 
         def ==(other)
           return false unless other.is_a? self.class
+          return false unless @filter == other.filter
+          return false unless @id == other.id
           return false unless @tag == other.tag
+          return false unless @tag_key == other.tag_key
+          return false unless @thumb == other.thumb
           true
         end
       end

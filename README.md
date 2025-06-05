@@ -160,7 +160,7 @@ end
 * [get_library_details](docs/sdks/library/README.md#get_library_details) - Get Library Details
 * [delete_library](docs/sdks/library/README.md#delete_library) - Delete Library Section
 * [get_library_items](docs/sdks/library/README.md#get_library_items) - Get Library Items
-* [get_all_media_library](docs/sdks/library/README.md#get_all_media_library) - Get all media of library
+* [get_library_sections_all](docs/sdks/library/README.md#get_library_sections_all) - Get Library section media by tag ALL
 * [get_refresh_library_metadata](docs/sdks/library/README.md#get_refresh_library_metadata) - Refresh Metadata Of The Library
 * [get_search_library](docs/sdks/library/README.md#get_search_library) - Search Library
 * [get_genres_library](docs/sdks/library/README.md#get_genres_library) - Get Genres of library media
@@ -294,7 +294,7 @@ require 'plex_ruby_sdk'
 
 s = ::PlexRubySDK::PlexAPI.new(
       security: Models::Shared::Security.new(
-        access_token: "<YOUR_API_KEY_HERE>",
+        access_token: '<YOUR_API_KEY_HERE>',
       ),
     )
 

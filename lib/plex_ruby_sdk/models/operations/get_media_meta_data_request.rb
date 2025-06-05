@@ -13,8 +13,8 @@ module PlexRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-        # the id of the library item to return the children of.
-        field :rating_key, ::Integer, { 'path_param': { 'field_name': 'ratingKey', 'style': 'simple', 'explode': false } }
+        # The id(s) of the library item(s) to return metadata for. Can be a single ID or comma-separated list of IDs.
+        field :rating_key, ::String, { 'path_param': { 'field_name': 'ratingKey', 'style': 'simple', 'explode': false } }
         # Trigger asynchronous metadata augmentation.
         field :async_augment_metadata, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'asyncAugmentMetadata', 'style': 'form', 'explode': true } }
         # Trigger asynchronous file checking.
@@ -43,7 +43,7 @@ module PlexRubySDK
         field :include_stations, T.nilable(T::Boolean), { 'query_param': { 'field_name': 'includeStations', 'style': 'form', 'explode': true } }
 
 
-        sig { params(rating_key: ::Integer, async_augment_metadata: T.nilable(T::Boolean), async_check_files: T.nilable(T::Boolean), async_refresh_analysis: T.nilable(T::Boolean), async_refresh_local_media_agent: T.nilable(T::Boolean), include_chapters: T.nilable(T::Boolean), include_concerts: T.nilable(T::Boolean), include_external_media: T.nilable(T::Boolean), include_extras: T.nilable(T::Boolean), include_on_deck: T.nilable(T::Boolean), include_popular_leaves: T.nilable(T::Boolean), include_preferences: T.nilable(T::Boolean), include_reviews: T.nilable(T::Boolean), include_stations: T.nilable(T::Boolean)).void }
+        sig { params(rating_key: ::String, async_augment_metadata: T.nilable(T::Boolean), async_check_files: T.nilable(T::Boolean), async_refresh_analysis: T.nilable(T::Boolean), async_refresh_local_media_agent: T.nilable(T::Boolean), include_chapters: T.nilable(T::Boolean), include_concerts: T.nilable(T::Boolean), include_external_media: T.nilable(T::Boolean), include_extras: T.nilable(T::Boolean), include_on_deck: T.nilable(T::Boolean), include_popular_leaves: T.nilable(T::Boolean), include_preferences: T.nilable(T::Boolean), include_reviews: T.nilable(T::Boolean), include_stations: T.nilable(T::Boolean)).void }
         def initialize(rating_key: nil, async_augment_metadata: nil, async_check_files: nil, async_refresh_analysis: nil, async_refresh_local_media_agent: nil, include_chapters: nil, include_concerts: nil, include_external_media: nil, include_extras: nil, include_on_deck: nil, include_popular_leaves: nil, include_preferences: nil, include_reviews: nil, include_stations: nil)
           @rating_key = rating_key
           @async_augment_metadata = async_augment_metadata

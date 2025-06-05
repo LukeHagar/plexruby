@@ -15,7 +15,9 @@ module PlexRubySDK
 
 
         field :filter, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('filter') } }
-
+        # The unique identifier for the genre.
+        # NOTE: This is different for each Plex server and is not globally unique.
+        # 
         field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
         # The genre name of this media-item
         # 

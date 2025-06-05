@@ -13,7 +13,7 @@ module PlexRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-
+        # The URL for the rating image, for example from IMDb.
         field :image, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('image') } }
 
         field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }

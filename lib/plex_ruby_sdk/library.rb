@@ -879,21 +879,21 @@ module PlexRubySDK
     end
 
 
-    sig { params(request: T.nilable(Models::Operations::GetAllMediaLibraryRequest), timeout_ms: T.nilable(Integer)).returns(Models::Operations::GetAllMediaLibraryResponse) }
-    def get_all_media_library(request, timeout_ms = nil)
-      # get_all_media_library - Get all media of library
+    sig { params(request: T.nilable(Models::Operations::GetLibrarySectionsAllRequest), timeout_ms: T.nilable(Integer)).returns(Models::Operations::GetLibrarySectionsAllResponse) }
+    def get_library_sections_all(request, timeout_ms = nil)
+      # get_library_sections_all - Get Library section media by tag ALL
       # Retrieves a list of all general media data for this library.
       # 
       url, params = @sdk_configuration.get_server_details
       base_url = Utils.template_url(url, params)
       url = Utils.generate_url(
-        Models::Operations::GetAllMediaLibraryRequest,
+        Models::Operations::GetLibrarySectionsAllRequest,
         base_url,
         '/library/sections/{sectionKey}/all',
         request
       )
       headers = {}
-      query_params = Utils.get_query_params(Models::Operations::GetAllMediaLibraryRequest, request)
+      query_params = Utils.get_query_params(Models::Operations::GetLibrarySectionsAllRequest, request)
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
@@ -907,7 +907,7 @@ module PlexRubySDK
       hook_ctx = SDKHooks::HookContext.new(
         base_url: base_url,
         oauth2_scopes: [],
-        operation_id: 'get-all-media-library',
+        operation_id: 'get-library-sections-all',
         security_source: @sdk_configuration.security_source
       )
 
@@ -964,8 +964,8 @@ module PlexRubySDK
             ),
             response: http_response
           )
-          obj = Crystalline.unmarshal_json(JSON.parse(http_response.env.response_body), Models::Operations::GetAllMediaLibraryResponseBody)
-          response = Models::Operations::GetAllMediaLibraryResponse.new(
+          obj = Crystalline.unmarshal_json(JSON.parse(http_response.env.response_body), Models::Operations::GetLibrarySectionsAllResponseBody)
+          response = Models::Operations::GetLibrarySectionsAllResponse.new(
             status_code: http_response.status,
             content_type: content_type,
             raw_response: http_response,
@@ -984,7 +984,7 @@ module PlexRubySDK
             ),
             response: http_response
           )
-          obj = Crystalline.unmarshal_json(JSON.parse(http_response.env.response_body), Models::Errors::GetAllMediaLibraryBadRequest)
+          obj = Crystalline.unmarshal_json(JSON.parse(http_response.env.response_body), Models::Errors::GetLibrarySectionsAllBadRequest)
           obj.raw_response = http_response
           throw obj
         else
@@ -998,7 +998,7 @@ module PlexRubySDK
             ),
             response: http_response
           )
-          obj = Crystalline.unmarshal_json(JSON.parse(http_response.env.response_body), Models::Errors::GetAllMediaLibraryUnauthorized)
+          obj = Crystalline.unmarshal_json(JSON.parse(http_response.env.response_body), Models::Errors::GetLibrarySectionsAllUnauthorized)
           obj.raw_response = http_response
           throw obj
         else
@@ -1863,7 +1863,8 @@ module PlexRubySDK
     sig { params(request: T.nilable(Models::Operations::GetMediaMetaDataRequest), timeout_ms: T.nilable(Integer)).returns(Models::Operations::GetMediaMetaDataResponse) }
     def get_media_meta_data(request, timeout_ms = nil)
       # get_media_meta_data - Get Media Metadata
-      # This endpoint will return all the (meta)data of a library item specified with by the ratingKey.
+      # This endpoint will return all the (meta)data of one or more library items specified by the ratingKey.
+      # Multiple rating keys can be provided as a comma-separated list (e.g., "21119,21617").
       # 
       url, params = @sdk_configuration.get_server_details
       base_url = Utils.template_url(url, params)
@@ -2587,7 +2588,7 @@ module PlexRubySDK
     end
 
 
-    sig { params(type: Models::Operations::GetTopWatchedContentQueryParamType, include_guids: T.nilable(::Integer), timeout_ms: T.nilable(Integer)).returns(Models::Operations::GetTopWatchedContentResponse) }
+    sig { params(type: Models::Operations::GetTopWatchedContentQueryParamType, include_guids: T.nilable(Models::Operations::GetTopWatchedContentQueryParamIncludeGuids), timeout_ms: T.nilable(Integer)).returns(Models::Operations::GetTopWatchedContentResponse) }
     def get_top_watched_content(type, include_guids = nil, timeout_ms = nil)
       # get_top_watched_content - Get Top Watched Content
       # This endpoint will return the top watched content from libraries of a certain type

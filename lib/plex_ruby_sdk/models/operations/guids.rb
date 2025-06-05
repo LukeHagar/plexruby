@@ -13,12 +13,12 @@ module PlexRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-        # The unique identifier for the Guid. Can be imdb://tt0286347, tmdb://1763, tvdb://2337
+        # The unique identifier for the Guid. Can be prefixed with imdb://, tmdb://, tvdb://
         # 
-        field :id, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+        field :id, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
 
 
-        sig { params(id: T.nilable(::String)).void }
+        sig { params(id: ::String).void }
         def initialize(id: nil)
           @id = id
         end
