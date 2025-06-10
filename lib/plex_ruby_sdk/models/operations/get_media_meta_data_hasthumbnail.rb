@@ -9,6 +9,7 @@ module PlexRubySDK
     module Operations
     
       # GetMediaMetaDataHasThumbnail - Indicates if the part has a thumbnail.
+      # 
       class GetMediaMetaDataHasThumbnail < T::Enum
         enums do
           FALSE = new('0')

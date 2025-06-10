@@ -30,14 +30,6 @@ module PlexRubySDK
         field :index, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('index') } }
         # The unique key for the media item.
         field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-        # The identifier for the library section.
-        field :library_section_id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
-        # The key corresponding to the library section.
-        field :library_section_key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionKey') } }
-        # The title of the library section.
-        field :library_section_title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionTitle') } }
-        # The original release date of the media item.
-        field :originally_available_at, ::Date, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originallyAvailableAt'), 'decoder': Utils.date_from_iso_format(false) } }
         # The studio of the parent media item.
         field :parent_studio, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('parentStudio') } }
         # The theme URL for the parent media item.
@@ -108,10 +100,18 @@ module PlexRubySDK
         field :last_viewed_at, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('lastViewedAt') } }
         # The number of leaf items (end nodes) under this media item.
         field :leaf_count, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('leafCount') } }
+        # The identifier for the library section.
+        field :library_section_id, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionID') } }
+        # The key corresponding to the library section.
+        field :library_section_key, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionKey') } }
+        # The title of the library section.
+        field :library_section_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('librarySectionTitle') } }
 
         field :location, T.nilable(T::Array[Models::Operations::Location]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Location') } }
 
         field :media, T.nilable(T::Array[Models::Operations::Media]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Media') } }
+        # The original release date of the media item.
+        field :originally_available_at, T.nilable(::Date), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originallyAvailableAt'), 'decoder': Utils.date_from_iso_format(true) } }
         # The original title of the media item (if different).
         field :original_title, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('originalTitle') } }
         # The GUID of the parent media item.
@@ -166,8 +166,8 @@ module PlexRubySDK
         field :year, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('year') } }
 
 
-        sig { params(added_at: ::Integer, art: ::String, audience_rating: ::Float, child_count: ::Integer, duration: ::Integer, guid: ::String, index: ::Integer, key: ::String, library_section_id: ::Integer, library_section_key: ::String, library_section_title: ::String, originally_available_at: ::Date, parent_studio: ::String, parent_theme: ::String, rating: ::Float, rating_key: ::String, season_count: ::Integer, slug: ::String, summary: ::String, tagline: ::String, theme: ::String, thumb: ::String, title: ::String, title_sort: ::String, type: Models::Operations::GetRecentlyAddedHubsType, audience_rating_image: T.nilable(::String), chapter_source: T.nilable(::String), collection: T.nilable(T::Array[Models::Operations::Collection]), content_rating: T.nilable(::String), country: T.nilable(T::Array[Models::Operations::Country]), created_at_accuracy: T.nilable(::String), created_at_tz_offset: T.nilable(::String), director: T.nilable(T::Array[Models::Operations::Director]), genre: T.nilable(T::Array[Models::Operations::Genre]), grandparent_art: T.nilable(::String), grandparent_guid: T.nilable(::String), grandparent_key: T.nilable(::String), grandparent_rating_key: T.nilable(::String), grandparent_slug: T.nilable(::String), grandparent_theme: T.nilable(::String), grandparent_thumb: T.nilable(::String), grandparent_title: T.nilable(::String), guids: T.nilable(T::Array[Models::Operations::Guids]), image: T.nilable(T::Array[Models::Operations::GetRecentlyAddedImage]), last_rated_at: T.nilable(::Integer), last_viewed_at: T.nilable(::Integer), leaf_count: T.nilable(::Integer), location: T.nilable(T::Array[Models::Operations::Location]), media: T.nilable(T::Array[Models::Operations::Media]), original_title: T.nilable(::String), parent_guid: T.nilable(::String), parent_index: T.nilable(::Integer), parent_key: T.nilable(::String), parent_rating_key: T.nilable(::String), parent_slug: T.nilable(::String), parent_thumb: T.nilable(::String), parent_title: T.nilable(::String), parent_year: T.nilable(::Integer), primary_extra_key: T.nilable(::String), producer: T.nilable(T::Array[Models::Operations::Producer]), rating1: T.nilable(T::Array[Models::Operations::Rating]), rating_image: T.nilable(::String), role: T.nilable(T::Array[Models::Operations::Role]), similar: T.nilable(T::Array[Models::Operations::Similar]), skip_count: T.nilable(::Integer), studio: T.nilable(::String), subtype: T.nilable(::String), ultra_blur_colors: T.nilable(Models::Operations::UltraBlurColors), updated_at: T.nilable(::Integer), user_rating: T.nilable(::Float), view_count: T.nilable(::Integer), viewed_leaf_count: T.nilable(::Integer), view_offset: T.nilable(::Integer), writer: T.nilable(T::Array[Models::Operations::Writer]), year: T.nilable(::Integer)).void }
-        def initialize(added_at: nil, art: nil, audience_rating: nil, child_count: nil, duration: nil, guid: nil, index: nil, key: nil, library_section_id: nil, library_section_key: nil, library_section_title: nil, originally_available_at: nil, parent_studio: nil, parent_theme: nil, rating: nil, rating_key: nil, season_count: nil, slug: nil, summary: nil, tagline: nil, theme: nil, thumb: nil, title: nil, title_sort: nil, type: nil, audience_rating_image: nil, chapter_source: nil, collection: nil, content_rating: nil, country: nil, created_at_accuracy: nil, created_at_tz_offset: nil, director: nil, genre: nil, grandparent_art: nil, grandparent_guid: nil, grandparent_key: nil, grandparent_rating_key: nil, grandparent_slug: nil, grandparent_theme: nil, grandparent_thumb: nil, grandparent_title: nil, guids: nil, image: nil, last_rated_at: nil, last_viewed_at: nil, leaf_count: nil, location: nil, media: nil, original_title: nil, parent_guid: nil, parent_index: nil, parent_key: nil, parent_rating_key: nil, parent_slug: nil, parent_thumb: nil, parent_title: nil, parent_year: nil, primary_extra_key: nil, producer: nil, rating1: nil, rating_image: nil, role: nil, similar: nil, skip_count: nil, studio: nil, subtype: nil, ultra_blur_colors: nil, updated_at: nil, user_rating: nil, view_count: nil, viewed_leaf_count: nil, view_offset: nil, writer: nil, year: nil)
+        sig { params(added_at: ::Integer, art: ::String, audience_rating: ::Float, child_count: ::Integer, duration: ::Integer, guid: ::String, index: ::Integer, key: ::String, parent_studio: ::String, parent_theme: ::String, rating: ::Float, rating_key: ::String, season_count: ::Integer, slug: ::String, summary: ::String, tagline: ::String, theme: ::String, thumb: ::String, title: ::String, title_sort: ::String, type: Models::Operations::GetRecentlyAddedHubsType, audience_rating_image: T.nilable(::String), chapter_source: T.nilable(::String), collection: T.nilable(T::Array[Models::Operations::Collection]), content_rating: T.nilable(::String), country: T.nilable(T::Array[Models::Operations::Country]), created_at_accuracy: T.nilable(::String), created_at_tz_offset: T.nilable(::String), director: T.nilable(T::Array[Models::Operations::Director]), genre: T.nilable(T::Array[Models::Operations::Genre]), grandparent_art: T.nilable(::String), grandparent_guid: T.nilable(::String), grandparent_key: T.nilable(::String), grandparent_rating_key: T.nilable(::String), grandparent_slug: T.nilable(::String), grandparent_theme: T.nilable(::String), grandparent_thumb: T.nilable(::String), grandparent_title: T.nilable(::String), guids: T.nilable(T::Array[Models::Operations::Guids]), image: T.nilable(T::Array[Models::Operations::GetRecentlyAddedImage]), last_rated_at: T.nilable(::Integer), last_viewed_at: T.nilable(::Integer), leaf_count: T.nilable(::Integer), library_section_id: T.nilable(::Integer), library_section_key: T.nilable(::String), library_section_title: T.nilable(::String), location: T.nilable(T::Array[Models::Operations::Location]), media: T.nilable(T::Array[Models::Operations::Media]), originally_available_at: T.nilable(::Date), original_title: T.nilable(::String), parent_guid: T.nilable(::String), parent_index: T.nilable(::Integer), parent_key: T.nilable(::String), parent_rating_key: T.nilable(::String), parent_slug: T.nilable(::String), parent_thumb: T.nilable(::String), parent_title: T.nilable(::String), parent_year: T.nilable(::Integer), primary_extra_key: T.nilable(::String), producer: T.nilable(T::Array[Models::Operations::Producer]), rating1: T.nilable(T::Array[Models::Operations::Rating]), rating_image: T.nilable(::String), role: T.nilable(T::Array[Models::Operations::Role]), similar: T.nilable(T::Array[Models::Operations::Similar]), skip_count: T.nilable(::Integer), studio: T.nilable(::String), subtype: T.nilable(::String), ultra_blur_colors: T.nilable(Models::Operations::UltraBlurColors), updated_at: T.nilable(::Integer), user_rating: T.nilable(::Float), view_count: T.nilable(::Integer), viewed_leaf_count: T.nilable(::Integer), view_offset: T.nilable(::Integer), writer: T.nilable(T::Array[Models::Operations::Writer]), year: T.nilable(::Integer)).void }
+        def initialize(added_at: nil, art: nil, audience_rating: nil, child_count: nil, duration: nil, guid: nil, index: nil, key: nil, parent_studio: nil, parent_theme: nil, rating: nil, rating_key: nil, season_count: nil, slug: nil, summary: nil, tagline: nil, theme: nil, thumb: nil, title: nil, title_sort: nil, type: nil, audience_rating_image: nil, chapter_source: nil, collection: nil, content_rating: nil, country: nil, created_at_accuracy: nil, created_at_tz_offset: nil, director: nil, genre: nil, grandparent_art: nil, grandparent_guid: nil, grandparent_key: nil, grandparent_rating_key: nil, grandparent_slug: nil, grandparent_theme: nil, grandparent_thumb: nil, grandparent_title: nil, guids: nil, image: nil, last_rated_at: nil, last_viewed_at: nil, leaf_count: nil, library_section_id: nil, library_section_key: nil, library_section_title: nil, location: nil, media: nil, originally_available_at: nil, original_title: nil, parent_guid: nil, parent_index: nil, parent_key: nil, parent_rating_key: nil, parent_slug: nil, parent_thumb: nil, parent_title: nil, parent_year: nil, primary_extra_key: nil, producer: nil, rating1: nil, rating_image: nil, role: nil, similar: nil, skip_count: nil, studio: nil, subtype: nil, ultra_blur_colors: nil, updated_at: nil, user_rating: nil, view_count: nil, viewed_leaf_count: nil, view_offset: nil, writer: nil, year: nil)
           @added_at = added_at
           @art = art
           @audience_rating = audience_rating
@@ -176,10 +176,6 @@ module PlexRubySDK
           @guid = guid
           @index = index
           @key = key
-          @library_section_id = library_section_id
-          @library_section_key = library_section_key
-          @library_section_title = library_section_title
-          @originally_available_at = originally_available_at
           @parent_studio = parent_studio
           @parent_theme = parent_theme
           @rating = rating
@@ -215,8 +211,12 @@ module PlexRubySDK
           @last_rated_at = last_rated_at
           @last_viewed_at = last_viewed_at
           @leaf_count = leaf_count
+          @library_section_id = library_section_id
+          @library_section_key = library_section_key
+          @library_section_title = library_section_title
           @location = location
           @media = media
+          @originally_available_at = originally_available_at
           @original_title = original_title
           @parent_guid = parent_guid
           @parent_index = parent_index
@@ -255,10 +255,6 @@ module PlexRubySDK
           return false unless @guid == other.guid
           return false unless @index == other.index
           return false unless @key == other.key
-          return false unless @library_section_id == other.library_section_id
-          return false unless @library_section_key == other.library_section_key
-          return false unless @library_section_title == other.library_section_title
-          return false unless @originally_available_at == other.originally_available_at
           return false unless @parent_studio == other.parent_studio
           return false unless @parent_theme == other.parent_theme
           return false unless @rating == other.rating
@@ -294,8 +290,12 @@ module PlexRubySDK
           return false unless @last_rated_at == other.last_rated_at
           return false unless @last_viewed_at == other.last_viewed_at
           return false unless @leaf_count == other.leaf_count
+          return false unless @library_section_id == other.library_section_id
+          return false unless @library_section_key == other.library_section_key
+          return false unless @library_section_title == other.library_section_title
           return false unless @location == other.location
           return false unless @media == other.media
+          return false unless @originally_available_at == other.originally_available_at
           return false unless @original_title == other.original_title
           return false unless @parent_guid == other.parent_guid
           return false unless @parent_index == other.parent_index

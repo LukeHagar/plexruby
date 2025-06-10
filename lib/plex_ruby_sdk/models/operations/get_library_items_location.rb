@@ -8,16 +8,16 @@ module PlexRubySDK
   module Models
     module Operations
     
-
+      # The folder path for the media item.
       class GetLibraryItemsLocation
         extend T::Sig
         include Crystalline::MetadataFields
 
 
-        field :path, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('path') } }
+        field :path, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('path') } }
 
 
-        sig { params(path: T.nilable(::String)).void }
+        sig { params(path: ::String).void }
         def initialize(path: nil)
           @path = path
         end

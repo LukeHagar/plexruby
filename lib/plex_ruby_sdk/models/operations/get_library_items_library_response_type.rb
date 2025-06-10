@@ -9,47 +9,12 @@ module PlexRubySDK
     module Operations
     
 
-      class GetLibraryItemsLibraryResponseType
-        extend T::Sig
-        include Crystalline::MetadataFields
-
-
-        field :active, T::Boolean, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('active') } }
-
-        field :key, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('key') } }
-
-        field :title, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title') } }
-
-        field :type, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('type') } }
-
-        field :field, T.nilable(T::Array[Models::Operations::GetLibraryItemsLibraryField]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Field') } }
-
-        field :filter, T.nilable(T::Array[Models::Operations::GetLibraryItemsLibraryFilter]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Filter') } }
-
-        field :sort, T.nilable(T::Array[Models::Operations::GetLibraryItemsLibrarySort]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Sort') } }
-
-
-        sig { params(active: T::Boolean, key: ::String, title: ::String, type: ::String, field: T.nilable(T::Array[Models::Operations::GetLibraryItemsLibraryField]), filter: T.nilable(T::Array[Models::Operations::GetLibraryItemsLibraryFilter]), sort: T.nilable(T::Array[Models::Operations::GetLibraryItemsLibrarySort])).void }
-        def initialize(active: nil, key: nil, title: nil, type: nil, field: nil, filter: nil, sort: nil)
-          @active = active
-          @key = key
-          @title = title
-          @type = type
-          @field = field
-          @filter = filter
-          @sort = sort
-        end
-
-        def ==(other)
-          return false unless other.is_a? self.class
-          return false unless @active == other.active
-          return false unless @key == other.key
-          return false unless @title == other.title
-          return false unless @type == other.type
-          return false unless @field == other.field
-          return false unless @filter == other.filter
-          return false unless @sort == other.sort
-          true
+      class GetLibraryItemsLibraryResponseType < T::Enum
+        enums do
+          COVER_POSTER = new('coverPoster')
+          BACKGROUND = new('background')
+          SNAPSHOT = new('snapshot')
+          CLEAR_LOGO = new('clearLogo')
         end
       end
     end

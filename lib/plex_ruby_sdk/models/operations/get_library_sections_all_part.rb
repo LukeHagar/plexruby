@@ -38,7 +38,7 @@ module PlexRubySDK
 
         field :indexes, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('indexes') } }
         # Has this media been optimized for streaming. NOTE: This can be 0, 1, false or true
-        field :optimized_for_streaming, T.nilable(T.any(Models::Operations::GetLibrarySectionsAllOptimizedForStreaming1, T::Boolean)), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('optimizedForStreaming') } }
+        field :optimized_for_streaming, T.nilable(T.any(Models::Operations::GetLibrarySectionsAllOptimizedForStreamingLibrary1, T::Boolean)), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('optimizedForStreaming') } }
 
         field :packet_length, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('packetLength') } }
         # An array of streams for this part.
@@ -47,7 +47,7 @@ module PlexRubySDK
         field :video_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoProfile') } }
 
 
-        sig { params(file: ::String, id: ::Integer, key: ::String, size: ::Integer, accessible: T.nilable(T::Boolean), audio_profile: T.nilable(::String), container: T.nilable(::String), duration: T.nilable(::Integer), exists: T.nilable(T::Boolean), has64bit_offsets: T.nilable(T::Boolean), has_thumbnail: T.nilable(Models::Operations::GetLibrarySectionsAllHasThumbnail), indexes: T.nilable(::String), optimized_for_streaming: T.nilable(T.any(Models::Operations::GetLibrarySectionsAllOptimizedForStreaming1, T::Boolean)), packet_length: T.nilable(::Integer), stream: T.nilable(T::Array[Models::Operations::GetLibrarySectionsAllStream]), video_profile: T.nilable(::String)).void }
+        sig { params(file: ::String, id: ::Integer, key: ::String, size: ::Integer, accessible: T.nilable(T::Boolean), audio_profile: T.nilable(::String), container: T.nilable(::String), duration: T.nilable(::Integer), exists: T.nilable(T::Boolean), has64bit_offsets: T.nilable(T::Boolean), has_thumbnail: T.nilable(Models::Operations::GetLibrarySectionsAllHasThumbnail), indexes: T.nilable(::String), optimized_for_streaming: T.nilable(T.any(Models::Operations::GetLibrarySectionsAllOptimizedForStreamingLibrary1, T::Boolean)), packet_length: T.nilable(::Integer), stream: T.nilable(T::Array[Models::Operations::GetLibrarySectionsAllStream]), video_profile: T.nilable(::String)).void }
         def initialize(file: nil, id: nil, key: nil, size: nil, accessible: nil, audio_profile: nil, container: nil, duration: nil, exists: nil, has64bit_offsets: nil, has_thumbnail: nil, indexes: nil, optimized_for_streaming: nil, packet_length: nil, stream: nil, video_profile: nil)
           @file = file
           @id = id

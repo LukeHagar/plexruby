@@ -35,14 +35,14 @@ module PlexRubySDK
         field :title2, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('title2') } }
         # Identifier for the view group layout.
         field :view_group, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewGroup') } }
-        # Identifier for the view mode.
-        field :view_mode, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewMode') } }
         # An array of actor entries for media items.
         field :directory, T.nilable(T::Array[Models::Operations::GetActorsLibraryDirectory]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
+        # Identifier for the view mode.
+        field :view_mode, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('viewMode') } }
 
 
-        sig { params(allow_sync: T::Boolean, art: ::String, identifier: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, nocache: T::Boolean, size: ::Integer, thumb: ::String, title1: ::String, title2: ::String, view_group: ::String, view_mode: ::String, directory: T.nilable(T::Array[Models::Operations::GetActorsLibraryDirectory])).void }
-        def initialize(allow_sync: nil, art: nil, identifier: nil, media_tag_prefix: nil, media_tag_version: nil, nocache: nil, size: nil, thumb: nil, title1: nil, title2: nil, view_group: nil, view_mode: nil, directory: nil)
+        sig { params(allow_sync: T::Boolean, art: ::String, identifier: ::String, media_tag_prefix: ::String, media_tag_version: ::Integer, nocache: T::Boolean, size: ::Integer, thumb: ::String, title1: ::String, title2: ::String, view_group: ::String, directory: T.nilable(T::Array[Models::Operations::GetActorsLibraryDirectory]), view_mode: T.nilable(::String)).void }
+        def initialize(allow_sync: nil, art: nil, identifier: nil, media_tag_prefix: nil, media_tag_version: nil, nocache: nil, size: nil, thumb: nil, title1: nil, title2: nil, view_group: nil, directory: nil, view_mode: nil)
           @allow_sync = allow_sync
           @art = art
           @identifier = identifier
@@ -54,8 +54,8 @@ module PlexRubySDK
           @title1 = title1
           @title2 = title2
           @view_group = view_group
-          @view_mode = view_mode
           @directory = directory
+          @view_mode = view_mode
         end
 
         def ==(other)
@@ -71,8 +71,8 @@ module PlexRubySDK
           return false unless @title1 == other.title1
           return false unless @title2 == other.title2
           return false unless @view_group == other.view_group
-          return false unless @view_mode == other.view_mode
           return false unless @directory == other.directory
+          return false unless @view_mode == other.view_mode
           true
         end
       end

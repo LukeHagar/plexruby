@@ -13,17 +13,23 @@ module PlexRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
+        # The unique identifier for the country.
+        # NOTE: This is different for each Plex server and is not globally unique.
+        # 
+        field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+        # The country of origin of this media item
+        field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
-        field :tag, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
-
-        sig { params(tag: T.nilable(::String)).void }
-        def initialize(tag: nil)
+        sig { params(id: ::Integer, tag: ::String).void }
+        def initialize(id: nil, tag: nil)
+          @id = id
           @tag = tag
         end
 
         def ==(other)
           return false unless other.is_a? self.class
+          return false unless @id == other.id
           return false unless @tag == other.tag
           true
         end

@@ -13,11 +13,11 @@ module PlexRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
+        # The user-made collection this media item belongs to
+        field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
-        field :tag, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
-
-        sig { params(tag: T.nilable(::String)).void }
+        sig { params(tag: ::String).void }
         def initialize(tag: nil)
           @tag = tag
         end

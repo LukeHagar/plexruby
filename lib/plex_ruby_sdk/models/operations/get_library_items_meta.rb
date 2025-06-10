@@ -15,12 +15,12 @@ module PlexRubySDK
         include Crystalline::MetadataFields
 
 
-        field :field_type, T.nilable(T::Array[Models::Operations::GetLibraryItemsLibraryFieldType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('FieldType') } }
+        field :field_type, T.nilable(T::Array[Models::Operations::GetLibraryItemsFieldType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('FieldType') } }
 
-        field :type, T.nilable(T::Array[Models::Operations::GetLibraryItemsLibraryResponseType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Type') } }
+        field :type, T.nilable(T::Array[Models::Operations::GetLibraryItemsLibraryType]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Type') } }
 
 
-        sig { params(field_type: T.nilable(T::Array[Models::Operations::GetLibraryItemsLibraryFieldType]), type: T.nilable(T::Array[Models::Operations::GetLibraryItemsLibraryResponseType])).void }
+        sig { params(field_type: T.nilable(T::Array[Models::Operations::GetLibraryItemsFieldType]), type: T.nilable(T::Array[Models::Operations::GetLibraryItemsLibraryType])).void }
         def initialize(field_type: nil, type: nil)
           @field_type = field_type
           @type = type

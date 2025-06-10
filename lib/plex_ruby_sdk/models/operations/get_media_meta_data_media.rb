@@ -25,13 +25,15 @@ module PlexRubySDK
         field :audio_profile, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('audioProfile') } }
         # Bitrate in bits per second.
         field :bitrate, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('bitrate') } }
-        # File container type.
+        # Container format of the media.
         field :container, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('container') } }
 
         field :display_offset, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('displayOffset') } }
         # Duration of the media in milliseconds.
         field :duration, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('duration') } }
-
+        # Indicates whether the media has 64-bit offsets.
+        # This is relevant for media files that may require larger offsets than what 32-bit integers can provide.
+        # 
         field :has64bit_offsets, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('has64bitOffsets') } }
         # Indicates whether voice activity is detected.
         field :has_voice_activity, T.nilable(T::Boolean), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('hasVoiceActivity') } }
@@ -39,7 +41,7 @@ module PlexRubySDK
         field :height, T.nilable(::Integer), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('height') } }
         # Has this media been optimized for streaming. NOTE: This can be 0, 1, false or true
         field :optimized_for_streaming, T.nilable(T.any(Models::Operations::GetMediaMetaDataOptimizedForStreaming1, T::Boolean)), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('optimizedForStreaming') } }
-        # An array of parts for this media item.
+
         field :part, T.nilable(T::Array[Models::Operations::GetMediaMetaDataPart]), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Part') } }
         # Video codec used.
         field :video_codec, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('videoCodec') } }

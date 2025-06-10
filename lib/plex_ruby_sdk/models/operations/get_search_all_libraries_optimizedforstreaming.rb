@@ -8,11 +8,19 @@ module PlexRubySDK
   module Models
     module Operations
     
+      # Has this media been optimized for streaming. NOTE: This can be 0, 1, false or true
+      class GetSearchAllLibrariesOptimizedForStreaming
+        extend T::Sig
+        include Crystalline::MetadataFields
 
-      class GetSearchAllLibrariesOptimizedForStreaming < T::Enum
-        enums do
-          DISABLE = new(0)
-          ENABLE = new(1)
+
+
+        
+        def initialize; end
+
+        def ==(other)
+          return false unless other.is_a? self.class
+          true
         end
       end
     end

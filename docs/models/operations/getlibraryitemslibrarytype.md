@@ -1,20 +1,14 @@
 # GetLibraryItemsLibraryType
 
-The type of media content in the Plex library. This can represent videos, music, or photos.
 
+## Fields
 
-
-## Values
-
-| Name          | Value         |
-| ------------- | ------------- |
-| `MOVIE`       | movie         |
-| `TV_SHOW`     | show          |
-| `SEASON`      | season        |
-| `EPISODE`     | episode       |
-| `ARTIST`      | artist        |
-| `ALBUM`       | album         |
-| `TRACK`       | track         |
-| `PHOTO_ALBUM` | photoalbum    |
-| `PHOTO`       | photo         |
-| `COLLECTION`  | collection    |
+| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             | Example                                                                                                 |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `key`                                                                                                   | *::String*                                                                                              | :heavy_check_mark:                                                                                      | N/A                                                                                                     | /library/sections/2/all?type=2                                                                          |
+| `type`                                                                                                  | *::String*                                                                                              | :heavy_check_mark:                                                                                      | N/A                                                                                                     | show                                                                                                    |
+| `title`                                                                                                 | *::String*                                                                                              | :heavy_check_mark:                                                                                      | N/A                                                                                                     | TV Shows                                                                                                |
+| `active`                                                                                                | *T::Boolean*                                                                                            | :heavy_check_mark:                                                                                      | N/A                                                                                                     | false                                                                                                   |
+| `filter`                                                                                                | T::Array<[Models::Operations::GetLibraryItemsFilter](../../models/operations/getlibraryitemsfilter.md)> | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |                                                                                                         |
+| `sort`                                                                                                  | T::Array<[Models::Operations::GetLibraryItemsSort](../../models/operations/getlibraryitemssort.md)>     | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |                                                                                                         |
+| `field`                                                                                                 | T::Array<[Models::Operations::GetLibraryItemsField](../../models/operations/getlibraryitemsfield.md)>   | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |                                                                                                         |

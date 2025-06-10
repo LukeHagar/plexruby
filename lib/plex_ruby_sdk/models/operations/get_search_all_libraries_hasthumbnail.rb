@@ -8,7 +8,8 @@ module PlexRubySDK
   module Models
     module Operations
     
-
+      # GetSearchAllLibrariesHasThumbnail - Indicates if the part has a thumbnail.
+      # 
       class GetSearchAllLibrariesHasThumbnail < T::Enum
         enums do
           FALSE = new('0')

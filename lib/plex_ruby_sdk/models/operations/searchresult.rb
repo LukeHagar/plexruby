@@ -13,22 +13,26 @@ module PlexRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-
-        field :metadata, Models::Operations::GetSearchAllLibrariesMetadata, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
-
+        # The score of the search result, typically a float value between 0 and 1.
         field :score, ::Float, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('score') } }
 
+        field :directory, T.nilable(Models::Operations::GetSearchAllLibrariesDirectory), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Directory') } }
 
-        sig { params(metadata: Models::Operations::GetSearchAllLibrariesMetadata, score: ::Float).void }
-        def initialize(metadata: nil, score: nil)
-          @metadata = metadata
+        field :metadata, T.nilable(Models::Operations::GetSearchAllLibrariesMetadata), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('Metadata') } }
+
+
+        sig { params(score: ::Float, directory: T.nilable(Models::Operations::GetSearchAllLibrariesDirectory), metadata: T.nilable(Models::Operations::GetSearchAllLibrariesMetadata)).void }
+        def initialize(score: nil, directory: nil, metadata: nil)
           @score = score
+          @directory = directory
+          @metadata = metadata
         end
 
         def ==(other)
           return false unless other.is_a? self.class
-          return false unless @metadata == other.metadata
           return false unless @score == other.score
+          return false unless @directory == other.directory
+          return false unless @metadata == other.metadata
           true
         end
       end

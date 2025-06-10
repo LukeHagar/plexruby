@@ -14,7 +14,7 @@ module PlexRubySDK
   extend T::Sig
 
   SERVERS = [
-    '{protocol}://{ip}:{port}', # 1 - The full address of your Plex Server
+    'https://10.10.10.47:32400', # 1 - The full address of your Plex Server
   ].freeze
   # Contains the list of servers available to the SDK
 
@@ -66,9 +66,9 @@ module PlexRubySDK
       end
       @language = 'ruby'
       @openapi_doc_version = '0.0.3'
-      @sdk_version = '0.15.0'
+      @sdk_version = '0.17.0'
       @gen_version = '2.570.4'
-      @user_agent = 'speakeasy-sdk/ruby 0.15.0 2.570.4 0.0.3 plex_ruby_sdk'
+      @user_agent = 'speakeasy-sdk/ruby 0.17.0 2.570.4 0.0.3 plex_ruby_sdk'
     end
 
     sig { returns([String, T::Hash[Symbol, String]]) }

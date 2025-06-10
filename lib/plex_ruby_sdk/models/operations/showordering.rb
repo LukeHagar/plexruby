@@ -9,11 +9,12 @@ module PlexRubySDK
     module Operations
     
       # ShowOrdering - Setting that indicates the episode ordering for the show.
-      # None = Library default,
-      # tmdbAiring = The Movie Database (Aired),
-      # aired = TheTVDB (Aired),
-      # dvd = TheTVDB (DVD),
-      # absolute = TheTVDB (Absolute)).
+      # Options:
+      #   - None = Library default
+      #   - tmdbAiring = The Movie Database (Aired)
+      #   - aired = TheTVDB (Aired)
+      #   - dvd = TheTVDB (DVD)
+      #   - absolute = TheTVDB (Absolute)
       # 
       class ShowOrdering < T::Enum
         enums do

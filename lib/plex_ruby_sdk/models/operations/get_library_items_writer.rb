@@ -13,18 +13,26 @@ module PlexRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
+        # Unique identifier for the writer.
+        field :id, ::Integer, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('id') } }
+        # The role of Writer
+        field :tag, ::String, { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
+        # The absolute URL of the thumbnail image for the writer.
+        field :thumb, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('thumb') } }
 
-        field :tag, T.nilable(::String), { 'format_json': { 'letter_case': ::PlexRubySDK::Utils.field_name('tag') } }
 
-
-        sig { params(tag: T.nilable(::String)).void }
-        def initialize(tag: nil)
+        sig { params(id: ::Integer, tag: ::String, thumb: T.nilable(::String)).void }
+        def initialize(id: nil, tag: nil, thumb: nil)
+          @id = id
           @tag = tag
+          @thumb = thumb
         end
 
         def ==(other)
           return false unless other.is_a? self.class
+          return false unless @id == other.id
           return false unless @tag == other.tag
+          return false unless @thumb == other.thumb
           true
         end
       end
